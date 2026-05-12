@@ -1,0 +1,30 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos temporales
+*.tmp
+*.bak
+*.log
+
+# Archivos de trabajo local (no aportan al repo)
+TODO.md
+CONTEXT.md
+.claude/
+
+# Libros / binarios (van en Google Drive, no en el repo)
+*.pdf
+*.epub
+*.mobi
+*.kfx
+*.docx
+*.doc

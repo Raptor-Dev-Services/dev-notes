@@ -1,0 +1,336 @@
+# 04 — Terraform: Infraestructura como código
+
+Terraform permite definir infraestructura cloud (AWS, Azure, GCP) en archivos de configuración versionables y reproducibles.
+
+---
+
+## Conceptos fundamentales
+> Fuente: *Terraform Up and Running* (Brikman) — Ch.1 Why Terraform
+
+```
+Provider   = plugin que conecta Terraform con un cloud (aws, azurerm, google)
+Resource   = un componente de infraestructura (instancia EC2, base de datos, etc.)
+Data Source = información de recursos ya existentes (no crea, solo lee)
+Variable   = parámetros de entrada configurables
+Output     = valores que se exportan para otros módulos
+State      = el estado actual de la infraestructura (terraform.tfstate)
+```
+
+---
+
+## Estructura de un proyecto Terraform
+
+```
+infra/
+├── main.tf          — recursos principales
+├── variables.tf     — definición de variables
+├── outputs.tf       — valores de salida
+├── providers.tf     — configuración de providers
+├── terraform.tfvars — valores de las variables (no commitear con secretos)
+└── modules/
+    ├── ecs/         — módulo reutilizable para ECS
+    │   ├── main.tf
+    │   ├── variables.tf
+    │   └── outputs.tf
+    └── rds/
+        └── ...
+```
+
+---
+
+## Provider AWS
+
+```hcl
+# providers.tf
+terraform {
+  required_version = ">= 1.6"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+
+  # Backend remoto — el estado se guarda en S3 (no en local)
+  backend "s3" {
+    bucket         = "gtm-suite-terraform-state"
+    key            = "production/terraform.tfstate"
+    region         = "us-east-1"
+    encrypt        = true
+    dynamodb_table = "gtm-suite-terraform-locks"   # para locking
+  }
+}
+
+provider "aws" {
+  region = var.aws_region
+}
+```
+
+---
+
+## Recursos principales para el stack GTM Suite
+
+```hcl
+# variables.tf
+variable "aws_region"    { default = "us-east-1" }
+variable "environment"   { default = "production" }
+variable "app_name"      { default = "gtm-suite" }
+variable "db_password"   {
+  type      = string
+  sensitive = true   # no se muestra en logs ni output
+}
+
+# main.tf — ECS Fargate
+resource "aws_ecs_cluster" "main" {
+  name = "${var.app_name}-${var.environment}"
+
+  setting {
+    name  = "containerInsights"
+    value = "enabled"
+  }
+}
+
+resource "aws_ecs_task_definition" "api" {
+  family                   = "${var.app_name}-api"
+  requires_compatibilities = ["FARGATE"]
+  network_mode             = "awsvpc"
+  cpu                      = 512
+  memory                   = 1024
+  execution_role_arn       = aws_iam_role.ecs_execution.arn
+  task_role_arn            = aws_iam_role.ecs_task.arn
+
+  container_definitions = jsonencode([{
+    name  = "api"
+    image = "${aws_ecr_repository.api.repository_url}:latest"
+
+    portMappings = [{ containerPort = 8080, protocol = "tcp" }]
+
+    environment = [
+      { name = "ASPNETCORE_ENVIRONMENT", value = var.environment }
+    ]
+
+    secrets = [
+      {
+        name      = "ConnectionStrings__MainDb"
+        valueFrom = aws_secretsmanager_secret.db_connection.arn
+      }
+    ]
+
+    logConfiguration = {
+      logDriver = "awslogs"
+      options = {
+        "awslogs-group"         = aws_cloudwatch_log_group.api.name
+        "awslogs-region"        = var.aws_region
+        "awslogs-stream-prefix" = "ecs"
+      }
+    }
+
+    healthCheck = {
+      command     = ["CMD-SHELL", "curl -f http://localhost:8080/health || exit 1"]
+      interval    = 30
+      timeout     = 5
+      retries     = 3
+      startPeriod = 30
+    }
+  }])
+}
+
+resource "aws_ecs_service" "api" {
+  name            = "${var.app_name}-api"
+  cluster         = aws_ecs_cluster.main.id
+  task_definition = aws_ecs_task_definition.api.arn
+  desired_count   = 2
+  launch_type     = "FARGATE"
+
+  network_configuration {
+    subnets          = aws_subnet.private[*].id
+    security_groups  = [aws_security_group.api.id]
+    assign_public_ip = false
+  }
+
+  load_balancer {
+    target_group_arn = aws_lb_target_group.api.arn
+    container_name   = "api"
+    container_port   = 8080
+  }
+
+  deployment_circuit_breaker {
+    enable   = true
+    rollback = true   # rollback automático si el deploy falla
+  }
+}
+```
+
+```hcl
+# RDS PostgreSQL
+resource "aws_db_instance" "postgres" {
+  identifier = "${var.app_name}-${var.environment}"
+
+  engine         = "postgres"
+  engine_version = "17"
+  instance_class = "db.t3.medium"
+
+  allocated_storage     = 20
+  max_allocated_storage = 100   # auto-scaling de storage
+
+  db_name  = "gtmsuite"
+  username = "gtmadmin"
+  password = var.db_password
+
+  vpc_security_group_ids = [aws_security_group.rds.id]
+  db_subnet_group_name   = aws_db_subnet_group.main.name
+
+  backup_retention_period = 7   # 7 días de backups automáticos
+  backup_window           = "03:00-04:00"
+  maintenance_window      = "sun:04:00-sun:05:00"
+
+  deletion_protection = true   # protección contra `terraform destroy` accidental
+  skip_final_snapshot = false
+  final_snapshot_identifier = "${var.app_name}-final-snapshot"
+
+  tags = {
+    Environment = var.environment
+    Project     = var.app_name
+  }
+}
+```
+
+---
+
+## Comandos del flujo de trabajo
+
+```bash
+# Inicializar — descargar providers, configurar backend
+terraform init
+
+# Planificar — ver qué va a cambiar SIN aplicar
+terraform plan
+
+# Planificar y guardar el plan en archivo (para CI/CD)
+terraform plan -out=tfplan
+
+# Aplicar cambios (pide confirmación)
+terraform apply
+
+# Aplicar el plan guardado (sin confirmación — para CI/CD)
+terraform apply tfplan
+
+# Ver el estado actual
+terraform state list
+terraform state show aws_ecs_service.api
+
+# Destruir infraestructura (peligroso — pide confirmación)
+terraform destroy
+
+# Importar un recurso existente al estado
+terraform import aws_s3_bucket.logs gtm-suite-logs-bucket
+
+# Formatear archivos .tf
+terraform fmt
+
+# Validar la sintaxis
+terraform validate
+```
+
+---
+
+## Outputs — exponer valores para otros módulos
+
+```hcl
+# outputs.tf
+output "ecr_repository_url" {
+  description = "URL del repositorio ECR para el pipeline de CI/CD"
+  value       = aws_ecr_repository.api.repository_url
+}
+
+output "rds_endpoint" {
+  description = "Endpoint de la base de datos (sin credenciales)"
+  value       = aws_db_instance.postgres.endpoint
+}
+
+output "load_balancer_dns" {
+  description = "DNS del Application Load Balancer"
+  value       = aws_lb.main.dns_name
+}
+
+# Usar el output de otro módulo
+module "network" {
+  source = "./modules/network"
+  # ...
+}
+
+module "ecs" {
+  source     = "./modules/ecs"
+  vpc_id     = module.network.vpc_id        # output del módulo network
+  subnet_ids = module.network.private_subnet_ids
+}
+```
+
+---
+
+## Terraform en CI/CD
+
+```yaml
+# .github/workflows/terraform.yml
+name: Terraform
+
+on:
+  pull_request:
+    paths: ["infra/**"]
+  push:
+    branches: [main]
+    paths: ["infra/**"]
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: infra/
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.7.x"
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.TERRAFORM_ROLE_ARN }}
+          aws-region: us-east-1
+
+      - name: Terraform init
+        run: terraform init
+
+      - name: Terraform validate
+        run: terraform validate
+
+      - name: Terraform plan
+        run: terraform plan -out=tfplan
+        env:
+          TF_VAR_db_password: ${{ secrets.DB_PASSWORD }}
+
+      # Solo en push a main — no en PR
+      - name: Terraform apply
+        if: github.event_name == 'push'
+        run: terraform apply tfplan
+```
+
+---
+
+## Cuándo usar Terraform
+
+| Usar | No usar |
+|------|---------|
+| Infraestructura que cambia con regularidad | Infraestructura creada una sola vez y nunca modificada |
+| Equipos con más de 1 persona manejando infraestructura | Recursos efímeros de desarrollo local |
+| Necesitas reproducir entornos (staging = producción) | Configuración de software dentro de instancias (usar Ansible) |
+| Auditoría de cambios de infraestructura en git | Cuando la consola de AWS es suficiente para el tamaño del proyecto |
+
+
+---
+
+*Rogelio Arriaga Gonzalez*
