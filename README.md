@@ -121,7 +121,7 @@ dev-notes/
 │   ├── 04-context-management.md
 │   └── 05-llmops.md
 └── resources/
-    └── books/README.md             (índice de biblioteca — G:\My Drive\Capacitacion\Bibliografias)
+    └── books/README.md             (índice de biblioteca — Capacitacion\Bibliografias)
 ```
 
 ---
