@@ -1,6 +1,8 @@
-# 01 — Clases en C#
+﻿# 01 — Clases en C#
 
 Una clase es el bloque fundamental de C#. Todo objeto que existe en tiempo de ejecución viene de una clase.
+
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.5 Building Your Own Types with OOP
 
 ---
 

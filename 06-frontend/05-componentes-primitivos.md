@@ -1,4 +1,4 @@
-# 05 · Componentes primitivos
+﻿# 05 · Componentes primitivos
 
 ## Problema que resuelve
 
@@ -202,6 +202,8 @@ Cada página es un chunk separado. El `<Suspense>` muestra un spinner mientras c
 | `Modal` para confirmaciones y formularios cortos | drawers/sidebars (usar Headless UI `Dialog` con panel lateral) |
 | lazy routing para páginas pesadas | lazy en componentes pequeños que no justifican el overhead de chunk |
 
+
+> Fuente: *Full Stack React, TypeScript, and Node* (David Choi) — Ch.5 React Component Patterns
 
 ---
 

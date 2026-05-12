@@ -55,6 +55,8 @@ Limitar peticiones por segundo protege contra abuso, ataques DDoS, y tenants que
 
 
 
+> Fuente: *Web API Development with ASP.NET Core 8* (Xiaodi Yan) — Ch.11 Rate Limiting and Throttling
+
 ---
 
 *Rogelio Arriaga Gonzalez*

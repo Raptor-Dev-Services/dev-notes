@@ -39,6 +39,8 @@
 
 
 
+> Fuente: *Apps and Services with .NET 8* (Mark J. Price) — Ch.9 Caching, Queuing, and Resilient Background Services
+
 ---
 
 *Rogelio Arriaga Gonzalez*

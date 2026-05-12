@@ -1,4 +1,4 @@
-# 01 · CLAUDE.md / AGENTS.md — instrucciones persistentes para el AI
+﻿# 01 · CLAUDE.md / AGENTS.md — instrucciones persistentes para el AI
 
 ## Problema que resuelve
 
@@ -137,6 +137,8 @@ AGENTS.md    ← otros agentes leen esto
 | cuando el AI repite errores por desconocer el contexto | para instrucciones que cambian cada sesión |
 | convenciones no obvias que el AI no puede inferir del código | información que ya está clara en el código |
 
+
+> Fuente: *Building LLM Powered Applications* (Valentina Alto) — Ch.3 Building AI Agents with Tools
 
 ---
 

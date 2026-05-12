@@ -1,6 +1,8 @@
-# 05 — TDD: Test-Driven Development
+﻿# 05 — TDD: Test-Driven Development
 
 Escribir el test antes que el código de producción. El ciclo Red/Green/Refactor guía el desarrollo de fuera hacia adentro.
+
+> Fuente: *Clean Code with C# 2nd Ed* (Jason Alls) — Ch.11 Test-Driven Development
 
 ---
 

@@ -1,8 +1,10 @@
-# 07 — Bridge
+﻿# 07 — Bridge
 
 **Categoría:** Estructural
 
 **Intención:** Separa una clase grande o un conjunto de clases relacionadas en dos jerarquías separadas — abstracción e implementación — que pueden desarrollarse independientemente.
+
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.4 Structural Patterns: Bridge
 
 ---
 

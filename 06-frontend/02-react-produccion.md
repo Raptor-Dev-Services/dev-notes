@@ -220,6 +220,8 @@
 
 
 
+> Fuente: *Full Stack React, TypeScript, and Node* (David Choi) — Ch.7 Advanced React Patterns
+
 ---
 
 *Rogelio Arriaga Gonzalez*

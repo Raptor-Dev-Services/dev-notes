@@ -1,4 +1,4 @@
-# 06 · Patrón feature hook — CRUD + filtros + paginación
+﻿# 06 · Patrón feature hook — CRUD + filtros + paginación
 
 ## Problema que resuelve
 
@@ -253,6 +253,8 @@ El `resolveApiEnvelope` consume exactamente el `Result<T>` que el back-template 
 | cuando la página tiene filtros, paginación y múltiples modales | cuando solo se hace un fetch sin acciones (usar `useEffect` + `useState` inline) |
 | vistas distintas por breakpoint con lógica diferente | cuando solo se necesita cambiar layout CSS (usar breakpoints Tailwind) |
 
+
+> Fuente: *Full Stack React, TypeScript, and Node* (David Choi) — Ch.6 React Hooks in Depth
 
 ---
 

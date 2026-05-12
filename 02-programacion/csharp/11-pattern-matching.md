@@ -1,6 +1,8 @@
-# 11 — Pattern Matching: is, switch, when
+﻿# 11 — Pattern Matching: is, switch, when
 
 Pattern matching es una forma expresiva y segura de examinar el tipo y valor de un objeto. Es la base del sistema de Presenters en este proyecto.
+
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.3 Controlling Flow: Pattern Matching
 
 ---
 

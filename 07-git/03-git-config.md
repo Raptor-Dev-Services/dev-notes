@@ -1,4 +1,4 @@
-# 03 · Configuración de Git
+﻿# 03 · Configuración de Git
 
 ## Problema que resuelve
 
@@ -132,6 +132,8 @@ git log -1 --format="%an <%ae>"
 | `includeIf` para múltiples identidades por directorio | variables de entorno permanentes en `.bashrc` |
 | `git config` local para overrides por repo | editar `.git/config` manualmente |
 
+
+> Fuente: *Pro Git 2nd Ed* (Scott Chacon, Ben Straub) — Ch.8 Customizing Git: Git Configuration
 
 ---
 

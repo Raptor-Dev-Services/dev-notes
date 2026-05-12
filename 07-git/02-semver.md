@@ -1,4 +1,4 @@
-# 02 · Versionado Semántico (SemVer 2.0.0)
+﻿# 02 · Versionado Semántico (SemVer 2.0.0)
 
 ## Problema que resuelve
 
@@ -120,6 +120,8 @@ Las APIs web usan SemVer en conjunto con API versioning (`v1`, `v2`) — el vers
 | paquetes npm del frontend | configuración de infraestructura |
 | microservicios con contratos de API | |
 
+
+> Fuente: *The Software Engineer's Guidebook* (Gergely Orosz) — Ch.7 Software Development Best Practices
 
 ---
 

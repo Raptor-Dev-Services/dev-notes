@@ -8,18 +8,18 @@ Base de conocimiento personal de **Rogelio Arriaga** para desarrollo de software
 
 | Dominio | Descripción | Docs |
 |---------|-------------|------|
-| [01-fundamentos](01-fundamentos/) | SOLID, paradigmas, principios de ingeniería | 1 |
+| [01-fundamentos](01-fundamentos/) | SOLID, Clean Code, Refactoring | 3 |
 | [02-programacion](02-programacion/) | C# completo (19 docs) + Patrones GoF (22 docs) | 41 |
-| [03-arquitectura](03-arquitectura/) | DDD, CQRS, Clean Architecture, Vertical Slice, API design | 11 |
-| [04-backend](04-backend/) | .NET / ASP.NET Core: Result Pattern, Repository, Pipeline Behaviors, auth, caching, validación, EF Core, Common library + testing | 28 |
+| [03-arquitectura](03-arquitectura/) | DDD, CQRS, Clean Architecture, Vertical Slice, microservicios, Keycloak, API design | 13 |
+| [04-backend](04-backend/) | ASP.NET Core: Result Pattern, Repository, Pipeline Behaviors, auth, caching, validación, EF Core, performance, memoria, JWT + testing | 24 |
 | [05-bases-de-datos](05-bases-de-datos/) | SQL, índices, transacciones, PostgreSQL avanzado, Dapper, connection strings | 6 |
-| [06-frontend](06-frontend/) | Tailwind v4, design system, componentes primitivos, feature hook, variables Vite, React producción | 6 |
+| [06-frontend](06-frontend/) | React 19, Vite, Tailwind v4, design system, componentes primitivos, feature hook | 6 |
 | [07-git](07-git/) | Tooling, SemVer, Git Flow, tags, conventional commits, merge strategies, rollback, stash | 9 |
-| [08-contenedores](08-contenedores/) | Docker: conceptos, Dockerfile, Compose, comandos | 5 |
-| [09-cicd](09-cicd/) | Checklists, GitHub Actions (AWS ECR+ECS), Azure DevOps pipelines | 3 |
-| [10-cloud](10-cloud/) | AWS basics, Azure basics, Linux+Nginx, observabilidad, secretos, costos | 6 |
-| [11-vibe-coding](11-vibe-coding/) | CLAUDE.md, prompts efectivos, AI workflow, manejo de contexto | 4 |
-| [resources](resources/) | Bibliografía, referencias externas | — |
+| [08-contenedores](08-contenedores/) | Docker: conceptos, Dockerfile multi-stage, Compose, comandos | 5 |
+| [09-cicd](09-cicd/) | Checklists, GitHub Actions (OIDC + AWS), Azure DevOps, Terraform | 4 |
+| [10-cloud](10-cloud/) | AWS, Azure, Linux+Nginx, observabilidad, secretos, costos, seguridad web (OWASP), Zero Trust | 8 |
+| [11-vibe-coding](11-vibe-coding/) | CLAUDE.md, prompts efectivos, AI workflow, manejo de contexto, LLMOps | 5 |
+| [resources](resources/) | Bibliografía indexada | — |
 
 ---
 
@@ -28,7 +28,9 @@ Base de conocimiento personal de **Rogelio Arriaga** para desarrollo de software
 ```
 dev-notes/
 ├── 01-fundamentos/
-│   └── 01-solid.md
+│   ├── 01-solid.md
+│   ├── 02-clean-code.md
+│   └── 03-refactoring.md
 ├── 02-programacion/
 │   ├── csharp/                     (01–19: classes → configuration)
 │   └── design-patterns/
@@ -42,6 +44,8 @@ dev-notes/
 │   ├── 04-vertical-slice.md
 │   ├── 05-specification.md
 │   ├── 06-api-versioning.md
+│   ├── 07-microservicios.md
+│   ├── 08-autenticacion-keycloak.md
 │   └── api-design/                 (01–05: HTTP → buenas prácticas)
 ├── 04-backend/
 │   ├── 01-result-pattern.md
@@ -52,16 +56,19 @@ dev-notes/
 │   ├── 06-validation.md
 │   ├── 07-background-services.md
 │   ├── 08-problem-details.md
-│   ├── 09-configuracion.md         (Manual Práctico — .NET + Docker)
-│   ├── 10-secretos.md              (Manual Práctico — Key Vault, Secrets Manager)
-│   ├── 11-cors.md                  (Manual Práctico)
-│   ├── 12-rate-limiting.md         (Manual Práctico)
-│   ├── 13-http-client.md           (Manual Práctico — IHttpClientFactory + Polly)
-│   ├── 14-hangfire.md              (Manual Práctico — jobs persistentes + SaaS tenant)
-│   ├── 15-openapi.md               (Manual Práctico — API versioning + Swagger + Scalar)
-│   ├── 16-output-caching.md        (Manual Práctico)
-│   ├── 17-ef-core.md               (Manual Práctico — migrations, soft delete, auditing)
-│   ├── 18-common-library.md        (Manual Práctico — librería Common completa)
+│   ├── 09-configuracion.md
+│   ├── 10-secretos.md
+│   ├── 11-cors.md
+│   ├── 12-rate-limiting.md
+│   ├── 13-http-client.md
+│   ├── 14-hangfire.md
+│   ├── 15-openapi.md
+│   ├── 16-output-caching.md
+│   ├── 17-ef-core.md
+│   ├── 18-common-library.md
+│   ├── 19-performance.md
+│   ├── 20-memoria-gc.md
+│   ├── 21-jwt.md
 │   └── testing/                    (01–05: xUnit → TDD)
 ├── 05-bases-de-datos/
 │   ├── 01-consultas.md
@@ -69,20 +76,24 @@ dev-notes/
 │   ├── 03-transacciones.md
 │   ├── 04-postgresql-avanzado.md
 │   ├── 05-postgresql-dapper.md
-│   └── 06-connection-strings.md    (Manual Práctico)
+│   └── 06-connection-strings.md
 ├── 06-frontend/
-│   ├── 01-variables-entorno-vite.md (Manual Práctico)
-│   └── 02-react-produccion.md       (Manual Práctico — Router, Axios, RHF, i18n, TanStack)
+│   ├── 01-variables-entorno-vite.md
+│   ├── 02-react-produccion.md
+│   ├── 03-tailwind.md
+│   ├── 04-design-system.md
+│   ├── 05-componentes-primitivos.md
+│   └── 06-feature-hook.md
 ├── 07-git/
-│   ├── 01-project-tooling.md        (Manual Práctico — .gitignore, Husky, Dependabot)
-│   ├── 02-semver.md                 (SemVer 2.0.0, pre-release, build metadata)
-│   ├── 03-git-config.md             (global, local, multi-usuario, includeIf)
-│   ├── 04-git-flow.md               (branch types, naming, feature/release/hotfix flow)
-│   ├── 05-tags.md                   (annotated vs lightweight, push, delete, convenciones)
-│   ├── 06-commit-conventions.md     (Conventional Commits, tipos, breaking changes)
-│   ├── 07-merge-strategies.md       (--no-ff, squash, rebase, rebase interactivo)
-│   ├── 08-rollback.md               (redespliegue tag, git revert, hotfix, checklists)
-│   └── 09-stash.md                  (push/pop/apply, mover cambios entre ramas)
+│   ├── 01-project-tooling.md
+│   ├── 02-semver.md
+│   ├── 03-git-config.md
+│   ├── 04-git-flow.md
+│   ├── 05-tags.md
+│   ├── 06-commit-conventions.md
+│   ├── 07-merge-strategies.md
+│   ├── 08-rollback.md
+│   └── 09-stash.md
 ├── 08-contenedores/
 │   ├── 01-conceptos.md
 │   ├── 02-dockerfile.md
@@ -90,26 +101,39 @@ dev-notes/
 │   ├── 04-proyecto.md
 │   └── 05-comandos.md
 ├── 09-cicd/
-│   └── 01-checklists.md             (Manual Práctico — commit, merge, deploy, diagnóstico)
-├── 10-cloud/                        (← pendiente)
-├── 11-vibe-coding/                  (← pendiente)
+│   ├── 01-checklists.md
+│   ├── 02-github-actions.md
+│   ├── 03-azure-devops.md
+│   └── 04-terraform.md
+├── 10-cloud/
+│   ├── 01-aws-basics.md
+│   ├── 02-azure-basics.md
+│   ├── 03-linux-nginx.md
+│   ├── 04-observabilidad.md
+│   ├── 05-secretos-produccion.md
+│   ├── 06-costos.md
+│   ├── 07-seguridad-web.md
+│   └── 08-zero-trust.md
+├── 11-vibe-coding/
+│   ├── 01-agents-md.md
+│   ├── 02-prompts-efectivos.md
+│   ├── 03-ai-workflow.md
+│   ├── 04-context-management.md
+│   └── 05-llmops.md
 └── resources/
-    └── books/                       (← notas de bibliografía)
+    └── books/README.md             (índice de biblioteca — G:\My Drive\Capacitacion\Bibliografias)
 ```
 
 ---
 
-## Fuentes
+## Proyectos de referencia
 
-- `01-fundamentos/` a `04-backend/01–08`, `05-bases-de-datos/01–05`, `08-contenedores/` — documentados en sesiones anteriores, basados en `back-template`
-- `04-backend/09–18`, `05-bases-de-datos/06`, `06-frontend/`, `07-git/`, `09-cicd/` — extraídos del **Manual Práctico del Stack v2.0** (Raptor Dev Services, Mayo 2026)
+Los ejemplos de código de este repositorio están basados en las dos plantillas del stack:
 
----
-
-## Proyecto relacionado
-
-[`back-template`](../back-template) — plantilla backend .NET 10 Clean Architecture sobre la que se basan los ejemplos.
-
+| Repo | Stack | Cubre |
+|------|-------|-------|
+| [`back-template`](../back-template) | .NET 10 · Clean Architecture · PostgreSQL · Docker | `01-fundamentos`, `02-programacion`, `03-arquitectura`, `04-backend`, `05-bases-de-datos`, `07-git`, `08-contenedores`, `09-cicd`, `10-cloud` |
+| [`front-template`](../front-template) | React 19 · Vite · Tailwind v4 · Axios · SignalR | `06-frontend` |
 
 ---
 

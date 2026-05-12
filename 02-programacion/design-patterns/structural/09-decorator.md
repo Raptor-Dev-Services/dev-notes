@@ -1,8 +1,10 @@
-# 09 — Decorator
+﻿# 09 — Decorator
 
 **Categoría:** Estructural
 
 **Intención:** Permite agregar nuevos comportamientos a objetos colocándolos dentro de objetos envolventes especiales que contienen los comportamientos. También conocido como "Wrapper".
+
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.4 Structural Patterns: Decorator
 
 ---
 

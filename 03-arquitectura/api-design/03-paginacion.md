@@ -1,6 +1,8 @@
-# 03 — Paginación: Offset, Cursor y Keyset
+﻿# 03 — Paginación: Offset, Cursor y Keyset
 
 Devolver grandes colecciones de datos en partes manejables.
+
+> Fuente: *Programming APIs with C# and .NET* (David Barkol) — Ch.4 Pagination, Filtering, and Sorting
 
 ---
 

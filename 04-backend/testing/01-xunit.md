@@ -1,6 +1,8 @@
-# 01 — xUnit: Fundamentos y Convenciones
+﻿# 01 — xUnit: Fundamentos y Convenciones
 
 El framework de testing estándar en .NET moderno. Todo test es un método público en una clase pública.
+
+> Fuente: *Clean Code with C# 2nd Ed* (Jason Alls) — Ch.10 Unit Testing with xUnit
 
 ---
 

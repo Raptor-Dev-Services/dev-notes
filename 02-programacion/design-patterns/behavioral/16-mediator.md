@@ -1,8 +1,10 @@
-# 16 — Mediator
+﻿# 16 — Mediator
 
 **Categoría:** Conductual
 
 **Intención:** Reduce las dependencias caóticas entre objetos. El patrón restringe las comunicaciones directas entre objetos y los obliga a colaborar solo a través de un objeto mediador.
+
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.5 Behavioral Patterns: Mediator
 
 ---
 

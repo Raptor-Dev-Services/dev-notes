@@ -1,6 +1,8 @@
-# 14 — Problem Details: RFC 7807 y Manejo de Errores HTTP
+﻿# 14 — Problem Details: RFC 7807 y Manejo de Errores HTTP
 
 Estándar para respuestas de error HTTP. En lugar de formatos ad-hoc, todas las APIs devuelven la misma estructura de error.
+
+> Fuente: *Web API Development with ASP.NET Core 8* (Xiaodi Yan) — Ch.9 Error Handling and Problem Details (RFC 7807)
 
 ---
 

@@ -1,4 +1,4 @@
-# 08 · Estrategias de rollback
+﻿# 08 · Estrategias de rollback
 
 ## Problema que resuelve
 
@@ -137,6 +137,8 @@ git branch -d hotfix/1.2.1-fix-crash
 | `git revert` cuando el commit ya está en `main` | `git push --force` en `main` para deshacer |
 | hotfix flow cuando se puede tolerar 30-60 min de proceso | redespliegue si el problema es de datos y no de código |
 
+
+> Fuente: *Learning Git* (Anna Skoulikari) — Ch.9 Undoing Changes
 
 ---
 

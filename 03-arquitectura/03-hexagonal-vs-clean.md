@@ -1,6 +1,8 @@
-# 06 — Hexagonal Architecture vs Clean Architecture
+﻿# 06 — Hexagonal Architecture vs Clean Architecture
 
 Dos arquitecturas que se confunden frecuentemente porque resuelven el mismo problema con el mismo principio. Entender las diferencias ayuda a razonar mejor sobre las decisiones del proyecto.
+
+> Fuente: *Architecting ASP.NET Core Applications* (Carl-Hugo Marcotte) — Ch.7 Layering and Clean Architecture
 
 ---
 

@@ -1,6 +1,8 @@
-# 05 — PostgreSQL y Dapper: Convenciones del Proyecto
+﻿# 05 — PostgreSQL y Dapper: Convenciones del Proyecto
 
 Cómo se integra PostgreSQL con Dapper en la arquitectura de back-template.
+
+> Fuente: *Empezando con PostgreSQL* — Ch.3 Consultas avanzadas y drivers .NET
 
 ---
 

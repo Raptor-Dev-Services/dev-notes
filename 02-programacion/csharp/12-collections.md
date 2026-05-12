@@ -1,6 +1,8 @@
-# 12 — Colecciones y LINQ
+﻿# 12 — Colecciones y LINQ
 
 Las colecciones son estructuras para almacenar múltiples elementos. LINQ es la sintaxis para consultarlas y transformarlas.
+
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.8 Working with Common .NET Types
 
 ---
 

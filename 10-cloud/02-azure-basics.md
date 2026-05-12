@@ -1,4 +1,4 @@
-# 02 · Azure — Servicios esenciales
+﻿# 02 · Azure — Servicios esenciales
 
 > Nota: no hay libro de Azure en la biblioteca actual. Este documento cubre los servicios equivalentes a los de AWS para el stack .NET.
 
@@ -144,6 +144,8 @@ El back-template funciona sin cambios en Azure: el `Dockerfile` se construye igu
 | App Service para apps .NET sin gestionar infraestructura | Azure VMs para aplicaciones stateless en contenedores |
 | Managed Identity siempre que sea posible | Service Principals con secretos estáticos de larga vida |
 
+
+> Fuente: *Architecting Modern Web Apps with ASP.NET Core and Azure* (Steve Smith) — Ch.2 Azure Architecture and Services Overview
 
 ---
 

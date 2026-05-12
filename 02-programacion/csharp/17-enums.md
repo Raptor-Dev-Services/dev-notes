@@ -1,6 +1,8 @@
-# 17 — Enums en C#
+﻿# 17 — Enums en C#
 
 Un `enum` (enumeración) es un tipo de valor que define un conjunto de constantes nombradas. Hace el código legible, evita "números mágicos" y permite al compilador verificar los valores válidos.
+
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.5 Building Your Own Types: Enumerations
 
 ---
 

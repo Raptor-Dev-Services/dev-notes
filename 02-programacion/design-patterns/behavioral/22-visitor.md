@@ -1,8 +1,10 @@
-# 22 — Visitor
+﻿# 22 — Visitor
 
 **Categoría:** Conductual
 
 **Intención:** Permite separar algoritmos de los objetos sobre los que operan. Con Visitor puedes agregar nuevas operaciones a una jerarquía de clases sin modificar esas clases.
+
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.5 Behavioral Patterns: Visitor
 
 ---
 

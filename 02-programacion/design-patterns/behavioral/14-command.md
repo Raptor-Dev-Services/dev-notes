@@ -1,8 +1,10 @@
-# 14 — Command
+﻿# 14 — Command
 
 **Categoría:** Conductual
 
 **Intención:** Convierte una petición en un objeto independiente que contiene toda la información sobre la petición. Esta transformación te permite parametrizar métodos con diferentes peticiones, retrasar o poner en cola la ejecución de una petición y soportar operaciones que se puedan deshacer.
+
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.5 Behavioral Patterns: Command
 
 ---
 

@@ -1,6 +1,8 @@
-# 04 — Records en C#
+﻿# 04 — Records en C#
 
 Los `record` son tipos diseñados para datos inmutables. Son la base de todos los DTOs, Requests y Responses de este proyecto.
+
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.5 Record Types
 
 ---
 

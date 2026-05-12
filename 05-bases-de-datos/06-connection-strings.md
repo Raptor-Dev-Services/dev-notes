@@ -76,6 +76,8 @@ La cadena de conexión es uno de los secretos más sensibles del sistema. Un lea
 
 
 
+> Fuente: *Apps and Services with .NET 8* (Mark J. Price) — Ch.3 Building Data Access Layers
+
 ---
 
 *Rogelio Arriaga Gonzalez*

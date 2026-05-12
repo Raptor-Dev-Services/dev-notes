@@ -1,6 +1,8 @@
-# 09 — DI Lifetimes: Singleton, Scoped, Transient
+﻿# 09 — DI Lifetimes: Singleton, Scoped, Transient
 
 Cuando registras una dependencia, debes decidir **cuánto tiempo vive** el objeto que el container crea. Esta decisión impacta el rendimiento, la seguridad entre peticiones y los posibles bugs.
+
+> Fuente: *Apps and Services with .NET 8* (Mark J. Price) — Ch.14 Dependency Injection and Service Lifetimes
 
 ---
 

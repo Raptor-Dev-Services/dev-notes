@@ -1,6 +1,8 @@
-# 04 — Docker en este Proyecto
+﻿# 04 — Docker en este Proyecto
 
 Cómo están configurados los archivos Docker/Compose de `back-template` y qué workflow usar según el objetivo.
+
+> Fuente: *Docker: Up and Running 3rd Ed* (Sean Kane, Karl Matthias) — Ch.4 Working with Docker Images
 
 ---
 

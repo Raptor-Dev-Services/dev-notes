@@ -64,6 +64,8 @@ CORS (Cross-Origin Resource Sharing) es el mecanismo del navegador que permite o
 
 
 
+> Fuente: *Web Application Security 2nd Ed* (Andrew Hoffman) — Ch.15 Same-Origin Policy and CORS
+
 ---
 
 *Rogelio Arriaga Gonzalez*

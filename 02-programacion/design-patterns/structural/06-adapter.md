@@ -1,8 +1,10 @@
-# 06 — Adapter
+﻿# 06 — Adapter
 
 **Categoría:** Estructural
 
 **Intención:** Permite que objetos con interfaces incompatibles colaboren. Convierte la interfaz de una clase en otra interfaz que el cliente espera.
+
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.4 Structural Patterns: Adapter
 
 ---
 

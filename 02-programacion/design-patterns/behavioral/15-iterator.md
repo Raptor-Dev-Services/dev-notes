@@ -1,8 +1,10 @@
-# 15 — Iterator
+﻿# 15 — Iterator
 
 **Categoría:** Conductual
 
 **Intención:** Permite recorrer elementos de una colección sin exponer su representación subyacente (lista, árbol, pila, etc.).
+
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.5 Behavioral Patterns: Iterator
 
 ---
 

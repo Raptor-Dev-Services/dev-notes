@@ -1,6 +1,8 @@
-# 13 — Nulabilidad en C#
+﻿# 13 — Nulabilidad en C#
 
 El valor `null` representa "sin valor". Manejarlo incorrectamente es la causa #1 de crashes en aplicaciones .NET: `NullReferenceException`.
+
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.2 Speaking C#: Null and Nullable Reference Types
 
 ---
 

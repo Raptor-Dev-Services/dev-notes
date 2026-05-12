@@ -1,6 +1,8 @@
-# 19 — Configuración: IConfiguration e IOptions\<T\>
+﻿# 19 — Configuración: IConfiguration e IOptions\<T\>
 
 ASP.NET Core tiene un sistema de configuración unificado que lee valores de múltiples fuentes (archivos JSON, variables de entorno, secrets) y los expone a través de `IConfiguration` e `IOptions<T>`.
+
+> Fuente: *Apps and Services with .NET 8* (Mark J. Price) — Ch.2 Managing Configuration and Secrets
 
 ---
 

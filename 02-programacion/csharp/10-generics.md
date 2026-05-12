@@ -1,6 +1,8 @@
-# 10 — Genéricos \<T\>
+﻿# 10 — Genéricos \<T\>
 
 Los genéricos permiten escribir código que funciona con cualquier tipo, determinado en el momento de uso — sin perder type-safety.
+
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.6 Implementing Interfaces: Generics
 
 ---
 

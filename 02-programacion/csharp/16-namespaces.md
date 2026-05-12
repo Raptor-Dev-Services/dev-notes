@@ -1,6 +1,8 @@
-# 16 — Namespaces y using
+﻿# 16 — Namespaces y using
 
 Los namespaces organizan el código en espacios de nombres jerárquicos. Los `using` importan esos espacios.
+
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.2 Speaking C#: Namespaces and Assemblies
 
 ---
 

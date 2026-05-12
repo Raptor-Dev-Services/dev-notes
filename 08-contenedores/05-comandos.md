@@ -1,6 +1,8 @@
-# 05 — Comandos Docker y Docker Compose
+﻿# 05 — Comandos Docker y Docker Compose
 
 Referencia rápida de los comandos más usados. `docker compose` (v2) sin guión es el comando actual.
+
+> Fuente: *Docker: Up and Running 3rd Ed* (Sean Kane, Karl Matthias) — Ch.3 Docker Container Lifecycle
 
 ---
 

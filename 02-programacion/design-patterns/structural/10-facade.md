@@ -1,8 +1,10 @@
-# 10 — Facade
+﻿# 10 — Facade
 
 **Categoría:** Estructural
 
 **Intención:** Proporciona una interfaz simplificada a un conjunto complejo de clases, una librería o un framework.
+
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.4 Structural Patterns: Facade
 
 ---
 

@@ -66,6 +66,8 @@ En desarrollo local, User Secrets resuelve. En producción, los secretos viven e
 
 
 
+> Fuente: *Building Secure and Reliable Systems* (Heather Adkins et al.) — Ch.8 Design for Security
+
 ---
 
 *Rogelio Arriaga Gonzalez*

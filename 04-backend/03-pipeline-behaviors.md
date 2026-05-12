@@ -1,6 +1,8 @@
-# 07 — Pipeline Behaviors
+﻿# 07 — Pipeline Behaviors
 
 Los Pipeline Behaviors son middlewares del mediador — interceptan cada Request antes y después de que llegue al Handler. Permiten agregar comportamiento cross-cutting (que aplica a todos los casos de uso) sin modificar cada Handler individualmente.
+
+> Fuente: *Architecting ASP.NET Core Applications* (Carl-Hugo Marcotte) — Ch.14 Mediator and CQRS Design Patterns
 
 ---
 

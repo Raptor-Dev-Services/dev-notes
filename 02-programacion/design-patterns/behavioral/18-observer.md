@@ -1,8 +1,10 @@
-# 18 — Observer
+﻿# 18 — Observer
 
 **Categoría:** Conductual
 
 **Intención:** Define un mecanismo de suscripción para notificar a múltiples objetos sobre cualquier evento que le ocurra al objeto que están observando. También conocido como "Publish-Subscribe" (Pub/Sub) o "Event-Driven".
+
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.5 Behavioral Patterns: Observer
 
 ---
 

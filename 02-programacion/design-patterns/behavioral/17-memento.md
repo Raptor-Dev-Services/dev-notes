@@ -1,8 +1,10 @@
-# 17 — Memento
+﻿# 17 — Memento
 
 **Categoría:** Conductual
 
 **Intención:** Permite guardar y restaurar el estado previo de un objeto sin revelar los detalles de su implementación.
+
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.5 Behavioral Patterns: Memento
 
 ---
 

@@ -1,6 +1,8 @@
-# 04 — TestContainers: PostgreSQL Real en Tests
+﻿# 04 — TestContainers: PostgreSQL Real en Tests
 
 Levanta contenedores Docker reales en los tests — PostgreSQL, Redis, RabbitMQ — de forma programática y sin configuración manual.
+
+> Fuente: *Real-World Web Development with .NET 9* (Mark J. Price) — Ch.10 Integration Testing with Testcontainers
 
 ---
 

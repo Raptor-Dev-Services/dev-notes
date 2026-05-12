@@ -1,8 +1,10 @@
-# 04 — Builder
+﻿# 04 — Builder
 
 **Categoría:** Creacional
 
 **Intención:** Permite construir objetos complejos paso a paso. El patrón te permite producir diferentes tipos y representaciones de un objeto usando el mismo código de construcción.
+
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.3 Creational Patterns: Builder
 
 ---
 

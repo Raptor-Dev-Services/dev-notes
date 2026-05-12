@@ -1,6 +1,8 @@
-# 14 — Excepciones en C#
+﻿# 14 — Excepciones en C#
 
 Las excepciones son errores que ocurren en tiempo de ejecución. C# tiene un sistema estructurado para lanzarlas, capturarlas y propagarlas.
+
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.3 Controlling Flow, Converting Types, and Handling Exceptions
 
 ---
 

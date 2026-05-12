@@ -1,6 +1,8 @@
-# 02 — Result Pattern
+﻿# 02 — Result Pattern
 
 El Result Pattern modela el resultado de una operación como un objeto con dos estados posibles: éxito o fallo. Es la alternativa a usar excepciones para controlar el flujo de negocio.
+
+> Fuente: *Clean Code with C# 2nd Ed* (Jason Alls) — Ch.3 Classes, Objects, and Error Handling
 
 ---
 

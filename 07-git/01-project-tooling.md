@@ -172,6 +172,8 @@
 
 
 
+> Fuente: *Pro Git 2nd Ed* (Scott Chacon, Ben Straub) — Ch.8 Customizing Git
+
 ---
 
 *Rogelio Arriaga Gonzalez*

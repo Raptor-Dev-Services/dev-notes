@@ -111,6 +111,8 @@
 
 
 
+> Fuente: *Web API Development with ASP.NET Core 8* (Xiaodi Yan) — Ch.3 Working with OpenAPI and Swagger
+
 ---
 
 *Rogelio Arriaga Gonzalez*

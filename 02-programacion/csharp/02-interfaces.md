@@ -1,6 +1,8 @@
-# 02 — Interfaces en C#
+﻿# 02 — Interfaces en C#
 
 Una interfaz es un **contrato**. Define qué métodos y propiedades debe tener quien la implemente, sin decir cómo.
+
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.6 Implementing Interfaces and Inheriting Classes
 
 ---
 

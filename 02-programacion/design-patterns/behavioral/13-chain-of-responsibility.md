@@ -1,8 +1,10 @@
-# 13 — Chain of Responsibility
+﻿# 13 — Chain of Responsibility
 
 **Categoría:** Conductual
 
 **Intención:** Permite pasar peticiones a lo largo de una cadena de handlers. Al recibir una petición, cada handler decide procesarla o pasarla al siguiente handler de la cadena.
+
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.5 Behavioral Patterns: Chain of Responsibility
 
 ---
 

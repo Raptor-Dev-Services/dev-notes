@@ -645,6 +645,8 @@ Para cerrar, así se ve un Program.cs completo de un nuevo SaaS que arranca enci
 
 
 
+> Fuente: *Architecting ASP.NET Core Applications* (Carl-Hugo Marcotte) — Ch.16 Building a Shared Kernel
+
 ---
 
 *Rogelio Arriaga Gonzalez*

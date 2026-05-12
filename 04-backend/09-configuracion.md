@@ -157,6 +157,8 @@ User Secrets en desarrollo local
 
 
 
+> Fuente: *Apps and Services with .NET 8* (Mark J. Price) — Ch.2 Managing Configuration and Secrets
+
 ---
 
 *Rogelio Arriaga Gonzalez*

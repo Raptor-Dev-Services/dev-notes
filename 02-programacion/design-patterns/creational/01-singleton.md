@@ -1,8 +1,10 @@
-# 01 — Singleton
+﻿# 01 — Singleton
 
 **Categoría:** Creacional
 
 **Intención:** Garantizar que una clase tenga una única instancia y proporcionar un punto de acceso global a ella.
+
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.3 Creational Patterns: Singleton
 
 ---
 

@@ -1,6 +1,8 @@
-# 02 — REST: Recursos, URLs y Constraints
+﻿# 02 — REST: Recursos, URLs y Constraints
 
 REST no es un protocolo ni un estándar — es un estilo arquitectónico. Las APIs "RESTful" siguen sus constraints para ser predecibles e interoperables.
+
+> Fuente: *Programming APIs with C# and .NET* (David Barkol) — Ch.2 RESTful Patterns and Conventions
 
 ---
 

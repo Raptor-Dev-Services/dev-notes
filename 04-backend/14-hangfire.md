@@ -111,6 +111,8 @@ Tareas que corren fuera del request HTTP: envío de emails, generación de repor
 
 
 
+> Fuente: *Apps and Services with .NET 8* (Mark J. Price) — Ch.12 Scheduling Jobs with Background Services
+
 ---
 
 *Rogelio Arriaga Gonzalez*

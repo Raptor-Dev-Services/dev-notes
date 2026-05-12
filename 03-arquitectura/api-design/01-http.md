@@ -1,6 +1,8 @@
-# 01 — HTTP: Verbos, Status Codes e Idempotencia
+﻿# 01 — HTTP: Verbos, Status Codes e Idempotencia
 
 El protocolo que subyace a todas las APIs REST. Entender HTTP semántico es la base de un buen diseño de API.
+
+> Fuente: *Web API Development with ASP.NET Core 8* (Xiaodi Yan) — Ch.2 RESTful API Design Fundamentals
 
 ---
 

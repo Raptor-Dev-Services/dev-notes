@@ -1,6 +1,8 @@
-# 07 — Métodos en C#
+﻿# 07 — Métodos en C#
 
 Los métodos definen el comportamiento de un objeto — qué puede hacer y cómo.
+
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.4 Writing, Debugging, and Testing Functions
 
 ---
 

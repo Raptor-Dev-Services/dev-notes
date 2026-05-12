@@ -66,6 +66,8 @@ Crear instancias de HttpClient con 'new HttpClient()' es uno de los bugs más cl
 
 
 
+> Fuente: *Apps and Services with .NET 8* (Mark J. Price) — Ch.5 Building Microservices Using Web API
+
 ---
 
 *Rogelio Arriaga Gonzalez*

@@ -1,6 +1,8 @@
-# 06 — Propiedades y Campos
+﻿# 06 — Propiedades y Campos
 
 Los campos almacenan datos directamente en memoria. Las propiedades son una abstracción sobre los campos que permite controlar el acceso.
+
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.5 Properties and Fields
 
 ---
 

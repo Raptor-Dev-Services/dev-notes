@@ -1,6 +1,8 @@
-# 08 — async, await, Task y CancellationToken
+﻿# 08 — async, await, Task y CancellationToken
 
 La programación asíncrona es fundamental en cualquier API web. Este documento explica desde cero qué significa, por qué existe y cómo funciona en este proyecto.
+
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.12 Improving Performance and Scalability Using Multitasking
 
 ---
 

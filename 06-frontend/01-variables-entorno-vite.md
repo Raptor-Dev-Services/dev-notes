@@ -88,6 +88,8 @@ Cómo leerlas en código React
 
 
 
+> Fuente: *Full Stack React, TypeScript, and Node* (David Choi) — Ch.3 Creating React Apps with Vite
+
 ---
 
 *Rogelio Arriaga Gonzalez*

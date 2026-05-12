@@ -1,6 +1,8 @@
-# 02 — Índices: B-tree, Parciales, Compuestos y EXPLAIN ANALYZE
+﻿# 02 — Índices: B-tree, Parciales, Compuestos y EXPLAIN ANALYZE
 
 Un índice es una estructura auxiliar que permite a PostgreSQL encontrar filas sin leer toda la tabla.
+
+> Fuente: *Procesamiento de Bases de Datos 8ed* (David M. Kroenke) — Ch.10 Database Redesign: Indexes and Performance
 
 ---
 

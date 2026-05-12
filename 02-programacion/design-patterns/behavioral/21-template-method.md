@@ -1,8 +1,10 @@
-# 21 — Template Method
+﻿# 21 — Template Method
 
 **Categoría:** Conductual
 
 **Intención:** Define el esqueleto de un algoritmo en la clase base, pero deja que las subclases sobrescriban pasos específicos del algoritmo sin cambiar su estructura general.
+
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.5 Behavioral Patterns: Template Method
 
 ---
 

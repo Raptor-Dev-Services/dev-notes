@@ -1,8 +1,10 @@
-# 12 — Proxy
+﻿# 12 — Proxy
 
 **Categoría:** Estructural
 
 **Intención:** Proporciona un sustituto o marcador de posición para otro objeto. Un proxy controla el acceso al objeto original, permitiéndote realizar algo antes o después de que la petición llegue al objeto original.
+
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.4 Structural Patterns: Proxy
 
 ---
 

@@ -1,6 +1,8 @@
-# 03 — Constructores y Dependency Injection
+﻿# 03 — Constructores y Dependency Injection
 
 El constructor y la inyección de dependencias son inseparables en este proyecto. Este documento los explica juntos, como se usan en la práctica.
+
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.5 Constructors; Ch.14 Dependency Injection
 
 ---
 

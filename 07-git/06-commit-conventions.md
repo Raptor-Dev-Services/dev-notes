@@ -1,4 +1,4 @@
-# 06 · Conventional Commits
+﻿# 06 · Conventional Commits
 
 ## Problema que resuelve
 
@@ -131,6 +131,8 @@ El back-template incluye Husky configurado con `commit-msg` hook. `commitlint` v
 | repos que generan changelogs automáticos | cuando el historial nunca se revisa |
 | pipelines que derivan versión del historial | ramas locales antes de squash-merge |
 
+
+> Fuente: *Pro Git 2nd Ed* (Scott Chacon, Ben Straub) — Ch.5 Distributed Git: Contributing to a Project
 
 ---
 

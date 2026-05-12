@@ -1,6 +1,8 @@
-# 15 — Strings en C#
+﻿# 15 — Strings en C#
 
 Los strings son inmutables en C#. Cada operación que "modifica" un string crea uno nuevo. Conocer esto evita bugs y problemas de rendimiento.
+
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.8 Working with Text, Dates, and Numbers
 
 ---
 

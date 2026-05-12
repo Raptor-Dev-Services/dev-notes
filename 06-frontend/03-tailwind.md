@@ -1,4 +1,4 @@
-# 03 · Tailwind CSS v4 con Vite
+﻿# 03 · Tailwind CSS v4 con Vite
 
 ## Problema que resuelve
 
@@ -98,6 +98,8 @@ El front-template usa `@tailwindcss/vite` v4.1.x. No tiene `tailwind.config.js`.
 | cualquier proyecto Vite + React nuevo | proyectos con Webpack (usar PostCSS + v3) |
 | componentes que consumen clases directamente | cuando se necesitan temas dinámicos en runtime (usar CSS custom properties) |
 
+
+> Fuente: *Full Stack React, TypeScript, and Node* (David Choi) — Ch.4 Styling with Tailwind CSS
 
 ---
 

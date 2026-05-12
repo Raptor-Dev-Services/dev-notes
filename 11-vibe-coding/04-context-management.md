@@ -1,4 +1,4 @@
-# 04 · Manejo de contexto en sesiones largas
+﻿# 04 · Manejo de contexto en sesiones largas
 
 ## Problema que resuelve
 
@@ -119,6 +119,8 @@ La memoria se usa automáticamente — el AI la carga al inicio de cada sesión 
 | commits frecuentes como checkpoints semánticos | commits grandes al final del día que mezclan múltiples features |
 | sesiones enfocadas en una feature o módulo | sesiones largas que tocan múltiples partes del sistema |
 
+
+> Fuente: *Building LLM Powered Applications* (Valentina Alto) — Ch.5 Context Management and Memory
 
 ---
 

@@ -1,4 +1,4 @@
-# 05 · Tags de Git
+﻿# 05 · Tags de Git
 
 ## Problema que resuelve
 
@@ -121,6 +121,8 @@ git push origin --delete release/1.3.0
 | referenciar el punto exacto de un hotfix | reemplazar el uso de ramas para trabajo en progreso |
 | disparar pipelines de CD por evento de tag | crear tags anotados para cambios de configuración que no son releases |
 
+
+> Fuente: *Pro Git 2nd Ed* (Scott Chacon, Ben Straub) — Ch.2 Git Basics: Tagging
 
 ---
 

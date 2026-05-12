@@ -1,6 +1,8 @@
-# 05 — Herencia y Polimorfismo
+﻿# 05 — Herencia y Polimorfismo
 
 La herencia permite que una clase tome el comportamiento de otra y lo extienda. El polimorfismo permite tratar objetos distintos de forma uniforme.
+
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.6 Inheritance and Polymorphism
 
 ---
 

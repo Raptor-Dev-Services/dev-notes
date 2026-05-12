@@ -1,6 +1,8 @@
-# 08 — Vertical Slice Architecture
+﻿# 08 — Vertical Slice Architecture
 
 Vertical Slice Architecture organiza el código por **feature** en lugar de por **capa técnica**. Es la alternativa principal a Clean Architecture y vale la pena entender cuándo elegir una sobre la otra.
+
+> Fuente: *Architecting ASP.NET Core Applications* (Carl-Hugo Marcotte) — Ch.17 Vertical Slice Architecture
 
 ---
 

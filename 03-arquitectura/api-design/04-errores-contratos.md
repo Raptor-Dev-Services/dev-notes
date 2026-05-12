@@ -1,6 +1,8 @@
-# 04 — Errores y Contratos: Diseñar Respuestas de Error Útiles
+﻿# 04 — Errores y Contratos: Diseñar Respuestas de Error Útiles
 
 Una API bien diseñada comunica los errores de forma que el cliente pueda entenderlos y reaccionar correctamente.
+
+> Fuente: *Web API Development with ASP.NET Core 8* (Xiaodi Yan) — Ch.9 Error Handling and Problem Details
 
 ---
 

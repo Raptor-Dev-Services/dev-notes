@@ -1,4 +1,4 @@
-# 04 · Design System — tokens de clases Tailwind
+﻿# 04 · Design System — tokens de clases Tailwind
 
 ## Problema que resuelve
 
@@ -138,6 +138,8 @@ document.documentElement.style.setProperty('--color-accent', tenant.primaryColor
 | cualquier componente del proyecto | componentes externos o de librerías (Headless UI, etc.) |
 | cuando se quiere cambiar el estilo globalmente desde un punto | cuando se necesita override local puntual (usar `cx()` para extender) |
 
+
+> Fuente: *Full-Stack Web Development with TypeScript 5* (Daishi Kato) — Ch.5 Building a Component Design System
 
 ---
 

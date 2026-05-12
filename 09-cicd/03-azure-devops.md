@@ -1,4 +1,4 @@
-# 03 · Azure DevOps Pipelines — CI/CD
+﻿# 03 · Azure DevOps Pipelines — CI/CD
 
 ## Problema que resuelve
 
@@ -248,6 +248,8 @@ El `Dockerfile` del back-template es compatible sin modificación. El `azure-pip
 | equipos que ya usan Azure para infraestructura | cuando no se tiene suscripción Azure activa |
 | aprobaciones formales antes de producción | scripts de deploy ad-hoc sin ciclo de vida de PR |
 
+
+> Fuente: *AWS Certified DevOps Engineer Professional* (Cybellium) — Ch.1 CI/CD Fundamentals and Pipeline Design
 
 ---
 

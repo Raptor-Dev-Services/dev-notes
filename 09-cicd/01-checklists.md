@@ -62,6 +62,8 @@
 
 
 
+> Fuente: *Learning DevSecOps* (Mark Rendell) — Ch.5 Security Gates and Deployment Checklists
+
 ---
 
 *Rogelio Arriaga Gonzalez*
