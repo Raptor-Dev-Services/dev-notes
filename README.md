@@ -17,7 +17,7 @@ Base de conocimiento personal de **Rogelio Arriaga** para desarrollo de software
 | [07-git](07-git/) | Tooling, SemVer, Git Flow, tags, conventional commits, merge strategies, rollback, stash | 9 |
 | [08-contenedores](08-contenedores/) | Docker: conceptos, Dockerfile multi-stage, Compose, comandos | 5 |
 | [09-cicd](09-cicd/) | Checklists, GitHub Actions (OIDC + AWS), Azure DevOps, Terraform | 4 |
-| [10-cloud](10-cloud/) | AWS, Azure, Linux+Nginx, observabilidad, secretos, costos, seguridad web (OWASP), Zero Trust | 8 |
+| [10-cloud](10-cloud/) | AWS, Azure, Linux+Nginx, observabilidad, secretos, costos, seguridad web (OWASP), Zero Trust, tracing distribuido | 9 |
 | [11-vibe-coding](11-vibe-coding/) | CLAUDE.md, prompts efectivos, AI workflow, manejo de contexto, LLMOps | 5 |
 | [resources](resources/) | Bibliografía indexada | — |
 
@@ -113,7 +113,8 @@ dev-notes/
 │   ├── 05-secretos-produccion.md
 │   ├── 06-costos.md
 │   ├── 07-seguridad-web.md
-│   └── 08-zero-trust.md
+│   ├── 08-zero-trust.md
+│   └── 09-tracing-distribuido.md
 ├── 11-vibe-coding/
 │   ├── 01-agents-md.md
 │   ├── 02-prompts-efectivos.md
