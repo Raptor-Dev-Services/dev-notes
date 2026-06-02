@@ -377,4 +377,22 @@ using (LogContext.PushProperty("JobName", GetType().Name))
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| TenantScopedJob | Clase base para jobs de Hangfire que establece automáticamente el contexto del tenant antes de ejecutar |
+| Hangfire con Tenant | Patrón donde el TenantId se pasa como parámetro explícito al job porque el contexto HTTP no existe |
+| ITenantContextAccessor en Jobs | Uso del accessor para establecer manualmente el TenantId antes de usar el DbContext en un job |
+| ExecuteForAllTenantsAsync | Método que itera todos los tenants activos y ejecuta una operación en el contexto de cada uno |
+| Tenant Context Manual | Establecimiento explícito del TenantId en el accessor dentro del job — no proviene de middleware HTTP |
+| LogContext.PushProperty | Método de Serilog para enriquecer todos los logs del scope con TenantId y BranchId |
+| AutomaticRetry | Atributo de Hangfire que configura el número de reintentos y el comportamiento ante fallos del job |
+| Job por Tenant | Patrón donde cada tenant tiene su propio job recurrente identificado como `{job-name}-{tenantId}` |
+| IServiceScope | Scope DI creado por job para resolver servicios Scoped (DbContext, repos) de forma segura |
+| Finally en Job | Bloque finally que limpia el TenantContext tras la ejecución para evitar fugas entre jobs |
+| Jobs de Larga Duración | Jobs persistidos en Hangfire — para jobs simples periódicos se prefiere BackgroundService |
+
+---
+
 *Rogelio Arriaga Gonzalez*

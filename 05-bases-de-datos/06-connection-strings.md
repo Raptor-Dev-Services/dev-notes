@@ -129,4 +129,21 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Connection string | cadena de texto que contiene todos los parámetros necesarios para que una aplicación se conecte a una base de datos |
+| Connection pooling | técnica que reutiliza conexiones TCP existentes en lugar de abrir y cerrar una nueva en cada request |
+| Pool size | número máximo de conexiones simultáneas mantenidas en el pool por instancia de la aplicación |
+| Npgsql | driver oficial de .NET para conectarse a PostgreSQL, compatible con EF Core y Dapper |
+| Application Name | parámetro de la connection string que identifica la aplicación en los logs del servidor de base de datos |
+| SSL Mode | parámetro que controla el cifrado TLS en la conexión entre la aplicación y el servidor de base de datos |
+| User Secrets | mecanismo de .NET para almacenar secretos de desarrollo en el directorio del usuario, fuera del repositorio |
+| Managed Identity | identidad de Azure AD asignada a un recurso de nube (App Service, AKS) que permite conectarse sin contraseña |
+| Conexión zombi | conexión de base de datos que no se liberó al pool porque no se usó `using` o `await using` correctamente |
+| Principio de mínimo privilegio | práctica de asignar al usuario de BD solo los permisos estrictamente necesarios: SELECT, INSERT, UPDATE, DELETE en su schema |
+
+---
+
 *Rogelio Arriaga Gonzalez*

@@ -219,3 +219,26 @@ Miércoles (mid-sprint):
 ❌ "Somos ágiles" = sin documentación, sin tests, sin arquitectura
    → Fix: Agile no significa ad-hoc; significa iterativo con calidad sostenida
 ```
+
+---
+
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Agile | conjunto de valores y principios para el desarrollo iterativo de software, definidos en el Manifiesto Ágil de 2001 |
+| Scrum | framework ágil con roles, eventos y artefactos definidos para organizar el trabajo en sprints |
+| Sprint | iteración de duración fija (1-4 semanas) que produce un Increment potencialmente entregable |
+| Product Owner | rol responsable del Product Backlog y de maximizar el valor del producto para el negocio |
+| Scrum Master | rol que facilita el proceso Scrum, elimina impedimentos y protege al equipo de interrupciones |
+| Product Backlog | lista ordenada de todo lo que podría necesitar el producto, gestionada por el Product Owner |
+| Sprint Backlog | subconjunto del Product Backlog comprometido por el Dev Team para un sprint específico |
+| Definición de Done | acuerdo del equipo sobre qué criterios debe cumplir una historia para considerarse terminada |
+| User Story | descripción de una funcionalidad desde la perspectiva del usuario: "Como [rol] quiero [acción] para [beneficio]" |
+| Velocity | número de story points completados por el equipo en un sprint, usado para planificar sprints futuros |
+| Increment | suma de todos los ítems del Product Backlog completados en el sprint; debe cumplir la Definición de Done |
+| Retrospectiva | ceremonia al final de cada sprint donde el equipo reflexiona sobre el proceso y define mejoras concretas |
+
+---
+
+*Rogelio Arriaga Gonzalez*

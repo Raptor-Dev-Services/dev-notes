@@ -277,4 +277,24 @@ return _viewModel.IsSuccess ? Ok(_viewModel) : StatusCode(500, _viewModel);
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Result Pattern | Patrón que modela el resultado de una operación como un objeto con estados éxito o fallo, sin usar excepciones para el flujo de negocio |
+| IResponse | Interfaz base de todos los resultados posibles de un caso de uso |
+| ISuccess\<T\> | Interfaz que representa un resultado exitoso con datos de tipo T |
+| IFailure | Interfaz que representa un resultado fallido con un mensaje de error |
+| INotFoundFailure | Tipo de fallo que mapea a HTTP 404 — recurso no encontrado |
+| IConflictFailure | Tipo de fallo que mapea a HTTP 409 — conflicto de unicidad o estado |
+| IValidationFailure | Tipo de fallo que mapea a HTTP 400 — datos de entrada inválidos |
+| Presenter | Clase que recibe la respuesta del Handler vía Publish y construye el ViewModel |
+| ResultViewModel\<T\> | Clase que serializa como JSON el resultado final enviado al cliente HTTP |
+| Railway-Oriented Programming | Concepto funcional de dos rieles (éxito/fallo) que inspira el Result Pattern |
+| Pattern Matching | Técnica de C# usada en el Presenter para discriminar entre tipos de IResponse |
+| DTO | Data Transfer Object — objeto plano con solo los campos que necesita el cliente |
+| INotFoundFailure | Respuesta semántica de negocio que el Presenter traduce a HTTP 404 sin lanzar excepción |
+
+---
+
 *Rogelio Arriaga Gonzalez*

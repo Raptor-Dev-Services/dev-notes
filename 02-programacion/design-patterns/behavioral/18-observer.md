@@ -302,4 +302,22 @@ public sealed class GetExampleUserPresenter
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Observer | Patrón conductual que define un mecanismo de suscripción para notificar a múltiples objetos sobre eventos del objeto observado |
+| Subject (Publisher) | El objeto observado que mantiene la lista de suscriptores y los notifica cuando su estado cambia |
+| Observer (Subscriber) | Objeto que recibe notificaciones del Subject cuando este cambia |
+| `Attach/Detach` | Métodos del Subject para registrar y eliminar observadores de la lista de suscriptores |
+| `event` | Palabra clave de C# que implementa Observer de forma nativa mediante delegates |
+| `EventHandler<T>` | Delegate estándar de .NET para eventos con datos tipados (T : EventArgs) |
+| `IObservable<T>` / `IObserver<T>` | Interfaces estándar de .NET para el patrón Observer reactivo (Reactive Extensions) |
+| `INotificationHandler<T>` | Interfaz del proyecto que los Presenters implementan para suscribirse a tipos de respuesta del mediador |
+| Pub/Sub | Publish-Subscribe: variante del Observer donde publisher y subscriber están desacoplados mediante un canal |
+| `+=` / `-=` | Operadores de C# para suscribir y desuscribir handlers de un `event` |
+| DI como gestor de suscripciones | En el proyecto, el contenedor registra y resuelve los `INotificationHandler<T>` en lugar de `Attach/Detach` manuales |
+
+---
+
 *Rogelio Arriaga Gonzalez*

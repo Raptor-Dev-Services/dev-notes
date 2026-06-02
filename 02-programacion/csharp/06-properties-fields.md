@@ -382,4 +382,22 @@ public sealed record ExampleUserDto(Guid UserId);
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Campo (field) | Variable declarada directamente en la clase que almacena datos en memoria; por convención privada con `_camelCase` |
+| Propiedad (property) | Abstracción controlada sobre un campo: expone getters/setters con posibilidad de añadir lógica de validación |
+| `readonly` | Modificador de campo que permite asignación solo en el constructor; garantiza inmutabilidad post-construcción |
+| Auto-property | Propiedad donde el compilador genera automáticamente el campo privado de respaldo: `public string Nombre { get; set; }` |
+| Backing field | Campo privado explícito que una propiedad usa internamente para almacenar el valor |
+| `init` | Modificador de propiedad de C# 9+ que permite asignación solo durante la construcción o en object initializers |
+| `const` | Modificador para valores fijos en tiempo de compilación; solo acepta tipos primitivos y `string` |
+| `static readonly` | Campo evaluado una vez al arrancar la aplicación; puede ser de cualquier tipo, a diferencia de `const` |
+| Propiedad calculada | Propiedad con solo getter que computa su valor en lugar de almacenarlo: `public int Total => Items.Count` |
+| `required` | Modificador de C# 11+ que obliga a asignar una propiedad en el object initializer |
+| `{ get; init; }` | Tipo de propiedad generada por los records posicionales: legible desde fuera, asignable solo al crear |
+
+---
+
 *Rogelio Arriaga Gonzalez*

@@ -325,6 +325,22 @@ public sealed class CostControlMiddleware
 | Volumen muy alto donde el costo de API es prohibitivo | Equipo sin expertise en infraestructura de LLMs |
 | Requisitos de latencia que solo se cumpren con modelo local | Modelo necesita actualizarse frecuentemente |
 
+---
+
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| LLMOps | prácticas de ingeniería para desplegar, monitorear y mantener sistemas con modelos de lenguaje en producción |
+| LLM | Large Language Model — modelo de lenguaje de gran escala entrenado con texto masivo para generar y comprender lenguaje natural |
+| RAG | Retrieval-Augmented Generation — técnica que recupera documentos relevantes antes de generar la respuesta, reduciendo hallucinations |
+| Fine-tuning | proceso de ajustar los pesos de un LLM preentrenado con datos específicos del dominio para mejorar su rendimiento |
+| Temperatura | parámetro que controla la aleatoriedad de las respuestas del LLM; valores altos son más creativos, bajos más deterministas |
+| Guardrail | validación o filtro aplicado a las entradas o salidas del LLM para evitar respuestas inseguras o incorrectas |
+| Prompt injection | ataque donde un usuario inserta instrucciones en su input para sobreescribir el system prompt del modelo |
+| Semantic cache | caché que almacena respuestas a prompts similares semánticamente, no solo idénticos textualmente |
+| Fallback | respuesta alternativa que se devuelve cuando el LLM falla o excede el tiempo de respuesta permitido |
+| Decorator pattern en AI | patrón que envuelve el servicio de AI con capas de observabilidad, guardrails y control de costos sin modificar el servicio base |
 
 ---
 

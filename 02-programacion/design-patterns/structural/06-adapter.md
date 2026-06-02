@@ -231,4 +231,21 @@ public sealed class MainDapperDbConnection
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Adapter | Patrón estructural que permite que objetos con interfaces incompatibles colaboren mediante un objeto intermedio que traduce las llamadas |
+| Adaptee | La clase existente con una interfaz incompatible que el Adapter envuelve y a la que delega |
+| ITarget | La interfaz que el cliente espera; el Adapter la implementa y traduce al Adaptee |
+| Object Adapter | Variante que usa composición para contener una instancia del Adaptee — recomendada en C# |
+| Class Adapter | Variante que usa herencia múltiple para heredar del Adaptee; limitada en C# porque no hay herencia múltiple de clases |
+| Composición | Principio de incluir una instancia de otra clase como campo en lugar de heredar de ella |
+| Librería de terceros | Código externo que no puede modificarse y cuya interfaz puede necesitar adaptarse |
+| `MainDapperDbConnection` | Clase del proyecto que actúa como Adapter: adapta la API de Dapper añadiendo logging y gestión de conexión |
+| Traducción de interfaz | Proceso central del Adapter: recibir una llamada con una firma y convertirla a otra firma compatible con el Adaptee |
+| Migración de sistemas | Escenario donde el Adapter permite que código nuevo y código legado coexistan sin modificarse mutuamente |
+
+---
+
 *Rogelio Arriaga Gonzalez*

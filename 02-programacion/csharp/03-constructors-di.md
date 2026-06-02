@@ -522,4 +522,23 @@ services.AddScoped<ExampleUsersSql>();
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Constructor | Método especial con el mismo nombre de la clase que se ejecuta al crear un objeto con `new`; inicializa el estado y recibe dependencias |
+| Primary constructor | Sintaxis de C# 12+ que declara los parámetros del constructor directamente en la cabecera de la clase |
+| Constructor encadenado (`this()`) | Constructor que llama a otro constructor de la misma clase para reutilizar lógica de inicialización |
+| Constructor base (`base()`) | Llamada desde un constructor hijo al constructor del padre para inicializar la parte heredada |
+| Dependency Injection (DI) | Patrón en el que las dependencias de un objeto se pasan desde el exterior (constructor, property) en lugar de crearlas internamente |
+| DI container | Sistema que gestiona la creación y el ciclo de vida de los objetos registrados; resuelve automáticamente la cadena de dependencias |
+| `services.AddScoped<>()` | Registro de un servicio cuya instancia vive mientras dure la petición HTTP |
+| `services.AddSingleton<>()` | Registro de un servicio cuya instancia vive toda la vida de la aplicación |
+| `AddMediator()` | Método que escanea un ensamblado y registra automáticamente todos los `IRequestHandler<,>` |
+| Circular dependency | Error de diseño donde A depende de B y B depende de A; el container no puede resolver la cadena |
+| `InvalidOperationException` | Excepción lanzada por el container cuando no encuentra un registro para un tipo requerido |
+| `Lazy<T>` | Mecanismo para romper dependencias circulares: la dependencia se resuelve la primera vez que se usa, no al construir el objeto |
+
+---
+
 *Rogelio Arriaga Gonzalez*

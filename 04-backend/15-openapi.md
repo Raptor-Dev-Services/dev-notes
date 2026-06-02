@@ -153,4 +153,23 @@ Ver `04-backend/08-problem-details.md` para la implementación completa con mane
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| OpenAPI | Especificación estándar para describir APIs REST de forma legible por máquinas y humanos |
+| Swagger | Conjunto de herramientas (Swashbuckle) para generar y visualizar documentación OpenAPI en .NET |
+| Scalar | Alternativa moderna a Swagger UI para visualizar documentación OpenAPI — integrada en .NET 9 |
+| MapOpenApi | Método de .NET 9 que expone el documento OpenAPI JSON en la ruta /openapi/v1.json |
+| API Versioning | Estrategia para mantener múltiples versiones de la API sin romper clientes existentes |
+| UrlSegmentApiVersionReader | Lector de versión de API que extrae la versión del segmento de URL (v1, v2) |
+| Swashbuckle | Librería NuGet para .NET 8 y anteriores que genera documentación OpenAPI/Swagger |
+| Bearer Token | Esquema de autenticación HTTP donde el token JWT se envía en el header Authorization |
+| MapToApiVersion | Atributo que asocia un método de controller con una versión específica de la API |
+| ApiVersionReader.Combine | Método que configura múltiples estrategias de lectura de versión simultáneamente |
+| Problem Details | Formato RFC 7807 para errores — documentado en OpenAPI para que los clientes conozcan la estructura |
+| ReportApiVersions | Configuración que añade headers con las versiones soportadas en cada respuesta HTTP |
+
+---
+
 *Rogelio Arriaga Gonzalez*

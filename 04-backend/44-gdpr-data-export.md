@@ -435,4 +435,22 @@ public sealed class DataComplianceController : BaseApiController
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| GDPR | Reglamento General de Protección de Datos de la UE — define derechos de exportación y eliminación de datos personales |
+| DataExportRequest | Entidad que registra una solicitud de exportación de datos del tenant con su estado y URL de descarga |
+| TenantDataPurgeJob | Job que elimina o anonimiza todos los datos de un tenant tras el período de gracia de eliminación |
+| Derecho al Olvido | Derecho GDPR que permite a un usuario solicitar la eliminación de sus datos personales |
+| Exportación ZIP | Archivo comprimido con todos los datos del tenant en formato JSON — descargable por el Admin |
+| Presigned URL | URL temporal de S3/Azure Blob con firma de acceso — válida por tiempo limitado para descargar el export |
+| Período de Gracia | Tiempo entre la solicitud de eliminación y la purga permanente — permite cancelar el proceso |
+| Anonimización | Reemplazo de datos personales por valores genéricos — alternativa a la eliminación para cumplir obligaciones legales |
+| ExportStatus | Estado de la exportación: Pending, Processing, Ready, Expired — controla el flujo del job |
+| Datos Fiscales | Registros financieros (facturas, pagos) que por ley no pueden eliminarse aunque se solicite el olvido |
+| Right to Portability | Derecho GDPR de recibir los propios datos en formato estándar (JSON, CSV) para transferirlos |
+
+---
+
 *Rogelio Arriaga Gonzalez*

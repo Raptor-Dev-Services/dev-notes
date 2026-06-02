@@ -398,6 +398,23 @@ CREATE TABLE ExampleUsers_Default
 - Necesitas eliminar datos históricos eficientemente (`DROP TABLE partition` es instantáneo, `DELETE` es lento)
 - Las queries casi siempre filtran por la columna de particionamiento
 
+---
+
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| CTE | Common Table Expression — subconsulta nombrada con `WITH` que mejora la legibilidad de queries complejas |
+| Window function | función SQL que opera sobre un conjunto de filas relacionadas con la fila actual sin colapsarlas (ROW_NUMBER, RANK, LAG) |
+| JSONB | tipo de dato de PostgreSQL que almacena JSON en formato binario comprimido con soporte de índices GIN |
+| GIN index | Generalized Inverted Index — tipo de índice de PostgreSQL optimizado para columnas JSONB, arrays y texto completo |
+| Full-text search | búsqueda sobre texto usando vectores de palabras normalizadas (tsvector) y consultas de texto (tsquery) |
+| tsvector | representación indexable de un texto en PostgreSQL: lista de lexemas con sus posiciones |
+| VACUUM | operación de mantenimiento que elimina las versiones de filas obsoletas (dead tuples) del almacenamiento físico |
+| ANALYZE | operación que actualiza las estadísticas de distribución de datos usadas por el query planner |
+| Particionamiento | técnica que divide una tabla grande en particiones físicas más pequeñas para mejorar el rendimiento de consultas |
+| EXPLAIN ANALYZE | comando que ejecuta una consulta y muestra el plan real de ejecución con tiempos, útil para detectar problemas de rendimiento |
+| Dead tuple | versión obsoleta de una fila que sigue ocupando espacio en disco hasta que VACUUM la limpia |
 
 ---
 

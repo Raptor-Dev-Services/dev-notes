@@ -253,4 +253,25 @@ El `Dockerfile` del back-template es compatible sin modificación. El `azure-pip
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Pipeline | Archivo YAML que define el flujo completo de CI/CD como código versionado junto al repositorio |
+| Stage | Agrupación lógica de jobs dentro de un pipeline (ej. Build, Test, Deploy) |
+| Job | Unidad de trabajo que se ejecuta en un agente; los steps de un job corren secuencialmente |
+| Step | Tarea individual dentro de un job (script, task de Azure DevOps o acción) |
+| Agent | Máquina (hosted por Microsoft o self-hosted) que ejecuta los jobs del pipeline |
+| Environment | Destino de despliegue en Azure DevOps con historial de deploys y soporte de aprobaciones |
+| Variable Group | Conjunto de variables y secretos reutilizables entre múltiples pipelines del proyecto |
+| Service Connection | Credencial almacenada en Azure DevOps para conectarse a servicios externos (Azure, Docker Hub, ACR) |
+| ACR | Azure Container Registry; registro privado de imágenes Docker equivalente a Amazon ECR |
+| App Service | Servicio PaaS de Azure para ejecutar aplicaciones web y contenedores Docker |
+| Key Vault | Servicio de Azure para almacenar secretos cifrados que se sincronizan con Variable Groups |
+| Aprobación manual | Control de environment que pausa el pipeline hasta que un aprobador confirma el despliegue |
+| Trigger | Condición que dispara automáticamente el pipeline (push a rama, tag, pull request) |
+| Artefacto de build | Resultado compilado del stage CI que el stage CD usa para el despliegue |
+
+---
+
 *Rogelio Arriaga Gonzalez*

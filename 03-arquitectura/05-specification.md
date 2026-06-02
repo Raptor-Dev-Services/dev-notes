@@ -479,4 +479,20 @@ public sealed class ActiveUserSpecificationTests
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Specification Pattern | patrón que encapsula una regla de negocio como un objeto reutilizable y componible con operadores lógicos (And, Or, Not) |
+| Expression Tree | árbol de sintaxis abstracta en .NET que representa código como datos, permitiendo su traducción a SQL |
+| Combinador lógico | operación que compone dos Specifications con AND, OR o NOT para crear criterios más complejos |
+| SqlSpecification | variante del patrón orientada a generar cláusulas WHERE de SQL con sus parámetros asociados |
+| Dynamic query | consulta cuya cláusula WHERE se construye en tiempo de ejecución según los parámetros activos del usuario |
+| Filter builder | clase que aplica el patrón builder para construir la cláusula WHERE de forma encadenada y segura contra SQL injection |
+| DynamicParameters | clase de Dapper para pasar parámetros de consulta de forma dinámica sin necesidad de objetos anónimos fijos |
+| Criteria pattern | nombre alternativo del Specification Pattern en algunos textos de arquitectura empresarial |
+| Composición | capacidad de combinar múltiples Specifications simples en reglas de negocio más complejas sin duplicar código |
+
+---
+
 *Rogelio Arriaga Gonzalez*

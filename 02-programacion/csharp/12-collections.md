@@ -358,4 +358,22 @@ return new GetExampleUsersSuccess(dtos, total, request.Page, request.PageSize);
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| `List<T>` | Colección mutable de acceso aleatorio por índice; la más usada para trabajar con listas en memoria |
+| `IEnumerable<T>` | Interfaz base para cualquier secuencia iterable; permite `foreach` pero no acceso por índice ni `Count` directo |
+| `IReadOnlyCollection<T>` | Colección de solo lectura con `Count`; usada en el proyecto para exponer resultados sin exponer mutabilidad |
+| `Dictionary<TKey, TValue>` | Colección de pares clave-valor con acceso O(1) por clave; ideal para cachés y lookups |
+| `HashSet<T>` | Colección de elementos únicos sin orden garantizado; la verificación de pertenencia es O(1) |
+| LINQ | Language Integrated Query: conjunto de métodos de extensión (`Where`, `Select`, `OrderBy`) para consultar y transformar colecciones |
+| Evaluación perezosa (lazy) | Propiedad de las consultas LINQ: los elementos no se procesan hasta que se itera o materializa la consulta |
+| Materialización | Proceso de ejecutar una consulta LINQ perezosa y almacenar los resultados: `ToList()`, `ToArray()`, `ToDictionary()` |
+| `ImmutableList<T>` | Colección inmutable de System.Collections.Immutable; segura para uso entre hilos y como estado compartido |
+| `Span<T>` | Tipo de alta performance para trabajar con segmentos de memoria sin allocaciones adicionales en el heap |
+| `Count` vs `Any()` | Para verificar si una colección tiene elementos, `Any()` es más eficiente que `Count > 0` en LINQ |
+
+---
+
 *Rogelio Arriaga Gonzalez*

@@ -316,4 +316,23 @@ await retryPolicy.ExecuteAsync(() => _repo.InsertAsync(user, ct));  // ← pelig
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Polly | Librería de .NET para políticas de resiliencia: retry, circuit breaker, timeout, fallback y bulkhead |
+| Circuit Breaker | Política que corta el circuito tras N fallos consecutivos, evitando saturar un servicio caído |
+| Retry | Política que reintenta automáticamente una operación fallida con espera configurable |
+| Exponential Backoff | Estrategia de espera entre reintentos donde el tiempo se duplica progresivamente para reducir carga |
+| Jitter | Variación aleatoria añadida al backoff para evitar que múltiples instancias reintenten al mismo tiempo |
+| PolicyWrap | Composición de múltiples políticas Polly en una sola — el orden importa (de afuera hacia adentro) |
+| ResiliencePipeline | API de Polly v8 que reemplaza a PolicyWrap con una interfaz fluida y tipada |
+| Fallback | Política que retorna un valor alternativo cuando todas las otras políticas fallan |
+| BrokenCircuitException | Excepción lanzada por Polly cuando el circuito está abierto y rechaza la solicitud |
+| Timeout | Política que cancela la operación si no responde dentro de un tiempo límite |
+| Idempotencia | Propiedad de una operación que puede ejecutarse múltiples veces con el mismo resultado — necesaria para reintentos seguros |
+| AddStandardResilienceHandler | Método de .NET 8 que aplica un pipeline de resiliencia predeterminado a IHttpClientFactory |
+
+---
+
 *Rogelio Arriaga Gonzalez*

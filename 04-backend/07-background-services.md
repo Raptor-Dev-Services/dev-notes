@@ -428,4 +428,23 @@ builder.Services.AddHostedService<EmailSenderService>();
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| BackgroundService | Clase base de .NET para servicios en segundo plano con método ExecuteAsync y soporte de cancellation |
+| IHostedService | Interfaz de .NET para servicios del host con StartAsync y StopAsync — BackgroundService la implementa |
+| IServiceScopeFactory | Factory que crea scopes DI dentro de un Singleton — necesaria para resolver servicios Scoped en background |
+| PeriodicTimer | Timer de .NET 6+ para ejecutar tareas en intervalos fijos sin drift acumulado |
+| Channel\<T\> | Cola en memoria de alta performance para producer/consumer patterns dentro del mismo proceso |
+| Captive Dependency | Error de DI donde un Singleton retiene una dependencia Scoped causando comportamiento incorrecto |
+| Graceful Shutdown | Proceso de cierre ordenado donde el servicio termina el trabajo en curso antes de apagarse |
+| CancellationToken | Token de cancelación que se activa cuando el host solicita la detención del servicio |
+| Outbox Pattern | Patrón donde los eventos de dominio se guardan en la misma transacción que el dato, luego se procesan |
+| IServiceProvider | Contenedor DI raíz desde el que se crean scopes en servicios Singleton |
+| ExecuteAsync | Método abstracto de BackgroundService donde se implementa el loop principal del servicio |
+| StoppingToken | Token de cancelación específico de BackgroundService que se activa en shutdown del host |
+
+---
+
 *Rogelio Arriaga Gonzalez*

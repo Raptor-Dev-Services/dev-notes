@@ -321,4 +321,23 @@ El proyecto ya tiene `Tests/Tests.csproj`. Para agregar TestContainers:
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| TestContainers | Librería que levanta contenedores Docker de forma programática durante la ejecución de tests |
+| `PostgreSqlContainer` | Clase de Testcontainers que gestiona el ciclo de vida de un contenedor PostgreSQL en tests |
+| `PostgreSqlBuilder` | Builder fluido para configurar la imagen, base de datos, usuario y contraseña del contenedor PostgreSQL |
+| `ICollectionFixture<T>` | Interfaz xUnit que comparte una fixture entre múltiples clases de test dentro de una misma colección |
+| `[CollectionDefinition]` | Atributo que define el nombre de una colección de tests que comparten una fixture |
+| `[Collection]` | Atributo aplicado a una clase de test para asociarla con una colección y su fixture compartida |
+| `IDbConnectionFactory` | Interfaz del back-template que abstrae la creación de conexiones a la base de datos |
+| `TestDbConnectionFactory` | Implementación de `IDbConnectionFactory` para tests que apunta al contenedor PostgreSQL de TestContainers |
+| `TRUNCATE ... RESTART IDENTITY CASCADE` | Sentencia SQL para vaciar tablas y reiniciar secuencias antes de cada test, garantizando estado limpio |
+| Migración de esquema | Script SQL que crea o modifica tablas; se aplica al contenedor en `InitializeAsync` para replicar la DB de producción |
+| `IAsyncLifetime` | Interfaz xUnit que permite arrancar y detener el contenedor Docker de forma asíncrona por clase de test |
+| `NpgsqlConnection` | Clase del driver Npgsql para abrir conexiones a PostgreSQL desde .NET |
+
+---
+
 *Rogelio Arriaga Gonzalez*

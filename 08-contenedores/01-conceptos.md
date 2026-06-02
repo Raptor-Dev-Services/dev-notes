@@ -248,6 +248,22 @@ services:
           memory: 256m
 ```
 
+---
+
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Contenedor | instancia en ejecución de una imagen Docker; proceso aislado con su propio sistema de archivos y red |
+| Imagen | plantilla de solo lectura que contiene el sistema de archivos y la configuración para crear contenedores |
+| Capa de imagen | incremento inmutable del sistema de archivos generado por cada instrucción `RUN`, `COPY` o `ADD` en el Dockerfile |
+| Volumen | mecanismo de Docker para persistir datos fuera del ciclo de vida del contenedor |
+| Red Docker | red virtual que permite la comunicación entre contenedores por nombre de servicio en lugar de IP |
+| Registry | repositorio de imágenes Docker; puede ser público (Docker Hub) o privado (ECR, GHCR) |
+| SIGTERM | señal de terminación graciosa que Docker envía al proceso principal del contenedor con `docker stop` |
+| host.docker.internal | DNS especial de Docker que desde dentro de un contenedor apunta a la IP del host |
+| `docker stats` | comando que muestra el uso de CPU, memoria y red de los contenedores en ejecución en tiempo real |
+| Distroless | tipo de imagen base minimalista sin shell ni package manager, que reduce la superficie de ataque |
 
 ---
 

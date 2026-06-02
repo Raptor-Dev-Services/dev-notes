@@ -644,6 +644,23 @@ builder.Services.AddHostedService<OutboxProcessorService>();
 - Cuando la consistencia entre la DB y el bus de mensajes es crítica
 - Sistemas donde "al menos una vez" (at-least-once delivery) es aceptable
 
+---
+
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| DDD | Domain-Driven Design — enfoque de diseño que modela el software alrededor del lenguaje y las reglas del negocio |
+| Lenguaje Ubiquitario | vocabulario compartido entre desarrolladores y expertos del dominio que se refleja directamente en el código |
+| Entidad | objeto del dominio con identidad única persistente a lo largo del tiempo (identificado por un ID) |
+| Value Object | objeto del dominio sin identidad propia, definido solo por sus atributos; es inmutable |
+| Aggregate Root | entidad que es el punto de entrada de un agregado; garantiza las invariantes del conjunto de entidades que lo forman |
+| Bounded Context | límite explícito dentro del cual un modelo de dominio es válido y consistente |
+| Domain Event | hecho ocurrido en el dominio, expresado en pasado; desencadena acciones en otros agregados o contextos |
+| Outbox Pattern | técnica para garantizar la publicación confiable de eventos guardando el evento y el cambio de estado en la misma transacción |
+| Anti-Corruption Layer | capa de traducción que aisla el modelo propio del modelo de un sistema externo o legado |
+| Shared Kernel | subconjunto pequeño y estable del modelo compartido entre dos Bounded Contexts con control conjunto de cambios |
+| Servicio de Dominio | clase que contiene lógica de negocio que involucra múltiples agregados y no pertenece a ninguna entidad sola |
 
 ---
 

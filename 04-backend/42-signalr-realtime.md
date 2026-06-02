@@ -370,4 +370,23 @@ Con Redis Backplane, un mensaje enviado en la instancia A llega a los clientes c
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| SignalR | Librería de ASP.NET Core para comunicación en tiempo real — WebSockets con fallback a SSE y Long Polling |
+| NotificationsHub | Hub de SignalR que gestiona conexiones, grupos y envío de notificaciones en el back-template |
+| Groups | Mecanismo de SignalR para enviar mensajes a subconjuntos de conexiones — base del aislamiento por tenant |
+| TenantGroup | Grupo de SignalR nombrado `tenant:{tenantId}` que aísla las notificaciones de un tenant |
+| BranchGroup | Grupo de SignalR nombrado `branch:{tenantId}:{branchId}` para notificaciones a una sucursal específica |
+| UserGroup | Grupo de SignalR nombrado `user:{userId}` para notificaciones privadas a un usuario específico |
+| INotificationService | Interfaz del back-template que abstrae el IHubContext — los handlers usan esta interfaz, no SignalR directamente |
+| IHubContext | Interfaz de ASP.NET Core para enviar mensajes a grupos y conexiones desde fuera del Hub |
+| Redis Backplane | Coordinador de mensajes SignalR entre múltiples instancias del servidor — necesario para escalar horizontalmente |
+| withAutomaticReconnect | Método del cliente JavaScript de SignalR para reconexión automática con backoff |
+| OnConnectedAsync | Método del Hub que se ejecuta cuando el cliente conecta — aquí se une a los grupos correctos |
+| Inbox | Notificaciones persistidas en base de datos para que el usuario las vea aunque estuviera desconectado |
+
+---
+
 *Rogelio Arriaga Gonzalez*

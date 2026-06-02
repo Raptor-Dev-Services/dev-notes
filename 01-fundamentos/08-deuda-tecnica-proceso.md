@@ -218,3 +218,25 @@ Cuando un módulo supere 500 requests/segundo de forma sostenida durante
 - Feathers, M. — *Working Effectively with Legacy Code* (2004)
 - Cunningham, W. — "The WyCash Portfolio Management System" (OOPSLA 1992)
 - Sonmez, J. — *Soft Skills: The Software Developer's Life Manual* — Cap. Deuda técnica
+
+---
+
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Deuda técnica | costo implícito del trabajo adicional causado por elegir una solución rápida en lugar de una solución mejor |
+| Cuadrante de Fowler | modelo que clasifica la deuda técnica en dos ejes: deliberada/accidental y prudente/imprudente |
+| Code smell | señal en el código que sugiere un problema de diseño subyacente; no es un bug pero dificulta el mantenimiento |
+| Hotspot | módulo del código que cambia frecuentemente, tiene alta complejidad y acumula la mayor parte de los bugs |
+| Boy Scout Rule | principio de dejar el código levemente mejor de como se encontró en cada cambio, sin necesidad de refactoring masivo |
+| Strangler Fig | patrón que reemplaza un módulo legado de forma incremental, sin reescribir todo de una vez |
+| ADR | Architecture Decision Record — documento que registra la justificación de una decisión de deuda técnica deliberada |
+| Definition of Done | criterios acordados por el equipo que debe cumplir toda historia para considerarse terminada, incluyendo calidad |
+| Complejidad ciclomática | métrica que mide el número de caminos independientes en el código; valores altos indican alta complejidad de prueba |
+| Continuous Refactoring | práctica de mejorar el código de forma incremental en cada PR, sin esperar sprints dedicados |
+| Deuda deliberada prudente | tipo de deuda aceptable cuando se documenta explícitamente y se planifica su pago |
+
+---
+
+*Rogelio Arriaga Gonzalez*

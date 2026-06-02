@@ -409,4 +409,23 @@ public sealed class ExampleUserRepository : IExampleUserRepository
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Método | Bloque de código con nombre que define el comportamiento de un objeto; tiene firma (nombre + parámetros + retorno) y cuerpo |
+| Sobrecarga (overloading) | Múltiples métodos con el mismo nombre pero distintos parámetros; el compilador elige cuál llamar según los argumentos |
+| Método de extensión | Método estático que se puede llamar como si fuera parte de un tipo existente; primer parámetro es `this TipoExtendido` |
+| Expression-bodied member | Sintaxis concisa con `=>` para métodos o propiedades de una sola expresión |
+| Método local | Función definida dentro de otro método; solo accesible en ese scope; puede ser `static` para evitar capturas |
+| Lambda | Función anónima expresada con `=>`: `(parámetros) => cuerpo`; usada en LINQ y como parámetros de alto orden |
+| `params` | Modificador que permite pasar un número variable de argumentos del mismo tipo a un método |
+| `ref` | Modificador que pasa un argumento por referencia mutable — el método puede cambiar el valor del original |
+| `out` | Modificador de parámetro de salida que el método debe asignar antes de retornar |
+| `CancellationToken` | Parámetro estándar en métodos asíncronos del proyecto; permite cancelar la operación desde el llamador |
+| `Task<T>` | Tipo de retorno de métodos asíncronos que devuelven un valor; se consume con `await` |
+| Named parameters | Forma de llamar un método especificando el nombre del parámetro: `new Dto(UserId: id, FullName: nombre)` |
+
+---
+
 *Rogelio Arriaga Gonzalez*

@@ -724,4 +724,26 @@ public async Task<IEnumerable<T>> QueryAsync<T>(
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Trace | Representación completa de una operación de extremo a extremo que agrupa todos los spans relacionados |
+| Span | Unidad individual de trabajo dentro de un trace; tiene nombre, TraceId, SpanId, timestamps y etiquetas |
+| TraceId | Identificador único de 128 bits que acompaña a todos los spans de una misma operación distribuida |
+| Context Propagation | Mecanismo para pasar el TraceId entre procesos (HTTP, queues, jobs) sin perder la cadena del trace |
+| W3C TraceContext | Estándar que define el formato del header `traceparent` para propagar el trace context entre servicios |
+| OpenTelemetry | Framework de observabilidad agnóstico al proveedor para instrumentar, recopilar y exportar trazas y métricas |
+| ActivitySource | Clase de .NET para crear spans custom dentro de la instrumentación de OpenTelemetry |
+| Baggage | Datos clave-valor que viajan junto al trace context (ej. TenantId, CorrelationId) |
+| Grafana Tempo | Backend de almacenamiento y consulta de trazas distribuidas compatible con OTLP, Jaeger y Zipkin |
+| TraceQL | Lenguaje de consulta de Grafana Tempo para buscar y filtrar trazas por atributos, duración y estado |
+| OTLP | OpenTelemetry Protocol; protocolo estándar para exportar trazas, métricas y logs a backends compatibles |
+| OTel Collector | Proceso intermediario que recibe telemetría, la procesa y la reenvía a múltiples backends |
+| Head-based sampling | Estrategia de muestreo que decide al inicio del trace si se guarda o se descarta |
+| Tail-based sampling | Estrategia que decide si guardar el trace después de completarse; permite priorizar errores y traces lentos |
+| Correlation ID | Identificador de negocio que une múltiples requests relacionadas más allá del scope técnico de un trace |
+
+---
+
 *Rogelio Arriaga Gonzalez*

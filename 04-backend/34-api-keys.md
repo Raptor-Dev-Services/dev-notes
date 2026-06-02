@@ -336,4 +336,23 @@ El cliente crea una nueva key, actualiza su integración para usar la nueva, y l
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| API Key | Credencial de larga duración para autenticación máquina-a-máquina — alternativa al JWT para integraciones |
+| SHA-256 Hash | Hash criptográfico almacenado en lugar de la API Key en texto plano — impide exposición ante breach de DB |
+| KeyHash | Campo en la entidad ApiKey que almacena el hash SHA-256 de la clave — lo que se guarda en base de datos |
+| KeyPrefix | Primeros caracteres de la API Key mostrados al usuario para identificar la clave sin revelarla completa |
+| Scopes | Permisos granulares de la API Key: read:users, write:orders — principio de mínimo privilegio |
+| ApiKeyAuthenticationHandler | Handler de autenticación de ASP.NET Core que valida el header X-Api-Key buscando el hash en base de datos |
+| Revocación | Invalidación inmediata de una API Key — el Admin puede revocar cualquier key de su tenant |
+| LastUsedAt | Timestamp de último uso de la API Key — actualizado en background para no bloquear el request |
+| ApiKeyGenerator | Utilidad que genera la API Key como string aleatorio criptográficamente seguro (Base64URL o hex) |
+| AuthenticateResult | Resultado del handler de autenticación: Success con ClaimsPrincipal o Fail con mensaje de error |
+| One-time Show | La API Key en texto plano solo se muestra una vez al crearla — después solo se almacena el hash |
+| X-Api-Key | Header HTTP estándar por convención para enviar la API Key en cada request |
+
+---
+
 *Rogelio Arriaga Gonzalez*

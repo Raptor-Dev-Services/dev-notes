@@ -254,4 +254,21 @@ app.MapControllers();        // handler final: ejecuta el controller
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Chain of Responsibility | Patrón conductual que pasa una petición por una cadena de handlers; cada uno decide procesarla o pasarla al siguiente |
+| Handler | Objeto que procesa una petición o la delega al siguiente handler de la cadena |
+| AbstractHandler | Clase base que implementa el encadenamiento (`SetNext`) y la delegación por defecto al siguiente handler |
+| Cortocircuito | Comportamiento en que un handler detiene la cadena sin llamar al siguiente, típicamente al detectar un error |
+| `SetNext()` | Método que retorna el siguiente handler para permitir construcción fluent de la cadena: `a.SetNext(b).SetNext(c)` |
+| Middleware pipeline | Implementación del patrón en ASP.NET Core: cada middleware es un handler que puede pasar al siguiente con `await next()` |
+| `await next()` | Llamada en un middleware de ASP.NET Core que pasa la petición al siguiente handler de la cadena |
+| InteractorPipeline | Cadena de behaviors del mediador del proyecto que orquesta el flujo Handler → Publish → Presenter |
+| Petición no manejada | Resultado cuando ningún handler procesa la petición y llega al final de la cadena sin ser atendida |
+| Configuración en runtime | Capacidad de ensamblar y reordenar la cadena dinámicamente sin modificar los handlers existentes |
+
+---
+
 *Rogelio Arriaga Gonzalez*

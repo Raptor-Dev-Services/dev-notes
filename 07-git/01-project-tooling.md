@@ -212,4 +212,21 @@ Normaliza line endings — previene diffs de archivos completos por cambios de C
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| .gitignore | Archivo que lista patrones de rutas que Git debe ignorar y no incluir en el repositorio |
+| .dockerignore | Archivo que excluye rutas del contexto enviado al demonio Docker al construir una imagen |
+| .editorconfig | Archivo de configuración que estandariza indentación, charset y saltos de línea entre editores del equipo |
+| .gitattributes | Archivo que define atributos por ruta, como normalización de line endings o tratamiento de archivos binarios |
+| Husky | Herramienta de Node.js que instala git hooks en el proyecto para ejecutar scripts automáticos antes de cada commit |
+| lint-staged | Herramienta que ejecuta linters solo sobre los archivos modificados y en staging, evitando analizar todo el proyecto |
+| Dependabot | Servicio de GitHub que abre PRs automáticos cuando detecta actualizaciones en dependencias del proyecto |
+| CRLF / LF | Caracteres de fin de línea; CRLF es de Windows (`\r\n`), LF es de Unix (`\n`); .gitattributes normaliza entre ellos |
+| Pre-commit hook | Script de Git que se ejecuta antes de crear el commit; permite bloquear commits que no pasen las validaciones |
+| EditorConfig | Especificación y ecosistema de plugins para editores que leen el archivo `.editorconfig` de forma automática |
+
+---
+
 *Rogelio Arriaga Gonzalez*

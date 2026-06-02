@@ -137,4 +137,21 @@ git log -1 --format="%an <%ae>"
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| git config | Comando para leer y escribir la configuración de Git en los niveles sistema, global o local |
+| Nivel global | Configuración en `~/.gitconfig` que aplica a todos los repositorios del usuario en la máquina |
+| Nivel local | Configuración en `.git/config` que aplica solo al repositorio actual y sobreescribe el nivel global |
+| includeIf | Directiva de `~/.gitconfig` que incluye un archivo de configuración adicional si se cumple una condición de ruta |
+| gitdir | Condición usada en `includeIf` que activa la inclusión cuando el repositorio está bajo la ruta especificada |
+| pull.rebase | Opción que determina si `git pull` usa rebase o merge para integrar cambios del remoto |
+| init.defaultBranch | Opción que define el nombre de la rama inicial al crear un nuevo repositorio con `git init` |
+| autocrlf | Opción `core.autocrlf` que controla la conversión de saltos de línea al hacer checkout o commit |
+| alias | Atajo personalizado en Git que reemplaza un comando largo por uno corto definido en la configuración |
+| GIT_AUTHOR_NAME | Variable de entorno que sobreescribe temporalmente el nombre del autor para el commit actual |
+
+---
+
 *Rogelio Arriaga Gonzalez*

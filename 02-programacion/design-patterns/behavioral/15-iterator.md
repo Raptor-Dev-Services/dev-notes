@@ -298,4 +298,21 @@ var dtos = users
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Iterator | Patrón conductual que permite recorrer los elementos de una colección sin exponer su estructura interna |
+| `IEnumerable<T>` | Interfaz estándar de .NET que representa una colección iterable; base del patrón Iterator en C# |
+| `IEnumerator<T>` | Interfaz que implementa la lógica de recorrido: `Current`, `MoveNext()`, `Reset()` |
+| `yield return` | Palabra clave de C# que genera automáticamente la máquina de estados del Iterator; pausa y reanuda la función en cada iteración |
+| Evaluación perezosa (lazy) | Propiedad de los iteradores: los elementos se producen uno a uno a medida que se consumen, sin cargar toda la colección en memoria |
+| LINQ | Language Integrated Query; usa Iterator internamente — cada operación (`Where`, `Select`) crea un nuevo Iterator encadenado |
+| `IAsyncEnumerable<T>` | Versión asíncrona del Iterator para streams de datos que se obtienen de forma asíncrona (C# 8+) |
+| `await foreach` | Sintaxis de C# para consumir un `IAsyncEnumerable<T>` elemento por elemento de forma asíncrona |
+| Materialización | Proceso de convertir un iterador perezoso en una colección concreta (`ToList()`, `ToArray()`) |
+| `IReadOnlyCollection<T>` | Tipo del proyecto para exponer colecciones de resultados — implementa `IEnumerable<T>` de forma inmutable |
+
+---
+
 *Rogelio Arriaga Gonzalez*

@@ -222,4 +222,22 @@ var nextPage  = original with { Page = 2 };  // copia del Prototype con Page dif
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Prototype | Patrón creacional que permite copiar objetos existentes sin depender de sus clases concretas |
+| Copia superficial (shallow copy) | Copia campo a campo: los tipos de valor se duplican, pero los objetos de referencia se comparten |
+| Copia profunda (deep copy) | Copia recursiva en la que todos los sub-objetos también se crean nuevos, sin compartir referencias |
+| `MemberwiseClone()` | Método protegido de `System.Object` que realiza una shallow copy del objeto |
+| `ICloneable` | Interfaz estándar de .NET que declara el método `Clone()` para implementar el patrón Prototype |
+| Expresión `with` | Sintaxis de C# para records que crea una nueva instancia copiando los campos del original y aplicando las modificaciones indicadas |
+| Prototype Registry | Almacén de prototipos nombrados que permite clonar instancias pre-configuradas bajo demanda |
+| Estado intrínseco | Parte del estado de un objeto que no cambia entre instancias y puede compartirse |
+| Inmutabilidad | Propiedad de un objeto cuyos campos no pueden modificarse después de su creación — característica central de los records |
+| Tipo de valor | Tipo que se copia directamente cuando se asigna (`int`, `struct`, `DateTime`); opuesto a tipo de referencia |
+| Tipo de referencia | Tipo que almacena una dirección de memoria; asignarlo copia la referencia, no el objeto en sí |
+
+---
+
 *Rogelio Arriaga Gonzalez*

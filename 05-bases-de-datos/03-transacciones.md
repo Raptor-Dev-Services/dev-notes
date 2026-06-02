@@ -332,6 +332,24 @@ public async Task<UpdateExampleUserResponse> Handle(
 | **Escala** | Peor bajo alta concurrencia | Mejor bajo alta concurrencia |
 | **Casos de uso** | Inventario, cuentas, reservas | CMS, perfiles, configuraciones |
 
+---
+
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Transacción | unidad de trabajo que cumple las propiedades ACID: se ejecuta toda o no se ejecuta nada |
+| ACID | Atomicidad, Consistencia, Aislamiento y Durabilidad — propiedades que garantizan la integridad de una transacción |
+| Aislamiento | propiedad que determina en qué medida una transacción es visible para otras transacciones concurrentes |
+| Nivel de aislamiento | configuración que establece cuánta inconsistencia temporal permite una transacción a cambio de mayor concurrencia |
+| Dirty read | lectura de datos modificados por una transacción no confirmada aún; ocurre en el nivel Read Uncommitted |
+| Non-repeatable read | fenómeno donde una misma lectura dentro de una transacción retorna valores distintos porque otra transacción los modificó |
+| Phantom read | fenómeno donde una consulta repetida dentro de una transacción retorna filas adicionales que otra transacción insertó |
+| Deadlock | bloqueo mutuo donde dos transacciones esperan indefinidamente el lock que la otra tiene |
+| Bloqueo pesimista | estrategia que adquiere el lock antes de modificar, asumiendo que habrá conflicto (`SELECT FOR UPDATE`) |
+| Bloqueo optimista | estrategia que detecta el conflicto al guardar mediante un número de versión, sin bloquear filas |
+| SELECT FOR UPDATE | cláusula SQL que adquiere un lock exclusivo sobre las filas seleccionadas hasta el siguiente COMMIT o ROLLBACK |
+| Número de versión | columna entera que se incrementa en cada UPDATE, usada para detectar modificaciones concurrentes |
 
 ---
 

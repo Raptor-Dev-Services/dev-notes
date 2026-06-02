@@ -380,4 +380,22 @@ public async Task LoginWithCorrectCredentials_ReturnsTokenWithCorrectTenantId()
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Tenant Leakage | Situación donde datos de un tenant son accesibles desde el contexto de otro — fallo crítico de seguridad |
+| IntegrationTestFactory | Clase que extiende WebApplicationFactory para configurar la app con base de datos de tests |
+| WebApplicationFactory | Clase de .NET para tests de integración que levanta la app en memoria con un servidor de tests |
+| Test JWT | Token JWT generado con la clave de signing de tests para simular usuarios de diferentes tenants |
+| IgnoreQueryFilters | Método usado en el test para verificar que los datos existen pero son inaccesibles desde otro tenant |
+| 404 en cross-tenant | Respuesta esperada al acceder a un recurso de otro tenant — el filtro hace que "no exista" |
+| Branch Isolation | Verificación de que un usuario de una branch no puede leer datos de otra branch del mismo tenant |
+| Privilege Escalation | Test que verifica que un usuario no puede acceder a recursos que su rol no permite |
+| Cross-tenant Access | Intento de acceso a datos de otro tenant — debe siempre resultar en 404 (filtrado) o 403 (forbid) |
+| DB Real en Tests | Requisito de los tests de leakage: usar una base de datos real (no mocks) para que RLS y filtros sean efectivos |
+| TestTenantIds | Constantes con IDs de tenants de test (TenantA, TenantB) para mantener consistencia en los asserts |
+
+---
+
 *Rogelio Arriaga Gonzalez*

@@ -377,4 +377,24 @@ builder.Services.AddDbContext<AppDbContext>((sp, opts) =>
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| DbContext | Clase de EF Core que representa la sesión con la base de datos, gestiona change tracking y expone DbSets |
+| Migrations | Sistema de EF Core para gestionar cambios incrementales al schema de la base de datos de forma controlada |
+| Global Query Filter | Filtro aplicado automáticamente a todas las queries de una entidad — usado para soft delete y multi-tenancy |
+| AsNoTracking | Modificador que desactiva el change tracking para queries de solo lectura, mejorando el rendimiento |
+| Include | Método para cargar relaciones de forma eager loading en la misma query |
+| AsSplitQuery | Modificador que divide una query con múltiples Includes en múltiples SELECTs para evitar producto cartesiano |
+| Soft Delete | Patrón que marca registros como eliminados sin borrarlos físicamente de la base de datos |
+| SaveChangesInterceptor | Hook que se ejecuta antes y después de SaveChanges — usado para auditoría y timestamps automáticos |
+| IAuditable | Interfaz del back-template que marca entidades con CreatedAt, CreatedBy, UpdatedAt, UpdatedBy |
+| ISoftDeletable | Interfaz del back-template que marca entidades con IsDeleted y DeletedAt |
+| IgnoreQueryFilters | Método para omitir los Global Query Filters en una query específica — usar con precaución |
+| HasQueryFilter | Método de configuración de entidad que registra un Global Query Filter en el ModelBuilder |
+| Change Tracking | Mecanismo de EF Core que rastrea modificaciones a entidades cargadas para generar los UPDATE automáticos |
+
+---
+
 *Rogelio Arriaga Gonzalez*

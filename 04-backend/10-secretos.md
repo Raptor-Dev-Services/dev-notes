@@ -113,4 +113,21 @@ Si aparecen en logs, hay un bug de seguridad que debe corregirse antes de desple
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| User Secrets | Mecanismo de .NET para almacenar secretos en desarrollo fuera del repositorio, en %APPDATA% |
+| Azure Key Vault | Servicio de Azure para almacenar y gestionar secretos, claves y certificados en producción |
+| DefaultAzureCredential | Clase del SDK de Azure que detecta automáticamente el mecanismo de autenticación disponible |
+| Managed Identity | Identidad administrada de Azure que permite a una VM o App Service autenticarse sin credenciales explícitas |
+| BuildKit Mount Secret | Mecanismo de Docker BuildKit para montar secretos durante el build sin que queden en capas de imagen |
+| Rotación de secretos | Proceso de reemplazar periódicamente las credenciales para reducir el impacto de una exposición |
+| AWS Secrets Manager | Servicio de AWS para gestionar secretos con rotación automática y auditoría |
+| Secret Scanning | Proceso de detectar secretos (tokens, contraseñas) accidentalmente incluidos en el código fuente |
+| .gitignore | Archivo que lista los patrones de archivos que Git no debe rastrear — esencial para excluir .env |
+| Principio de mínimo privilegio | Práctica de otorgar solo los permisos estrictamente necesarios a cada identidad o servicio |
+
+---
+
 *Rogelio Arriaga Gonzalez*

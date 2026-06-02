@@ -880,4 +880,25 @@ aws cloudwatch put-metric-alarm \
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Observabilidad | Capacidad de entender el estado interno de un sistema a partir de sus salidas externas: logs, métricas y trazas |
+| Log estructurado | Registro de eventos en formato JSON con campos indexables, en contraposición al texto plano |
+| Serilog | Biblioteca de logging para .NET que produce logs estructurados con soporte a múltiples sinks |
+| Prometheus | Sistema de monitoreo que recopila métricas mediante scraping HTTP y las almacena como series de tiempo |
+| PromQL | Lenguaje de consulta funcional de Prometheus para explorar y agregar series de tiempo |
+| Grafana | Plataforma de visualización que une múltiples fuentes de datos (Prometheus, Loki, Tempo) en dashboards |
+| Loki | Sistema de agregación de logs de Grafana que indexa solo etiquetas, no el contenido completo |
+| LogQL | Lenguaje de consulta de Grafana Loki para filtrar y agregar streams de logs por etiquetas y contenido |
+| Seq | Servidor de logs estructurados self-hosted con UI de búsqueda y sistema de alertas integrado |
+| SLO | Service Level Objective; objetivo interno de confiabilidad medido por un SLI específico |
+| SLI | Service Level Indicator; métrica concreta que mide el cumplimiento de un SLO |
+| Error Budget | Porcentaje de fallas permitidas antes de violar el SLO; controla el ritmo de despliegues riesgosos |
+| Alertmanager | Componente de Prometheus que gestiona el enrutamiento, agrupación y deduplicación de alertas |
+| Uptime Kuma | Monitor de disponibilidad self-hosted con status page pública y más de 90 integraciones |
+
+---
+
 *Rogelio Arriaga Gonzalez*

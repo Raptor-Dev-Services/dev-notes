@@ -449,4 +449,23 @@ Ver `04-backend/26-tenant-onboarding.md` para cuándo se crea el Customer de Str
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Stripe Customer | Objeto de Stripe que representa a un tenant — almacena métodos de pago y historial de facturación |
+| Subscription | Objeto de Stripe que modela la suscripción activa de un tenant a un plan con precio recurrente |
+| Price | Objeto de Stripe que define el costo de un plan: monto, moneda, intervalo de facturación |
+| Invoice | Factura generada por Stripe para cada ciclo de facturación — puede ser paid, open o void |
+| SetupIntent | Objeto de Stripe para registrar un método de pago sin cobrar inmediatamente |
+| CheckoutSession | Sesión de Stripe que redirige al usuario a la página de pago alojada en Stripe |
+| BillingPortal | Portal de Stripe donde el cliente puede gestionar su suscripción, tarjeta e historial de pagos |
+| StripeWebhookService | Servicio que procesa los eventos Stripe recibidos via webhook y actualiza el estado del tenant |
+| WebhookSecret | Secreto de Stripe usado para validar la firma de cada webhook con ConstructEvent |
+| Idempotencia de webhooks | Manejo de eventos duplicados de Stripe usando el EventId como clave de idempotencia |
+| StripeCustomerId | ID del Customer en Stripe almacenado en la entidad Tenant para asociar facturación |
+| customer.subscription.updated | Evento Stripe que notifica cambios en el plan o estado de la suscripción de un tenant |
+
+---
+
 *Rogelio Arriaga Gonzalez*

@@ -270,4 +270,22 @@ public sealed class InsertExampleUserPresenter
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Mediator | Patrón conductual que centraliza la comunicación entre objetos en un objeto intermediario, eliminando las dependencias directas entre ellos |
+| `IMediator` | Interfaz del proyecto en `Common.Messaging` que define `Send()` y `Publish()` — punto central de comunicación |
+| `Mediator.Send()` | Método que envía un Request al Handler correspondiente y devuelve la respuesta |
+| `Mediator.Publish()` | Método que notifica a todos los `INotificationHandler<T>` suscritos a un tipo de respuesta |
+| InteractorPipeline | Componente del proyecto que orquesta el flujo: Handler → Publish → Presenter usando el mediador |
+| `INotificationHandler<T>` | Interfaz implementada por los Presenters para suscribirse a un tipo específico de respuesta |
+| Acoplamiento O(N²) | Problema que el Mediator resuelve: sin él, N componentes tendrían N×(N-1) dependencias entre sí |
+| `ConcreteMediator` | Implementación del mediador que conoce a todos los componentes y orquesta su interacción |
+| Event bus | Variante del Mediator para comunicación asíncrona entre componentes o microservicios mediante eventos |
+| God Object | Anti-patrón al que puede degenerar el Mediator si acumula demasiada lógica de coordinación |
+| Desacoplamiento | Propiedad lograda con el Mediator: ningún componente (Controller, Handler, Presenter) conoce directamente a los demás |
+
+---
+
 *Rogelio Arriaga Gonzalez*

@@ -310,4 +310,22 @@ if (numero is int n)
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| `null` | Valor especial que indica ausencia de objeto; las variables de referencia pueden contener null si se permite |
+| Nullable Reference Types (NRT) | Característica de C# 8+ activada en el proyecto que permite al compilador distinguir tipos que pueden o no ser null |
+| `T?` (tipo de referencia) | Anotación que indica que la variable puede ser null; el compilador exige verificación antes de usar el valor |
+| `T?` (tipo de valor) | `Nullable<T>`: wrapper que permite que tipos de valor como `int` o `DateTime` almacenen `null` |
+| `NullReferenceException` | Excepción lanzada al intentar acceder a un miembro de una variable cuyo valor es `null` |
+| Operador `?.` (null-conditional) | Accede a un miembro solo si el objeto no es null; retorna null si es null: `user?.FullName` |
+| Operador `??` (null-coalescing) | Retorna el valor de la izquierda si no es null, o el de la derecha: `nombre ?? "Desconocido"` |
+| Operador `??=` | Asigna el valor de la derecha solo si la variable es null: `_cache ??= new Cache()` |
+| Operador `!` (null-forgiving) | Indica al compilador que el valor nunca es null en ese punto, suprimiendo el aviso |
+| `string.IsNullOrEmpty()` | Método estático para verificar si un string es null o `""`; equivalente a `s == null || s == ""` |
+| `GetValueOrDefault()` | Método de `Nullable<T>` que retorna el valor o el default del tipo si es null |
+
+---
+
 *Rogelio Arriaga Gonzalez*

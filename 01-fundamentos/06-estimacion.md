@@ -242,3 +242,26 @@ Nueva historia: tiene lógica de multi-select (más compleja que filtro por esta
 ```
 
 La triangulación convierte las estimaciones de "adivinar" a "comparar con evidencia real del equipo".
+
+---
+
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Story point | unidad relativa de medida que representa la complejidad de una historia de usuario, no las horas absolutas |
+| Velocity | promedio de story points completados por el equipo en los últimos sprints; se usa para planificar futuros sprints |
+| Planning Poker | técnica de estimación grupal con votos simultáneos para evitar el anclaje al primer número expresado |
+| Cono de Incertidumbre | modelo que ilustra cómo la incertidumbre de una estimación disminuye a medida que avanza el proyecto |
+| Fibonacci (escala) | secuencia 1, 2, 3, 5, 8, 13, 21 usada para asignar story points porque refleja la incertidumbre creciente |
+| T-Shirt Sizing | técnica de estimación gruesa (XS, S, M, L, XL) para epics y backlogs iniciales antes de refinar historias |
+| Complejidad inherente | dificultad propia del problema que no puede eliminarse con mejor diseño |
+| Complejidad accidental | dificultad introducida por decisiones de diseño o tecnología, que sí puede reducirse |
+| Capacity | disponibilidad real del equipo en el sprint, expresada en días o porcentaje de tiempo disponible |
+| Spike | tarea de investigación de duración fija (timeboxed) para reducir la incertidumbre antes de estimar |
+| Triangulación | técnica de calibración que compara una historia nueva con historias ya completadas de complejidad similar |
+| Ancla (anchoring) | sesgo cognitivo donde el primer número expresado en una discusión influye desproporcionadamente en el consenso |
+
+---
+
+*Rogelio Arriaga Gonzalez*

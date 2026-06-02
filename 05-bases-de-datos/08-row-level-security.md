@@ -278,4 +278,21 @@ ALTER TABLE dbo.production_orders FORCE ROW LEVEL SECURITY;
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Row Level Security (RLS) | mecanismo de PostgreSQL que filtra automáticamente las filas a nivel de motor según políticas definidas por tabla |
+| Política RLS | regla declarada con `CREATE POLICY` que define qué filas son visibles o modificables para una sesión |
+| FORCE ROW LEVEL SECURITY | modificador que aplica RLS incluso al propietario de la tabla, evitando bypass accidental por permisos elevados |
+| SET LOCAL | variante de `SET` que aplica la configuración solo durante la transacción actual; evita fugas entre conexiones del pool |
+| current_setting | función de PostgreSQL que lee una variable de sesión (`app.current_tenant_id`) usada por las políticas RLS |
+| app.current_tenant_id | variable de sesión personalizada que establece el contexto del tenant activo en cada conexión |
+| BYPASSRLS | privilegio de PostgreSQL que permite a un rol ignorar todas las políticas RLS — nunca conceder al usuario de la app |
+| SECURITY DEFINER | función que se ejecuta con los privilegios del dueño de la función, no del llamador — puede bypassar RLS |
+| EF Core Interceptor | clase que intercepta eventos del ciclo de vida de EF Core (apertura de conexión, guardado) para ejecutar código transversal |
+| Fuga de datos entre tenants | acceso a datos de otro tenant debido a ausencia o mala configuración de aislamiento en multi-tenancy |
+
+---
+
 *Rogelio Arriaga Gonzalez*

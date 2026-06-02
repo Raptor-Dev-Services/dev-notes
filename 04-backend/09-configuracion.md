@@ -253,4 +253,23 @@ Ver `04-backend/10-secretos.md` para gestión de secretos en producción (Azure 
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Options Pattern | Patrón de .NET que mapea secciones de configuración a clases POCO fuertemente tipadas con validación en startup |
+| IOptions\<T\> | Singleton de configuración que se lee una sola vez al iniciar la aplicación — no se recarga |
+| IOptionsSnapshot\<T\> | Configuración Scoped que se recarga en cada request HTTP cuando el archivo de config cambia |
+| IOptionsMonitor\<T\> | Singleton de configuración que notifica cambios en tiempo real — para servicios long-running |
+| ValidateDataAnnotations | Método que activa la validación de atributos ([Required], [Range]) en las clases Options al iniciar |
+| ValidateOnStart | Método que fuerza la validación de configuración en startup en lugar de esperar al primer uso |
+| IValidateOptions\<T\> | Interfaz para validaciones personalizadas de configuración más complejas que Data Annotations |
+| appsettings.json | Archivo base de configuración de .NET — va al repositorio con valores neutros o de ejemplo |
+| User Secrets | Mecanismo de desarrollo local para almacenar secretos fuera del repositorio en %APPDATA% |
+| IConfiguration | Interfaz de bajo nivel para acceder a valores de configuración por clave string — propenso a typos |
+| Double Underscore | Separador de secciones en variables de entorno Linux/Docker (`Jwt__SigningKey`) equivalente a `:` |
+| Named Options | Instancias múltiples de la misma clase Options identificadas por nombre — para múltiples proveedores |
+
+---
+
 *Rogelio Arriaga Gonzalez*

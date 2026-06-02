@@ -314,4 +314,21 @@ public sealed class ExampleUsersController : BaseApiController
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Template Method | Patrón conductual que define el esqueleto de un algoritmo en la clase base y delega pasos específicos a las subclases |
+| Método plantilla | El método de la clase base que define el orden fijo de los pasos — no se sobreescribe (`sealed` implícito) |
+| Paso abstracto | Método `abstract` que las subclases deben implementar obligatoriamente — varía en cada implementación concreta |
+| Hook | Método `virtual` con implementación vacía que las subclases pueden sobreescribir opcionalmente — punto de extensión flexible |
+| Operación base | Método con implementación en la clase base que es común a todas las subclases y no se sobreescribe |
+| `abstract` | Modificador de C# para métodos que no tienen implementación en la clase base y deben ser implementados por las subclases |
+| `virtual` | Modificador de C# que permite sobreescribir un método en subclases — base de los hooks del Template Method |
+| `override` | Modificador de C# que indica que un método sobreescribe la implementación del padre |
+| `BaseApiController` | Clase base del proyecto que implementa el esqueleto: proporciona `Mediator` como operación base compartida |
+| Template Method vs Strategy | Template Method usa herencia (el esqueleto es fijo, se compilan los pasos); Strategy usa composición (todo el algoritmo es intercambiable) |
+
+---
+
 *Rogelio Arriaga Gonzalez*

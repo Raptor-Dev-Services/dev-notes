@@ -385,4 +385,23 @@ Resend__ApiKey=re_live_xxxx
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Email Transaccional | Email disparado por una acción del usuario: confirmación, reset de password, invitación — no marketing |
+| IEmailService | Interfaz que abstrae el proveedor de email — permite cambiar de Resend a SendGrid sin cambiar los handlers |
+| Resend | Proveedor de email transaccional moderno con API REST simple — alternativa a SendGrid |
+| SendGrid | Proveedor de email de Twilio con alta reputación y herramientas de deliverability |
+| PasswordResetToken | Token único de corta duración enviado por email para autenticar el reset de contraseña |
+| ForgotPasswordHandler | Handler que genera el PasswordResetToken, lo almacena y envía el email de reset |
+| Branded Email | Email con nombre del tenant, logo y colores personalizados — requiere configuración por tenant |
+| EmailLog | Registro de cada email enviado para auditoría, diagnóstico y reenvío en caso de fallo |
+| Retry de email | Reintentos automáticos ante fallos temporales del proveedor — máximo 3 intentos con backoff |
+| HTML Email | Plantilla de email en HTML para clientes de email — debe ser compatible con Outlook (tablas, inline styles) |
+| Email Transaccional vs Marketing | Diferencia clave: los transaccionales se envían siempre; los de marketing respetan preferencias de suscripción |
+| From personalizado | Remitente con nombre del tenant (Alfacorp via MiSaaS) para mejor reconocimiento y deliverability |
+
+---
+
 *Rogelio Arriaga Gonzalez*

@@ -269,4 +269,23 @@ aws cloudtrail lookup-events \
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Secreto | Valor sensible (contraseña, API key, connection string, JWT secret) que no debe exponerse en código ni logs |
+| AWS Secrets Manager | Servicio gestionado de AWS para almacenar, rotar y auditar secretos con integración nativa en ECS |
+| Parameter Store | Servicio de AWS Systems Manager para almacenar configuración y secretos cifrados con KMS; más económico que Secrets Manager |
+| Azure Key Vault | Servicio de Azure para almacenar secretos, claves criptográficas y certificados con acceso vía Managed Identity |
+| KMS | AWS Key Management Service; servicio para crear y gestionar las claves criptográficas que cifran los secretos |
+| Managed Identity | Identidad asignada por Azure a un servicio que permite acceder a Key Vault sin credenciales en el código |
+| DefaultAzureCredential | Clase del SDK de Azure que resuelve automáticamente la credencial correcta según el entorno de ejecución |
+| user-secrets | Herramienta de .NET para almacenar secretos de desarrollo local fuera del repositorio |
+| detect-secrets | Herramienta de Yelp que escanea repositorios en busca de patrones de secretos y genera un baseline |
+| Secret scanning | Función de GitHub que detecta automáticamente secretos conocidos (AWS keys, tokens) en el código enviado |
+| Rotación automática | Proceso programado que reemplaza un secreto por uno nuevo sin intervención manual, reduciendo la ventana de exposición |
+| IAM Role | Rol de AWS que define permisos; se asigna a una tarea ECS para que la app acceda a Secrets Manager sin claves propias |
+
+---
+
 *Rogelio Arriaga Gonzalez*

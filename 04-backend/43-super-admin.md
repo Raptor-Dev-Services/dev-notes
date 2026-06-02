@@ -359,4 +359,22 @@ Adicionalmente, en producción el panel de admin puede estar en un subdominio se
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| SuperAdmin | Rol especial del equipo del SaaS con acceso cross-tenant — nunca asignable a usuarios de un tenant |
+| Impersonación | Capacidad del SuperAdmin de autenticarse como si fuera un usuario de un tenant para diagnóstico |
+| IgnoreQueryFilters | Método de EF Core usado en los repositorios de admin para acceder a datos de cualquier tenant |
+| AdminTenantRepository | Repositorio del panel super-admin que usa IgnoreQueryFilters para queries cross-tenant |
+| ImpersonateUserHandler | Handler que genera un token de impersonación con claim is_impersonation y corta duración |
+| is_impersonation | Claim en el JWT de impersonación que identifica que la sesión no es del usuario real |
+| AdminIpWhitelistMiddleware | Middleware que restringe el acceso a los endpoints de admin a IPs del equipo o VPN |
+| IP Whitelist | Lista de IPs autorizadas para acceder al panel super-admin — capa de seguridad adicional |
+| Cross-tenant Query | Query que accede a datos de múltiples tenants — solo ejecutable desde el super-admin |
+| Audit de Admin | Registro de todas las acciones del super-admin en el audit trail con impersonated_by |
+| Swagger Admin Group | Documentación OpenAPI separada para endpoints de admin — no expuesta en la doc pública |
+
+---
+
 *Rogelio Arriaga Gonzalez*

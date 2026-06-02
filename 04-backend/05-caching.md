@@ -451,4 +451,23 @@ public async Task<GetExampleUserResponse> Handle(
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| IMemoryCache | Interfaz de .NET para caché en memoria del proceso — no se comparte entre instancias |
+| IDistributedCache | Interfaz de .NET para caché distribuida (Redis, SQL Server) — compartida entre instancias |
+| Cache-Aside | Patrón donde la aplicación gestiona la caché: leer caché primero, si miss consultar DB y guardar |
+| TTL | Time To Live — tiempo de expiración de una entrada de caché |
+| Cache Stampede | Fenómeno donde múltiples requests simultáneos llegan a una caché vacía y saturan la base de datos |
+| SemaphoreSlim | Mecanismo de sincronización usado para proteger el recálculo de caché ante stampede |
+| ICacheService | Interfaz del back-template que abstrae IMemoryCache e IDistributedCache con GetOrCreateAsync |
+| QueryCachingBehavior | Pipeline behavior que cachea respuestas de queries antes de llegar al handler |
+| AbsoluteExpiration | Expiración absoluta de caché — la entrada expira en una fecha/hora fija |
+| SlidingExpiration | Expiración deslizante — la entrada expira si no se accede en X tiempo |
+| Redis | Base de datos en memoria de alto rendimiento usada como caché distribuida en producción |
+| Output Cache | Caché a nivel de middleware que almacena la respuesta HTTP completa — independiente de la lógica |
+
+---
+
 *Rogelio Arriaga Gonzalez*

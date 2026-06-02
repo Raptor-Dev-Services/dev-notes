@@ -302,3 +302,24 @@ Para decisiones técnicas grandes, hacer un RFC antes del ADR:
 | Prioridades cambiantes | Sprint interrumpido cada semana | "Cada cambio mid-sprint nos cuesta [X] días de contexto. ¿Quieres ese trade-off?" |
 | "Los devs siempre dicen que va a tardar más" | Falta de confianza en estimaciones | Mostrar velocity histórica + triangular con historias similares completadas |
 | Scope vs calidad | "¿Para qué sirven los tests?" | Mostrar costo de bugs en producción vs costo de tests: típicamente 5-15× más caro sin tests |
+
+---
+
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Stakeholder | persona o grupo con interés en el resultado de un proyecto; puede ser interno (equipo) o externo (cliente, regulador) |
+| Cuadrante Poder/Interés | herramienta para clasificar stakeholders según su capacidad de influencia y su nivel de interés en el proyecto |
+| Upstream dependency | equipo o sistema del que depende el equipo para poder avanzar en su propio trabajo |
+| Downstream dependency | equipo o sistema que depende del trabajo del equipo para construir el suyo |
+| RFC | Request for Comments — documento previo al ADR para proponer y debatir cambios técnicos significativos con el equipo |
+| ADR | Architecture Decision Record — documento que formaliza una decisión arquitectural con su contexto y alternativas |
+| Feature creep | acumulación de funcionalidades no planificadas que expande el scope sin ajustar la fecha de entrega |
+| Elevator pitch técnico | presentación concisa (problema → causa → solución → impacto → inversión → riesgo) para comunicar propuestas técnicas a no-técnicos |
+| DevEx (Developer Experience) | calidad de la experiencia de trabajo del desarrollador: tiempos de build, feedback loops, herramientas y autonomía |
+| Managing expectations | práctica de alinear proactivamente las expectativas de los stakeholders con la realidad del proyecto |
+
+---
+
+*Rogelio Arriaga Gonzalez*

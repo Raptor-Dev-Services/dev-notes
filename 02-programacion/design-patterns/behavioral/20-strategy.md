@@ -311,4 +311,21 @@ public sealed class InsertExampleUserPresenter : INotificationHandler<InsertExam
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Strategy | Patrón conductual que define una familia de algoritmos, los encapsula en clases separadas y los hace intercambiables en runtime |
+| Context | Objeto que usa la estrategia; mantiene una referencia a `IStrategy` y delega el algoritmo a ella |
+| IStrategy | Interfaz común para todas las estrategias; el Context solo conoce esta interfaz |
+| ConcreteStrategy | Implementación concreta de un algoritmo específico que implementa `IStrategy` |
+| `SetStrategy()` | Método del Context que permite cambiar el algoritmo en runtime sin modificar la lógica del Context |
+| `Func<T, TResult>` | Alternativa en C# para estrategias simples: se pasa una función/lambda en lugar de una clase completa |
+| Presenters como Strategies | En el proyecto, cada Presenter es una estrategia de presentación; misma interfaz (`INotificationHandler<T>`), comportamiento diferente |
+| Estrategia de pago | Ejemplo clásico: `CreditCardStrategy`, `PayPalStrategy`, `CryptoStrategy` implementan `IPaymentStrategy` |
+| Open/Closed Principle | El Strategy lo satisface: agregar un algoritmo nuevo no modifica el Context — solo se crea una nueva ConcreteStrategy |
+| Factory de estrategias | Patrón de registrar estrategias en DI y resolverlas por clave (nombre, tipo de pago) para selección dinámica |
+
+---
+
 *Rogelio Arriaga Gonzalez*

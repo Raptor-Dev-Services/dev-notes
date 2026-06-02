@@ -291,4 +291,22 @@ if (string.IsNullOrWhiteSpace(request.Email))
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Inmutabilidad de strings | Propiedad de los strings en C#: cada operación que "modifica" un string crea una nueva instancia en memoria |
+| Interpolación (`$""`) | Sintaxis para construir strings con expresiones incrustadas en `{ }`: `$"Hola {nombre}"` |
+| Raw string literal (`"""`) | Sintaxis de C# 11+ para strings multilínea sin escapar caracteres especiales; usada para SQL en el proyecto |
+| Verbatim string (`@""`) | String literal donde los caracteres de escape se interpretan literalmente (las barras no se escapan) |
+| `StringBuilder` | Clase mutable para construcción eficiente de strings cuando se realizan muchas concatenaciones en un bucle |
+| `string.IsNullOrEmpty()` | Método estático que verifica si un string es `null` o vacío `""` |
+| `string.IsNullOrWhiteSpace()` | Extiende `IsNullOrEmpty()` para incluir strings con solo espacios o tabulaciones |
+| Comparación de strings | En C# los strings se comparan por valor con `==`; para ignorar mayúsculas usar `StringComparison.OrdinalIgnoreCase` |
+| `Span<char>` | Tipo de alta performance para procesar substrings sin crear nuevas allocaciones de memoria |
+| Formato numérico | Especificadores en interpolación: `:F2` (2 decimales), `:N0` (miles con separador), `:C` (moneda) |
+| Codificación (`Encoding`) | Sistema de representación de texto como bytes: UTF-8 es el estándar para APIs REST y archivos de configuración |
+
+---
+
 *Rogelio Arriaga Gonzalez*

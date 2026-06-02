@@ -256,4 +256,23 @@ Ver `04-backend/17-ef-core.md` para los patrones de EF Core del proyecto.
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Dapper | Micro-ORM de .NET que extiende IDbConnection con métodos de mapeo de SQL a objetos |
+| IDbConnection | Interfaz ADO.NET que representa una conexión a base de datos — Dapper extiende sus métodos |
+| QueryMultiple | Método de Dapper que ejecuta múltiples SELECT en una sola query y retorna un GridReader |
+| Multi-mapping | Capacidad de Dapper para mapear una fila a múltiples objetos C# en una sola query con JOIN |
+| DapperSqlDbConnectionBase | Clase base del Common que encapsula IDbConnection con soporte de tenant context |
+| IDapperSqlDbConnection | Interfaz del Common que abstrae la conexión Dapper para inyección de dependencias |
+| DefaultTypeMap | Configuración de Dapper para mapear columnas snake_case a propiedades PascalCase automáticamente |
+| snake_case | Convención de nombres de PostgreSQL para columnas (`user_id`) — requiere mapeo en Dapper |
+| CTE | Common Table Expression — cláusula SQL WITH que simplifica queries complejas y recursivas |
+| Npgsql | Driver ADO.NET para PostgreSQL en .NET — usado como proveedor de conexión con Dapper |
+| SplitOn | Parámetro de Dapper para multi-mapping que indica en qué columna dividir el resultado entre objetos |
+| Parametrized Query | Query SQL con parámetros tipados que evitan inyección SQL y permiten plan caching en PostgreSQL |
+
+---
+
 *Rogelio Arriaga Gonzalez*

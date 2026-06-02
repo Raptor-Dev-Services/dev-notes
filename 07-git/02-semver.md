@@ -125,4 +125,21 @@ Las APIs web usan SemVer en conjunto con API versioning (`v1`, `v2`) — el vers
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| SemVer | Semantic Versioning; convención de versiones con formato MAJOR.MINOR.PATCH que comunica el impacto de cada cambio |
+| MAJOR | Segmento de versión que se incrementa cuando hay cambios incompatibles con la versión anterior (breaking change) |
+| MINOR | Segmento de versión que se incrementa cuando se agrega funcionalidad nueva de forma compatible hacia atrás |
+| PATCH | Segmento de versión que se incrementa cuando se corrigen errores de forma compatible hacia atrás |
+| Breaking change | Cambio que rompe la compatibilidad con consumidores de la versión anterior de la API o librería |
+| Pre-release | Identificador opcional después de PATCH (alpha, beta, rc.N) que indica versiones previas a la release estable |
+| Release candidate | Versión candidata a producción (rc.N) considerada lista salvo que se encuentre algún defecto crítico |
+| Build metadata | Información adicional después de `+` en la versión (ej. SHA del commit) que no afecta la precedencia |
+| Precedencia | Orden de comparación entre versiones; pre-releases tienen menor precedencia que la release estable equivalente |
+| API versioning | Estrategia para mantener múltiples versiones de una API web disponibles simultáneamente (v1, v2) |
+
+---
+
 *Rogelio Arriaga Gonzalez*

@@ -425,4 +425,22 @@ Ver `04-backend/37-emails-transaccionales.md` para el envío del email de invita
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| InvitationToken | Token único criptográficamente seguro enviado al invitado por email para aceptar la invitación |
+| InvitationStatus | Estado de la invitación: Pending, Accepted, Revoked, Expired — controla la validez del token |
+| SendInvitation | Caso de uso que crea el registro de invitación, genera el token y envía el email al destinatario |
+| AcceptInvitation | Caso de uso que valida el token, crea el usuario y le asigna el rol y branch definidos en la invitación |
+| One-time Use | Propiedad del InvitationToken: una vez aceptado se invalida inmediatamente para evitar reutilización |
+| JIT Provisioning via Invitation | Creación del usuario en el momento de aceptar la invitación, sin pre-registro previo |
+| BranchId Pre-assignment | Opción de asociar al invitado a una branch específica antes de que cree su cuenta |
+| Reenvío de invitación | Operación que genera un nuevo token e invalida el anterior — útil cuando el email expiró |
+| Revocación | Cancelación de una invitación pendiente por el Admin — cambia estado a Revoked |
+| ExpiresAt | Timestamp de expiración del InvitationToken — típicamente 7 días desde la creación |
+| InvitedBy | FK del usuario Admin que creó la invitación — auditoría de quién invitó a quién |
+
+---
+
 *Rogelio Arriaga Gonzalez*

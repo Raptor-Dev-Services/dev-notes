@@ -477,6 +477,22 @@ docker compose pull
 docker compose up -d --force-recreate
 ```
 
+---
+
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| `docker run` | comando que crea y arranca un nuevo contenedor desde una imagen |
+| `docker exec` | comando que ejecuta un proceso adicional dentro de un contenedor ya en ejecución |
+| `docker logs` | comando que muestra la salida estándar y de error de un contenedor |
+| `docker inspect` | comando que retorna la configuración completa de un contenedor o imagen en formato JSON |
+| `docker system prune` | comando que elimina todos los recursos de Docker no utilizados: contenedores, redes, imágenes y caché |
+| `docker ps` | comando que lista los contenedores en ejecución; con `-a` incluye los parados |
+| `docker cp` | comando que copia archivos entre el sistema de archivos del host y el de un contenedor |
+| Dangling image | imagen sin tag (`<none>:<none>`) generada como residuo de builds anteriores |
+| `docker system df` | comando que muestra cuánto espacio ocupa Docker en disco (imágenes, contenedores, volúmenes, caché) |
+| `docker tag` | comando que asigna un nuevo nombre o tag a una imagen existente |
 
 ---
 

@@ -414,4 +414,22 @@ Ver `04-backend/32-stripe-billing.md` para conectar el onboarding con el cobro.
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Tenant Onboarding | Flujo completo de registro de un nuevo tenant: datos de empresa, credenciales, plan y activación |
+| TenantSlug | Identificador URL-friendly único del tenant — usado en subdominio (alfacorp.misaas.com) |
+| RegisterTenant | Caso de uso que crea el tenant, el primer usuario Admin y dispara los integration events |
+| BCrypt | Algoritmo de hashing de contraseñas con salt automático — trabajo mínimo recomendado: 12 |
+| Integration Event | Evento publicado por un módulo para notificar a otros módulos de un cambio — base del onboarding asíncrono |
+| UserShouldBeCreatedIntegrationEvent | Evento que el módulo de Tenancy publica para que el módulo de Authentication cree el usuario Admin |
+| EmailVerificationToken | Token único enviado por email para confirmar la dirección del primer usuario del tenant |
+| TenantStatus | Estado del tenant en el onboarding: Pending, Active, Suspended — controla el acceso al sistema |
+| SlugValidator | Validador que verifica que el slug solo contiene caracteres válidos y no está ya registrado |
+| Transacción en onboarding | Operación atómica que crea el tenant y el usuario en la misma transacción para evitar estados inconsistentes |
+| Plan por defecto | Plan de suscripción asignado al tenant al registrarse — típicamente Free o Trial |
+
+---
+
 *Rogelio Arriaga Gonzalez*

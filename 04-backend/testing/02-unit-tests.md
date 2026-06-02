@@ -536,4 +536,23 @@ public sealed class ExampleUserDomainTests
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Test unitario | Test que verifica una sola clase en aislamiento total, sin dependencias externas reales |
+| Mock / Sustituto | Objeto falso que reemplaza una dependencia real y permite controlar su comportamiento en tests |
+| NSubstitute | Librería de mocking para .NET basada en proxies que genera sustitutos de interfaces y clases abstractas |
+| `Substitute.For<T>()` | Método de NSubstitute que crea un sustituto de la interfaz o clase abstracta `T` |
+| `Arg.Any<T>()` | Matcher de NSubstitute que acepta cualquier valor del tipo `T` como argumento |
+| `Arg.Is<T>(predicate)` | Matcher de NSubstitute que acepta solo argumentos que cumplen el predicado indicado |
+| `Received(n)` | Verificación de NSubstitute que el método fue llamado exactamente `n` veces |
+| `DidNotReceive()` | Verificación de NSubstitute que un método nunca fue invocado durante el test |
+| Builder pattern de tests | Clase auxiliar con método `Build()` que construye objetos de prueba con valores por defecto configurables |
+| Invariante de dominio | Regla de negocio que la entidad debe cumplir en todo momento; se testa sin mocks ni infraestructura |
+| Aislamiento | Principio de tests unitarios: el test no debe depender de red, disco, DB ni estado global externo |
+| SUT (System Under Test) | La clase o componente específico que está siendo probado en un test determinado |
+
+---
+
 *Rogelio Arriaga Gonzalez*

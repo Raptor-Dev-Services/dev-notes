@@ -509,6 +509,23 @@ builder.Services.AddMediatR(cfg =>
 });
 ```
 
+---
+
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| CQRS | Command Query Responsibility Segregation — patrón que separa las operaciones de lectura (queries) y escritura (commands) en flujos independientes |
+| Command | mensaje que produce un cambio de estado en el sistema; no retorna datos, solo éxito o falla |
+| Query | mensaje que lee el estado del sistema sin modificarlo; retorna un DTO o lista de DTOs |
+| Handler | clase con una sola responsabilidad que procesa un Command o Query específico |
+| Mediator | intermediario que desacopla el emisor de un mensaje de su receptor; en .NET se usa MediatR |
+| Pipeline Behavior | middleware del pipeline de MediatR que se ejecuta antes o después del Handler para concerns transversales |
+| Proyección | modelo de lectura derivado del estado de escritura; puede ser una vista SQL, tabla desnormalizada o caché |
+| Read Model | representación optimizada para consulta (DTO, vista materializada) independiente del modelo de escritura |
+| Notification | mensaje de MediatR que puede tener cero o múltiples handlers; se usa para Domain Events e Integration Events |
+| Event Sourcing | patrón donde el estado se deriva de una secuencia de eventos inmutables en lugar de un registro mutable |
+| Vista materializada | tabla precalculada en la base de datos que se refresca periódicamente y optimiza las consultas de lectura |
 
 ---
 

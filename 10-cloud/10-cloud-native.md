@@ -299,4 +299,24 @@ Backing services:
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Cloud-Native | Enfoque de diseño de aplicaciones que aprovecha la elasticidad, resiliencia y servicios gestionados del cloud |
+| Twelve-Factor App | Metodología de 12 prácticas para construir aplicaciones modernas, escalables y portables en el cloud |
+| Backing Service | Recurso externo consumido por la app (DB, Redis, S3, broker) referenciado solo por URL o credencial |
+| Stateless | Propiedad de un proceso que no guarda estado entre requests; el estado persiste en backing services |
+| Graceful Shutdown | Proceso de cierre limpio que espera a que los requests en vuelo terminen antes de detener la app |
+| Escalado horizontal | Agregar más instancias del mismo proceso para manejar mayor carga, en contraposición a instancias más grandes |
+| Feature Flag | Mecanismo de configuración que activa o desactiva funcionalidades en producción sin desplegar nuevo código |
+| Reactive Manifesto | Documento que define los cuatro principios de los sistemas reactivos: responsivo, resiliente, elástico y orientado a mensajes |
+| Circuit Breaker | Patrón de resiliencia que abre el circuito y aplica un fallback cuando un servicio externo falla repetidamente |
+| HPA | Horizontal Pod Autoscaler; objeto de Kubernetes que escala réplicas según métricas de CPU, memoria u otras |
+| Dev/Prod Parity | Principio de mantener los ambientes de desarrollo y producción lo más similares posible para evitar sorpresas |
+| Port Binding | Factor que establece que la app exporta su servicio escuchando en un puerto configurado desde el entorno |
+| Trunk-based Development | Estrategia donde todos los desarrolladores integran cambios frecuentemente en la rama principal del repositorio |
+
+---
+
 *Rogelio Arriaga Gonzalez*

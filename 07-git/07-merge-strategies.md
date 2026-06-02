@@ -215,4 +215,22 @@ git bisect run dotnet test --filter "FeatureName=UserAuth"
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Merge commit | Commit especial con dos padres que Git crea al integrar dos ramas con `--no-ff` |
+| Fast-forward | Integración de ramas sin crear merge commit cuando la rama destino no ha avanzado desde el punto de divergencia |
+| Squash merge | Integración que aplana todos los commits de la rama en uno solo antes de incorporarlos a la rama destino |
+| Rebase | Operación que reaplica los commits de una rama sobre la punta de otra, produciendo historia lineal y nuevos SHAs |
+| Rebase interactivo | Modo de `git rebase -i` que permite reordenar, unir, editar o eliminar commits antes del merge |
+| cherry-pick | Comando que copia un commit específico de cualquier rama a la rama actual creando un nuevo commit equivalente |
+| git bisect | Búsqueda binaria automatizada en el historial de commits para encontrar cuál introdujo un bug |
+| SHA | Identificador hexadecimal de 40 caracteres que Git calcula a partir del contenido de un commit |
+| git revert | Crea un nuevo commit que deshace los cambios de un commit anterior sin reescribir el historial |
+| fixup | Comando de rebase interactivo que combina el commit con el anterior descartando su mensaje |
+| Historia lineal | Historial de Git sin merge commits; producido por rebase o squash merge |
+
+---
+
 *Rogelio Arriaga Gonzalez*

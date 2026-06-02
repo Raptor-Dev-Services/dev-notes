@@ -412,6 +412,23 @@ docker build \
   -t back-template:latest .
 ```
 
+---
+
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Dockerfile | archivo de instrucciones que define cómo construir una imagen Docker capa por capa |
+| Multi-stage build | técnica que usa varias imágenes base en un Dockerfile; las etapas finales solo copian los artefactos necesarios |
+| Stage de build | fase del Dockerfile donde se compila el código usando la imagen SDK, que no llega a la imagen final |
+| `COPY --from` | instrucción que copia archivos de un stage anterior, permitiendo descartar el SDK en la imagen final |
+| .dockerignore | archivo que lista patrones de archivos y directorios que se excluyen del contexto de build |
+| Contexto de build | directorio que Docker envía al daemon al construir una imagen; debe mantenerse pequeño |
+| ARG | variable de build disponible solo durante la construcción de la imagen; no persiste en el contenedor |
+| ENV | variable de entorno disponible durante el build y en el contenedor en runtime |
+| ENTRYPOINT | comando principal que siempre se ejecuta al iniciar el contenedor |
+| BuildKit | motor moderno de build de Docker con soporte para caché de mounts, secretos y builds en paralelo |
+| noble-chiseled | variante de imagen ASP.NET sin shell ni herramientas de sistema; minimiza la superficie de ataque en producción |
 
 ---
 

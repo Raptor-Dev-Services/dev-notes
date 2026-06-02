@@ -361,4 +361,22 @@ public async Task<Result<ExampleUser>> RegisterAsync(string name, string email)
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Legibilidad | cualidad del código que permite entender su propósito sin necesidad de comentarios adicionales |
+| Nombre significativo | identificador que revela la intención del elemento que nombra sin abreviaciones ni vaguedad |
+| Función limpia | función que hace una sola cosa, en un solo nivel de abstracción, con argumentos mínimos |
+| Ley de Demeter | principio que establece que un objeto solo debe comunicarse con sus colaboradores directos |
+| Comentario redundante | comentario que repite lo que el código ya expresa claramente — debe eliminarse |
+| Nivel de abstracción | capa conceptual de un sistema; una función no debe mezclar niveles alto y bajo en el mismo cuerpo |
+| Alta cohesión | propiedad de una clase cuyos métodos son todos relevantes a una única responsabilidad |
+| Bajo acoplamiento | dependencia exclusiva a través de abstracciones (interfaces), no de implementaciones concretas |
+| Result Pattern | patrón para comunicar éxito o fallo sin usar excepciones para flujo de negocio |
+| Manejo de errores | estrategia para comunicar condiciones de fallo de forma explícita y tipada |
+| Magic string | literal de texto usada directamente en el código sin nombre ni constante que explique su significado |
+
+---
+
 *Rogelio Arriaga Gonzalez*

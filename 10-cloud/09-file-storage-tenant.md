@@ -413,4 +413,23 @@ public async Task CleanupOrphanedFilesAsync(CancellationToken ct)
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Presigned URL | URL temporal con firma criptográfica que otorga acceso a un objeto de S3 o Blob sin exponer credenciales |
+| Bucket | Contenedor lógico de objetos en Amazon S3; equivalente al contenedor de Azure Blob Storage |
+| Object key | Identificador único de un objeto dentro de un bucket de S3; actúa como ruta de archivo |
+| Path traversal | Ataque que usa secuencias como `../` en nombres de archivo para escapar del directorio permitido |
+| Content-Type | Cabecera HTTP que indica el tipo MIME del archivo (application/pdf, image/png, etc.) |
+| Cuota de storage | Límite de almacenamiento asignado a un tenant según su plan de suscripción |
+| IStorageService | Interfaz de abstracción que desacopla la lógica de negocio del proveedor de almacenamiento concreto |
+| Archivo huérfano | Objeto en S3 o Blob Storage cuyo registro en la base de datos fue eliminado o cuyo tenant fue desactivado |
+| SAS | Shared Access Signature; mecanismo de Azure Blob Storage equivalente a la presigned URL de S3 |
+| Upload directo | Patrón donde el cliente sube el archivo directamente a S3 usando una presigned URL, sin pasar por la API |
+| StoredFile | Entidad de dominio que registra los metadatos de un archivo subido (key, tenant, branch, tamaño, tipo) |
+| Sanitización | Proceso de validar y limpiar el nombre de archivo para eliminar caracteres peligrosos antes de usarlo como key |
+
+---
+
 *Rogelio Arriaga Gonzalez*

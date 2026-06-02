@@ -263,4 +263,22 @@ El flujo de desarrollo recomendado para nuevos casos de uso:
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| TDD (Test-Driven Development) | Metodología en la que el test se escribe antes que el código de producción, guiando el diseño |
+| Ciclo Red / Green / Refactor | Los tres pasos del TDD: test que falla → código mínimo para pasar → mejora del código |
+| RED | Primera fase del ciclo TDD: el test existe pero falla porque no hay código de producción que lo haga pasar |
+| GREEN | Segunda fase del ciclo TDD: se escribe el mínimo código necesario para que el test pase, sin buscar elegancia |
+| REFACTOR | Tercera fase del ciclo TDD: se mejora la estructura del código existente manteniendo todos los tests en verde |
+| Outside-In TDD | Variante de TDD que empieza por el test de integración (capa externa) y avanza hacia las capas internas |
+| Test de regresión | Test que reproduce un bug conocido; garantiza que el bug no vuelva a aparecer tras un cambio |
+| Código mínimo | Implementación que hace pasar el test con la menor complejidad posible, sin agregar funcionalidad no pedida |
+| YAGNI (You Aren't Gonna Need It) | Principio que prohíbe implementar funcionalidad que ningún test está pidiendo actualmente |
+| Cobertura de comportamiento | Enfoque de TDD en verificar comportamientos y casos de uso, no solo líneas de código |
+| Diseño emergente | Arquitectura que surge naturalmente del ciclo TDD al hacer el código testeable, en lugar de planificarse de antemano |
+
+---
+
 *Rogelio Arriaga Gonzalez*

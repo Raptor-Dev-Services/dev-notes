@@ -334,4 +334,21 @@ Conceptualmente, las migraciones de schema SQL son Mementos:
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Memento | Patrón conductual que guarda y restaura el estado de un objeto sin violar el encapsulamiento |
+| Originator | Objeto cuyo estado se quiere guardar; crea y restaura Mementos |
+| Caretaker | Objeto que gestiona la lista de Mementos sin leer su contenido; solo sabe cuándo guardar y restaurar |
+| `IMemento` | Interfaz del Memento que expone metadatos para el Caretaker (`GetName`, `GetDate`) pero no el estado interno |
+| Encapsulamiento | Principio que el Memento preserva: el Caretaker no puede leer ni modificar el estado interno del Memento |
+| Undo/Redo | Funcionalidad clásica implementada con Memento: pila de estados anteriores para deshacer y rehacer |
+| `EditorState` | Ejemplo del Memento como record inmutable — captura el estado del `TextEditor` en un instante |
+| Expresión `with` | En C# moderno, la forma idiomática de Prototype/Memento para records: genera una copia con campos modificados |
+| Migración SQL | Analogía del Memento en el proyecto: cada archivo de migración es un snapshot del estado del esquema de base de datos |
+| `Stack<T>` | Estructura de datos usada en el Caretaker para implementar Undo/Redo con acceso LIFO al historial |
+
+---
+
 *Rogelio Arriaga Gonzalez*

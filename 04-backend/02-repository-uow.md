@@ -431,4 +431,23 @@ catch
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Repository Pattern | Abstracción que desacopla el acceso a datos del dominio — la interfaz vive en Domain, la implementación en Infrastructure |
+| IExampleUserRepository | Interfaz de repositorio que define las operaciones de acceso a datos para ExampleUser |
+| ExampleUsersSql | Clase estática que centraliza las consultas SQL parametrizadas del repositorio |
+| Unit of Work | Patrón que agrupa varias operaciones en una transacción atómica — commit o rollback conjunto |
+| IUnitOfWork | Interfaz con BeginTransactionAsync, CommitAsync y RollbackAsync |
+| DapperUnitOfWork | Implementación de IUnitOfWork usando conexiones Dapper y transacciones ADO.NET |
+| AsNoTracking | Modificador de EF Core que evita el seguimiento de entidades para lecturas de solo lectura |
+| SaveChangesAsync | Método de DbContext que persiste todos los cambios trackeados en la base de datos |
+| DIP | Dependency Inversion Principle — las capas superiores dependen de abstracciones, no de implementaciones concretas |
+| Captive Dependency | Error donde un servicio Singleton retiene una dependencia Scoped, causando bugs de estado compartido |
+| Dapper | Micro-ORM liviano que mapea resultados SQL a objetos C# con mínima configuración |
+| DbContext | Clase de EF Core que representa la sesión con la base de datos y rastreo de cambios |
+
+---
+
 *Rogelio Arriaga Gonzalez*

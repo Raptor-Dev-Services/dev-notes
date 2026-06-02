@@ -124,4 +124,22 @@ app.MapControllers()
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| CORS | Cross-Origin Resource Sharing — mecanismo HTTP que controla qué dominios pueden hacer requests a la API |
+| Preflight | Request OPTIONS automático del navegador para verificar si el CORS policy permite la solicitud real |
+| Access-Control-Allow-Origin | Header de respuesta que indica qué origen tiene permiso para acceder al recurso |
+| AllowCredentials | Configuración CORS que permite enviar cookies y headers de autorización cross-origin |
+| SetIsOriginAllowed | Método para validar orígenes dinámicamente con una función — útil para subdomains de tenant |
+| WithOrigins | Método de CORS policy que especifica orígenes permitidos de forma explícita |
+| SpaPolicy | Nombre de convención para la política CORS destinada al frontend SPA (React/Vite) |
+| SetPreflightMaxAge | Configura cuánto tiempo puede el navegador cachear la respuesta del preflight OPTIONS |
+| UseCors | Middleware de ASP.NET que aplica la política CORS — debe ir antes de UseAuthentication |
+| AllowAnyHeader | Permite cualquier header en requests cross-origin — combinable con WithOrigins específicos |
+| CorsPolicyBuilder | Clase builder para construir configuraciones CORS de forma fluida en Program.cs |
+
+---
+
 *Rogelio Arriaga Gonzalez*

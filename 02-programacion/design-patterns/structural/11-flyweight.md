@@ -241,4 +241,21 @@ private const string GetByPublicIdSql = """
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Flyweight | Patrón estructural que reduce el uso de memoria compartiendo el estado común entre múltiples objetos en lugar de almacenarlo en cada instancia |
+| Estado intrínseco | Parte del estado del objeto que es inmutable y compartida entre todas las instancias del mismo tipo |
+| Estado extrínseco | Parte del estado que es única por instancia y se pasa como parámetro en cada operación, nunca almacenada en el Flyweight |
+| FlyweightFactory | Clase que gestiona el pool de flyweights: retorna uno existente si ya fue creado o crea uno nuevo si no existe |
+| Pool de objetos | Colección de instancias reutilizables que se gestionan para evitar la creación repetida de objetos costosos |
+| Presión en el GC | Cantidad de trabajo que el recolector de basura debe realizar; muchos objetos pequeños la aumentan |
+| `Dictionary<string, T>` | Estructura usada habitualmente como caché de flyweights en la FlyweightFactory |
+| Dapper query cache | Mecanismo implícito de Flyweight en Dapper: el texto SQL compilado (intrínseco) se reutiliza entre llamadas |
+| Optimización prematura | Anti-patrón de aplicar Flyweight sin necesidad real de ahorro de memoria |
+| Tradeoff CPU/RAM | El Flyweight reduce RAM al costo de mayor uso de CPU para buscar el flyweight en la factory |
+
+---
+
 *Rogelio Arriaga Gonzalez*

@@ -454,4 +454,23 @@ Common sirve a equipos que construyen SaaS multi-tenant con .NET, Postgres, Seq 
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| ITenantContextAccessor | Interfaz del Common que expone TenantId y BranchId del contexto actual de forma tipada |
+| AddMultiTenancy | Método de extensión del Common que registra todos los servicios de multi-tenancy en DI |
+| AddLoggingServices | Método del Common que configura Serilog con enriquecedores de tenant_id y branch_id |
+| AddObservability | Método del Common que configura OpenTelemetry con traces, métricas y logs exportados a Seq/OTLP |
+| ITenantExecutionContextRunner | Interfaz del Common para ejecutar código en el contexto de un tenant específico desde jobs |
+| IDapperSqlDbConnection | Interfaz del Common que abstrae la conexión Dapper con tenant context integrado |
+| AddTenantPropagation | Método del Common que propaga el TenantId a través de HttpClient en requests salientes |
+| NuGet package | Artefacto binario publicado en NuGet para reutilizar la librería Common entre proyectos |
+| Git Submodule | Forma alternativa de compartir el Common como referencia de código fuente en lugar de NuGet |
+| OpenTelemetry | Estándar de observabilidad para trazas, métricas y logs — integrado en el Common del stack |
+| Serilog | Librería de logging estructurado para .NET — enriquece logs con tenant_id, request_id y más |
+| ServiceCollectionExtensions | Patrón de extensión de IServiceCollection para agrupar registros DI por capa o módulo |
+
+---
+
 *Rogelio Arriaga Gonzalez*

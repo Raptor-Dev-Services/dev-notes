@@ -122,4 +122,21 @@ git stash push -a -m "todo incluyendo ignorados"
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| git stash | Comando que guarda los cambios no commiteados del working directory y staging en una pila temporal |
+| Pila de stash | Estructura LIFO (último en entrar, primero en salir) donde Git almacena las entradas de stash |
+| stash pop | Recupera y elimina el stash más reciente (o el especificado) de la pila aplicando sus cambios |
+| stash apply | Aplica el stash sin eliminarlo de la pila; útil para reproducir el mismo cambio en varias ramas |
+| stash drop | Elimina una entrada de la pila del stash sin aplicar sus cambios |
+| stash clear | Elimina todas las entradas de la pila del stash de forma irreversible |
+| Archivo untracked | Archivo nuevo que Git aún no rastrea; se incluye en el stash solo con la opción `-u` |
+| stash branch | Comando que crea una rama nueva desde el commit donde se creó el stash y aplica sus cambios |
+| Stash parcial | Técnica que guarda solo archivos o cambios seleccionados usando `-p` o especificando rutas explícitas |
+| Working directory | Estado del árbol de archivos del repositorio con los cambios no commiteados del desarrollador |
+
+---
+
 *Rogelio Arriaga Gonzalez*

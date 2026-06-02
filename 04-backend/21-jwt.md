@@ -516,4 +516,24 @@ Con JWKS, la rotación de claves es transparente:
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| JWT | JSON Web Token — token firmado digitalmente con header, payload y signature en Base64URL |
+| Claims | Pares clave-valor dentro del payload del JWT que describen al usuario y su contexto |
+| HMAC-SHA256 | Algoritmo de firma simétrica para JWT — usa la misma clave para firmar y verificar |
+| RS256 | Algoritmo de firma asimétrica RSA para JWT — clave privada firma, clave pública verifica |
+| ES256 | Algoritmo de firma asimétrica ECDSA para JWT — más corto y rápido que RS256 |
+| Refresh Token | Token de larga duración almacenado en DB que permite obtener nuevos access tokens sin re-autenticación |
+| Token Rotation | Estrategia donde cada uso del refresh token genera uno nuevo e invalida el anterior |
+| JWE | JSON Web Encryption — JWT con payload cifrado, no solo firmado |
+| JWKS | JSON Web Key Set — endpoint público que expone las claves públicas para verificar tokens RS256/ES256 |
+| TokenValidationParameters | Clase de .NET que configura las reglas de validación de JWT (issuer, audience, firma, expiración) |
+| Signature Stripping | Ataque donde se cambia el algoritmo del JWT a "none" para eludir la verificación de firma |
+| JWK | JSON Web Key — representación estándar de una clave criptográfica en formato JSON |
+| iss / sub / aud / exp | Claims estándar de JWT: emisor, sujeto, audiencia y tiempo de expiración |
+
+---
+
 *Rogelio Arriaga Gonzalez*

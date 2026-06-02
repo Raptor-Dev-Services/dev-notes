@@ -189,6 +189,22 @@ Luego crea los tests para ApproveOrderHandler.
 | dividir tareas grandes en pasos | pedir handler + tests + controller + migration en un solo prompt |
 | pedir solo el código cuando ya se entiende el diseño | pedir código antes de validar el diseño con el AI |
 
+---
+
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Prompt | instrucción o pregunta que se envía a un modelo de lenguaje para obtener una respuesta específica |
+| Prompt engineering | conjunto de técnicas para formular instrucciones que maximizan la calidad de la respuesta del modelo |
+| Shot prompting | técnica de incluir uno o más ejemplos completos en el prompt para que el modelo imite el patrón |
+| Zero-shot | prompt que no incluye ejemplos; el modelo infiere el comportamiento esperado solo del texto de la instrucción |
+| Contexto del prompt | información de fondo (arquitectura, convenciones, restricciones) que encuadra la tarea antes de describir qué hacer |
+| Role prompting | técnica de asignar un rol al modelo ("actúa como arquitecto senior") para orientar su perspectiva |
+| Chain of Thought | técnica que pide al modelo razonar paso a paso antes de dar la respuesta final, mejorando la precisión |
+| Anclaje de ejemplo | incluir un archivo o fragmento existente del proyecto como referencia para que el modelo siga el mismo estilo |
+| Restricción explícita | condición negativa en el prompt que delimita lo que el modelo NO debe cambiar o generar |
+| Hallucination | respuesta de un modelo que parece correcta pero contiene información falsa o código inventado |
 
 ---
 

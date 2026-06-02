@@ -223,4 +223,22 @@ No hay una clase IAbstractFactory explícita, pero el concepto aplica:
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Abstract Factory | Patrón creacional que provee una interfaz para crear familias de objetos relacionados sin especificar sus clases concretas |
+| Familia de productos | Conjunto de objetos relacionados o dependientes que están diseñados para trabajar juntos |
+| IAbstractFactory | Interfaz que declara los métodos de creación para cada tipo de producto de la familia |
+| ConcreteFactory | Implementación concreta que crea los productos de una familia específica |
+| IAbstractProduct | Interfaz común para un tipo de producto; cada variante de la familia la implementa |
+| Cliente | Código que usa la fábrica abstracta trabajando únicamente con interfaces — no con clases concretas |
+| Compatibilidad entre productos | Garantía de que los productos creados por la misma fábrica funcionan correctamente juntos |
+| IConfiguration | Interfaz de .NET que actúa conceptualmente como una Abstract Factory al proveer distintas "familias" de valores según el ambiente |
+| Ambiente de ejecución | Contexto (Development, Staging, Production) que determina qué variante de configuración o comportamiento se activa |
+| Principio de sustitución | Capacidad de intercambiar una fábrica concreta por otra sin cambiar el código cliente |
+| Extensión de fábrica | Proceso de agregar una nueva familia completa implementando la interfaz de la fábrica; requiere crear N clases nuevas |
+
+---
+
 *Rogelio Arriaga Gonzalez*

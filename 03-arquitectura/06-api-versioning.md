@@ -310,6 +310,22 @@ La plantilla actual usa `[Route("api/example/users")]` sin versionado explícito
 
 **Regla de compatibilidad:** agregar campos opcionales es backwards compatible. Renombrar, eliminar o cambiar la semántica de un campo requiere nueva versión.
 
+---
+
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| API versioning | práctica de mantener múltiples contratos de una API de forma simultánea para no romper clientes existentes |
+| Breaking change | cambio en el contrato de una API que rompe la compatibilidad con clientes que usan la versión anterior |
+| URL versioning | estrategia que incluye la versión en la ruta: `/api/v1/resource` |
+| Header versioning | estrategia que usa un header HTTP para indicar la versión solicitada: `api-version: 2.0` |
+| Backwards compatible | cambio que no rompe clientes existentes; agregar campos opcionales es el caso típico |
+| Deprecación | proceso formal de anunciar que una versión dejará de ser soportada en una fecha futura |
+| Sunset header | header HTTP que comunica la fecha en que una versión deprecada dejará de estar disponible |
+| Asp.Versioning | librería NuGet oficial de Microsoft para gestionar versionado de API en ASP.NET Core |
+| Multi-versión Swagger | configuración de Swagger/OpenAPI que genera un documento de especificación independiente por versión |
+| Contrato de API | definición formal de los endpoints, tipos de datos y comportamiento que los clientes pueden asumir |
 
 ---
 

@@ -382,3 +382,24 @@ El back-template implementa este patrón con:
 - Tests de arquitectura con `NetArchTest.Rules` — verifican las fronteras en CI
 
 Ver `CLAUDE.md` del back-template para las reglas de implementación específicas.
+
+---
+
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Monolito Modular | arquitectura donde el sistema se despliega como una sola unidad pero el código está organizado en módulos con fronteras bien definidas |
+| Bounded Context | límite dentro del cual un modelo de dominio es válido; cada módulo del monolito representa un Bounded Context |
+| Integration Event | mensaje que cruza la frontera entre módulos o servicios; no es un Domain Event — es un contrato de integración |
+| Contracts project | proyecto `.Contracts` que expone los DTOs e interfaces públicas de un módulo; es el único punto de entrada para otros módulos |
+| Composition Root | punto único donde se registran todas las dependencias del sistema; en el monolito modular es `Host.Api` |
+| AppDbContext compartido | único DbContext que agrupa las entidades de todos los módulos, con schemas SQL separados por módulo |
+| Schema SQL por módulo | agrupación de tablas bajo un schema de PostgreSQL/SQL Server (`products.items`, `baskets.items`) para evitar colisiones |
+| Mediator in-memory | bus de mensajes que opera dentro del mismo proceso; permite que los módulos se comuniquen sin acoplamiento directo |
+| Test de arquitectura | prueba automatizada que verifica las reglas de dependencia entre capas o módulos con herramientas como NetArchTest |
+| Strangler Fig | patrón para extraer un módulo del monolito a microservicio de forma incremental, redirigiendo el tráfico gradualmente |
+
+---
+
+*Rogelio Arriaga Gonzalez*

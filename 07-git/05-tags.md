@@ -126,4 +126,21 @@ git push origin --delete release/1.3.0
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Tag | Referencia inmutable en Git que apunta a un commit específico, usada para marcar versiones de release |
+| Tag anotado | Tag que es un objeto Git completo con autor, fecha, mensaje y opcionalmente firma GPG; recomendado para releases |
+| Tag ligero | Alias simple a un commit sin metadatos adicionales; adecuado para marcadores temporales de uso local |
+| --follow-tags | Opción de `git push` que envía al remoto solo los tags anotados que apuntan a commits del push actual |
+| Detached HEAD | Estado de Git donde el puntero HEAD apunta a un commit directamente en lugar de a una rama |
+| SemVer tag | Tag de Git con prefijo `v` que sigue el formato `vMAJOR.MINOR.PATCH` (ej. `v1.3.0`) |
+| git tag -a | Comando para crear un tag anotado especificando el mensaje con `-m` |
+| git show | Comando que muestra los metadatos de un tag anotado y los cambios del commit al que apunta |
+| Release | Versión de software marcada con un tag anotado que puede disparar el pipeline de CD |
+| Hotfix tag | Tag creado desde una rama `hotfix/*` que incrementa el PATCH de la versión (ej. `v1.2.1`) |
+
+---
+
 *Rogelio Arriaga Gonzalez*

@@ -134,4 +134,20 @@ Los secretos reales van en variables de entorno sin prefijo `VITE_` — accesibl
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Variable de entorno | valor de configuración externo al código fuente que cambia según el ambiente de ejecución |
+| Prefijo VITE_ | convención de Vite que determina qué variables de entorno se incrustan en el bundle del navegador |
+| `import.meta.env` | objeto de Vite que expone las variables de entorno con prefijo `VITE_` en tiempo de compilación |
+| `.env.local` | archivo de variables de entorno específico de la máquina del desarrollador; nunca se sube al repositorio |
+| Tree shaking | técnica del bundler que elimina código no referenciado; las variables no incrustadas no llegan al bundle |
+| `ImportMetaEnv` | interfaz TypeScript que tipifica las variables de entorno de Vite para obtener autocompletar en el editor |
+| Bundle | archivo JavaScript comprimido y optimizado que Vite genera para el navegador durante el build de producción |
+| Secret leak | filtración accidental de credenciales en el código o en el bundle del navegador |
+| Modo de Vite | contexto de ejecución (`development`, `staging`, `production`) que determina qué archivo `.env` se carga |
+
+---
+
 *Rogelio Arriaga Gonzalez*

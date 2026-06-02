@@ -387,4 +387,23 @@ public async Task GetById_ExistingUser_MatchesSnapshot()
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Test de integración | Test que verifica la interacción entre múltiples componentes o capas del sistema de forma conjunta |
+| `WebApplicationFactory<T>` | Clase de ASP.NET Core Testing que levanta toda la aplicación en memoria para tests HTTP |
+| `TestServer` | Servidor HTTP en memoria que `WebApplicationFactory` crea internamente para procesar requests |
+| `HttpClient` de test | Cliente HTTP obtenido de `CreateClient()` que envía requests directamente al `TestServer` sin red |
+| `IClassFixture<T>` | Interfaz xUnit que comparte una instancia (ej. `WebAppFixture`) entre todos los métodos de la clase |
+| `ConfigureWebHost` | Método override de `WebApplicationFactory` para sobreescribir servicios y configuración en el entorno de test |
+| Datos de semilla (seed) | Registros insertados en la DB de test antes de los tests para garantizar un estado inicial conocido |
+| `[Trait]` | Atributo xUnit para clasificar tests con metadatos (Category, Slow, etc.) y filtrarlos en CI |
+| Snapshot testing | Técnica que guarda la respuesta esperada en un archivo y compara contra él en ejecuciones posteriores |
+| JWT de test | Token generado con una clave simétrica conocida para autenticar requests en integration tests |
+| `ON CONFLICT DO NOTHING` | Cláusula SQL para insertar datos de semilla de forma idempotente sin error si ya existen |
+| Rollback de transacción | Técnica de limpieza de tests: revertir todos los cambios de un test al finalizar usando una transacción |
+
+---
+
 *Rogelio Arriaga Gonzalez*

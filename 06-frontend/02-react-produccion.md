@@ -299,4 +299,21 @@ const onHover = () => {
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Code splitting | técnica que divide el bundle en fragmentos más pequeños que se cargan bajo demanda, reduciendo el tiempo de carga inicial |
+| Lazy loading | carga diferida de un componente o módulo hasta que es realmente necesario |
+| React.Suspense | componente que muestra un fallback mientras el componente hijo se está cargando de forma asíncrona |
+| TanStack Query | librería de gestión de estado asíncrono para React que maneja caché, sincronización y revalidación de datos del servidor |
+| Optimistic update | técnica que actualiza la UI inmediatamente antes de recibir la confirmación del servidor, mejorando la percepción de velocidad |
+| staleTime | configuración de TanStack Query que define cuánto tiempo se considera fresco un dato antes de revalidarlo |
+| Error Boundary | componente de React que captura errores de sus hijos y muestra una UI de error en lugar de colapsar la aplicación |
+| i18n | internacionalización — preparación del código para soportar múltiples idiomas y regiones |
+| date-fns | librería modular de manipulación de fechas para JavaScript, más ligera que Moment.js |
+| Prefetch | carga anticipada de datos que el usuario probablemente necesitará pronto, antes de que los solicite explícitamente |
+
+---
+
 *Rogelio Arriaga Gonzalez*

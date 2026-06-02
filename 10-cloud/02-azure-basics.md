@@ -149,4 +149,24 @@ El back-template funciona sin cambios en Azure: el `Dockerfile` se construye igu
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Resource Group | Contenedor lógico en Azure que agrupa recursos relacionados para gestión y facturación conjunta |
+| Subscription | Unidad de facturación y acceso en Azure; equivalente a una cuenta AWS |
+| App Service Plan | Define la capacidad (SKU, vCPU, RAM) que comparten una o varias Web Apps |
+| App Service | Servicio PaaS de Azure para ejecutar aplicaciones web y contenedores sin gestionar VMs |
+| ACR | Azure Container Registry; registro privado de imágenes Docker alojado en Azure |
+| Azure Blob Storage | Almacenamiento de objetos no estructurados en Azure; equivalente a Amazon S3 |
+| PostgreSQL Flexible Server | Servicio gestionado de PostgreSQL en Azure con opciones de escalado y alta disponibilidad |
+| Managed Identity | Identidad asignada a un servicio de Azure que permite acceder a otros recursos sin credenciales estáticas |
+| Entra ID | Servicio de gestión de identidades y accesos de Azure (anteriormente Azure Active Directory) |
+| Service Principal | Identidad de aplicación en Entra ID equivalente a un usuario IAM para cargas de trabajo automatizadas |
+| RBAC | Control de acceso basado en roles; mecanismo para asignar permisos sobre recursos de Azure |
+| SKU | Stock Keeping Unit; nivel de servicio que determina capacidad y precio (B1, B2, P1v3, etc.) |
+| az CLI | Herramienta de línea de comandos para gestionar recursos de Azure desde terminal |
+
+---
+
 *Rogelio Arriaga Gonzalez*

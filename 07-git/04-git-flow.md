@@ -197,4 +197,22 @@ public async Task<GetExampleUserResponse> Handle(
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Git Flow | Estrategia de ramas que define roles claros para `main`, `develop`, `feature/*`, `release/*` y `hotfix/*` |
+| main | Rama permanente que contiene únicamente el código en producción; recibe merges de release y hotfix |
+| develop | Rama permanente de integración donde confluyen todas las features completadas |
+| feature branch | Rama temporal para desarrollar una funcionalidad específica; se crea desde `develop` y se merge a `develop` |
+| release branch | Rama temporal para preparar una versión; acepta solo fixes menores y bump de versión antes del merge a `main` |
+| hotfix branch | Rama temporal creada directamente desde `main` para corregir un defecto crítico en producción |
+| --no-ff | Opción de `git merge` que fuerza la creación de un merge commit aunque el fast-forward sea posible |
+| fast-forward | Merge que avanza el puntero de la rama destino sin crear un commit adicional porque no hay divergencia |
+| Trunk-based development | Alternativa a Git Flow donde todos trabajan sobre la rama principal con ramas de corta duración |
+| Feature flag | Mecanismo para activar o desactivar código en producción sin desplegar, clave en trunk-based development |
+| Branch protection | Regla en GitHub/Azure DevOps que requiere PR aprobada y checks de CI antes de hacer merge a `main` |
+
+---
+
 *Rogelio Arriaga Gonzalez*

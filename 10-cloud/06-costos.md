@@ -173,4 +173,23 @@ aws organizations create-account \
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| On-Demand | Modelo de precio de EC2 donde se paga por hora sin compromiso; referencia para calcular ahorros de otros modelos |
+| Reserved Instances | Compromiso de uso de EC2 por 1 o 3 años a cambio de descuentos de hasta el 60% sobre On-Demand |
+| Savings Plans | Compromiso de gasto mínimo por hora (más flexible que Reserved Instances) que aplica a EC2, Fargate y Lambda |
+| Spot Instances | Instancias EC2 con descuentos de hasta el 90%; pueden interrumpirse con aviso de 2 minutos |
+| Rightsizing | Proceso de ajustar el tipo de instancia al uso real medido para eliminar capacidad innecesaria |
+| Cost Explorer | Herramienta de AWS para visualizar y analizar el gasto histórico por servicio, cuenta o etiqueta |
+| AWS Budgets | Servicio que genera alertas cuando el gasto real o proyectado supera un umbral definido |
+| Trusted Advisor | Servicio de AWS que audita la cuenta y genera recomendaciones de costo, seguridad y rendimiento |
+| Elastic IP | Dirección IP pública estática en AWS que genera costo cuando no está asociada a una instancia en ejecución |
+| NAT Gateway | Componente de VPC que permite a subredes privadas acceder a internet; tiene costo por hora más transferencia |
+| Cost Allocation Tags | Etiquetas de recursos habilitadas en la consola de facturación para segmentar costos por proyecto o ambiente |
+| AWS Organizations | Servicio para gestionar múltiples cuentas AWS bajo una facturación consolidada con políticas de control de servicio |
+
+---
+
 *Rogelio Arriaga Gonzalez*

@@ -343,4 +343,23 @@ Ver `03-arquitectura/09-modular-monolith.md` para cómo el tenant se propaga a t
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Multi-tenancy | Arquitectura donde una sola instancia del software sirve a múltiples clientes (tenants) con datos aislados |
+| Tenant | Cliente o empresa que utiliza el SaaS — sus datos están aislados de los demás tenants |
+| tenant_id | Identificador único del tenant almacenado en cada fila de la base de datos para el filtrado |
+| Row-Level Security | Estrategia de aislamiento donde cada fila tiene un tenant_id y los filtros garantizan el aislamiento |
+| ITenantContextAccessor | Interfaz que provee el TenantId del contexto actual de ejecución |
+| TenantContextAccessor | Implementación de ITenantContextAccessor usando AsyncLocal para seguridad en contextos asíncronos |
+| TenantClaimsMiddleware | Middleware que extrae tenant_id del JWT y lo establece en el contexto de ejecución |
+| Global Query Filter | Filtro automático de EF Core que añade WHERE tenant_id = @current a todas las queries |
+| AsyncLocal | Almacenamiento por contexto de ejecución asíncrona — permite aislar el TenantId por request |
+| Shared Database | Estrategia de multi-tenancy donde todos los tenants comparten la misma base de datos e instancia |
+| IgnoreQueryFilters | Método para deshabilitar los filtros globales en casos como login o consultas cross-tenant del super-admin |
+| Subdomain Routing | Estrategia de identificación del tenant por subdominio (alfacorp.misaas.com) en lugar de en el JWT |
+
+---
+
 *Rogelio Arriaga Gonzalez*

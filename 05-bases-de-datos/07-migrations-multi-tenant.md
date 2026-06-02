@@ -334,4 +334,21 @@ protected override void Up(MigrationBuilder migrationBuilder)
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Migración | cambio versionado de esquema de base de datos que EF Core puede aplicar y revertir de forma controlada |
+| Migración aditiva | migración que solo agrega columnas, tablas o índices sin modificar los existentes — compatible con el código anterior |
+| Breaking migration | migración que elimina o renombra columnas usadas por el código anterior, requiriendo coordinación con el deploy |
+| Backfill | migración de datos que rellena columnas nuevas con valores derivados de datos existentes |
+| __EFMigrationsHistory | tabla que EF Core mantiene en la base de datos con el registro de las migraciones aplicadas |
+| Zero-downtime migration | estrategia de tres fases (agregar, migrar datos, eliminar lo viejo) que permite cambios de esquema sin interrumpir el servicio |
+| CONCURRENTLY | cláusula de PostgreSQL para crear índices sin bloquear lecturas ni escrituras mientras se construye el índice |
+| lock_timeout | configuración de PostgreSQL que cancela una operación si no puede adquirir el lock requerido en el tiempo especificado |
+| Global Query Filter | filtro aplicado automáticamente por EF Core a todas las queries de una entidad (ej. `WHERE tenant_id = @current`) |
+| ITenantContextAccessor | interfaz que provee el `TenantId` del request actual para usarlo en filtros de consulta multi-tenant |
+
+---
+
 *Rogelio Arriaga Gonzalez*

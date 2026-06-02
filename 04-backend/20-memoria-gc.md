@@ -440,4 +440,23 @@ builder.Services.AddOpenTelemetry()
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Garbage Collector | Componente del runtime de .NET que gestiona la memoria automáticamente liberando objetos sin referencias |
+| Generaciones | División del heap en Gen 0, Gen 1 y Gen 2 según la edad y supervivencia de los objetos |
+| Gen 0 | Generación donde se alocan los objetos nuevos — la GC collection más frecuente y barata |
+| Large Object Heap | Segmento del heap para objetos mayores a 85 KB — raramente compactado, propenso a fragmentación |
+| IDisposable | Interfaz que implementan los objetos con recursos no administrados para liberarlos en Dispose() |
+| IAsyncDisposable | Variante asíncrona de IDisposable para recursos que requieren liberación asíncrona (streams, conexiones) |
+| WeakReference\<T\> | Referencia que no impide al GC recolectar el objeto — útil para cachés que ceden memoria bajo presión |
+| ObjectPool\<T\> | Pool de objetos para reutilizar instancias costosas de crear y evitar presión en el GC |
+| ArrayPool\<T\> | Pool de arrays para reutilizar buffers y evitar allocations en el LOH |
+| Memory Leak | Situación donde la memoria crece indefinidamente porque objetos no se liberan correctamente |
+| Captive Dependency | Singleton que retiene una dependencia Scoped, causando que el Scoped nunca sea recolectado |
+| Finalizador | Método llamado por el GC antes de recolectar un objeto — usar solo como salvaguarda, preferir Dispose() |
+
+---
+
 *Rogelio Arriaga Gonzalez*

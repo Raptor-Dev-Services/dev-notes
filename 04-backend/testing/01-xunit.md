@@ -285,4 +285,23 @@ dotnet test --collect:"XPlat Code Coverage"
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| `[Fact]` | Atributo xUnit para un test con un único caso concreto, sin parámetros |
+| `[Theory]` | Atributo xUnit para un test parametrizado que se ejecuta con múltiples conjuntos de datos |
+| `[InlineData]` | Atributo que provee datos literales inline a un `[Theory]` |
+| `[MemberData]` | Atributo que provee datos complejos a un `[Theory]` desde un método o propiedad estática |
+| Arrange / Act / Assert | Patrón de estructura de tests: preparar escenario, ejecutar acción y verificar resultado |
+| FluentAssertions | Librería que reemplaza `Assert.*` con una sintaxis encadenada más legible en inglés natural |
+| `IClassFixture<T>` | Interfaz xUnit que comparte una instancia de fixture entre todos los métodos de una clase de test |
+| `IAsyncLifetime` | Interfaz xUnit para setup y teardown asíncronos (`InitializeAsync` / `DisposeAsync`) |
+| Fixture | Objeto compartido que encapsula recursos costosos (contenedores, conexiones) para reutilizarlos entre tests |
+| Suite de tests | Conjunto organizado de tests agrupados por clase, módulo o categoría |
+| Cobertura de código | Métrica que indica qué porcentaje de las líneas de producción son ejecutadas por los tests |
+| `--filter` | Argumento de `dotnet test` para ejecutar un subconjunto de tests según nombre o trait |
+
+---
+
 *Rogelio Arriaga Gonzalez*

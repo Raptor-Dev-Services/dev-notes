@@ -459,4 +459,22 @@ public sealed class GetProductHandler
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Interfaz | Contrato que define los métodos y propiedades que debe implementar cualquier clase que la adopte, sin especificar el cómo |
+| Convención de nombres | Las interfaces en C# se nombran con el prefijo `I` seguido de un sustantivo o adjetivo: `IRepository`, `IDisposable` |
+| Implementación explícita | Técnica para implementar un método de interfaz de forma que solo sea accesible al hacer cast al tipo de la interfaz |
+| `IDisposable` | Interfaz estándar de .NET para liberar recursos no administrados; se usa con la instrucción `using` |
+| `IEnumerable<T>` | Interfaz estándar de .NET para tipos iterables con `foreach`; base de LINQ y las colecciones del proyecto |
+| Default interface method | Funcionalidad de C# 8+ que permite agregar métodos con implementación a una interfaz sin romper implementaciones existentes |
+| Segregación de interfaces | Principio (ISP) que indica que las interfaces deben ser pequeñas y especializadas en lugar de grandes y genéricas |
+| Marker interface | Interfaz vacía usada solo para marcar que un tipo pertenece a una categoría (ej: `ISuccess`, `IResponse`) |
+| `IExampleUserRepository` | Interfaz del proyecto que declara el contrato del repositorio de usuarios en la capa Domain |
+| Desacoplamiento | Propiedad lograda al inyectar interfaces en lugar de clases concretas, permitiendo cambiar implementaciones sin afectar al cliente |
+| Clase abstracta vs interfaz | La clase abstracta puede tener estado, constructor y lógica compartida; la interfaz define capacidades sin implementación |
+
+---
+
 *Rogelio Arriaga Gonzalez*

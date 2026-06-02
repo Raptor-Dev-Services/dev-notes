@@ -124,4 +124,21 @@ La memoria se usa automáticamente — el AI la carga al inicio de cada sesión 
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Ventana de contexto | cantidad máxima de tokens que un modelo de lenguaje puede procesar en una sola llamada |
+| Token | unidad mínima de procesamiento de un LLM; aproximadamente 4 caracteres en inglés o 3 en español |
+| Context drift | degradación de la coherencia del AI cuando la ventana de contexto se llena o la sesión es muy larga |
+| CLAUDE.md | archivo de instrucciones del proyecto que Claude carga automáticamente al inicio de cada sesión |
+| AGENTS.md | variante de CLAUDE.md compatible con otros agentes de AI como Cursor, Copilot Workspace y Codex |
+| /clear | comando de Claude Code que reinicia la conversación descartando el historial acumulado |
+| Caché de prompts | mecanismo de Claude que reutiliza el prefijo del contexto entre mensajes para reducir latencia y costo |
+| Memoria persistente | sistema de archivos en `~/.claude/projects/` donde Claude guarda contexto específico del proyecto entre sesiones |
+| Checkpoint semántico | commit de git que sirve como punto de retorno seguro para una sesión de trabajo con el agente |
+| System prompt | instrucciones fijas que preceden al historial de mensajes y definen el comportamiento del modelo en toda la sesión |
+
+---
+
 *Rogelio Arriaga Gonzalez*

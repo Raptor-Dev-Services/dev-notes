@@ -463,4 +463,22 @@ public ValueTask<ExampleUser?> GetFromCache(Guid id)
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Programación asíncrona | Modelo de ejecución donde las operaciones de I/O no bloquean el hilo mientras esperan; el hilo queda libre para atender otras peticiones |
+| `async` | Modificador de método que permite usar `await` dentro de él; indica que el método puede retornar un `Task` |
+| `await` | Operador que suspende la ejecución del método hasta que el `Task` termine, sin bloquear el hilo |
+| `Task` | Representa una operación asíncrona sin valor de retorno; equivalente async de `void` |
+| `Task<T>` | Representa una operación asíncrona que eventualmente devuelve un valor de tipo T |
+| `CancellationToken` | Mecanismo para cancelar operaciones asíncronas en curso; se propaga por toda la cadena de llamadas |
+| `CancellationTokenSource` | Objeto que crea y controla un `CancellationToken`; llamar `Cancel()` cancela todas las operaciones que usan su token |
+| `ValueTask<T>` | Alternativa a `Task<T>` optimizada para operaciones que frecuentemente retornan de forma sincrónica (sin allocación de heap) |
+| `ConfigureAwait(false)` | Indica que la continuación no necesita regresar al contexto original de sincronización; útil en librerías |
+| `async void` | Anti-patrón: las excepciones no se pueden capturar; solo se acepta en event handlers de UI |
+| Pool de hilos | Conjunto de hilos gestionados por el runtime de .NET que se reutilizan para ejecutar operaciones asíncronas |
+
+---
+
 *Rogelio Arriaga Gonzalez*

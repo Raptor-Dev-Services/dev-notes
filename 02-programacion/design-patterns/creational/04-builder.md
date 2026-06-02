@@ -266,4 +266,22 @@ app.UseAuthentication()
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Builder | Patrón creacional que permite construir objetos complejos paso a paso usando el mismo proceso para distintas representaciones |
+| Director | Clase que define el orden en que se ejecutan los pasos del builder para producir configuraciones específicas del producto |
+| ConcreteBuilder | Implementación que sabe cómo construir y ensamblar las partes de un producto específico |
+| Fluent Builder | Variante del Builder donde cada método retorna `this` para permitir el encadenamiento de llamadas |
+| Constructor telescópico | Anti-patrón donde un constructor acumula decenas de parámetros opcionales, haciéndose ilegible |
+| `WebApplicationBuilder` | Implementación del patrón Builder en ASP.NET Core usada en `Program.cs` para configurar la aplicación |
+| `NpgsqlDataSourceBuilder` | Builder de Npgsql que permite configurar la fuente de datos de PostgreSQL paso a paso |
+| `builder.Build()` | Llamada equivalente al método `GetProduct()` — materializa el objeto completamente configurado |
+| Object initializer | Alternativa de C# a un Builder simple: `new Clase { Prop1 = val1, Prop2 = val2 }` |
+| Pipeline de middleware | Secuencia de componentes de ASP.NET Core configurada mediante llamadas encadenadas — Builder implícito |
+| Producto | El objeto complejo que resulta del proceso de construcción dirigido por el Builder |
+
+---
+
 *Rogelio Arriaga Gonzalez*

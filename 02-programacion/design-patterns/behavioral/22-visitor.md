@@ -321,4 +321,21 @@ Si **las operaciones** cambian frecuentemente → Usar Visitor (agregar operaci�
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Visitor | Patrón conductual que separa algoritmos de los objetos sobre los que operan, permitiendo agregar operaciones sin modificar las clases |
+| Double dispatch | Mecanismo clave del Visitor: la ejecución correcta se determina por el tipo del componente Y por el tipo del visitor en dos despachos |
+| `Accept(IVisitor)` | Método que cada componente implementa para "recibir" al visitor y llamar al método correspondiente |
+| `Visit*(ConcreteComponent)` | Métodos del visitor: uno por cada tipo concreto de componente en la jerarquía |
+| IVisitor | Interfaz que declara un método `Visit` por cada tipo concreto de componente en la jerarquía |
+| AST (Abstract Syntax Tree) | Caso de uso clásico del Visitor: cada nodo del árbol de expresiones llama `Accept` y el visitor recorre el árbol |
+| Pattern matching como Visitor | En C# moderno, el `switch` sobre tipos concretos es un Visitor implícito sin las clases adicionales |
+| `IExpressionVisitor<T>` | Visitor genérico que permite aplicar diferentes operaciones (evaluar, imprimir) sobre el mismo árbol de expresiones |
+| Estabilidad de tipos vs operaciones | Usar Visitor cuando las operaciones cambian frecuentemente (nuevas operaciones = nuevo Visitor); evitarlo si los tipos cambian frecuentemente |
+| Presenters como Visitors | En el proyecto, el Presenter visita cada tipo concreto de respuesta con `is INotFoundFailure`, `is ISuccess<T>` — Visitor implícito |
+
+---
+
 *Rogelio Arriaga Gonzalez*

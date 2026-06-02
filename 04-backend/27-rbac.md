@@ -381,4 +381,23 @@ Ver `04-backend/28-user-invitation.md` para cómo se asigna el rol al invitar us
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| RBAC | Role-Based Access Control — modelo de autorización donde los permisos se asignan a roles, no a usuarios |
+| ClaimTypes.Role | Claim estándar de .NET que almacena el rol del usuario en el JWT — usado por [Authorize(Roles = "...")] |
+| Authorize | Atributo de ASP.NET Core que protege endpoints requiriendo autenticación y/o roles específicos |
+| Resource-Based Authorization | Verificación de autorización que considera el recurso específico además del rol — necesaria para datos de tenant |
+| SystemRoles | Constantes que definen los roles disponibles en el sistema: SuperAdmin, Admin, Manager, Member |
+| SuperAdmin | Rol especial del equipo del SaaS con acceso cross-tenant — nunca asignado a usuarios de un tenant |
+| Flat Roles | Modelo de roles sin jerarquía donde cada rol es independiente — Admin no hereda permisos de Member |
+| Hierarchical Roles | Modelo de roles con herencia donde un rol superior incluye los permisos de los roles inferiores |
+| ChangeUserRole | Caso de uso que cambia el rol de un usuario dentro del mismo tenant |
+| Policy | Configuración de autorización en ASP.NET Core que puede combinar roles, claims y requisitos personalizados |
+| IAuthorizationService | Servicio de ASP.NET Core para verificar autorización de forma programática — usado en resource-based auth |
+| Tenant-scoped role | Rol que aplica solo dentro del contexto de un tenant — un usuario puede ser Admin en un tenant y Member en otro |
+
+---
+
 *Rogelio Arriaga Gonzalez*

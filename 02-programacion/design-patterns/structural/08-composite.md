@@ -236,4 +236,21 @@ builder.Services.AddWebApiServices();         // agrega hojas de WebApi
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Composite | Patrón estructural que permite componer objetos en estructuras de árbol y tratarlos uniformemente como objetos individuales |
+| Componente (Component) | Interfaz o clase base común para hojas y composites que define las operaciones disponibles para todos |
+| Hoja (Leaf) | Elemento terminal del árbol que no tiene hijos y realiza el trabajo real cuando se llama su operación |
+| Composite (nodo) | Elemento del árbol que puede contener hijos (hojas u otros composites) y delega las operaciones a ellos |
+| Jerarquía parte-todo | Estructura donde un objeto puede contener otros objetos del mismo tipo (árbol, sistema de archivos, menú) |
+| Recursión | Mecanismo por el que el Composite ejecuta su operación llamando la misma operación en cada hijo sucesivamente |
+| Tratamiento uniforme | Propiedad clave del Composite: el cliente usa la misma interfaz para hojas y composites sin distinguir tipos |
+| `IDiscount` | Ejemplo del proyecto donde `CompositeDiscount` agrupa múltiples descuentos tratándolos uniformemente |
+| Pipeline de middleware | Estructura Composite implícita de ASP.NET Core donde cada middleware es una hoja y el pipeline los contiene |
+| `IServiceProvider` | Contenedor de DI que resuelve recursivamente la jerarquía de dependencias — Composite implícito |
+
+---
+
 *Rogelio Arriaga Gonzalez*

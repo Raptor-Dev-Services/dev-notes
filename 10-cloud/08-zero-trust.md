@@ -287,4 +287,23 @@ public sealed class ProcessPaymentHandler
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Zero Trust | Modelo de seguridad basado en "nunca confiar, siempre verificar"; ningún usuario o servicio recibe acceso implícito |
+| Least Privilege | Principio de otorgar solo los permisos mínimos necesarios para realizar una tarea específica |
+| mTLS | Mutual TLS; extensión de TLS donde tanto cliente como servidor presentan y validan sus certificados |
+| Modelo perimetral | Arquitectura de seguridad tradicional que confía en todo el tráfico dentro del firewall interno |
+| Asumir Breach | Principio de diseñar el sistema como si un atacante ya estuviera dentro de la red |
+| Micro-segmentación | División de la red interna en segmentos pequeños con controles de acceso independientes entre ellos |
+| Security Group | Firewall virtual en AWS que controla el tráfico entrante y saliente de recursos como EC2 o ECS |
+| Policy granular | Política de autorización definida por operación específica (orders:read, orders:write) en lugar de rol amplio |
+| CA interna | Autoridad certificadora propia de la organización que emite certificados para la autenticación entre servicios |
+| Thumbprint | Huella digital única de un certificado X.509 utilizada para identificarlo sin exponer su contenido |
+| Claim de permiso | Valor dentro de un JWT que indica una capacidad específica del portador (ej. `permission: orders:write`) |
+| UEBA | User and Entity Behavior Analytics; análisis de comportamiento para detectar anomalías de acceso |
+
+---
+
 *Rogelio Arriaga Gonzalez*

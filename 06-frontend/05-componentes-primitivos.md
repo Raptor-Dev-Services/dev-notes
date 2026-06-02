@@ -207,4 +207,21 @@ Cada página es un chunk separado. El `<Suspense>` muestra un spinner mientras c
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Componente primitivo | bloque de construcción reutilizable de bajo nivel (Button, FormField, Modal) sin lógica de negocio |
+| Composición de componentes | patrón donde un componente complejo se construye combinando primitivos en lugar de heredar de ellos |
+| Prop drilling | pasar props a través de múltiples niveles de componentes intermedios que no las usan; señal de que se necesita contexto o composición |
+| `children` prop | mecanismo de React para pasar contenido arbitrario a un componente como si fuera un slot |
+| Portal | mecanismo de React (`createPortal`) que renderiza un hijo en un nodo del DOM fuera de la jerarquía del componente padre |
+| Suspense | componente de React que muestra un fallback mientras un hijo cargado de forma asíncrona no está listo |
+| Lazy loading | carga diferida con `React.lazy` que convierte una página en un chunk separado cargado solo cuando se navega a ella |
+| Headless UI | librería de componentes accesibles sin estilos predefinidos, diseñada para usarse con Tailwind CSS |
+| FormField | componente primitivo que agrupa un label, un input y un mensaje de error con accesibilidad correcta |
+| Toast | notificación temporal que aparece brevemente en la pantalla para confirmar una acción o mostrar un error |
+
+---
+
 *Rogelio Arriaga Gonzalez*

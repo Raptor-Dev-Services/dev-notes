@@ -233,4 +233,23 @@ public sealed class MainDapperDbConnection
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Factory Method | Patrón creacional que define una interfaz para crear objetos pero deja a las subclases decidir qué clase instanciar |
+| Creator | Clase base abstracta que declara el factory method y contiene el algoritmo que usa el producto |
+| ConcreteCreator | Subclase que sobreescribe el factory method para retornar un tipo concreto de producto |
+| IProduct | Interfaz común que todos los productos creados por el factory method deben implementar |
+| Acoplamiento | Grado de dependencia entre clases; un acoplamiento alto dificulta el mantenimiento y el testing |
+| Open/Closed Principle | Principio que establece que el código debe estar abierto para extensión pero cerrado para modificación |
+| Delegación | Técnica en la que una clase cede parte de su responsabilidad a otra clase u objeto |
+| Instanciación | Proceso de crear un objeto concreto a partir de una clase en tiempo de ejecución |
+| `MainDbConnectionFactory` | Clase del proyecto que encapsula la creación de conexiones Npgsql mediante un factory method (`OpenConnection()`) |
+| Encapsulamiento | Principio de ocultar los detalles de implementación dentro de una clase y exponer solo una interfaz pública |
+| Polimorfismo | Capacidad de un mismo método o interfaz de comportarse de manera diferente según el tipo concreto en tiempo de ejecución |
+| Object pool | Patrón que reutiliza objetos costosos de crear en lugar de instanciar nuevos cada vez |
+
+---
+
 *Rogelio Arriaga Gonzalez*

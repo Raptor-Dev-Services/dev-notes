@@ -218,4 +218,23 @@ public class MyService  // registrado como Singleton
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Singleton | Patrón creacional que garantiza una única instancia de una clase y provee un punto de acceso global a ella |
+| Instancia | Objeto concreto creado a partir de una clase en tiempo de ejecución |
+| Thread-safety | Propiedad de un código que funciona correctamente cuando es ejecutado por múltiples hilos simultáneamente |
+| Double-checked locking | Técnica de optimización que verifica la condición dos veces (fuera y dentro del lock) para evitar la creación doble en entornos multihilo |
+| `lock` | Palabra clave de C# que restringe el acceso a un bloque de código a un solo hilo a la vez |
+| `Lazy<T>` | Clase de .NET que implementa inicialización diferida y thread-safe de un valor de tipo T |
+| Captive Dependency | Error en el que un Singleton retiene una dependencia Scoped, haciendo que esta viva más tiempo del previsto |
+| DI Container | Contenedor de inyección de dependencias que gestiona la creación y el ciclo de vida de los objetos registrados |
+| `AddSingleton<>()` | Método de extensión de ASP.NET Core que registra un servicio con ciclo de vida Singleton en el contenedor DI |
+| Estado global | Datos accesibles desde cualquier parte de la aplicación; su uso indiscriminado crea acoplamiento y dificulta el testing |
+| Pool de conexiones | Conjunto de conexiones a base de datos reutilizables para evitar el costo de crear una nueva conexión en cada petición |
+| `sealed` | Modificador de C# que impide que una clase sea heredada o que un método virtual sea sobreescrito |
+
+---
+
 *Rogelio Arriaga Gonzalez*

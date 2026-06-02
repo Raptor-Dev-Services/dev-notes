@@ -215,6 +215,23 @@ Checklist antes de entregar un nuevo módulo:
 - ¿El índice es parcial si la mayoría de queries filtra `DeletedAt IS NULL`?
 - ¿Se ejecutó `EXPLAIN ANALYZE` en los queries más críticos?
 
+---
+
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Índice | estructura de datos auxiliar que acelera la búsqueda de filas en una tabla a cambio de espacio en disco y tiempo de escritura |
+| B-tree | estructura de árbol balanceado usada por defecto en PostgreSQL para índices; eficiente para igualdad y rango |
+| Índice compuesto | índice sobre dos o más columnas; solo es eficiente cuando las consultas filtran por las columnas del índice en el mismo orden |
+| Índice parcial | índice que solo incluye filas que cumplen una condición (ej. `WHERE DeletedAt IS NULL`), reduciendo su tamaño |
+| Índice de cobertura | índice que contiene todas las columnas necesarias para resolver una consulta, evitando acceder a la tabla principal |
+| EXPLAIN ANALYZE | comando de PostgreSQL que muestra el plan de ejecución real de una consulta con tiempos medidos |
+| Sequential Scan | modo de acceso que lee toda la tabla fila a fila; indica ausencia de índice útil para esa consulta |
+| Index Scan | modo de acceso que usa el índice para localizar directamente las filas que cumplen la condición |
+| Índice único | índice que garantiza la unicidad de los valores en una columna o combinación de columnas |
+| Cardinalidad | número de valores distintos en una columna; columnas con alta cardinalidad se benefician más de un índice B-tree |
+| Soft delete | patrón que marca registros con `DeletedAt` en lugar de borrarlos físicamente; requiere índices parciales para eficiencia |
 
 ---
 

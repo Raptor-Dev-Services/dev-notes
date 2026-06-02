@@ -278,4 +278,22 @@ public sealed class MainDapperDbConnection
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Proxy | Patrón estructural que proporciona un sustituto con la misma interfaz que el objeto real para controlar el acceso a él |
+| Virtual Proxy | Variante que pospone la creación del objeto real hasta que se necesita por primera vez (lazy initialization) |
+| Protection Proxy | Variante que verifica permisos antes de delegar la operación al objeto real |
+| Caching Proxy | Variante que almacena los resultados de operaciones costosas para evitar llamadas repetidas al objeto real |
+| Remote Proxy | Variante que representa un objeto que vive en otro proceso o servidor; el cliente lo usa como si fuera local |
+| RealSubject | El objeto original que realiza el trabajo real; el Proxy controla el acceso a él |
+| Lazy initialization | Técnica de posponer la creación de un objeto costoso hasta el momento en que se necesita |
+| `MainDapperDbConnection` | Proxy del proyecto sobre Dapper: misma API pero añade logging de duración y gestión de conexión |
+| `IMemoryCache` | Interfaz usada en el Caching Proxy para almacenar resultados de consultas y reducir llamadas a la base de datos |
+| Proxy vs Decorator | Ambos tienen la misma interfaz; el Proxy gestiona el ciclo de vida del real; el Decorator solo añade comportamiento |
+| `??=` (null-coalescing assignment) | Operador de C# usado en Virtual Proxy para inicializar el objeto real solo en el primer acceso |
+
+---
+
 *Rogelio Arriaga Gonzalez*

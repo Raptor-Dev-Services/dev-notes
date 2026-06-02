@@ -254,4 +254,21 @@ namespace Application.UseCases
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Namespace | Contenedor lógico que agrupa tipos relacionados bajo un nombre jerárquico para evitar colisiones y organizar el código |
+| File-scoped namespace | Sintaxis de C# 10+ que declara el namespace una vez al inicio del archivo sin llaves: `namespace Mi.Namespace;` |
+| `using` | Directiva que importa un namespace para no escribir el nombre completo de cada tipo: `using System.Collections.Generic;` |
+| `global using` | Directiva que importa un namespace en todos los archivos del proyecto; se declara en un archivo dedicado |
+| `using static` | Directiva que importa los miembros estáticos de una clase: `using static System.Math;` para usar `Abs()` directamente |
+| Alias de tipo (`using X = ...`) | Asigna un alias a un tipo para evitar colisiones de nombres o acortar nombres largos |
+| Ensamblado (assembly) | Unidad de compilación en .NET (`.dll` o `.exe`); un proyecto de C# compila a un ensamblado |
+| Referencia de proyecto | Dependencia entre proyectos en la solución; los namespaces del proyecto referenciado quedan disponibles |
+| Convención namespace = ruta | Regla del proyecto: el namespace debe reflejar la jerarquía de carpetas del proyecto |
+| Colisión de nombres | Problema que los namespaces resuelven: dos tipos con el mismo nombre en proyectos distintos conviven usando su namespace completo |
+
+---
+
 *Rogelio Arriaga Gonzalez*

@@ -142,4 +142,22 @@ git branch -d hotfix/1.2.1-fix-crash
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Rollback | Proceso de revertir el sistema a una versión anterior estable ante un defecto crítico en producción |
+| git revert | Comando que crea un nuevo commit que deshace los cambios de un commit previo sin reescribir el historial |
+| git reset --soft | Deshace el commit manteniendo los cambios en el staging area; solo válido antes de hacer push |
+| git reset --hard | Deshace el commit y descarta todos los cambios del working directory; operación destructiva |
+| Redespliegue de tag | Estrategia de rollback más rápida: disparar el pipeline de CD apuntando al tag de la versión estable anterior |
+| Hotfix branch | Rama creada desde el último tag estable de `main` para aplicar una corrección urgente en producción |
+| -m 1 | Parámetro de `git revert` que indica revertir al primer padre del merge commit (la rama destino) |
+| Error budget | Tiempo o porcentaje de fallas disponible antes de violar el SLO; ayuda a priorizar la urgencia del rollback |
+| Blast radius | Alcance del impacto de un incidente; reducirlo es uno de los objetivos de las estrategias de rollback |
+| Post-mortem | Análisis documentado de la causa raíz de un incidente, incluyendo acciones correctivas para evitar la recurrencia |
+| Pipeline de CD | Proceso automatizado de entrega continua que puede redesplegar una versión anterior especificando el tag |
+
+---
+
 *Rogelio Arriaga Gonzalez*

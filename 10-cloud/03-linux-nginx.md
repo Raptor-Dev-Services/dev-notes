@@ -315,4 +315,24 @@ systemctl start gtm-suite
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Nginx | Servidor web de alto rendimiento utilizado como reverse proxy, load balancer y servidor de contenido estático |
+| Reverse proxy | Intermediario que recibe peticiones externas y las reenvía al servidor de aplicación interno |
+| systemd | Sistema de inicio y gestor de servicios estándar en Linux moderno; reemplaza a SysVinit |
+| journalctl | Herramienta de systemd para consultar el diario de logs del sistema y de servicios individuales |
+| Certbot | Cliente oficial de Let's Encrypt que automatiza la obtención y renovación de certificados TLS |
+| Let's Encrypt | Autoridad certificadora gratuita y automatizada que emite certificados TLS/HTTPS válidos por 90 días |
+| UFW | Uncomplicated Firewall; interfaz simplificada de iptables para gestionar reglas de red en Ubuntu/Debian |
+| HSTS | HTTP Strict Transport Security; cabecera que instruye al navegador a usar solo HTTPS por un período determinado |
+| WebSocket | Protocolo de comunicación bidireccional y persistente sobre TCP, necesario para SignalR |
+| SSL/TLS | Protocolos criptográficos que cifran la comunicación entre cliente y servidor (HTTPS) |
+| proxy_pass | Directiva de Nginx que reenvía la petición al servidor de aplicación especificado por URL |
+| Bash shebang | Línea `#!/usr/bin/env bash` al inicio de un script que define el intérprete a utilizar |
+| set -euo pipefail | Opciones de Bash para detener el script ante errores, variables no definidas o fallos en pipes |
+
+---
+
 *Rogelio Arriaga Gonzalez*

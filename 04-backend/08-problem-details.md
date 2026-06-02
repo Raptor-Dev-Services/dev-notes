@@ -299,4 +299,23 @@ El proyecto tiene `app.UseCoreProblemDetails()` de `Common.Web` que ya configura
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Problem Details | Formato estándar RFC 7807 para respuestas de error HTTP con campos type, title, status, detail e instance |
+| RFC 7807 | Estándar IETF que define el formato Problem Details para APIs HTTP |
+| IExceptionHandler | Interfaz de ASP.NET Core 8 para manejar excepciones globales de forma tipada |
+| ValidationProblemDetails | Extensión de ProblemDetails que incluye un diccionario de errores de validación por campo |
+| traceId | Identificador único de una solicitud HTTP, incluido en ProblemDetails para correlacionar logs |
+| UseExceptionHandler | Middleware de ASP.NET que captura excepciones y las procesa con IExceptionHandler registrados |
+| UseStatusCodePages | Middleware que intercepta respuestas sin cuerpo (404, 405) y las formatea como ProblemDetails |
+| type | Campo de ProblemDetails que es una URI que identifica el tipo de problema — constante para cada tipo de error |
+| detail | Campo de ProblemDetails específico a la instancia del error — describe el contexto particular del fallo |
+| title | Campo de ProblemDetails con la descripción corta del tipo de error — constante para todos los errores del mismo tipo |
+| AddProblemDetails | Método de DI que registra el servicio ProblemDetails y permite personalizar campos extra |
+| GlobalExceptionHandler | Implementación de IExceptionHandler que centraliza el manejo de todas las excepciones no controladas |
+
+---
+
 *Rogelio Arriaga Gonzalez*

@@ -353,4 +353,21 @@ Ver `04-backend/25-tenant-branch-logic.md` para la jerarquía de dos niveles.
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Subdomain routing | técnica que extrae el identificador del tenant desde el subdominio del request (`alfacorp.misaas.com`) |
+| Tenant slug | fragmento de URL amigable y único que identifica a un tenant: `alfacorp` en `alfacorp.misaas.com` |
+| SubdomainTenantMiddleware | middleware ASP.NET Core que resuelve el tenant desde el subdominio y lo almacena en `ITenantContextAccessor` |
+| Wildcard DNS | registro DNS de tipo `*.misaas.com` que enruta todos los subdominios a la misma IP o CNAME |
+| Wildcard SSL | certificado TLS que cubre todos los subdominios de un dominio base (`*.misaas.com`) |
+| ITenantContextAccessor | interfaz que proporciona el tenant y branch del request actual a cualquier capa de la aplicación |
+| TenantContext | clase que contiene el `TenantId` y `BranchId` resueltos para el request en curso |
+| Custom domain | dominio propio del tenant (`crm.alfacorp.com`) en lugar del subdominio estándar del SaaS |
+| ForwardedHeaders | middleware ASP.NET Core que lee los headers `X-Forwarded-*` para obtener el host real detrás de un proxy inverso |
+| X-Tenant-Slug header | mecanismo alternativo para desarrollo local que evita la complejidad de configurar DNS con subdominios |
+
+---
+
 *Rogelio Arriaga Gonzalez*

@@ -353,4 +353,22 @@ public sealed class ExampleUsersController : BaseApiController
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Atributo | Clase que hereda de `System.Attribute`; agrega metadatos a tipos o miembros que el framework lee con reflexión en tiempo de ejecución |
+| Reflexión (Reflection) | API de .NET para inspeccionar y manipular tipos, métodos y atributos en tiempo de ejecución |
+| `[Route]` | Atributo de ASP.NET Core que define la ruta base de un controller o la ruta de un endpoint |
+| `[HttpGet]` / `[HttpPost]` etc. | Atributos que mapean un método de controller al verbo HTTP correspondiente y su ruta |
+| `[Authorize]` | Atributo que requiere autenticación para acceder al controller o endpoint; puede combinarse con políticas o roles |
+| `[FromBody]` | Atributo que indica que el parámetro se debe leer del cuerpo JSON de la petición |
+| `[FromRoute]` | Atributo que indica que el parámetro se debe leer del segmento de ruta |
+| `[ProducesResponseType]` | Atributo para documentar los posibles códigos de respuesta HTTP de un endpoint en Swagger/OpenAPI |
+| Atributo personalizado | Clase propia que hereda de `Attribute`; permite agregar metadatos específicos del dominio |
+| `AttributeTargets` | Enum que especifica a qué elementos puede aplicarse un atributo: `Class`, `Method`, `Property`, etc. |
+| `[DataAnnotations]` | Atributos de validación estándar de .NET: `[Required]`, `[MaxLength]`, `[EmailAddress]`; usados en request bodies |
+
+---
+
 *Rogelio Arriaga Gonzalez*

@@ -457,6 +457,23 @@ jobs:
 ```
 ```
 
+---
+
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Docker Compose | herramienta que define y orquesta múltiples contenedores como un único servicio usando un archivo YAML |
+| Service | definición de un contenedor en Compose; equivale a un proceso de la aplicación (api, postgres, seq) |
+| `depends_on` | clave de Compose que define el orden de inicio y la condición de salud requerida antes de arrancar un servicio |
+| Healthcheck | comando que Compose ejecuta periódicamente para verificar si un servicio está listo para recibir tráfico |
+| Volume mount | mapeo entre un directorio del host y un directorio del contenedor para persistir datos o inyectar archivos |
+| Port mapping | configuración `host:container` que expone un puerto del contenedor al host |
+| Profile | etiqueta que agrupa servicios opcionales; solo se levantan cuando se especifica `--profile` |
+| Override file | archivo `compose.override.yaml` que sobreescribe o extiende la configuración base de `compose.yaml` |
+| `docker compose up -d` | comando que levanta todos los servicios del compose en modo daemon (background) |
+| `docker compose down -v` | comando que detiene todos los servicios y elimina también los volúmenes nombrados |
+| Graceful shutdown | proceso de terminación controlada donde el contenedor espera que las conexiones activas se completen |
 
 ---
 

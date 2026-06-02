@@ -380,4 +380,22 @@ string mensaje = notification switch
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Pattern matching | Conjunto de expresiones de C# para examinar el tipo, forma o valor de un objeto de forma concisa y segura |
+| Type pattern | Verificación de tipo con `is TipoConcreto variable` que asigna el objeto casteado si la verificación es verdadera |
+| Switch expression | Forma de switch que retorna un valor directamente; cada rama es `patrón => expresión` |
+| Switch statement | Forma clásica de switch con bloques `case`; útil cuando hay efectos secundarios en las ramas |
+| `when` clause | Condición adicional en un `case` o rama de switch: `case NpgsqlException ex when ex.SqlState == "23505"` |
+| Property pattern | Verificación de tipo y propiedades juntas: `is ExampleUser { IsActive: true }` |
+| Positional pattern | Verificación que usa el deconstructor de un record: `is (Guid id, string name)` |
+| `is not null` | Patrón de nulabilidad para verificar que un valor no es null de forma explícita |
+| Exhaustividad | Propiedad de un switch expression que lanza error de compilación si no se cubre todos los casos posibles |
+| Presenters del proyecto | Usan pattern matching (`is ISuccess<T>`, `is INotFoundFailure`) para distinguir tipos de respuesta del mediador |
+| `_` (discard) | Patrón que coincide con cualquier valor y lo descarta; usado como caso por defecto en switch expressions |
+
+---
+
 *Rogelio Arriaga Gonzalez*

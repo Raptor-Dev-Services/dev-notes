@@ -283,4 +283,23 @@ Para implementarlo en el proyecto:
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| FluentValidation | Librería de .NET para definir reglas de validación con API fluida sobre clases de validación separadas |
+| AbstractValidator\<T\> | Clase base de FluentValidation que se hereda para definir las reglas de validación del tipo T |
+| RuleFor | Método de FluentValidation para configurar reglas sobre una propiedad específica del request |
+| ValidationBehavior | Pipeline behavior que ejecuta todos los IValidator registrados antes de pasar al handler |
+| IValidator\<T\> | Interfaz de FluentValidation inyectada en el behavior para validar el request de tipo T |
+| ValidationException | Excepción lanzada por FluentValidation cuando una o más reglas fallan |
+| ValidationProblemDetails | Respuesta HTTP estándar con lista de errores de validación, compatible con RFC 7807 |
+| GlobalExceptionHandler | Middleware que captura ValidationException y la convierte en HTTP 400 con detalles |
+| MustAsync | Método de FluentValidation para reglas de validación asíncronas que consultan base de datos |
+| IValidationFailure | Tipo de resultado del Result Pattern que representa errores de validación de negocio |
+| WithMessage | Método de FluentValidation para personalizar el mensaje de error de una regla |
+| Separación de responsabilidades | Principio que reserva FluentValidation para formato/estructura y el Handler para lógica de negocio |
+
+---
+
 *Rogelio Arriaga Gonzalez*

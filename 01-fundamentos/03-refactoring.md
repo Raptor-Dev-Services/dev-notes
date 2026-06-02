@@ -643,4 +643,23 @@ refactorings significativos que requieren coordinación de equipo.
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Refactoring | reestructuración del código existente sin cambiar su comportamiento externo observable |
+| Code smell | patrón en el código que indica un problema subyacente de diseño o calidad |
+| Deuda técnica | costo adicional del trabajo futuro causado por tomar atajos en el presente |
+| Código legado | código sin tests — sin importar su antigüedad, es difícil cambiar con confianza |
+| Long Method | método demasiado largo que hace más de una cosa — señal de necesidad de extracción |
+| Feature Envy | método que usa más datos de otra clase que de la suya propia |
+| Strangler Fig | patrón para reemplazar un sistema legado incrementalmente sin detener el desarrollo |
+| Boy Scout Rule | práctica de dejar el código más limpio de como se encontró en cada modificación |
+| Extract Method | técnica de refactoring que extrae un bloque de código a un método separado con nombre descriptivo |
+| Introduce Constant | técnica que reemplaza números o strings mágicos por constantes con nombre significativo |
+| Risk Register | registro de riesgos con probabilidad e impacto para priorizar la deuda técnica de forma objetiva |
+| Feature flag | mecanismo para activar o desactivar funcionalidad sin necesidad de un nuevo deployment |
+
+---
+
 *Rogelio Arriaga Gonzalez*

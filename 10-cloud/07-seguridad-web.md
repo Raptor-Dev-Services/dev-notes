@@ -323,4 +323,23 @@ app.UseCors("AllowedOrigins");
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| OWASP | Open Worldwide Application Security Project; organización que publica el Top 10 de vulnerabilidades web más críticas |
+| SQL Injection | Ataque que inyecta código SQL en consultas al concatenar input del usuario sin parametrizar |
+| Broken Access Control | Fallo que permite a un usuario acceder a recursos que pertenecen a otro usuario u operación |
+| HSTS | HTTP Strict Transport Security; cabecera que fuerza al navegador a usar solo HTTPS durante el tiempo definido |
+| CSP | Content Security Policy; cabecera que controla qué recursos (scripts, estilos, imágenes) puede cargar el navegador |
+| Clickjacking | Ataque donde un iframe invisible superpone la UI legítima para engañar al usuario; mitigado con X-Frame-Options |
+| BCrypt | Algoritmo de hashing diseñado para contraseñas, intencionalmente lento para resistir ataques de fuerza bruta |
+| Rate Limiting | Mecanismo que limita el número de peticiones por tiempo a un endpoint para prevenir ataques de fuerza bruta |
+| HttpOnly Cookie | Cookie no accesible por JavaScript; protege el token de sesión contra robo por ataques XSS |
+| SSRF | Server-Side Request Forgery; vulnerabilidad donde la app realiza peticiones a URLs controladas por el atacante |
+| CORS | Cross-Origin Resource Sharing; mecanismo que controla qué orígenes pueden hacer peticiones a la API |
+| MIME Sniffing | Proceso del navegador de inferir el tipo de contenido; mitigado con la cabecera X-Content-Type-Options: nosniff |
+
+---
+
 *Rogelio Arriaga Gonzalez*

@@ -379,4 +379,22 @@ catch (Exception ex)
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Excepción | Objeto que encapsula información sobre un error en tiempo de ejecución; hereda de `System.Exception` |
+| `throw` | Instrucción que lanza una excepción y transfiere el control al bloque `catch` más cercano que la maneje |
+| `try/catch` | Estructura para ejecutar código que puede fallar (`try`) y manejar el error si ocurre (`catch`) |
+| `finally` | Bloque que se ejecuta siempre, haya o no excepción; ideal para liberar recursos |
+| `when` filter | Condición adicional en `catch` que determina si ese handler aplica: `catch (Ex e) when (e.Code == "X")` |
+| `InvalidOperationException` | Excepción lanzada cuando el estado del objeto no permite la operación; usada para errores de configuración |
+| `NpgsqlException` | Excepción de la librería Npgsql para errores de PostgreSQL; `SqlState` identifica el código de error |
+| Result Pattern | Alternativa a las excepciones para errores de negocio: en lugar de lanzar, retornar `IFailure` |
+| `throw` sin argumento | Re-lanza la excepción actual preservando el stack trace original; solo válido dentro de un bloque `catch` |
+| `AggregateException` | Excepción que agrupa múltiples excepciones; común en operaciones paralelas con `Task.WhenAll` |
+| `using` statement | Garantiza que un objeto `IDisposable` se libera al salir del bloque, aunque ocurra una excepción |
+
+---
+
 *Rogelio Arriaga Gonzalez*

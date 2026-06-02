@@ -331,4 +331,22 @@ public class MiWorker : BackgroundService
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Lifetime (ciclo de vida) | Duración de la instancia de un servicio gestionada por el DI container: Singleton, Scoped o Transient |
+| Singleton | Lifetime donde se crea una única instancia compartida por toda la aplicación desde el arranque hasta el apagado |
+| Scoped | Lifetime donde se crea una instancia por cada petición HTTP; todos los servicios dentro de la misma petición comparten la instancia |
+| Transient | Lifetime donde se crea una instancia nueva cada vez que el servicio es solicitado al container |
+| Captive Dependency | Error donde un Singleton retiene un servicio Scoped, haciendo que este viva más tiempo del previsto y comparta estado entre peticiones |
+| `IServiceScope` | Ámbito de DI creado manualmente; necesario para consumir servicios Scoped desde un Singleton o un job en segundo plano |
+| `MainDbConnectionFactory` | Singleton del proyecto: sin estado propio, compartir entre peticiones es seguro y eficiente |
+| `MainDapperDbConnection` | Scoped del proyecto: una instancia por petición — gestiona la conexión durante el ciclo de vida de la request |
+| `ResultViewModel<T>` | Scoped del proyecto: almacena el resultado de la operación para que el controller lo lea al final |
+| Thread-safety | Propiedad requerida para cualquier Singleton: su código debe funcionar correctamente cuando múltiples hilos lo usan simultáneamente |
+| `AddSingleton<>()` / `AddScoped<>()` / `AddTransient<>()` | Métodos de registro de DI en ASP.NET Core que definen el lifetime de cada servicio |
+
+---
+
 *Rogelio Arriaga Gonzalez*

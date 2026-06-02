@@ -269,4 +269,21 @@ Este es exactamente el Bridge: `IExampleUserRepository` (abstracción) ↔ `Exam
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Bridge | Patrón estructural que separa una abstracción de su implementación para que ambas puedan evolucionar independientemente |
+| Abstracción | El lado de "alto nivel" que define las operaciones del dominio y delega el trabajo a la implementación |
+| Implementación | El lado de "bajo nivel" que contiene las operaciones concretas de la plataforma o tecnología |
+| Explosión combinatoria | Problema de herencia donde N formas × M variantes generan N×M subclases en lugar de N+M |
+| IImplementation | Interfaz del lado de implementación que la abstracción usa sin conocer la clase concreta |
+| ExtendedAbstraction | Subclase de la abstracción que añade comportamiento adicional sin cambiar la implementación |
+| `IExampleUserRepository` | En el proyecto, la interfaz del repositorio actúa como la abstracción puenteada a `ExampleUserRepository` (implementación) |
+| Jerarquía independiente | Cada lado del bridge (abstracción e implementación) tiene su propia jerarquía que puede extenderse sin afectar al otro |
+| Canal de notificación | Ejemplo práctico del bridge: las notificaciones (abstracción) se desacoplan del medio de envío (implementación: email, SMS, Slack) |
+| Inyección de dependencias | Mecanismo por el cual se conectan abstracción e implementación en tiempo de ejecución — equivalente al "puente" |
+
+---
+
 *Rogelio Arriaga Gonzalez*

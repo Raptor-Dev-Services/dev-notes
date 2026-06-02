@@ -389,4 +389,22 @@ public sealed record ExampleUserDto(
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Record | Tipo de C# diseñado para datos inmutables con comparación por valor, `ToString()` descriptivo y deconstrucción automáticos |
+| Record posicional | Forma de declarar un record donde los parámetros van en la cabecera; el compilador genera propiedades `{ get; init; }` y constructor |
+| Comparación por valor | Comportamiento de los records: dos instancias con los mismos datos son iguales (`==` retorna `true`) |
+| `init` | Modificador de propiedad que permite asignarla solo durante la construcción o en un object initializer |
+| Expresión `with` | Sintaxis para crear una copia de un record con algunos campos modificados: `original with { Campo = valor }` |
+| `Deconstruct()` | Método generado automáticamente en records posicionales que permite desestructurar el objeto: `var (a, b) = record` |
+| `abstract record` | Record que no se puede instanciar directamente; usado como tipo base para jerarquías de respuestas en el proyecto |
+| `sealed record` | Record que no puede ser heredado; todas las variantes concretas de respuesta en el proyecto son `sealed record` |
+| `record struct` | Variante de record que vive en el stack como tipo de valor; útil para datos pequeños y colecciones grandes |
+| Referencia circular | Error al implementar `ISuccess<TSelf>` con `Data => this` en un record — `Data.Data.Data...` infinito en la serialización JSON |
+| DTO (Data Transfer Object) | Objeto cuyo único propósito es transportar datos entre capas; en el proyecto se implementan como `sealed record` |
+
+---
+
 *Rogelio Arriaga Gonzalez*

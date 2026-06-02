@@ -326,4 +326,23 @@ public sealed class TransactionBehavior<TRequest, TResponse>
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Pipeline Behavior | Middleware del mediador que intercepta requests antes y después del handler — implementa IPipelineBehavior\<TRequest, TResponse\> |
+| IPipelineBehavior | Interfaz del mediador que define el contrato de un comportamiento de pipeline con método Handle |
+| RequestHandlerDelegate | Delegado que representa el siguiente paso en el pipeline — se llama con await next() |
+| LoggingBehavior | Pipeline behavior que registra el inicio, resultado y duración de cada request |
+| ValidationBehavior | Pipeline behavior que ejecuta validadores de FluentValidation antes de llegar al handler |
+| PerformanceBehavior | Pipeline behavior que mide el tiempo de ejecución y alerta si supera un umbral |
+| ExceptionHandlingBehavior | Pipeline behavior que captura excepciones no controladas y las convierte en IFailure |
+| Cross-cutting concern | Preocupación transversal (logs, validación, métricas) que aplica a múltiples casos de uso |
+| InteractorPipeline | Nombre alternativo para el pipeline de mediador en el stack del back-template |
+| ICommand | Marcador de request que modifica estado — usado para acotar TransactionBehavior solo a comandos |
+| Decorador | Patrón estructural que los Pipeline Behaviors implementan: envuelven al handler sin modificarlo |
+| Open Generic Registration | Registro de `typeof(IPipelineBehavior<,>)` en DI que aplica un behavior a todos los requests |
+
+---
+
 *Rogelio Arriaga Gonzalez*

@@ -350,4 +350,22 @@ public Task<ExampleUser> GetUserAsync(Guid id)
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Genérico | Tipo o método parametrizado con un tipo `T` que se determina en el momento de uso, sin perder type-safety |
+| Parámetro de tipo | El placeholder `T` (o `TRequest`, `TResponse`) que representa el tipo real que se especifica al usar el genérico |
+| Constraint (`where`) | Restricción sobre el parámetro de tipo: `where T : class`, `where T : IRequest<TResponse>` |
+| `IRequest<TResponse>` | Interfaz genérica del proyecto que relaciona un Request con su tipo de respuesta |
+| `IRequestHandler<TRequest, TResponse>` | Interfaz genérica que implementan los Handlers; el container la usa para mapear requests a handlers |
+| `ResultViewModel<T>` | Clase genérica del proyecto donde `T` identifica para qué controller es el ViewModel |
+| `ISuccess<T>` | Interfaz genérica de resultado exitoso que expone el dato tipado: `T Data { get; }` |
+| Tipo genérico abierto | Tipo registrado en DI sin especificar el parámetro de tipo: `services.AddScoped(typeof(ResultViewModel<>))` |
+| Covarianza (`out T`) | Modificador que permite que un `IEnumerable<Derivado>` sea tratado como `IEnumerable<Base>` |
+| Contravarianza (`in T`) | Modificador que permite que un delegado que acepta `Base` sea tratado como uno que acepta `Derivado` |
+| Inferencia de tipo | Capacidad del compilador de deducir `T` sin especificarlo: `var resultado = repo.GetByIdAsync(id)` |
+
+---
+
 *Rogelio Arriaga Gonzalez*

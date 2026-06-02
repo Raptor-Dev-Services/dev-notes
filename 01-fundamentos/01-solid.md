@@ -473,4 +473,23 @@ public async Task<InsertExampleUserResponse> Handle(
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| SRP (Single Responsibility) | principio que establece que una clase debe tener una sola razón para cambiar |
+| OCP (Open/Closed) | principio que establece que las entidades deben estar abiertas a extensión y cerradas a modificación |
+| LSP (Liskov Substitution) | principio que garantiza que los subtipos pueden reemplazar a sus tipos base sin alterar el programa |
+| ISP (Interface Segregation) | principio que establece que los clientes no deben depender de interfaces que no usan |
+| DIP (Dependency Inversion) | principio que establece que los módulos de alto nivel no deben depender de los de bajo nivel |
+| DRY (Don't Repeat Yourself) | principio que establece que cada pieza de conocimiento debe tener una representación única en el sistema |
+| KISS (Keep It Simple) | principio que prefiere la solución más simple que funcione correctamente |
+| YAGNI (You Aren't Gonna Need It) | principio que establece no implementar funcionalidad hasta que sea necesaria |
+| CCP (Common Closure Principle) | las clases que cambian juntas por las mismas razones deben estar en el mismo componente |
+| Value Object | objeto definido completamente por sus atributos, sin identidad propia, e inmutable |
+| Acoplamiento | grado de dependencia entre módulos — bajo acoplamiento facilita el cambio independiente |
+| Cohesión | medida de cuán relacionadas están las responsabilidades dentro de un componente |
+
+---
+
 *Rogelio Arriaga Gonzalez*

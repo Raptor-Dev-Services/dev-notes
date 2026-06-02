@@ -222,6 +222,22 @@ Muéstrame el diseño antes de escribir código."
 InsertExampleUserHandler. ¿Qué diferencias hay? Corrige antes de continuar."
 ```
 
+---
+
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Vibe coding | estilo de desarrollo donde el programador describe la intención en lenguaje natural y el AI genera el código |
+| Agente de AI | sistema que usa un modelo de lenguaje con acceso a herramientas para completar tareas de múltiples pasos de forma autónoma |
+| ReAct pattern | patrón de razonamiento de agentes: Thought → Action → Observation → Thought... hasta llegar a la respuesta |
+| Tool use | capacidad de un agente de invocar funciones externas (leer archivos, ejecutar comandos, hacer búsquedas) |
+| Checkpoint | instrucción explícita de hacer commit o pedir aprobación después de cada etapa de una tarea larga del agente |
+| Drift | desviación gradual del agente respecto al patrón o convenciones del proyecto, acumulada en tareas largas |
+| Human-in-the-loop | diseño de flujo de trabajo donde el humano aprueba o corrige al agente en puntos críticos de la tarea |
+| Mode chat | uso del AI para preguntas, explicaciones y snippets pequeños sin herramientas ni autonomía |
+| Mode agent | uso del AI como agente con acceso a herramientas para tareas complejas de múltiples archivos |
+| Scaffolding | generación automática de la estructura de archivos y código boilerplate para un nuevo módulo o feature |
 
 ---
 

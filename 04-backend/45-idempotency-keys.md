@@ -599,4 +599,23 @@ async function createOrder(orderData: CreateOrderRequest): Promise<Order> {
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Idempotency Key | Identificador único enviado por el cliente para que el servidor detecte y descarte requests duplicados |
+| IdempotencyRecord | Entidad que almacena el hash de la key, el endpoint, el response cacheado y la fecha de expiración |
+| IdempotencyMiddleware | Middleware que intercepta todos los requests POST/PUT para verificar y cachear respuestas por key |
+| X-Idempotency-Key | Header HTTP estándar para enviar la clave de idempotencia — generado por el cliente con UUID v4 |
+| SHA-256 Hash | Hash de la key almacenado en base de datos en lugar del valor original para consistencia e indexación |
+| Unique Constraint Violation | Excepción que indica que dos requests simultáneos intentaron registrar la misma key — se resuelve con SELECT |
+| X-Idempotency-Replayed | Header en la respuesta que indica que se está retornando una respuesta cacheada de un request anterior |
+| Race Condition | Situación donde dos requests con la misma key llegan simultáneamente — se gestiona con catch de constraint |
+| Stripe RequestOptions | Objeto de la SDK de Stripe donde se especifica la IdempotencyKey para pagos y suscripciones críticos |
+| ExpiresAtUtc | Timestamp de expiración del IdempotencyRecord — típicamente 7 días — limpiado por job nocturno |
+| Idempotencia de webhooks | Estrategia para ignorar eventos duplicados de Stripe usando el EventId como idempotency key |
+| crypto.randomUUID() | API del navegador para generar UUIDs v4 criptográficamente seguros — forma recomendada de generar keys en el frontend |
+
+---
+
 *Rogelio Arriaga Gonzalez*

@@ -325,3 +325,26 @@ No es refactoring masivo: es agregar un test faltante, extraer un método largo,
 - `dev-notes/01-fundamentos/01-solid.md` — principios que previenen deuda de diseño
 - `dev-notes/01-fundamentos/02-clean-code.md` — prevención de deuda de código
 - `dev-notes/01-fundamentos/03-refactoring.md` — cómo pagar la deuda técnica existente
+
+---
+
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| SDLC | Software Development Life Cycle — proceso estructurado que guía la planificación, construcción, prueba, despliegue y mantenimiento de un sistema |
+| Waterfall | modelo de SDLC donde las fases se ejecutan en secuencia estricta, sin iteración |
+| Iterativo | modelo de SDLC que construye el sistema en ciclos, produciendo un incremento funcional al final de cada uno |
+| ADR | Architecture Decision Record — documento que registra una decisión de arquitectura, sus alternativas y consecuencias |
+| PRD | Product Requirements Document — artefacto que traduce los objetivos de negocio en requerimientos concretos del sistema |
+| CI/CD | Continuous Integration / Continuous Delivery — práctica de integrar y desplegar cambios de forma automática y frecuente |
+| Deployment Frequency | métrica DORA que mide la frecuencia con la que el equipo despliega a producción |
+| Lead Time for Changes | métrica DORA que mide el tiempo entre un commit y su llegada a producción |
+| MTTR | Mean Time to Restore — tiempo promedio que tarda el equipo en restaurar el servicio tras un incidente |
+| Deuda técnica | costo futuro de atajos tomados en el presente; se acumula como intereses sobre cada nueva funcionalidad |
+| Feature flag | mecanismo para desplegar código sin activarlo, permitiendo activar o desactivar funcionalidades sin redespliegue |
+| Postmortem | documento que analiza un incidente de producción: causas, línea de tiempo e impacto para evitar su recurrencia |
+
+---
+
+*Rogelio Arriaga Gonzalez*

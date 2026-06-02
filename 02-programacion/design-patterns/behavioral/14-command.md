@@ -275,4 +275,22 @@ _ = await Mediator.Send(request, ct);  // Invoker → envía Command → Handler
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Command | Patrón conductual que convierte una petición en un objeto independiente que contiene toda la información necesaria para ejecutarla |
+| Invoker | Objeto que ejecuta los comandos; no sabe qué hace cada comando internamente |
+| Receiver | Objeto que contiene la lógica real del negocio; el comando complejo delega en él |
+| ICommand | Interfaz que declara el método `Execute()` (y opcionalmente `Undo()`) que todos los comandos implementan |
+| Undo/Redo | Funcionalidad que el Command pattern facilita: cada comando puede guardar el estado anterior para revertir la operación |
+| `CommandHistory` | Pila (Stack) que almacena los comandos ejecutados para soportar deshacer operaciones |
+| CQRS | Command Query Responsibility Segregation: patrón arquitectónico que separa las operaciones de escritura (Commands) de las de lectura (Queries) |
+| `IRequest<TResponse>` | Interfaz del proyecto que representa un Command (o Query) — un objeto que encapsula una petición para el mediador |
+| Controller como Invoker | En el proyecto, el controller envía el Request (Command) al mediador sin saber qué Handler lo ejecuta |
+| Handler como Receiver | En el proyecto, el Handler contiene la lógica real y es el Receiver del patrón Command |
+| Serialización de comandos | Ventaja del Command pattern: al ser objetos, los requests se pueden loguear, auditar y poner en cola |
+
+---
+
 *Rogelio Arriaga Gonzalez*

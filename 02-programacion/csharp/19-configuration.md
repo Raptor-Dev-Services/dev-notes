@@ -413,4 +413,22 @@ public class GetUserHandler : IRequestHandler<...>
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| `IConfiguration` | Interfaz central del sistema de configuración de .NET que provee acceso a todos los valores de configuración |
+| `IOptions<T>` | Interfaz que expone un objeto de configuración fuertemente tipado en lugar de strings planos |
+| `IOptionsSnapshot<T>` | Variante de `IOptions<T>` que recarga la configuración en cada petición HTTP cuando el archivo cambia |
+| `IOptionsMonitor<T>` | Variante de `IOptions<T>` que notifica cambios en tiempo real sin reiniciar la aplicación |
+| Configuración por capas | Sistema donde múltiples fuentes (JSON, env vars, secrets) se cargan en orden y las posteriores sobreescriben a las anteriores |
+| `appsettings.json` | Archivo de configuración base que se incluye en todos los entornos |
+| `appsettings.Local.json` | Archivo de configuración solo para desarrollo local; se agrega al `.gitignore` para no versionarlo |
+| Variables de entorno | Pares clave-valor del sistema operativo que sobreescriben la configuración JSON; convención con `__` para jerarquía |
+| User Secrets | Mecanismo de desarrollo de .NET para almacenar secretos fuera del repositorio: `dotnet user-secrets set "Clave" "Valor"` |
+| Strongly-typed config | Clase POCO que mapea una sección de configuración; se registra con `services.Configure<T>(section)` |
+| `GetConnectionString()` | Método de `IConfiguration` que accede directamente a la sección `ConnectionStrings:NombreConexion` |
+
+---
+
 *Rogelio Arriaga Gonzalez*

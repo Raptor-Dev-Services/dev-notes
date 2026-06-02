@@ -271,6 +271,22 @@ public sealed class CreateUserPresenter : IPresenter<CreateUserResponse>
 
 Este proyecto usa Clean Architecture por sus ventajas de estructura clara y el patrón bien establecido en .NET. Si el proyecto crece a múltiples módulos grandes con equipos independientes, migrar la capa Application a Vertical Slices es el paso natural siguiente — sin tocar Domain ni Infrastructure.
 
+---
+
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Vertical Slice Architecture | estilo arquitectural donde el código se organiza por caso de uso (feature) en lugar de por capa técnica |
+| Feature slice | unidad de organización que agrupa todos los elementos de un caso de uso: request, handler, respuesta y presenter |
+| Clean Architecture | arquitectura en capas (Domain, Application, Infrastructure, WebApi) con dependencias apuntando hacia el dominio |
+| Acoplamiento horizontal | dependencia entre features del mismo nivel; el principal problema que Vertical Slice busca eliminar |
+| REPR (Request-Endpoint-Response) | variante de Vertical Slice para APIs donde cada endpoint tiene su propio handler y respuestas encapsuladas |
+| Minimal API | forma de definir endpoints en ASP.NET Core sin Controllers, compatible con el patrón REPR |
+| Co-location | práctica de colocar archivos relacionados en el mismo directorio o archivo para facilitar la navegación |
+| Cross-cutting concern | preocupación transversal (logging, validación, autorización) que aplica a múltiples features y se implementa en el pipeline |
+| Cohesión por feature | propiedad de un módulo de feature donde todos sus componentes colaboran para un único caso de uso |
+| Acoplamiento por capa | patrón opuesto a Vertical Slice, donde los cambios en una capa técnica impactan a múltiples features |
 
 ---
 

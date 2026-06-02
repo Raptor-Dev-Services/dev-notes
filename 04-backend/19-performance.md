@@ -340,4 +340,23 @@ var admins = await _context.ExampleUsers
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| BenchmarkDotNet | Librería de .NET para medir el rendimiento de código de forma reproducible con estadísticas detalladas |
+| Span\<T\> | Tipo de .NET que referencia una región contigua de memoria sin allocations adicionales |
+| StringBuilder | Clase para construir strings de forma eficiente evitando la inmutabilidad y allocations de string |
+| ObjectPool\<T\> | Pool de objetos reutilizables para evitar allocations repetidas de objetos costosos de crear |
+| ArrayPool\<T\> | Pool de arrays reutilizables — evita allocations de arrays grandes y reduce presión sobre el GC |
+| IQueryable | Interfaz de LINQ para queries diferidas que se traducen a SQL — evita cargar datos innecesarios |
+| ConfigureAwait(false) | Llamada que evita la captura del contexto de sincronización en await — mejora rendimiento en librerías |
+| Response Compression | Middleware que comprime respuestas HTTP con gzip/brotli — reduce el tamaño de transferencia |
+| PerformanceBehavior | Pipeline behavior que mide el tiempo de cada request y alerta ante latencias elevadas |
+| Hot Path | Ruta de código ejecutada con alta frecuencia donde las optimizaciones tienen mayor impacto |
+| N+1 Query | Problema de rendimiento donde se ejecuta una query por cada elemento de una colección en lugar de un JOIN |
+| Allocation | Reserva de memoria en el heap administrado — reduce allocations para disminuir la presión sobre el GC |
+
+---
+
 *Rogelio Arriaga Gonzalez*

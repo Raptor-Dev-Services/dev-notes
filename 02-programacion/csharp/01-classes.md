@@ -459,4 +459,23 @@ public sealed class JwtTokenService : IJwtTokenService { /* Solo JWT */ }
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Clase | Plantilla que define la estructura (campos, propiedades) y el comportamiento (métodos) de los objetos que se crean a partir de ella |
+| Instancia | Objeto concreto creado en memoria a partir de una clase mediante `new` |
+| `sealed` | Modificador que impide que una clase sea heredada; comunica que es una implementación final y permite optimizaciones del compilador |
+| `abstract` | Modificador que impide instanciar la clase directamente; define la estructura que las subclases deben completar |
+| `static` | Modificador que impide instanciar la clase; todos sus miembros pertenecen al tipo y no a objetos individuales |
+| `partial` | Modificador que permite dividir la definición de una clase en múltiples archivos del mismo proyecto |
+| Modificador de acceso | Palabra clave que controla la visibilidad de un miembro: `public`, `private`, `protected`, `internal` |
+| `sealed class` | Tipo concreto final del proyecto — handlers, repositorios, presenters no están diseñados para ser heredados |
+| `abstract record` | Tipo base de respuestas en el proyecto (ej: `GetExampleUserResponse`) que no se puede instanciar directamente |
+| `static class` | Usado en el proyecto para los métodos de extensión de registro de DI (`ServiceCollectionExtensions`) |
+| Object initializer | Sintaxis `new Clase { Prop1 = val1 }` para asignar propiedades después de la creación sin un constructor explícito |
+| Principio de mínimo privilegio | Regla de usar el modificador de acceso más restrictivo posible para cada miembro |
+
+---
+
 *Rogelio Arriaga Gonzalez*

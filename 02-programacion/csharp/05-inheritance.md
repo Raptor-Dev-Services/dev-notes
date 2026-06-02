@@ -400,4 +400,22 @@ public class RepoCacheado : RepoBase
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Herencia | Mecanismo por el que una clase (hija) toma los miembros públicos y protegidos de otra clase (padre) y puede extenderlos |
+| Polimorfismo | Capacidad de tratar objetos de distintos tipos concretos de forma uniforme a través de un tipo base o interfaz |
+| `virtual` | Modificador que permite que una subclase sobreescriba la implementación de un método con `override` |
+| `abstract` | Modificador para métodos sin implementación que las subclases deben implementar obligatoriamente |
+| `override` | Modificador que indica que un método sobreescribe la implementación heredada del padre |
+| `base()` | Llamada al constructor o método del padre desde la clase hija |
+| Shadowing (`new`) | Técnica de ocultar un método del padre con `new`; no es polimórfico y generalmente es un anti-patrón |
+| Liskov Substitution Principle (LSP) | Principio que establece que un objeto de una subclase debe poder sustituir al padre sin alterar el comportamiento esperado |
+| `BaseApiController` | Clase abstracta del proyecto que provee `Mediator` como operación heredada a todos los controllers |
+| `is` con asignación | Operador de C# para verificar tipo y asignar en una sola expresión: `if (response is SuccessType s)` |
+| Herencia de records | Los records solo pueden heredar de otros records; una clase no puede heredar de un record |
+
+---
+
 *Rogelio Arriaga Gonzalez*

@@ -451,4 +451,23 @@ Ver `04-backend/25-tenant-branch-logic.md` para la jerarquía de dos niveles.
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| AuditEntry | Registro de auditoría que documenta quién hizo qué, cuándo, en qué entidad y con qué valores |
+| AuditActions | Enumeración de acciones auditables: Created, Updated, Deleted, Restored |
+| IAuditable | Interfaz que marca entidades con CreatedAt, CreatedBy, UpdatedAt, UpdatedBy — auditadas automáticamente |
+| IAuditContextAccessor | Interfaz que provee UserId y TenantId del usuario actual para enriquecer los registros de auditoría |
+| SaveChangesInterceptor | Hook de EF Core que se ejecuta antes/después de SaveChanges — punto de captura del audit trail |
+| AuditInterceptor | Implementación del SaveChangesInterceptor que genera AuditEntry para cada cambio detectado |
+| OldValues | JSON con los valores de la entidad antes del cambio — almacenado en AuditEntry para trazabilidad |
+| NewValues | JSON con los valores de la entidad después del cambio — almacenado en AuditEntry |
+| Retención de datos | Política que define cuánto tiempo se conservan los registros de auditoría antes de archivarlos o borrarlos |
+| Anonimización | Proceso de eliminar datos personales del audit trail cuando se ejerce el derecho al olvido (GDPR) |
+| EntityType | Nombre del tipo de entidad auditada — almacenado en AuditEntry para filtrado y búsqueda |
+| ChangeTracker | API de EF Core usada en el interceptor para detectar entidades modificadas y sus valores anteriores |
+
+---
+
 *Rogelio Arriaga Gonzalez*

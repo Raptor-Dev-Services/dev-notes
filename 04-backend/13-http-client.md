@@ -123,4 +123,22 @@ Ver `04-backend/04-resiliencia-polly.md` para patrones avanzados de resiliencia 
 
 ---
 
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| IHttpClientFactory | Factory de .NET que gestiona el ciclo de vida de HttpClient evitando socket exhaustion |
+| Socket Exhaustion | Agotamiento de sockets TCP causado por crear y destruir HttpClient sin reutilizar conexiones |
+| Typed HTTP Client | Clase que encapsula la lógica de comunicación con un servicio externo e inyecta HttpClient vía DI |
+| Named Client | HttpClient registrado con nombre en DI para ser recuperado por ese nombre desde IHttpClientFactory |
+| AddStandardResilienceHandler | Método de .NET 8 que aplica retry, circuit breaker y timeout predeterminados a un HttpClient |
+| HttpMessageHandler | Handler de bajo nivel que procesa requests HTTP — IHttpClientFactory reutiliza su pool de handlers |
+| DelegatingHandler | Handler encadenable que envuelve otro handler — usado para agregar headers, logging o retry |
+| BackoffType | Enum de Polly que define la estrategia de backoff: Linear, Exponential o Constant |
+| CircuitBreakerStrategy | Estrategia de resiliencia que abre el circuito tras un porcentaje de fallos en una ventana de tiempo |
+| BaseAddress | Dirección base del HttpClient configurada en registro — los requests pueden usar paths relativos |
+| AddHttpClient\<T\> | Método de DI que registra un Typed Client con su HttpClient asociado y configuración |
+
+---
+
 *Rogelio Arriaga Gonzalez*
