@@ -276,6 +276,230 @@ using var rsa     = RSA.Create(2048);
 var privateKey    = new RsaSecurityKey(rsa);  // para firmar — solo el auth server
 var publicKey     = new RsaSecurityKey(rsa.ExportParameters(includePrivateParameters: false));
 var rsaCreds      = new SigningCredentials(privateKey, SecurityAlgorithms.RsaSha256);
+
+// ES256 — ECDSA-SHA256 con par de claves de curva elíptica (P-256)
+// Firma con clave privada, verifica con clave pública — igual que RS256
+// ✓ Claves más pequeñas que RSA con seguridad equivalente
+// ✓ Más rápido que RS256 en generación y verificación
+// Fuente: *JWT Handbook* — Ch.4 JSON Web Signatures
+
+using var ecdsa  = ECDsa.Create(ECCurve.NamedCurves.nistP256);
+var ecPrivateKey = new ECDsaSecurityKey(ecdsa);
+var ecCreds      = new SigningCredentials(ecPrivateKey, SecurityAlgorithms.EcdsaSha256);
+```
+
+| Algoritmo | Tipo de clave | Velocidad | Caso de uso |
+|-----------|--------------|-----------|-------------|
+| HS256 | Secreto compartido (simétrico) | Muy rápido | Monolito o servicios que comparten el secreto |
+| RS256 | Par RSA 2048 bits (asimétrico) | Lento en firma | Microservicios — la clave pública se distribuye |
+| ES256 | Par ECDSA P-256 (asimétrico) | Rápido | Preferido sobre RS256 por claves más pequeñas |
+
+---
+
+## JWE — JSON Web Encryption (tokens cifrados)
+> Fuente: *JWT Handbook* — Ch.5 JSON Web Encryption
+
+Por defecto el payload de un JWT está codificado en base64url — **no cifrado**. Cualquiera que intercepte el token puede leer su contenido. JWE cifra el payload para que sea ilegible sin la clave de descifrado.
+
+```
+JWT (JWS):  header.payload.signature
+JWE:        header.encrypted_key.iv.ciphertext.tag
+```
+
+```csharp
+// JWE con Microsoft.IdentityModel.Tokens
+var encryptionKey = new SymmetricSecurityKey(
+    Convert.FromBase64String(jwtOptions.EncryptionKey));  // clave de 256 bits (32 bytes)
+
+var encryptingCreds = new EncryptingCredentials(
+    encryptionKey,
+    JwtConstants.DirectKeyUseAlg,           // alg: "dir" — clave directa sin envolver
+    SecurityAlgorithms.Aes256CbcHmacSha512  // enc: A256CBC-HS512
+);
+
+var tokenDescriptor = new SecurityTokenDescriptor
+{
+    Subject               = new ClaimsIdentity(claims),
+    Expires               = DateTime.UtcNow.AddMinutes(60),
+    SigningCredentials     = signingCreds,
+    EncryptingCredentials  = encryptingCreds   // firma + cifrado
+};
+
+var handler        = new JsonWebTokenHandler();
+var encryptedToken = handler.CreateToken(tokenDescriptor);
+```
+
+Usar JWE cuando el payload contiene datos sensibles (PII, datos médicos o financieros) o cuando el token se almacena fuera de memoria del servidor.
+
+---
+
+## Consideraciones de seguridad
+> Fuente: *JWT Handbook* — Ch.2 Practical Applications of JWT
+
+### Signature Stripping
+
+Un atacante puede tomar un JWT firmado, cambiar el header a `"alg": "none"` y eliminar la firma. Si el servidor no valida el algoritmo explícitamente, el token manipulado pasa.
+
+```csharp
+// ✓ Definir lista blanca de algoritmos aceptados
+options.TokenValidationParameters = new TokenValidationParameters
+{
+    ValidAlgorithms = [SecurityAlgorithms.HmacSha256],
+    // ...
+};
+// ✗ Omitir ValidAlgorithms — el default acepta cualquier algoritmo, incluido "none"
+```
+
+### Almacenamiento del token y XSS / CSRF
+
+```
+localStorage / sessionStorage
+  ✗ Vulnerable a XSS — cualquier script en la página puede leerlo
+
+Cookie HttpOnly + SameSite=Strict   ← opción preferida para web apps
+  ✓ Inaccesible desde JavaScript
+  ✓ SameSite=Strict mitiga CSRF sin token adicional
+
+Memoria (variable JavaScript)
+  ✓ XSS no puede extraerlo del storage
+  ✗ Se pierde al refrescar la página — requiere refresh token en cookie para renovar
+```
+
+```csharp
+// ✓ Si se usa cookie, configurar las propiedades de seguridad
+options.Cookie = new CookieBuilder
+{
+    HttpOnly     = true,
+    SameSite     = SameSiteMode.Strict,
+    SecurePolicy = CookieSecurePolicy.Always
+};
+```
+
+---
+
+## JWK — JSON Web Keys y JWKS endpoint
+> Fuente: *JWT Handbook* (Sebastian Peyrott, Auth0) — Ch.6 JSON Web Keys
+
+Un JSON Web Key (JWK) es un formato estandarizado (RFC 7517) para representar claves criptográficas. Permite distribuir claves públicas de forma interoperable para que múltiples servicios puedan verificar tokens emitidos por un servidor de autenticación central.
+
+### Estructura de un JWK
+
+```json
+{
+  "kty": "RSA",
+  "use": "sig",
+  "alg": "RS256",
+  "kid": "2024-key-1",
+  "n":   "0vx7agoebGcQSuuPiLJXZptN9nn...",
+  "e":   "AQAB"
+}
+```
+
+| Campo | Descripción |
+|-------|-------------|
+| `kty` | Tipo de clave: `RSA`, `EC` (curva elíptica), `oct` (simétrica) |
+| `use` | Uso: `sig` (firma) o `enc` (cifrado) |
+| `alg` | Algoritmo: `RS256`, `ES256`, `HS256`, etc. |
+| `kid` | Key ID — permite identificar qué clave usó el token (claim `kid` en el header) |
+| `n`, `e` | Parámetros RSA (módulo y exponente) — solo la parte pública |
+
+### JWK Set (JWKS)
+
+Un JWKS es un JSON con un array `keys` que contiene múltiples JWKs. El endpoint `/.well-known/jwks.json` expone las claves públicas del servidor de autenticación:
+
+```json
+{
+  "keys": [
+    {
+      "kty": "RSA",
+      "use": "sig",
+      "alg": "RS256",
+      "kid": "2024-key-1",
+      "n": "0vx7agoebGcQSuuPiLJXZptN9nn...",
+      "e": "AQAB"
+    },
+    {
+      "kty": "EC",
+      "use": "sig",
+      "alg": "ES256",
+      "kid": "2024-key-2",
+      "crv": "P-256",
+      "x": "MKBCTNIcKUSDii11ySs3526iDZ8AiTo7Tu6KPAqv7D4",
+      "y": "4Etl6SRW2YiLUrN5vfvVHuhp7x8PxltmWWlbbM4IFyM"
+    }
+  ]
+}
+```
+
+### Exponer JWKS endpoint en ASP.NET Core
+
+```csharp
+// Program.cs — endpoint que expone las claves públicas
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Cryptography;
+
+app.MapGet("/.well-known/jwks.json", (IOptions<JwtOptions> opts) =>
+{
+    using var rsa = RSA.Create();
+    rsa.ImportRSAPublicKey(Convert.FromBase64String(opts.Value.PublicKeyBase64), out _);
+
+    var rsaSecurityKey = new RsaSecurityKey(rsa.ExportParameters(includePrivateParameters: false))
+    {
+        KeyId = opts.Value.KeyId
+    };
+
+    var jwk = JsonWebKeyConverter.ConvertFromRSASecurityKey(rsaSecurityKey);
+
+    return Results.Json(new { keys = new[] { jwk } });
+})
+.AllowAnonymous()
+.WithName("JWKS");
+```
+
+### Consumir JWKS desde un servicio cliente
+
+```csharp
+// Los microservicios validan tokens usando el JWKS del servidor de autenticación
+// En lugar de compartir el secreto, solo necesitan la URL pública
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        // ConfigurationManager descarga el JWKS automáticamente y rota las claves
+        options.Authority           = "https://auth.misaas.com";
+        options.MetadataAddress     = "https://auth.misaas.com/.well-known/openid-configuration";
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            ValidateIssuer           = true,
+            ValidIssuer              = "https://auth.misaas.com",
+            ValidateAudience         = true,
+            ValidAudience            = "api",
+            ValidateLifetime         = true,
+        };
+    });
+```
+
+### Rotación de claves sin downtime
+
+Con JWKS, la rotación de claves es transparente:
+
+```
+1. Generar nueva clave (key-2024-12)
+2. Agregar nueva clave al endpoint JWKS (ahora hay 2 claves publicadas)
+3. Emitir nuevos tokens con kid = "key-2024-12" (la nueva clave)
+4. Los tokens viejos (kid = "key-2024-01") siguen siendo válidos hasta que expiran
+5. Cuando todos los tokens viejos expiran → eliminar la clave vieja del JWKS
+```
+
+```
+❌ Con secreto compartido (HS256):
+   - Cambiar el secreto invalida todos los tokens activos inmediatamente
+   - Todos los servicios deben recibir el nuevo secreto de forma sincronizada
+
+✓ Con JWKS (RS256 / ES256):
+   - Múltiples claves coexisten durante el período de transición
+   - Los servicios descargan el JWKS automáticamente → sin coordinación manual
+   - Rotación gradual y sin downtime
 ```
 
 ---

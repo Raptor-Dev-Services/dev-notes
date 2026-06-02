@@ -2,8 +2,6 @@
 
 Guía completa de los 22 patrones de diseño (GoF — Gang of Four), con ejemplos en C# del código fuente en [`docs/design-patterns-C#/`](design-patterns-C#/) y relación con este proyecto.
 
-📁 Sub-documentos: [`docs/design-patterns/`](design-patterns/)
-
 ---
 
 ## ¿Qué es un patrón de diseño?

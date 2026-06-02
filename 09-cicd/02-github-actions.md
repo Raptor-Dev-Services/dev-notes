@@ -349,4 +349,102 @@ jobs:
 
 ---
 
+## Matrix builds — probar en múltiples versiones/OS
+
+Una matrix build ejecuta el mismo job en múltiples combinaciones de variables (versión de .NET, sistema operativo, región, etc.) en paralelo:
+
+```yaml
+# .github/workflows/ci-matrix.yml
+name: CI Matrix
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Test (.NET ${{ matrix.dotnet }} / ${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        dotnet: ['9.0.x', '10.0.x']
+        os: [ubuntu-latest, windows-latest]
+      fail-fast: false   # continuar con otras combinaciones aunque una falle
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ matrix.dotnet }}
+
+      - run: dotnet restore
+      - run: dotnet build --no-restore -c Release
+      - run: dotnet test --no-build -c Release
+```
+
+Resultado: 4 jobs en paralelo (2 versiones × 2 OS).
+
+### Incluir y excluir combinaciones específicas
+
+```yaml
+strategy:
+  matrix:
+    dotnet: ['9.0.x', '10.0.x']
+    os: [ubuntu-latest, windows-latest, macos-latest]
+    include:
+      # Agregar una combinación extra que no existe en el producto cartesiano
+      - dotnet: '10.0.x'
+        os: ubuntu-latest
+        experimental: true
+    exclude:
+      # Excluir combinaciones sin sentido
+      - dotnet: '9.0.x'
+        os: macos-latest
+```
+
+### Matrix para despliegue multi-región
+
+```yaml
+jobs:
+  deploy:
+    name: Deploy to ${{ matrix.region }}
+    strategy:
+      matrix:
+        region: [us-east-1, eu-west-1, ap-southeast-1]
+      max-parallel: 1   # desplegar una región a la vez
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy to ${{ matrix.region }}
+        run: |
+          aws ecs update-service \
+            --region ${{ matrix.region }} \
+            --cluster my-cluster \
+            --service my-service \
+            --force-new-deployment
+```
+
+---
+
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Workflow | archivo YAML en `.github/workflows/` que define el pipeline |
+| Job | unidad de trabajo que corre en un runner; los jobs se pueden paralizar con `needs` |
+| Step | comando o action dentro de un job |
+| Action | step reutilizable publicado en el Marketplace o en el propio repo |
+| Runner | máquina virtual donde corre el job (ubuntu-latest, windows-latest, etc.) |
+| OIDC | OpenID Connect — permite que GitHub Actions obtenga credenciales temporales de AWS/Azure sin secrets de larga duración |
+| Reusable workflow | workflow con `workflow_call` que puede ser invocado por otros workflows |
+| Matrix build | estrategia que ejecuta el mismo job con múltiples combinaciones de variables en paralelo |
+| `needs` | declara dependencia entre jobs — un job no empieza hasta que su dependencia termine |
+| `fail-fast` | en matrix builds: si es `true` (default), cancela todas las combinaciones si una falla |
+| Artifact | archivo generado por el workflow (binarios, reportes) que se puede pasar entre jobs o descargar |
+| GITHUB_TOKEN | token temporal generado automáticamente por GitHub Actions para acceder al repositorio |
+| ECR | Amazon Elastic Container Registry — registro de imágenes Docker en AWS |
+| ECS | Amazon Elastic Container Service — orquestador de contenedores de AWS |
+
+---
+
 *Rogelio Arriaga Gonzalez*

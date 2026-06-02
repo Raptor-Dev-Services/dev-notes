@@ -251,6 +251,82 @@ public sealed class ExampleUserCsvExporter
 
 ---
 
+## LINQ — patrones de rendimiento
+> Fuente: *High-Performance Programming in C# and .NET* — Ch.7 LINQ Performance
+
+### Acceso al último elemento
+
+```csharp
+// ❌ Last() itera toda la colección internamente
+var lastUser = users.Last();
+
+// ✓ Índice directo — O(1) sin iteración
+var lastUser = users[users.Count - 1];
+
+// ✓ C# 8+ Index syntax
+var lastUser = users[^1];
+```
+
+### Evitar el keyword `let` en queries LINQ
+
+```csharp
+// ❌ let genera IL extra — más lento y más allocations
+var result = from u in users
+             let name = u.FullName.ToLower()
+             where name.Contains("garcía")
+             select u;
+
+// ✓ Sin let — el compilador genera menos IL
+var result = from u in users
+             where u.FullName.ToLower().Contains("garcía")
+             select u;
+
+// ✓ O mejor aún — método con lambda (el compilador optimiza más)
+var result = users.Where(u => u.FullName.Contains("garcía", StringComparison.OrdinalIgnoreCase));
+```
+
+### Ordenar condiciones en filtros
+
+```csharp
+// Si hay varios filtros con distintos tamaños de conjuntos, poner el más selectivo primero
+// — el short-circuit de && evita evaluar la segunda condición cuando la primera ya falla
+
+// ❌ Verificar primero el conjunto más grande
+var result = users.Where(u => largeRoleSet.Contains(u.Role) && smallTenantSet.Contains(u.TenantId));
+
+// ✓ Verificar primero el conjunto más pequeño — elimina más candidatos rápido
+var result = users.Where(u => smallTenantSet.Contains(u.TenantId) && largeRoleSet.Contains(u.Role));
+```
+
+### GroupBy con conversión a array
+
+```csharp
+// ✓ Convertir a array antes de GroupBy puede ser más rápido que operar sobre List<T>
+// porque array tiene menor overhead de iteración interna
+var grouped = users
+    .ToArray()                                     // ← array tiene iteración más rápida
+    .GroupBy(u => u.TenantId)
+    .Where(g => g.Count() > 1)
+    .SelectMany(g => g)
+    .ToList();
+```
+
+### IQueryable vs materialización prematura
+
+```csharp
+// ❌ ToList() trae todos los registros a memoria antes de filtrar
+var admins = _context.ExampleUsers
+    .ToList()                                      // ← materializa TODOS los usuarios
+    .Where(u => u.Role == "Admin");
+
+// ✓ Filtrar en la DB antes de materializar
+var admins = await _context.ExampleUsers
+    .Where(u => u.Role == "Admin")
+    .ToListAsync(ct);                              // ← solo los admins viajan por la red
+```
+
+---
+
 ## Cuándo optimizar / cuándo no
 
 | Optimizar | No optimizar todavía |

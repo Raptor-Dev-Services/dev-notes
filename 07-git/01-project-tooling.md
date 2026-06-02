@@ -1,178 +1,214 @@
-﻿# 12 · Archivos de proyecto y tooling de equipo
+# 01 — Archivos de Proyecto y Tooling de Equipo
 
-## 12.1 .gitignore
-
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<tbody>
-<tr>
-<td><em>.gitignore</em></td>
-</tr>
-<tr>
-<td><p># .NET</p>
-<p>bin/</p>
-<p>obj/</p>
-<p>*.user</p>
-<p>*.suo</p>
-<p>.vs/</p>
-<p>[Tt]est[Rr]esult*/</p>
-<p># Node / React</p>
-<p>node_modules/</p>
-<p>dist/</p>
-<p>build/</p>
-<p>.vite/</p>
-<p>coverage/</p>
-<p># Variables de entorno</p>
-<p>.env</p>
-<p>.env.local</p>
-<p>.env.*.local</p>
-<p># IDE</p>
-<p>.idea/</p>
-<p>.vscode/*</p>
-<p>!.vscode/settings.json</p>
-<p>!.vscode/extensions.json</p>
-<p># OS</p>
-<p>.DS_Store</p>
-<p>Thumbs.db</p>
-<p># Secretos</p>
-<p>*.pfx</p>
-<p>*.pem</p>
-<p>*.key</p>
-<p>secrets.json</p></td>
-</tr>
-</tbody>
-</table>
-
-## 12.2 .dockerignore
-
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<tbody>
-<tr>
-<td><em>.dockerignore</em></td>
-</tr>
-<tr>
-<td><p>**/.git</p>
-<p>**/.gitignore</p>
-<p>**/.vs</p>
-<p>**/.vscode</p>
-<p>**/.idea</p>
-<p>**/bin</p>
-<p>**/obj</p>
-<p>**/node_modules</p>
-<p>**/dist</p>
-<p>**/build</p>
-<p>**/.env</p>
-<p>**/.env.*</p>
-<p>**/coverage</p>
-<p>**/*.md</p>
-<p>**/Dockerfile*</p>
-<p>**/docker-compose*</p>
-<p>**/.dockerignore</p>
-<p>**/README.md</p>
-<p>**/LICENSE</p></td>
-</tr>
-</tbody>
-</table>
-
-## 12.3 .editorconfig
-
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<tbody>
-<tr>
-<td><em>.editorconfig</em></td>
-</tr>
-<tr>
-<td><p>root = true</p>
-<p>[*]</p>
-<p>indent_style = space</p>
-<p>indent_size = 4</p>
-<p>end_of_line = lf</p>
-<p>charset = utf-8</p>
-<p>trim_trailing_whitespace = true</p>
-<p>insert_final_newline = true</p>
-<p>[*.{js,jsx,ts,tsx,json,yml,yaml,html,css}]</p>
-<p>indent_size = 2</p>
-<p>[*.cs]</p>
-<p>indent_size = 4</p>
-<p>csharp_new_line_before_open_brace = all</p>
-<p>csharp_indent_case_contents = true</p></td>
-</tr>
-</tbody>
-</table>
-
-## 12.4 Husky + lint-staged
-
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<tbody>
-<tr>
-<td><em>bash</em></td>
-</tr>
-<tr>
-<td><p># Frontend (Node):</p>
-<p># npm install --save-dev husky lint-staged</p>
-<p># npx husky init</p>
-<p># package.json</p>
-<p>{</p>
-<p>"scripts": {</p>
-<p>"prepare": "husky",</p>
-<p>"lint": "eslint .",</p>
-<p>"format": "prettier --write ."</p>
-<p>},</p>
-<p>"lint-staged": {</p>
-<p>"*.{js,jsx,ts,tsx}": ["eslint --fix", "prettier --write"],</p>
-<p>"*.{json,css,md}": ["prettier --write"]</p>
-<p>}</p>
-<p>}</p>
-<p># .husky/pre-commit</p>
-<p>npx lint-staged</p></td>
-</tr>
-</tbody>
-</table>
-
-## 12.5 Dependabot
-
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<tbody>
-<tr>
-<td><em>.github/dependabot.yml</em></td>
-</tr>
-<tr>
-<td><p>version: 2</p>
-<p>updates:</p>
-<p>- package-ecosystem: "npm"</p>
-<p>directory: "/frontend"</p>
-<p>schedule: { interval: "weekly" }</p>
-<p>open-pull-requests-limit: 10</p>
-<p>- package-ecosystem: "nuget"</p>
-<p>directory: "/backend"</p>
-<p>schedule: { interval: "weekly" }</p>
-<p>- package-ecosystem: "docker"</p>
-<p>directory: "/"</p>
-<p>schedule: { interval: "weekly" }</p>
-<p>- package-ecosystem: "github-actions"</p>
-<p>directory: "/"</p>
-<p>schedule: { interval: "monthly" }</p></td>
-</tr>
-</tbody>
-</table>
-
-
+Archivos de configuración que todo proyecto debe incluir en el repositorio para garantizar consistencia entre desarrolladores, IDEs y entornos de CI.
 
 > Fuente: *Pro Git 2nd Ed* (Scott Chacon, Ben Straub) — Ch.8 Customizing Git
+
+---
+
+## `.gitignore`
+
+```gitignore
+# .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+[Tt]est[Rr]esult*/
+*.nupkg
+.nuget/
+
+# Node / React
+node_modules/
+dist/
+build/
+.vite/
+coverage/
+.eslintcache
+
+# Variables de entorno
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Secretos (nunca al repo)
+*.pfx
+*.pem
+*.key
+secrets.json
+local.settings.json
+```
+
+---
+
+## `.dockerignore`
+
+Excluye archivos que no necesita la imagen Docker — reduce el contexto del build significativamente (de GB a MB):
+
+```dockerignore
+**/.git
+**/.gitignore
+**/.vs
+**/.vscode
+**/.idea
+**/bin
+**/obj
+**/node_modules
+**/dist
+**/build
+**/.env
+**/.env.*
+**/coverage
+**/*.md
+**/Dockerfile*
+**/docker-compose*
+**/.dockerignore
+**/README.md
+**/LICENSE
+**/tests
+```
+
+---
+
+## `.editorconfig`
+
+Estandariza indentación, line endings y charset entre todos los editores del equipo. El archivo se hereda — una regla en el root aplica a todo el proyecto:
+
+```ini
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{js,jsx,ts,tsx,json,yml,yaml,html,css}]
+indent_size = 2
+
+[*.cs]
+indent_size = 4
+csharp_new_line_before_open_brace = all
+csharp_indent_case_contents = true
+csharp_space_after_cast = false
+
+[*.{md,txt}]
+trim_trailing_whitespace = false
+```
+
+---
+
+## Husky + lint-staged (Frontend)
+
+Ejecuta lint y format automáticamente en cada commit — el desarrollador no necesita recordarlo:
+
+```bash
+# instalación
+npm install --save-dev husky lint-staged
+npx husky init
+```
+
+```json
+// package.json
+{
+  "scripts": {
+    "prepare": "husky",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": ["eslint --fix", "prettier --write"],
+    "*.{json,css,md}": ["prettier --write"]
+  }
+}
+```
+
+```bash
+# .husky/pre-commit
+npx lint-staged
+```
+
+---
+
+## Dependabot
+
+Abre PRs automáticos cuando hay actualizaciones disponibles en dependencias — sin Dependabot las vulnerabilidades de librerías antiguas se acumulan silenciosamente:
+
+```yaml
+# .github/dependabot.yml
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/frontend"
+    schedule: { interval: "weekly" }
+    open-pull-requests-limit: 10
+    groups:
+      react-ecosystem:
+        patterns: ["react*", "@types/react*"]
+
+  - package-ecosystem: "nuget"
+    directory: "/backend"
+    schedule: { interval: "weekly" }
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule: { interval: "monthly" }
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule: { interval: "monthly" }
+```
+
+---
+
+## `.gitattributes`
+
+Normaliza line endings — previene diffs de archivos completos por cambios de CRLF/LF:
+
+```gitattributes
+# Normalizar a LF en el repositorio
+* text=auto eol=lf
+
+# Archivos binarios — no tocar line endings
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.dll binary
+*.exe binary
+*.nupkg binary
+```
+
+---
+
+## Checklist de archivos en cada nuevo repositorio
+
+```
+✓ .gitignore        — sin bin/, obj/, node_modules/, .env
+✓ .dockerignore     — contexto Docker mínimo
+✓ .editorconfig     — consistencia entre IDEs del equipo
+✓ .gitattributes    — LF consistente en todos los sistemas
+✓ README.md         — cómo arrancar el proyecto localmente
+✓ dependabot.yml    — dependencias actualizadas automáticamente
+```
 
 ---
 

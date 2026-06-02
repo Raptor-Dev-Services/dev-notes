@@ -2,8 +2,6 @@
 
 SQL y PostgreSQL para desarrollo backend: desde consultas básicas hasta optimización avanzada.
 
-📁 Carpeta: [`sql/`](sql/)
-
 ---
 
 ## Documentos

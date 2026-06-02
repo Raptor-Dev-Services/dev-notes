@@ -250,6 +250,246 @@ app.MapHealthChecks("/health/live", new HealthCheckOptions
 
 ---
 
+## Event Sourcing — historial inmutable de eventos
+> Fuente: *Microservices Design Patterns in .NET* — Ch.6 Applying Event Sourcing Patterns
+
+En lugar de guardar el **estado actual** de una entidad, Event Sourcing guarda la **secuencia de eventos** que llevaron a ese estado. El estado se reconstruye reproduciendo los eventos.
+
+```
+Estado tradicional (store current state):
+  User { Id: 1, Email: "nuevo@test.com", IsActive: false }  ← solo el estado actual
+
+Event Sourcing (store events):
+  1. UserRegistered     { UserId: 1, Email: "original@test.com",   At: 2024-01-01 }
+  2. EmailChanged       { UserId: 1, Email: "nuevo@test.com",      At: 2024-03-15 }
+  3. UserDeactivated    { UserId: 1, Reason: "por solicitud",      At: 2024-06-01 }
+  ← el estado actual se reconstruye reproduciendo estos 3 eventos
+```
+
+**Atributos clave de los eventos:**
+- **Inmutables** — un evento es un hecho ocurrido; no se modifica
+- **Únicos** — cada ocurrencia genera un evento nuevo, aunque sea el mismo tipo
+- **Históricos** — siempre representan un punto en el tiempo (nombrarlos en pasado)
+
+```csharp
+// Event Store — tabla append-only para guardar eventos
+public sealed class StoredEvent
+{
+    public Guid     Id          { get; init; } = Guid.NewGuid();
+    public Guid     AggregateId { get; init; }   // ID del agregado (usuario, orden, etc.)
+    public string   EventType   { get; init; } = string.Empty;
+    public string   Payload     { get; init; } = string.Empty;  // JSON del evento
+    public DateTime OccurredAt  { get; init; } = DateTime.UtcNow;
+    public int      Version     { get; init; }   // número secuencial — para detectar conflictos
+}
+
+// Repository que usa Event Sourcing
+public sealed class EventSourcedOrderRepository : IOrderRepository
+{
+    private readonly AppDbContext _db;
+
+    // Guardar un agregado = guardar sus eventos pendientes
+    public async Task SaveAsync(Order order, CancellationToken ct)
+    {
+        var events = order.DomainEvents.Select(e => new StoredEvent
+        {
+            AggregateId = order.Id,
+            EventType   = e.GetType().Name,
+            Payload     = JsonSerializer.Serialize(e, e.GetType()),
+            Version     = order.Version
+        });
+
+        await _db.StoredEvents.AddRangeAsync(events, ct);
+        await _db.SaveChangesAsync(ct);
+        order.ClearDomainEvents();
+    }
+
+    // Reconstruir un agregado = reproducir sus eventos
+    public async Task<Order?> GetByIdAsync(Guid id, CancellationToken ct)
+    {
+        var events = await _db.StoredEvents
+            .Where(e => e.AggregateId == id)
+            .OrderBy(e => e.OccurredAt)
+            .ToListAsync(ct);
+
+        if (!events.Any()) return null;
+
+        var order = new Order();
+        foreach (var stored in events)
+        {
+            var eventType = Type.GetType(stored.EventType);
+            if (eventType is null) continue;
+            var @event = JsonSerializer.Deserialize(stored.Payload, eventType);
+            order.Apply(@event!);  // el agregado aplica cada evento a su estado
+        }
+        return order;
+    }
+}
+```
+
+**Cuándo usar Event Sourcing:**
+- Sistemas donde la **auditoría completa** es un requisito (finanzas, salud, legal)
+- CQRS con modelos de lectura que necesitan reconstruirse desde los eventos
+- Cuando se necesita "viaje en el tiempo" (ver el estado en una fecha pasada)
+
+**Cuándo NO usar Event Sourcing:**
+- CRUDs simples donde la historia no importa — agrega complejidad sin beneficio
+- Cuando el volumen de eventos crece tanto que la reproducción se vuelve lenta sin snapshots
+- Sin CQRS — Event Sourcing sin un read model separado genera queries lentas
+
+**Snapshot pattern** — cuando hay muchos eventos, guardar un snapshot del estado cada N eventos para no reproducir desde el principio:
+
+```
+Evento 1 → Evento 50 → Snapshot v50 → Evento 51 → Evento 100 → Snapshot v100
+                                    ↑
+                         Para reconstruir desde v100: leer snapshot + eventos 51-100
+```
+
+---
+
+## Event-Driven Architecture — tipos de eventos
+> Fuente: *Architecting ASP.NET Core Applications* (Marcotte, 3rd Ed) — Ch.19 Introduction to Microservices Architecture
+
+EDA es un paradigma donde los componentes se comunican emitiendo y consumiendo eventos en lugar de llamarse directamente. Los tres términos clave:
+
+| Concepto | Definición |
+|----------|-----------|
+| **Mensaje** | pieza de datos con payload, headers e identificador — base de todo |
+| **Evento** | mensaje que representa algo que ya ocurrió (en pasado) — `OrderConfirmed`, `UserRegistered` |
+| **Comando** | mensaje enviado para que uno o más destinatarios ejecuten una acción — `SendWelcomeEmail` |
+
+### Los cuatro tipos de eventos
+
+```
+Domain Event        → integra lógica dentro de la misma aplicación (SRP interno)
+Application Event   → evento interno a una aplicación o grupo de microservicios del mismo equipo
+Integration Event   → propaga mensajes a sistemas externos; usa un message broker
+Enterprise Event    → integration event que cruza límites organizacionales (entre departamentos o empresas)
+```
+
+```csharp
+// Domain event — publicado internamente con MediatR, sin message broker
+public sealed record ExampleUserCreatedDomainEvent(Guid PublicId, string Email)
+    : INotification;
+
+// Integration event — publicado al message broker para otros microservicios
+// Contracts/V1/ExampleUserRegisteredIntegrationEvent.cs
+public sealed record ExampleUserRegisteredIntegrationEvent(
+    Guid     PublicId,
+    string   Email,
+    string   FullName,
+    DateTime OccurredAt);
+
+// Handler que publica el domain event — dentro de la misma app
+public sealed class ExampleUserCreatedDomainEventHandler
+    : INotificationHandler<ExampleUserCreatedDomainEvent>
+{
+    private readonly IMessageBus _bus;
+
+    public async Task Handle(ExampleUserCreatedDomainEvent evt, CancellationToken ct)
+    {
+        // Convierte domain event → integration event para publicar externamente
+        await _bus.PublishAsync(
+            new ExampleUserRegisteredIntegrationEvent(
+                evt.PublicId, evt.Email, evt.FullName, DateTime.UtcNow), ct);
+    }
+}
+```
+
+---
+
+## Publish-Subscribe pattern
+
+En lugar de un queue (un mensaje → un consumidor), Pub-Sub permite que **un publicador envíe un evento a cero o más suscriptores**. El publicador no conoce a los suscriptores: fire and forget.
+
+```
+Queue:      Publisher → Message → [Queue] → 1 Consumer
+
+Pub-Sub:    Publisher → Event → [Broker / Topic] → N Consumers (0, 1, o muchos)
+```
+
+```csharp
+// ❌ Sin Pub-Sub — AuthServer conoce todos los pasos post-registro (acoplamiento)
+public async Task RegisterUserAsync(RegisterUserCommand cmd, CancellationToken ct)
+{
+    var user = ExampleUser.Create(cmd.Email, cmd.FullName);
+    await _repo.AddAsync(user, ct);
+
+    await _emailService.SendWelcomeEmailAsync(user.Email, ct);   // acoplado
+    await _imageService.ProcessAvatarAsync(user.PublicId, ct);   // acoplado
+    await _mailboxService.SendOnboardingMessageAsync(user.PublicId, ct); // acoplado
+}
+
+// ✓ Con Pub-Sub — AuthServer solo publica el evento; cada servicio reacciona independientemente
+public async Task RegisterUserAsync(RegisterUserCommand cmd, CancellationToken ct)
+{
+    var user = ExampleUser.Create(cmd.Email, cmd.FullName);
+    await _repo.AddAsync(user, ct);
+
+    // Un solo publish; los suscriptores hacen el resto en paralelo
+    await _bus.PublishAsync(
+        new ExampleUserRegisteredIntegrationEvent(
+            user.PublicId, user.Email, user.FullName, DateTime.UtcNow), ct);
+}
+
+// Cada suscriptor es un microservicio o handler independiente
+public sealed class SendWelcomeEmailOnUserRegistered
+    : IIntegrationEventHandler<ExampleUserRegisteredIntegrationEvent>
+{
+    public async Task Handle(ExampleUserRegisteredIntegrationEvent evt, CancellationToken ct)
+        => await _emailService.SendWelcomeEmailAsync(evt.Email, ct);
+}
+```
+
+### Message brokers comunes
+
+| Broker | Protocolo | Mejor para |
+|--------|-----------|-----------|
+| **Azure Service Bus** | AMQP | Microservicios en Azure, topics y queues gestionados |
+| **Amazon SQS / SNS** | HTTP | Microservicios en AWS, integración con Lambda y ECS |
+| **Apache Kafka** | Kafka | Alta velocidad, event streaming, replay de historial |
+| **RabbitMQ** | AMQP | On-premise, open-source, flexible |
+| **MQTT / Mosquitto** | MQTT | IoT, dispositivos con ancho de banda limitado |
+
+### Dead Letter Queue (DLQ)
+
+Cuando un mensaje falla repetidamente (por error de procesamiento o expiración), el broker lo mueve a una **dead letter queue** en lugar de bloquearlo o perderlo:
+
+```
+Normal Queue → falla 3 veces → Dead Letter Queue
+                                    ↑
+                            Aquí se diagnostica el error
+                            y se decide si reencolar o descartar
+```
+
+```csharp
+// Azure Service Bus — configurar DLQ
+var options = new ServiceBusProcessorOptions
+{
+    MaxConcurrentCalls = 5,
+    AutoCompleteMessages = false
+};
+
+await using var processor = client.CreateProcessor("orders-topic", "inventory-sub", options);
+
+processor.ProcessMessageAsync += async args =>
+{
+    try
+    {
+        var evt = args.Message.Body.ToObjectFromJson<OrderConfirmedIntegrationEvent>();
+        await HandleAsync(evt, args.CancellationToken);
+        await args.CompleteMessageAsync(args.Message);  // éxito: eliminar del queue
+    }
+    catch (Exception ex)
+    {
+        _logger.LogError(ex, "Error procesando mensaje {MessageId}", args.Message.MessageId);
+        await args.AbandonMessageAsync(args.Message);   // fracaso: reencolar (hasta max retries → DLQ)
+    }
+};
+```
+
+---
+
 ## Cuándo usar / no usar microservicios
 
 | Usar | No usar |
@@ -259,6 +499,34 @@ app.MapHealthChecks("/health/live", new HealthCheckOptions
 | Módulos con requisitos de disponibilidad distintos | Cuando la latencia de red impacta la UX |
 | Cumplimiento normativo requiere aislamiento de datos | Sin CI/CD maduro — los microservicios requieren automatización |
 
+---
+
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Microservicio | servicio pequeño e independiente con su propia BD y ciclo de deploy |
+| Monolito Modular | monolito con módulos bien separados — alternativa antes de microservicios |
+| EDA (Event-Driven Architecture) | paradigma donde los componentes se comunican mediante eventos, no llamadas directas |
+| Mensaje | pieza de datos (payload + headers + ID) que fluye entre sistemas |
+| Evento | mensaje que representa un hecho ocurrido en el pasado — `OrderConfirmed`, `UserRegistered` |
+| Comando | mensaje enviado para que un destinatario ejecute una acción — `SendEmail` |
+| Domain Event | evento interno de la aplicación; publicado con MediatR; no cruza límites de proceso |
+| Integration Event | evento que cruza límites de proceso; publicado en un message broker |
+| Application Event | evento interno a una aplicación o grupo de microservicios del mismo equipo |
+| Enterprise Event | integration event que cruza límites organizacionales (entre departamentos o empresas) |
+| Pub-Sub | patrón donde un publicador envía un evento a cero o más suscriptores sin conocerlos |
+| Message Broker | componente central que recibe eventos de publicadores y los entrega a suscriptores |
+| Topic | canal de un message broker donde los publicadores envían y los suscriptores reciben |
+| Dead Letter Queue (DLQ) | queue donde el broker mueve mensajes que fallaron repetidamente, para diagnóstico |
+| FIFO Queue | cola que garantiza procesamiento en orden de llegada (First In, First Out) |
+| Event Sourcing | patrón que almacena el historial de eventos como fuente de verdad en lugar del estado actual |
+| Eventual Consistency | consistencia de datos que se logra con un pequeño retardo — aceptable en sistemas distribuidos |
+| Materialized View | modelo pre-computado que un microservicio mantiene en su propia BD a partir de eventos consumidos |
+| API Gateway | punto de entrada único para los clientes externos — autentica, enruta y limita tráfico |
+| Saga | patrón para transacciones distribuidas — coordina pasos locales con mensajes de compensación |
+| gRPC | protocolo binario de llamada remota, más eficiente que REST para comunicación entre microservicios |
+| YARP | Yet Another Reverse Proxy — librería .NET para implementar API Gateway con configuración YAML |
 
 ---
 

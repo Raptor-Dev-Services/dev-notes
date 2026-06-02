@@ -2,8 +2,6 @@
 
 Diseño de APIs REST: semántica HTTP, recursos, paginación, errores y evolución del contrato.
 
-📁 Carpeta: [`api-design/`](api-design/)
-
 ---
 
 ## Documentos

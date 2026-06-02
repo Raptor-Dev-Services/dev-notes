@@ -266,6 +266,141 @@ public readonly record struct UserId(Guid Value)
 
 ---
 
+## ObjectPool — reutilizar objetos costosos
+> Fuente: *Effective .NET Memory Management* — Ch.2 Object Allocation and Deallocation
+
+Crear y destruir objetos repetidamente presiona al GC. Un pool mantiene instancias listas para reutilizar, eliminando el costo de allocación y recolección en hot paths.
+
+```csharp
+// Microsoft.Extensions.ObjectPool — registrar en DI
+builder.Services.AddSingleton<ObjectPoolProvider, DefaultObjectPoolProvider>();
+builder.Services.AddSingleton(sp =>
+{
+    var provider = sp.GetRequiredService<ObjectPoolProvider>();
+    return provider.CreateStringBuilderPool();
+});
+
+// Uso en un servicio
+public sealed class CsvExportService
+{
+    private readonly ObjectPool<StringBuilder> _sbPool;
+
+    public CsvExportService(ObjectPool<StringBuilder> sbPool) => _sbPool = sbPool;
+
+    public string ExportExampleUsers(IEnumerable<ExampleUser> users)
+    {
+        var sb = _sbPool.Get();
+        try
+        {
+            sb.AppendLine("Id,FullName,Email");
+            foreach (var u in users)
+                sb.AppendLine($"{u.PublicId},{u.FullName},{u.Email}");
+            return sb.ToString();
+        }
+        finally
+        {
+            _sbPool.Return(sb);  // devolver al pool — se limpia automáticamente
+        }
+    }
+}
+```
+
+Usar `ObjectPool<T>` para objetos costosos de crear (regex compilados, conexiones, buffers) que se usan frecuentemente en endpoints de alta carga.
+
+---
+
+## ArrayPool — reutilizar arrays grandes
+> Fuente: *Effective .NET Memory Management* — Ch.2 Object Allocation and Deallocation
+
+Arrays de más de 85 KB van al LOH (Large Object Heap), que el GC no compacta. `ArrayPool<T>` permite reutilizarlos sin generar presión al LOH.
+
+```csharp
+// System.Buffers.ArrayPool<T>
+public async Task ProcessExampleUserBatchAsync(int batchSize, CancellationToken ct)
+{
+    // Alquilar un array del pool — el tamaño real puede ser mayor que el solicitado
+    var buffer = ArrayPool<ExampleUser>.Shared.Rent(minimumLength: batchSize);
+    try
+    {
+        var count = await _repo.FillBatchAsync(buffer.AsMemory(0, batchSize), ct);
+        await ProcessUsersAsync(buffer.AsSpan(0, count), ct);
+    }
+    finally
+    {
+        ArrayPool<ExampleUser>.Shared.Return(buffer, clearArray: true);
+    }
+}
+```
+
+Regla práctica: cualquier array temporal mayor a ~80 KB debe venir de `ArrayPool<T>.Shared`.
+
+---
+
+## WeakReference — referenciar sin prevenir la recolección
+> Fuente: *Effective .NET Memory Management* — Ch.2 Object Allocation and Deallocation
+
+Una referencia débil permite mantener un puntero a un objeto sin impedir que el GC lo recolecte cuando no hay otras referencias fuertes.
+
+```csharp
+// Caché que cede memoria bajo presión del GC
+public sealed class ExampleUserCache
+{
+    private readonly Dictionary<Guid, WeakReference<ExampleUser>> _cache = new();
+
+    public void Add(ExampleUser user)
+        => _cache[user.PublicId] = new WeakReference<ExampleUser>(user);
+
+    public ExampleUser? Get(Guid id)
+    {
+        if (_cache.TryGetValue(id, out var weakRef) &&
+            weakRef.TryGetTarget(out var user))
+            return user;   // el objeto todavía vive en memoria
+
+        _cache.Remove(id); // el GC ya lo recolectó
+        return null;
+    }
+}
+
+// Referencia fuerte vs débil
+ExampleUser user = new ExampleUser { ... };         // referencia fuerte — el GC NO recolecta
+var weak = new WeakReference<ExampleUser>(user);     // referencia débil — el GC PUEDE recolectar
+user = null!;                                        // sin referencias fuertes...
+GC.Collect();                                        // ...el GC puede recolectar el objeto
+weak.TryGetTarget(out var recovered);               // recovered == null si fue recolectado
+```
+
+Usar `WeakReference<T>` para cachés opcionales donde perder la entrada es aceptable.
+
+---
+
+## Optimización de strings
+> Fuente: *Effective .NET Memory Management* — Ch.2 Object Allocation and Deallocation
+
+Los strings son inmutables — cada concatenación crea un objeto nuevo en el heap.
+
+```csharp
+// ❌ Concatenación en loop — crea N strings intermedios en el heap
+var result = string.Empty;
+foreach (var user in users)
+    result += $"{user.FullName}, ";
+
+// ✓ StringBuilder — un solo buffer mutable, evita N allocations
+var sb = new StringBuilder(capacity: users.Count * 30);  // pre-sizing evita resize interno
+foreach (var user in users)
+    sb.Append(user.FullName).Append(", ");
+var result = sb.ToString();
+
+// ✓ string.Create — crear sin StringBuilder cuando se conoce el tamaño exacto
+var formatted = string.Create(36, userId, static (span, id) =>
+    id.TryFormat(span, out _, "D"));
+
+// ✓ Interpolated string handlers (C# 10+) — el compilador optimiza automáticamente
+// $"..." en métodos como logger.LogInformation ya usa DefaultInterpolatedStringHandler
+// que evita el string intermedio cuando el log level no está habilitado
+```
+
+---
+
 ## Diagnóstico de memoria
 
 ```csharp

@@ -269,6 +269,51 @@ public sealed record ExampleUserDto(
 
 ---
 
+## Cohesión y acoplamiento
+> Fuente: *Clean Code with C#* — Ch.3 Classes, Objects, and Data Structures
+
+**Alta cohesión** — una clase tiene una responsabilidad bien definida y sus métodos son todos relevantes a esa responsabilidad. El resultado: código fácil de entender, probar y modificar.
+
+**Bajo acoplamiento** — las clases interactúan solo a través de abstracciones (interfaces). Cambiar una clase no obliga a cambiar las demás.
+
+```csharp
+// ❌ Baja cohesión — una clase con responsabilidades no relacionadas
+public sealed class ExampleUserManager
+{
+    public ExampleUser GetUser(Guid id) { ... }
+    public void SendWelcomeEmail(ExampleUser user) { ... }    // ← responsabilidad de email
+    public void CalculateTax(ExampleUser user) { ... }        // ← responsabilidad de contabilidad
+    public void GeneratePayStub(ExampleUser user) { ... }     // ← responsabilidad de nómina
+}
+
+// ✓ Alta cohesión — cada clase hace una sola cosa
+public sealed class ExampleUserRepository { ... }     // solo acceso a datos
+public sealed class EmailService { ... }              // solo envío de emails
+public sealed class TaxCalculator { ... }             // solo cálculo de impuestos
+```
+
+```csharp
+// ❌ Acoplamiento fuerte — ExampleUserService depende de una implementación concreta
+public sealed class ExampleUserService
+{
+    private readonly SqlExampleUserRepository _repo = new SqlExampleUserRepository();  // ← hardcoded
+}
+
+// ✓ Acoplamiento débil — depende de la abstracción, no de la implementación
+public sealed class ExampleUserService
+{
+    private readonly IExampleUserRepository _repo;
+
+    public ExampleUserService(IExampleUserRepository repo)  // ← DI por interfaz
+        => _repo = repo;
+}
+// Se puede cambiar SqlExampleUserRepository por InMemoryExampleUserRepository sin tocar ExampleUserService
+```
+
+**Regla práctica:** si para testear una clase hay que instanciar 5 dependencias concretas, el acoplamiento es demasiado fuerte. Las dependencias deben inyectarse como interfaces.
+
+---
+
 ## Manejo de errores
 > Fuente: *Clean Code* (Martin) — Ch.7 Error Handling
 

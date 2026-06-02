@@ -19,6 +19,7 @@ ehthumbs.db
 # Archivos de trabajo local (no aportan al repo)
 TODO.md
 CONTEXT.md
+CLAUDE.md
 .claude/
 
 # Libros / binarios (van en Google Drive, no en el repo)

@@ -1,4 +1,4 @@
-# 11 · Vibe Coding / AI Workflow
+# 11 — Vibe Coding / AI Workflow
 
 Documentación sobre el uso profesional de herramientas AI en el ciclo de desarrollo de software.
 

@@ -1,4 +1,4 @@
-# 07 · Git / Control de Versiones
+# 07 — Git / Control de Versiones
 
 Documentación sobre flujos de trabajo con Git, convenciones de equipo y estrategias de gestión de código.
 

@@ -2,8 +2,6 @@
 
 Tests automatizados en .NET: unitarios, integración, base de datos real y TDD.
 
-📁 Carpeta: [`testing/`](testing/)
-
 ---
 
 ## Documentos

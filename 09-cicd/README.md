@@ -1,4 +1,4 @@
-# 09 · CI/CD y Automatización
+# 09 — CI/CD y Automatización
 
 Documentación sobre pipelines de integración y entrega continua.
 

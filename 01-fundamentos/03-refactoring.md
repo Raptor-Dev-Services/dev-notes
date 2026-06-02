@@ -26,6 +26,56 @@ No es refactoring:
 
 "Deja el código más limpio de como lo encontraste." No hace falta un sprint de refactoring — mejorar un poco cada vez que se toca el código.
 
+### Deuda técnica y código legado
+> Fuente: *Refactoring with C#* — Ch.1 What Is Refactoring?
+
+**Deuda técnica** es el costo adicional de trabajo futuro causado por tomar atajos en el presente. Acumula intereses: cada feature nueva cuesta más cuando el código subyacente es difícil de entender o modificar.
+
+**Código legado** — definición de Michael Feathers: *"code without tests"*. No importa la antigüedad; lo que lo hace "legado" es la ausencia de una red de seguridad que permita cambiarlo con confianza.
+
+Causas comunes de deuda técnica:
+- Presión de deadlines que obliga a tomar atajos
+- Falta de refactoring continuo (no aplicar la regla del Boy Scout)
+- Código escrito sin tests desde el principio
+- Decisiones de diseño obsoletas que nunca se revisitaron
+
+Señales de deuda acumulada:
+- El equipo evita tocar ciertos archivos ("zona peligrosa")
+- Agregar una feature simple requiere cambios en muchos lugares
+- Es difícil escribir tests para el código existente
+- Leer el código no revela claramente su intención
+
+### Deuda técnica como riesgo — registro de riesgos
+> Fuente: *Refactoring with C#* — Ch.15 Managing Technical Debt
+
+La deuda técnica no pagada es riesgo de proyecto. Para priorizarla de forma objetiva, tratarla como riesgos con probabilidad e impacto medibles.
+
+```
+Riesgo = Probabilidad × Impacto
+
+Probabilidad (1-5): ¿qué tan probable es que esta deuda cause un problema?
+Impacto (1-5): ¿qué tan grave sería el problema si ocurre?
+Prioridad = Probabilidad × Impacto (1 = bajo riesgo, 25 = crítico)
+```
+
+```
+Ejemplo de registro de riesgos (Risk Register):
+
+ID  | Título                           | Estado  | Prob | Impacto | Prioridad
+----|----------------------------------|---------|------|---------|----------
+R01 | AuthService sin tests unitarios  | Abierto | 4    | 5       | 20
+R02 | Queries N+1 en listado de órdenes | Abierto | 3    | 4       | 12
+R03 | Dependencias desactualizadas     | Abierto | 2    | 3       | 6
+R04 | Magic strings en validaciones    | Abierto | 3    | 2       | 6
+
+Refactorizar primero los riesgos con prioridad más alta.
+```
+
+**Proceso de revisión de riesgos:**
+- Revisar el registro en cada sprint planning o retrospectiva
+- Reclasificar riesgos cuando cambia el contexto (nuevo módulo que toca la deuda, cliente nuevo)
+- Marcar riesgos como "mitigado" cuando se refactoriza la zona afectada, no solo cuando "se cierra el ticket"
+
 ---
 
 ## Code Smells — señales de que el código necesita refactoring
@@ -279,6 +329,126 @@ public sealed class MexicanAddress : Address
 }
 ```
 
+### Introduce Local Variable — eliminar expresiones repetidas
+> Fuente: *Refactoring with C#* — Ch.2 Simplifying Methods
+
+```csharp
+// Antes — la misma expresión calculada múltiples veces
+public decimal CalculateFinalPrice(Order order)
+{
+    if (order.Items.Sum(i => i.Price * i.Quantity) > 1000m)
+        return order.Items.Sum(i => i.Price * i.Quantity) * 0.9m;
+    return order.Items.Sum(i => i.Price * i.Quantity);
+}
+
+// Después — extraer a una variable con nombre que explica el propósito
+public decimal CalculateFinalPrice(Order order)
+{
+    var subtotal = order.Items.Sum(i => i.Price * i.Quantity);
+    return subtotal > 1000m ? subtotal * 0.9m : subtotal;
+}
+```
+
+### Introduce Constant — eliminar números mágicos
+> Fuente: *Refactoring with C#* — Ch.2 Simplifying Methods
+
+```csharp
+// Antes — ¿qué significan estos números?
+public string GetExampleUserTier(ExampleUser user)
+{
+    if (user.TotalPurchases >= 50_000_000) return "Platinum";
+    if (user.TotalPurchases >= 40_000_000) return "Gold";
+    if (user.TotalPurchases >= 30_000_000) return "Silver";
+    return "Standard";
+}
+
+// Después — las constantes documentan el significado del número
+private const decimal PlatinumThreshold = 50_000_000m;
+private const decimal GoldThreshold     = 40_000_000m;
+private const decimal SilverThreshold   = 30_000_000m;
+
+public string GetExampleUserTier(ExampleUser user) => user.TotalPurchases switch
+{
+    >= PlatinumThreshold => "Platinum",
+    >= GoldThreshold     => "Gold",
+    >= SilverThreshold   => "Silver",
+    _                    => "Standard"
+};
+```
+
+### Invert If — retorno temprano para eliminar anidamiento
+> Fuente: *Refactoring with C#* — Ch.3 Conditional Logic
+
+```csharp
+// Antes — lógica principal anidada dentro de múltiples if
+public async Task<ProcessResult> ProcessOrderAsync(Guid userId, Guid orderId, CancellationToken ct)
+{
+    var user = await _users.GetByIdAsync(userId, ct);
+    if (user is not null)
+    {
+        if (user.IsActive)
+        {
+            var order = await _orders.GetByIdAsync(orderId, ct);
+            if (order is not null)
+            {
+                // lógica principal
+                return new ProcessSuccess();
+            }
+            return new ProcessFailure("Orden no encontrada.");
+        }
+        return new ProcessFailure("Usuario inactivo.");
+    }
+    return new ProcessFailure("Usuario no encontrado.");
+}
+
+// Después — invertir: validar el camino infeliz primero, lógica principal al final sin anidamiento
+public async Task<ProcessResult> ProcessOrderAsync(Guid userId, Guid orderId, CancellationToken ct)
+{
+    var user = await _users.GetByIdAsync(userId, ct);
+    if (user is null)    return new ProcessFailure("Usuario no encontrado.");
+    if (!user.IsActive)  return new ProcessFailure("Usuario inactivo.");
+
+    var order = await _orders.GetByIdAsync(orderId, ct);
+    if (order is null)   return new ProcessFailure("Orden no encontrada.");
+
+    // lógica principal sin anidamiento
+    return new ProcessSuccess();
+}
+```
+
+### Drop Else After Return — eliminar else redundante
+> Fuente: *Refactoring with C#* — Ch.3 Conditional Logic
+
+```csharp
+// Antes — else después de return no aporta información; solo agrega anidamiento
+public string GetExampleUserStatus(ExampleUser user)
+{
+    if (!user.IsActive)
+    {
+        return "Inactivo";
+    }
+    else
+    {
+        if (user.IsSuspended)
+        {
+            return "Suspendido";
+        }
+        else
+        {
+            return "Activo";
+        }
+    }
+}
+
+// Después — sin else; el flujo es lineal
+public string GetExampleUserStatus(ExampleUser user)
+{
+    if (!user.IsActive)   return "Inactivo";
+    if (user.IsSuspended) return "Suspendido";
+    return "Activo";
+}
+```
+
 ---
 
 ## Refactoring seguro — el proceso
@@ -306,6 +476,156 @@ git add -A && git commit -m "refactor(users): extract email validation to Value 
 dotnet test
 git add -A && git commit -m "refactor(users): use Email value object in InsertHandler"
 # ... y así sucesivamente
+```
+
+---
+
+## Refactoring a gran escala — Strangler Fig pattern
+> Fuente: *Refactoring with C#* — Ch.17 Refactoring Large Applications
+
+Cuando el sistema legado es demasiado grande para refactorizar in-situ, el patrón Strangler Fig permite reemplazarlo incrementalmente sin detener el desarrollo ni hacer una reescritura total.
+
+### El problema con las reescrituras totales
+
+```
+El "rewrite trap":
+  ✗ El equipo estima 6 meses → tarda 2 años
+  ✗ El sistema legado sigue recibiendo bugs mientras se construye el nuevo
+  ✗ Al llegar, el nuevo sistema tiene los mismos problemas de diseño
+     que el viejo (porque el equipo no entendía el dominio)
+  ✗ El negocio perdió 2 años de features
+
+Strangler Fig es mejor: reemplazar por rebanadas verticales,
+incrementalmente, sin detener el negocio.
+```
+
+### Cómo funciona Strangler Fig
+
+```
+Fase 1: Identificar una "rebanada" funcional pequeña (ej: módulo de reportes)
+Fase 2: Construir la nueva implementación en paralelo (mismo dominio, nuevo código)
+Fase 3: Redirigir el tráfico de esa rebanada al nuevo servicio via proxy/gateway
+Fase 4: Monitorear — si hay problemas, regresar al legado (feature flag)
+Fase 5: Una vez estable, eliminar el código legado de esa rebanada
+Fase 6: Repetir con la siguiente rebanada
+
+Resultado: el sistema legado "se estrangula" gradualmente, como la higuera
+(strangler fig) que crece alrededor de un árbol hasta reemplazarlo.
+```
+
+### Implementación con YARP (proxy de tráfico)
+
+```csharp
+// El API Gateway redirige tráfico al sistema legado o al nuevo servicio
+// según la feature flag o la ruta — sin que el cliente note la diferencia
+
+// appsettings.json — YARP como Strangler Fig proxy
+{
+  "ReverseProxy": {
+    "Routes": {
+      "reports-new": {
+        "ClusterId": "reports-new-cluster",
+        "Match": { "Path": "/api/reports/{**catch-all}" },
+        "Metadata": { "RequireFeatureFlag": "NewReportsService" }
+      },
+      "legacy-fallback": {
+        "ClusterId": "legacy-cluster",
+        "Match": { "Path": "/{**catch-all}" }
+      }
+    },
+    "Clusters": {
+      "reports-new-cluster": {
+        "Destinations": {
+          "reports-api": { "Address": "http://reports-service-v2:8080" }
+        }
+      },
+      "legacy-cluster": {
+        "Destinations": {
+          "legacy-api": { "Address": "http://legacy-monolith:8080" }
+        }
+      }
+    }
+  }
+}
+```
+
+```csharp
+// Middleware que inspecciona la feature flag antes de dejar pasar al proxy
+public sealed class FeatureFlagRoutingMiddleware
+{
+    private readonly RequestDelegate _next;
+    private readonly IFeatureManager _features;
+
+    public async Task InvokeAsync(HttpContext context)
+    {
+        var requiresFlag = context.GetEndpoint()?.Metadata
+            .GetMetadata<RouteMetadataAttribute>()?.Values
+            .GetValueOrDefault("RequireFeatureFlag");
+
+        if (requiresFlag is not null && !await _features.IsEnabledAsync(requiresFlag))
+        {
+            // Redirigir al legado si la feature flag no está activa
+            context.Request.Path = "/legacy" + context.Request.Path;
+        }
+
+        await _next(context);
+    }
+}
+```
+
+### Feature flags para despliegue seguro del refactoring
+
+```csharp
+// Microsoft.FeatureManagement — habilitar gradualmente el nuevo servicio
+// appsettings.json
+{
+  "FeatureManagement": {
+    "NewReportsService": {
+      "EnabledFor": [
+        {
+          "Name": "Percentage",
+          "Parameters": { "Value": 10 }   // 10% del tráfico al nuevo servicio
+        }
+      ]
+    }
+  }
+}
+
+// Uso en el handler
+public sealed class GetReportHandler
+{
+    private readonly IFeatureManager       _features;
+    private readonly INewReportService     _newService;
+    private readonly ILegacyReportService  _legacyService;
+
+    public async Task<ReportDto> Handle(GetReportRequest req, CancellationToken ct)
+    {
+        if (await _features.IsEnabledAsync("NewReportsService"))
+            return await _newService.GetReportAsync(req.ReportId, ct);
+
+        return await _legacyService.GetReportAsync(req.ReportId, ct);
+    }
+}
+```
+
+### Estrategias ágiles de refactoring
+> Fuente: *Refactoring with C#* — Ch.17 Agile Refactoring Strategies
+
+```
+Opción 1 — Work items dedicados
+  Crear tickets de refactoring en el backlog con la misma prioridad que features.
+  Ventaja: visibilidad. Desventaja: compiten con features por tiempo.
+
+Opción 2 — Refactorizar mientras se toca el código (Boy Scout Rule)
+  Cada vez que un desarrollador toca un archivo, lo deja más limpio.
+  Ventaja: sin overhead de planificación. Desventaja: puede ser inconsistente.
+
+Opción 3 — Sprints de refactoring dedicados
+  Un sprint cada N sprints (ej: cada 4) dedicado exclusivamente a deuda técnica.
+  Ventaja: esfuerzo concentrado. Desventaja: el negocio lo percibe como "sin features".
+
+Recomendación: combinar Opción 2 para mejoras pequeñas + Opción 1 para
+refactorings significativos que requieren coordinación de equipo.
 ```
 
 ---

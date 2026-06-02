@@ -1,10 +1,10 @@
 # 01 · AWS — Servicios esenciales
 
-> Fuente: *AWS Certified Solutions Architect – Associate Guide* (Packt) — Ch.1 IAM, Ch.2 Infraestructura global y S3, Ch.3 EC2, Ch.9 Storage y RDS, Ch.13 Access Control
+> Fuente: *AWS Certified Solutions Architect – Associate Guide* (Gabriel Ramirez, Packt) — Ch.1 IAM, Ch.2 Infraestructura global y S3, Ch.3 EC2, Ch.9 Storage y RDS, Ch.13 Access Control
 
 ## Problema que resuelve
 
-Un equipo que empieza a operar en AWS necesita entender la infraestructura global, los servicios de cómputo, almacenamiento y base de datos, y el sistema de permisos antes de desplegar cualquier aplicación.
+Un equipo que empieza a operar en AWS necesita entender la infraestructura global, los servicios de cómputo, almacenamiento y base de datos, y el sistema de permisos antes de desplegar cualquier aplicación. Este documento es el índice del bloque AWS de esta base de conocimiento — los detalles de cada servicio están en los documentos especializados referenciados al final.
 
 ## Infraestructura global
 
@@ -207,6 +207,56 @@ El back-template se despliega en ECS Fargate (contenedor Docker). La base de dat
 | S3 para almacenamiento de objetos de cualquier tamaño | S3 como base de datos (no es transaccional) |
 | IAM Roles para servicios, nunca access keys embebidas | crear un solo usuario IAM con todos los permisos |
 
+---
+
+## Documentos especializados del bloque AWS
+
+| Documento | Contenido |
+|-----------|-----------|
+| `11-aws-vpc-networking.md` | VPC, subredes, Route Tables, IGW, NAT Gateway, Security Groups, NACLs, VPC Endpoints, Route 53 |
+| `12-aws-compute-ec2.md` | Familias de instancia, tipos de compra, AMIs, User Data, IAM Instance Profiles, Auto Scaling, ALB |
+| `13-aws-storage-ebs-s3.md` | EBS (gp3, io2, snapshots, DLM), S3 (clases, lifecycle, versioning, cifrado, presigned URLs, replicación) |
+| `14-aws-rds-postgresql.md` | RDS vs EC2, Parameter Groups, Multi-AZ, Read Replicas, PITR, RDS Proxy, seguridad, Performance Insights |
+| `15-aws-iam-seguridad.md` | Usuarios, grupos, roles, políticas, evaluación de permisos, Instance Profiles, OIDC, CloudTrail |
+| `16-aws-cloudwatch.md` | Métricas, namespaces, dimensiones, CloudWatch Agent, Logs, alarmas esenciales, dashboards |
+
+---
+
+## Glosario global de AWS
+
+| Término | Definición breve |
+|---------|-----------------|
+| Región | Conjunto de AZs geográficamente separadas. Ej: `us-east-1` (Virginia), `sa-east-1` (São Paulo). |
+| AZ | Availability Zone. Data center físicamente separado dentro de una región. |
+| VPC | Virtual Private Cloud. Red virtual aislada donde viven los recursos. |
+| Subnet | Subred dentro de la VPC. Pública (ruta a IGW) o privada (sin ruta a Internet). |
+| CIDR | Notación de rangos de IP. `/16` = 65K IPs, `/24` = 256 IPs. |
+| IGW | Internet Gateway. Conecta la VPC a Internet. Bidireccional. |
+| NAT Gateway | Permite que recursos privados salgan a Internet. Solo outbound. |
+| Security Group | Firewall stateful a nivel de instancia. Solo reglas ALLOW. |
+| NACL | Network ACL. Firewall stateless a nivel de subnet. Allow y Deny. |
+| EC2 | Elastic Compute Cloud. Máquinas virtuales bajo demanda. |
+| AMI | Amazon Machine Image. Imagen de sistema para lanzar instancias. |
+| ASG | Auto Scaling Group. Mantiene y escala instancias EC2 automáticamente. |
+| ALB | Application Load Balancer. Proxy reverso HTTP/HTTPS con routing avanzado. |
+| EBS | Elastic Block Store. Discos virtuales persistentes para EC2. |
+| S3 | Simple Storage Service. Almacenamiento de objetos serverless. |
+| RDS | Relational Database Service. Base de datos gestionada (PostgreSQL, MySQL, etc.). |
+| Multi-AZ | Réplica síncrona de RDS en otra AZ. Failover automático. No escala lecturas. |
+| Read Replica | Réplica asíncrona de RDS para escalar lecturas. Eventualmente consistente. |
+| IAM | Identity and Access Management. Control de acceso a recursos AWS. |
+| IAM Role | Identidad temporal asumible por servicios, pipelines o cuentas. |
+| Instance Profile | Contenedor de IAM Role para instancias EC2. |
+| OIDC | OpenID Connect. Federar identidades externas (GitHub Actions) con IAM sin access keys. |
+| CloudWatch | Observabilidad: métricas, logs, alarmas y dashboards. |
+| CloudTrail | Auditoría de todas las llamadas a la API de AWS. |
+| Route 53 | DNS gestionado con routing policies (weighted, failover, latency, geolocation). |
+| ACM | AWS Certificate Manager. Certificados TLS gratuitos para ALB y CloudFront. |
+| Secrets Manager | Almacén de secretos (passwords, API keys) con rotación automática. |
+| ECR | Elastic Container Registry. Registro privado de imágenes Docker. |
+| ECS | Elastic Container Service. Orquestador de contenedores. |
+| Fargate | Modo serverless de ECS. Sin gestionar instancias EC2. |
+| STS | Security Token Service. Genera credenciales temporales al asumir roles. |
 
 ---
 

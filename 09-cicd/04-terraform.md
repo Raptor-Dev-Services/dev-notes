@@ -321,6 +321,185 @@ jobs:
 
 ---
 
+## Módulos reutilizables
+> Fuente: *Terraform: Up and Running* (Brikman) — Ch.4 How to Create Reusable Infrastructure with Terraform Modules
+
+Un módulo es cualquier conjunto de archivos `.tf` en una carpeta. Los módulos reutilizables permiten definir un componente de infraestructura una vez y usarlo en múltiples entornos (staging, producción).
+
+```
+infra/
+├── modules/                      ← módulos reutilizables (blueprints)
+│   ├── ecs-service/
+│   │   ├── main.tf
+│   │   ├── variables.tf          ← inputs del módulo
+│   │   └── outputs.tf            ← valores exportados
+│   └── rds-postgres/
+│       ├── main.tf
+│       ├── variables.tf
+│       └── outputs.tf
+└── live/                         ← infraestructura real por ambiente
+    ├── staging/
+    │   └── main.tf               ← usa los módulos con config de staging
+    └── production/
+        └── main.tf               ← usa los mismos módulos con config de prod
+```
+
+```hcl
+# modules/ecs-service/variables.tf — inputs del módulo
+variable "service_name" {
+  description = "Nombre del servicio ECS"
+  type        = string
+}
+
+variable "docker_image" {
+  description = "URL de la imagen Docker (ECR)"
+  type        = string
+}
+
+variable "desired_count" {
+  description = "Número de tareas a correr"
+  type        = number
+  default     = 2
+}
+
+variable "container_port" {
+  description = "Puerto que expone el contenedor"
+  type        = number
+  default     = 8080
+}
+
+# modules/ecs-service/outputs.tf — valores que el módulo exporta
+output "service_name" {
+  value       = aws_ecs_service.this.name
+  description = "Nombre del servicio ECS creado"
+}
+
+output "service_arn" {
+  value       = aws_ecs_service.this.id
+}
+```
+
+```hcl
+# live/staging/main.tf — consumir el módulo en staging
+module "api_service" {
+  source = "../../modules/ecs-service"
+
+  service_name  = "gtm-api-staging"
+  docker_image  = "${var.ecr_url}:staging-latest"
+  desired_count = 1   # menos réplicas en staging
+  container_port = 8080
+}
+
+# live/production/main.tf — mismo módulo, config de producción
+module "api_service" {
+  source = "../../modules/ecs-service"
+
+  service_name  = "gtm-api-production"
+  docker_image  = "${var.ecr_url}:v1.2.0"
+  desired_count = 3   # más réplicas en producción
+  container_port = 8080
+}
+```
+
+### Módulos versionados desde Git
+
+```hcl
+# Apuntar a un tag específico del repo de módulos (no a un path local)
+# Esto permite usar v0.0.1 en prod y v0.0.2 en staging sin que afecten entre sí
+module "api_service" {
+  source = "github.com/mi-org/infra-modules//ecs-service?ref=v0.0.2"
+
+  service_name  = "gtm-api-staging"
+  docker_image  = "${var.ecr_url}:staging"
+  desired_count = 1
+}
+
+# En producción — versión estable anterior
+module "api_service" {
+  source = "github.com/mi-org/infra-modules//ecs-service?ref=v0.0.1"
+
+  service_name  = "gtm-api-production"
+  docker_image  = "${var.ecr_url}:v1.2.0"
+  desired_count = 3
+}
+```
+
+```bash
+# Siempre correr init después de cambiar source o agregar un módulo
+terraform init
+
+# Etiquetar el repo de módulos con semver
+git tag -a "v0.0.2" -m "Add health check to ECS service module"
+git push --follow-tags
+```
+
+---
+
+## Aislamiento de ambientes — file layout vs workspaces
+> Fuente: *Terraform: Up and Running* (Brikman) — Ch.3 How to Manage Terraform State
+
+### Por qué NO usar workspaces para aislar ambientes
+
+Los workspaces de Terraform parecen una solución obvia para staging/producción, pero tienen problemas:
+- Todos los workspaces comparten el mismo backend (mismo bucket S3, mismas credenciales IAM)
+- No son visibles en el código — es fácil ejecutar `terraform destroy` en el workspace equivocado
+- No proveen verdadero aislamiento de permisos entre ambientes
+
+### Estructura recomendada: carpetas separadas por ambiente
+
+```
+infra/
+├── global/                      ← recursos compartidos entre ambientes (IAM, S3)
+│   ├── s3/
+│   └── iam/
+├── staging/
+│   ├── vpc/
+│   ├── services/
+│   │   └── api/
+│   │       ├── main.tf          ← backend apunta a staging state bucket
+│   │       ├── variables.tf
+│   │       └── terraform.tfvars
+│   └── data-storage/
+│       └── rds/
+└── production/
+    ├── vpc/
+    ├── services/
+    │   └── api/
+    │       ├── main.tf          ← backend apunta a production state bucket
+    │       ├── variables.tf
+    │       └── terraform.tfvars
+    └── data-storage/
+        └── rds/
+```
+
+```hcl
+# staging/services/api/main.tf — backend propio por ambiente
+terraform {
+  backend "s3" {
+    bucket         = "gtm-suite-staging-tfstate"
+    key            = "services/api/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "gtm-suite-staging-tf-locks"
+    encrypt        = true
+  }
+}
+
+# production/services/api/main.tf — bucket y tabla DynamoDB distintos
+terraform {
+  backend "s3" {
+    bucket         = "gtm-suite-prod-tfstate"    # bucket diferente → cuenta AWS diferente
+    key            = "services/api/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "gtm-suite-prod-tf-locks"
+    encrypt        = true
+  }
+}
+```
+
+**Ventaja clave:** cada ambiente puede tener su propia cuenta AWS con permisos separados. Un desarrollador puede tener acceso total a staging pero solo lectura en producción.
+
+---
+
 ## Cuándo usar Terraform
 
 | Usar | No usar |

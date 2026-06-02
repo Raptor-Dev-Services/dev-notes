@@ -1,4 +1,4 @@
-# 10 · Cloud, Linux y Operación
+# 10 — Cloud, Linux y Operación
 
 Documentación sobre infraestructura cloud, administración de Linux y operación de servicios en producción.
 

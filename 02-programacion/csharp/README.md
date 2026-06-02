@@ -2,8 +2,6 @@
 
 Guía completa de C# y .NET orientada a este proyecto. Cada documento cubre un tema en profundidad máxima, con ejemplos del código real.
 
-📁 Carpeta: [`docs/csharp-primer/`](csharp-primer/)
-
 ---
 
 ## Documentos

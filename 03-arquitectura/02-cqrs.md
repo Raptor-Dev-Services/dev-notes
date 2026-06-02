@@ -357,6 +357,72 @@ public sealed class UserRegisteredEventHandler
 
 ---
 
+## MediatR — tipos de mensajes
+> Fuente: *Architecting ASP.NET Core Applications* (Ferreira) — Ch.16 Mediator and CQS Patterns
+
+MediatR soporta tres tipos de mensajes:
+
+| Tipo | Handlers | Uso típico |
+|------|----------|------------|
+| **Request/Response** (`IRequest<T>`) | Exactamente 1 | Commands y Queries — relación 1:1 |
+| **Notifications** (`INotification`) | 0 o N | Domain Events, Integration Events — Publish/Subscribe |
+| **Streams** (`IStreamRequest<T>`) | Exactamente 1 | Respuesta paginada como `IAsyncEnumerable<T>` |
+
+```csharp
+// Request/Response — un solo handler (Command o Query)
+public record GetUserQuery(Guid Id) : IRequest<GetUserResponse>;
+
+// Notification — múltiples handlers (Domain Event)
+public record UserRegisteredEvent(Guid UserId, string Email) : INotification;
+
+// Los handlers de Notification se ejecutan todos en paralelo o secuencial
+public class SendWelcomeEmailHandler : INotificationHandler<UserRegisteredEvent> { }
+public class CreateUserProfileHandler : INotificationHandler<UserRegisteredEvent> { }
+```
+
+### Extensiones del pipeline de MediatR
+
+Además de `IPipelineBehavior<TRequest,TResponse>`, MediatR ofrece:
+
+```csharp
+// Ejecuta ANTES del handler — ideal para enriquecer el request o pre-validar
+public class AuditPreProcessor<TRequest> : IRequestPreProcessor<TRequest>
+    where TRequest : notnull
+{
+    public Task Process(TRequest request, CancellationToken ct)
+    {
+        _logger.LogInformation("Request: {Type}", typeof(TRequest).Name);
+        return Task.CompletedTask;
+    }
+}
+
+// Ejecuta DESPUÉS del handler — ideal para logging de respuesta o post-proceso
+public class LogResponsePostProcessor<TRequest, TResponse>
+    : IRequestPostProcessor<TRequest, TResponse>
+{
+    public Task Process(TRequest request, TResponse response, CancellationToken ct)
+    {
+        _logger.LogInformation("Response: {Type}", typeof(TResponse).Name);
+        return Task.CompletedTask;
+    }
+}
+
+// Manejo de excepciones por tipo de exception dentro del pipeline
+public class NotFoundExceptionHandler<TRequest, TResponse, TException>
+    : IRequestExceptionHandler<TRequest, TResponse, TException>
+    where TException : NotFoundException
+{
+    public Task Handle(TRequest request, TException exception,
+        RequestExceptionHandlerState<TResponse> state, CancellationToken ct)
+    {
+        state.SetHandled(/* default response */);
+        return Task.CompletedTask;
+    }
+}
+```
+
+---
+
 ## CQRS con MediatR — pipeline de behaviors
 > Fuente: *.NET Microservices Architecture* — Ch.6 CQRS Patterns
 

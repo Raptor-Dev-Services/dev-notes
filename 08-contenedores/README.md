@@ -2,8 +2,6 @@
 
 Guía completa de Docker para este proyecto, desde conceptos hasta workflows de producción.
 
-📁 Carpeta: [`docs/docker/`](docker/)
-
 ---
 
 ## Documentos

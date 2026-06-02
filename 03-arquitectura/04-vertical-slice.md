@@ -40,6 +40,34 @@ back-template/
 
 ---
 
+## Principio central — Jimmy Bogard
+
+> "Minimize coupling between slices and maximize coupling within a slice."
+
+Dos objetivos en tensión:
+
+- **Minimizar el acoplamiento entre slices** → modificar un slice no requiere tocar otros
+- **Maximizar el acoplamiento dentro de un slice** → todo el código de una feature vive junto (cohesión)
+
+### Niveles de código compartido
+
+```
+Slice code        → código único de un feature (debería ser la MAYORÍA del código)
+                    Alta cohesión, sin acoplamiento entre features
+                    
+Cross-slice code  → código compartido entre features del mismo dominio
+                    (ej: entidad Shipment compartida entre Create, List y Details)
+                    Menor cantidad que el slice code
+                    
+Global code       → código compartido entre dominios no relacionados
+                    (ej: middleware de error handling, helpers de serialización)
+                    MÍNIMO — es el mayor fuente de acoplamiento global
+```
+
+**Regla práctica:** escribir primero código de feature (slice-specific), refactorizar a código compartido solo cuando emerge la necesidad real — no anticipar abstracciones.
+
+---
+
 ## Clean Architecture — ventajas y problemas
 
 ### Ventajas

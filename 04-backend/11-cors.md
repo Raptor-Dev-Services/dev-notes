@@ -1,70 +1,126 @@
-﻿# 4 · CORS
+# 11 — CORS (Cross-Origin Resource Sharing)
 
-CORS (Cross-Origin Resource Sharing) es el mecanismo del navegador que permite o bloquea peticiones de un origen distinto al del documento HTML. En SaaS típico, frontend y backend viven en dominios diferentes, así que CORS es obligatorio.
+CORS es el mecanismo del navegador que restringe peticiones JavaScript a un origen distinto al del documento HTML. En SaaS con frontend y backend en dominios diferentes, CORS es obligatorio.
 
-## 4.1 Configuración correcta en ASP.NET Core
+> Fuente: *Web Application Security 2nd Ed* (Andrew Hoffman) — Ch.15 Same-Origin Policy and CORS  
+> Fuente: *ASP.NET Core 9 Essentials* (Packt) — Ch.6 Enhancing Security and Quality
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<tbody>
-<tr>
-<td><em>C# Program.cs</em></td>
-</tr>
-<tr>
-<td><p>var corsOrigins = builder.Configuration</p>
-<p>.GetSection("Cors:AllowedOrigins")</p>
-<p>.Get&lt;string[]&gt;() ?? Array.Empty&lt;string&gt;();</p>
-<p>builder.Services.AddCors(options =&gt;</p>
-<p>{</p>
-<p>options.AddPolicy("SpaPolicy", policy =&gt;</p>
-<p>{</p>
-<p>policy</p>
-<p>.WithOrigins(corsOrigins)</p>
-<p>.AllowAnyHeader()</p>
-<p>.AllowAnyMethod()</p>
-<p>.AllowCredentials()</p>
-<p>.SetPreflightMaxAge(TimeSpan.FromMinutes(10));</p>
-<p>});</p>
-<p>});</p>
-<p>// CRÍTICO: orden importa. UseCors va antes de UseAuthentication/UseAuthorization</p>
-<p>app.UseCors("SpaPolicy");</p>
-<p>app.UseAuthentication();</p>
-<p>app.UseAuthorization();</p></td>
-</tr>
-</tbody>
-</table>
+---
 
-## 4.2 Wildcard subdomains para SaaS multi-tenant
+## Cómo funciona
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<tbody>
-<tr>
-<td><em>C#</em></td>
-</tr>
-<tr>
-<td><p>options.AddPolicy("TenantPolicy", policy =&gt;</p>
-<p>{</p>
-<p>policy.SetIsOriginAllowed(origin =&gt;</p>
-<p>{</p>
-<p>var uri = new Uri(origin);</p>
-<p>return uri.Host == "taskflow.com"</p>
-<p>|| uri.Host.EndsWith(".taskflow.com")</p>
-<p>|| uri.Host == "localhost";</p>
-<p>})</p>
-<p>.AllowAnyHeader().AllowAnyMethod().AllowCredentials();</p>
-<p>});</p></td>
-</tr>
-</tbody>
-</table>
+CORS no es un mecanismo de seguridad del servidor — es una restricción del **navegador**. El servidor indica qué orígenes puede confiar. Herramientas como Postman o curl no están afectadas por CORS.
 
+```
+Preflight request (navegador → servidor):
+  OPTIONS /api/users
+  Origin: https://app.midominio.com
+  Access-Control-Request-Method: POST
+  Access-Control-Request-Headers: Authorization
 
+Respuesta del servidor:
+  Access-Control-Allow-Origin: https://app.midominio.com
+  Access-Control-Allow-Methods: GET, POST, PUT, DELETE
+  Access-Control-Allow-Headers: Authorization, Content-Type
+  Access-Control-Max-Age: 600   ← cachea el preflight por 10 minutos
+```
 
-> Fuente: *Web Application Security 2nd Ed* (Andrew Hoffman) — Ch.15 Same-Origin Policy and CORS
+---
+
+## Configuración en ASP.NET Core
+
+```csharp
+// Program.cs
+
+// Leer orígenes permitidos desde configuración
+var corsOrigins = builder.Configuration
+    .GetSection("Cors:AllowedOrigins")
+    .Get<string[]>() ?? Array.Empty<string>();
+
+builder.Services.AddCors(options =>
+{
+    // Política para SPA — la más común en SaaS
+    options.AddPolicy("SpaPolicy", policy =>
+        policy
+            .WithOrigins(corsOrigins)          // orígenes específicos (nunca * con credentials)
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials()                // necesario para cookies y Authorization header
+            .SetPreflightMaxAge(TimeSpan.FromMinutes(10)));
+
+    // Política pública — para endpoints sin autenticación
+    options.AddPolicy("PublicPolicy", policy =>
+        policy
+            .AllowAnyOrigin()                  // cualquier origen
+            .AllowAnyHeader()
+            .AllowAnyMethod());                // NO se puede usar con AllowCredentials()
+});
+
+// CRÍTICO: el orden del middleware importa
+app.UseCors("SpaPolicy");      // ANTES de Authentication y Authorization
+app.UseAuthentication();
+app.UseAuthorization();
+```
+
+---
+
+## Wildcard subdomains para multi-tenant
+
+En SaaS con subdominio por tenant (`tenant1.app.com`, `tenant2.app.com`) se necesita lógica dinámica:
+
+```csharp
+options.AddPolicy("TenantPolicy", policy =>
+    policy.SetIsOriginAllowed(origin =>
+    {
+        var uri = new Uri(origin);
+        // Permitir el dominio raíz y todos sus subdominios
+        return uri.Host == "miapp.com"
+            || uri.Host.EndsWith(".miapp.com")
+            || uri.Host == "localhost";           // para desarrollo local
+    })
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+    .AllowCredentials());
+```
+
+---
+
+## CORS por endpoint
+
+```csharp
+// Política diferente por endpoint — para APIs públicas dentro de la misma app
+app.MapGet("/api/public/plans", GetPublicPlans)
+   .RequireCors("PublicPolicy");    // endpoint público: cualquier origen
+
+app.MapControllers()
+   .RequireCors("SpaPolicy");       // controllers privados: solo orígenes permitidos
+```
+
+---
+
+## Configuración en appsettings.json
+
+```json
+{
+  "Cors": {
+    "AllowedOrigins": [
+      "https://app.midominio.com",
+      "https://admin.midominio.com"
+    ]
+  }
+}
+```
+
+---
+
+## Errores comunes
+
+| Error | Causa | Fix |
+|-------|-------|-----|
+| `AllowAnyOrigin()` + `AllowCredentials()` | Combinación inválida | Usar `WithOrigins(...)` cuando se necesitan credentials |
+| `UseCors` después de `UseRouting` pero antes de `MapControllers` | ✓ correcto | Poner `UseCors` después de `UseRouting` y antes de `UseAuthentication` |
+| El preflight falla con 401 | El middleware de auth rechaza OPTIONS antes de CORS | `UseCors` debe ir ANTES de `UseAuthentication` |
+| Headers personalizados bloqueados | No están en `AllowAnyHeader()` o `WithHeaders(...)` | Agregar el header a la política |
 
 ---
 
