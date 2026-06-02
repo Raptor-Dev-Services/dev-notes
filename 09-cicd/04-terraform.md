@@ -509,6 +509,41 @@ terraform {
 | Necesitas reproducir entornos (staging = producción) | Configuración de software dentro de instancias (usar Ansible) |
 | Auditoría de cambios de infraestructura en git | Cuando la consola de AWS es suficiente para el tamaño del proyecto |
 
+---
+
+## Glosario
+
+| Término | Definición |
+|---------|-----------|
+| Provider | plugin de Terraform que conecta con un cloud (aws, azurerm, google) — gestiona autenticación y API calls |
+| Resource | bloque que define un componente de infraestructura real (`aws_ecs_service`, `aws_db_instance`) |
+| Data Source | bloque que lee recursos existentes sin crearlos — útil para referenciar VPCs o AMIs existentes |
+| Variable | parámetro de entrada del módulo o del root module — permite reutilizar configuración |
+| Output | valor que expone un módulo para que otros módulos o el usuario lo consuman |
+| State | archivo que mapea los recursos de Terraform con los recursos reales del cloud (`terraform.tfstate`) |
+| Remote State | estado guardado en un backend externo (S3) en lugar de localmente — necesario para equipos |
+| Backend | sistema que almacena el state remotamente (S3, Azure Blob, Terraform Cloud) |
+| State Locking | mecanismo para evitar ejecuciones simultáneas que corrompan el state (DynamoDB en AWS) |
+| Módulo | carpeta con archivos `.tf` que encapsula un conjunto de recursos reutilizables |
+| Root Module | el directorio donde se ejecuta `terraform apply` — punto de entrada de la ejecución |
+| Plan | operación de solo lectura que calcula qué recursos se crearán, modificarán o destruirán |
+| Apply | operación que ejecuta el plan y materializa los cambios en el cloud |
+| `terraform.tfvars` | archivo que provee valores para las variables — nunca commitear si contiene secretos |
+| `terraform init` | descarga providers, configura el backend y los módulos — siempre el primer paso |
+| `terraform fmt` | formatea los archivos `.tf` con el estilo estándar de HCL |
+| `terraform validate` | valida la sintaxis y coherencia de la configuración sin contactar el cloud |
+| HCL | HashiCorp Configuration Language — el lenguaje declarativo de Terraform |
+| Workspace | contexto de ejecución alternativo (no recomendado para aislar ambientes) |
+| Sensitive | marca una variable u output como secreto — no se muestra en logs ni en plan output |
+| `depends_on` | declaración explícita de dependencia entre recursos cuando Terraform no la infiere |
+| Lifecycle | bloque de control que define `create_before_destroy`, `prevent_destroy` o `ignore_changes` |
+| `prevent_destroy` | lifecycle rule que impide que `terraform destroy` elimine un recurso crítico |
+| `terraform import` | importa un recurso existente (creado fuera de Terraform) al state actual |
+| `terraform taint` | (pre-v1.0) marca un recurso para ser recreado en el próximo apply; ahora `terraform apply -replace` |
+| `for_each` | meta-argumento para crear múltiples recursos desde un mapa — alternativa a `count` |
+| `count` | meta-argumento para crear N copias de un recurso usando un número entero |
+| `locals` | bloque para definir valores intermedios reutilizables dentro de un módulo |
+| `terraform_remote_state` | data source para leer outputs del state de otro módulo remoto |
 
 ---
 
