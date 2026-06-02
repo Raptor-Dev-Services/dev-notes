@@ -241,6 +241,133 @@ miner.Mine("data.xml");
 
 ---
 
+## Implementación ASP.NET Core (Ferreira)
+
+### Maquina de búsqueda — hooks abstractos y opcionales
+
+Ferreira (*Architecting ASP.NET Core Applications*, Ch.12) implementa el patrón con una máquina de búsqueda para ilustrar los dos tipos de hooks:
+
+```csharp
+// AbstractClass — el esqueleto del algoritmo
+public abstract class SearchMachine
+{
+    protected int[] Values { get; }
+
+    protected SearchMachine(params int[] values)
+    {
+        Values = values ?? throw new ArgumentNullException(nameof(values));
+    }
+
+    // Template Method — define el orden del algoritmo
+    public int? IndexOf(int value)
+    {
+        if (Values.Length == 0) { return null; }  // paso base compartido
+        var result = Find(value);                   // delega al hook abstracto
+        return result;
+    }
+
+    // Hook OBLIGATORIO — la subclase define el algoritmo de búsqueda
+    protected abstract int? Find(int value);
+}
+
+// Implementación 1 — búsqueda lineal
+public class LinearSearchMachine : SearchMachine
+{
+    public LinearSearchMachine(params int[] values)
+        : base(values) { }
+
+    protected override int? Find(int value)
+    {
+        for (var i = 0; i < Values.Length; i++)
+            if (Values[i] == value) return i;
+        return null;
+    }
+}
+
+// Implementación 2 — búsqueda binaria (requiere array ordenado)
+public class BinarySearchMachine : SearchMachine
+{
+    // Ordena el array en el constructor (validación en la base)
+    public BinarySearchMachine(params int[] values)
+        : base(values.OrderBy(v => v).ToArray()) { }
+
+    protected override int? Find(int value)
+    {
+        var index = Array.BinarySearch(Values, value);
+        return index < 0 ? null : index;
+    }
+}
+```
+
+### Inyectar múltiples implementaciones en un endpoint
+
+ASP.NET Core permite inyectar `IEnumerable<SearchMachine>` para usar todas las implementaciones registradas:
+
+```csharp
+// Registro — ambas implementaciones del template
+builder.Services.AddSingleton<SearchMachine>(new LinearSearchMachine(1, 10, 5, 2, 123, 333, 4));
+builder.Services.AddSingleton<SearchMachine>(new BinarySearchMachine(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+
+// Endpoint — recibe TODAS las implementaciones registradas de SearchMachine
+app.MapGet("/search/{value:int}", (int value, IEnumerable<SearchMachine> machines) =>
+{
+    return machines.Select(m => new SearchResult(
+        SearchedNumber: value,
+        Name: m.GetType().Name,
+        Found: m.IndexOf(value).HasValue,
+        Index: m.IndexOf(value)
+    ));
+});
+
+public record class SearchResult(
+    int SearchedNumber,
+    string Name,
+    bool Found,
+    int? Index
+);
+
+// GET /search/123 retorna:
+// [
+//   { "searchedNumber": 123, "name": "LinearSearchMachine", "found": true,  "index": 4 },
+//   { "searchedNumber": 123, "name": "BinarySearchMachine", "found": false, "index": null }
+// ]
+// (LinearSearchMachine tiene 123 en índice 4; BinarySearchMachine no lo tiene)
+```
+
+### Testing del Template Method
+
+La clave es crear una implementación `Fake` para testear el código de la clase base sin ejecutar el hook:
+
+```csharp
+public class SearchMachineTest
+{
+    // Solo los tests pueden instanciarla — privada al test class
+    private class FakeSearchMachine : SearchMachine
+    {
+        public FakeSearchMachine(params int[] values)
+            : base(values) { }
+
+        // El Find no debería llamarse en los tests de la base
+        protected override int? Find(int value)
+            => throw new NotImplementedException("No debería llamarse.");
+    }
+
+    [Fact]
+    public void Should_guard_against_null_values()
+    {
+        Assert.Throws<ArgumentNullException>(() => new FakeSearchMachine(null!));
+    }
+
+    [Fact]
+    public void Should_return_null_when_Values_is_empty()
+    {
+        var machine = new FakeSearchMachine();        // array vacío
+        var result  = machine.IndexOf(5);
+        Assert.Null(result);                          // retorna null sin llamar a Find
+    }
+}
+```
+
 ## En este proyecto
 
 ```csharp
@@ -328,7 +455,14 @@ public sealed class ExampleUsersController : BaseApiController
 | `override` | Modificador de C# que indica que un método sobreescribe la implementación del padre |
 | `BaseApiController` | Clase base del proyecto que implementa el esqueleto: proporciona `Mediator` como operación base compartida |
 | Template Method vs Strategy | Template Method usa herencia (el esqueleto es fijo, se compilan los pasos); Strategy usa composición (todo el algoritmo es intercambiable) |
+| `SearchMachine` | Clase abstracta del ejemplo de Ferreira que encapsula el esqueleto del algoritmo de búsqueda — las subclases implementan el algoritmo concreto |
+| Hook obligatorio | Método `abstract` que la subclase debe implementar — el Template Method delega este paso al concreto |
+| Hook opcional | Método `virtual` con implementación por defecto vacía — la subclase puede o no sobreescribirlo |
+| `IEnumerable<T>` en DI | Patrón de ASP.NET Core que permite inyectar todas las implementaciones registradas de un tipo base — útil para ejecutar múltiples estrategias del Template Method |
+| Fake en tests | Implementación mínima de la clase abstracta creada solo para tests — permite verificar el comportamiento de la clase base sin ejecutar el hook concreto |
 
 ---
+
+> Fuente adicional: *Architecting ASP.NET Core Applications, 3a ed.* (Carl-Hugo Marcotte) — Ch.12 Behavioral Patterns
 
 *Rogelio Arriaga Gonzalez*

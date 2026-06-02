@@ -188,6 +188,267 @@ else if (notification is GetUsersSuccess success)
 
 ---
 
+## Variantes del Operation Result (Ferreira)
+
+Ferreira (*Architecting ASP.NET Core Applications*, Ch.13) documenta una progresión de implementaciones desde la más simple hasta la más robusta. Cada forma es válida; la elección depende de cuánta información necesita el caller.
+
+### Forma 1 — Indicador booleano simple
+
+La más básica: solo comunica éxito o falla. Útil como base extensible (puede agregar propiedades después sin romper consumers).
+
+```csharp
+// La diferencia con retornar bool directo: el record es extensible sin romper consumers
+public record class OperationResult(bool Succeeded);
+```
+
+### Forma 2 — Un solo mensaje de error
+
+El éxito se infiere de la ausencia de error:
+
+```csharp
+public record class OperationResult
+{
+    public bool Succeeded => string.IsNullOrWhiteSpace(ErrorMessage);
+    public string? ErrorMessage { get; init; }
+}
+
+// Retornar desde el ejecutor:
+return success
+    ? new()
+    : new() { ErrorMessage = "Algo salió mal." };
+```
+
+### Forma 3 — Agregar un valor de retorno
+
+Para operaciones que producen datos en el camino exitoso:
+
+```csharp
+public record class OperationResult
+{
+    public bool Succeeded => string.IsNullOrWhiteSpace(ErrorMessage);
+    public string? ErrorMessage { get; init; }
+    public int? Value { get; init; }  // nullable: puede ser null en caso de error
+}
+```
+
+### Forma 4 — Múltiples errores (validación)
+
+Cuando se necesitan reportar varios errores a la vez (ej. validación de formularios):
+
+```csharp
+using System.Collections.Immutable;
+
+public record class OperationResult
+{
+    public OperationResult()
+    {
+        Errors = ImmutableList<string>.Empty;
+    }
+    public OperationResult(params string[] errors)
+    {
+        Errors = errors.ToImmutableList();
+    }
+    public bool Succeeded => !HasErrors();
+    public int? Value { get; init; }
+    public IReadOnlyCollection<string> Errors { get; init; }
+    public bool HasErrors() => Errors?.Count > 0;
+}
+
+// Retornar desde el ejecutor:
+return success
+    ? new() { Value = randomNumber }
+    : new("Error A.", "Error B.");
+```
+
+### Forma 5 — Mensajes con nivel de severidad
+
+Cuando la respuesta no es solo "error/no error" sino también advertencias e información:
+
+```csharp
+public enum OperationResultSeverity { Information, Warning, Error }
+
+public record class OperationResultMessage(
+    string Message,
+    OperationResultSeverity Severity);
+
+public record class OperationResult
+{
+    public OperationResult(params OperationResultMessage[] messages)
+    {
+        Messages = messages.ToImmutableList();
+    }
+    public bool Succeeded => !HasErrors();
+    public int? Value { get; init; }
+    public IReadOnlyCollection<OperationResultMessage> Messages { get; init; }
+    public bool HasErrors()
+    {
+        return FindErrors().Any();
+    }
+    private IEnumerable<OperationResultMessage> FindErrors()
+        => Messages.Where(x => x.Severity == OperationResultSeverity.Error);
+}
+
+// Salida JSON cuando el resultado tiene advertencias:
+// {
+//   "succeeded": true,
+//   "value": 56,
+//   "messages": [
+//     { "message": "Informativo!", "severity": "Information" },
+//     { "message": "Algo puede fallar después.", "severity": "Warning" }
+//   ]
+// }
+```
+
+### Forma 6 — Subclases con static factory methods
+
+La más robusta: el tipo mismo distingue éxito de fallo. El contrato de la API de la clase base es mínimo (solo `Succeeded`) y cada subclase expone solo lo que necesita:
+
+```csharp
+public abstract record class OperationResult
+{
+    private OperationResult() { }  // constructor privado — solo subclases internas
+
+    public abstract bool Succeeded { get; }
+
+    // Static factories — única forma de instanciar
+    public static OperationResult Success(int? value = null)
+        => new SuccessfulOperationResult { Value = value };
+
+    public static OperationResult Failure(params OperationResultMessage[] errors)
+        => new FailedOperationResult(errors);
+
+    // Subclases privadas — inaccesibles desde fuera
+    private record class SuccessfulOperationResult : OperationResult
+    {
+        public override bool Succeeded { get; } = true;
+        public virtual int? Value { get; init; }
+    }
+
+    private record class FailedOperationResult : OperationResult
+    {
+        public FailedOperationResult(params OperationResultMessage[] errors)
+        {
+            Messages = errors.ToImmutableList();
+        }
+        public override bool Succeeded { get; } = false;
+        public ImmutableList<OperationResultMessage> Messages { get; }
+    }
+}
+
+// Uso — lecturas claras de intención:
+return OperationResult.Success(randomNumber);
+return OperationResult.Failure(new OperationResultMessage("Error.", OperationResultSeverity.Error));
+```
+
+---
+
+## Ejemplo de dominio real — registro a concierto (Ferreira)
+
+Ilustra cómo el pattern se aplica a un caso de negocio real con factory methods y `MemberNotNullWhen`:
+
+```csharp
+using System.Diagnostics.CodeAnalysis;
+
+public record class ConcertRegistrationResult
+{
+    // Atributos que le dicen al compilador qué propiedades son non-null
+    // según el valor de RegistrationSucceeded
+    [MemberNotNullWhen(false, nameof(ErrorMessage))]
+    [MemberNotNullWhen(true, nameof(ConfirmationNumber))]
+    public bool RegistrationSucceeded { get; init; }
+
+    public User User { get; init; } = null!;
+    public Concert Concert { get; init; } = null!;
+    public string? ConfirmationNumber { get; init; }
+    public string? ErrorMessage { get; init; }
+
+    // Constructor privado — fuerza uso de factory methods
+    private ConcertRegistrationResult() { }
+
+    public static ConcertRegistrationResult CreateSuccess(
+        User user, Concert concert, string confirmationNumber)
+        => new() { RegistrationSucceeded = true, User = user,
+                   Concert = concert, ConfirmationNumber = confirmationNumber };
+
+    public static ConcertRegistrationResult CreateFailure(
+        User user, Concert concert, string errorMessage)
+        => new() { RegistrationSucceeded = false, User = user,
+                   Concert = concert, ErrorMessage = errorMessage };
+}
+
+// El servicio (ejecutor):
+public class ConcertRegistrationService
+{
+    public async Task<ConcertRegistrationResult> RegisterAsync(User user, Concert concert)
+    {
+        var (success, confirmationNumber) = await SimulatedRegistrationProcessAsync(user, concert);
+
+        if (!success)
+            return ConcertRegistrationResult.CreateFailure(
+                user, concert, "El registro al concierto falló.");
+
+        return ConcertRegistrationResult.CreateSuccess(user, concert, confirmationNumber);
+    }
+}
+
+// Consumer (endpoint Minimal API):
+app.MapPost("/concerts/{concertId}/register",
+    async Task<Results<Ok<ConcertRegistrationResult>, BadRequest<ConcertRegistrationResult>>>
+    (int concertId, ConcertRegistrationService service) =>
+    {
+        var user    = GetCurrentUser();
+        var concert = GetConcert(concertId);
+        var result  = await service.RegisterAsync(user, concert);
+
+        if (result.RegistrationSucceeded)
+            return TypedResults.Ok(result);
+
+        // MemberNotNullWhen garantiza que ErrorMessage no es null aquí
+        await LogErrorMessageAsync(result.ErrorMessage);
+        return TypedResults.BadRequest(result);
+    });
+```
+
+---
+
+## Estado parcial (`OperationStatus`)
+
+Ferreira sugiere agregar un tercer estado para operaciones con resultados mixtos:
+
+```csharp
+public enum OperationStatus { Success, Failure, PartialSuccess }
+
+// En el OperationResult:
+public OperationStatus Status => HasErrors()
+    ? OperationStatus.Failure
+    : (HasWarnings() ? OperationStatus.PartialSuccess : OperationStatus.Success);
+
+// Consumer puede manejar los tres estados sin inspeccionar mensajes individuales:
+switch (result.Status)
+{
+    case OperationStatus.Success:        HandleSuccess(result); break;
+    case OperationStatus.PartialSuccess: HandlePartial(result); break;
+    case OperationStatus.Failure:        HandleFailure(result); break;
+}
+```
+
+---
+
+## Ventajas y desventajas del Operation Result (Ferreira)
+
+### Ventajas
+- **Explicitud:** el tipo de retorno documenta todos los estados posibles — más claro que saber qué excepciones pueden volar.
+- **Rendimiento:** retornar un objeto es marginalmente más rápido que crear un stack trace de excepción.
+- **Flexibilidad de diseño:** permite transportar mensajes de advertencia e información, no solo errores.
+
+### Desventajas
+- **Propagación manual:** el resultado debe pasarse hacia arriba en la pila de llamadas de forma explícita — si debe recorrer muchos niveles, se vuelve tedioso.
+- **Superficie de API grande:** es fácil exponer propiedades que no aplican a todos los escenarios (ej. `Value` puede ser null en error). El trade-off es siempre legibilidad vs perfección de diseño.
+
+> **Regla de Ferreira:** "Cuando las ventajas superan los impactos menores de las violaciones de SOLID, es aceptable dejarlas pasar. Los principios son ideales, no leyes."
+
+---
+
 ## Result Pattern vs Excepciones
 
 | Aspecto | Result Pattern | Excepciones |
@@ -294,7 +555,16 @@ return _viewModel.IsSuccess ? Ok(_viewModel) : StatusCode(500, _viewModel);
 | Pattern Matching | Técnica de C# usada en el Presenter para discriminar entre tipos de IResponse |
 | DTO | Data Transfer Object — objeto plano con solo los campos que necesita el cliente |
 | INotFoundFailure | Respuesta semántica de negocio que el Presenter traduce a HTTP 404 sin lanzar excepción |
+| OperationResultSeverity | Enumeración con tres niveles: `Information`, `Warning`, `Error` — permite diferenciar tipos de mensajes en el resultado |
+| Static Factory Method | Método estático que crea instancias del resultado (`Success(...)`, `Failure(...)`) — encapsula la lógica de construcción y fuerza el uso del contrato correcto |
+| `MemberNotNullWhen` | Atributo de C# que le indica al compilador qué propiedad es non-null según el valor de un booleano — elimina warnings de nullable en el consumer |
+| Constructor privado | Técnica para forzar el uso de static factory methods — nadie puede instanciar la clase directamente |
+| OperationStatus | Enumeración con tres estados: `Success`, `PartialSuccess`, `Failure` — útil cuando una operación puede tener resultados mixtos (algunos errores son tolerables) |
+| ImmutableList\<T\> | Colección inmutable de .NET usada en la lista de errores/mensajes — previene que actores externos muten los resultados |
+| Subclase privada anidada | Clase definida dentro de otra con visibilidad `private` — la única forma de heredar de un padre con constructor privado; inaccesible desde fuera |
 
 ---
+
+> Fuente adicional: *Architecting ASP.NET Core Applications* (Carl-Hugo Marcotte / Ferreira) — Ch.13 Operation Result Pattern
 
 *Rogelio Arriaga Gonzalez*
