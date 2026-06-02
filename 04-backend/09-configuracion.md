@@ -253,6 +253,137 @@ Ver `04-backend/10-secretos.md` para gestión de secretos en producción (Azure 
 
 ---
 
+## Inyectar la clase Options directamente (sin IOptions)
+> Fuente: *Architecting ASP.NET Core Applications* (Ferreira) — Ch.9 Injecting Options Objects Directly
+
+El problema con `IOptions<T>`, `IOptionsSnapshot<T>`, etc. es que el consumidor controla el lifetime — rompe Inversion of Control. La solución es inyectar la clase POCO directamente desde el composition root:
+
+```csharp
+// ❌ El consumidor controla el lifetime al elegir IOptionsSnapshot vs IOptions vs IOptionsMonitor
+public class ExampleUserService(IOptionsSnapshot<JwtOptions> options)   // ← acoplamiento a IOptionsSnapshot
+{
+    private readonly JwtOptions _jwt = options.Value;
+}
+
+// ✓ El consumer no sabe nada de lifetimes — solo recibe JwtOptions
+public class ExampleUserService(JwtOptions jwt)   // ← solo depende del POCO
+{
+    private readonly JwtOptions _jwt = jwt;
+}
+
+// Composition root — controla el lifetime aquí, no en el consumidor
+builder.Services
+    .AddOptions<JwtOptions>()
+    .BindConfiguration(JwtOptions.SectionName)
+    .ValidateDataAnnotations()
+    .ValidateOnStart();
+
+// Factory que crea JwtOptions con Scoped lifetime (se recarga en cada request)
+builder.Services.AddScoped(sp =>
+    sp.GetRequiredService<IOptionsSnapshot<JwtOptions>>().Value);
+```
+
+Con este patrón:
+- Los tests inyectan `new JwtOptions { ... }` directamente sin mockear `IOptions<T>`
+- El composition root decide el lifetime (Scoped, Singleton, etc.)
+- El código queda desacoplado de `Microsoft.Extensions.Options`
+
+---
+
+## FluentValidation para validar opciones
+> Fuente: *Architecting ASP.NET Core Applications* (Ferreira) — Ch.9 Validating Options Using FluentValidation
+
+Puente entre FluentValidation y el sistema de validación de Options de .NET:
+
+```csharp
+// 1. Validador FluentValidation — reglas declarativas
+public class JwtOptionsValidator : AbstractValidator<JwtOptions>
+{
+    public JwtOptionsValidator()
+    {
+        RuleFor(x => x.SigningKey).NotEmpty().MinimumLength(32);
+        RuleFor(x => x.Issuer).NotEmpty();
+        RuleFor(x => x.AccessTokenLifetimeMinutes).InclusiveBetween(1, 60);
+        RuleFor(x => x.AccessTokenLifetimeMinutes)
+            .LessThan(x => x.RefreshTokenLifetimeDays * 24 * 60)
+            .WithMessage("AccessToken debe expirar antes que RefreshToken.");
+    }
+}
+
+// 2. Adaptador genérico — reutilizable para cualquier tipo de Options
+public sealed class FluentValidateOptions<TOptions> : IValidateOptions<TOptions>
+    where TOptions : class
+{
+    private readonly IValidator<TOptions> _validator;
+
+    public FluentValidateOptions(IValidator<TOptions> validator)
+        => _validator = validator;
+
+    public ValidateOptionsResult Validate(string? name, TOptions options)
+    {
+        var result = _validator.Validate(options);
+        if (result.IsValid) return ValidateOptionsResult.Success;
+
+        var errors = result.Errors.Select(e => e.ErrorMessage);
+        return ValidateOptionsResult.Fail(errors);
+    }
+}
+
+// 3. Registro en Program.cs
+builder.Services
+    .AddSingleton<IValidator<JwtOptions>, JwtOptionsValidator>()
+    .AddSingleton<IValidateOptions<JwtOptions>, FluentValidateOptions<JwtOptions>>();
+
+builder.Services
+    .AddOptions<JwtOptions>()
+    .BindConfiguration(JwtOptions.SectionName)
+    .ValidateOnStart();
+```
+
+La ventaja sobre `ValidateDataAnnotations()`: las reglas de validación viven en una clase separada, son más expresivas y más fáciles de testear.
+
+---
+
+## `[OptionsValidator]` — source generator (.NET 8)
+> Fuente: *Architecting ASP.NET Core Applications* (Ferreira) — Ch.9 Using the Options Validation Source Generator
+
+Para proyectos con AOT (Ahead-of-Time compilation) o trimming, el generador de código crea el validador en tiempo de compilación — sin reflection:
+
+```csharp
+// Opciones con Data Annotations
+public class JwtOptions
+{
+    [Required] public string Issuer    { get; init; } = string.Empty;
+    [Required, MinLength(32)]
+    public string SigningKey { get; init; } = string.Empty;
+    [Range(1, 60)]
+    public int AccessTokenLifetimeMinutes { get; init; } = 15;
+}
+
+// Validador generado automáticamente — solo la declaración, el código lo genera el compilador
+[OptionsValidator]
+public partial class JwtOptionsValidator : IValidateOptions<JwtOptions> { }
+
+// Registro
+builder.Services.AddSingleton<IValidateOptions<JwtOptions>, JwtOptionsValidator>();
+
+builder.Services
+    .AddOptions<JwtOptions>()
+    .BindConfiguration(JwtOptions.SectionName)
+    .ValidateOnStart();
+```
+
+```xml
+<!-- .csproj — activar el source generator (activo por defecto en AOT/trimming) -->
+<PropertyGroup>
+    <EnableConfigurationBindingGenerator>true</EnableConfigurationBindingGenerator>
+</PropertyGroup>
+```
+
+Diferencia clave vs `ValidateDataAnnotations()`: el código de validación se genera en tiempo de compilación, no usa reflection en runtime — compatible con publicación AOT.
+
+---
+
 ## Glosario
 
 | Término | Definición |
@@ -269,6 +400,11 @@ Ver `04-backend/10-secretos.md` para gestión de secretos en producción (Azure 
 | IConfiguration | Interfaz de bajo nivel para acceder a valores de configuración por clave string — propenso a typos |
 | Double Underscore | Separador de secciones en variables de entorno Linux/Docker (`Jwt__SigningKey`) equivalente a `:` |
 | Named Options | Instancias múltiples de la misma clase Options identificadas por nombre — para múltiples proveedores |
+| IConfigureOptions\<T\> | Interfaz para encapsular lógica de configuración en una clase separada — se ejecuta en la fase de configuración |
+| IPostConfigureOptions\<T\> | Como IConfigureOptions pero se ejecuta después — útil para sobreescribir valores en tests de integración |
+| FluentValidateOptions\<T\> | Adaptador genérico que conecta FluentValidation con IValidateOptions — bridge entre los dos sistemas |
+| [OptionsValidator] | Atributo de .NET 8 para generar código de validación en tiempo de compilación — compatible con AOT |
+| AOT | Ahead-of-Time compilation — compila .NET a código nativo antes de ejecutar; requiere evitar reflection |
 
 ---
 

@@ -435,6 +435,168 @@ git push --follow-tags
 
 ---
 
+## Crear el backend de estado: S3 + DynamoDB
+> Fuente: *Terraform: Up and Running* (Brikman) — Ch.3 How to Manage Terraform State
+
+El bucket S3 y la tabla DynamoDB para state/locking se crean con Terraform usando un proceso en dos pasos (porque el bucket aún no existe cuando se crea):
+
+### Paso 1 — crear los recursos con backend local
+
+```hcl
+# infra/global/state-backend/main.tf
+provider "aws" { region = "us-east-1" }
+
+# Bucket S3 para el state — nombre debe ser globalmente único
+resource "aws_s3_bucket" "terraform_state" {
+  bucket = "gtm-suite-terraform-state"
+  lifecycle { prevent_destroy = true }   # protección contra terraform destroy accidental
+}
+
+# Versionado — guarda todas las versiones del state (rollback)
+resource "aws_s3_bucket_versioning" "enabled" {
+  bucket = aws_s3_bucket.terraform_state.id
+  versioning_configuration { status = "Enabled" }
+}
+
+# Cifrado en reposo con AES-256
+resource "aws_s3_bucket_server_side_encryption_configuration" "default" {
+  bucket = aws_s3_bucket.terraform_state.id
+  rule {
+    apply_server_side_encryption_by_default { sse_algorithm = "AES256" }
+  }
+}
+
+# Bloquear acceso público — el state puede contener secretos
+resource "aws_s3_bucket_public_access_block" "public_access" {
+  bucket                  = aws_s3_bucket.terraform_state.id
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
+}
+
+# Tabla DynamoDB para state locking — hash_key debe ser "LockID" exactamente
+resource "aws_dynamodb_table" "terraform_locks" {
+  name         = "gtm-suite-terraform-locks"
+  billing_mode = "PAY_PER_REQUEST"
+  hash_key     = "LockID"
+
+  attribute {
+    name = "LockID"
+    type = "S"
+  }
+}
+```
+
+```bash
+# Paso 1: aplicar con backend local (el bucket aún no existe)
+terraform init
+terraform apply
+```
+
+### Paso 2 — migrar al backend remoto
+
+```hcl
+# infra/global/state-backend/main.tf — agregar backend al mismo archivo
+terraform {
+  backend "s3" {
+    bucket         = "gtm-suite-terraform-state"
+    key            = "global/state-backend/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "gtm-suite-terraform-locks"
+    encrypt        = true
+  }
+}
+```
+
+```bash
+# Paso 2: migrar el state local al bucket S3 recién creado
+terraform init   # Terraform detecta el nuevo backend y migra el state automáticamente
+```
+
+A partir de este punto, todos los demás módulos de Terraform pueden usar directamente el bloque `backend "s3"` sin pasos adicionales.
+
+---
+
+## `terraform_remote_state` — leer outputs de otro módulo
+> Fuente: *Terraform: Up and Running* (Brikman) — Ch.3 The terraform_remote_state Data Source
+
+Cuando la infraestructura está dividida en módulos separados (VPC, RDS, ECS), un módulo puede leer los outputs de otro a través del state remoto sin acoplar los archivos `.tf`.
+
+```
+Problema sin terraform_remote_state:
+  infra/rds/ → produce output "rds_endpoint"
+  infra/ecs/ → necesita "rds_endpoint" pero está en otro módulo
+  → ¿Cómo lo lee? No puede usar attribute reference directa (son carpetas separadas)
+```
+
+```hcl
+# infra/rds/outputs.tf — el módulo RDS exporta su endpoint
+output "rds_endpoint" {
+  description = "Endpoint de la base de datos PostgreSQL"
+  value       = aws_db_instance.postgres.endpoint
+}
+```
+
+```hcl
+# infra/ecs/main.tf — el módulo ECS lee el state del módulo RDS
+data "terraform_remote_state" "rds" {
+  backend = "s3"
+  config = {
+    bucket = "gtm-suite-terraform-state"
+    key    = "production/rds/terraform.tfstate"   # path del state del módulo RDS
+    region = "us-east-1"
+  }
+}
+
+# Usar el output leído del state remoto
+resource "aws_ecs_task_definition" "api" {
+  # ...
+  container_definitions = jsonencode([{
+    environment = [
+      {
+        name  = "DB_HOST"
+        value = data.terraform_remote_state.rds.outputs.rds_endpoint  # ← leído del state remoto
+      }
+    ]
+  }])
+}
+```
+
+El data source `terraform_remote_state` es **solo lectura** — no puede modificar el state de otro módulo.
+
+---
+
+## Partial backend configuration — reducir copy-paste
+> Fuente: *Terraform: Up and Running* (Brikman) — Ch.3 Limitations with Backends
+
+El bloque `backend "s3"` no acepta variables de Terraform (`var.bucket_name` no funciona). Para evitar copiar el bucket name y region en cada módulo, se usa partial configuration:
+
+```hcl
+# backend.hcl — valores compartidos (commitear sin secretos)
+bucket         = "gtm-suite-terraform-state"
+region         = "us-east-1"
+dynamodb_table = "gtm-suite-terraform-locks"
+encrypt        = true
+```
+
+```hcl
+# infra/production/ecs/main.tf — solo el key es específico por módulo
+terraform {
+  backend "s3" {
+    key = "production/ecs/terraform.tfstate"   # único por módulo
+    # bucket, region, dynamodb_table vienen de backend.hcl
+  }
+}
+```
+
+```bash
+# Inicializar pasando el archivo de configuración parcial
+terraform init -backend-config=../../../backend.hcl
+```
+
+---
+
 ## Aislamiento de ambientes — file layout vs workspaces
 > Fuente: *Terraform: Up and Running* (Brikman) — Ch.3 How to Manage Terraform State
 
