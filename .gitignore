@@ -22,6 +22,11 @@ CONTEXT.md
 CLAUDE.md
 .claude/
 
+# Entorno virtual Python (creado accidentalmente en la raíz)
+Lib/
+Scripts/
+pyvenv.cfg
+
 # Libros / binarios (van en Google Drive, no en el repo)
 *.pdf
 *.epub
