@@ -175,6 +175,50 @@ La regla que lo garantiza: **Domain no referencia Infrastructure**. Solo Infrast
 
 ---
 
+## Hexagonal vs Clean Architecture vs Onion
+
+Los tres resuelven el mismo problema con la misma idea — se confunden porque son variantes de un único principio.
+
+| Aspecto | Hexagonal | Clean Architecture | Onion |
+|---------|-----------|-------------------|-------|
+| **Autor / año** | Cockburn, 2005 | Martin, 2012 | Palermo, 2008 |
+| **Metáfora** | Hexágono con puertos | Capas concéntricas | Cebolla — capas anidadas |
+| **Foco** | Separar driving/driven adapters | Regla de dependencia (→ adentro) | Domain Services explícitos |
+| **Capas internas** | No define capas internas | Domain + Application + Infrastructure | Domain Model + Domain Services + Application |
+| **Puertos** | Concepto explícito (in/out) | Interfaces en capas internas | Interfaces en capas internas |
+| **Adapters** | Concepto explícito | Controllers/Repos son implícitamente adapters | Igual que Clean |
+
+**En la práctica:** son la misma idea expresada distinto. Aprender uno es aprender todos. El back-template usa **Clean Architecture con mentalidad Hexagonal** — Clean da la estructura de capas, Hexagonal ayuda a razonar sobre qué es un puerto y qué es un adaptador.
+
+```
+Hexagonal         → Clean Architecture    → Este proyecto
+──────────────────────────────────────────────────────────
+Port (in)         → Use Case Interface    → IRequest + IRequestHandler
+Driving Adapter   → Controller            → ExampleUsersController
+Core Application  → Application layer     → GetExampleUserHandler
+Port (out)        → Repository Interface  → IExampleUserRepository
+Driven Adapter    → Infrastructure        → ExampleUserRepository + ExampleUsersSql
+```
+
+---
+
+## La Dependency Rule
+
+> **Las dependencias de código solo pueden apuntar hacia adentro.** Nada en una capa interna puede conocer nada de una capa externa.
+
+```
+✓ Application conoce Domain
+✓ Infrastructure conoce Domain
+✓ WebApi conoce Application
+✗ Domain conoce Infrastructure      ← viola la regla
+✗ Application conoce Infrastructure ← viola la regla
+✗ Domain conoce WebApi              ← viola la regla
+```
+
+Se implementa con DI: la capa externa implementa la interface definida en la capa interna. La capa interna nunca importa la externa.
+
+---
+
 ## Cuándo usar / no usar
 
 | Usar | No usar |
@@ -182,7 +226,7 @@ La regla que lo garantiza: **Domain no referencia Infrastructure**. Solo Infrast
 | Sistemas que necesitan testearse sin infra real | CRUDs simples sin lógica de negocio |
 | Cuando hay múltiples adaptadores (Dapper + EF Core, REST + GraphQL) | Scripts o herramientas de un solo uso |
 | Dominios complejos con reglas de negocio cambiantes | Proyectos de vida muy corta (PoC descartable) |
-| Multi-tenancy donde los adaptadores varían por tenant | |
+| Multi-tenancy donde los adaptadores varían por tenant | Cuando Clean Architecture ya da suficiente estructura |
 
 ---
 

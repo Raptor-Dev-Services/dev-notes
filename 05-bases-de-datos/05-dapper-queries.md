@@ -6,6 +6,55 @@ Dapper es un micro-ORM que ejecuta SQL directo y mapea los resultados a objetos 
 
 ---
 
+## Tipos de datos PostgreSQL ↔ C#
+
+| PostgreSQL | C# | Notas |
+|------------|-----|-------|
+| `UUID` | `Guid` | Siempre para IDs públicos — evita enumeration attacks |
+| `SERIAL` / `BIGSERIAL` | `int` / `long` | IDs internos — más eficiente en B-tree que UUID |
+| `INTEGER` | `int` | |
+| `DECIMAL(p,s)` | `decimal` | Dinero y cantidades exactas — nunca `double` |
+| `VARCHAR(n)` / `TEXT` | `string` | |
+| `BOOLEAN` | `bool` | |
+| `TIMESTAMP(0)` | `DateTime` | Sin milisegundos, siempre UTC |
+| `TIMESTAMPTZ` | `DateTimeOffset` | Con zona horaria |
+| `DATE` | `DateOnly` | Solo fecha, sin hora |
+| `JSONB` | `string` / clase custom | Serializar/deserializar manualmente |
+
+Dapper mapea columnas a propiedades por nombre (case-insensitive). El nombre SQL debe coincidir con el de C#:
+
+```sql
+-- ✓ Columna: PublicId → Propiedad: PublicId
+-- ✗ Columna: public_id → Propiedad: PublicId (snake_case no mapea automáticamente)
+-- Solución: usar alias  SELECT public_id AS PublicId FROM users
+```
+
+---
+
+## Convenciones del proyecto (back-template)
+
+```sql
+-- Esquema dbo — separa tablas de la app del resto del sistema
+CREATE TABLE IF NOT EXISTS dbo.ExampleUsers (
+    Id           SERIAL       NOT NULL,          -- PK interna, nunca exponer al cliente
+    PublicId     UUID         NOT NULL DEFAULT gen_random_uuid(),  -- ID pública en la API
+    FullName     VARCHAR(200) NOT NULL,
+    Email        VARCHAR(320) NOT NULL,
+    TenantId     UUID         NOT NULL,
+    IsActive     BOOLEAN      NOT NULL DEFAULT true,
+    CreatedAtUtc TIMESTAMP(0) NOT NULL DEFAULT (timezone('utc', now())),
+    UpdatedAtUtc TIMESTAMP(0) NOT NULL DEFAULT (timezone('utc', now())),
+    DeletedAt    TIMESTAMP(0) NULL     -- soft delete
+);
+```
+
+Reglas de todas las queries de lectura:
+- `WHERE deleted_at IS NULL` siempre presente
+- `AND tenant_id = @TenantId` siempre presente
+- Nunca concatenar valores del usuario en el SQL — siempre `@parametro`
+
+---
+
 ## Setup en el back-template
 
 ```csharp
@@ -30,6 +79,26 @@ public class MainDbConnectionFactory(IConfiguration config)
         return conn;
     }
 }
+```
+
+---
+
+## SQL Injection — regla absoluta
+
+```csharp
+// ❌ SQL Injection — NUNCA concatenar o interpolar valores del usuario
+_db.QueryAsync<ExampleUser>($"SELECT * FROM users WHERE email = '{email}'");
+
+// ✓ Siempre parámetros nombrados con @
+_db.QueryAsync<ExampleUser>(
+    "SELECT * FROM users WHERE email = @Email AND tenant_id = @TenantId",
+    new { Email = email, TenantId = tenantId });
+
+// ✓ Colecciones — Dapper expande automáticamente con ANY (PostgreSQL)
+var ids = new[] { id1, id2, id3 };
+_db.QueryAsync<ExampleUser>(
+    "SELECT * FROM users WHERE public_id = ANY(@Ids)",
+    new { Ids = ids });
 ```
 
 ---
@@ -323,6 +392,49 @@ public async Task BulkInsertAsync(IEnumerable<ExampleUser> users)
     // Opción 2: Npgsql COPY — máximo rendimiento para miles de registros
     // Ver: NpgsqlConnection.BeginBinaryImportAsync
 }
+```
+
+---
+
+## INSERT, UPDATE y Soft Delete
+
+```csharp
+// INSERT con RETURNING — retorna el Id generado por la BD
+public const string Insert = """
+    INSERT INTO dbo.ExampleUsers (PublicId, FullName, Email, TenantId, CreatedAtUtc, UpdatedAtUtc)
+    VALUES (@PublicId, @FullName, @Email, @TenantId, timezone('utc', now()), timezone('utc', now()))
+    RETURNING Id
+    """;
+
+public async Task<int> InsertAsync(ExampleUser user, CancellationToken ct)
+    => await _db.ExecuteScalarAsync<int>(ExampleUsersSql.Insert, user);
+
+// UPDATE — verificar que se modificó exactamente 1 fila
+public const string Update = """
+    UPDATE dbo.ExampleUsers
+    SET    FullName     = @FullName,
+           UpdatedAtUtc = timezone('utc', now())
+    WHERE  PublicId     = @PublicId
+      AND  TenantId     = @TenantId
+      AND  DeletedAt    IS NULL
+    """;
+
+public async Task UpdateAsync(ExampleUser user, CancellationToken ct)
+{
+    var affected = await _db.ExecuteAsync(ExampleUsersSql.Update, user);
+    if (affected == 0)
+        throw new KeyNotFoundException($"Usuario {user.PublicId} no encontrado.");
+}
+
+// Soft DELETE — nunca borrar físicamente; marcar con timestamp
+public const string SoftDelete = """
+    UPDATE dbo.ExampleUsers
+    SET    DeletedAt    = timezone('utc', now()),
+           UpdatedAtUtc = timezone('utc', now())
+    WHERE  PublicId     = @PublicId
+      AND  TenantId     = @TenantId
+      AND  DeletedAt    IS NULL
+    """;
 ```
 
 ---

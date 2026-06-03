@@ -333,6 +333,72 @@ app.MapHealthChecks("/health/ready", new HealthCheckOptions
 
 ---
 
+## Workflow diario en el back-template
+
+En el back-template real hay 4 archivos compose para distintos propósitos:
+
+| Archivo | Entorno | API en Docker | Cuándo usar |
+|---------|---------|--------------|------------|
+| `compose-db.yaml` | Desarrollo local | No — API con `dotnet run` | Dev diario con hot-reload |
+| `compose-dev.yaml` | Development | Sí | Probar la imagen completa |
+| `compose-staging.yaml` | Staging | Sí | Pipeline CI/CD |
+| `compose.yaml` | Production | Sí | Prod / QA final |
+
+**El flujo recomendado para desarrollo diario:**
+
+```bash
+# 1. Levantar solo la infraestructura (PostgreSQL + Seq + Jaeger)
+docker compose -f compose-db.yaml up -d
+
+# 2. Correr la API localmente con hot-reload e ILogger directo
+dotnet run --project Host --launch-profile Local
+
+# URLs disponibles:
+# API:               http://localhost:5080
+# Swagger UI:        http://localhost:5080/swagger
+# Seq (logs):        http://localhost:5341
+# Jaeger (trazas):   http://localhost:16686
+
+# 3. Apagar infra al terminar (los datos persisten en ./data/)
+docker compose -f compose-db.yaml down
+```
+
+**Por qué bind mounts en lugar de named volumes en dev:**
+
+```yaml
+volumes:
+  - ./data/postgres:/var/lib/postgresql/data  # los datos quedan en ./data/ del repo
+```
+
+Los datos son visibles, inspeccionables con DBeaver y fáciles de resetear: `rm -rf ./data/`.
+
+**Variables de entorno — mapeo `__` → `:` en appsettings:**
+
+| Variable de entorno | Equivalente en appsettings.json |
+|--------------------|--------------------------------|
+| `ConnectionStrings__MainDbConnection` | `ConnectionStrings:MainDbConnection` |
+| `Jwt__Key` | `Jwt:Key` |
+| `Jwt__Issuer` | `Jwt:Issuer` |
+| `ASPNETCORE_ENVIRONMENT` | Entorno (Local/Development/Staging/Production) |
+| `ASPNETCORE_HTTP_PORTS` | Puerto HTTP dentro del contenedor |
+
+**Problemas frecuentes:**
+
+```bash
+# Puerto 5432 ya en uso → mapear a otro puerto en el compose
+ports:
+  - "5433:5432"   # host:container
+
+# Imagen desactualizada tras cambios de código
+docker compose -f compose-dev.yaml up -d --build --force-recreate
+
+# Reset completo de la base de datos
+docker compose -f compose-db.yaml down -v
+rm -rf ./data/
+```
+
+---
+
 ## Relación con el back-template
 
 El back-template expone en `Host/Program.cs`:

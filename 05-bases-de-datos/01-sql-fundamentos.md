@@ -163,6 +163,30 @@ FROM payments;
 
 ---
 
+## LIKE, DISTINCT y operadores adicionales
+
+```sql
+-- LIKE — buscar por patrón (% = cualquier cadena, _ = un carácter)
+SELECT * FROM users WHERE full_name LIKE 'John%';      -- empieza con John
+SELECT * FROM users WHERE email     LIKE '%@gmail%';   -- contiene @gmail
+SELECT * FROM users WHERE email     ILIKE '%@GMAIL%';  -- ILIKE = case-insensitive (PostgreSQL)
+
+-- IN — lista de valores (más legible que múltiples OR)
+SELECT * FROM users WHERE public_id IN ('id-1', 'id-2', 'id-3');
+
+-- BETWEEN — rango inclusivo
+SELECT * FROM users WHERE created_at BETWEEN '2025-01-01' AND '2025-12-31';
+
+-- DISTINCT — eliminar filas duplicadas
+SELECT DISTINCT email FROM users;
+SELECT DISTINCT full_name, tenant_id FROM users;   -- única por combinación
+
+-- ORDER BY con NULLS LAST (PostgreSQL)
+SELECT * FROM users ORDER BY deleted_at NULLS LAST;
+```
+
+---
+
 ## Subqueries
 
 ```sql

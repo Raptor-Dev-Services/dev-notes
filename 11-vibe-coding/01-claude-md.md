@@ -122,6 +122,76 @@ Los nombres siguen PascalCase y deben tener un story en Storybook.
 
 ---
 
+## Qué secciones incluir en un CLAUDE.md completo
+
+### Stack y versiones
+
+```markdown
+## Stack
+- Backend: .NET 10, C# 13, ASP.NET Core, Dapper, PostgreSQL 16
+- Frontend: React 19, Vite 7, Tailwind CSS v4
+- Infraestructura: Docker, AWS ECS Fargate, ECR, RDS PostgreSQL
+- CI/CD: GitHub Actions
+```
+
+### Arquitectura del proyecto
+
+```markdown
+## Arquitectura
+Clean Architecture 4 capas. Ver `docs/architecture.md` para diagrama.
+
+Capa Application: un UseCase = una carpeta con Handler, Request, Response.
+Handlers retornan Result<T> — nunca lanzar excepciones para flujo de negocio.
+
+Naming estándar:
+- Handler:    GetExampleUserHandler
+- Request:    GetExampleUserRequest(Guid PublicId)
+- Repo iface: IExampleUserRepository
+- Repo impl:  ExampleUserRepository
+```
+
+### Convenciones de código
+
+```markdown
+## Convenciones
+- Idioma: español en comentarios y docs, inglés en código
+- Result Pattern en todos los handlers
+- Validación con FluentValidation, no DataAnnotations
+- Sin queries SQL inline en handlers — siempre en clase ...Sql
+```
+
+### Restricciones
+
+```markdown
+## Restricciones
+- No usar EF Core para queries de lectura — siempre Dapper
+- No commitear appsettings.Production.json con valores reales
+- Tests de integración usan Testcontainers, no mocks de base de datos
+- No modificar Common/ sin discutirlo primero
+```
+
+### Comandos frecuentes
+
+```markdown
+## Comandos
+- Build:        dotnet build
+- Tests:        dotnet test
+- Dev local:    docker compose -f compose-db.yaml up -d && dotnet run --project Host
+- Migrations:   dotnet ef migrations add <Name> --project Infrastructure --startup-project Host
+- Frontend dev: cd frontend && npm run dev
+```
+
+---
+
+## Cuándo actualizar CLAUDE.md
+
+- Al agregar una nueva dependencia o patrón al proyecto
+- Al cambiar la estructura de directorios
+- Al establecer una nueva convención de equipo
+- Al detectar que el LLM repite el mismo error — agregar restricción explícita
+
+---
+
 ## Buenas prácticas para CLAUDE.md efectivo
 
 ### ✓ Qué incluir

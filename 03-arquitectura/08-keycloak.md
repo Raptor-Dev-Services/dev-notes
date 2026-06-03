@@ -272,6 +272,105 @@ El back-template está diseñado para que el `token_id` y `tenant_id` vengan del
 
 ---
 
+## Mapear roles de Keycloak al sistema de roles de .NET
+
+Keycloak emite los roles en `realm_access.roles` — estructura diferente a lo que .NET espera en `ClaimTypes.Role`:
+
+```csharp
+options.Events = new JwtBearerEvents
+{
+    OnTokenValidated = ctx =>
+    {
+        var identity = ctx.Principal?.Identity as ClaimsIdentity;
+        if (identity is null) return Task.CompletedTask;
+
+        var realmAccess = ctx.Principal?.FindFirst("realm_access")?.Value;
+        if (realmAccess is not null)
+        {
+            var roles = JsonSerializer.Deserialize<KeycloakRealmAccess>(realmAccess);
+            foreach (var role in roles?.Roles ?? [])
+                identity.AddClaim(new Claim(ClaimTypes.Role, role));
+        }
+        return Task.CompletedTask;
+    },
+    // SignalR — el token llega en el query string
+    OnMessageReceived = ctx =>
+    {
+        var token = ctx.Request.Query["access_token"];
+        if (!string.IsNullOrEmpty(token) && ctx.HttpContext.Request.Path.StartsWithSegments("/hubs"))
+            ctx.Token = token;
+        return Task.CompletedTask;
+    }
+};
+
+public sealed class KeycloakRealmAccess
+{
+    [JsonPropertyName("roles")]
+    public List<string> Roles { get; init; } = [];
+}
+```
+
+---
+
+## ClaimsPrincipalExtensions — leer claims del token
+
+```csharp
+public static class ClaimsPrincipalExtensions
+{
+    public static Guid GetUserId(this ClaimsPrincipal principal)
+        => Guid.Parse(principal.FindFirst("sub")?.Value
+            ?? throw new InvalidOperationException("Claim 'sub' no encontrado."));
+
+    public static string GetTenantId(this ClaimsPrincipal principal)
+        => principal.FindFirst("tenant_id")?.Value
+            ?? throw new InvalidOperationException("Claim 'tenant_id' no encontrado.");
+
+    public static bool HasRole(this ClaimsPrincipal principal, string role)
+        => principal.IsInRole(role);
+}
+
+// CurrentUserService — encapsula la lectura del contexto del usuario en el request
+public sealed class CurrentUserService(IHttpContextAccessor http) : ICurrentUserService
+{
+    public Guid   UserId   => http.HttpContext!.User.GetUserId();
+    public string TenantId => http.HttpContext!.User.GetTenantId();
+    public bool   IsAdmin  => http.HttpContext!.User.HasRole("admin");
+}
+```
+
+---
+
+## Client Credentials — M2M con token cacheado
+
+```csharp
+public sealed class KeycloakTokenService(HttpClient http, IConfiguration config)
+{
+    private string?  _cachedToken;
+    private DateTime _tokenExpiry;
+
+    public async Task<string> GetAccessTokenAsync(CancellationToken ct)
+    {
+        if (_cachedToken is not null && DateTime.UtcNow < _tokenExpiry)
+            return _cachedToken;
+
+        var response = await http.PostAsync("/token",
+            new FormUrlEncodedContent(new Dictionary<string, string>
+            {
+                ["grant_type"]    = "client_credentials",
+                ["client_id"]     = config["Keycloak:ClientId"]!,
+                ["client_secret"] = config["Keycloak:ClientSecret"]!
+            }), ct);
+
+        var token = await response.Content.ReadFromJsonAsync<TokenResponse>(cancellationToken: ct);
+        _cachedToken = token!.AccessToken;
+        _tokenExpiry = DateTime.UtcNow.AddSeconds(token.ExpiresIn - 30);
+        return _cachedToken;
+    }
+}
+```
+
+---
+
 ## Cuándo usar / no usar
 
 | Usar Keycloak | No usar Keycloak |
