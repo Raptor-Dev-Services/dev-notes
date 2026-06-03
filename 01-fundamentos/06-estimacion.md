@@ -1,6 +1,6 @@
 # 06 — Estimación de Software
 
-La estimación de software es el proceso de predecir cuánto esfuerzo, tiempo o recursos requiere completar un trabajo. Es una de las habilidades más difíciles en ingeniería de software — y también una de las más malentendidas.
+La estimación de software es el proceso de predecir cuánto esfuerzo, tiempo o recursos requiere completar un trabajo. Es una de las habilidades más difíciles en ingeniería de software, y también una de las más malentendidas.
 
 > Fuente: *Software Estimation: Demystifying the Black Art* — McConnell, *Agile Estimating and Planning* — Cohn, *The Mythical Man-Month* — Brooks
 
@@ -40,7 +40,7 @@ La estimación debe asumir que mitigaremos la complejidad accidental, pero no pu
 
 ### Definición
 
-Story points miden la **complejidad relativa** de una historia de usuario — no el tiempo absoluto.
+Story points miden la **complejidad relativa** de una historia de usuario, no el tiempo absoluto.
 
 ```
 Factores que influyen en los story points:
@@ -167,7 +167,7 @@ Equipo de 4 devs, sprint de 2 semanas (10 días hábiles):
 Capacity total: 37 dev-días × (velocity / días de sprint)
 ```
 
-**Planificación conservadora:** no usar el 100% de la capacity — dejar 20% para bugs, reuniones e imprevistos.
+**Planificación conservadora:** no usar el 100% de la capacity. Dejar 20% para bugs, reuniones e imprevistos.
 
 ---
 

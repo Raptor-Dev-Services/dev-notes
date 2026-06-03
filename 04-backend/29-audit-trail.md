@@ -65,7 +65,7 @@ public static class AuditActions
 
 ---
 
-## Estrategia A — EF Core SaveChanges Interceptor (automático)
+## Estrategia A: EF Core SaveChanges Interceptor (automático)
 
 Interceptar el `SaveChanges` del `AppDbContext` y registrar cambios automáticamente para todas las entidades auditables.
 
@@ -154,7 +154,7 @@ services.AddDbContext<AppDbContext>((sp, options) =>
 
 ---
 
-## Estrategia B — Registro manual en el handler (explícito)
+## Estrategia B: Registro manual en el handler (explícito)
 
 Para eventos de negocio que no corresponden a cambios de entidad (login, export, role change), registrar manualmente:
 
@@ -249,7 +249,7 @@ public async Task<LoginResponse> Handle(LoginRequest request, CancellationToken 
 
 ---
 
-## IAuditContextAccessor — quién hace la acción
+## IAuditContextAccessor: quién hace la acción
 
 Similar al `ITenantContextAccessor`, para llevar el contexto del usuario actual al interceptor:
 
@@ -324,7 +324,7 @@ public sealed class AuditEntryConfiguration : IEntityTypeConfiguration<AuditEntr
 }
 ```
 
-La tabla `audit_entries` **no lleva Global Query Filter** de tenant — el repositorio filtra manualmente, y el Super Admin puede consultarla sin restricciones.
+La tabla `audit_entries` **no lleva Global Query Filter** de tenant. El repositorio filtra manualmente, y el Super Admin puede consultarla sin restricciones.
 
 ---
 

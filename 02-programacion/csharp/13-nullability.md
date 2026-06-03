@@ -1,8 +1,8 @@
-﻿# 13 — Nulabilidad en C#
+﻿# 13: Nulabilidad en C#
 
 El valor `null` representa "sin valor". Manejarlo incorrectamente es la causa #1 de crashes en aplicaciones .NET: `NullReferenceException`.
 
-> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.2 Speaking C#: Null and Nullable Reference Types
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price). Ch.2 Speaking C#: Null and Nullable Reference Types
 
 ---
 
@@ -13,7 +13,7 @@ ExampleUser user = null;
 Console.WriteLine(user.FullName); // ¡CRASH! NullReferenceException
 ```
 
-C# 8+ introdujo **Nullable Reference Types** — el compilador te avisa antes de que el crash ocurra.
+C# 8+ introdujo **Nullable Reference Types**. El compilador te avisa antes de que el crash ocurra.
 
 ---
 
@@ -50,14 +50,14 @@ Guid?     idOpcional     = null;
 
 ## Operadores de nulabilidad
 
-### `?` en el tipo — permite null
+### `?` en el tipo: permite null
 
 ```csharp
 ExampleUser? user = await repo.GetByPublicIdAsync(id, ct);
 // user PUEDE ser null — el método retorna null si no existe
 ```
 
-### `?.` — acceso seguro (null-conditional)
+### `?.`: acceso seguro (null-conditional)
 
 ```csharp
 // Sin operador — puede explotar
@@ -71,7 +71,7 @@ string? ciudad = persona?.Direccion?.Ciudad?.ToUpper();
 // Si persona o Direccion o Ciudad es null → retorna null sin excepción
 ```
 
-### `??` — operador null-coalescing (valor por defecto)
+### `??`: operador null-coalescing (valor por defecto)
 
 ```csharp
 // Si la izquierda es null, usa la derecha
@@ -86,7 +86,7 @@ string config =
     ?? throw new InvalidOperationException("No hay connection string configurada.");
 ```
 
-### `??=` — asignar si es null (C# 8+)
+### `??=`: asignar si es null (C# 8+)
 
 ```csharp
 // Si la variable es null, asignarle el valor
@@ -97,7 +97,7 @@ string nombre = null!;
 nombre ??= "Valor default";  // nombre = "Valor default"
 ```
 
-### `!` — null-forgiving operator (suprimir advertencia)
+### `!`: null-forgiving operator (suprimir advertencia)
 
 Le dices al compilador "confía en mí, esto no es null":
 
@@ -111,7 +111,7 @@ var jwtKey = configuration["Jwt:Key"]!;
 // Sin ! el compilador avisa: "Possible null reference"
 ```
 
-**Úsalo solo cuando REALMENTE sabes que no es null.** Si lo usas en algo que SÍ puede ser null, el compilador no te avisará y tendrás un crash en runtime.
+Úsalo solo cuando realmente sabes que no es null. Si lo usas en algo que sí puede ser null, el compilador no avisará y habrá un crash en runtime.
 
 ---
 
@@ -244,7 +244,7 @@ Con `enable`, el compilador:
 
 ## Errores comunes
 
-### Error 1 — Ignorar la advertencia de nullable
+### Error 1: ignorar la advertencia de nullable
 
 ```csharp
 // ❌ Ignorar el warning — puede crashear en producción
@@ -257,7 +257,7 @@ if (user is null) return NotFound();
 Console.WriteLine(user.FullName);  // ✓ seguro aquí
 ```
 
-### Error 2 — Abusar del `!` para silenciar warnings
+### Error 2: abusar del `!` para silenciar warnings
 
 ```csharp
 // ❌ Silenciar todos los warnings con !
@@ -270,7 +270,7 @@ if (user is null) return new GetExampleUserNotFoundFailure("...");
 Console.WriteLine(user.FullName);  // ✓
 ```
 
-### Error 3 — string vacío vs null
+### Error 3: string vacío vs null
 
 ```csharp
 // Ambos son "sin valor" pero son distintos
@@ -286,7 +286,7 @@ if (string.IsNullOrWhiteSpace(nombre))
     return new RegistroValidationFailure("Nombre es requerido.");
 ```
 
-### Error 4 — Nullable value types
+### Error 4: nullable value types
 
 ```csharp
 // int? tiene un valor bool HasValue y acceso por .Value

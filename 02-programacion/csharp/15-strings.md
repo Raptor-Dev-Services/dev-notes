@@ -1,8 +1,8 @@
-﻿# 15 — Strings en C#
+﻿# 15: Strings en C#
 
 Los strings son inmutables en C#. Cada operación que "modifica" un string crea uno nuevo. Conocer esto evita bugs y problemas de rendimiento.
 
-> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.8 Working with Text, Dates, and Numbers
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price). Ch.8 Working with Text, Dates, and Numbers
 
 ---
 
@@ -21,7 +21,7 @@ string.IsNullOrWhiteSpace(nombre)    // true si null, "" o solo espacios/tabs
 
 ---
 
-## Interpolación — `$""`
+## Interpolación: `$""`
 
 La forma más común de construir strings dinámicos:
 
@@ -66,7 +66,7 @@ $"{id:B}"           // "{d4f7a2b1-abc1-23...}" (con llaves)
 
 ---
 
-## Raw strings — `""" """`
+## Raw strings: `""" """`
 
 C# 11+. Para strings multilínea sin escapes. Esencial para SQL en este proyecto.
 
@@ -84,7 +84,7 @@ var sql = """
 // El string resultante NO tiene los espacios de la indentación de código
 ```
 
-### Raw string interpolado — `$""" """`
+### Raw string interpolado: `$""" """`
 
 ```csharp
 var tabla = "dbo.ExampleUsers";
@@ -111,7 +111,7 @@ var json = $$"""
 
 ---
 
-## Verbatim strings — `@""`
+## Verbatim strings: `@""`
 
 Ignora secuencias de escape (`\n`, `\t`, etc.). Útil para rutas de Windows y regex.
 
@@ -136,7 +136,7 @@ Línea 3";
 
 ## Concatenación y StringBuilder
 
-### Concatenación simple — para pocos strings
+### Concatenación simple: para pocos strings
 
 ```csharp
 string a = "Hola";
@@ -144,7 +144,7 @@ string b = "mundo";
 string c = a + " " + b;  // crea UN nuevo string — está bien para pocos
 ```
 
-### `StringBuilder` — para muchos strings en loop
+### `StringBuilder`: para muchos strings en loop
 
 Cuando concatenas en un loop, cada `+` crea un nuevo string. `StringBuilder` es un buffer mutable:
 
@@ -246,7 +246,7 @@ byte[] decoded = Convert.FromBase64String(base64);
 
 ---
 
-## Range y Index — C# 8+
+## Range y Index: C# 8+
 
 ```csharp
 string s = "Hola Mundo";

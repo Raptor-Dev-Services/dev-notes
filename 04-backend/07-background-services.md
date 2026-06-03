@@ -97,7 +97,7 @@ public sealed class SessionCleanupService : BackgroundService
 
 ### Por qué IServiceScopeFactory
 
-Los `BackgroundService` son **Singleton**. Los repositorios y handlers son **Scoped**. No se pueden inyectar directamente — la dependencia capturada (captive dependency) causa bugs.
+Los `BackgroundService` son **Singleton**. Los repositorios y handlers son **Scoped**. No se pueden inyectar directamente. La dependencia capturada (captive dependency) causa bugs.
 
 ```csharp
 // ❌ Captive dependency — el Singleton captura un Scoped
@@ -324,7 +324,7 @@ public sealed class SessionCleanupService : BackgroundService
 
 ## BackgroundService con canal (Channel<T>)
 
-Para procesar trabajo enviado desde requests HTTP — el Handler publica en el canal, el Background Service consume.
+Para procesar trabajo enviado desde requests HTTP: el Handler publica en el canal y el Background Service consume.
 
 ```csharp
 // Shared/Channels/EmailChannel.cs

@@ -133,7 +133,7 @@ git log -1 --format="%an <%ae>"
 | `git config` local para overrides por repo | editar `.git/config` manualmente |
 
 
-> Fuente: *Pro Git 2nd Ed* (Scott Chacon, Ben Straub) — Ch.8 Customizing Git: Git Configuration
+> Fuente: *Pro Git 2nd Ed* (Scott Chacon, Ben Straub): Ch.8 Customizing Git: Git Configuration
 
 ---
 

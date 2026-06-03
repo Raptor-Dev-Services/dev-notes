@@ -145,7 +145,7 @@ El back-template funciona sin cambios en Azure: el `Dockerfile` se construye igu
 | Managed Identity siempre que sea posible | Service Principals con secretos estáticos de larga vida |
 
 
-> Fuente: *Architecting Modern Web Apps with ASP.NET Core and Azure* (Steve Smith) — Ch.2 Azure Architecture and Services Overview
+> Fuente: *Architecting Modern Web Apps with ASP.NET Core and Azure* (Steve Smith): Ch.2 Azure Architecture and Services Overview
 
 ---
 

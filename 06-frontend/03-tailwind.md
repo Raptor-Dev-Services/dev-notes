@@ -1,8 +1,8 @@
 # 03 · Tailwind CSS v4 con Vite
 
-Tailwind CSS v4 cambia radicalmente la forma de instalación y configuración respecto a v3. Ya no usa `tailwind.config.js` ni `postcss.config.js` — se integra directamente como plugin de Vite y toda la configuración va en el CSS mediante `@theme` y CSS custom properties.
+Tailwind CSS v4 cambia radicalmente la forma de instalación y configuración respecto a v3. Ya no usa `tailwind.config.js` ni `postcss.config.js`. Se integra directamente como plugin de Vite y toda la configuración va en el CSS mediante `@theme` y CSS custom properties.
 
-> Fuentes: *Full Stack React, TypeScript, and Node* (David Choi) — Ch.4 Styling with Tailwind CSS; documentación oficial Tailwind CSS v4
+> Fuentes: *Full Stack React, TypeScript, and Node* (David Choi): Ch.4 Styling with Tailwind CSS; documentación oficial Tailwind CSS v4
 
 ---
 

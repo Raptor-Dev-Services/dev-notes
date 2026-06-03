@@ -5,7 +5,7 @@ Terraform permite definir infraestructura cloud (AWS, Azure, GCP) en archivos de
 ---
 
 ## Conceptos fundamentales
-> Fuente: *Terraform Up and Running* (Brikman) — Ch.1 Why Terraform
+> Fuente: *Terraform Up and Running* (Brikman): Ch.1 Why Terraform
 
 ```
 Provider   = plugin que conecta Terraform con un cloud (aws, azurerm, google)
@@ -322,7 +322,7 @@ jobs:
 ---
 
 ## Módulos reutilizables
-> Fuente: *Terraform: Up and Running* (Brikman) — Ch.4 How to Create Reusable Infrastructure with Terraform Modules
+> Fuente: *Terraform: Up and Running* (Brikman): Ch.4 How to Create Reusable Infrastructure with Terraform Modules
 
 Un módulo es cualquier conjunto de archivos `.tf` en una carpeta. Los módulos reutilizables permiten definir un componente de infraestructura una vez y usarlo en múltiples entornos (staging, producción).
 
@@ -436,7 +436,7 @@ git push --follow-tags
 ---
 
 ## Crear el backend de estado: S3 + DynamoDB
-> Fuente: *Terraform: Up and Running* (Brikman) — Ch.3 How to Manage Terraform State
+> Fuente: *Terraform: Up and Running* (Brikman): Ch.3 How to Manage Terraform State
 
 El bucket S3 y la tabla DynamoDB para state/locking se crean con Terraform usando un proceso en dos pasos (porque el bucket aún no existe cuando se crea):
 
@@ -519,7 +519,7 @@ A partir de este punto, todos los demás módulos de Terraform pueden usar direc
 ---
 
 ## `terraform_remote_state` — leer outputs de otro módulo
-> Fuente: *Terraform: Up and Running* (Brikman) — Ch.3 The terraform_remote_state Data Source
+> Fuente: *Terraform: Up and Running* (Brikman): Ch.3 The terraform_remote_state Data Source
 
 Cuando la infraestructura está dividida en módulos separados (VPC, RDS, ECS), un módulo puede leer los outputs de otro a través del state remoto sin acoplar los archivos `.tf`.
 
@@ -563,12 +563,12 @@ resource "aws_ecs_task_definition" "api" {
 }
 ```
 
-El data source `terraform_remote_state` es **solo lectura** — no puede modificar el state de otro módulo.
+El data source `terraform_remote_state` es **solo lectura**. No puede modificar el state de otro módulo.
 
 ---
 
 ## Partial backend configuration — reducir copy-paste
-> Fuente: *Terraform: Up and Running* (Brikman) — Ch.3 Limitations with Backends
+> Fuente: *Terraform: Up and Running* (Brikman): Ch.3 Limitations with Backends
 
 El bloque `backend "s3"` no acepta variables de Terraform (`var.bucket_name` no funciona). Para evitar copiar el bucket name y region en cada módulo, se usa partial configuration:
 
@@ -598,7 +598,7 @@ terraform init -backend-config=../../../backend.hcl
 ---
 
 ## Aislamiento de ambientes — file layout vs workspaces
-> Fuente: *Terraform: Up and Running* (Brikman) — Ch.3 How to Manage Terraform State
+> Fuente: *Terraform: Up and Running* (Brikman): Ch.3 How to Manage Terraform State
 
 ### Por qué NO usar workspaces para aislar ambientes
 

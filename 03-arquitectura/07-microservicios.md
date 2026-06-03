@@ -267,9 +267,9 @@ Event Sourcing (store events):
 ```
 
 **Atributos clave de los eventos:**
-- **Inmutables** — un evento es un hecho ocurrido; no se modifica
-- **Únicos** — cada ocurrencia genera un evento nuevo, aunque sea el mismo tipo
-- **Históricos** — siempre representan un punto en el tiempo (nombrarlos en pasado)
+- **Inmutables:** un evento es un hecho ocurrido; no se modifica
+- **Únicos:** cada ocurrencia genera un evento nuevo, aunque sea el mismo tipo
+- **Históricos:** siempre representan un punto en el tiempo (nombrarlos en pasado)
 
 ```csharp
 // Event Store — tabla append-only para guardar eventos
@@ -333,11 +333,11 @@ public sealed class EventSourcedOrderRepository : IOrderRepository
 - Cuando se necesita "viaje en el tiempo" (ver el estado en una fecha pasada)
 
 **Cuándo NO usar Event Sourcing:**
-- CRUDs simples donde la historia no importa — agrega complejidad sin beneficio
+- CRUDs simples donde la historia no importa: agrega complejidad sin beneficio
 - Cuando el volumen de eventos crece tanto que la reproducción se vuelve lenta sin snapshots
-- Sin CQRS — Event Sourcing sin un read model separado genera queries lentas
+- Sin CQRS: Event Sourcing sin un read model separado genera queries lentas
 
-**Snapshot pattern** — cuando hay muchos eventos, guardar un snapshot del estado cada N eventos para no reproducir desde el principio:
+**Snapshot pattern:** cuando hay muchos eventos, guardar un snapshot del estado cada N eventos para no reproducir desde el principio:
 
 ```
 Evento 1 → Evento 50 → Snapshot v50 → Evento 51 → Evento 100 → Snapshot v100

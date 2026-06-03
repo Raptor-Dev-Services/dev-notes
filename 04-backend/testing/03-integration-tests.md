@@ -14,7 +14,7 @@ Integration:   HTTP GET /api/example/users/{id} → verifica todo el stack
                   Controller → Mediator → Handler → Repo → DB (real) → Presenter → Response
 ```
 
-Si el Controller tiene mal el route, si el DI no registró algo, si la serialización JSON falla — los unit tests no lo detectan. Los integration tests sí.
+Si el Controller tiene mal el route, si el DI no registró algo, si la serialización JSON falla: los unit tests no lo detectan. Los integration tests sí.
 
 ---
 
@@ -279,7 +279,7 @@ public async Task Insert_ValidBody_Returns200AndCreatesUser()
 
 ## Relación con back-template
 
-`back-template/docs/Testing.md` documenta la configuración específica del proyecto. `WebApplicationFactory<Program>` requiere que `Program` sea `public partial class` — la plantilla ya lo tiene configurado.
+`back-template/docs/Testing.md` documenta la configuración específica del proyecto. `WebApplicationFactory<Program>` requiere que `Program` sea `public partial class`. La plantilla ya lo tiene configurado.
 
 Los integration tests son más lentos que los unit tests. La convención habitual es separar los suites con categorías y correr solo los unit tests en el loop de desarrollo, los integration tests en CI.
 

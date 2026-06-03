@@ -1,14 +1,14 @@
-﻿# 09 — DI Lifetimes: Singleton, Scoped, Transient
+﻿# 09: DI Lifetimes: Singleton, Scoped, Transient
 
 Cuando registras una dependencia, debes decidir **cuánto tiempo vive** el objeto que el container crea. Esta decisión impacta el rendimiento, la seguridad entre peticiones y los posibles bugs.
 
-> Fuente: *Apps and Services with .NET 8* (Mark J. Price) — Ch.14 Dependency Injection and Service Lifetimes
+> Fuente: *Apps and Services with .NET 8* (Mark J. Price). Ch.14 Dependency Injection and Service Lifetimes
 
 ---
 
 ## Los tres lifetimes
 
-### Singleton — una instancia para toda la aplicación
+### Singleton: una instancia para toda la aplicación
 
 ```csharp
 services.AddSingleton<MainDbConnectionFactory>();
@@ -37,11 +37,11 @@ App se apaga
 - Objetos costosos de crear: fábricas, clientes HTTP, configuraciones cacheadas
 - Thread-safe (puede ser usado simultáneamente por múltiples hilos)
 
-**En este proyecto:** `MainDbConnectionFactory` — solo sabe cómo crear conexiones, no tiene estado propio.
+**En este proyecto:** `MainDbConnectionFactory`. Solo sabe cómo crear conexiones, no tiene estado propio.
 
 ---
 
-### Scoped — una instancia por petición HTTP
+### Scoped: una instancia por petición HTTP
 
 ```csharp
 services.AddScoped<MainDapperDbConnection>();
@@ -79,7 +79,7 @@ Petición 2 llega
 
 ---
 
-### Transient — nueva instancia cada vez que se pide
+### Transient: nueva instancia cada vez que se pide
 
 ```csharp
 services.AddTransient<IEmailSender, EmailSender>();
@@ -101,7 +101,7 @@ Petición 1 llega
 **Cuándo usar:**
 - Objetos ligeros y sin estado
 - Objetos que NO deben compartirse ni siquiera dentro de la misma petición
-- Raramente necesario — si el objeto no tiene estado, Singleton es mejor; si lo tiene, Scoped es mejor
+- Raramente necesario. Si el objeto no tiene estado, Singleton es mejor; si lo tiene, Scoped es mejor.
 
 **En este proyecto:** no se usa actualmente.
 
@@ -117,7 +117,7 @@ Petición 1 llega
 
 ---
 
-## El error más peligroso — Captive Dependency
+## El error más peligroso: Captive Dependency
 
 Ocurre cuando **un Singleton captura un Scoped**. El Scoped debería vivir solo una petición, pero el Singleton lo retiene para siempre.
 
@@ -177,7 +177,7 @@ InvalidOperationException: Cannot consume scoped service 'MainDapperDbConnection
 from singleton 'CacheGlobal'.
 ```
 
-En producción este chequeo puede estar desactivado — pero el bug existe igual.
+En producción este chequeo puede estar desactivado. El bug existe igual.
 
 Para activar el chequeo en producción:
 
@@ -288,7 +288,7 @@ services.AddSingleton<ConexionBd>();
 
 ## Acceder a servicios fuera del contexto HTTP
 
-En workers, jobs, migraciones — donde no hay petición HTTP:
+En workers, jobs, migraciones (donde no hay petición HTTP):
 
 ```csharp
 // Opción A — IServiceScopeFactory (la más limpia)

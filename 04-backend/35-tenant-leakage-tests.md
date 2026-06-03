@@ -18,7 +18,7 @@ Escenarios que deben FALLAR:
 
 ---
 
-## Estructura del test — dos tenants, dos requests
+## Estructura del test: dos tenants, dos requests
 
 ```csharp
 // Tests/TenantIsolation/UserProfileLeakageTests.cs
@@ -74,7 +74,7 @@ public sealed class UserProfileLeakageTests : IClassFixture<IntegrationTestFacto
 
 ---
 
-## IntegrationTestFactory — factory para tests de leakage
+## IntegrationTestFactory: factory para tests de leakage
 
 ```csharp
 // Tests/Infrastructure/IntegrationTestFactory.cs
@@ -367,16 +367,16 @@ public async Task LoginWithCorrectCredentials_ReturnsTokenWithCorrectTenantId()
 
 ## Checklist de tests de leakage
 
-- [ ] GET de recurso de otro tenant → 404 (no 403 — no revelar que existe)
-- [ ] PUT/DELETE de recurso de otro tenant → 404
-- [ ] GET all → solo retorna recursos del tenant propio
-- [ ] GET de recurso de otro branch (mismo tenant) → 404
-- [ ] Admin corporativo (sin branch) → ve todos los branches del tenant
+- [ ] GET de recurso de otro tenant: 404 (no 403, no revelar que existe)
+- [ ] PUT/DELETE de recurso de otro tenant: 404
+- [ ] GET all: solo retorna recursos del tenant propio
+- [ ] GET de recurso de otro branch (mismo tenant): 404
+- [ ] Admin corporativo (sin branch): ve todos los branches del tenant
 - [ ] Viewer no puede DELETE ni PUT
 - [ ] Operator no puede acceder a settings de tenant
-- [ ] Login con credenciales de otro tenant → 401
-- [ ] JWT de tenant A no funciona en subdominio de tenant B → 403
-- [ ] Tests ejecutan contra una DB real (no mocks) — RLS y filtros se prueban de verdad
+- [ ] Login con credenciales de otro tenant: 401
+- [ ] JWT de tenant A no funciona en subdominio de tenant B: 403
+- [ ] Tests ejecutan contra una DB real (no mocks): RLS y filtros se prueban de verdad
 
 ---
 

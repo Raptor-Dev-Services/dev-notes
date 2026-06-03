@@ -97,7 +97,7 @@ public async Task TransferAsync(
 }
 ```
 
-**Patrón en back-template:** `MainDapperDbConnection` no expone transacciones directamente — las operaciones multi-tabla que requieren transacción se manejan en el repositorio con `NpgsqlConnection` y `NpgsqlTransaction` directas.
+**Patrón en back-template:** `MainDapperDbConnection` no expone transacciones directamente. Las operaciones multi-tabla que requieren transacción se manejan en el repositorio con `NpgsqlConnection` y `NpgsqlTransaction` directas.
 
 ---
 
@@ -200,7 +200,7 @@ UPDATE dbo.Accounts SET Balance = Balance + 50  WHERE Id = 1;  -- quiere lock en
 
 ### Prevenir deadlocks
 
-**1. Ordenar los locks consistentemente** — siempre adquirir locks en el mismo orden:
+**1. Ordenar los locks consistentemente:** siempre adquirir locks en el mismo orden:
 
 ```sql
 -- ✓ Siempre actualizar primero la cuenta con menor Id
@@ -221,7 +221,7 @@ UPDATE dbo.Accounts SET Balance = Balance + 100 WHERE Id = 2;
 COMMIT;
 ```
 
-**3. Mantener transacciones cortas** — menos tiempo con locks = menos probabilidad de conflicto.
+**3. Mantener transacciones cortas:** menos tiempo con locks equivale a menos probabilidad de conflicto.
 
 ---
 
@@ -256,7 +256,7 @@ public async Task InsertWithRoleAsync(
 
 ### Bloqueo pesimista (Pessimistic Locking)
 
-Asume que habrá conflicto — bloquea el recurso antes de modificarlo.
+Asume que habrá conflicto. Bloquea el recurso antes de modificarlo.
 
 ```sql
 -- SELECT FOR UPDATE — bloquea la fila hasta el COMMIT
@@ -283,7 +283,7 @@ public async Task<ExampleUser?> GetForUpdateAsync(Guid publicId, IDbTransaction 
 
 ### Bloqueo optimista (Optimistic Locking)
 
-Asume que NO habrá conflicto — detecta el conflicto al guardar mediante un número de versión o timestamp.
+Asume que NO habrá conflicto. Detecta el conflicto al guardar mediante un número de versión o timestamp.
 
 ```sql
 -- La tabla tiene una columna de versión

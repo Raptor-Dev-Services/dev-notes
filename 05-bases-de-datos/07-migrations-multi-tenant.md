@@ -156,7 +156,7 @@ protected override void Down(MigrationBuilder migrationBuilder)
 }
 ```
 
-**Importante:** `CONCURRENTLY` no puede ejecutarse dentro de una transacción. EF Core wrappea las migraciones en transacciones — hay que desactivarlo:
+**Importante:** `CONCURRENTLY` no puede ejecutarse dentro de una transacción. EF Core wrappea las migraciones en transacciones. Hay que desactivarlo:
 
 ```csharp
 // Deshabilitar transacción para esta migración

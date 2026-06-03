@@ -1,6 +1,6 @@
 # 08 — Keycloak — IAM, OIDC y SSO
 
-Keycloak es un servidor de identidad y acceso (IAM) open-source. Centraliza autenticación, autorización, SSO y gestión de usuarios fuera de la aplicación. El back-template valida tokens JWT emitidos por Keycloak — no gestiona contraseñas ni sesiones directamente.
+Keycloak es un servidor de identidad y acceso (IAM) open-source. Centraliza autenticación, autorización, SSO y gestión de usuarios fuera de la aplicación. El back-template valida tokens JWT emitidos por Keycloak. No gestiona contraseñas ni sesiones directamente.
 
 > Fuente: Documentación oficial Keycloak 25 — https://www.keycloak.org/documentation
 
@@ -202,8 +202,8 @@ var tenantSlug = issuer?.Split('/').LastOrDefault();
 // tenantSlug = "alfacorp"
 ```
 
-**Ventaja:** aislamiento total — usuarios de un tenant nunca ven a otros.  
-**Desventaja:** gestionar N realms — complejidad operativa alta.
+**Ventaja:** aislamiento total. Los usuarios de un tenant nunca ven a otros.
+**Desventaja:** gestionar N realms implica complejidad operativa alta.
 
 ### Opción B — Un realm + claim tenant_id (recomendado para empezar)
 
@@ -267,14 +267,14 @@ docker exec -it keycloak /opt/keycloak/bin/kc.sh export \
 El back-template está diseñado para que el `token_id` y `tenant_id` vengan del JWT. Con Keycloak:
 
 - `SubdomainTenantMiddleware` puede reemplazarse por `TenantClaimsMiddleware` que lee los claims
-- Los Global Query Filters en EF Core siguen usando `ITenantContextAccessor` — no cambia nada en Infrastructure
+- Los Global Query Filters en EF Core siguen usando `ITenantContextAccessor`. No cambia nada en Infrastructure.
 - Las políticas de autorización usan los roles del JWT: `[Authorize(Roles = "admin")]`
 
 ---
 
 ## Mapear roles de Keycloak al sistema de roles de .NET
 
-Keycloak emite los roles en `realm_access.roles` — estructura diferente a lo que .NET espera en `ClaimTypes.Role`:
+Keycloak emite los roles en `realm_access.roles`. La estructura es diferente a lo que .NET espera en `ClaimTypes.Role`:
 
 ```csharp
 options.Events = new JwtBearerEvents

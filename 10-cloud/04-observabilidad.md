@@ -1,6 +1,6 @@
 # 04 · Observabilidad — logs, métricas y alertas
 
-> Fuente: *Learning Modern Linux* Ch.8 (Logging, Monitoring, Advanced Observability); *AWS Certified Solutions Architect – Associate Guide* Ch.15 (CloudTrail, CloudWatch); *Building Secure and Reliable Systems* (Google SRE Book) — Ch.3 Reliability
+> Fuente: *Learning Modern Linux* Ch.8 (Logging, Monitoring, Advanced Observability); *AWS Certified Solutions Architect – Associate Guide* Ch.15 (CloudTrail, CloudWatch); *Building Secure and Reliable Systems* (Google SRE Book): Ch.3 Reliability
 
 ---
 
@@ -12,7 +12,7 @@
 | **Métricas** | ¿cuánto y con qué frecuencia? | Prometheus, Grafana, CloudWatch Metrics |
 | **Trazas** | ¿dónde tardó una request? | OpenTelemetry, Grafana Tempo, Jaeger |
 
-La observabilidad moderna requiere los tres pilares conectados entre sí. Un log sin trace correlacionado es útil pero incompleto. Un trace sin métricas de contexto no dice si el problema es sistémico o puntual. El objetivo es saltar de logs → traces → métricas en una sola UI sin cambiar de pestaña.
+La observabilidad moderna requiere los tres pilares conectados entre sí. Un log sin trace correlacionado es útil pero incompleto. Un trace sin métricas de contexto no dice si el problema es sistémico o puntual. El objetivo es pasar de logs a traces y métricas en una sola UI sin cambiar de pestaña.
 
 ---
 

@@ -482,7 +482,7 @@ El `SubdomainTenantMiddleware` del back-template necesita que el DNS resuelva `*
 | Elastic IP | IP pública fija asignada a tu cuenta. No cambia al reiniciar instancias. |
 | ENI | Elastic Network Interface. Interfaz de red virtual que pueden tener EC2, RDS, Lambda. |
 
-> Fuente: *AWS Certified Solutions Architect – Associate Guide* (Gabriel Ramirez, Packt) — Ch.5 VPC, Networking y Route 53
+> Fuente: *AWS Certified Solutions Architect – Associate Guide* (Gabriel Ramirez, Packt): Ch.5 VPC, Networking y Route 53
 
 ---
 

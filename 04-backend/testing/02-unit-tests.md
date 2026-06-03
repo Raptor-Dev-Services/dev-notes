@@ -482,7 +482,7 @@ public async Task Handle_InactiveUser_ReturnsForbiddenFailure()
 
 ## Tests de entidades de dominio (invariantes)
 
-Los métodos de negocio de las entidades también se testean como unit tests — no necesitan mocks.
+Los métodos de negocio de las entidades también se testean como unit tests. No necesitan mocks.
 
 ```csharp
 public sealed class ExampleUserDomainTests

@@ -1,6 +1,6 @@
 # 07 — Gestión de Stakeholders en Proyectos de Software
 
-Los stakeholders son todas las personas o grupos que tienen interés en el resultado de un proyecto de software — desde los usuarios finales hasta el equipo de operaciones. Gestionarlos bien determina si un proyecto técnicamente exitoso se percibe como un fracaso, o viceversa.
+Los stakeholders son todas las personas o grupos que tienen interés en el resultado de un proyecto de software, desde los usuarios finales hasta el equipo de operaciones. Gestionarlos bien determina si un proyecto técnicamente exitoso se percibe como un fracaso, o viceversa.
 
 > Fuente: *Soft Skills* — Sonmez, *The Manager's Path* — Fournier, *Staff Engineer* — Larson
 
@@ -139,9 +139,9 @@ Strategic stakeholders — personas o equipos que deben estar informados y
 ```
 
 **Aplicación práctica:**
-- Cambiar una API → comunicar a todos los downstream que dependen de ella
-- Necesitar una API de otro equipo → confirmar con ese upstream que no habrá breaking changes
-- Proyecto con stakeholder de Legal → incluirlos desde el inicio, no al final
+- Cambiar una API: comunicar a todos los downstream que dependen de ella
+- Necesitar una API de otro equipo: confirmar con ese upstream que no habrá breaking changes
+- Proyecto con stakeholder de Legal: incluirlos desde el inicio, no al final
 
 ### Cómo encontrar a los stakeholders
 Identificar stakeholders tarde es caro. La regla: incluirlos en el kickoff, no cuando el proyecto ya está terminado.

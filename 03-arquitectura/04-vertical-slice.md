@@ -46,8 +46,8 @@ back-template/
 
 Dos objetivos en tensión:
 
-- **Minimizar el acoplamiento entre slices** → modificar un slice no requiere tocar otros
-- **Maximizar el acoplamiento dentro de un slice** → todo el código de una feature vive junto (cohesión)
+- **Minimizar el acoplamiento entre slices**: modificar un slice no requiere tocar otros
+- **Maximizar el acoplamiento dentro de un slice**: todo el código de una feature vive junto (cohesión)
 
 ### Niveles de código compartido
 
@@ -64,7 +64,7 @@ Global code       → código compartido entre dominios no relacionados
                     MÍNIMO — es el mayor fuente de acoplamiento global
 ```
 
-**Regla práctica:** escribir primero código de feature (slice-specific), refactorizar a código compartido solo cuando emerge la necesidad real — no anticipar abstracciones.
+**Regla práctica:** escribir primero código de feature (slice-specific), refactorizar a código compartido solo cuando emerge la necesidad real. No anticipar abstracciones.
 
 ---
 
@@ -133,7 +133,7 @@ public sealed class GetUserPresenter : IPresenter<GetUserResponse>
 }
 ```
 
-- Toda la feature en un directorio → un PR toca una carpeta
+- Toda la feature en un directorio: un PR toca una carpeta
 - Los desarrolladores trabajan en features completas sin tocar otras
 - Copiar/eliminar/mover una feature es trivial
 - Cada slice puede tener su propio modelo, sin forzar una abstracción compartida
@@ -269,7 +269,7 @@ public sealed class CreateUserPresenter : IPresenter<CreateUserResponse>
 
 ## Decisión para este proyecto
 
-Este proyecto usa Clean Architecture por sus ventajas de estructura clara y el patrón bien establecido en .NET. Si el proyecto crece a múltiples módulos grandes con equipos independientes, migrar la capa Application a Vertical Slices es el paso natural siguiente — sin tocar Domain ni Infrastructure.
+Este proyecto usa Clean Architecture por sus ventajas de estructura clara y el patrón bien establecido en .NET. Si el proyecto crece a múltiples módulos grandes con equipos independientes, migrar la capa Application a Vertical Slices es el paso natural siguiente, sin tocar Domain ni Infrastructure.
 
 ---
 

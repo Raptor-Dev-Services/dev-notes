@@ -1,8 +1,8 @@
-﻿# 11 — Pattern Matching: is, switch, when
+﻿# 11: Pattern Matching: is, switch, when
 
 Pattern matching es una forma expresiva y segura de examinar el tipo y valor de un objeto. Es la base del sistema de Presenters en este proyecto.
 
-> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.3 Controlling Flow: Pattern Matching
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price). Ch.3 Controlling Flow: Pattern Matching
 
 ---
 
@@ -36,7 +36,7 @@ else if (response is IFailure failure)
 
 ---
 
-## `is` — verificar tipo y asignar
+## `is`: verificar tipo y asignar
 
 ### Verificación simple
 
@@ -84,7 +84,7 @@ return new GetExampleUserSuccess(new ExampleUserDto(user.PublicId, user.FullName
 
 ---
 
-## `switch` expression — múltiples casos que retornan un valor
+## `switch` expression: múltiples casos que retornan un valor
 
 ### Forma básica
 
@@ -116,7 +116,7 @@ int statusCode = notification switch
 };
 ```
 
-### Con `when` — condición adicional
+### Con `when`: condición adicional
 
 ```csharp
 string describir = user switch
@@ -217,7 +217,7 @@ if (obj is string or int or Guid)
 
 ---
 
-## Pattern matching en el proyecto — Presenters
+## Pattern matching en el proyecto: Presenters
 
 El caso más importante es el Presenter, que recibe el tipo base y distingue el subtipo:
 
@@ -281,7 +281,7 @@ public Task Handle(GetExampleUserResponse notification, CancellationToken ct)
 
 ## `switch statement` vs `switch expression`
 
-### Statement — ejecuta código, no retorna valor
+### Statement: ejecuta código, no retorna valor
 
 ```csharp
 // switch statement (el clásico)
@@ -299,7 +299,7 @@ switch (environment)
 }
 ```
 
-### Expression — evalúa y retorna un valor
+### Expression: evalúa y retorna un valor
 
 ```csharp
 // switch expression (C# 8+) — más conciso cuando retornas un valor
@@ -338,7 +338,7 @@ string flecha = direccion switch
 
 ## Errores comunes
 
-### Error 1 — Orden incorrecto de casos (más específico primero)
+### Error 1: orden incorrecto de casos (más específico primero)
 
 ```csharp
 // ❌ IFailure es más general que INotFoundFailure
@@ -355,7 +355,7 @@ else if (notification is IFailure failure)
     _viewModel.Fail(failure.Message);
 ```
 
-### Error 2 — Olvidar el caso `null`
+### Error 2: olvidar el caso `null`
 
 ```csharp
 // ❌ Si "notification" puede ser null, ningún patrón de tipo lo captura

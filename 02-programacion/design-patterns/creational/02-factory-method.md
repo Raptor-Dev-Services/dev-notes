@@ -10,7 +10,7 @@
 
 ## El problema
 
-Tienes un sistema de logística que inicialmente solo usa camiones. Toda la lógica de planificación está en una clase `Logistics`. Más tarde necesitas soporte para barcos. El código está acoplado a `Truck` — agregar `Ship` requiere cambiar toda la clase.
+Tienes un sistema de logística que inicialmente solo usa camiones. Toda la lógica de planificación está en una clase `Logistics`. Más tarde necesitas soporte para barcos. El código está acoplado a `Truck`. Agregar `Ship` requiere cambiar toda la clase.
 
 ```csharp
 // ❌ Sin Factory Method — acoplado a la clase concreta
@@ -29,7 +29,7 @@ public class Logistics
 
 ## Analogía
 
-Una franquicia de comida rápida. La receta general (el algoritmo) está definida por la empresa central. Cada sucursal (subclase) decide qué proveedor local de ingredientes usar (qué producto crear). El proceso de preparación es el mismo — los ingredientes son específicos a cada sucursal.
+Una franquicia de comida rápida. La receta general (el algoritmo) está definida por la empresa central. Cada sucursal (subclase) decide qué proveedor local de ingredientes usar (qué producto crear). El proceso de preparación es el mismo. Los ingredientes son específicos a cada sucursal.
 
 ---
 
@@ -226,9 +226,9 @@ public sealed class MainDapperDbConnection
 
 ## Cuándo NO usar
 
-- Para creaciones simples con `new` — no agregar complejidad innecesaria.
-- Cuando solo existe un tipo de producto — no hay variabilidad que justifique el patrón.
-- Cuando la creación no cambia nunca — no hay extensibilidad que ganar.
+- Para creaciones simples con `new`. No agregar complejidad innecesaria.
+- Cuando solo existe un tipo de producto. No hay variabilidad que justifique el patrón.
+- Cuando la creación no cambia nunca. No hay extensibilidad que ganar.
 
 
 ---

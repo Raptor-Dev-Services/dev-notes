@@ -22,7 +22,7 @@ Portabilidad de datos (Art. 20 GDPR):
 
 ---
 
-## Exportación de datos — flujo
+## Exportación de datos: flujo
 
 ```
 1. Admin del tenant solicita exportación: POST /api/data/export
@@ -35,7 +35,7 @@ Portabilidad de datos (Art. 20 GDPR):
    - Configuración del tenant
 4. Job genera un ZIP con JSONs y lo sube a S3
 5. API notifica al Admin (email + SignalR) con presigned URL
-6. Presigned URL válida 7 días — luego se elimina el archivo
+6. Presigned URL válida 7 días: luego se elimina el archivo
 ```
 
 ---
@@ -252,7 +252,7 @@ public sealed class DataExportJob
 
 ---
 
-## Derecho al olvido — eliminar todos los datos del tenant
+## Derecho al olvido: eliminar todos los datos del tenant
 
 ```csharp
 // Compliance.Application/UseCases/RequestDataDeletion/RequestDataDeletionHandler.cs

@@ -121,7 +121,7 @@ if (app.Environment.IsDevelopment())
 
 ## Problem Details (RFC 7807)
 
-Formato estándar para respuestas de error — todos los clientes pueden parsearlo de forma uniforme:
+Formato estándar para respuestas de error. Todos los clientes pueden parsearlo de forma uniforme:
 
 ```csharp
 builder.Services.AddProblemDetails(options =>

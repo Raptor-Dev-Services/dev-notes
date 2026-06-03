@@ -109,7 +109,7 @@ En el back-template los proyectos NuGet (`GTM.Common`, `GTM.Domain`) siguen SemV
 <FileVersion>1.2.0.0</FileVersion>
 ```
 
-Las APIs web usan SemVer en conjunto con API versioning (`v1`, `v2`) — el versionado de ruta de la API no reemplaza a SemVer del paquete/servicio.
+Las APIs web usan SemVer en conjunto con API versioning (`v1`, `v2`). El versionado de ruta de la API no reemplaza a SemVer del paquete/servicio.
 
 ## Cuándo usar / no usar
 
@@ -121,7 +121,7 @@ Las APIs web usan SemVer en conjunto con API versioning (`v1`, `v2`) — el vers
 | microservicios con contratos de API | |
 
 
-> Fuente: *The Software Engineer's Guidebook* (Gergely Orosz) — Ch.7 Software Development Best Practices
+> Fuente: *The Software Engineer's Guidebook* (Gergely Orosz): Ch.7 Software Development Best Practices
 
 ---
 

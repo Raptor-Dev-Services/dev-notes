@@ -216,13 +216,13 @@ builder.Services.AddApplicationServices();  // ← Facade: una línea
 
 - Cuando necesitas una interfaz simple para un subsistema complejo.
 - Cuando hay mucho acoplamiento entre clientes y clases de implementación.
-- Cuando quieres estructurar un subsistema en capas — cada capa expone una Facade.
+- Cuando quieres estructurar un subsistema en capas. Cada capa expone una Facade.
 - Para integración con librerías externas: la Facade aísla el código de los detalles de la librería.
 
 ## Cuándo NO usar
 
-- Cuando el "subsistema" es simple — una Facade para 2 clases es innecesaria.
-- Cuando la Facade se convierte en un God Object que hace demasiado — dividirla.
+- Cuando el "subsistema" es simple. Una Facade para 2 clases es innecesaria.
+- Cuando la Facade se convierte en un God Object que hace demasiado. Dividirla.
 - Cuando los clientes realmente necesitan acceso a la funcionalidad detallada del subsistema.
 
 

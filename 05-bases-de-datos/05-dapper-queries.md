@@ -1,6 +1,6 @@
 # 05 — Dapper — Queries Avanzadas
 
-Dapper es un micro-ORM que ejecuta SQL directo y mapea los resultados a objetos C#. El back-template usa Dapper para todas las lecturas — ofrece control total sobre el SQL y rendimiento cercano al ADO.NET puro, con una API mucho más simple.
+Dapper es un micro-ORM que ejecuta SQL directo y mapea los resultados a objetos C#. El back-template usa Dapper para todas las lecturas. Ofrece control total sobre el SQL y rendimiento cercano al ADO.NET puro, con una API mucho más simple.
 
 > Fuente: Documentación oficial Dapper — https://github.com/DapperLib/Dapper; *Using Dapper* — Marc Gravell
 
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS dbo.ExampleUsers (
 Reglas de todas las queries de lectura:
 - `WHERE deleted_at IS NULL` siempre presente
 - `AND tenant_id = @TenantId` siempre presente
-- Nunca concatenar valores del usuario en el SQL — siempre `@parametro`
+- Nunca concatenar valores del usuario en el SQL: siempre `@parametro`
 
 ---
 
@@ -175,8 +175,7 @@ public async Task<ExampleUserWithTenant?> GetWithTenantAsync(Guid publicId)
 }
 ```
 
-> `splitOn` es el nombre de la columna que marca el inicio del siguiente objeto. Si el JOIN trae columnas ambiguas, alias con AS:  
-> `u.id AS user_id, t.id AS tenant_id` → `splitOn: "tenant_id"`
+> `splitOn` es el nombre de la columna que marca el inicio del siguiente objeto. Si el JOIN trae columnas ambiguas, alias con AS: `u.id AS user_id, t.id AS tenant_id` y usar `splitOn: "tenant_id"`.
 
 ---
 
@@ -210,7 +209,7 @@ public async Task<(ExampleUser? User, IEnumerable<Order> Orders)> GetUserWithOrd
 }
 ```
 
-**Ventaja:** una sola roundtrip a la BD en lugar de dos queries separadas — importante en redes con latencia.
+**Ventaja:** una sola roundtrip a la BD en lugar de dos queries separadas. Importante en redes con latencia.
 
 ---
 
@@ -444,10 +443,10 @@ public const string SoftDelete = """
 El back-template sigue estas convenciones con Dapper:
 
 - Todas las queries están en clases estáticas `...Sql` en `Infrastructure/Persistence/SQLDB/`
-- Los repositorios inyectan `IDbConnection` (Scoped) — cada request tiene su propia conexión
-- `MainDbConnectionFactory` es Singleton — solo guarda el connection string
-- El `tenant_id` siempre se pasa como parámetro — nunca hardcodeado en el SQL
-- Las queries de lectura usan `QueryAsync` / `QueryFirstOrDefaultAsync` — nunca `Query` síncrono
+- Los repositorios inyectan `IDbConnection` (Scoped): cada request tiene su propia conexión
+- `MainDbConnectionFactory` es Singleton: solo guarda el connection string
+- El `tenant_id` siempre se pasa como parámetro: nunca hardcodeado en el SQL
+- Las queries de lectura usan `QueryAsync` / `QueryFirstOrDefaultAsync`: nunca `Query` síncrono
 
 ---
 

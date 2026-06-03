@@ -33,7 +33,7 @@ class Navigator
 
 ## Analogía
 
-Diferentes modos de transporte hacia el aeropuerto. Todos resuelven el mismo problema (llegar al aeropuerto) pero con algoritmos diferentes (taxi, metro, bus, bici, caminar). Seleccionas la estrategia según tiempo, costo, o preferencia — sin cambiar el objetivo final.
+Diferentes modos de transporte hacia el aeropuerto. Todos resuelven el mismo problema (llegar al aeropuerto) pero con algoritmos diferentes (taxi, metro, bus, bici, caminar). Seleccionas la estrategia según tiempo, costo o preferencia, sin cambiar el objetivo final.
 
 ---
 
@@ -304,9 +304,9 @@ public sealed class InsertExampleUserPresenter : INotificationHandler<InsertExam
 
 ## Cuándo NO usar
 
-- Si solo tienes un algoritmo que nunca cambia — no necesitas la abstracción.
+- Si solo tienes un algoritmo que nunca cambia. No se necesita la abstracción.
 - Si el cliente no necesita saber de las diferencias entre estrategias.
-- Para comportamientos muy simples — lambdas o funciones locales son suficientes.
+- Para comportamientos muy simples. Lambdas o funciones locales son suficientes.
 
 
 ---

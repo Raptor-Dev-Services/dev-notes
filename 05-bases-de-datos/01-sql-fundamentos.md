@@ -124,7 +124,7 @@ SELECT level, full_name FROM org_chart ORDER BY level, full_name;
 
 ## Window Functions (funciones de ventana)
 
-No colapsan filas como GROUP BY — calculan sobre un conjunto sin agrupar.
+No colapsan filas como GROUP BY. Calculan sobre un conjunto sin agrupar.
 
 ```sql
 -- ROW_NUMBER — numeración única por partición
@@ -314,7 +314,7 @@ public static class ExampleUsersSql
 }
 ```
 
-`COUNT(*) OVER()` es una window function que retorna el total sin una segunda query — patrón estándar para paginación eficiente con Dapper.
+`COUNT(*) OVER()` es una window function que retorna el total sin una segunda query. Es el patrón estándar para paginación eficiente con Dapper.
 
 ---
 

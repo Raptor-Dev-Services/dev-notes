@@ -1,14 +1,14 @@
-﻿# 12 — Colecciones y LINQ
+﻿# 12: Colecciones y LINQ
 
 Las colecciones son estructuras para almacenar múltiples elementos. LINQ es la sintaxis para consultarlas y transformarlas.
 
-> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.8 Working with Common .NET Types
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price). Ch.8 Working with Common .NET Types
 
 ---
 
 ## Tipos de colección más usados
 
-### `List<T>` — lista mutable, orden garantizado
+### `List<T>`: lista mutable, orden garantizado
 
 La colección más común para uso interno.
 
@@ -36,7 +36,7 @@ foreach (var item in lista)
     Console.WriteLine(item);
 ```
 
-### `IEnumerable<T>` — la interfaz más básica
+### `IEnumerable<T>`: la interfaz más básica
 
 Solo permite iterar. No sabe cuántos elementos tiene, no permite acceso por índice.
 
@@ -55,7 +55,7 @@ foreach (var user in users)
 
 **Importante:** `IEnumerable<T>` es **lazy** (diferida). En Dapper, la consulta SQL puede ejecutarse al iterar, no al asignar.
 
-### `IReadOnlyCollection<T>` — inmutable con Count
+### `IReadOnlyCollection<T>`: inmutable con Count
 
 Permite iterar y saber cuántos elementos hay, pero no modificar.
 
@@ -69,7 +69,7 @@ public sealed record GetExampleUsersSuccess(
 // Quién recibe esto puede iterar y saber la cantidad, pero no modificar la colección
 ```
 
-### `IReadOnlyList<T>` — inmutable con Count + índice
+### `IReadOnlyList<T>`: inmutable con Count + índice
 
 Como `IReadOnlyCollection<T>` pero también tiene acceso por índice.
 
@@ -80,7 +80,7 @@ Console.WriteLine(nombres.Count); // 3
 // nombres.Add("Otra");  // ERROR — ReadOnly no permite modificar
 ```
 
-### `Dictionary<TKey, TValue>` — clave → valor
+### `Dictionary<TKey, TValue>`: pares clave-valor
 
 ```csharp
 var cache = new Dictionary<Guid, ExampleUser>();
@@ -104,7 +104,7 @@ foreach (var (key, value) in cache)
     Console.WriteLine($"{key}: {value.FullName}");
 ```
 
-### `HashSet<T>` — conjunto sin duplicados
+### `HashSet<T>`: conjunto sin duplicados
 
 ```csharp
 var roles = new HashSet<string>();
@@ -151,18 +151,18 @@ Console.WriteLine(dias[0]);      // "Lunes"
 
 ---
 
-## LINQ — Language Integrated Query
+## LINQ: Language Integrated Query
 
 LINQ permite consultar y transformar colecciones con una sintaxis fluida.
 
-### Filtrar — `Where`
+### Filtrar: `Where`
 
 ```csharp
 var activos = users.Where(u => u.IsActive);
 var adminActivos = users.Where(u => u.IsActive && u.Role == "Admin");
 ```
 
-### Transformar — `Select`
+### Transformar: `Select`
 
 ```csharp
 // Convertir ExampleUser a ExampleUserDto
@@ -173,7 +173,7 @@ var dtos = users.Select(u => new ExampleUserDto(
 var emails = users.Select(u => u.Email);
 ```
 
-### Ordenar — `OrderBy`, `OrderByDescending`
+### Ordenar: `OrderBy`, `OrderByDescending`
 
 ```csharp
 var ordenados = users.OrderBy(u => u.FullName);
@@ -185,7 +185,7 @@ var multi = users
     .ThenBy(u => u.FullName);
 ```
 
-### Obtener uno — `First`, `FirstOrDefault`, `Single`, `SingleOrDefault`
+### Obtener uno: `First`, `FirstOrDefault`, `Single`, `SingleOrDefault`
 
 ```csharp
 // First — el primero, lanza si no hay ninguno
@@ -204,7 +204,7 @@ var exacto = users.Single(u => u.PublicId == publicId);
 var unicoONull = users.SingleOrDefault(u => u.Email == email);
 ```
 
-### Agregación — `Count`, `Sum`, `Max`, `Min`, `Average`
+### Agregación: `Count`, `Sum`, `Max`, `Min`, `Average`
 
 ```csharp
 int total     = users.Count();
@@ -215,7 +215,7 @@ decimal min   = products.Min(p => p.Price);
 double  avg   = products.Average(p => (double)p.Price);
 ```
 
-### Existencia — `Any`, `All`
+### Existencia: `Any`, `All`
 
 ```csharp
 bool hayAdmins   = users.Any(u => u.Role == "Admin");
@@ -223,7 +223,7 @@ bool todoActivos = users.All(u => u.IsActive);
 bool sinUsuarios = !users.Any();  // equivalente a !users.Any()
 ```
 
-### Agrupación — `GroupBy`
+### Agrupación: `GroupBy`
 
 ```csharp
 var porRol = users.GroupBy(u => u.Role);
@@ -236,7 +236,7 @@ foreach (var grupo in porRol)
 }
 ```
 
-### Proyección plana — `SelectMany`
+### Proyección plana: `SelectMany`
 
 ```csharp
 // Cada usuario tiene múltiples permisos
@@ -255,7 +255,7 @@ var paginados = users
     .Take(tamanio);                // tomar los de esta página
 ```
 
-### Convertir — `ToList`, `ToArray`, `ToDictionary`, `ToHashSet`
+### Convertir: `ToList`, `ToArray`, `ToDictionary`, `ToHashSet`
 
 ```csharp
 // Materializar — ejecuta la query LINQ y crea la colección concreta
@@ -265,7 +265,7 @@ HashSet<string>         emails   = users.Select(u => u.Email).ToHashSet();
 Dictionary<Guid, ExampleUserDto> dict = dtos.ToDictionary(d => d.UserId, d => d);
 ```
 
-### Concatenar — `Concat`, `Union`
+### Concatenar: `Concat`, `Union`
 
 ```csharp
 var todos = admins.Concat(usuarios);  // incluye duplicados

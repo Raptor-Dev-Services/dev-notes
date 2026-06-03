@@ -138,7 +138,7 @@ git branch -d hotfix/1.2.1-fix-crash
 | hotfix flow cuando se puede tolerar 30-60 min de proceso | redespliegue si el problema es de datos y no de código |
 
 
-> Fuente: *Learning Git* (Anna Skoulikari) — Ch.9 Undoing Changes
+> Fuente: *Learning Git* (Anna Skoulikari): Ch.9 Undoing Changes
 
 ---
 

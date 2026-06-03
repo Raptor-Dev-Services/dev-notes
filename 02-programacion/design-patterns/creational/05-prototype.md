@@ -23,7 +23,7 @@ IAnimal animal = GetAnimalFromSomewhere();  // puede ser Dog, Cat, Wolf...
 
 ## Analogía
 
-La división celular. Una célula se copia a sí misma — no necesita un "constructor externo" que sepa cómo crear una célula. La célula sabe cómo duplicarse. El resultado es una copia con el mismo material genético.
+La división celular. Una célula se copia a sí misma sin necesitar un "constructor externo" que sepa cómo crearla. La célula sabe cómo duplicarse. El resultado es una copia con el mismo material genético.
 
 ---
 
@@ -91,7 +91,7 @@ Console.WriteLine(p3.IdInfo.IdNumber); // 666  → ✓ IdInfo independiente
 
 **Conclusión:**
 - **Shallow copy:** campos de valor copiados, campos de referencia **compartidos**.
-- **Deep copy:** todo independiente — modificar el original no afecta la copia.
+- **Deep copy:** todo independiente. Modificar el original no afecta la copia.
 
 ---
 
@@ -156,7 +156,7 @@ var updated = original with { FullName = "Ana García-López" };
 // updated es una NUEVA instancia con todos los campos del original excepto FullName
 ```
 
-**Los records en este proyecto SON el Prototype pattern** — el `with` expression genera una copia con los campos modificados.
+**Los records en este proyecto SON el Prototype pattern.** El `with` expression genera una copia con los campos modificados.
 
 ---
 
@@ -209,13 +209,13 @@ var nextPage  = original with { Page = 2 };  // copia del Prototype con Page dif
 ## Cuándo usar
 
 - Cuando crear un objeto desde cero es costoso (requiere operaciones de I/O, cálculos, etc.) y tienes un objeto existente que es una "plantilla".
-- Cuando quieres reducir el número de subclases — copiar y modificar en lugar de heredar.
+- Cuando quieres reducir el número de subclases: copiar y modificar en lugar de heredar.
 - Cuando el código no debería depender de las clases concretas de los objetos a copiar.
-- En C# moderno: cuando usas records con `with` — es Prototype implícito.
+- En C# moderno: cuando usas records con `with`. Es Prototype implícito.
 
 ## Cuándo NO usar
 
-- Para objetos simples — `new MyObject()` es más claro.
+- Para objetos simples. `new MyObject()` es más claro.
 - Cuando los objetos tienen recursos no copiables (conexiones, hilos).
 - Cuando la semántica de "copia" no está clara (¿qué significa copiar una transacción activa?).
 

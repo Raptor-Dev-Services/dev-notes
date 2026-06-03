@@ -1,8 +1,8 @@
-﻿# 14 — Excepciones en C#
+﻿# 14: Excepciones en C#
 
 Las excepciones son errores que ocurren en tiempo de ejecución. C# tiene un sistema estructurado para lanzarlas, capturarlas y propagarlas.
 
-> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.3 Controlling Flow, Converting Types, and Handling Exceptions
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price). Ch.3 Controlling Flow, Converting Types, and Handling Exceptions
 
 ---
 
@@ -17,7 +17,7 @@ Console.WriteLine(numeros[5]);  // IndexOutOfRangeException — índice fuera de
 
 ---
 
-## `try/catch` — capturar excepciones
+## `try/catch`: capturar excepciones
 
 ```csharp
 try
@@ -67,7 +67,7 @@ catch (Exception ex)
 
 **El orden importa:** los catch más específicos deben ir primero.
 
-### `when` — filtro de excepción
+### `when`: filtro de excepción
 
 ```csharp
 catch (SqlException ex) when (ex.Number == 2627)
@@ -114,7 +114,7 @@ await connection.OpenAsync(ct);
 
 ---
 
-## `throw` — lanzar excepciones
+## `throw`: lanzar excepciones
 
 ### Lanzar nueva excepción
 
@@ -129,7 +129,7 @@ if (precio < 0)
     throw new ArgumentOutOfRangeException(nameof(precio), "El precio debe ser positivo.");
 ```
 
-### Re-lanzar la misma excepción — preserva el stack trace
+### Re-lanzar la misma excepción: preserva el stack trace
 
 ```csharp
 try
@@ -222,7 +222,7 @@ throw new ConfigurationException("Jwt:Key");
 
 ---
 
-## Patrón del proyecto — manejo en controllers
+## Patrón del proyecto: manejo en controllers
 
 ```csharp
 [HttpGet("{id:guid}")]
@@ -238,7 +238,7 @@ public async Task<IActionResult> GetById(Guid id, CancellationToken ct = default
         // Log con el contexto de la operación
         _logger.LogError(ex, "Error en GetById ExampleUser id={UserId}", id);
         
-        // Buscar la excepción raíz (la más profunda — la causa real)
+        // Buscar la excepción raíz (la más profunda, la causa real)
         var innerEx = ex;
         while (innerEx.InnerException != null) innerEx = innerEx.InnerException!;
         
@@ -258,9 +258,9 @@ El mensaje útil está en la excepción más profunda. Las externas son wrappers
 
 ---
 
-## `OperationCanceledException` — no es un error
+## `OperationCanceledException`: no es un error
 
-Cuando se cancela una operación (cliente desconectado, timeout), se lanza `OperationCanceledException`. **No debes loguear esto como error** — es comportamiento esperado.
+Cuando se cancela una operación (cliente desconectado, timeout), se lanza `OperationCanceledException`. No debes loguear esto como error. Es comportamiento esperado.
 
 ```csharp
 try
@@ -285,7 +285,7 @@ catch (Exception ex)
 
 ---
 
-## Global exception handling — `ProblemDetailsMiddleware`
+## Global exception handling: `ProblemDetailsMiddleware`
 
 En el proyecto, `Common.Web` registra un middleware que captura excepciones no manejadas y las convierte en respuestas estándar (RFC 7807 ProblemDetails):
 
@@ -315,7 +315,7 @@ El middleware de `Common.Web` captura:
 
 ## Errores comunes
 
-### Error 1 — Catch vacío (silenciar errores)
+### Error 1: catch vacío (silenciar errores)
 
 ```csharp
 // ❌ Captura la excepción y la ignora — el error desaparece silenciosamente
@@ -340,7 +340,7 @@ catch (Exception ex)
 }
 ```
 
-### Error 2 — throw ex (pierde stack trace)
+### Error 2: throw ex (pierde stack trace)
 
 ```csharp
 // ❌ throw ex — resetea el stack trace, pierdes dónde ocurrió el error
@@ -357,7 +357,7 @@ catch (Exception ex)
 }
 ```
 
-### Error 3 — Catch demasiado amplio sin re-throw
+### Error 3: catch demasiado amplio sin re-throw
 
 ```csharp
 // ❌ Capturar todo y retornar error genérico — esconde problemas de configuración

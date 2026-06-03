@@ -1,6 +1,6 @@
 # 11 · Layering y Clean Architecture
 
-El modelo clásico de tres capas (Presentación → Dominio → Datos) genera acoplamiento directo entre capas: el Dominio depende de la capa de Datos, lo que impide testear la lógica de negocio sin una base de datos real y obliga a reescribir el Dominio cada vez que cambia el origen de datos. Clean Architecture resuelve esto invirtiendo el flujo de dependencias: el núcleo no conoce a nadie, y todas las capas externas lo conocen a él.
+El modelo clásico de tres capas (Presentación, Dominio, Datos) genera acoplamiento directo entre capas: el Dominio depende de la capa de Datos, lo que impide testear la lógica de negocio sin una base de datos real y obliga a reescribir el Dominio cada vez que cambia el origen de datos. Clean Architecture resuelve esto invirtiendo el flujo de dependencias: el núcleo no conoce a nadie, y todas las capas externas lo conocen a él.
 
 > Fuente: *Architecting ASP.NET Core Applications* (Marcotte, 3rd Ed) — Ch.14 Layering and Clean Architecture
 
@@ -16,7 +16,7 @@ Tres términos que se confunden frecuentemente:
 | **Tier** (nivel) | Unidad física de despliegue (máquina) | API server + DB server = 2 tiers |
 | **Assembly** | Unidad compilada de .NET (.dll) | `GTM.Suite.Domain.dll` |
 
-No existe relación 1:1: tres layers pueden residir en el mismo assembly, o cada layer puede ser un assembly separado. Un assembly no garantiza que las layers estén desacopladas — la disciplina del equipo lo hace.
+No existe relación 1:1: tres layers pueden residir en el mismo assembly, o cada layer puede ser un assembly separado. Un assembly no garantiza que las layers estén desacopladas. La disciplina del equipo lo hace.
 
 ---
 

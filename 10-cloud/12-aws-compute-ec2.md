@@ -468,7 +468,7 @@ El back-template expone `/health` para el health check del ALB. El ASG reemplaza
 | Cooldown | Período de espera después de un evento de escalado antes de evaluar nuevamente. |
 | IMDS | Instance Metadata Service. Servidor en 169.254.169.254 con info de la instancia. |
 
-> Fuente: *AWS Certified Solutions Architect – Associate Guide* (Gabriel Ramirez, Packt) — Ch.3 Elasticity, Scalability and EC2, Ch.8 Elastic Load Balancing y Auto Scaling
+> Fuente: *AWS Certified Solutions Architect – Associate Guide* (Gabriel Ramirez, Packt): Ch.3 Elasticity, Scalability and EC2, Ch.8 Elastic Load Balancing y Auto Scaling
 
 ---
 

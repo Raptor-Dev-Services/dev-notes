@@ -1,6 +1,6 @@
 # 24 — Multi-Tenancy: Lógica de Tenant
 
-Multi-tenancy es el modelo en que una sola instancia de la aplicación sirve a múltiples empresas (tenants) con aislamiento completo de datos. Cada tenant ve únicamente sus propios registros — nunca los de otro.
+Multi-tenancy es el modelo en que una sola instancia de la aplicación sirve a múltiples empresas (tenants) con aislamiento completo de datos. Cada tenant ve únicamente sus propios registros. Nunca los de otro.
 
 ---
 
@@ -19,7 +19,7 @@ SaaS Product
     └── ...
 ```
 
-Un tenant es una empresa cliente del producto SaaS. Sus usuarios, datos, configuraciones y registros son completamente privados. La misma tabla de base de datos contiene registros de todos los tenants — la separación es lógica, no física.
+Un tenant es una empresa cliente del producto SaaS. Sus usuarios, datos, configuraciones y registros son completamente privados. La misma tabla de base de datos contiene registros de todos los tenants. La separación es lógica, no física.
 
 ---
 
@@ -47,9 +47,9 @@ Cada tenant tiene su propio schema en la misma DB (`tenant_1.user_profiles`, `te
 
 ### Bases de datos separadas
 
-El máximo aislamiento. Cada tenant tiene su propia DB. Caro y difícil de mantener — solo justificable para tenants Enterprise con requisitos de compliance.
+El máximo aislamiento. Cada tenant tiene su propia DB. Caro y difícil de mantener. Solo justificable para tenants Enterprise con requisitos de compliance.
 
-**El back-template usa Row-Level Security con `tenant_id`** — es el balance correcto para un SaaS bootstrapped.
+**El back-template usa Row-Level Security con `tenant_id`**: es el balance correcto para un SaaS bootstrapped.
 
 ---
 
@@ -78,11 +78,11 @@ El máximo aislamiento. Cada tenant tiene su propia DB. Caro y difícil de mante
 6. Resultado: el repositorio solo ve datos del tenant 42
 ```
 
-El `tenant_id` nace en el momento del login y vive en el JWT hasta que expira. El backend nunca confía en el `tenant_id` que el cliente envíe en el body — lo saca exclusivamente del JWT validado.
+El `tenant_id` nace en el momento del login y vive en el JWT hasta que expira. El backend nunca confía en el `tenant_id` que el cliente envíe en el body. Lo saca exclusivamente del JWT validado.
 
 ---
 
-## Implementación en .NET — los 4 componentes
+## Implementación en .NET: los 4 componentes
 
 ### 1. Entidad con TenantId
 
@@ -101,7 +101,7 @@ public sealed class UserProfile
 }
 ```
 
-### 2. ITenantContextAccessor — portador del tenant
+### 2. ITenantContextAccessor: portador del tenant
 
 ```csharp
 // Common/MultiTenancy/ITenantContextAccessor.cs
@@ -125,13 +125,13 @@ public sealed class TenantContextAccessor : ITenantContextAccessor
 
 `AsyncLocal<T>` garantiza que el valor está aislado por request (no hay mezcla entre requests concurrentes).
 
-Registro como **Singleton** — `AsyncLocal` maneja el aislamiento:
+Registro como **Singleton**: `AsyncLocal` maneja el aislamiento:
 
 ```csharp
 services.AddSingleton<ITenantContextAccessor, TenantContextAccessor>();
 ```
 
-### 3. TenantClaimsMiddleware — extrae el claim
+### 3. TenantClaimsMiddleware: extrae el claim
 
 ```csharp
 // Host.Api/Middleware/TenantClaimsMiddleware.cs
@@ -188,11 +188,11 @@ Con esto, cada query sobre `UserProfile` genera automáticamente `WHERE tenant_i
 
 ---
 
-## Excepciones — cuándo no filtrar por tenant
+## Excepciones: cuándo no filtrar por tenant
 
 ### Endpoints de autenticación
 
-Login y refresh token no tienen JWT todavía — no hay tenant_id en el accessor. Los repositorios de auth usan `IgnoreQueryFilters()`:
+Login y refresh token no tienen JWT todavía. No hay tenant_id en el accessor. Los repositorios de auth usan `IgnoreQueryFilters()`:
 
 ```csharp
 public async Task<UserCredential?> GetForLoginAsync(string email, CancellationToken ct = default) =>
@@ -235,7 +235,7 @@ public sealed class UsersController : BaseApiController
 }
 ```
 
-El handler recibe el `TenantId` como parámetro del request — no lo lee del accessor directamente. Esto hace los unit tests más simples (no hay que mockear el accessor):
+El handler recibe el `TenantId` como parámetro del request. No lo lee del accessor directamente. Esto hace los unit tests más simples (no hay que mockear el accessor):
 
 ```csharp
 public sealed record GetUserProfileRequest(Guid PublicId, long TenantId)
@@ -244,7 +244,7 @@ public sealed record GetUserProfileRequest(Guid PublicId, long TenantId)
 
 ---
 
-## Creación de un registro — tenant automático
+## Creación de un registro: tenant automático
 
 Al crear un registro nuevo, el `TenantId` viene del JWT, no del body del request:
 
@@ -275,7 +275,7 @@ public async Task<long> InsertAsync(Guid publicId, long tenantId, string fullNam
 
 ---
 
-## Tenant en el JWT — claim en el login
+## Tenant en el JWT: claim en el login
 
 Al hacer login, el JWT se genera con el `tenant_id` del usuario:
 
@@ -333,7 +333,7 @@ b.HasIndex(e => new { e.TenantId, e.IsActive });
 ## Relación con el back-template
 
 El back-template implementa single-level multi-tenancy con:
-- `ITenantContextAccessor` en `Common/` — AsyncLocal singleton
+- `ITenantContextAccessor` en `Common/`: AsyncLocal singleton
 - `TenantClaimsMiddleware` en `Host.Api/Middleware/`
 - Global Query Filters en `Shared/Database/AppDbContext.cs`
 - `IgnoreQueryFilters()` en `Authentication.Infrastructure/Repositories/`

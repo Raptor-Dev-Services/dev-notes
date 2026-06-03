@@ -2,7 +2,7 @@
 
 Una aplicación cloud-native está diseñada desde el principio para aprovechar las características del cloud: elasticidad, resiliencia automática, despliegue independiente y observabilidad integrada.
 
-> Fuente: *ASP.NET Core 9 Essentials* (Packt) — Ch.11 Cloud-Native Development with ASP.NET Core 9
+> Fuente: *ASP.NET Core 9 Essentials* (Packt): Ch.11 Cloud-Native Development with ASP.NET Core 9
 
 ---
 
@@ -123,7 +123,7 @@ Horizontal = agregar más instancias del mismo proceso (elástico)
 ✓ Azure App Service scale-out → más instancias del mismo contenedor
 ```
 
-Para trabajo de larga duración → procesos worker separados de los HTTP handlers.
+Para trabajo de larga duración, usar procesos worker separados de los HTTP handlers.
 
 ### Factor 9 — Disposability: startup rápido y shutdown limpio
 
@@ -190,14 +190,14 @@ Log.Logger = new LoggerConfiguration()
 ---
 
 ## The Reactive Manifesto — sistemas resilientes por diseño
-> Fuente: *Docker: Up and Running* (Kane, Matthias) — Ch.13 Container Platform Design
+> Fuente: *Docker: Up and Running* (Kane, Matthias): Ch.13 Container Platform Design
 
 Complementario a los 12 factores, el Reactive Manifesto (Jonas Bonér, 2013) define cómo los sistemas deben comportarse ante fallas, carga variable y eventos inesperados.
 
 Un sistema reactivo tiene 4 propiedades:
 
 ### Responsive (responsivo)
-El sistema responde en tiempo razonable bajo cualquier condición. Si una operación toma tiempo (ej: generar un PDF), responder inmediatamente con "trabajo enviado" y notificar cuando termine — nunca hacer esperar al usuario en un request bloqueante.
+El sistema responde en tiempo razonable bajo cualquier condición. Si una operación toma tiempo (ej: generar un PDF), responder inmediatamente con "trabajo enviado" y notificar cuando termine. Nunca hacer esperar al usuario en un request bloqueante.
 
 ```csharp
 // ✓ Responsivo: respuesta inmediata con ID de trabajo

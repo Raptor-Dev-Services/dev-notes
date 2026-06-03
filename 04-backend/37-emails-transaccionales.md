@@ -37,7 +37,7 @@ Operacionales:
 
 ---
 
-## IEmailService — abstracción del proveedor
+## IEmailService: abstracción del proveedor
 
 ```csharp
 // Common/Email/IEmailService.cs
@@ -87,7 +87,7 @@ public interface IEmailService
 | AWS SES | 62,000/mes (desde EC2) | Más barato en volumen |
 | Mailgun | 5,000/mes (3 meses) | API sencilla |
 
-**Recomendación para empezar:** Resend o Postmark — mejor DX y entregabilidad.
+**Recomendación para empezar:** Resend o Postmark: mejor DX y entregabilidad.
 
 ---
 
@@ -154,7 +154,7 @@ public sealed class ResendEmailService : IEmailService
 
 ---
 
-## Templates HTML — mantenerlos simples
+## Templates HTML: mantenerlos simples
 
 El HTML de emails debe ser compatible con clientes de email viejos (Outlook, Gmail app). Usar tablas en lugar de CSS moderno:
 
@@ -190,7 +190,7 @@ private static string BuildWelcomeHtml(string name, string tenantName) => $"""
 
 ---
 
-## Branded por tenant — personalización
+## Branded por tenant: personalización
 
 Los emails pueden incluir el logo y el nombre del tenant en el from:
 
@@ -215,7 +215,7 @@ public async Task SendInvitationAsync(
 
 ---
 
-## Restablecimiento de contraseña — flujo seguro
+## Restablecimiento de contraseña: flujo seguro
 
 ```csharp
 // Authentication.Domain/Entities/PasswordResetToken.cs
@@ -280,7 +280,7 @@ public async Task<ResetPasswordResponse> Handle(
 
 ## Emails con retry y fallback
 
-El email no es transaccional en el sentido de la DB — si falla, el tenant no se entera. Agregar reintentos:
+El email no es transaccional en el sentido de la DB. Si falla, el tenant no se entera. Agregar reintentos:
 
 ```csharp
 // Wrapper con reintento (sin usar Polly por simplicidad)
@@ -379,8 +379,8 @@ Resend__ApiKey=re_live_xxxx
 - [ ] HTML compatible con Outlook (tablas, inline styles)
 - [ ] Retry automático en fallo del proveedor (3 intentos)
 - [ ] Log de emails enviados para diagnóstico
-- [ ] API key del proveedor en variables de entorno — nunca en código/git
-- [ ] Unsubscribe solo aplica a emails de marketing — los transaccionales no tienen unsubscribe
+- [ ] API key del proveedor en variables de entorno: nunca en código/git
+- [ ] Unsubscribe solo aplica a emails de marketing: los transaccionales no tienen unsubscribe
 - [ ] Emails de seguridad (reset, cambio de password) se envían sin importar las preferencias de notificación
 
 ---

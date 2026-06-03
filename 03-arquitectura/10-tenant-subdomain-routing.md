@@ -329,15 +329,15 @@ Si el usuario existe pero en otro tenant, el resultado es "Credenciales inválid
 - [ ] Validación de coherencia: tenant del subdominio == tenant del JWT
 - [ ] Tenant `Suspended` retorna 403 antes de procesar el request
 - [ ] Tenant inexistente retorna 404 con mensaje claro
-- [ ] Slug normalizado a minúsculas — `AlfaCorp` == `alfacorp`
+- [ ] Slug normalizado a minúsculas: `AlfaCorp` == `alfacorp`
 - [ ] Header `X-Tenant-Slug` como fallback solo en Development
-- [ ] Tests: acceso con JWT de tenant B desde subdominio de tenant A → 403
+- [ ] Tests: acceso con JWT de tenant B desde subdominio de tenant A debe retornar 403
 
 ---
 
 ## Relación con back-template (tenant + branch)
 
-El subdominio identifica al **tenant**. El **branch** sigue viniendo del JWT (o de otra lógica como el perfil del usuario). El subdomain routing no resuelve el nivel de branch — eso es responsabilidad del claim.
+El subdominio identifica al **tenant**. El **branch** sigue viniendo del JWT (o de otra lógica como el perfil del usuario). El subdomain routing no resuelve el nivel de branch. Eso es responsabilidad del claim.
 
 Múltiples tenants, cada uno con su subdominio y sus branches:
 ```

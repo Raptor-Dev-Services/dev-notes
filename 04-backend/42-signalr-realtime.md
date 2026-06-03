@@ -19,7 +19,7 @@ SignalR provee comunicación bidireccional en tiempo real entre el servidor y el
 
 ## Aislamiento por tenant: Groups de SignalR
 
-SignalR tiene el concepto de Groups — un cliente puede unirse a uno o más grupos y los mensajes enviados al grupo llegan solo a los miembros. En un SaaS multi-tenant, el group name incluye el `tenant_id`:
+SignalR tiene el concepto de Groups. Un cliente puede unirse a uno o más grupos y los mensajes enviados al grupo llegan solo a los miembros. En un SaaS multi-tenant, el group name incluye el `tenant_id`:
 
 ```
 Group: "tenant:1"          → todos los usuarios del tenant 1
@@ -105,7 +105,7 @@ app.MapHub<NotificationsHub>("/hubs/notifications");
 
 ---
 
-## INotificationService — enviar notificaciones desde el backend
+## INotificationService: enviar notificaciones desde el backend
 
 ```csharp
 // Common/Notifications/INotificationService.cs
@@ -359,10 +359,10 @@ Con Redis Backplane, un mensaje enviado en la instancia A llega a los clientes c
 
 ## Checklist
 
-- [ ] Hub con `[Authorize]` — solo usuarios autenticados pueden conectarse
+- [ ] Hub con `[Authorize]`: solo usuarios autenticados pueden conectarse
 - [ ] `OnConnectedAsync` une al cliente a los grupos correctos: tenant + branch + user
-- [ ] El nombre del grupo siempre incluye `tenant_id` — nunca grupos sin tenant
-- [ ] `INotificationService` abstrae el `IHubContext<>` — los handlers no referencian SignalR directamente
+- [ ] El nombre del grupo siempre incluye `tenant_id`: nunca grupos sin tenant
+- [ ] `INotificationService` abstrae el `IHubContext<>`: los handlers no referencian SignalR directamente
 - [ ] Notificaciones persistidas en DB para el inbox (no solo tiempo real)
 - [ ] Redis Backplane configurado para múltiples instancias
 - [ ] Frontend con reconexión automática (`withAutomaticReconnect`)

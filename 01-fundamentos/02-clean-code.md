@@ -184,7 +184,7 @@ user.SetBirthDate(request.BirthDate);
 ## Comentarios
 > Fuente: *Clean Code* (Martin) — Ch.4 Comments
 
-El mejor comentario es el que no se necesita — el código bien nombrado se explica solo.
+El mejor comentario es el que no se necesita. El código bien nombrado se explica solo.
 
 ```csharp
 // ❌ Comentario que explica QUÉ hace el código (redundante si el nombre es bueno)
@@ -272,9 +272,9 @@ public sealed record ExampleUserDto(
 ## Cohesión y acoplamiento
 > Fuente: *Clean Code with C#* — Ch.3 Classes, Objects, and Data Structures
 
-**Alta cohesión** — una clase tiene una responsabilidad bien definida y sus métodos son todos relevantes a esa responsabilidad. El resultado: código fácil de entender, probar y modificar.
+**Alta cohesión**: una clase tiene una responsabilidad bien definida y sus métodos son todos relevantes a esa responsabilidad. El resultado: código fácil de entender, probar y modificar.
 
-**Bajo acoplamiento** — las clases interactúan solo a través de abstracciones (interfaces). Cambiar una clase no obliga a cambiar las demás.
+**Bajo acoplamiento**: las clases interactúan solo a través de abstracciones (interfaces). Cambiar una clase no obliga a cambiar las demás.
 
 ```csharp
 // ❌ Baja cohesión — una clase con responsabilidades no relacionadas

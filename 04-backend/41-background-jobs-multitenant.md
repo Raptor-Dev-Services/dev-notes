@@ -1,6 +1,6 @@
 # 41 — Background Jobs en Multi-Tenant
 
-Los background jobs procesan tareas fuera del ciclo request-response: envío de emails, generación de reportes, sincronización de datos, limpieza periódica. En un SaaS multi-tenant, el desafío es que cada job necesita saber para qué tenant está trabajando — sin ese contexto, los Global Query Filters de EF Core retornan 0 filas y los datos se mezclan.
+Los background jobs procesan tareas fuera del ciclo request-response: envío de emails, generación de reportes, sincronización de datos, limpieza periódica. En un SaaS multi-tenant, el desafío es que cada job necesita saber para qué tenant está trabajando. Sin ese contexto, los Global Query Filters de EF Core retornan 0 filas y los datos se mezclan.
 
 ---
 
@@ -348,7 +348,7 @@ public async Task ExecuteForAllBranchesAsync(long tenantId, CancellationToken ct
 
 ---
 
-## Observabilidad — loguear el tenant en jobs
+## Observabilidad: loguear el tenant en jobs
 
 ```csharp
 // En el job, enriquecer el contexto de Serilog con el tenant
@@ -373,7 +373,7 @@ using (LogContext.PushProperty("JobName", GetType().Name))
 - [ ] Reintentos configurados en Hangfire (`[AutomaticRetry(Attempts = 3)]`)
 - [ ] Los errores por tenant no deben cancelar el procesamiento de los demás tenants
 - [ ] Logs enriquecidos con `TenantId` y `BranchId` para diagnóstico
-- [ ] Jobs de larga duración en Hangfire (persistencia) — jobs simples periódicos en BackgroundService
+- [ ] Jobs de larga duración en Hangfire (persistencia): jobs simples periódicos en BackgroundService
 
 ---
 

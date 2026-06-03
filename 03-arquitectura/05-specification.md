@@ -264,8 +264,8 @@ Infrastructure/Persistence/Specifications/ExampleUsers/
 └── RecentUserSqlSpec.cs
 ```
 
-Las Specifications de negocio viven en **Domain** — son reglas de negocio puras.
-Las Specifications SQL viven en **Infrastructure** — son detalles de persistencia.
+Las Specifications de negocio viven en **Domain**: son reglas de negocio puras.
+Las Specifications SQL viven en **Infrastructure**: son detalles de persistencia.
 
 ---
 
@@ -429,7 +429,7 @@ public sealed class SearchExampleUsersHandler
 
 ## Testing de Specifications
 
-Las Specifications son lógica de negocio pura — se testean sin base de datos.
+Las Specifications son lógica de negocio pura. Se testean sin base de datos.
 
 ```csharp
 public sealed class ActiveUserSpecificationTests

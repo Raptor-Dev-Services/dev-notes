@@ -5,7 +5,7 @@ Las vulnerabilidades más comunes en aplicaciones web y cómo prevenirlas en ASP
 ---
 
 ## OWASP Top 10 — resumen rápido
-> Fuente: *Web Application Security* 2nd Ed. — Ch.1-5 OWASP vulnerabilities
+> Fuente: *Web Application Security* 2nd Ed.: Ch.1-5 OWASP vulnerabilities
 
 | # | Vulnerabilidad | Ejemplo |
 |---|---------------|---------|

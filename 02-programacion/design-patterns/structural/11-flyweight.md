@@ -222,10 +222,10 @@ private const string GetByPublicIdSql = """
 
 ## Cuándo NO usar
 
-- Cuando tienes pocas instancias — la complejidad adicional no vale.
+- Cuando tienes pocas instancias. La complejidad adicional no vale.
 - Cuando el estado extrínseco es tan grande que no hay ahorro real.
 - Cuando los objetos no comparten suficiente estado intrínseco.
-- Cuando la performance no es un problema — no optimizar prematuramente.
+- Cuando la performance no es un problema. No optimizar prematuramente.
 
 ---
 

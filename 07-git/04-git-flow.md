@@ -134,7 +134,7 @@ El back-template usa este flujo. Las PRs en GitHub/Azure DevOps tienen como base
 ---
 
 ## Trunk-Based Development — alternativa a Git Flow
-> Fuente: *Pro Git* (Chacon, Straub) — Ch.5 Distributed Git
+> Fuente: *Pro Git* (Chacon, Straub): Ch.5 Distributed Git
 
 En proyectos con despliegue continuo (CI/CD agresivo), Git Flow puede ser overhead. Trunk-based development (TBD) es la alternativa.
 

@@ -120,11 +120,11 @@ public sealed class StripeService : IStripeService
 
 ---
 
-## Checkout Session — agregar método de pago
+## Checkout Session: agregar método de pago
 
 Para que el Admin agregue su tarjeta, crear un Checkout Session de Stripe (hosted UI) o un SetupIntent (UI propia):
 
-### Opción A — Stripe Checkout (hosted, recomendado para empezar)
+### Opción A: Stripe Checkout (hosted, recomendado para empezar)
 
 ```csharp
 public async Task<string> CreateCheckoutSessionAsync(
@@ -152,7 +152,7 @@ public async Task<string> CreateCheckoutSessionAsync(
 }
 ```
 
-### Opción B — SetupIntent (UI propia con Stripe.js)
+### Opción B: SetupIntent (UI propia con Stripe.js)
 
 ```csharp
 public async Task<string> CreateSetupIntentAsync(
@@ -170,9 +170,9 @@ public async Task<string> CreateSetupIntentAsync(
 
 ---
 
-## Webhooks — el corazón de la integración
+## Webhooks: el corazón de la integración
 
-Los webhooks de Stripe notifican los cambios de estado. **La API no debe hacer polling a Stripe** — escuchar los webhooks.
+Los webhooks de Stripe notifican los cambios de estado. **La API no debe hacer polling a Stripe**. Escuchar los webhooks.
 
 ```csharp
 // Host.Api/Controllers/StripeWebhookController.cs
@@ -430,19 +430,19 @@ await _processedEvents.MarkAsProcessedAsync(stripeEvent.Id, ct);
 - [ ] Guardar `stripe_customer_id` en `TenantBilling`
 - [ ] Webhook endpoint `[AllowAnonymous]` con validación de firma `Stripe-Signature`
 - [ ] Idempotencia: ignorar eventos ya procesados
-- [ ] `invoice.paid` → activar tenant, actualizar plan
-- [ ] `invoice.payment_failed` → marcar `past_due`, enviar email
-- [ ] `customer.subscription.deleted` → suspender tenant
-- [ ] `customer.subscription.trial_will_end` → email de advertencia
-- [ ] Stripe keys NUNCA en git — variables de entorno
+- [ ] `invoice.paid`: activar tenant, actualizar plan
+- [ ] `invoice.payment_failed`: marcar `past_due`, enviar email
+- [ ] `customer.subscription.deleted`: suspender tenant
+- [ ] `customer.subscription.trial_will_end`: email de advertencia
+- [ ] Stripe keys NUNCA en git: variables de entorno
 - [ ] Portal de facturación de Stripe para que el Admin gestione su suscripción
-- [ ] Precio IDs centralizados en configuración — no hardcodeados
+- [ ] Precio IDs centralizados en configuración: no hardcodeados
 
 ---
 
 ## Relación con multi-tenant y branches
 
-Stripe opera a nivel **Tenant** — un Customer por tenant, no por branch. Los branches no tienen facturación independiente. El plan del tenant se aplica a todos sus branches.
+Stripe opera a nivel **Tenant**. Un Customer por tenant, no por branch. Los branches no tienen facturación independiente. El plan del tenant se aplica a todos sus branches.
 
 Ver `04-backend/31-planes-limites.md` para cómo el plan determina los límites por tenant.
 Ver `04-backend/26-tenant-onboarding.md` para cuándo se crea el Customer de Stripe.

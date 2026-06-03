@@ -10,7 +10,7 @@
 
 ## El problema
 
-Tienes una jerarquía de formas geométricas: `Circle`, `Rectangle`, `Triangle`. Quieres agregar operaciones: exportar a XML, calcular área, serializar a JSON. Sin Visitor, cada operación nueva requiere modificar todas las clases de la jerarquía — viola el Open/Closed Principle.
+Tienes una jerarquía de formas geométricas: `Circle`, `Rectangle`, `Triangle`. Quieres agregar operaciones: exportar a XML, calcular área, serializar a JSON. Sin Visitor, cada operación nueva requiere modificar todas las clases de la jerarquía, lo que viola el Open/Closed Principle.
 
 ```csharp
 // ❌ Sin Visitor — cada nueva operación modifica todas las clases
@@ -202,7 +202,7 @@ public static double CalculateArea(IShape shape)
 }
 ```
 
-Este es exactamente el Visitor — el switch es el "VisitX" por tipo — pero sin las clases adicionales de la implementación clásica.
+Este es exactamente el Visitor: el switch actúa como el "VisitX" por tipo, pero sin las clases adicionales de la implementación clásica.
 
 ---
 
@@ -309,14 +309,14 @@ public Task Handle(GetExampleUserResponse notification, CancellationToken ct)
 
 ## Cuándo NO usar
 
-- Cuando la jerarquía de clases cambia frecuentemente — agregar un nuevo tipo requiere modificar todos los Visitors.
-- Cuando las operaciones que quieres añadir son pocas — sobreingeniería.
-- Cuando C# pattern matching resuelve el problema de forma más simple — úsalo en su lugar.
+- Cuando la jerarquía de clases cambia frecuentemente. Agregar un nuevo tipo requiere modificar todos los Visitors.
+- Cuando las operaciones que quieres añadir son pocas. Es sobreingeniería.
+- Cuando C# pattern matching resuelve el problema de forma más simple. Usarlo en su lugar.
 
 ### Regla práctica
 
-Si **los tipos** cambian frecuentemente → No usar Visitor (agregar tipo = modificar todos los Visitors).  
-Si **las operaciones** cambian frecuentemente → Usar Visitor (agregar operación = nuevo Visitor, tipos no cambian).
+Si **los tipos** cambian frecuentemente: no usar Visitor (agregar un tipo obliga a modificar todos los Visitors).
+Si **las operaciones** cambian frecuentemente: usar Visitor (agregar una operación equivale a crear un Visitor nuevo; los tipos no cambian).
 
 
 ---

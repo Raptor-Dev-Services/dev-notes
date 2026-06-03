@@ -6,7 +6,7 @@ La gestión de sesiones permite controlar las sesiones activas de los usuarios: 
 
 ## El problema con JWT
 
-Un JWT es stateless — una vez emitido, es válido hasta su expiración aunque el usuario haya cambiado su password. Sin gestión de sesiones activa, un JWT robado es válido hasta que expira (minutos u horas).
+Un JWT es stateless. Una vez emitido, es válido hasta su expiración aunque el usuario haya cambiado su password. Sin gestión de sesiones activa, un JWT robado es válido hasta que expira (minutos u horas).
 
 ```
 Sin gestión de sesiones:
@@ -109,7 +109,7 @@ private static string ParseDeviceName(string? userAgent)
 
 ---
 
-## Refresh Token — validar contra la sesión activa
+## Refresh Token: validar contra la sesión activa
 
 ```csharp
 // Authentication.Application/UseCases/RefreshToken/RefreshTokenHandler.cs
@@ -302,7 +302,7 @@ await redis.StringSetAsync(
     expiry: TimeSpan.FromMinutes(15));  // mismo TTL que el access token
 ```
 
-Solo necesario en escenarios de urgencia — la mayoría de los SaaS toleran los 15 minutos de gracia.
+Solo necesario en escenarios de urgencia. La mayoría de los SaaS toleran los 15 minutos de gracia.
 
 ---
 
@@ -319,7 +319,7 @@ public async Task<IActionResult> RevokeUserSessions(Guid userId, CancellationTok
 }
 ```
 
-Útil cuando un usuario es desvinculado de la empresa — el Admin puede cerrar todas sus sesiones inmediatamente.
+Útil cuando un usuario es desvinculado de la empresa. El Admin puede cerrar todas sus sesiones inmediatamente.
 
 ---
 
@@ -340,12 +340,12 @@ public async Task CleanupExpiredSessionsAsync(CancellationToken ct)
 
 ## Checklist
 
-- [ ] Refresh token almacenado como hash SHA-256 — nunca en texto claro
+- [ ] Refresh token almacenado como hash SHA-256: nunca en texto claro
 - [ ] Token rotation: revocar el refresh token al usarlo, emitir uno nuevo
 - [ ] `session_id` incluido en el JWT para identificar la sesión actual
-- [ ] Listar sesiones activas con device name e IP — visible para el usuario
+- [ ] Listar sesiones activas con device name e IP: visible para el usuario
 - [ ] Revocar sesión individual (usuario) y todas las sesiones (logout global)
-- [ ] Al cambiar password → revocar todas las sesiones excepto la actual
+- [ ] Al cambiar password: revocar todas las sesiones excepto la actual
 - [ ] Admin puede revocar sesiones de usuarios de su tenant
 - [ ] Cleanup periódico de sesiones expiradas
 - [ ] Denylist en Redis para revocación urgente del access token (casos extremos)

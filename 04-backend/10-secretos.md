@@ -46,7 +46,7 @@ dotnet user-secrets set "ConnectionStrings:MainDb" "Host=localhost;..." --projec
 dotnet user-secrets list --project Host/
 ```
 
-User Secrets se almacena en `%APPDATA%\Microsoft\UserSecrets\{guid}\secrets.json` — fuera del repo.
+User Secrets se almacena en `%APPDATA%\Microsoft\UserSecrets\{guid}\secrets.json`, fuera del repo.
 
 ---
 

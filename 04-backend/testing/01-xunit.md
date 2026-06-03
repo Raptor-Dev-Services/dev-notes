@@ -193,7 +193,7 @@ public sealed class ExampleUserRepositoryTests
 }
 ```
 
-La fixture se crea una vez para toda la clase — ideal para recursos costosos (contenedores Docker).
+La fixture se crea una vez para toda la clase, ideal para recursos costosos (contenedores Docker).
 
 ### IAsyncLifetime — setup/teardown async
 

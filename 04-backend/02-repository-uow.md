@@ -8,7 +8,7 @@ Dos patrones de acceso a datos que trabajan juntos: Repository abstrae la persis
 
 ### El problema que resuelve
 
-Sin Repository, los handlers conocen directamente la base de datos — imposible testear sin una DB real, imposible cambiar el motor de persistencia:
+Sin Repository, los handlers conocen directamente la base de datos. Imposible testear sin una DB real, imposible cambiar el motor de persistencia:
 
 ```csharp
 // ❌ Handler acoplado a la persistencia — no testeable, viola DIP
@@ -114,7 +114,7 @@ public async Task InsertWithProfileAsync(ExampleUser user, UserProfile profile, 
 
 ### El problema que resuelve
 
-Cuando una operación debe modificar múltiples tablas de forma atómica — todo o nada. Sin Unit of Work, las operaciones son independientes y una falla parcial deja la DB en estado inconsistente.
+Cuando una operación debe modificar múltiples tablas de forma atómica: todo o nada. Sin Unit of Work, las operaciones son independientes y una falla parcial deja la DB en estado inconsistente.
 
 ```csharp
 // ❌ Sin transacción — el sistema puede quedar en estado inconsistente

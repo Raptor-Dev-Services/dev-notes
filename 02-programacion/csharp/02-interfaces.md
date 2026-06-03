@@ -1,8 +1,8 @@
-﻿# 02 — Interfaces en C#
+﻿# 02: Interfaces en C#
 
 Una interfaz es un **contrato**. Define qué métodos y propiedades debe tener quien la implemente, sin decir cómo.
 
-> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.6 Implementing Interfaces and Inheriting Classes
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price). Ch.6 Implementing Interfaces and Inheriting Classes
 
 ---
 
@@ -19,7 +19,7 @@ public interface IExampleUserRepository
 }
 ```
 
-La interfaz no tiene cuerpo — solo firmas de métodos. La implementación viene en una clase:
+La interfaz no tiene cuerpo. Solo firmas de métodos. La implementación viene en una clase:
 
 ```csharp
 public sealed class ExampleUserRepository : IExampleUserRepository
@@ -49,7 +49,7 @@ public sealed class ExampleUserRepository : IExampleUserRepository
 
 Este es el concepto más importante para entender la arquitectura del proyecto.
 
-### Sin interfaz — acoplamiento directo
+### Sin interfaz: acoplamiento directo
 
 ```csharp
 // ❌ El handler depende de la clase concreta
@@ -67,7 +67,7 @@ public sealed class GetExampleUserHandler
 }
 ```
 
-### Con interfaz — desacoplamiento
+### Con interfaz: desacoplamiento
 
 ```csharp
 // ✓ El handler depende del contrato
@@ -135,7 +135,7 @@ public sealed class GetExampleUserHandler
 
 ---
 
-## Interfaces del proyecto — catálogo completo
+## Interfaces del proyecto: catálogo completo
 
 ### De `Common.Messaging`
 
@@ -210,7 +210,7 @@ public interface IExampleUserRepository
 
 ## Interfaces de .NET que debes conocer
 
-### `IDisposable` — liberar recursos
+### `IDisposable`: liberar recursos
 
 Implementada por clases que usan recursos no administrados (conexiones de BD, archivos, sockets).
 
@@ -239,11 +239,11 @@ using var db = new DatabaseConnection("...");
 // Al salir del bloque: db.Dispose() automático
 ```
 
-### `IEnumerable<T>` — iterable
+### `IEnumerable<T>`: iterable
 
 Permite usar `foreach`. Ver [Colecciones](12-collections.md) para detalle completo.
 
-### `IAsyncEnumerable<T>` — iterable asíncrono
+### `IAsyncEnumerable<T>`: iterable asíncrono
 
 Para secuencias que se obtienen de forma asíncrona (ej. streaming de BD).
 
@@ -260,7 +260,7 @@ await foreach (var product in repo.StreamAllAsync(ct))
 }
 ```
 
-### `IComparable<T>` — comparación para ordenamiento
+### `IComparable<T>`: comparación para ordenamiento
 
 ```csharp
 public sealed class Precio : IComparable<Precio>
@@ -275,7 +275,7 @@ public sealed class Precio : IComparable<Precio>
 }
 ```
 
-### `IEquatable<T>` — comparación de igualdad
+### `IEquatable<T>`: comparación de igualdad
 
 Los `record` lo implementan automáticamente. Para clases, puedes hacerlo manual:
 
@@ -311,7 +311,7 @@ public interface IExampleUserRepository
 }
 ```
 
-**Cuándo usar:** versionado de APIs — agregar funcionalidad sin romper implementaciones existentes.
+**Cuándo usar:** versionado de APIs. Agrega funcionalidad sin romper implementaciones existentes.
 
 **Cuándo NO usar:** como sustituto de clases base o para lógica de negocio compleja.
 
@@ -350,7 +350,7 @@ doc.Print();                          // "Print genérico"
 
 ---
 
-## Interface vs Clase Abstracta — cuándo usar cada una
+## Interface vs Clase Abstracta: cuándo usar cada una
 
 | Criterio | Interface | Clase Abstracta |
 |----------|-----------|-----------------|
@@ -382,7 +382,7 @@ public abstract class BaseApiController : ControllerBase
 
 ---
 
-## Marker interfaces — interfaces vacías
+## Marker interfaces: interfaces vacías
 
 Sin métodos. Solo marcan que una clase tiene cierta característica.
 
@@ -405,7 +405,7 @@ else if (response is INotFoundFailure notFound)
 
 ## Errores comunes con interfaces
 
-### Error 1 — Interfaz demasiado grande (Interface Segregation)
+### Error 1: Interfaz demasiado grande (Interface Segregation)
 
 ```csharp
 // ❌ Una interfaz que hace todo — viola el principio de segregación
@@ -423,7 +423,7 @@ public interface IEmailService    { Task SendAsync(string to, string subject, Ca
 public interface IJwtTokenService { string Generate(Guid userId, string email); }
 ```
 
-### Error 2 — Implementar interfaz sin registrarla en DI
+### Error 2: Implementar interfaz sin registrarla en DI
 
 ```csharp
 // Defines e implementas la interfaz...
@@ -438,7 +438,7 @@ services.AddScoped<ProductsSql>();
 // Resultado: InvalidOperationException al arrancar la app
 ```
 
-### Error 3 — Inyectar la implementación concreta, no la interfaz
+### Error 3: Inyectar la implementación concreta, no la interfaz
 
 ```csharp
 // ❌ Inyecta la clase concreta — acoplamiento directo

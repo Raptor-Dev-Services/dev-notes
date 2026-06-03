@@ -1,8 +1,8 @@
-﻿# 03 — Constructores y Dependency Injection
+﻿# 03: Constructores y Dependency Injection
 
 El constructor y la inyección de dependencias son inseparables en este proyecto. Este documento los explica juntos, como se usan en la práctica.
 
-> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.5 Constructors; Ch.14 Dependency Injection
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price). Ch.5 Constructors; Ch.14 Dependency Injection
 
 ---
 
@@ -96,7 +96,7 @@ public sealed class JwtTokenService : IJwtTokenService
 }
 ```
 
-### Constructor encadenado — `this()`
+### Constructor encadenado: `this()`
 
 Un constructor llama a otro de la misma clase:
 
@@ -131,7 +131,7 @@ var c2 = new ConexionConfig("db.ejemplo.com");     // host=db.ejemplo.com, port=
 var c3 = new ConexionConfig("db.ejemplo.com", 5433, "prod_db");
 ```
 
-### Constructor base — `base()`
+### Constructor base: `base()`
 
 Llama al constructor del padre:
 
@@ -186,7 +186,7 @@ public sealed class ProductMetrics
 
 ---
 
-## Primary Constructor — C# 12+
+## Primary Constructor: C# 12+
 
 La forma más concisa de declarar un constructor. Los parámetros van en la declaración de la clase.
 
@@ -278,9 +278,9 @@ public sealed class JwtTokenService(IConfiguration configuration) : IJwtTokenSer
 
 ---
 
-## Dependency Injection — el problema del `new`
+## Dependency Injection: el problema del `new`
 
-### Sin DI — código acoplado
+### Sin DI: código acoplado
 
 Imagina que escribes un handler sin DI:
 
@@ -312,9 +312,9 @@ public sealed class GetExampleUserHandler
 1. El handler sabe cómo construir toda la infraestructura
 2. Si cambia la firma de `MainDapperDbConnection`, tienes que cambiar el handler
 3. No puedes testear sin una base de datos real
-4. La conexión a BD se crea en cada llamada — sin reutilización
+4. La conexión a BD se crea en cada llamada. Sin reutilización.
 
-### Con DI — código desacoplado
+### Con DI: código desacoplado
 
 ```csharp
 // ✓ Handler que pide lo que necesita
@@ -342,7 +342,7 @@ El DI container de ASP.NET Core resuelve toda la cadena automáticamente en el m
 
 ## Cómo funciona el DI container
 
-### Paso 1 — Registrar las dependencias
+### Paso 1: Registrar las dependencias
 
 En `Program.cs` y los archivos `ServiceCollectionEx.cs`:
 
@@ -362,7 +362,7 @@ services.AddScoped(typeof(ResultViewModel<>));             // ViewModel genéric
 services.AddScoped<INotificationHandler<GetExampleUserResponse>, GetExampleUserPresenter>();
 ```
 
-### Paso 2 — El container resuelve la cadena
+### Paso 2: El container resuelve la cadena
 
 Cuando llega una petición HTTP `GET /api/example/users/{id}`:
 
@@ -390,7 +390,7 @@ Tú nunca escribes ningún `new`. El container lo hace todo.
 
 ---
 
-## Registro en DI — patrones del proyecto
+## Registro en DI: patrones del proyecto
 
 ### Registrar interfaz → implementación
 
@@ -458,7 +458,7 @@ Todo se registra una vez al arrancar. El container gestiona la vida de cada obje
 
 ## Errores comunes con constructores y DI
 
-### Error 1 — Constructor sin parámetro obligatorio
+### Error 1: Constructor sin parámetro obligatorio
 
 ```csharp
 // ❌ El container no puede resolver GetExampleUserHandler
@@ -473,7 +473,7 @@ public sealed class GetExampleUserHandler
 public sealed class GetExampleUserHandler(IExampleUserRepository repo) { }
 ```
 
-### Error 2 — Guardar un Scoped en un campo Singleton
+### Error 2: Guardar un Scoped en un campo Singleton
 
 ```csharp
 // ❌ El Singleton vive toda la app — el Scoped (MainDapperDbConnection) fue creado
@@ -489,7 +489,7 @@ public sealed class CacheSingleton
 
 Ver [DI Lifetimes](09-lifetimes.md) para la explicación completa.
 
-### Error 3 — Circular dependency
+### Error 3: Circular dependency
 
 ```csharp
 // ❌ A necesita B, B necesita A → el container lanza StackOverflowException
@@ -503,7 +503,7 @@ public sealed class ServiceB(ServiceA a) { }
 // services.AddScoped(sp => new Lazy<ServiceB>(() => sp.GetRequiredService<ServiceB>()));
 ```
 
-### Error 4 — Olvidar registrar una dependencia
+### Error 4: Olvidar registrar una dependencia
 
 ```csharp
 // Infrastructure/ServiceCollectionEx.cs
@@ -517,7 +517,7 @@ services.AddScoped<ExampleUsersSql>();
 // while attempting to activate 'Application.UseCases.ExampleUsers...'
 ```
 
-**Debugging tip:** cuando ves `Unable to resolve service for type`, busca en los archivos `ServiceCollectionEx.cs` — falta un `AddScoped`.
+**Debugging tip:** cuando ves `Unable to resolve service for type`, busca en los archivos `ServiceCollectionEx.cs`. Falta un `AddScoped`.
 
 
 ---

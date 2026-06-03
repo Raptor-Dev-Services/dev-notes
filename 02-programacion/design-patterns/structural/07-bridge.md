@@ -2,7 +2,7 @@
 
 **Categoría:** Estructural
 
-**Intención:** Separa una clase grande o un conjunto de clases relacionadas en dos jerarquías separadas — abstracción e implementación — que pueden desarrollarse independientemente.
+**Intención:** Separa una clase grande o un conjunto de clases relacionadas en dos jerarquías separadas: abstracción e implementación. Ambas pueden desarrollarse independientemente.
 
 > Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.4 Structural Patterns: Bridge
 
@@ -10,7 +10,7 @@
 
 ## El problema
 
-Tienes una clase `Shape` con subclases `Circle` y `Square`. Quieres añadir colores `Red` y `Blue`. Con herencia simple necesitarías `RedCircle`, `BlueCircle`, `RedSquare`, `BlueSquare` — la jerarquía explota exponencialmente.
+Tienes una clase `Shape` con subclases `Circle` y `Square`. Quieres añadir colores `Red` y `Blue`. Con herencia simple necesitarías `RedCircle`, `BlueCircle`, `RedSquare`, `BlueSquare`. La jerarquía explota exponencialmente.
 
 ```
 Sin Bridge — explosión combinatoria:
@@ -39,7 +39,7 @@ N shapes × M colors = N + M clases, no N × M
 
 ## Analogía
 
-Un control remoto (abstracción) y un TV (implementación). El control remoto define los botones: encender, subir volumen, cambiar canal. El TV define cómo ejecutar esas acciones. Puedes tener un control remoto universal (abstracción extendida) que funciona con cualquier marca de TV (Sony, Samsung, LG — implementaciones distintas). El control y el TV se pueden extender independientemente.
+Un control remoto (abstracción) y un TV (implementación). El control remoto define los botones: encender, subir volumen, cambiar canal. El TV define cómo ejecutar esas acciones. Puedes tener un control remoto universal (abstracción extendida) que funciona con cualquier marca de TV: Sony, Samsung, LG, cada una una implementación distinta. El control y el TV se pueden extender independientemente.
 
 ---
 
@@ -258,11 +258,11 @@ Este es exactamente el Bridge: `IExampleUserRepository` (abstracción) ↔ `Exam
 - Cuando quieres dividir una clase monolítica que tiene varias variantes de funcionalidad.
 - Cuando quieres extender abstracción e implementación de forma independiente.
 - Cuando quieres cambiar la implementación en tiempo de ejecución.
-- Cuando tienes una jerarquía que explota combinatoriamente (NxM subclases → N+M).
+- Cuando tienes una jerarquía que explota combinatoriamente (NxM subclases se reducen a N+M).
 
 ## Cuándo NO usar
 
-- Cuando solo tienes una implementación — el bridge es innecesario.
+- Cuando solo tienes una implementación. El bridge es innecesario.
 - Para código simple donde la abstracción y la implementación nunca van a cambiar independientemente.
 - Cuando la indirección extra añade más confusión que claridad.
 

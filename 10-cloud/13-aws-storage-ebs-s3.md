@@ -620,7 +620,7 @@ public class GenerateUploadUrlHandler : IRequestHandler<GenerateUploadUrlRequest
 | CRR | Cross-Region Replication. Réplica automática a un bucket en otra región. |
 | Block Public Access | Configuración de seguridad que bloquea todo acceso público, prevaleciendo sobre policies. |
 
-> Fuente: *AWS Certified Solutions Architect – Associate Guide* (Gabriel Ramirez, Packt) — Ch.6 S3, Ch.7 Encryption y Storage Security
+> Fuente: *AWS Certified Solutions Architect – Associate Guide* (Gabriel Ramirez, Packt): Ch.6 S3, Ch.7 Encryption y Storage Security
 
 ---
 

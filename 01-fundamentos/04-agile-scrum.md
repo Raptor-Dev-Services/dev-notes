@@ -1,6 +1,6 @@
 # 04 — Agile y Scrum: Metodología de Desarrollo Iterativo
 
-Agile es un conjunto de valores y principios para el desarrollo de software que prioriza la colaboración, la entrega incremental y la adaptación al cambio. Scrum es el framework ágil más utilizado — una implementación concreta de los principios Agile con roles, eventos y artefactos definidos.
+Agile es un conjunto de valores y principios para el desarrollo de software que prioriza la colaboración, la entrega incremental y la adaptación al cambio. Scrum es el framework ágil más utilizado. Es una implementación concreta de los principios Agile con roles, eventos y artefactos definidos.
 
 > Fuente: *Agile Manifesto* (Beck et al., 2001), *Scrum Guide* (Schwaber & Sutherland, 2020), *Scrum: The Art of Doing Twice the Work in Half the Time* — Sutherland
 
@@ -15,7 +15,7 @@ Colaboración con el cliente  SOBRE   negociación de contratos
 Responder al cambio          SOBRE   seguir un plan
 ```
 
-**Importante:** los ítems de la derecha tienen valor — el Manifiesto dice que los de la izquierda se valoran MÁS, no que los otros no importen.
+**Importante:** los ítems de la derecha tienen valor. El Manifiesto dice que los de la izquierda se valoran MÁS, no que los otros no importen.
 
 ---
 
@@ -37,20 +37,20 @@ Responder al cambio          SOBRE   seguir un plan
 ## Scrum — Los 3 Roles
 
 ### Product Owner (PO)
-- Dueño del Product Backlog — decide qué se construye y en qué orden
+- Dueño del Product Backlog: decide qué se construye y en qué orden
 - Maximiza el valor del producto para el negocio
 - Único punto de decisión de prioridad (no hay comité de prioridades)
-- **No es:** un proxy entre usuarios y devs — debe tener poder real de decisión
+- **No es:** un proxy entre usuarios y devs. Debe tener poder real de decisión.
 
 ### Scrum Master (SM)
-- Facilita el proceso Scrum — no es el jefe del equipo
+- Facilita el proceso Scrum, no es el jefe del equipo
 - Elimina impedimentos que bloquean al equipo
 - Protege al equipo de interrupciones externas durante el sprint
 - **No es:** un project manager tradicional
 
 ### Development Team
-- Autoorganizado — decide cómo construir lo que el PO prioriza
-- Cross-functional — tiene todas las habilidades necesarias (dev, QA, diseño)
+- Autoorganizado: decide cómo construir lo que el PO prioriza
+- Cross-functional: tiene todas las habilidades necesarias (dev, QA, diseño)
 - Tamaño ideal: 3-9 personas (comunicación manejable)
 - **No hay:** sub-equipos de frontend/backend dentro del equipo Scrum
 
@@ -66,18 +66,18 @@ Responder al cambio          SOBRE   seguir un plan
 ### 2. Sprint Planning
 - Qué: PO presenta las historias de mayor prioridad
 - Quién: PO + SM + Dev Team
-- Resultado: Sprint Backlog — historias comprometidas para el sprint
-- Duración máx: 2 horas por semana de sprint (sprint de 2 sem → 4 horas)
+- Resultado: Sprint Backlog con historias comprometidas para el sprint
+- Duración máx: 2 horas por semana de sprint (sprint de 2 semanas: 4 horas)
 
 ### 3. Daily Standup (Daily Scrum)
 - 15 minutos, misma hora, mismo lugar
-- Para los DEVS — no es un reporte de estado para el PO
+- Para los DEVS, no es un reporte de estado para el PO
 - Preguntas orientadoras: ¿Qué hice ayer? ¿Qué haré hoy? ¿Hay algún impedimento?
 - El SM facilita, no interroga
 
 ### 4. Sprint Review (Demo)
 - El Dev Team demuestra el Increment al PO y stakeholders
-- Software funcionando — no slides
+- Software funcionando, no slides
 - El PO acepta o rechaza historias; el backlog se ajusta
 - Duración máx: 1 hora por semana de sprint
 
@@ -93,9 +93,9 @@ Responder al cambio          SOBRE   seguir un plan
 
 ### Product Backlog
 - Lista ordenada de todo lo que podría necesitar el producto
-- El PO es el dueño — puede añadir, reordenar, eliminar
+- El PO es el dueño: puede añadir, reordenar o eliminar items
 - Items en formato User Story o tarea técnica
-- El backlog nunca se "termina" — evoluciona con el producto
+- El backlog nunca se "termina": evoluciona con el producto
 
 ### Sprint Backlog
 - Subconjunto del Product Backlog comprometido para el sprint
@@ -105,7 +105,7 @@ Responder al cambio          SOBRE   seguir un plan
 ### Increment
 - Suma de todos los ítems del Product Backlog completados durante el sprint
 - Debe cumplir la Definición de Done para ser un Increment válido
-- Potencialmente entregable — aunque el PO decida no desplegarlo
+- Potencialmente entregable, aunque el PO decida no desplegarlo
 
 ---
 

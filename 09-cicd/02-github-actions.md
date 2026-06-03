@@ -224,7 +224,7 @@ El `Dockerfile` del back-template usa multi-stage build. El step de `docker buil
 ---
 
 ## OIDC — autenticación sin credenciales de larga duración
-> Fuente: *Learning GitHub Actions* (Weimer) — Ch.8 Security Best Practices
+> Fuente: *Learning GitHub Actions* (Weimer): Ch.8 Security Best Practices
 
 En lugar de guardar `AWS_ACCESS_KEY_ID` y `AWS_SECRET_ACCESS_KEY` como Secrets (credenciales de larga duración), se puede usar OIDC para que GitHub Actions pida tokens temporales directamente a AWS.
 

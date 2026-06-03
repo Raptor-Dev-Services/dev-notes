@@ -5,7 +5,7 @@ LLMOps es el conjunto de prácticas para diseñar, deployar, monitorear y mejora
 ---
 
 ## LLMOps vs MLOps vs DevOps
-> Fuente: *Essential Guide to LLMOps* — Ch.1 Introduction; Ch.2 The LLM Development Lifecycle
+> Fuente: *Essential Guide to LLMOps*: Ch.1 Introduction; Ch.2 The LLM Development Lifecycle
 
 ```
 DevOps:  código determinista → tests unitarios → CI/CD tradicional
@@ -95,7 +95,7 @@ public sealed class AnthropicCompletionService : IAICompletionService
 
 ## Gestión y versionado de prompts
 
-Los prompts son código — deben versionarse, testearse y desplegarse con el mismo rigor.
+Los prompts son código. Deben versionarse, testearse y desplegarse con el mismo rigor.
 
 ```csharp
 // Application/AI/Prompts/UserSummaryPrompt.cs

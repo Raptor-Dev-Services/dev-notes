@@ -10,7 +10,7 @@
 
 ## El problema
 
-Quieres implementar Undo en un editor de texto. El editor tiene estado complejo (texto, cursor, selección, historial de formato). Para guardar el estado, necesitas acceder a los campos privados del editor — violar el encapsulamiento. Si expones esos campos, cualquier otro objeto puede modificarlos inesperadamente.
+Quieres implementar Undo en un editor de texto. El editor tiene estado complejo (texto, cursor, selección, historial de formato). Para guardar el estado, necesitas acceder a los campos privados del editor, lo que viola el encapsulamiento. Si expones esos campos, cualquier otro objeto puede modificarlos inesperadamente.
 
 ```csharp
 // ❌ Sin Memento — rompe el encapsulamiento para guardar estado
@@ -26,7 +26,7 @@ class TextEditor
 
 ## Analogía
 
-Una fotografía. Tomar una foto captura el estado de una escena (el Originator) en un momento específico. La foto (el Memento) almacena ese estado. Si algo se mueve, puedes volver a mirar la foto — pero la foto no permite *modificar* la escena original a través de ella. El álbum de fotos (el Caretaker) gestiona las fotos sin saber qué contienen.
+Una fotografía. Tomar una foto captura el estado de una escena (el Originator) en un momento específico. La foto (el Memento) almacena ese estado. Si algo se mueve, puedes volver a mirar la foto; pero la foto no permite *modificar* la escena original a través de ella. El álbum de fotos (el Caretaker) gestiona las fotos sin saber qué contienen.
 
 ---
 
@@ -272,7 +272,7 @@ Console.WriteLine(editor.GetContent());  // "Hello "
 
 ## Memento con Records en C# — la forma moderna
 
-Los records de C# son inmutables y se copian con `with` — la forma más limpia de Memento:
+Los records de C# son inmutables y se copian con `with`: la forma más limpia de Memento.
 
 ```csharp
 // El estado ES el Memento — inmutable, no se puede modificar
@@ -322,7 +322,7 @@ Conceptualmente, las migraciones de schema SQL son Mementos:
 
 - Cuando quieres implementar Undo/Redo.
 - Cuando el acceso directo a los campos de un objeto viola el encapsulamiento.
-- Cuando guardar estado es costoso — el Memento te permite decidir cuándo hacerlo.
+- Cuando guardar estado es costoso. El Memento permite decidir cuándo hacerlo.
 - Editores (texto, gráficos, CAD), juegos (guardar partida), transacciones (rollback manual).
 
 ## Cuándo NO usar

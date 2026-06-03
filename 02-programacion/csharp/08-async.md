@@ -1,12 +1,12 @@
-﻿# 08 — async, await, Task y CancellationToken
+﻿# 08: async, await, Task y CancellationToken
 
 La programación asíncrona es fundamental en cualquier API web. Este documento explica desde cero qué significa, por qué existe y cómo funciona en este proyecto.
 
-> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.12 Improving Performance and Scalability Using Multitasking
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price). Ch.12 Improving Performance and Scalability Using Multitasking
 
 ---
 
-## El problema — operaciones lentas bloquean el hilo
+## El problema: operaciones lentas bloquean el hilo
 
 ASP.NET Core tiene un pool de hilos. Cada hilo puede atender una petición simultáneamente.
 
@@ -36,7 +36,7 @@ Con async:
 
 ---
 
-## `Task<T>` — la promesa de un valor futuro
+## `Task<T>`: la promesa de un valor futuro
 
 `Task<T>` representa una operación que **eventualmente** devolverá un `T`. Es como un ticket de reclamación.
 
@@ -111,7 +111,7 @@ Toda la cadena debe ser async. "Cortar" la cadena (llamar a un método async sin
 
 ---
 
-## Cómo se ve en el proyecto — ejemplo completo
+## Cómo se ve en el proyecto: ejemplo completo
 
 ```csharp
 // Controller — punto de entrada
@@ -168,7 +168,7 @@ public Task<ExampleUser?> GetByPublicIdAsync(Guid publicId, CancellationToken ct
 
 ---
 
-## `_ = await` — descarta el resultado
+## `_ = await`: descarta el resultado
 
 En los controllers, el resultado del handler va al Presenter via el pipeline de mediator. El controller no usa ese retorno:
 
@@ -205,11 +205,11 @@ public async Task<(ExampleUser? user, int totalUsers)> GetUserWithStatsAsync(
 }
 ```
 
-**Cuidado:** en el mismo scope de base de datos, dos queries paralelas pueden causar problemas si comparten la misma conexión. En este proyecto, `MainDapperDbConnection` es Scoped — úsalo de forma secuencial por defecto.
+**Cuidado:** en el mismo scope de base de datos, dos queries paralelas pueden causar problemas si comparten la misma conexión. En este proyecto, `MainDapperDbConnection` es Scoped. Úsalo de forma secuencial por defecto.
 
 ---
 
-## `Task.WhenAny` — el primero que termine
+## `Task.WhenAny`: el primero que termine
 
 ```csharp
 // Timeout manual: esperar a que termine la operación O pasen 5 segundos
@@ -226,7 +226,7 @@ var user = await operacion;  // ya terminó — obtener el resultado
 
 ---
 
-## `CancellationToken` — señal de cancelación
+## `CancellationToken`: señal de cancelación
 
 ### ¿Qué es?
 

@@ -1,8 +1,8 @@
-﻿# 06 — Propiedades y Campos
+﻿# 06: Propiedades y Campos
 
 Los campos almacenan datos directamente en memoria. Las propiedades son una abstracción sobre los campos que permite controlar el acceso.
 
-> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.5 Properties and Fields
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price). Ch.5 Properties and Fields
 
 ---
 
@@ -24,7 +24,7 @@ public sealed class ExampleUsersSql
 }
 ```
 
-### `readonly` — solo escritura en el constructor
+### `readonly`: solo escritura en el constructor
 
 ```csharp
 public sealed class GetExampleUserHandler
@@ -46,7 +46,7 @@ public sealed class GetExampleUserHandler
 
 **Usa `readonly` siempre que el campo no deba cambiar después del constructor.** Es la práctica estándar para dependencias inyectadas.
 
-### `static` — pertenece a la clase, no a la instancia
+### `static`: pertenece a la clase, no a la instancia
 
 ```csharp
 public static class ProductMetrics
@@ -61,7 +61,7 @@ public static class ProductMetrics
 }
 ```
 
-### `const` — valor en tiempo de compilación
+### `const`: valor en tiempo de compilación
 
 ```csharp
 public static class CorsPolicy
@@ -93,7 +93,7 @@ public static class Config
 
 Una propiedad es acceso controlado a un valor. Puede tener lógica en lectura (`get`) y escritura (`set`).
 
-### Auto-property — el compilador crea el campo privado
+### Auto-property: el compilador crea el campo privado
 
 ```csharp
 public class ExampleUser
@@ -110,7 +110,7 @@ user.FullName = "Ana García";  // set
 Console.WriteLine(user.FullName);  // get → "Ana García"
 ```
 
-### Propiedad con backing field — control total
+### Propiedad con backing field: control total
 
 ```csharp
 public class Producto
@@ -134,7 +134,7 @@ p.Precio = 9.99m;   // OK
 p.Precio = -1m;     // ArgumentException
 ```
 
-### `get` solo — propiedad de solo lectura
+### `get` solo: propiedad de solo lectura
 
 ```csharp
 public class Rectangulo
@@ -153,7 +153,7 @@ public class Rectangulo
 }
 ```
 
-### `set` privado — escritura solo desde la clase
+### `set` privado: escritura solo desde la clase
 
 ```csharp
 public class Pedido
@@ -179,7 +179,7 @@ Console.WriteLine(pedido.Estado);  // "Confirmado"
 // pedido.Estado = "Otro";  // ERROR — set es private
 ```
 
-### `init` — solo en la inicialización del objeto
+### `init`: solo en la inicialización del objeto
 
 C# 9+. Permite asignar en el constructor o en el object initializer, pero no después.
 
@@ -264,7 +264,7 @@ Console.WriteLine(AppInfo.Uptime);   // tiempo desde que arrancó la app
 
 ---
 
-## Propiedades requeridas — C# 11+
+## Propiedades requeridas: C# 11+
 
 ```csharp
 public class ConfiguracionObligatoria
@@ -327,7 +327,7 @@ public sealed record PaginacionDto(int Page, int PageSize, int Total)
 
 ## Errores comunes
 
-### Error 1 — Campo público en vez de propiedad
+### Error 1: Campo público en vez de propiedad
 
 ```csharp
 // ❌ Campo público — no encapsulado, no se puede agregar lógica después
@@ -343,7 +343,7 @@ public class Usuario
 }
 ```
 
-### Error 2 — Olvidar `readonly` en dependencias
+### Error 2: Olvidar `readonly` en dependencias
 
 ```csharp
 // ❌ Sin readonly — permite reasignación accidental
@@ -364,7 +364,7 @@ public sealed class GetExampleUserHandler
 }
 ```
 
-### Error 3 — Propiedad mutable en un record
+### Error 3: Propiedad mutable en un record
 
 ```csharp
 // ❌ Record con set mutable — rompe la promesa de inmutabilidad

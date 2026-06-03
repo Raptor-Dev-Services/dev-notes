@@ -1,6 +1,6 @@
 # 26 — Tenant Onboarding: Registro de Empresa Nueva
 
-El onboarding de un tenant es el flujo que convierte a una empresa desconocida en un tenant activo con su primer usuario Admin. Es el "día cero" del tenant — el momento en que el SaaS adquiere un nuevo cliente.
+El onboarding de un tenant es el flujo que convierte a una empresa desconocida en un tenant activo con su primer usuario Admin. Es el "día cero" del tenant. El momento en que el SaaS adquiere un nuevo cliente.
 
 ---
 
@@ -169,7 +169,7 @@ public sealed class RegisterTenantHandler
 
 ---
 
-## Transacción atómica — Tenant + Credential
+## Transacción atómica: Tenant + Credential
 
 El Tenant y la Credential deben crearse en una sola transacción. Si la credencial falla, el tenant no debe quedar huérfano:
 
@@ -391,10 +391,10 @@ public enum TenantStatus
 - [ ] Integration Event crea UserProfile después del commit
 - [ ] Tenant empieza en `Active` (sin verificación) o `Pending` (con verificación)
 - [ ] Trial period configurado al crear (ej. 14 días)
-- [ ] Slug validado y único — normalización automática desde el nombre
+- [ ] Slug validado y único: normalización automática desde el nombre
 - [ ] Email verificado antes de hacer login automático (variante)
 - [ ] Email de bienvenida enviado con primeros pasos
-- [ ] Endpoint `[AllowAnonymous]` — no requiere JWT
+- [ ] Endpoint `[AllowAnonymous]`: no requiere JWT
 - [ ] Primer usuario siempre recibe rol `Admin`
 
 ---
@@ -403,11 +403,11 @@ public enum TenantStatus
 
 El back-template tiene `Register` (usuario en tenant existente) pero no `RegisterTenant` (crear empresa nueva). Para agregar onboarding:
 
-1. `Tenancy.Domain/Entities/Tenant.cs` — agregar `Status`, `Slug`, `Plan`, `TrialEndsAt`
-2. `Tenancy.Infrastructure/Repositories/TenantRepository.cs` — `InsertAsync`, `SlugExistsAsync`, `ActivateAsync`
-3. `Authentication.Application/UseCases/RegisterTenant/` — handler completo
-4. `Authentication.Presentation/Controllers/AuthController.cs` — endpoint `POST /api/auth/register-tenant`
-5. `Authentication.Contracts/Events/TenantRegisteredIntegrationEvent.cs` — para notificar a otros módulos
+1. `Tenancy.Domain/Entities/Tenant.cs`: agregar `Status`, `Slug`, `Plan`, `TrialEndsAt`
+2. `Tenancy.Infrastructure/Repositories/TenantRepository.cs`: `InsertAsync`, `SlugExistsAsync`, `ActivateAsync`
+3. `Authentication.Application/UseCases/RegisterTenant/`: handler completo
+4. `Authentication.Presentation/Controllers/AuthController.cs`: endpoint `POST /api/auth/register-tenant`
+5. `Authentication.Contracts/Events/TenantRegisteredIntegrationEvent.cs`: para notificar a otros módulos
 
 Ver `04-backend/27-rbac.md` para los roles del primer usuario Admin.
 Ver `04-backend/32-stripe-billing.md` para conectar el onboarding con el cobro.

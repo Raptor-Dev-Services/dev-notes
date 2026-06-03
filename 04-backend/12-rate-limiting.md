@@ -129,10 +129,10 @@ options.OnRejected = async (context, ct) =>
 
 ## Beneficios del rate limiting
 
-- **Protección contra sobrecarga** — el servidor mantiene performance estable bajo alta carga
-- **Uso justo** — ningún cliente puede monopolizar los recursos (especialmente importante en multi-tenant)
-- **Seguridad** — mitiga ataques DDoS y fuerza bruta en endpoints de autenticación
-- **Experiencia consistente** — tiempos de respuesta estables para todos los usuarios
+- **Protección contra sobrecarga:** el servidor mantiene performance estable bajo alta carga
+- **Uso justo:** ningún cliente puede monopolizar los recursos (especialmente importante en multi-tenant)
+- **Seguridad:** mitiga ataques DDoS y fuerza bruta en endpoints de autenticación
+- **Experiencia consistente:** tiempos de respuesta estables para todos los usuarios
 
 ---
 

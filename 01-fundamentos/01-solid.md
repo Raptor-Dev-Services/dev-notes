@@ -1,6 +1,6 @@
 # 01 — SOLID
 
-Los 5 principios que guían el diseño orientado a objetos. No son reglas arbitrarias — cada uno resuelve un tipo de fragilidad concreta que aparece en proyectos reales.
+Los 5 principios que guían el diseño orientado a objetos. No son reglas arbitrarias. Cada uno resuelve un tipo de fragilidad concreta que aparece en proyectos reales.
 
 ---
 
@@ -87,7 +87,7 @@ public class NotificationService
 }
 ```
 
-**En este proyecto:** para agregar un nuevo caso de uso se agregan nuevas clases (Handler, Response, Presenter) sin modificar las existentes. `BaseApiController` está cerrado a modificación — los controllers concretos lo extienden.
+**En este proyecto:** para agregar un nuevo caso de uso se agregan nuevas clases (Handler, Response, Presenter) sin modificar las existentes. `BaseApiController` está cerrado a modificación. Los controllers concretos lo extienden.
 
 ---
 
@@ -254,7 +254,7 @@ El Host "invierte" la dependencia: en runtime Infrastructure implementa la inter
 
 ### SRP: confundir "una responsabilidad" con "un método"
 
-Una clase puede tener muchos métodos y tener una sola responsabilidad. `ExampleUsersSql` tiene `GetByIdAsync`, `GetAllAsync`, `InsertAsync`, etc. — todos son responsabilidad de la misma cosa: acceso a datos de `ExampleUsers`.
+Una clase puede tener muchos métodos y tener una sola responsabilidad. `ExampleUsersSql` tiene `GetByIdAsync`, `GetAllAsync`, `InsertAsync`, etc. Todos son responsabilidad de la misma cosa: acceso a datos de `ExampleUsers`.
 
 ### OCP: no significa nunca modificar código
 
@@ -274,7 +274,7 @@ Es que los módulos de **alto nivel** (reglas de negocio) no dependan de los de 
 
 **Cada pieza de conocimiento debe tener una representación única, inequívoca y autoritativa en el sistema.**
 
-No se trata solo de no copiar código — se trata de no duplicar *conocimiento*. Dos bloques de código pueden ser similares en estructura pero representar lógica distinta; eso no viola DRY.
+No se trata solo de no copiar código. Se trata de no duplicar *conocimiento*. Dos bloques de código pueden ser similares en estructura pero representar lógica distinta; eso no viola DRY.
 
 ```csharp
 // ❌ Viola DRY — la regla "email debe tener @" está duplicada en tres lugares
@@ -385,7 +385,7 @@ Cada proyecto tiene una razón de cambio diferente. Un cambio de base de datos n
 
 ### Estabilidad de componentes
 
-Un componente **estable** es uno del que muchos otros dependen — cambiarlo es costoso. Un componente **inestable** es uno que depende de muchos otros — cambiarlo es fácil.
+Un componente **estable** es uno del que muchos otros dependen. Cambiarlo es costoso. Un componente **inestable** es uno que depende de muchos otros. Cambiarlo es fácil.
 
 ```
 Estabilidad:    Domain (muy estable)

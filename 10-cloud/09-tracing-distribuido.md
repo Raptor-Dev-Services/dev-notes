@@ -1,6 +1,6 @@
 # 09 · Tracing distribuido — OpenTelemetry, Tempo y correlación
 
-> Fuente: *Building Microservices* (Sam Newman) — Ch.10 Distributed Tracing; *Web API Development with ASP.NET Core 8* (Quan Nguyen) — Ch.12 Observability
+> Fuente: *Building Microservices* (Sam Newman): Ch.10 Distributed Tracing; *Web API Development with ASP.NET Core 8* (Quan Nguyen): Ch.12 Observability
 
 ---
 
@@ -579,7 +579,7 @@ processors:
 
 ### Desde .NET a Node.js
 
-El W3C TraceContext es estándar — OpenTelemetry lo implementa en todos los lenguajes. Si el servicio .NET llama a un servicio Node.js:
+El W3C TraceContext es estándar. OpenTelemetry lo implementa en todos los lenguajes. Si el servicio .NET llama a un servicio Node.js:
 
 ```javascript
 // Node.js — recibir el trace context automáticamente
@@ -720,7 +720,7 @@ public async Task<IEnumerable<T>> QueryAsync<T>(
 
 ---
 
-> Fuente: *Building Microservices* (Sam Newman) — Ch.10 Distributed Tracing; *Web API Development with ASP.NET Core 8* (Quan Nguyen) — Ch.12 Observability; *Building Secure and Reliable Systems* (Google SRE Book) — Ch.3 Measuring Reliability
+> Fuente: *Building Microservices* (Sam Newman): Ch.10 Distributed Tracing; *Web API Development with ASP.NET Core 8* (Quan Nguyen): Ch.12 Observability; *Building Secure and Reliable Systems* (Google SRE Book): Ch.3 Measuring Reliability
 
 ---
 

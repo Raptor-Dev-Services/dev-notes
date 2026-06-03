@@ -274,7 +274,7 @@ public sealed class SsoController : BaseApiController
 
 ---
 
-## Configurar SSO — endpoint Admin
+## Configurar SSO: endpoint Admin
 
 ```csharp
 [Route("api/tenant/sso")]
@@ -339,20 +339,20 @@ public async Task<LoginResponse> Handle(LoginRequest request, CancellationToken 
 | Pre-provisioning | El Admin del SaaS debe invitar al usuario antes de que pueda hacer login | Empresas que quieren control explícito sobre quién accede |
 | SCIM | El IDP sincroniza usuarios automáticamente (crear, modificar, desactivar) | Enterprise con muchos usuarios — fuera del scope inicial |
 
-El back-template implementa JIT Provisioning como default — más simple y la mayoría de empresas lo prefiere.
+El back-template implementa JIT Provisioning como default. Es más simple y la mayoría de empresas lo prefiere.
 
 ---
 
 ## Checklist
 
 - [ ] `ClientSecret` cifrado con AES-256 en la DB
-- [ ] State anti-CSRF verificado en el callback — rechazar si no coincide
+- [ ] State anti-CSRF verificado en el callback: rechazar si no coincide
 - [ ] Validar que el email pertenece al dominio permitido del tenant
 - [ ] JIT Provisioning: crear usuario con rol `Viewer` por defecto
 - [ ] SSO obligatorio por dominio: rechazar login por password si `EnforceForDomain = true`
-- [ ] ID Token parseado correctamente — validar firma en producción (JWKS)
-- [ ] Tokens del SaaS emitidos con el JWT propio — no usar los tokens del proveedor
-- [ ] Redirect con tokens en el fragment (no query param) — no quedan en logs del servidor
+- [ ] ID Token parseado correctamente: validar firma en producción (JWKS)
+- [ ] Tokens del SaaS emitidos con el JWT propio: no usar los tokens del proveedor
+- [ ] Redirect con tokens en el fragment (no query param): no quedan en logs del servidor
 - [ ] Feature de SSO solo en planes Pro/Enterprise (ver `04-backend/31-planes-limites.md`)
 
 ---

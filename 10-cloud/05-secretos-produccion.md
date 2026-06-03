@@ -1,6 +1,6 @@
 # 05 · Secretos en producción
 
-> Fuente: *AWS Certified Solutions Architect – Associate Guide* Ch.14 (KMS, encryption) + Ch.15 (Systems Manager Parameter Store) — *Architecting ASP.NET Core Applications* (Packt) Ch.9 (Azure Key Vault, Managed Identities)
+> Fuente: *AWS Certified Solutions Architect – Associate Guide* Ch.14 (KMS, encryption) + Ch.15 (Systems Manager Parameter Store); *Architecting ASP.NET Core Applications* (Packt) Ch.9 (Azure Key Vault, Managed Identities)
 
 ## Problema que resuelve
 
@@ -69,7 +69,7 @@ Con esto, `Jwt__Secret` del secreto de AWS mapea a `Jwt:Secret` en la configurac
 }
 ```
 
-Esta política se adjunta al IAM Role de la task definition de ECS. La app nunca tiene credenciales propias — asume el rol del contenedor.
+Esta política se adjunta al IAM Role de la task definition de ECS. La app nunca tiene credenciales propias. Asume el rol del contenedor.
 
 ### Rotación automática
 
@@ -200,7 +200,7 @@ Los user-secrets se almacenan en `%APPDATA%\Microsoft\UserSecrets\<guid>\secrets
 ---
 
 ## Detección de secretos expuestos
-> Fuente: *AWS Certified Security Specialty* — Ch.6 Data Protection in AWS
+> Fuente: *AWS Certified Security Specialty*: Ch.6 Data Protection in AWS
 
 ### Pre-commit con git-secrets o detect-secrets
 

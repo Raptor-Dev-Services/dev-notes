@@ -225,13 +225,13 @@ builder.Services.AddWebApiServices();         // agrega hojas de WebApi
 - Cuando tienes una estructura de árbol (jerarquía parte-todo).
 - Cuando el cliente debe tratar objetos simples y compuestos de forma uniforme.
 - Cuando necesitas operaciones recursivas sobre estructuras jerárquicas.
-- Ejemplos: sistemas de archivos, UI (widgets que contienen widgets), organizaciones (empresa → departamento → empleado), expresiones matemáticas, menús de navegación.
+- Ejemplos: sistemas de archivos, UI (widgets que contienen widgets), organizaciones jerárquicas (empresa, departamento, empleado), expresiones matemáticas, menús de navegación.
 
 ## Cuándo NO usar
 
 - Cuando la estructura es siempre plana (sin jerarquía).
-- Cuando los objetos hoja y compuesto tienen comportamientos muy diferentes — la interfaz común se vuelve incómoda.
-- Cuando el tipo del componente importa al cliente — el Composite hace que sea difícil restringir los tipos de componentes permitidos.
+- Cuando los objetos hoja y compuesto tienen comportamientos muy diferentes. La interfaz común se vuelve incómoda.
+- Cuando el tipo del componente importa al cliente. El Composite hace que sea difícil restringir los tipos de componentes permitidos.
 
 
 ---

@@ -623,7 +623,7 @@ El back-template NUNCA debe tener access keys en:
 | MFA | Multi-Factor Authentication. Segundo factor de autenticación (TOTP). |
 | Least Privilege | Principio de mínimo privilegio: dar solo los permisos necesarios, nada más. |
 
-> Fuente: *AWS Certified Solutions Architect – Associate Guide* (Gabriel Ramirez, Packt) — Ch.1 IAM, Ch.13 Security Best Practices; *AWS Certified Security Specialty SCS-C02 Exam Guide* — Ch.1 Identity and Access Management
+> Fuente: *AWS Certified Solutions Architect – Associate Guide* (Gabriel Ramirez, Packt): Ch.1 IAM, Ch.13 Security Best Practices; *AWS Certified Security Specialty SCS-C02 Exam Guide*: Ch.1 Identity and Access Management
 
 ---
 

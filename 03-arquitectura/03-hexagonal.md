@@ -1,6 +1,6 @@
 # 03 — Arquitectura Hexagonal (Ports & Adapters)
 
-La arquitectura hexagonal aísla el dominio de negocio de todo lo que lo rodea — bases de datos, HTTP, mensajería, CLIs. El dominio no sabe nada del mundo exterior; el mundo exterior se adapta al dominio a través de interfaces bien definidas llamadas **puertos**.
+La arquitectura hexagonal aísla el dominio de negocio de todo lo que lo rodea: bases de datos, HTTP, mensajería, CLIs. El dominio no sabe nada del mundo exterior; el mundo exterior se adapta al dominio a través de interfaces bien definidas llamadas **puertos**.
 
 > Autor: Alistair Cockburn (2005). Popularizada por Eric Evans y los libros de DDD.
 
@@ -62,7 +62,7 @@ public class ExampleUserService
 
 ## Hexagonal vs Clean Architecture
 
-Son compatibles — Clean Architecture es una forma concreta de implementar hexagonal:
+Son compatibles. Clean Architecture es una forma concreta de implementar hexagonal:
 
 | Hexagonal | Clean Architecture (back-template) |
 |-----------|-------------------------------------|
@@ -165,11 +165,11 @@ public class GetExampleUserHandler
 
 El back-template es hexagonal por diseño:
 
-- `Domain/Repositories/IExampleUserRepository.cs` → puerto secundario
-- `Infrastructure/Repositories/ExampleUserRepository.cs` → adaptador secundario
-- `WebApi/Controllers/ExampleUsersController.cs` → adaptador primario
-- `Application/Handlers/GetExampleUserHandler.cs` → lógica dentro del hexágono
-- `Host/Program.cs` → composition root que conecta todo
+- `Domain/Repositories/IExampleUserRepository.cs`: puerto secundario
+- `Infrastructure/Repositories/ExampleUserRepository.cs`: adaptador secundario
+- `WebApi/Controllers/ExampleUsersController.cs`: adaptador primario
+- `Application/Handlers/GetExampleUserHandler.cs`: lógica dentro del hexágono
+- `Host/Program.cs`: composition root que conecta todo
 
 La regla que lo garantiza: **Domain no referencia Infrastructure**. Solo Infrastructure referencia Domain.
 
@@ -177,7 +177,7 @@ La regla que lo garantiza: **Domain no referencia Infrastructure**. Solo Infrast
 
 ## Hexagonal vs Clean Architecture vs Onion
 
-Los tres resuelven el mismo problema con la misma idea — se confunden porque son variantes de un único principio.
+Los tres resuelven el mismo problema con la misma idea. Se confunden porque son variantes de un único principio.
 
 | Aspecto | Hexagonal | Clean Architecture | Onion |
 |---------|-----------|-------------------|-------|
@@ -188,7 +188,7 @@ Los tres resuelven el mismo problema con la misma idea — se confunden porque s
 | **Puertos** | Concepto explícito (in/out) | Interfaces en capas internas | Interfaces en capas internas |
 | **Adapters** | Concepto explícito | Controllers/Repos son implícitamente adapters | Igual que Clean |
 
-**En la práctica:** son la misma idea expresada distinto. Aprender uno es aprender todos. El back-template usa **Clean Architecture con mentalidad Hexagonal** — Clean da la estructura de capas, Hexagonal ayuda a razonar sobre qué es un puerto y qué es un adaptador.
+**En la práctica:** son la misma idea expresada distinto. Aprender uno es aprender todos. El back-template usa **Clean Architecture con mentalidad Hexagonal**. Clean da la estructura de capas; Hexagonal ayuda a razonar sobre qué es un puerto y qué es un adaptador.
 
 ```
 Hexagonal         → Clean Architecture    → Este proyecto

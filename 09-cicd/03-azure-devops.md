@@ -238,7 +238,7 @@ Configurar en: **Project Settings → Service connections**.
 
 ## Relación con back-template
 
-El `Dockerfile` del back-template es compatible sin modificación. El `azure-pipelines.yml` va en la raíz del repositorio. Las variables de conexión (`ConnectionStrings__Default`, `Jwt__Secret`) van en el variable group vinculado a Key Vault — nunca en el YAML.
+El `Dockerfile` del back-template es compatible sin modificación. El `azure-pipelines.yml` va en la raíz del repositorio. Las variables de conexión (`ConnectionStrings__Default`, `Jwt__Secret`) van en el variable group vinculado a Key Vault. Nunca deben estar en el YAML.
 
 ## Cuándo usar / no usar
 
@@ -249,7 +249,7 @@ El `Dockerfile` del back-template es compatible sin modificación. El `azure-pip
 | aprobaciones formales antes de producción | scripts de deploy ad-hoc sin ciclo de vida de PR |
 
 
-> Fuente: *AWS Certified DevOps Engineer Professional* (Cybellium) — Ch.1 CI/CD Fundamentals and Pipeline Design
+> Fuente: *AWS Certified DevOps Engineer Professional* (Cybellium): Ch.1 CI/CD Fundamentals and Pipeline Design
 
 ---
 

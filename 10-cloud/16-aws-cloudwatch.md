@@ -639,7 +639,7 @@ Integración en el back-template:
 | DBLoad | Métrica de Performance Insights. Sesiones activas / vCPUs. > 1 indica saturación. |
 | High-Resolution | Métricas con granularidad de 1 segundo (vs 1 minuto estándar). Más caro. |
 
-> Fuente: *AWS Certified Solutions Architect – Associate Guide* (Gabriel Ramirez, Packt) — Ch.21 CloudWatch Logs y Automatizacion; *AWS Certified SysOps Administrator – Associate Guide* — Ch.4 Monitoring y Reporting
+> Fuente: *AWS Certified Solutions Architect – Associate Guide* (Gabriel Ramirez, Packt): Ch.21 CloudWatch Logs y Automatizacion; *AWS Certified SysOps Administrator – Associate Guide*: Ch.4 Monitoring y Reporting
 
 ---
 

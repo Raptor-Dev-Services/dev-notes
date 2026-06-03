@@ -449,9 +449,9 @@ app.MapControllers();        // handler final: ejecuta el controller
 
 ## Cuándo NO usar
 
-- Cuando tienes garantía de que la petición siempre será manejada — si puede "caer al vacío", considera si eso es correcto.
+- Cuando tienes garantía de que la petición siempre será manejada. Si puede "caer al vacío", considerar si eso es correcto.
 - Cuando el encadenamiento genera demasiada indirección y hace el debug difícil.
-- Cuando solo tienes 2-3 handlers fijos — un if/else simple es más claro.
+- Cuando solo tienes 2-3 handlers fijos. Un if/else simple es más claro.
 
 
 ---

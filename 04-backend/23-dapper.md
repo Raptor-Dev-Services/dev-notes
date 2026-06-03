@@ -1,6 +1,6 @@
 # 23 — Dapper: Micro-ORM para .NET
 
-Dapper es un micro-ORM de .NET que mapea resultados SQL directamente a objetos C#. Es más rápido que EF Core en lecturas complejas porque no tiene change tracking ni generación de queries — escribe el SQL tú mismo.
+Dapper es un micro-ORM de .NET que mapea resultados SQL directamente a objetos C#. Es más rápido que EF Core en lecturas complejas porque no tiene change tracking ni generación de queries. Escribe el SQL tú mismo.
 
 ---
 
@@ -137,9 +137,9 @@ var users = await conn.QueryAsync<ExampleUser, ExampleTenant, ExampleUser>(
 
 ---
 
-## DapperSqlDbConnectionBase — patrón del back-template
+## DapperSqlDbConnectionBase: patrón del back-template
 
-La librería `Common` incluye `DapperSqlDbConnectionBase` — una clase base que envuelve `IDbConnection` con logging automático (nombre de query, duración, hash del SQL):
+La librería `Common` incluye `DapperSqlDbConnectionBase`: una clase base que envuelve `IDbConnection` con logging automático (nombre de query, duración, hash del SQL):
 
 ```csharp
 // Patrón del back-template (cuando se usa Dapper en lugar de EF Core)
@@ -249,8 +249,8 @@ var items = list.Select(r => r.User).ToList();
 El back-template usa **EF Core** como ORM principal. `Common` incluye `DapperSqlDbConnectionBase` para casos donde se necesita control total del SQL. En la arquitectura actual, todos los repositorios usan `AppDbContext` (EF Core).
 
 Si agregas Dapper a un módulo, el patrón es:
-- `{Modulo}.Infrastructure/Persistence/SQLDB/{Entidad}Sql.cs` — queries SQL con `IDapperSqlDbConnection`
-- `{Modulo}.Infrastructure/Repositories/{Entidad}Repository.cs` — orquesta entre SQL y dominio
+- `{Modulo}.Infrastructure/Persistence/SQLDB/{Entidad}Sql.cs`: queries SQL con `IDapperSqlDbConnection`
+- `{Modulo}.Infrastructure/Repositories/{Entidad}Repository.cs`: orquesta entre SQL y dominio
 
 Ver `04-backend/17-ef-core.md` para los patrones de EF Core del proyecto.
 

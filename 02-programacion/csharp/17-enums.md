@@ -1,8 +1,8 @@
-﻿# 17 — Enums en C#
+﻿# 17: Enums en C#
 
 Un `enum` (enumeración) es un tipo de valor que define un conjunto de constantes nombradas. Hace el código legible, evita "números mágicos" y permite al compilador verificar los valores válidos.
 
-> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.5 Building Your Own Types: Enumerations
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price). Ch.5 Building Your Own Types: Enumerations
 
 ---
 
@@ -102,7 +102,7 @@ public enum ProductCategory
 
 ---
 
-## Flags — combinación de valores con OR de bits
+## Flags: combinación de valores con OR de bits
 
 `[Flags]` permite combinar valores de enum usando OR (`|`). Cada valor debe ser una potencia de 2.
 
@@ -259,7 +259,7 @@ builder.Services.AddControllers()
 
 ## Errores comunes
 
-### Error 1 — Olvidar que los enums no se validan automáticamente
+### Error 1: olvidar que los enums no se validan automáticamente
 
 ```csharp
 // ❌ Un int puede castearse a cualquier valor aunque no esté definido
@@ -271,7 +271,7 @@ if (!Enum.IsDefined(typeof(OrderStatus), valueFromDb))
     throw new ArgumentOutOfRangeException($"Status inválido: {valueFromDb}");
 ```
 
-### Error 2 — [Flags] sin potencias de 2
+### Error 2: [Flags] sin potencias de 2
 
 ```csharp
 // ❌ Los valores no son potencias de 2 — los OR de bits no funcionan correctamente
@@ -294,7 +294,7 @@ public enum GoodFlags
 }
 ```
 
-### Error 3 — Comparar con el número en lugar del nombre
+### Error 3: comparar con el número en lugar del nombre
 
 ```csharp
 // ❌ Número mágico — no es claro qué significa

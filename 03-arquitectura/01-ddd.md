@@ -1,6 +1,6 @@
 # 03 — Domain-Driven Design (DDD)
 
-DDD es una forma de diseñar software centrada en el dominio del negocio. No es un framework ni una librería — es un conjunto de patrones y principios para modelar la lógica de negocio de forma que refleje el mundo real.
+DDD es una forma de diseñar software centrada en el dominio del negocio. No es un framework ni una librería. Es un conjunto de patrones y principios para modelar la lógica de negocio de forma que refleje el mundo real.
 
 Este documento cubre los conceptos tácticos de DDD: los bloques de construcción que se usan dentro de un Bounded Context.
 
@@ -21,13 +21,13 @@ public class ExampleUser
 }
 ```
 
-Si el cliente habla de "Pedido" y el código usa "Order" en inglés, está bien — siempre que sea consistente. Lo que no funciona es que el código use "Order" en algunos lugares y "Purchase" en otros para lo mismo.
+Si el cliente habla de "Pedido" y el código usa "Order" en inglés, está bien, siempre que sea consistente. Lo que no funciona es que el código use "Order" en algunos lugares y "Purchase" en otros para lo mismo.
 
 ---
 
 ## Entidades (Entities)
 
-Una entidad es un objeto que tiene **identidad** — existe como una cosa específica en el mundo, independientemente de sus atributos.
+Una entidad es un objeto que tiene **identidad**: existe como una cosa específica en el mundo, independientemente de sus atributos.
 
 ```
 Dos usuarios con el mismo nombre y email son dos usuarios distintos porque tienen IDs distintos.
@@ -58,13 +58,13 @@ public sealed class ExampleUser
 - Tiene identidad única (ID)
 - Tiene ciclo de vida (se crea, modifica, desactiva)
 - La igualdad se basa en el ID, no en los atributos
-- Puede mutar — sus datos pueden cambiar pero sigue siendo la misma entidad
+- Puede mutar: sus datos pueden cambiar pero sigue siendo la misma entidad
 
 ---
 
 ## Value Objects (Objetos de Valor)
 
-Un Value Object es un objeto definido completamente por sus atributos. No tiene identidad propia — dos instancias con los mismos valores son intercambiables.
+Un Value Object es un objeto definido completamente por sus atributos. No tiene identidad propia. Dos instancias con los mismos valores son intercambiables.
 
 ```csharp
 // ❌ Email como string — sin validación, fácil de pasar un email inválido
@@ -110,10 +110,10 @@ Console.WriteLine(email);  // "usuario@example.com"
 - `Color` (r, g, b)
 
 **Características de un Value Object:**
-- Sin identidad propia — la igualdad es por valor
-- Inmutable — no cambia después de crearse
-- Autovalidado — nunca existe en estado inválido
-- Reemplazable — en lugar de mutar, se reemplaza por un nuevo valor
+- Sin identidad propia: la igualdad es por valor
+- Inmutable: no cambia después de crearse
+- Autovalidado: nunca existe en estado inválido
+- Reemplazable: en lugar de mutar, se reemplaza por un nuevo valor
 
 ```csharp
 // ❌ Mutar un Value Object — no tiene sentido
@@ -127,7 +127,7 @@ user.Address = new Address("Calle Nueva", "Ciudad", "CP");
 
 ## Agregados y Aggregate Root
 
-Un **Agregado** es un grupo de objetos relacionados que se tratan como una unidad para operaciones de datos. El **Aggregate Root** es la entidad principal del grupo — el único punto de entrada para modificar el agregado.
+Un **Agregado** es un grupo de objetos relacionados que se tratan como una unidad para operaciones de datos. El **Aggregate Root** es la entidad principal del grupo. Es el único punto de entrada para modificar el agregado.
 
 ```
 Pedido (Aggregate Root)
@@ -174,14 +174,14 @@ public sealed class Order   // ← Aggregate Root
 **Reglas de los Agregados:**
 1. Solo el Aggregate Root tiene referencias externas (IDs de otros agregados, no objetos)
 2. Las modificaciones de entidades hijas pasan por el root
-3. Un repositorio existe por cada Aggregate Root — no hay repositorios de entidades hijas
+3. Un repositorio existe por cada Aggregate Root. No hay repositorios de entidades hijas.
 4. Las transacciones no cruzan límites de agregados (cada agregado es consistente en sí mismo)
 
 ---
 
 ## Invariantes de Dominio
 
-Las invariantes son reglas que siempre deben cumplirse. El dominio es responsable de hacerlas cumplir — no la base de datos ni la UI.
+Las invariantes son reglas que siempre deben cumplirse. El dominio es responsable de hacerlas cumplir, no la base de datos ni la UI.
 
 ```csharp
 public sealed class ExampleUser
@@ -231,7 +231,7 @@ public sealed class ExampleUser
 
 ## Eventos de Dominio (Domain Events)
 
-Un evento de dominio representa algo significativo que ocurrió en el dominio. Son hechos en pasado — "Usuario registrado", "Pedido confirmado".
+Un evento de dominio representa algo significativo que ocurrió en el dominio. Son hechos en pasado: "Usuario registrado", "Pedido confirmado".
 
 ```csharp
 // Interfaz base para eventos de dominio
@@ -294,7 +294,7 @@ Contexto "Facturación":
     Cliente { Id, RFC, DireccionFiscal, CuentasBancarias }
 ```
 
-El mismo "Cliente" tiene propiedades distintas en cada contexto — intentar tener una sola clase `Cliente` para todo genera un modelo inflado y acoplado.
+El mismo "Cliente" tiene propiedades distintas en cada contexto. Intentar tener una sola clase `Cliente` para todo genera un modelo inflado y acoplado.
 
 **En este proyecto:** actualmente es un solo Bounded Context. Cuando el sistema crezca, se identifican los contextos por los módulos naturales del negocio (Usuarios, Pedidos, Inventario, Facturación) y cada uno tiene su propia capa de dominio o microservicio.
 
@@ -322,11 +322,11 @@ El mismo "Cliente" tiene propiedades distintas en cada contexto — intentar ten
 - El dominio tiene reglas de negocio no triviales (estados, transiciones, invariantes)
 
 **No sobre-aplicar DDD cuando:**
-- Es una API CRUD simple — mapear tabla → DTO es suficiente
-- El equipo no conoce el dominio todavía — el lenguaje ubiquitario emerge con el tiempo
+- Es una API CRUD simple: mapear tabla a DTO es suficiente
+- El equipo no conoce el dominio todavía: el lenguaje ubiquitario emerge con el tiempo
 - La complejidad es técnica (integraciones, infraestructura), no de negocio
 
-**Este proyecto como punto de partida:** las entidades actuales son deliberadamente simples. Agregar Value Objects, invariantes y Domain Events cuando la lógica de negocio lo justifique — no por adelantado.
+**Este proyecto como punto de partida:** las entidades actuales son deliberadamente simples. Agregar Value Objects, invariantes y Domain Events cuando la lógica de negocio lo justifique. No por adelantado.
 
 ---
 
@@ -401,8 +401,8 @@ public sealed class UserMergeService : IUserMergeService
 - Calcular un precio final con reglas de descuento complejas que no viven en `Order` ni en `Product`
 
 **Cuándo NO crear un Servicio de Dominio:**
-- La lógica es técnica (acceso a DB, HTTP, email) → eso va en Application o Infrastructure
-- La lógica pertenece claramente a una entidad → ponla como método de esa entidad
+- La lógica es técnica (acceso a DB, HTTP, email): va en Application o Infrastructure
+- La lógica pertenece claramente a una entidad: ponla como método de esa entidad
 
 ---
 

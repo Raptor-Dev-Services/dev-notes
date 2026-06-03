@@ -308,7 +308,7 @@ POST /api/auth/invitations
 }
 ```
 
-El repositorio de invitaciones filtra por tenant — un Admin no puede ver ni revocar invitaciones de otro tenant:
+El repositorio de invitaciones filtra por tenant. Un Admin no puede ver ni revocar invitaciones de otro tenant:
 
 ```csharp
 // InvitationTokenRepository — con tenant + branch opcional
@@ -338,7 +338,7 @@ Un solo uso: se marca como Accepted al primer uso exitoso
 Solo Pending: solo funciona si está en estado Pending
 ```
 
-No enviar el token en la URL como query param — embebido en el link es suficiente:
+No enviar el token en la URL como query param. Embebido en el link es suficiente:
 ```
 https://app.misaas.com/accept-invite?token=a1b2c3d4e5f6...
 ```
@@ -397,13 +397,13 @@ public sealed class InvitationExpirationJob : BackgroundService
 ## Checklist
 
 - [ ] El token es un GUID v4 de un solo uso
-- [ ] La invitación expira (7 días por defecto — configurable)
+- [ ] La invitación expira (7 días por defecto: configurable)
 - [ ] Solo el Admin del tenant puede enviar invitaciones
 - [ ] El email pre-asignado no se puede cambiar al aceptar
 - [ ] El rol y branch_id vienen de la invitación, no del body del request de aceptación
 - [ ] Un reenvío revoca la invitación anterior y crea una nueva
 - [ ] El Admin puede revocar invitaciones pendientes
-- [ ] `AcceptInvitation` es `[AllowAnonymous]` — no requiere JWT
+- [ ] `AcceptInvitation` es `[AllowAnonymous]`: no requiere JWT
 - [ ] El login automático incluye `branch_id` si la invitación lo tenía
 
 ---
@@ -412,13 +412,13 @@ public sealed class InvitationExpirationJob : BackgroundService
 
 Para agregar invitaciones al back-template:
 
-1. `Authentication.Domain/Entities/InvitationToken.cs` — entidad
-2. `Shared/Database/EntityTypeConfigurations/InvitationTokenConfiguration.cs` — config EF Core
-3. `AppDbContext` — agregar `DbSet<InvitationToken>`
-4. `Authentication.Application/UseCases/SendInvitation/` — caso de uso
-5. `Authentication.Application/UseCases/AcceptInvitation/` — caso de uso
-6. `Authentication.Presentation/Controllers/AuthController.cs` — endpoints
-7. `IJwtTokenService.Generate` — extender para aceptar `branchId` opcional
+1. `Authentication.Domain/Entities/InvitationToken.cs`: entidad
+2. `Shared/Database/EntityTypeConfigurations/InvitationTokenConfiguration.cs`: config EF Core
+3. `AppDbContext`: agregar `DbSet<InvitationToken>`
+4. `Authentication.Application/UseCases/SendInvitation/`: caso de uso
+5. `Authentication.Application/UseCases/AcceptInvitation/`: caso de uso
+6. `Authentication.Presentation/Controllers/AuthController.cs`: endpoints
+7. `IJwtTokenService.Generate`: extender para aceptar `branchId` opcional
 
 Ver `04-backend/27-rbac.md` para el modelo de roles asignados en la invitación.
 Ver `04-backend/37-emails-transaccionales.md` para el envío del email de invitación.

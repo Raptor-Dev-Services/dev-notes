@@ -168,7 +168,7 @@ Execution Time: 45.2 ms
 | `Nested Loop` | Join fila por fila — eficiente con pocos datos, caro con muchos |
 | `Sort` | Ordenamiento en memoria o disco — posible candidato para índice |
 
-**cost=inicio..total:** tiempo relativo estimado. No son ms ni segundos — son unidades internas. Lo importante es la magnitud relativa (10 vs 10000).
+**cost=inicio..total:** tiempo relativo estimado. No son ms ni segundos. Son unidades internas. Lo importante es la magnitud relativa (10 vs 10000).
 
 ---
 

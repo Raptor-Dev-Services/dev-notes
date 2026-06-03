@@ -10,7 +10,7 @@
 
 ## El problema
 
-Tienes un formulario de UI con: TextField, CheckBox, Button, DatePicker. Cuando el usuario escribe en el TextField, el Button debe habilitarse. Cuando la CheckBox se activa, el DatePicker debe mostrarse. Sin Mediator, cada componente referencia directamente a los demás — crea un grafo de dependencias imposible de mantener.
+Tienes un formulario de UI con: TextField, CheckBox, Button, DatePicker. Cuando el usuario escribe en el TextField, el Button debe habilitarse. Cuando la CheckBox se activa, el DatePicker debe mostrarse. Sin Mediator, cada componente referencia directamente a los demás. Esto crea un grafo de dependencias imposible de mantener.
 
 ```
 Sin Mediator — N componentes, O(N²) dependencias:
@@ -31,7 +31,7 @@ CheckBox   →  Mediator
 
 ## Analogía
 
-Una torre de control de aeropuerto. Los pilotos no hablan directamente entre sí para coordinar aterrizajes y despegues — todos reportan a la torre de control (el Mediador). La torre decide el orden, asigna pistas, y comunica las instrucciones. Los pilotos solo hablan con la torre — no saben nada de los demás aviones.
+Una torre de control de aeropuerto. Los pilotos no hablan directamente entre sí para coordinar aterrizajes y despegues; todos reportan a la torre de control (el Mediador). La torre decide el orden, asigna pistas y comunica las instrucciones. Los pilotos solo hablan con la torre y no saben nada de los demás aviones.
 
 ---
 
@@ -263,9 +263,9 @@ public sealed class InsertExampleUserPresenter
 
 ## Cuándo NO usar
 
-- Cuando el mediador se convierte en un God Object que hace demasiado — dividirlo en mediadores más pequeños.
-- Para comunicación simple entre 2 objetos — el patrón agrega complejidad innecesaria.
-- Cuando los componentes tienen relaciones fijas y bien definidas — la herencia puede ser suficiente.
+- Cuando el mediador se convierte en un God Object que hace demasiado. Dividirlo en mediadores más pequeños.
+- Para comunicación simple entre 2 objetos. El patrón agrega complejidad innecesaria.
+- Cuando los componentes tienen relaciones fijas y bien definidas. La herencia puede ser suficiente.
 
 
 ---

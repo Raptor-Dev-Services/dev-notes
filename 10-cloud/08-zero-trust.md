@@ -5,7 +5,7 @@ Zero Trust es el principio de seguridad: "nunca confiar, siempre verificar". Nin
 ---
 
 ## El modelo perimetral vs Zero Trust
-> Fuente: *Zero Trust Networks* 2nd Ed. (Gilman, Barth) — Ch.1 Zero Trust Fundamentals
+> Fuente: *Zero Trust Networks* 2nd Ed. (Gilman, Barth): Ch.1 Zero Trust Fundamentals
 
 ```
 Modelo perimetral (viejo):

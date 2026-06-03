@@ -2,7 +2,7 @@
 
 Los mensajes de commit libres ("fix", "changes", "wip") no permiten automatizar changelogs, generar releases semánticos ni entender el historial sin leer el diff. Conventional Commits define un formato estándar que herramientas como `semantic-release`, `conventional-changelog` y los pipelines de CI pueden procesar automáticamente para determinar versiones y generar notas de release.
 
-> Fuentes: *Pro Git 2nd Ed* (Scott Chacon, Ben Straub) — Ch.5 Distributed Git; *Learning GitHub Actions* (Brent Laster) — Ch.9 Actions and Security, Ch.12 Advanced Workflows
+> Fuentes: *Pro Git 2nd Ed* (Scott Chacon, Ben Straub): Ch.5 Distributed Git; *Learning GitHub Actions* (Brent Laster): Ch.9 Actions and Security, Ch.12 Advanced Workflows
 
 ---
 

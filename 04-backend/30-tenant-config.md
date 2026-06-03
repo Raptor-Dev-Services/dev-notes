@@ -27,7 +27,7 @@ Configuración de Tenant
 
 ---
 
-## Estrategia A — Key-Value genérico
+## Estrategia A: Key-Value genérico
 
 ```csharp
 // Tenancy.Domain/Entities/TenantSetting.cs
@@ -58,7 +58,7 @@ dbo.tenant_settings
 
 Ventaja: extensible sin cambiar el esquema. Desventaja: no hay tipado.
 
-### Clave de settings — constantes
+### Clave de settings: constantes
 
 ```csharp
 public static class TenantSettingKeys
@@ -79,7 +79,7 @@ public static class TenantSettingKeys
 
 ---
 
-## Estrategia B — Columnas tipadas en la tabla de Tenants
+## Estrategia B: Columnas tipadas en la tabla de Tenants
 
 ```csharp
 // Tenancy.Domain/Entities/Tenant.cs — settings integrados
@@ -110,7 +110,7 @@ Ventaja: tipado, simple, un solo query para cargar todo. Desventaja: cambiar la 
 
 ---
 
-## ITenantConfigAccessor — leer settings en la request
+## ITenantConfigAccessor: leer settings en la request
 
 ```csharp
 // Common/MultiTenancy/ITenantConfigAccessor.cs
@@ -406,9 +406,9 @@ public sealed class TenantSettingsController : BaseApiController
 - [ ] Branch puede sobreescribir settings del tenant (jerarquía branch > tenant)
 - [ ] Feature flags determinados por plan + settings del tenant
 - [ ] Settings inicializados con defaults al crear el tenant
-- [ ] Claves de settings en constantes — nunca strings hardcodeados en el código
+- [ ] Claves de settings en constantes: nunca strings hardcodeados en el código
 - [ ] Solo Admin puede modificar settings del tenant
-- [ ] Settings sensibles (API keys, secrets) no se retornan en el GET — solo se actualizan
+- [ ] Settings sensibles (API keys, secrets) no se retornan en el GET: solo se actualizan
 
 ---
 

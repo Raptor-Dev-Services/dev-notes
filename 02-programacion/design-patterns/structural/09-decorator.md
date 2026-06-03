@@ -15,7 +15,7 @@ Tienes una clase `EmailNotifier`. Quieres agregarle capacidades de envío por SM
 - `SlackEmailNotifier : EmailNotifier`
 - `SMSSlackEmailNotifier : EmailNotifier`
 
-La jerarquía explota. Además, la herencia es estática — no puedes cambiar el comportamiento en runtime.
+La jerarquía explota. Además, la herencia es estática: no puedes cambiar el comportamiento en runtime.
 
 ```csharp
 // ❌ Con herencia — explosión combinatoria, estático en compile-time
@@ -282,9 +282,9 @@ public sealed class ExampleUsersController : BaseApiController { }
 
 ## Cuándo NO usar
 
-- Para comportamiento tan esencial que todas las instancias siempre lo necesitan — use herencia o el componente base.
-- Cuando el orden de los decoradores importa y es difícil de controlar — puede ser confuso.
-- Cuando solo tienes un comportamiento adicional — una subclase simple puede ser suficiente.
+- Para comportamiento tan esencial que todas las instancias siempre lo necesitan. Usar herencia o el componente base.
+- Cuando el orden de los decoradores importa y es difícil de controlar. Puede generar confusión.
+- Cuando solo tienes un comportamiento adicional. Una subclase simple puede ser suficiente.
 
 
 ---

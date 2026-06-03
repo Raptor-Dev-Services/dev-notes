@@ -10,7 +10,7 @@
 
 ## El problema
 
-Tienes código para analizar datos de diferentes formatos (CSV, XML, JSON). El proceso siempre es: leer datos → parsear → analizar → generar reporte. Los pasos "leer" y "generar reporte" son iguales en todos. "Parsear" y "analizar" varían por formato. Sin el patrón, duplicas el esqueleto del algoritmo en cada subclase.
+Tienes código para analizar datos de diferentes formatos (CSV, XML, JSON). El proceso siempre sigue cuatro pasos: leer datos, parsear, analizar y generar reporte. Los pasos "leer" y "generar reporte" son iguales en todos. "Parsear" y "analizar" varían por formato. Sin el patrón, duplicas el esqueleto del algoritmo en cada subclase.
 
 ```csharp
 // ❌ Sin Template Method — el esqueleto se duplica en cada clase
@@ -425,8 +425,8 @@ public sealed class ExampleUsersController : BaseApiController
 
 ## Cuándo NO usar
 
-- Cuando el algoritmo raramente varía — sobreingeniería.
-- Cuando el esqueleto cambia frecuentemente — cada cambio afecta todas las subclases.
+- Cuando el algoritmo raramente varía. Es sobreingeniería.
+- Cuando el esqueleto cambia frecuentemente. Cada cambio afecta todas las subclases.
 - Cuando Strategy (composición) sería más flexible que Template Method (herencia).
 
 ### Template Method vs Strategy

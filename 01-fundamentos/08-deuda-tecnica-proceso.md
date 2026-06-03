@@ -25,7 +25,7 @@ IMPRUDENTE  │ "No hay tiempo para │ "¿Qué es capas de   │
             └─────────────────────┴─────────────────────┘
 ```
 
-**Solo la Deliberada/Prudente es aceptable** — y debe documentarse (ADR).
+**Solo la Deliberada/Prudente es aceptable**. Debe documentarse (ADR).
 
 ---
 
@@ -84,7 +84,7 @@ Deuda estimada:           SonarQube calcula "días de trabajo" para resolverla
 Hotspot:                  archivos con alta complejidad Y alta frecuencia de cambio
 ```
 
-**Hotspot analysis:** cruzar "¿qué archivos cambian más?" (git log) con "¿qué archivos tienen más deuda?" (SonarQube). Los hotspots son la deuda que más duele — priorizar esos.
+**Hotspot analysis:** cruzar "¿qué archivos cambian más?" (git log) con "¿qué archivos tienen más deuda?" (SonarQube). Los hotspots son la deuda que más duele. Priorizar esos primero.
 
 ---
 

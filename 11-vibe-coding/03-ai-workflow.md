@@ -2,7 +2,7 @@
 
 ## Problema que resuelve
 
-Sin un flujo definido, el AI se usa de forma reactiva ("arregla esto que falló") en lugar de proactiva. Un workflow deliberado integra el AI en cada fase del ciclo — diseño, implementación, revisión y documentación — multiplicando la velocidad sin comprometer la calidad.
+Sin un flujo definido, el AI se usa de forma reactiva ("arregla esto que falló") en lugar de proactiva. Un workflow deliberado integra el AI en cada fase del ciclo (diseño, implementación, revisión y documentación), multiplicando la velocidad sin comprometer la calidad.
 
 ## El ciclo de desarrollo con AI
 
@@ -15,7 +15,7 @@ Sin un flujo definido, el AI se usa de forma reactiva ("arregla esto que falló"
 6. Documentación   → AI redacta, humano valida
 ```
 
-El humano nunca desaparece — decide qué hacer, valida que el AI lo hizo bien, y mantiene el contexto del negocio que el AI no tiene.
+El humano nunca desaparece. Decide qué hacer, valida que el AI lo hizo bien, y mantiene el contexto del negocio que el AI no tiene.
 
 ## Cuándo delegar al AI
 
@@ -107,7 +107,7 @@ Claude Code mantiene el contexto de la sesión en memoria. Para sesiones largas:
 - Abrir la sesión con el objetivo claro: "voy a implementar el módulo de production orders"
 - Hacer commits frecuentes para que el AI pueda ver el historial
 - Si el AI empieza a generar código inconsistente, resetear con `/clear` y reabrir con contexto fresco
-- Las sesiones muy largas (>2h) tienden a perder coherencia — partir la tarea
+- Las sesiones muy largas (>2h) tienden a perder coherencia. Conviene partir la tarea.
 
 ## División de trabajo típica
 
@@ -148,7 +148,7 @@ Respuesta: corregir explícitamente y, si se repite, agregar la restricción a `
 ---
 
 ## Agentes autónomos — delegar tareas completas
-> Fuente: *Building LLM Powered Applications* — Ch.6 AI Agents and Tooling; Ch.8 Multi-Step Reasoning
+> Fuente: *Building LLM Powered Applications*: Ch.6 AI Agents and Tooling; Ch.8 Multi-Step Reasoning
 
 Los agentes van más allá del chat: tienen acceso a herramientas (leer archivos, ejecutar comandos, hacer búsquedas) y pueden completar tareas de múltiples pasos sin intervención humana en cada paso.
 

@@ -1,6 +1,6 @@
 # 02 · Prompts efectivos para desarrollo
 
-> Fuente: *Unlocking the Secrets of Prompt Engineering* (Packt) — Ch.1 Components of an LLM prompt, Ch.7 AI Pair Programmers
+> Fuente: *Unlocking the Secrets of Prompt Engineering* (Packt): Ch.1 Components of an LLM prompt, Ch.7 AI Pair Programmers
 
 ## Problema que resuelve
 

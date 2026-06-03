@@ -1,8 +1,8 @@
-﻿# 05 — Herencia y Polimorfismo
+﻿# 05: Herencia y Polimorfismo
 
 La herencia permite que una clase tome el comportamiento de otra y lo extienda. El polimorfismo permite tratar objetos distintos de forma uniforme.
 
-> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.6 Inheritance and Polymorphism
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price). Ch.6 Inheritance and Polymorphism
 
 ---
 
@@ -69,7 +69,7 @@ public sealed class ExampleUsersController : BaseApiController
 
 ---
 
-## `virtual` — método que se puede sobreescribir
+## `virtual`: método que se puede sobreescribir
 
 ```csharp
 public class Animal
@@ -111,7 +111,7 @@ Console.WriteLine(a.HacerSonido()); // "Guau" — se ejecuta el Perro, no el Ani
 
 ---
 
-## `abstract` — método que DEBE sobreescribirse
+## `abstract`: método que DEBE sobreescribirse
 
 ```csharp
 public abstract class FiguraGeometrica
@@ -164,7 +164,7 @@ foreach (var figura in figuras)
 
 ---
 
-## `sealed` sobre un `override` — sellar la cadena
+## `sealed` sobre un `override`: sellar la cadena
 
 Una vez sobreescrito, puedes sellarlo para que nadie más lo sobreescriba:
 
@@ -214,7 +214,7 @@ repo = new FakeExampleUserRepository();  // un fake para tests
 var user = await repo.GetByPublicIdAsync(id, ct);
 ```
 
-### En el Presenter — polimorfismo con pattern matching
+### En el Presenter: polimorfismo con pattern matching
 
 ```csharp
 // "notification" es del tipo base GetExampleUserResponse
@@ -234,9 +234,9 @@ public Task Handle(GetExampleUserResponse notification, CancellationToken ct)
 
 ---
 
-## `new` en métodos — ocultar (shadowing)
+## `new` en métodos: ocultar (shadowing)
 
-Diferente de `override` — oculta el método del padre en vez de sobreescribirlo:
+Diferente de `override`. Oculta el método del padre en vez de sobreescribirlo:
 
 ```csharp
 public class Padre
@@ -294,7 +294,7 @@ else if (response is GetExampleUserNotFoundFailure f)
 
 ---
 
-## `is` y casting — verificar y convertir el tipo
+## `is` y casting: verificar y convertir el tipo
 
 ```csharp
 // is — verificar sin lanzar excepción
@@ -314,7 +314,7 @@ if (success != null)
 var success = (GetExampleUserSuccess)response;  // ¡cuidado!
 ```
 
-**Prefiere `is` con asignación** sobre `as` + null check — es más limpio y seguro.
+**Prefiere `is` con asignación** sobre `as` + null check. Es más limpio y seguro.
 
 ---
 
@@ -337,7 +337,7 @@ services.AddMediator(typeof(GetExampleUserHandler).Assembly);
 
 ## Anti-patrones de herencia
 
-### Anti-patrón 1 — Herencia para reutilizar código (favorece composición)
+### Anti-patrón 1: Herencia para reutilizar código (favorece composición)
 
 ```csharp
 // ❌ Herencia incorrecta — Cuadrado hereda de Rectángulo solo para reutilizar código
@@ -361,7 +361,7 @@ public sealed class Cuadrado
 }
 ```
 
-### Anti-patrón 2 — Herencia profunda
+### Anti-patrón 2: Herencia profunda
 
 ```csharp
 // ❌ Cadena larga de herencia — difícil de seguir y mantener
@@ -377,7 +377,7 @@ public sealed class Labrador : IAnimal, IDomestico
 }
 ```
 
-### Anti-patrón 3 — Sobreescribir para cambiar el comportamiento esperado (viola LSP)
+### Anti-patrón 3: Sobreescribir para cambiar el comportamiento esperado (viola LSP)
 
 ```csharp
 // ❌ Viola Liskov Substitution Principle

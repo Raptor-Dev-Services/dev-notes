@@ -17,7 +17,7 @@ El límite efectivo varía por modelo, pero una sesión de 2-3 horas de trabajo 
 
 ### 1. CLAUDE.md como memoria persistente
 
-Lo que se define en `CLAUDE.md` no consume contexto de la sesión — se carga al inicio y permanece disponible. Ante una sesión larga, lo primero es mover a `CLAUDE.md` todo lo que el AI necesitará repetidamente:
+Lo que se define en `CLAUDE.md` no consume contexto de la sesión. Se carga al inicio y permanece disponible. Ante una sesión larga, lo primero es mover a `CLAUDE.md` todo lo que el AI necesitará repetidamente:
 
 ```markdown
 # en CLAUDE.md — no en el chat
@@ -96,7 +96,7 @@ Ante estos síntomas: corregir explícitamente, luego evaluar si agregar la rest
 
 ## Cache de prompts
 
-Claude guarda en caché el prefijo del contexto (incluyendo `CLAUDE.md`) durante ~5 minutos entre mensajes. Una sesión activa dentro de ese tiempo reutiliza el caché — respuestas más rápidas y menor costo de tokens. Sesiones inactivas por más de 5 minutos pagan el costo completo al retomar.
+Claude guarda en caché el prefijo del contexto (incluyendo `CLAUDE.md`) durante ~5 minutos entre mensajes. Una sesión activa dentro de ese tiempo reutiliza el caché. Las respuestas son más rápidas y el costo de tokens es menor. Sesiones inactivas por más de 5 minutos pagan el costo completo al retomar.
 
 Implicación práctica: en sesiones de trabajo, mantener el ritmo en lugar de pausar 10-15 minutos entre mensajes.
 
@@ -108,7 +108,7 @@ Claude Code tiene un sistema de memoria en `~/.claude/projects/<proyecto>/memory
 - Contexto del proyecto que cambia con el tiempo (estado del sprint, decisiones recientes)
 - Referencias a recursos externos (tablero de Linear, canal de Slack del equipo)
 
-La memoria se usa automáticamente — el AI la carga al inicio de cada sesión en ese proyecto.
+La memoria se usa automáticamente. El AI la carga al inicio de cada sesión en ese proyecto.
 
 ## Cuándo usar / no usar
 
@@ -120,7 +120,7 @@ La memoria se usa automáticamente — el AI la carga al inicio de cada sesión 
 | sesiones enfocadas en una feature o módulo | sesiones largas que tocan múltiples partes del sistema |
 
 
-> Fuente: *Building LLM Powered Applications* (Valentina Alto) — Ch.5 Context Management and Memory
+> Fuente: *Building LLM Powered Applications* (Valentina Alto): Ch.5 Context Management and Memory
 
 ---
 

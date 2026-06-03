@@ -1,6 +1,6 @@
 # 31 — Planes, Tiers y Límites de Uso
 
-Los planes (Free, Pro, Enterprise) definen qué features tiene disponibles cada tenant y cuánto puede usar. Los límites se validan en tiempo de ejecución — antes de permitir una operación, el sistema verifica si el tenant tiene cuota disponible.
+Los planes (Free, Pro, Enterprise) definen qué features tiene disponibles cada tenant y cuánto puede usar. Los límites se validan en tiempo de ejecución. Antes de permitir una operación, el sistema verifica si el tenant tiene cuota disponible.
 
 ---
 
@@ -86,7 +86,7 @@ public static class Plans
 
 ---
 
-## IPlanService — verificación de límites
+## IPlanService: verificación de límites
 
 ```csharp
 // Common/Plans/IPlanService.cs
@@ -368,9 +368,9 @@ public async Task CheckLimitsAsync(CancellationToken ct)
 
 ## Checklist
 
-- [ ] Los límites del plan están centralizados en `Plans.GetLimits()` — no hardcodeados por feature
+- [ ] Los límites del plan están centralizados en `Plans.GetLimits()`: no hardcodeados por feature
 - [ ] Los handlers verifican el límite ANTES de ejecutar la operación
-- [ ] HTTP 402 para respuestas de límite alcanzado — incluir link de upgrade
+- [ ] HTTP 402 para respuestas de límite alcanzado: incluir link de upgrade
 - [ ] El downgrade de plan verifica que el uso actual cabe en el nuevo plan
 - [ ] El conteo de usuarios es tenant-global (suma de todos los branches)
 - [ ] Dashboard de uso disponible para el Admin

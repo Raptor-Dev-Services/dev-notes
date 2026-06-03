@@ -36,7 +36,7 @@ public void Publish()
 
 ## Analogía
 
-Un semáforo. El semáforo tiene estados: Rojo, Amarillo, Verde. Cada estado define el comportamiento (parar, prepararse, avanzar) y cuál es el siguiente estado. El semáforo como objeto solo llama "siguiente estado" — cada estado sabe qué hacer y a quién delegar.
+Un semáforo. El semáforo tiene estados: Rojo, Amarillo, Verde. Cada estado define el comportamiento (parar, prepararse, avanzar) y cuál es el siguiente estado. El semáforo como objeto solo llama "siguiente estado". Cada estado sabe qué hacer y a quién delegar.
 
 ---
 
@@ -309,8 +309,8 @@ return _viewModel.IsSuccess        // consulta el estado
 
 ## Cuándo NO usar
 
-- Cuando solo hay 2-3 estados simples — un `bool` o `enum` es más directo.
-- Cuando las transiciones son pocas y estables — un switch simple puede ser suficiente.
+- Cuando solo hay 2-3 estados simples. Un `bool` o `enum` es más directo.
+- Cuando las transiciones son pocas y estables. Un switch simple puede ser suficiente.
 - Cuando los estados no tienen comportamientos realmente distintos.
 
 

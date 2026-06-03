@@ -77,7 +77,7 @@ public sealed class LoginHandlerTests
 }
 ```
 
-El test no compila — `LoginHandler`, `LoginRequest`, `LoginSuccess` no existen. Eso es correcto en este punto.
+El test no compila. `LoginHandler`, `LoginRequest`, `LoginSuccess` no existen. Eso es correcto en este punto.
 
 ### Paso 2 — GREEN: implementar lo mínimo para compilar y pasar
 
@@ -160,7 +160,7 @@ public async Task Handle_InactiveUser_ReturnsForbiddenFailure()
 }
 ```
 
-El último test falla (RED) — no existe `LoginForbiddenFailure` ni el Handler maneja el caso `IsActive = false`.
+El último test falla (RED). No existe `LoginForbiddenFailure` ni el Handler maneja el caso `IsActive = false`.
 
 ### Paso 4 — GREEN: agregar el nuevo caso
 
@@ -228,7 +228,7 @@ TDD "outside-in" empieza por el test de integración (HTTP request) y va hacia a
 5. Todos los tests pasan → refactorizar
 ```
 
-Este orden asegura que cada capa es necesaria — no se implementa lo que ningún test pide.
+Este orden asegura que cada capa es necesaria. No se implementa lo que ningún test pide.
 
 ---
 
@@ -256,7 +256,7 @@ El flujo de desarrollo recomendado para nuevos casos de uso:
 
 1. Escribir `{Accion}HandlerTests.cs` con los casos (éxito, not found, conflicto, sin permisos).
 2. Implementar `{Accion}Request.cs`, `{Accion}Response.cs`, `{Accion}Handler.cs`.
-3. Tests en verde → agregar `{Accion}Presenter.cs` con test.
+3. Tests en verde: agregar `{Accion}Presenter.cs` con test.
 4. Agregar Controller endpoint.
 5. Integration test final: el endpoint completo funciona.
 

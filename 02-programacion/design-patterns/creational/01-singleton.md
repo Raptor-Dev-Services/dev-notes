@@ -23,7 +23,7 @@ var config2 = new ConfigurationManager();  // lee el archivo OTRA VEZ
 
 ## Analogía
 
-El gobierno de un país. Un país puede tener un solo gobierno oficial. No importa cuántas veces "accedas" al gobierno — siempre es el mismo. Los ciudadanos no crean nuevos gobiernos — acceden al existente.
+El gobierno de un país. Un país puede tener un solo gobierno oficial. No importa cuántas veces "accedas" al gobierno, siempre es el mismo. Los ciudadanos no crean nuevos gobiernos; acceden al existente.
 
 ---
 
@@ -108,7 +108,7 @@ class Singleton
 ```
 
 **Por qué doble verificación:**
-- El `if` externo evita entrar al `lock` en cada llamada una vez creada la instancia → rendimiento.
+- El `if` externo evita entrar al `lock` en cada llamada una vez creada la instancia, lo que mejora el rendimiento.
 - El `if` interno dentro del `lock` evita la creación doble si dos hilos pasan el `if` externo simultáneamente.
 
 ---
@@ -177,7 +177,7 @@ services.AddSingleton<MainDbConnectionFactory>();
 
 - Como sustituto de variables globales (code smell).
 - Para objetos que tienen estado mutable que varía por request (usa Scoped).
-- Cuando dificulta el testing — prefiere DI con `AddSingleton`.
+- Cuando dificulta el testing. Preferir DI con `AddSingleton`.
 - En objetos que tienen lógica de negocio dependiente de contexto.
 
 ---

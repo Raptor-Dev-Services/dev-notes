@@ -364,7 +364,7 @@ services:
 ---
 
 ## Compose para entornos de CI/CD
-> Fuente: *Docker Up and Running* (Kane, Matthias) — Ch.8 Continuous Integration
+> Fuente: *Docker Up and Running* (Kane, Matthias): Ch.8 Continuous Integration
 
 Compose es muy útil para levantar servicios de apoyo (DB, caché, message broker) en el pipeline de CI.
 

@@ -1,8 +1,8 @@
-﻿# 04 — Records en C#
+﻿# 04: Records en C#
 
 Los `record` son tipos diseñados para datos inmutables. Son la base de todos los DTOs, Requests y Responses de este proyecto.
 
-> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.5 Record Types
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price). Ch.5 Record Types
 
 ---
 
@@ -125,7 +125,7 @@ var config = new ProductConfig
 };
 ```
 
-### Mezcla — posicional + propiedades adicionales
+### Mezcla: posicional + propiedades adicionales
 
 ```csharp
 public sealed record GetExampleUsersSuccess(
@@ -144,7 +144,7 @@ public sealed record GetExampleUsersSuccess(
 
 ---
 
-## `abstract record` — base sin instanciar
+## `abstract record`: base sin instanciar
 
 ```csharp
 // La "familia" de respuestas para GetExampleUser
@@ -175,7 +175,7 @@ public Task Handle(GetExampleUserResponse notification, CancellationToken ct)
 
 ---
 
-## La expresión `with` — copia con modificaciones
+## La expresión `with`: copia con modificaciones
 
 Records son inmutables. Para "modificar" uno, creas una copia con los cambios:
 
@@ -199,9 +199,9 @@ Console.WriteLine(object.ReferenceEquals(original, actualizado)); // false
 ```
 
 **Cuándo usar `with`:**
-- En tests — crear variantes de un objeto base
-- En mappers — transformar datos cambiando pocos campos
-- En handlers — actualizar estado sin mutar el original
+- En tests: crear variantes de un objeto base
+- En mappers: transformar datos cambiando pocos campos
+- En handlers: actualizar estado sin mutar el original
 
 ---
 
@@ -228,7 +228,7 @@ foreach (var (lat, lon) in puntos)
 
 ---
 
-## `record struct` — record como tipo de valor
+## `record struct`: record como tipo de valor
 
 Los records normales son tipos de referencia (como clases). `record struct` es un tipo de valor (como `int`, `DateTime`).
 
@@ -283,7 +283,7 @@ public sealed record GatoRecord(string Nombre, bool EsIndoor) : AnimalRecord(Nom
 
 ---
 
-## Records vs Clases — tabla de decisión completa
+## Records vs Clases: tabla de decisión completa
 
 | Característica | `class` | `record` |
 |----------------|---------|----------|
@@ -325,7 +325,7 @@ public sealed class ExampleUserRepository : IExampleUserRepository { }
 
 ### 3. Respuestas de colección con `ISuccess` genérico
 
-**IMPORTANTE — trampa del proyecto:**
+**IMPORTANTE**: trampa del proyecto:
 
 ```csharp
 // ❌ NO implementar ISuccess<TSelf> en un record con Data => this
@@ -347,7 +347,7 @@ public sealed record GetExampleUsersSuccess(
 
 ## Records en cada capa del proyecto
 
-### Domain — Entidades (clase, no record)
+### Domain: Entidades (clase, no record)
 
 ```csharp
 // Las entidades de dominio son clases porque Dapper las mapea por propiedades mutables
@@ -363,7 +363,7 @@ public class ExampleUser
 }
 ```
 
-### Application — Request, Response, DTO (todos records)
+### Application: Request, Response, DTO (todos records)
 
 ```csharp
 // Request — immutable message

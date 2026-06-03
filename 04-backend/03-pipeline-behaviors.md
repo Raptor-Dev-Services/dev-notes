@@ -1,6 +1,6 @@
 ﻿# 07 — Pipeline Behaviors
 
-Los Pipeline Behaviors son middlewares del mediador — interceptan cada Request antes y después de que llegue al Handler. Permiten agregar comportamiento cross-cutting (que aplica a todos los casos de uso) sin modificar cada Handler individualmente.
+Los Pipeline Behaviors son middlewares del mediador. Interceptan cada Request antes y después de que llegue al Handler. Permiten agregar comportamiento cross-cutting (que aplica a todos los casos de uso) sin modificar cada Handler individualmente.
 
 > Fuente: *Architecting ASP.NET Core Applications* (Carl-Hugo Marcotte) — Ch.14 Mediator and CQRS Design Patterns
 
@@ -297,7 +297,7 @@ Presenter.Handle(response, ct)  → llena _viewModel
 Controller: _viewModel.IsSuccess ? Ok() : StatusCode(500)
 ```
 
-Los behaviors se ejecutan antes del Handler. El Publish al Presenter ocurre automáticamente después del Handler — no hay que llamarlo manualmente.
+Los behaviors se ejecutan antes del Handler. El Publish al Presenter ocurre automáticamente después del Handler. No hay que llamarlo manualmente.
 
 ---
 

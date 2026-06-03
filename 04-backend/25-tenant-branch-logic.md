@@ -1,6 +1,6 @@
 # 25 — Tenant + Branch: Jerarquía de Dos Niveles
 
-Algunos sistemas SaaS necesitan un segundo nivel de segmentación dentro de cada empresa. Una empresa (tenant) puede tener múltiples sucursales, plantas, departamentos o unidades de negocio (branches). Los datos de cada branch son privados dentro del tenant — un usuario de la Sucursal Norte no debe ver los datos de la Sucursal Sur, aunque ambas pertenezcan al mismo tenant.
+Algunos sistemas SaaS necesitan un segundo nivel de segmentación dentro de cada empresa. Una empresa (tenant) puede tener múltiples sucursales, plantas, departamentos o unidades de negocio (branches). Los datos de cada branch son privados dentro del tenant. Un usuario de la Sucursal Norte no debe ver los datos de la Sucursal Sur, aunque ambas pertenezcan al mismo tenant.
 
 ---
 
@@ -82,7 +82,7 @@ Un usuario pertenece a un tenant **y** a un branch. El JWT lleva ambos: `tenant_
 public sealed record TenantContext(string TenantId, string? BranchId = null);
 ```
 
-`BranchId` es nullable — no todos los sistemas lo usan, y los endpoints admin que cruzan branches lo omiten.
+`BranchId` es nullable. No todos los sistemas lo usan, y los endpoints admin que cruzan branches lo omiten.
 
 ```csharp
 // Common/MultiTenancy/ITenantContextAccessor.cs
@@ -166,9 +166,7 @@ private long CurrentBranchId =>
     long.TryParse(_tenantAccessor.Current?.BranchId, out var id) ? id : 0L;
 ```
 
-La condición `(CurrentBranchId == 0 || e.BranchId == CurrentBranchId)` es la clave:
-- Si el JWT tiene `branch_id` → filtra solo ese branch
-- Si el JWT no tiene `branch_id` (admin corporativo) → devuelve todos los branches del tenant
+La condición `(CurrentBranchId == 0 || e.BranchId == CurrentBranchId)` es la clave. Si el JWT tiene `branch_id`, filtra solo ese branch. Si el JWT no tiene `branch_id` (admin corporativo), devuelve todos los branches del tenant.
 
 ---
 
@@ -247,7 +245,7 @@ dbo.branches
 └─────┴───────────┴───────────────────────┘
 ```
 
-`dbo.branches` tiene `tenant_id` pero no tiene `branch_id` — la tabla de branches pertenece al tenant, no a un branch específico. El Global Query Filter de `Branch` filtra solo por `TenantId`.
+`dbo.branches` tiene `tenant_id` pero no tiene `branch_id`. La tabla de branches pertenece al tenant, no a un branch específico. El Global Query Filter de `Branch` filtra solo por `TenantId`.
 
 ---
 
@@ -287,7 +285,7 @@ public async Task<List<ProductionOrder>> GetAllBranchesAsync(
         .ToListAsync(ct);
 ```
 
-Usar `IgnoreQueryFilters()` y filtrar manualmente por `TenantId` — el tenant sigue siendo el límite máximo.
+Usar `IgnoreQueryFilters()` y filtrar manualmente por `TenantId`. El tenant sigue siendo el límite máximo.
 
 **Regla:** `IgnoreQueryFilters()` para branches siempre va acompañado de un filtro manual de `TenantId`. Nunca datos cross-tenant.
 
@@ -340,7 +338,7 @@ public sealed class ProductionOrderConfiguration : IEntityTypeConfiguration<Prod
 
 ## Relación con el back-template
 
-El back-template implementa **solo el nivel Tenant** — es el punto de partida correcto para la mayoría de SaaS. Si el producto requiere el nivel Branch, los pasos de extensión son:
+El back-template implementa **solo el nivel Tenant**: es el punto de partida correcto para la mayoría de SaaS. Si el producto requiere el nivel Branch, los pasos de extensión son:
 
 1. Agregar `BranchId` a `TenantContext` en `Common/`.
 2. Actualizar `TenantClaimsMiddleware` para leer `branch_id` del JWT.

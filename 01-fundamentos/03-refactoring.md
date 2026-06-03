@@ -24,14 +24,14 @@ No es refactoring:
 
 ### La regla del Boy Scout
 
-"Deja el código más limpio de como lo encontraste." No hace falta un sprint de refactoring — mejorar un poco cada vez que se toca el código.
+"Deja el código más limpio de como lo encontraste." No hace falta un sprint de refactoring. Mejorar un poco cada vez que se toca el código.
 
 ### Deuda técnica y código legado
 > Fuente: *Refactoring with C#* — Ch.1 What Is Refactoring?
 
 **Deuda técnica** es el costo adicional de trabajo futuro causado por tomar atajos en el presente. Acumula intereses: cada feature nueva cuesta más cuando el código subyacente es difícil de entender o modificar.
 
-**Código legado** — definición de Michael Feathers: *"code without tests"*. No importa la antigüedad; lo que lo hace "legado" es la ausencia de una red de seguridad que permita cambiarlo con confianza.
+**Código legado**: definición de Michael Feathers: *"code without tests"*. No importa la antigüedad; lo que lo hace "legado" es la ausencia de una red de seguridad que permita cambiarlo con confianza.
 
 Causas comunes de deuda técnica:
 - Presión de deadlines que obliga a tomar atajos

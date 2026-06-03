@@ -455,7 +455,7 @@ Flujo de conexion en produccion:
 | Publicly Accessible | Flag que determina si RDS tiene endpoint público. Siempre `false` en producción. |
 | SSL Certificate | Certificado de RDS para cifrado en tránsito. Descargar desde AWS. |
 
-> Fuente: *AWS Certified Solutions Architect – Associate Guide* (Gabriel Ramirez, Packt) — Ch.9 Storage y Relational Databases, Ch.4 Scaling Databases
+> Fuente: *AWS Certified Solutions Architect – Associate Guide* (Gabriel Ramirez, Packt): Ch.9 Storage y Relational Databases, Ch.4 Scaling Databases
 
 ---
 

@@ -1,6 +1,6 @@
 # 08 — Row-Level Security en PostgreSQL
 
-Row-Level Security (RLS) es una característica nativa de PostgreSQL que restringe las filas que devuelven o modifican los queries, directamente en el motor de base de datos — sin depender del código de la aplicación. Es una segunda línea de defensa para el aislamiento multi-tenant.
+Row-Level Security (RLS) es una característica nativa de PostgreSQL que restringe las filas que devuelven o modifican los queries, directamente en el motor de base de datos, sin depender del código de la aplicación. Es una segunda línea de defensa para el aislamiento multi-tenant.
 
 ---
 
@@ -147,7 +147,7 @@ Host=localhost;Database=back_template;Username=app_user;Password=app_password
 
 ## RLS como defensa en profundidad
 
-RLS no reemplaza los Global Query Filters de EF Core — los complementa:
+RLS no reemplaza los Global Query Filters de EF Core. Los complementa:
 
 ```
 Capa 1: Global Query Filter de EF Core    → filtra a nivel ORM (código)
@@ -220,7 +220,7 @@ SELECT COUNT(*) FROM dbo.user_profiles;   -- 0 filas (current_setting retorna NU
 
 ## Rendimiento de RLS
 
-Las políticas RLS agregan una condición WHERE implícita — el impacto en rendimiento es mínimo si los índices son correctos:
+Las políticas RLS agregan una condición WHERE implícita. El impacto en rendimiento es mínimo si los índices son correctos:
 
 ```sql
 -- Índice que soporta el filtro RLS
@@ -271,7 +271,7 @@ ALTER TABLE dbo.production_orders FORCE ROW LEVEL SECURITY;
 - [ ] `ENABLE ROW LEVEL SECURITY` + `FORCE ROW LEVEL SECURITY` en tablas multi-tenant
 - [ ] Política `FOR ALL` con `USING (tenant_id = current_setting(...)::BIGINT)`
 - [ ] Usuario de la app no es superuser (`BYPASSRLS` no activo)
-- [ ] `SET LOCAL` (no `SET`) para establecer el tenant_id — evita fugas entre conexiones
+- [ ] `SET LOCAL` (no `SET`) para establecer el tenant_id: evita fugas entre conexiones
 - [ ] Interceptor EF Core establece el setting al abrir la conexión
 - [ ] Índices en `(tenant_id)` y `(tenant_id, branch_id)` para rendimiento
 - [ ] Verificar con `EXPLAIN ANALYZE` que no hay Seq Scan por RLS

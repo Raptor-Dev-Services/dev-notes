@@ -74,7 +74,7 @@ LIMIT 1
 
 ---
 
-## ITenantContextAccessor — el portador del tenant actual
+## ITenantContextAccessor: el portador del tenant actual
 
 El `CurrentTenantId` en el DbContext se lee de un accessor inyectado como Singleton:
 
@@ -99,7 +99,7 @@ public sealed class TenantContextAccessor : ITenantContextAccessor
 }
 ```
 
-### Cómo se llena el accessor — TenantClaimsMiddleware
+### Cómo se llena el accessor: TenantClaimsMiddleware
 
 El accessor se llena al inicio de cada request HTTP, después de que el JWT ha sido validado:
 
@@ -140,7 +140,7 @@ app.UseMiddleware<TenantClaimsMiddleware>();  // 3. Lee tenant_id del User ya au
 
 ---
 
-## IgnoreQueryFilters — casos especiales
+## IgnoreQueryFilters: casos especiales
 
 Algunos casos legítimos no tienen tenant: login, refresh token, creación inicial de credenciales.
 
@@ -182,7 +182,7 @@ var all = await _db.ExampleUsers.IgnoreQueryFilters().ToListAsync(ct);
 
 ---
 
-## Fixture de tests — TenantContext dummy
+## Fixture de tests: TenantContext dummy
 
 En tests de integración, el `AppDbContext` necesita un accessor con un tenant dummy:
 
@@ -211,7 +211,7 @@ Sin el tenant dummy, el `CurrentTenantId` devuelve `0` y las queries no retornan
 
 ---
 
-## DatabaseInitializationService — tenant dummy en startup
+## DatabaseInitializationService: tenant dummy en startup
 
 El mismo problema ocurre al inicializar la base de datos en el startup. El `DatabaseInitializationService` establece un tenant dummy antes de llamar `EnsureCreated`:
 
@@ -242,7 +242,7 @@ internal sealed class DatabaseInitializationService : IHostedService
 **Usar Global Query Filters cuando:**
 - La entidad siempre pertenece a un tenant y nunca debe cruzar fronteras de tenant
 - Quieres garantía en tiempo de compilación (sin filtros = datos de otro tenant)
-- Tienes muchos repositorios y métodos — añadir el filtro manualmente en cada uno es error-prone
+- Tienes muchos repositorios y métodos: añadir el filtro manualmente en cada uno es error-prone
 
 **No usar Global Query Filters cuando:**
 - La entidad es transversal a todos los tenants (ej. catálogos compartidos)
@@ -254,10 +254,10 @@ internal sealed class DatabaseInitializationService : IHostedService
 ## Relación con el back-template
 
 El back-template aplica este patrón en:
-- `Shared/Database/AppDbContext.cs` — filtros para `UserCredential` y `UserProfile`
-- `Host.Api/Middleware/TenantClaimsMiddleware.cs` — llena el accessor desde el JWT
-- `Authentication.Infrastructure/Repositories/` — usa `IgnoreQueryFilters()` para login/refresh
-- `Shared/Database/ServiceCollectionEx.cs` — `DatabaseInitializationService` con tenant dummy
+- `Shared/Database/AppDbContext.cs`: filtros para `UserCredential` y `UserProfile`
+- `Host.Api/Middleware/TenantClaimsMiddleware.cs`: llena el accessor desde el JWT
+- `Authentication.Infrastructure/Repositories/`: usa `IgnoreQueryFilters()` para login/refresh
+- `Shared/Database/ServiceCollectionEx.cs`: `DatabaseInitializationService` con tenant dummy
 
 Ver `docs/DB.md` y `docs/MultiTenancy.md` del back-template para la implementación completa.
 

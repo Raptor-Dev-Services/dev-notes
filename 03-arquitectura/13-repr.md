@@ -54,9 +54,9 @@ public class ShuffleText
 
 **REPR tiene tres componentes:**
 
-1. **Request** — DTO de entrada; contiene toda la información que el endpoint necesita para ejecutar. Puede modelarse como `Query` (lectura) o `Command` (escritura) siguiendo CQS.
-2. **EndPoint** — la lógica de negocio; es la pieza central que justifica la existencia del endpoint.
-3. **Response** — DTO de salida; lo que el endpoint devuelve al cliente.
+1. **Request:** DTO de entrada; contiene toda la información que el endpoint necesita para ejecutar. Puede modelarse como `Query` (lectura) o `Command` (escritura) siguiendo CQS.
+2. **EndPoint:** la lógica de negocio; es la pieza central que justifica la existencia del endpoint.
+3. **Response:** DTO de salida; lo que el endpoint devuelve al cliente.
 
 ```
 Cliente → [Request] → EndPoint → [Response] → Cliente

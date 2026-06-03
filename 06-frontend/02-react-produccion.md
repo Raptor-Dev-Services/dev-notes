@@ -2,7 +2,7 @@
 
 Patrones y librerías del stack frontend para apps SaaS: routing protegido, cliente HTTP con refresh automático, formularios con validación, fechas, i18n y actualizaciones optimistas.
 
-> Fuente: *Full Stack React, TypeScript, and Node* (David Choi) — Ch.7 Advanced React Patterns
+> Fuente: *Full Stack React, TypeScript, and Node* (David Choi): Ch.7 Advanced React Patterns
 
 ---
 
@@ -238,7 +238,7 @@ export function Header() {
 
 ## Optimistic updates con TanStack Query
 
-El update optimista actualiza la UI inmediatamente sin esperar la respuesta del servidor — se revierte si el request falla:
+El update optimista actualiza la UI inmediatamente sin esperar la respuesta del servidor. Se revierte si el request falla:
 
 ```js
 import { useMutation, useQueryClient } from '@tanstack/react-query';

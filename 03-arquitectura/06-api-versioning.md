@@ -33,7 +33,7 @@ GET /api/v2/users
 ```
 
 **Pros:** visible en la URL, fácil de cachear, fácil de probar en el browser.  
-**Contras:** la URL cambia — "URLs no deben cambiar" según REST puro.
+**Contras:** la URL cambia. "URLs no deben cambiar" según REST puro.
 
 ### 2. Query string
 
@@ -177,7 +177,7 @@ public sealed class ExampleUsersController : BaseApiController
 }
 ```
 
-La Estrategia A escala mejor — controllers separados son más fáciles de eliminar cuando se depreca una versión.
+La Estrategia A escala mejor. Los controllers separados son más fáciles de eliminar cuando se depreca una versión.
 
 ---
 
@@ -280,7 +280,7 @@ public sealed class ExampleUsersV1Controller : BaseApiController { ... }
 public sealed class ExampleUsersV2Controller : BaseApiController { ... }
 ```
 
-Funciona perfectamente para la mayoría de casos. La librería `Asp.Versioning` añade headers, deprecación automática, Swagger multi-versión — útil cuando la API es pública y tiene muchos consumidores.
+Funciona perfectamente para la mayoría de casos. La librería `Asp.Versioning` añade headers, deprecación automática y Swagger multi-versión. Es útil cuando la API es pública y tiene muchos consumidores.
 
 ---
 

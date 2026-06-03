@@ -2,13 +2,13 @@
 
 Los checklists mecanizan las decisiones repetibles en el ciclo de vida de un cambio: antes del commit, antes del merge, antes del deploy y durante un incidente. El concepto de **shift-left** integra la seguridad en cada etapa temprana del pipeline en lugar de revisarla al final.
 
-> Fuentes: *Learning DevSecOps* (Mark Rendell) — Ch.3 Integrating Security, Ch.5 Moving Toward Deployment; *Learning GitHub Actions* (Brent Laster) — Ch.9 Actions and Security, Ch.12 Advanced Workflows
+> Fuentes: *Learning DevSecOps* (Mark Rendell): Ch.3 Integrating Security, Ch.5 Moving Toward Deployment; *Learning GitHub Actions* (Brent Laster): Ch.9 Actions and Security, Ch.12 Advanced Workflows
 
 ---
 
 ## Shift-left security — el principio
 
-El término "shift-left" se refiere a mover las comprobaciones de seguridad y calidad hacia la izquierda del pipeline — es decir, más temprano en el ciclo de desarrollo. Detectar una vulnerabilidad durante el commit del desarrollador cuesta minutos. Detectarla en producción puede costar días de remediación, reputación y datos.
+El término "shift-left" se refiere a mover las comprobaciones de seguridad y calidad hacia la izquierda del pipeline. Es decir, más temprano en el ciclo de desarrollo. Detectar una vulnerabilidad durante el commit del desarrollador cuesta minutos. Detectarla en producción puede costar días de remediación, reputación y datos.
 
 ```
 Desarrollo → CI → Staging → Producción

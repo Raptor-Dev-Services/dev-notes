@@ -1,8 +1,8 @@
-﻿# 18 — Atributos en C#
+﻿# 18: Atributos en C#
 
 Los atributos agregan metadatos a clases, métodos, propiedades o parámetros. En tiempo de ejecución, el framework (ASP.NET Core, xUnit, Swagger, etc.) lee esos metadatos con reflexión y actúa en consecuencia.
 
-> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.5 Building Your Own Types: Attributes and Reflection
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price). Ch.5 Building Your Own Types: Attributes and Reflection
 
 ---
 
@@ -39,7 +39,7 @@ public sealed class UsersController : BaseApiController
 
 ---
 
-## Atributos de ASP.NET Core — los más usados
+## Atributos de ASP.NET Core: los más usados
 
 ### Routing y HTTP
 

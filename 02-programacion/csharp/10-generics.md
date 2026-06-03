@@ -1,8 +1,8 @@
-﻿# 10 — Genéricos \<T\>
+﻿# 10: Genéricos \<T\>
 
-Los genéricos permiten escribir código que funciona con cualquier tipo, determinado en el momento de uso — sin perder type-safety.
+Los genéricos permiten escribir código que funciona con cualquier tipo, determinado en el momento de uso. No se pierde type-safety.
 
-> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.6 Implementing Interfaces: Generics
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price). Ch.6 Implementing Interfaces: Generics
 
 ---
 
@@ -135,7 +135,7 @@ var count = await db.ExecuteScalarAsync<int>("SELECT COUNT(*) FROM ...");
 
 Los constraints limitan qué tipos se pueden usar con el genérico.
 
-### `where T : class` — T debe ser tipo referencia
+### `where T : class`: T debe ser tipo referencia
 
 ```csharp
 public sealed class Repositorio<T> where T : class
@@ -145,7 +145,7 @@ public sealed class Repositorio<T> where T : class
 }
 ```
 
-### `where T : struct` — T debe ser tipo de valor
+### `where T : struct`: T debe ser tipo de valor
 
 ```csharp
 public T? ParseValue<T>(string input) where T : struct
@@ -154,7 +154,7 @@ public T? ParseValue<T>(string input) where T : struct
 }
 ```
 
-### `where T : new()` — T debe tener constructor sin parámetros
+### `where T : new()`: T debe tener constructor sin parámetros
 
 ```csharp
 public T Crear<T>() where T : new()
@@ -163,7 +163,7 @@ public T Crear<T>() where T : new()
 }
 ```
 
-### `where T : IInterfaz` — T debe implementar una interfaz
+### `where T : IInterfaz`: T debe implementar una interfaz
 
 ```csharp
 // El constraint del mediator — TRequest debe implementar IRequest<TResponse>
@@ -178,7 +178,7 @@ public interface IRequestHandler<TRequest, TResponse>
 // IRequestHandler<string, GetExampleUserResponse>                ✗ string no implementa IRequest
 ```
 
-### `where T : ClaseBase` — T debe heredar de una clase
+### `where T : ClaseBase`: T debe heredar de una clase
 
 ```csharp
 public void Procesar<T>(T item) where T : BaseApiController
@@ -227,7 +227,7 @@ services.AddScoped<ResultViewModel<AuthController>>();
 
 ---
 
-## `ISuccess<T>` — genérico para respuestas exitosas
+## `ISuccess<T>`: genérico para respuestas exitosas
 
 ```csharp
 // En Common.Results:
@@ -274,11 +274,11 @@ var resultado = GetOrDefault("Ana", "Anónimo");
 
 ---
 
-## Covarianza y contravarianza — avanzado
+## Covarianza y contravarianza: avanzado
 
 Para interfaces y delegates genéricos.
 
-### Covarianza (`out T`) — puedes usar un tipo más derivado
+### Covarianza (`out T`): puedes usar un tipo más derivado
 
 ```csharp
 // IEnumerable<T> es covariante — puedes asignar IEnumerable<Perro> a IEnumerable<Animal>
@@ -286,7 +286,7 @@ IEnumerable<Perro> perros = new List<Perro> { new Perro() };
 IEnumerable<Animal> animales = perros;  // ✓ funciona con "out T"
 ```
 
-### Contravarianza (`in T`) — puedes usar un tipo menos derivado
+### Contravarianza (`in T`): puedes usar un tipo menos derivado
 
 ```csharp
 // Action<T> es contravariante — puedes asignar Action<Animal> a Action<Perro>
@@ -298,7 +298,7 @@ Action<Perro>  procesarPerro  = procesarAnimal;  // ✓ funciona con "in T"
 
 ## Errores comunes con genéricos
 
-### Error 1 — Usar `object` en vez de genérico
+### Error 1: usar `object` en vez de genérico
 
 ```csharp
 // ❌ Pierde type-safety
@@ -320,7 +320,7 @@ var repo = new Repositorio<ExampleUser>();
 ExampleUser user = repo.GetById(1);  // el compilador sabe el tipo
 ```
 
-### Error 2 — Registrar genérico cerrado cuando debería ser abierto
+### Error 2: registrar genérico cerrado cuando debería ser abierto
 
 ```csharp
 // ❌ Solo funciona para ProductsController
@@ -331,7 +331,7 @@ services.AddScoped<ResultViewModel<ProductsController>>();
 services.AddScoped(typeof(ResultViewModel<>));
 ```
 
-### Error 3 — Constraint demasiado restrictivo
+### Error 3: constraint demasiado restrictivo
 
 ```csharp
 // ❌ where T : ExampleUser — solo acepta ExampleUser (entonces para qué el genérico?)

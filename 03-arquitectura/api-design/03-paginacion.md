@@ -157,7 +157,7 @@ ORDER BY CreatedAtUtc DESC, PublicId DESC
 LIMIT  @pageSize;
 ```
 
-La cláusula `(col1, col2) < (@val1, @val2)` es **row comparison** de PostgreSQL — evalúa como `(col1 < @val1) OR (col1 = @val1 AND col2 < @val2)`.
+La cláusula `(col1, col2) < (@val1, @val2)` es **row comparison** de PostgreSQL. Evalúa como `(col1 < @val1) OR (col1 = @val1 AND col2 < @val2)`.
 
 ### Response con cursor
 
@@ -237,7 +237,7 @@ OFFSET @offset;
 
 ## Relación con back-template
 
-`back-template/docs/Pagination.md` cubre `PagedResult<T>` específico del proyecto. La implementación concreta usa `GetExampleUsersSuccess` con la colección, total, page y pageSize — exactamente el patrón de este documento.
+`back-template/docs/Pagination.md` cubre `PagedResult<T>` específico del proyecto. La implementación concreta usa `GetExampleUsersSuccess` con la colección, total, page y pageSize. Es exactamente el patrón de este documento.
 
 El Controller recibe los query params con `[FromQuery]` y los pasa al Request. El Handler aplica `Math.Clamp(pageSize, 1, 100)` para evitar que el cliente pida 1,000,000 registros.
 

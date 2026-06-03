@@ -10,7 +10,7 @@
 
 ## El problema
 
-Tienes un objeto `Store` que tiene stock de productos. Otros objetos (clientes, notificadores, analytics) quieren saber cuando llega nuevo stock. Sin Observer, el Store necesita conocer directamente a todos los objetos interesados — acoplamiento fuerte.
+Tienes un objeto `Store` que tiene stock de productos. Otros objetos (clientes, notificadores, analytics) quieren saber cuando llega nuevo stock. Sin Observer, el Store necesita conocer directamente a todos los objetos interesados, lo que genera un acoplamiento fuerte.
 
 ```csharp
 // ❌ Sin Observer — Store está acoplado a todos los observadores
@@ -271,7 +271,7 @@ public sealed class GetExampleUserPresenter
 }
 ```
 
-**La diferencia con Observer clásico:** En lugar de `Attach/Detach` manuales, el DI Container gestiona las suscripciones — cuando el Mediator publica, el container resuelve todos los `INotificationHandler<T>` registrados y los notifica.
+**La diferencia con Observer clásico:** en lugar de `Attach/Detach` manuales, el DI Container gestiona las suscripciones. Cuando el Mediator publica, el container resuelve todos los `INotificationHandler<T>` registrados y los notifica.
 
 ---
 
@@ -291,13 +291,13 @@ public sealed class GetExampleUserPresenter
 - Cuando un cambio en un objeto requiere cambiar otros objetos, y no sabes cuántos.
 - Cuando los objetos deben notificar a otros sin hacer suposiciones sobre quiénes son esos objetos.
 - Cuando tienes eventos que múltiples partes del sistema necesitan manejar.
-- Sistemas de eventos, UI (click → múltiples reacciones), sincronización de datos, notificaciones.
+- Sistemas de eventos, UI reactiva, sincronización de datos, notificaciones.
 
 ## Cuándo NO usar
 
-- Para relaciones donde solo hay un suscriptor fijo — la referencia directa es más clara.
+- Para relaciones donde solo hay un suscriptor fijo. La referencia directa es más clara.
 - Cuando los observadores tienen efectos secundarios difíciles de predecir o depurar.
-- Cuando el orden de notificación importa y debe ser controlado — usa Chain of Responsibility.
+- Cuando el orden de notificación importa y debe ser controlado. Usar Chain of Responsibility.
 
 
 ---

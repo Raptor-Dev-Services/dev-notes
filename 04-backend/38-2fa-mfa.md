@@ -15,12 +15,12 @@ Factor 3 — Algo que eres     → biométrico (fuera del scope de un SaaS típi
 ```
 
 **Estrategia recomendada para un SaaS:**
-- TOTP (app autenticadora) como método principal — sin costo, sin dependencia de SMS
-- Email OTP como fallback — cuando el usuario perdió acceso a su app
+- TOTP (app autenticadora) como método principal: sin costo, sin dependencia de SMS
+- Email OTP como fallback: cuando el usuario perdió acceso a su app
 
 ---
 
-## TOTP — Time-based One-Time Password
+## TOTP: Time-based One-Time Password
 
 TOTP genera un código de 6 dígitos que cambia cada 30 segundos. El algoritmo (RFC 6238) usa un secreto compartido entre el servidor y la app del usuario. No requiere conectividad.
 
@@ -204,7 +204,7 @@ public sealed class MfaPendingToken
 }
 ```
 
-### LoginHandler — modificado para 2FA
+### LoginHandler: modificado para 2FA
 
 ```csharp
 // Authentication.Application/UseCases/Login/LoginHandler.cs
@@ -383,7 +383,7 @@ public sealed class AuthController : BaseApiController
 
 ## Cifrado del secreto TOTP
 
-El secreto TOTP se almacena cifrado con AES-256 — si la DB se compromete, el atacante no puede usar los secretos:
+El secreto TOTP se almacena cifrado con AES-256. Si la DB se compromete, el atacante no puede usar los secretos:
 
 ```csharp
 // Common/Encryption/IEncryptionService.cs
@@ -439,14 +439,14 @@ public sealed class AesEncryptionService : IEncryptionService
 
 ## Checklist
 
-- [ ] Secreto TOTP cifrado con AES-256 en la DB — nunca en texto claro
+- [ ] Secreto TOTP cifrado con AES-256 en la DB: nunca en texto claro
 - [ ] Ventana de tolerancia ±1 período (30 segundos) para desfase de reloj
-- [ ] Recovery codes generados al activar 2FA — mostrados solo una vez
-- [ ] Recovery codes almacenados como hash SHA-256 — nunca en texto claro
-- [ ] Token MFA temporal de 5 minutos — no usar el accessToken definitivo hasta pasar el 2FA
+- [ ] Recovery codes generados al activar 2FA: mostrados solo una vez
+- [ ] Recovery codes almacenados como hash SHA-256: nunca en texto claro
+- [ ] Token MFA temporal de 5 minutos: no usar el accessToken definitivo hasta pasar el 2FA
 - [ ] Email OTP como fallback con expiración de 10 minutos
 - [ ] 2FA obligatorio por tenant: `require_2fa` en TenantSettings
-- [ ] `Encryption:Key` en variables de entorno — nunca en appsettings
+- [ ] `Encryption:Key` en variables de entorno: nunca en appsettings
 - [ ] Rate limiting estricto en los endpoints de verificación (evitar fuerza bruta del código de 6 dígitos)
 
 ---

@@ -64,7 +64,7 @@ public sealed class ApiKey
 }
 ```
 
-La API Key **nunca se almacena en texto claro** — solo el hash. El hash permite verificar sin recuperar la key original.
+La API Key **nunca se almacena en texto claro**. Solo el hash permite verificar sin recuperar la key original.
 
 ---
 
@@ -116,7 +116,7 @@ private const int MaxApiKeysPerTenant = 20;
 
 ---
 
-## Autenticar con API Key — Handler de autenticación
+## Autenticar con API Key: Handler de autenticación
 
 ```csharp
 // Host.Api/Authentication/ApiKeyAuthenticationHandler.cs
@@ -210,7 +210,7 @@ builder.Services.AddAuthorization(options =>
 
 ---
 
-## Scopes — permisos granulares de la API Key
+## Scopes: permisos granulares de la API Key
 
 ```csharp
 public static class ApiScopes
@@ -299,7 +299,7 @@ Key "Integración POS Sucursal Norte": TenantId=1, BranchId=10 → solo Sucursal
 Key "Script Reportes Sucursal Sur": TenantId=1, BranchId=11 → solo Sucursal Sur
 ```
 
-El `TenantClaimsMiddleware` procesa el `branch_id` del ClaimsPrincipal (puesto por `ApiKeyAuthenticationHandler`) igual que si viniera del JWT — el Global Query Filter de EF Core filtra por ambos automáticamente.
+El `TenantClaimsMiddleware` procesa el `branch_id` del ClaimsPrincipal (puesto por `ApiKeyAuthenticationHandler`) igual que si viniera del JWT. El Global Query Filter de EF Core filtra por ambos automáticamente.
 
 ---
 
@@ -325,12 +325,12 @@ El cliente crea una nueva key, actualiza su integración para usar la nueva, y l
 ## Checklist
 
 - [ ] La key en texto claro solo se muestra al crear — nunca se recupera después
-- [ ] Almacenar solo el hash SHA-256 — no la key en claro
+- [ ] Almacenar solo el hash SHA-256: no la key en claro
 - [ ] Prefijo en la key para identificar sin revelar (`sk_live_c8f2...`)
-- [ ] Scopes granulares — no dar acceso total por defecto
+- [ ] Scopes granulares: no dar acceso total por defecto
 - [ ] `LastUsedAt` actualizado en cada uso (fire and forget para no bloquear)
-- [ ] `ExpiresAt` opcional — keys de integración suelen ser permanentes pero revocables
-- [ ] Endpoint de revocación — el Admin puede revocar cualquier key de su tenant
+- [ ] `ExpiresAt` opcional: keys de integración suelen ser permanentes pero revocables
+- [ ] Endpoint de revocación: el Admin puede revocar cualquier key de su tenant
 - [ ] El rol `ApiClient` no tiene acceso a endpoints de gestión de usuarios ni de billing
 - [ ] Rate limiting por `api_key_id` en lugar de por `tenant_id` (si la key tiene límites propios)
 

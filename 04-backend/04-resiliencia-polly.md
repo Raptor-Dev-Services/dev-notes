@@ -58,7 +58,7 @@ var response = await retryPolicy.ExecuteAsync(
 
 ### Retry con jitter (recomendado en producción)
 
-El exponential backoff puro puede causar una "tormenta de reintentos" si muchos clientes fallan al mismo tiempo — todos esperan los mismos intervalos y golpean el servidor a la vez:
+El exponential backoff puro puede causar una "tormenta de reintentos" si muchos clientes fallan al mismo tiempo. Todos esperan los mismos intervalos y golpean el servidor a la vez:
 
 ```csharp
 // Exponential backoff + jitter aleatorio — distribuye los reintentos en el tiempo

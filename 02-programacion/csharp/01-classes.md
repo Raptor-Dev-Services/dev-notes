@@ -1,8 +1,8 @@
-﻿# 01 — Clases en C#
+﻿# 01: Clases en C#
 
 Una clase es el bloque fundamental de C#. Todo objeto que existe en tiempo de ejecución viene de una clase.
 
-> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.5 Building Your Own Types with OOP
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price). Ch.5 Building Your Own Types with OOP
 
 ---
 
@@ -41,7 +41,7 @@ Console.WriteLine(p2.Saludar()); // "Hola, soy Luis y tengo 35 años."
 
 Controlan quién puede ver y usar los miembros de una clase. Son la primera palabra de cada declaración.
 
-### `public` — visible para todos
+### `public`: visible para todos
 
 ```csharp
 public class ExampleUsersSql          // cualquier proyecto puede usarla
@@ -53,7 +53,7 @@ public class ExampleUsersSql          // cualquier proyecto puede usarla
 
 Úsalo para: clases de interfaces públicas, métodos que forman parte del contrato externo.
 
-### `private` — solo dentro de la clase
+### `private`: solo dentro de la clase
 
 ```csharp
 public sealed class GetExampleUserHandler
@@ -72,7 +72,7 @@ public sealed class GetExampleUserHandler
 
 **Convención del proyecto:** campos privados se nombran con guión bajo: `_camelCase`.
 
-### `protected` — la clase y sus subclases
+### `protected`: la clase y sus subclases
 
 ```csharp
 public abstract class BaseApiController : ControllerBase
@@ -98,7 +98,7 @@ public sealed class ExampleUsersController : BaseApiController
 
 Úsalo para: miembros que las subclases necesitan pero el código externo no.
 
-### `internal` — solo dentro del mismo proyecto (.csproj)
+### `internal`: solo dentro del mismo proyecto (.csproj)
 
 ```csharp
 // Solo código dentro del proyecto "Infrastructure" puede ver esto
@@ -110,7 +110,7 @@ internal sealed class MainDbConnectionFactory
 
 Úsalo para: detalles de implementación que no deben ser API pública del proyecto, pero sí son accesibles dentro del ensamblado.
 
-### `private protected` — la clase y subclases del mismo proyecto
+### `private protected`: la clase y subclases del mismo proyecto
 
 Combinación restrictiva: heredable, pero solo dentro del mismo ensamblado.
 
@@ -119,7 +119,7 @@ private protected void MetodoInterno() { }
 // Accesible desde subclases, pero solo si están en el mismo proyecto
 ```
 
-### `protected internal` — la clase, subclases, y todo el proyecto
+### `protected internal`: la clase, subclases, y todo el proyecto
 
 ```csharp
 protected internal void MetodoCompartido() { }
@@ -159,7 +159,7 @@ public class ProductRepository : IProductRepository
 }
 ```
 
-### `sealed` — clase sellada, no se puede heredar
+### `sealed`: clase sellada, no se puede heredar
 
 ```csharp
 public sealed class GetExampleUserHandler : IRequestHandler<GetExampleUserRequest, GetExampleUserResponse>
@@ -182,7 +182,7 @@ public sealed class GetExampleUserHandler : IRequestHandler<GetExampleUserReques
 - Cuando la clase está diseñada como base para extensión (`abstract class`)
 - Cuando quieres que los tests puedan hacer subclases para override de comportamiento
 
-### `abstract` — clase abstracta, no se puede instanciar
+### `abstract`: clase abstracta, no se puede instanciar
 
 Una clase que está incompleta a propósito. Define la estructura que las subclases deben completar.
 
@@ -211,7 +211,7 @@ public sealed class ExampleUsersController : BaseApiController
 // var ctrl = new BaseApiController(...);
 ```
 
-**Métodos abstractos** — deben implementarse en subclases:
+**Métodos abstractos**: deben implementarse en subclases:
 
 ```csharp
 public abstract class Animal
@@ -249,7 +249,7 @@ public abstract record GetExampleUserResponse : IResponse;
 // Permite que el presenter reciba cualquier subtipo de respuesta
 ```
 
-### `static` — clase estática
+### `static`: clase estática
 
 No se puede instanciar. Todos sus miembros son estáticos. Vive durante toda la aplicación.
 
@@ -287,7 +287,7 @@ builder.Services.AddWebApiServices();
 - Cuando necesitas DI (las clases estáticas no se inyectan)
 - Cuando el estado varía entre peticiones
 
-### `partial` — clase dividida en múltiples archivos
+### `partial`: clase dividida en múltiples archivos
 
 Permite dividir una clase en varios archivos. El compilador los une.
 
@@ -317,7 +317,7 @@ public partial class ExampleUser
 
 ---
 
-## Object Initializers — inicializar sin constructor explícito
+## Object Initializers: inicializar sin constructor explícito
 
 ```csharp
 // Forma larga
@@ -340,7 +340,7 @@ var user = new ExampleUser
 
 ---
 
-## Nested classes — clases anidadas
+## Nested classes: clases anidadas
 
 Una clase dentro de otra. Útil cuando la clase anidada solo tiene sentido en el contexto de la exterior.
 
@@ -388,7 +388,7 @@ public sealed class GetExampleUsersHandler
 
 ## Errores comunes
 
-### Error 1 — Olvidar `sealed` en implementaciones
+### Error 1: Olvidar `sealed` en implementaciones
 
 ```csharp
 // ❌ sin sealed — deja la puerta abierta a herencia no deseada
@@ -398,7 +398,7 @@ public class GetExampleUserHandler { }
 public sealed class GetExampleUserHandler { }
 ```
 
-### Error 2 — Hacer público lo que debería ser privado
+### Error 2: Hacer público lo que debería ser privado
 
 ```csharp
 // ❌ _db es un detalle de implementación — no debería ser público
@@ -414,7 +414,7 @@ public sealed class ExampleUsersSql
 }
 ```
 
-### Error 3 — Usar `static` cuando se necesita DI
+### Error 3: Usar `static` cuando se necesita DI
 
 ```csharp
 // ❌ sin DI — no puedes testear, no puedes cambiar la implementación
@@ -438,7 +438,7 @@ public sealed class UserService : IUserService
 }
 ```
 
-### Error 4 — Clase con demasiadas responsabilidades
+### Error 4: Clase con demasiadas responsabilidades
 
 ```csharp
 // ❌ una clase que hace todo — difícil de mantener y testear

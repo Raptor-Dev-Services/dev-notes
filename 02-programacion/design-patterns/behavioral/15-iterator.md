@@ -32,7 +32,7 @@ for (int i = 0; i < collection.Items.Count; i++)
 
 ## Analogía
 
-Un guía de tour en una ciudad. Tú (el cliente) quieres ver la ciudad (la colección) pero no necesitas saber las calles. El guía conoce el recorrido. Hay diferentes tours: histórico, gastronómico, arquitectónico — cada uno es un Iterator diferente sobre la misma colección de lugares.
+Un guía de tour en una ciudad. Tú (el cliente) quieres ver la ciudad (la colección) pero no necesitas saber las calles. El guía conoce el recorrido. Hay diferentes tours: histórico, gastronómico, arquitectónico. Cada uno es un Iterator diferente sobre la misma colección de lugares.
 
 ---
 
@@ -186,7 +186,7 @@ foreach (var even in GetEvens(nums))
 
 ### `yield` — cómo funciona
 
-`yield return` pausa la función en ese punto y retorna el valor al consumidor. En la próxima iteración (`MoveNext()`), la función continúa desde donde pausó — el compilador genera una máquina de estados por ti.
+`yield return` pausa la función en ese punto y retorna el valor al consumidor. En la próxima iteración (`MoveNext()`), la función continúa desde donde pausó. El compilador genera una máquina de estados por ti.
 
 ```csharp
 public IEnumerable<int> LazyRange(int from, int to)
@@ -288,12 +288,12 @@ var dtos = users
 - Cuando tienes una colección con una estructura interna compleja y no quieres exponer esa complejidad.
 - Cuando necesitas múltiples formas de recorrer la misma colección.
 - Cuando quieres que diferentes colecciones usen el mismo código de recorrido (polimorfismo).
-- Siempre en C# — `IEnumerable<T>` / `yield return` / LINQ son el Iterator idiomático.
+- Siempre en C#: `IEnumerable<T>`, `yield return` y LINQ son el Iterator idiomático.
 
 ## Cuándo NO usar
 
 - Para colecciones simples de tipo `List<T>` donde el acceso directo es suficiente.
-- Cuando necesitas acceso aleatorio (por índice) — no tiene sentido crear un Iterator.
+- Cuando necesitas acceso aleatorio (por índice). No tiene sentido crear un Iterator.
 
 
 ---

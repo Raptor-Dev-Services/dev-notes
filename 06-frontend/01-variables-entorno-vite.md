@@ -2,7 +2,7 @@
 
 Vite tiene un sistema simple pero estricto. Solo expone al cliente las variables con prefijo `VITE_`. Todas las demás están disponibles únicamente en build-time (Node), nunca llegan al navegador.
 
-> Fuente: *Full Stack React, TypeScript, and Node* (David Choi) — Ch.3 Creating React Apps with Vite
+> Fuente: *Full Stack React, TypeScript, and Node* (David Choi): Ch.3 Creating React Apps with Vite
 
 ---
 
@@ -83,7 +83,7 @@ const api = axios.create({ baseURL: config.apiBaseUrl });
 
 ## Variables nativas de Vite (sin prefijo)
 
-Estas las provee Vite automáticamente — no requieren definición manual:
+Estas las provee Vite automáticamente. No requieren definición manual:
 
 | Variable | Valor |
 |----------|-------|
@@ -130,7 +130,7 @@ interface ImportMeta {
 ✓ VITE_API_BASE_URL      — URL de la API (no es un secreto)
 ```
 
-Los secretos reales van en variables de entorno sin prefijo `VITE_` — accesibles en build scripts de Node, no en el bundle del navegador.
+Los secretos reales van en variables de entorno sin prefijo `VITE_`. Son accesibles en build scripts de Node, no en el bundle del navegador.
 
 ---
 

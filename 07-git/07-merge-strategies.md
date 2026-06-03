@@ -141,7 +141,7 @@ Esto crea un nuevo commit que deshace los cambios del merge, sin reescribir hist
 ---
 
 ## Cherry-pick — aplicar un commit específico
-> Fuente: *Pro Git* (Chacon, Straub) — Ch.7 Git Tools
+> Fuente: *Pro Git* (Chacon, Straub): Ch.7 Git Tools
 
 `cherry-pick` copia un commit de una rama a otra sin hacer merge de toda la rama.
 
@@ -176,8 +176,8 @@ main:    ─────────────────── C' ───�
 - Un commit que se hizo en la rama equivocada
 
 **Cuándo NO usar cherry-pick:**
-- No usarlo para integrar features completas → usa merge
-- Si el commit depende de commits anteriores que no están en la rama destino → conflictos
+- No usarlo para integrar features completas. Usar merge en su lugar.
+- Si el commit depende de commits anteriores que no están en la rama destino, se producirán conflictos.
 
 ---
 

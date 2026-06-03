@@ -76,17 +76,17 @@ El sistema reacciona a flujos de eventos. Modelo natural de interfaces modernas 
 
 ### 1.3 Ciclo de vida del software (SDLC)
 
-**Cascada (Waterfall)** — Cada fase termina antes de empezar la siguiente. Para proyectos con requisitos cerrados (gobierno, normativos).
+**Cascada (Waterfall)**: Cada fase termina antes de empezar la siguiente. Para proyectos con requisitos cerrados (gobierno, normativos).
 
-**Iterativo / incremental** — Se entrega valor en bloques. Cada iteración revisa, ajusta y suma.
+**Iterativo / incremental**: Se entrega valor en bloques. Cada iteración revisa, ajusta y suma.
 
-**Ágil (Agile)** — Filosofía que prioriza personas, software funcionando y respuesta al cambio. Materializada en Scrum, Kanban, XP.
+**Ágil (Agile)**: Filosofía que prioriza personas, software funcionando y respuesta al cambio. Materializada en Scrum, Kanban, XP.
 
-**Scrum** — Sprints de 1-4 semanas, roles (Product Owner, Scrum Master, equipo), eventos (planning, daily, review, retro).
+**Scrum**: Sprints de 1-4 semanas, roles (Product Owner, Scrum Master, equipo), eventos (planning, daily, review, retro).
 
-**Kanban** — Tablero visual sin sprints fijos. Flujo continuo. Útil para soporte y operación de SaaS en marcha.
+**Kanban**: Tablero visual sin sprints fijos. Flujo continuo. Útil para soporte y operación de SaaS en marcha.
 
-**DevOps** — La frontera entre desarrollo y operaciones desaparece. CI/CD, IaC, observabilidad, automatización.
+**DevOps**: La frontera entre desarrollo y operaciones desaparece. CI/CD, IaC, observabilidad, automatización.
 
 ### 1.4 Principios SOLID
 
@@ -100,17 +100,17 @@ El sistema reacciona a flujos de eventos. Modelo natural de interfaces modernas 
 
 ### 1.5 Otros principios fundamentales
 
-**DRY (Don't Repeat Yourself)** — Cada pieza de conocimiento tiene una representación única en el sistema.
+**DRY (Don't Repeat Yourself)**: Cada pieza de conocimiento tiene una representación única en el sistema.
 
-**KISS (Keep It Simple, Stupid)** — Si una solución simple y una compleja resuelven lo mismo, gana la simple.
+**KISS (Keep It Simple, Stupid)**: Si una solución simple y una compleja resuelven lo mismo, gana la simple.
 
-**YAGNI (You Aren't Gonna Need It)** — No construyas funcionalidad "por si acaso". Especialmente importante en SaaS donde el feature creep mata productos.
+**YAGNI (You Aren't Gonna Need It)**: No construyas funcionalidad "por si acaso". Especialmente importante en SaaS donde el feature creep mata productos.
 
-**Fail Fast** — Detecta y reporta errores lo antes posible.
+**Fail Fast**: Detecta y reporta errores lo antes posible.
 
-**Separation of Concerns (SoC)** — Cada componente atiende una responsabilidad clara.
+**Separation of Concerns (SoC)**: Cada componente atiende una responsabilidad clara.
 
-**Twelve-Factor App** — Metodología para construir aplicaciones SaaS modernas: codebase única, dependencias explícitas, configuración en entorno, procesos sin estado, logs como streams, etc.
+**Twelve-Factor App**: Metodología para construir aplicaciones SaaS modernas: codebase única, dependencias explícitas, configuración en entorno, procesos sin estado, logs como streams, etc.
 
 ---
 
@@ -118,87 +118,87 @@ El sistema reacciona a flujos de eventos. Modelo natural de interfaces modernas 
 
 ### 2.1 Conceptos centrales de POO
 
-**Clase** — Plantilla que define estructura (atributos) y comportamiento (métodos).
+**Clase**: Plantilla que define estructura (atributos) y comportamiento (métodos).
 
-**Objeto / Instancia** — Materialización de una clase en memoria con estado propio.
+**Objeto / Instancia**: Materialización de una clase en memoria con estado propio.
 
-**Encapsulamiento** — Esconder detalles internos y exponer solo lo necesario.
+**Encapsulamiento**: Esconder detalles internos y exponer solo lo necesario.
 
-**Herencia** — Una clase hija recibe atributos y métodos de la clase padre. Útil con moderación.
+**Herencia**: Una clase hija recibe atributos y métodos de la clase padre. Útil con moderación.
 
-**Polimorfismo** — Un mismo método se comporta distinto según el tipo concreto del objeto.
+**Polimorfismo**: Un mismo método se comporta distinto según el tipo concreto del objeto.
 
-**Abstracción** — Definir qué hace algo sin definir cómo. Una interfaz es abstracción pura.
+**Abstracción**: Definir qué hace algo sin definir cómo. Una interfaz es abstracción pura.
 
-**Composición sobre herencia** — En lugar de "A es un B", preferir "A tiene un B". Más flexible, menos acoplamiento.
+**Composición sobre herencia**: En lugar de "A es un B", preferir "A tiene un B". Más flexible, menos acoplamiento.
 
 ### 2.2 Patrones creacionales
 
-**Singleton** — Una sola instancia de una clase en todo el sistema. Útil para logger, configuración, cache compartido. Mal usado, mata la testabilidad.
+**Singleton**: Una sola instancia de una clase en todo el sistema. Útil para logger, configuración, cache compartido. Mal usado, mata la testabilidad.
 
-**Factory Method** — Delega la creación de objetos a un método especializado. En SaaS multi-tenant, común para crear conexiones o servicios según el tenant activo.
+**Factory Method**: Delega la creación de objetos a un método especializado. En SaaS multi-tenant, común para crear conexiones o servicios según el tenant activo.
 
-**Abstract Factory** — Familia de fábricas relacionadas. Útil cuando hay que crear conjuntos coherentes de objetos por tenant.
+**Abstract Factory**: Familia de fábricas relacionadas. Útil cuando hay que crear conjuntos coherentes de objetos por tenant.
 
-**Builder** — Construye objetos complejos paso a paso. Cuando un objeto tiene muchos parámetros opcionales evita constructores monstruosos.
+**Builder**: Construye objetos complejos paso a paso. Cuando un objeto tiene muchos parámetros opcionales evita constructores monstruosos.
 
-**Prototype** — Crea nuevos objetos clonando una plantilla. Útil para clonar configuraciones de tenant.
+**Prototype**: Crea nuevos objetos clonando una plantilla. Útil para clonar configuraciones de tenant.
 
 ### 2.3 Patrones estructurales
 
-**Adapter** — Convierte la interfaz de una clase en otra que el cliente espera. El "traductor" para integrar componentes legacy o de terceros.
+**Adapter**: Convierte la interfaz de una clase en otra que el cliente espera. El "traductor" para integrar componentes legacy o de terceros.
 
-**Decorator** — Agrega responsabilidades a un objeto en tiempo de ejecución sin modificar su clase. Base de los middlewares en ASP.NET y de logging y caching transversales.
+**Decorator**: Agrega responsabilidades a un objeto en tiempo de ejecución sin modificar su clase. Base de los middlewares en ASP.NET y de logging y caching transversales.
 
-**Facade** — Expone una interfaz simple sobre un subsistema complejo. Un `BillingFacade` que oculta Stripe, webhooks, notificaciones y actualización de estado del tenant.
+**Facade**: Expone una interfaz simple sobre un subsistema complejo. Un `BillingFacade` que oculta Stripe, webhooks, notificaciones y actualización de estado del tenant.
 
-**Proxy** — Sustituto que controla el acceso a otro objeto. Para caching, control de acceso, lazy loading.
+**Proxy**: Sustituto que controla el acceso a otro objeto. Para caching, control de acceso, lazy loading.
 
-**Composite** — Trata objetos individuales y grupos de forma uniforme. Estructura clásica de árbol: DOM, sistema de archivos, jerarquías de permisos.
+**Composite**: Trata objetos individuales y grupos de forma uniforme. Estructura clásica de árbol: DOM, sistema de archivos, jerarquías de permisos.
 
 ### 2.4 Patrones de comportamiento
 
-**Strategy** — Familia de algoritmos intercambiables. Reemplaza if/else por composición. Ejemplo SaaS: estrategias de pricing por plan.
+**Strategy**: Familia de algoritmos intercambiables. Reemplaza if/else por composición. Ejemplo SaaS: estrategias de pricing por plan.
 
-**Observer** — Dependencia uno-a-muchos: cuando un objeto cambia, todos sus dependientes son notificados. Base de eventos y suscripciones.
+**Observer**: Dependencia uno-a-muchos: cuando un objeto cambia, todos sus dependientes son notificados. Base de eventos y suscripciones.
 
-**Command** — Encapsula una solicitud como un objeto. Permite hacer/deshacer, encolar. Es el pilar del CQRS y de los handlers de Mediator.
+**Command**: Encapsula una solicitud como un objeto. Permite hacer/deshacer, encolar. Es el pilar del CQRS y de los handlers de Mediator.
 
-**Mediator** — Un objeto centraliza la comunicación entre componentes para que no se conozcan entre sí. En .NET, MediatR o el mediator de Common son implementaciones dominantes.
+**Mediator**: Un objeto centraliza la comunicación entre componentes para que no se conozcan entre sí. En .NET, MediatR o el mediator de Common son implementaciones dominantes.
 
-**Chain of Responsibility** — Cadena de manejadores donde cada uno decide si procesa la solicitud o la pasa al siguiente. Modelo del middleware HTTP.
+**Chain of Responsibility**: Cadena de manejadores donde cada uno decide si procesa la solicitud o la pasa al siguiente. Modelo del middleware HTTP.
 
-**State** — Permite que un objeto cambie su comportamiento cuando cambia su estado interno. Útil para máquinas de estado de suscripciones (trial, active, past_due, canceled).
+**State**: Permite que un objeto cambie su comportamiento cuando cambia su estado interno. Útil para máquinas de estado de suscripciones (trial, active, past_due, canceled).
 
-**Template Method** — Define el esqueleto de un algoritmo en una clase base y permite que las subclases redefinan ciertos pasos.
+**Template Method**: Define el esqueleto de un algoritmo en una clase base y permite que las subclases redefinan ciertos pasos.
 
 ### 2.5 Patrones de arquitectura empresarial
 
-**Repository** — Abstrae el acceso a datos. La capa de aplicación pide al repositorio objetos sin saber si vienen de SQL, un archivo o un cache.
+**Repository**: Abstrae el acceso a datos. La capa de aplicación pide al repositorio objetos sin saber si vienen de SQL, un archivo o un cache.
 
-**Unit of Work** — Agrupa operaciones de persistencia para que se hagan commit o rollback como una sola transacción. En EF Core, el `DbContext` actúa como Unit of Work nativo.
+**Unit of Work**: Agrupa operaciones de persistencia para que se hagan commit o rollback como una sola transacción. En EF Core, el `DbContext` actúa como Unit of Work nativo.
 
-**CQRS (Command Query Responsibility Segregation)** — Separa operaciones que modifican estado (commands) de las que solo leen (queries). Permite optimizar cada lado por separado. Muy útil en SaaS donde la lectura es el 90% del tráfico.
+**CQRS (Command Query Responsibility Segregation)**: Separa operaciones que modifican estado (commands) de las que solo leen (queries). Permite optimizar cada lado por separado. Muy útil en SaaS donde la lectura es el 90% del tráfico.
 
-**Specification** — Encapsula criterios de búsqueda o validación como objetos combinables con operadores lógicos (`And`, `Or`, `Not`). Permite construir queries dinámicas sin condicionales dispersos.
+**Specification**: Encapsula criterios de búsqueda o validación como objetos combinables con operadores lógicos (`And`, `Or`, `Not`). Permite construir queries dinámicas sin condicionales dispersos.
 
-**Result Pattern** — Encapsula éxito o falla como un tipo de retorno en lugar de lanzar excepciones. `Result<T>` puede ser `Success<T>`, `NotFound`, `Forbidden`, `Conflict`, `ValidationFailure`. Las excepciones quedan reservadas para errores realmente excepcionales.
+**Result Pattern**: Encapsula éxito o falla como un tipo de retorno en lugar de lanzar excepciones. `Result<T>` puede ser `Success<T>`, `NotFound`, `Forbidden`, `Conflict`, `ValidationFailure`. Las excepciones quedan reservadas para errores realmente excepcionales.
 
-**Outbox Pattern** — Garantiza que los eventos de dominio se publiquen incluso si el broker cae. Los eventos se persisten en una tabla `OutboxMessages` en la misma transacción de BD que el cambio de estado. Un `BackgroundService` los lee y los publica al broker, marcándolos como procesados.
+**Outbox Pattern**: Garantiza que los eventos de dominio se publiquen incluso si el broker cae. Los eventos se persisten en una tabla `OutboxMessages` en la misma transacción de BD que el cambio de estado. Un `BackgroundService` los lee y los publica al broker, marcándolos como procesados.
 
-**Event Sourcing** — En lugar de guardar el estado actual, se guardan todos los eventos que llevaron a él. El estado se reconstruye reproduciendo los eventos. Útil para auditoría fuerte y reportes históricos.
+**Event Sourcing**: En lugar de guardar el estado actual, se guardan todos los eventos que llevaron a él. El estado se reconstruye reproduciendo los eventos. Útil para auditoría fuerte y reportes históricos.
 
-**Saga** — Patrón para coordinar transacciones distribuidas que no pueden hacer rollback ACID. Cada paso tiene su compensación. Crítico cuando hay integraciones externas: cobro, envío de email, provisioning de recursos cloud.
+**Saga**: Patrón para coordinar transacciones distribuidas que no pueden hacer rollback ACID. Cada paso tiene su compensación. Crítico cuando hay integraciones externas: cobro, envío de email, provisioning de recursos cloud.
 
-**DTO (Data Transfer Object)** — Objeto plano que solo lleva datos, sin lógica. Se usa en las fronteras del sistema (API requests/responses) para no exponer entidades internas.
+**DTO (Data Transfer Object)**: Objeto plano que solo lleva datos, sin lógica. Se usa en las fronteras del sistema (API requests/responses) para no exponer entidades internas.
 
-**MVC** — Modelo, Vista, Controlador. Base de ASP.NET MVC.
+**MVC**: Modelo, Vista, Controlador. Base de ASP.NET MVC.
 
-**MVVM** — Variante con ViewModel que adapta el modelo a la vista. Natural en frameworks con binding declarativo.
+**MVVM**: Variante con ViewModel que adapta el modelo a la vista. Natural en frameworks con binding declarativo.
 
-**Anti-Corruption Layer (ACL)** — Capa de traducción que aísla el dominio propio de modelos externos (ERPs legacy, APIs de terceros). Evita que el vocabulario externo contamine el modelo del dominio.
+**Anti-Corruption Layer (ACL)**: Capa de traducción que aísla el dominio propio de modelos externos (ERPs legacy, APIs de terceros). Evita que el vocabulario externo contamine el modelo del dominio.
 
-**Shared Kernel** — Código compartido entre múltiples bounded contexts que cambia raramente y ambos equipos acuerdan explícitamente. Tipos de valor como `UserId`, `Money`, `TenantId`.
+**Shared Kernel**: Código compartido entre múltiples bounded contexts que cambia raramente y ambos equipos acuerdan explícitamente. Tipos de valor como `UserId`, `Money`, `TenantId`.
 
 ### 2.6 Clean Code
 
@@ -216,19 +216,19 @@ El sistema reacciona a flujos de eventos. Modelo natural de interfaces modernas 
 
 ### 3.1 Conceptos fundamentales
 
-**SaaS (Software as a Service)** — Software ofrecido como servicio, accesible vía web, facturado por suscripción. El cliente no instala ni opera infraestructura.
+**SaaS (Software as a Service)**: Software ofrecido como servicio, accesible vía web, facturado por suscripción. El cliente no instala ni opera infraestructura.
 
-**Tenant** — Cliente del SaaS. Una empresa, una organización, una cuenta. Cada tenant tiene sus propios datos, usuarios, configuración y plan.
+**Tenant**: Cliente del SaaS. Una empresa, una organización, una cuenta. Cada tenant tiene sus propios datos, usuarios, configuración y plan.
 
-**Multi-tenancy** — Capacidad del sistema de servir a múltiples tenants desde la misma base de código e infraestructura. La separación entre tenants es lógica.
+**Multi-tenancy**: Capacidad del sistema de servir a múltiples tenants desde la misma base de código e infraestructura. La separación entre tenants es lógica.
 
-**Tenant isolation** — Garantía de que un tenant nunca pueda ver, modificar o afectar los datos de otro. Es el requisito más crítico de cualquier SaaS.
+**Tenant isolation**: Garantía de que un tenant nunca pueda ver, modificar o afectar los datos de otro. Es el requisito más crítico de cualquier SaaS.
 
-**Onboarding** — Proceso por el que un nuevo tenant entra al sistema: registro, verificación, configuración inicial, primer uso.
+**Onboarding**: Proceso por el que un nuevo tenant entra al sistema: registro, verificación, configuración inicial, primer uso.
 
-**Self-service** — El cliente se da de alta, configura y opera sin intervención humana. Marca de un SaaS maduro.
+**Self-service**: El cliente se da de alta, configura y opera sin intervención humana. Marca de un SaaS maduro.
 
-**White-labeling** — Capacidad de presentar el producto con la marca del tenant: logo, colores, dominio personalizado.
+**White-labeling**: Capacidad de presentar el producto con la marca del tenant: logo, colores, dominio personalizado.
 
 ### 3.2 Modelos de tenancy
 
@@ -243,41 +243,41 @@ El sistema reacciona a flujos de eventos. Modelo natural de interfaces modernas 
 
 ### 3.3 Resolución de tenant
 
-**Por subdominio** — `acme.miproducto.com → tenant 'acme'`. Opción más común y la mejor UX. Requiere wildcard DNS y SSL multi-dominio.
+**Por subdominio**: `acme.miproducto.com → tenant 'acme'`. Opción más común y la mejor UX. Requiere wildcard DNS y SSL multi-dominio.
 
-**Por path** — `miproducto.com/acme/...`. Más simple operativamente, peor UX.
+**Por path**: `miproducto.com/acme/...`. Más simple operativamente, peor UX.
 
-**Por header** — Header `X-Tenant-Id` en cada request. Útil para APIs públicas.
+**Por header**: Header `X-Tenant-Id` en cada request. Útil para APIs públicas.
 
-**Por dominio personalizado** — `tenant.cliente.com` apunta al SaaS. Requisito de white-labeling. Implica gestión de certificados SSL automática.
+**Por dominio personalizado**: `tenant.cliente.com` apunta al SaaS. Requisito de white-labeling. Implica gestión de certificados SSL automática.
 
-**Por claim del JWT** — El token contiene el `tenantId`. Combina bien con las anteriores.
+**Por claim del JWT**: El token contiene el `tenantId`. Combina bien con las anteriores.
 
-**Tenant Resolver Middleware** — Componente del pipeline HTTP que identifica el tenant al inicio del request y lo deja disponible para toda la cadena posterior.
+**Tenant Resolver Middleware**: Componente del pipeline HTTP que identifica el tenant al inicio del request y lo deja disponible para toda la cadena posterior.
 
 ### 3.4 Tenant context y propagación
 
-**ITenantContext** — Servicio inyectable que expone `TenantId`, nombre, plan, configuración.
+**ITenantContext**: Servicio inyectable que expone `TenantId`, nombre, plan, configuración.
 
-**AsyncLocal<T>** — Mecanismo de .NET para almacenar valores que viajan con el flujo asíncrono. Implementación típica de TenantContext en peticiones HTTP.
+**AsyncLocal<T>**: Mecanismo de .NET para almacenar valores que viajan con el flujo asíncrono. Implementación típica de TenantContext en peticiones HTTP.
 
-**Tenant scoping en queries** — En modelo pool, cada query debe incluir `WHERE TenantId = @currentTenant`. Olvidarlo expone datos de otros tenants. Se combina con Row-Level Security o filtros globales del ORM.
+**Tenant scoping en queries**: En modelo pool, cada query debe incluir `WHERE TenantId = @currentTenant`. Olvidarlo expone datos de otros tenants. Se combina con Row-Level Security o filtros globales del ORM.
 
-**Tenant en jobs en background** — Un job debe recibir el `TenantId` como parámetro explícito. Nunca asumir el contexto actual del trabajador.
+**Tenant en jobs en background**: Un job debe recibir el `TenantId` como parámetro explícito. Nunca asumir el contexto actual del trabajador.
 
 ### 3.5 Modelos de billing y monetización
 
-**Per-seat / per-user** — Se cobra por usuario activo. Modelo de Slack, Salesforce.
+**Per-seat / per-user**: Se cobra por usuario activo. Modelo de Slack, Salesforce.
 
-**Per-usage / metered** — Se cobra por consumo: peticiones, mensajes, GB almacenados. Modelo de Twilio, AWS.
+**Per-usage / metered**: Se cobra por consumo: peticiones, mensajes, GB almacenados. Modelo de Twilio, AWS.
 
-**Tiered / planes** — Planes Free / Pro / Business / Enterprise con features y límites distintos. Requiere feature flagging por plan.
+**Tiered / planes**: Planes Free / Pro / Business / Enterprise con features y límites distintos. Requiere feature flagging por plan.
 
-**Freemium** — Plan gratuito con limitaciones, plan pagado para crecer.
+**Freemium**: Plan gratuito con limitaciones, plan pagado para crecer.
 
-**Annual contract** — Suscripción anual con descuento. Mejora retención y previsibilidad.
+**Annual contract**: Suscripción anual con descuento. Mejora retención y previsibilidad.
 
-**Trial** — Período de prueba gratuito al inicio (14-30 días). Con tarjeta convierte 5x más.
+**Trial**: Período de prueba gratuito al inicio (14-30 días). Con tarjeta convierte 5x más.
 
 ### 3.6 Métricas SaaS críticas
 
@@ -295,25 +295,25 @@ El sistema reacciona a flujos de eventos. Modelo natural de interfaces modernas 
 
 ### 3.7 Gateways de pago
 
-**Stripe** — El estándar global. APIs limpias, soporte nativo de suscripciones, webhooks, multi-moneda.
+**Stripe**: El estándar global. APIs limpias, soporte nativo de suscripciones, webhooks, multi-moneda.
 
-**Conekta / OpenPay / Mercado Pago** — Gateways con énfasis en mercado latinoamericano. OXXO, SPEI, tarjetas locales.
+**Conekta / OpenPay / Mercado Pago**: Gateways con énfasis en mercado latinoamericano. OXXO, SPEI, tarjetas locales.
 
-**Webhooks de pago** — El gateway envía eventos al SaaS: pago exitoso, pago fallido, cancelación, disputa.
+**Webhooks de pago**: El gateway envía eventos al SaaS: pago exitoso, pago fallido, cancelación, disputa.
 
-**Idempotency key** — Identificador que se envía con peticiones a gateways para evitar cobros duplicados ante reintentos.
+**Idempotency key**: Identificador que se envía con peticiones a gateways para evitar cobros duplicados ante reintentos.
 
-**3D Secure / SCA** — Autenticación reforzada para pagos. Obligatoria en muchos países.
+**3D Secure / SCA**: Autenticación reforzada para pagos. Obligatoria en muchos países.
 
 ### 3.8 Feature flags y control por plan
 
-**Feature flag** — Switch de configuración que activa o desactiva una feature sin redeploy. Permite habilitar features por tenant, por plan, por porcentaje de usuarios o por geografía.
+**Feature flag**: Switch de configuración que activa o desactiva una feature sin redeploy. Permite habilitar features por tenant, por plan, por porcentaje de usuarios o por geografía.
 
-**Feature por plan** — Asociación entre features y planes de suscripción. Si el plan Free no incluye 'export to Excel', la feature debe estar deshabilitada para esos tenants.
+**Feature por plan**: Asociación entre features y planes de suscripción. Si el plan Free no incluye 'export to Excel', la feature debe estar deshabilitada para esos tenants.
 
-**Limits enforcement** — Aplicar límites del plan: número de usuarios, registros, peticiones, GB. Idealmente con grace period y notificaciones antes de bloquear.
+**Limits enforcement**: Aplicar límites del plan: número de usuarios, registros, peticiones, GB. Idealmente con grace period y notificaciones antes de bloquear.
 
-**Herramientas** — LaunchDarkly, Unleash, Flagsmith. Para empezar, basta una tabla `feature_flags(tenant_id, feature_key, enabled)` con cache.
+**Herramientas**: LaunchDarkly, Unleash, Flagsmith. Para empezar, basta una tabla `feature_flags(tenant_id, feature_key, enabled)` con cache.
 
 ### 3.9 Onboarding y activación
 
@@ -327,17 +327,17 @@ El sistema reacciona a flujos de eventos. Modelo natural de interfaces modernas 
 
 ### 3.10 Aislamiento, seguridad y compliance
 
-**Cross-tenant access** — Bug donde un tenant accede a datos de otro. Generalmente por una query sin filtro de `TenantId`. Es el bug más grave posible en SaaS.
+**Cross-tenant access**: Bug donde un tenant accede a datos de otro. Generalmente por una query sin filtro de `TenantId`. Es el bug más grave posible en SaaS.
 
-**Defense in depth** — Múltiples capas: autenticación, autorización, filtro de tenant, RLS en BD, validación de pertenencia en handlers.
+**Defense in depth**: Múltiples capas: autenticación, autorización, filtro de tenant, RLS en BD, validación de pertenencia en handlers.
 
-**Data residency** — Requisito legal de algunos clientes: los datos deben vivir en su país.
+**Data residency**: Requisito legal de algunos clientes: los datos deben vivir en su país.
 
-**GDPR / LFPDPPP** — Regulaciones de protección de datos personales (Europa y México). Consentimiento, derecho de acceso, derecho de borrado.
+**GDPR / LFPDPPP**: Regulaciones de protección de datos personales (Europa y México). Consentimiento, derecho de acceso, derecho de borrado.
 
-**SOC 2** — Estándar de seguridad y disponibilidad para SaaS. Exigido por enterprise.
+**SOC 2**: Estándar de seguridad y disponibilidad para SaaS. Exigido por enterprise.
 
-**ISO 27001** — Estándar internacional de gestión de seguridad de la información.
+**ISO 27001**: Estándar internacional de gestión de seguridad de la información.
 
 ---
 
@@ -345,37 +345,37 @@ El sistema reacciona a flujos de eventos. Modelo natural de interfaces modernas 
 
 ### 4.1 Conceptos del runtime
 
-**.NET Runtime** — Motor que ejecuta el código C# compilado. Incluye GC, JIT y librerías base. Multiplataforma.
+**.NET Runtime**: Motor que ejecuta el código C# compilado. Incluye GC, JIT y librerías base. Multiplataforma.
 
-**CLR (Common Language Runtime)** — Runtime histórico de .NET Framework. En .NET moderno es CoreCLR.
+**CLR (Common Language Runtime)**: Runtime histórico de .NET Framework. En .NET moderno es CoreCLR.
 
-**IL (Intermediate Language)** — Código intermedio al que se compila C#. El JIT lo convierte a código nativo en ejecución.
+**IL (Intermediate Language)**: Código intermedio al que se compila C#. El JIT lo convierte a código nativo en ejecución.
 
-**JIT (Just-In-Time)** — Compilación del IL a código nativo en el momento de ejecución.
+**JIT (Just-In-Time)**: Compilación del IL a código nativo en el momento de ejecución.
 
-**AOT (Ahead-Of-Time)** — Compilación a código nativo antes de ejecutar. Arranque más rápido, menor consumo de memoria.
+**AOT (Ahead-Of-Time)**: Compilación a código nativo antes de ejecutar. Arranque más rápido, menor consumo de memoria.
 
-**Garbage Collector (GC)** — Libera automáticamente memoria de objetos sin referencias. Generacional: Gen 0 (corta vida), Gen 1, Gen 2, LOH (Large Object Heap, objetos > 85 KB).
+**Garbage Collector (GC)**: Libera automáticamente memoria de objetos sin referencias. Generacional: Gen 0 (corta vida), Gen 1, Gen 2, LOH (Large Object Heap, objetos > 85 KB).
 
-**NuGet** — Gestor de paquetes de .NET.
+**NuGet**: Gestor de paquetes de .NET.
 
 ### 4.2 ASP.NET Core
 
-**Kestrel** — Servidor web nativo de ASP.NET Core. Rápido, ligero, multiplataforma.
+**Kestrel**: Servidor web nativo de ASP.NET Core. Rápido, ligero, multiplataforma.
 
-**Middleware** — Componentes que procesan cada petición HTTP en cadena. Authentication, logging, CORS, tenant resolution, manejo de errores.
+**Middleware**: Componentes que procesan cada petición HTTP en cadena. Authentication, logging, CORS, tenant resolution, manejo de errores.
 
-**Dependency Injection (DI)** — Sistema integrado para resolver dependencias. Tres ciclos de vida: Singleton (vida del proceso), Scoped (vida del request), Transient (cada vez que se pide).
+**Dependency Injection (DI)**: Sistema integrado para resolver dependencias. Tres ciclos de vida: Singleton (vida del proceso), Scoped (vida del request), Transient (cada vez que se pide).
 
-**Controller** — Clase que expone endpoints HTTP. En arquitecturas modernas, solo despacha al Mediator.
+**Controller**: Clase que expone endpoints HTTP. En arquitecturas modernas, solo despacha al Mediator.
 
-**Minimal APIs** — Endpoints sin controladores usando expresiones lambda. Para servicios pequeños.
+**Minimal APIs**: Endpoints sin controladores usando expresiones lambda. Para servicios pequeños.
 
-**Routing** — Mapea URLs a endpoints. Soporta rutas con parámetros y restricciones.
+**Routing**: Mapea URLs a endpoints. Soporta rutas con parámetros y restricciones.
 
-**Model Binding** — Conversión automática de datos HTTP a parámetros tipados de C#.
+**Model Binding**: Conversión automática de datos HTTP a parámetros tipados de C#.
 
-**Filters** — Lógica transversal en endpoints: validación, autorización, logging. Alternativa al middleware cuando el contexto es de controlador.
+**Filters**: Lógica transversal en endpoints: validación, autorización, logging. Alternativa al middleware cuando el contexto es de controlador.
 
 ### 4.3 Patrón de casos de uso (UseCase / Mediator)
 
@@ -390,7 +390,7 @@ UseCases/Customers/CreateCustomer/
 
 El controlador recibe la petición, la convierte a `Request`, llama al Mediator, y este encuentra el Handler correcto.
 
-**Pipeline Behaviors** — Middleware del Mediator. Se ejecutan en orden antes y después del Handler. Usos típicos: validación (FluentValidation), caching de queries, logging de performance. Se registran globalmente y aplican a todos los requests que cumplen la restricción de tipo.
+**Pipeline Behaviors**: Middleware del Mediator. Se ejecutan en orden antes y después del Handler. Usos típicos: validación (FluentValidation), caching de queries, logging de performance. Se registran globalmente y aplican a todos los requests que cumplen la restricción de tipo.
 
 ```csharp
 // Behavior que cachea queries que implementan ICacheableQuery
@@ -409,129 +409,129 @@ public sealed class QueryCachingBehavior<TRequest, TResponse>
 | Entity Framework Core | ORM completo. Modelos en C#, LINQ a SQL, migraciones. Ideal para SaaS con esquema controlado por la app. |
 | Dapper | Micro-ORM. Tú escribes el SQL, Dapper mapea los resultados. Más control, mejor rendimiento en reportes. |
 
-**Migrations** — Versiones del esquema de BD como código. Cada cambio es una migración. EF Core las genera y aplica.
+**Migrations**: Versiones del esquema de BD como código. Cada cambio es una migración. EF Core las genera y aplica.
 
-**Global Query Filters** — Feature de EF Core para aplicar filtros automáticos a todas las queries de una entidad. Implementación natural para tenant scoping y soft delete.
+**Global Query Filters**: Feature de EF Core para aplicar filtros automáticos a todas las queries de una entidad. Implementación natural para tenant scoping y soft delete.
 
-**AsNoTracking** — Deshabilita el tracking de EF Core para queries de solo lectura. Reduce uso de memoria y mejora rendimiento significativamente.
+**AsNoTracking**: Deshabilita el tracking de EF Core para queries de solo lectura. Reduce uso de memoria y mejora rendimiento significativamente.
 
-**Async/await** — Cualquier operación de IO debe ser async. Bloquear un hilo en una API desperdicia capacidad del servidor.
+**Async/await**: Cualquier operación de IO debe ser async. Bloquear un hilo en una API desperdicia capacidad del servidor.
 
-**Connection pooling** — Reutilización de conexiones a la BD. ADO.NET y EF lo manejan automáticamente.
+**Connection pooling**: Reutilización de conexiones a la BD. ADO.NET y EF lo manejan automáticamente.
 
 ### 4.5 Autenticación y autorización
 
-**Autenticación** — Verificar quién es el usuario. Resultado: una identidad.
+**Autenticación**: Verificar quién es el usuario. Resultado: una identidad.
 
-**Autorización** — Verificar qué puede hacer ese usuario autenticado. Resultado: permitir o denegar.
+**Autorización**: Verificar qué puede hacer ese usuario autenticado. Resultado: permitir o denegar.
 
-**JWT (JSON Web Token)** — Token firmado que contiene claims. Stateless: el servidor no guarda sesión. Estándar dominante en APIs modernas. El payload es solo base64, no está cifrado — nunca poner información sensible.
+**JWT (JSON Web Token)**: Token firmado que contiene claims. Stateless: el servidor no guarda sesión. Estándar dominante en APIs modernas. El payload es solo base64, no está cifrado. Nunca poner información sensible.
 
-**OAuth 2.0** — Protocolo para delegar autorización a un proveedor externo.
+**OAuth 2.0**: Protocolo para delegar autorización a un proveedor externo.
 
-**OpenID Connect (OIDC)** — Capa de autenticación encima de OAuth. Lo que realmente usas con login de Google/Microsoft.
+**OpenID Connect (OIDC)**: Capa de autenticación encima de OAuth. Lo que realmente usas con login de Google/Microsoft.
 
-**RBAC (Role-Based Access Control)** — Permisos asignados a roles y roles a usuarios. Simple y comprensible.
+**RBAC (Role-Based Access Control)**: Permisos asignados a roles y roles a usuarios. Simple y comprensible.
 
-**ABAC (Attribute-Based Access Control)** — Decisión basada en atributos del usuario, recurso y contexto. Más flexible, más complejo.
+**ABAC (Attribute-Based Access Control)**: Decisión basada en atributos del usuario, recurso y contexto. Más flexible, más complejo.
 
-**Refresh token** — Token de larga duración para obtener nuevos JWTs sin volver a pedir credenciales. Se rota en cada uso (rotation pattern).
+**Refresh token**: Token de larga duración para obtener nuevos JWTs sin volver a pedir credenciales. Se rota en cada uso (rotation pattern).
 
-**Token Blacklist** — Para revocar JWTs antes de su expiración, el `jti` del token se almacena en Redis hasta que expire. Un middleware verifica en cada request.
+**Token Blacklist**: Para revocar JWTs antes de su expiración, el `jti` del token se almacena en Redis hasta que expire. Un middleware verifica en cada request.
 
-**HS256 vs RS256** — HS256 usa un secreto compartido para firmar y verificar. RS256 usa par de claves: la privada firma (solo el auth server), la pública verifica (cualquier servicio). RS256 es preferible en microservicios.
+**HS256 vs RS256**: HS256 usa un secreto compartido para firmar y verificar. RS256 usa par de claves: la privada firma (solo el auth server), la pública verifica (cualquier servicio). RS256 es preferible en microservicios.
 
-**Keycloak** — Servidor de identidad open-source. Implementa OAuth 2.0 y OIDC. Soporta multi-tenancy por realms. Útil para M2M (machine-to-machine) con client credentials flow.
+**Keycloak**: Servidor de identidad open-source. Implementa OAuth 2.0 y OIDC. Soporta multi-tenancy por realms. Útil para M2M (machine-to-machine) con client credentials flow.
 
 ### 4.6 SignalR — comunicación en tiempo real
 
-**SignalR** — Empuja datos del servidor al cliente sin polling. Base de notificaciones, dashboards en vivo, chat.
+**SignalR**: Empuja datos del servidor al cliente sin polling. Base de notificaciones, dashboards en vivo, chat.
 
-**Hub** — Clase del lado del servidor donde se definen métodos invocables por el cliente.
+**Hub**: Clase del lado del servidor donde se definen métodos invocables por el cliente.
 
-**WebSocket** — Protocolo bidireccional. Transporte preferido de SignalR. Cae a SSE o long-polling como fallback.
+**WebSocket**: Protocolo bidireccional. Transporte preferido de SignalR. Cae a SSE o long-polling como fallback.
 
-**Group** — Conjunto lógico de clientes. En SaaS, lo natural es agrupar por tenant para que las notificaciones lleguen solo a usuarios del tenant correcto.
+**Group**: Conjunto lógico de clientes. En SaaS, lo natural es agrupar por tenant para que las notificaciones lleguen solo a usuarios del tenant correcto.
 
-**Backplane** — Escala SignalR horizontalmente: Redis o Azure SignalR Service. Necesario cuando hay múltiples instancias.
+**Backplane**: Escala SignalR horizontalmente: Redis o Azure SignalR Service. Necesario cuando hay múltiples instancias.
 
 ### 4.7 Validación y FluentValidation
 
-**Data Annotations** — Atributos en propiedades de modelos. Simple, integrado al binding.
+**Data Annotations**: Atributos en propiedades de modelos. Simple, integrado al binding.
 
-**FluentValidation** — Separa validación del modelo en clases dedicadas. Más expresiva, mejor testabilidad.
+**FluentValidation**: Separa validación del modelo en clases dedicadas. Más expresiva, mejor testabilidad.
 
-**Validator pipeline** — Cuando se combina FluentValidation con MediatR/Mediator, las validaciones se ejecutan automáticamente antes de cada handler.
+**Validator pipeline**: Cuando se combina FluentValidation con MediatR/Mediator, las validaciones se ejecutan automáticamente antes de cada handler.
 
 ### 4.8 Resiliencia con Polly
 
-**Retry** — Reintentar operaciones fallidas con backoff exponencial y jitter. Útil para llamadas HTTP a servicios externos.
+**Retry**: Reintentar operaciones fallidas con backoff exponencial y jitter. Útil para llamadas HTTP a servicios externos.
 
-**Circuit Breaker** — Abre el circuito cuando las fallas superan un umbral. Evita cascada de fallos. Se cierra automáticamente después de un período.
+**Circuit Breaker**: Abre el circuito cuando las fallas superan un umbral. Evita cascada de fallos. Se cierra automáticamente después de un período.
 
-**Timeout** — Límite de tiempo para una operación. Fail fast si el servicio externo no responde.
+**Timeout**: Límite de tiempo para una operación. Fail fast si el servicio externo no responde.
 
-**Hedging** — Envía múltiples requests en paralelo y usa la primera respuesta. Para latencia P99.
+**Hedging**: Envía múltiples requests en paralelo y usa la primera respuesta. Para latencia P99.
 
-**Microsoft.Extensions.Http.Resilience** — Paquete oficial que integra Polly en `IHttpClientFactory`.
+**Microsoft.Extensions.Http.Resilience**: Paquete oficial que integra Polly en `IHttpClientFactory`.
 
 ### 4.9 Caching
 
-**In-memory cache** — Cache en el proceso. Rápido. No compartido entre instancias. Útil para datos de solo lectura que cambian raramente.
+**In-memory cache**: Cache en el proceso. Rápido. No compartido entre instancias. Útil para datos de solo lectura que cambian raramente.
 
-**Distributed cache (Redis)** — Cache compartido entre instancias. Estándar para SaaS de múltiples réplicas.
+**Distributed cache (Redis)**: Cache compartido entre instancias. Estándar para SaaS de múltiples réplicas.
 
-**Output Caching** — Cachea la respuesta HTTP completa por ruta y parámetros. .NET 7+ incluye middleware nativo con políticas e invalidación por tags.
+**Output Caching**: Cachea la respuesta HTTP completa por ruta y parámetros. .NET 7+ incluye middleware nativo con políticas e invalidación por tags.
 
-**Cache aside** — La app pregunta al cache; si no encuentra, consulta la BD y guarda en cache.
+**Cache aside**: La app pregunta al cache; si no encuentra, consulta la BD y guarda en cache.
 
-**Cache stampede** — Cuando el cache expira, muchos requests simultáneos van a la BD. Solución: `SemaphoreSlim` con doble check o locking distribuido.
+**Cache stampede**: Cuando el cache expira, muchos requests simultáneos van a la BD. Solución: `SemaphoreSlim` con doble check o locking distribuido.
 
-**Cache key con TenantId** — En multi-tenant, toda key de cache debe incluir el TenantId. `customer:123` es bug; `tenant:acme:customer:123` es correcto.
+**Cache key con TenantId**: En multi-tenant, toda key de cache debe incluir el TenantId. `customer:123` es bug; `tenant:acme:customer:123` es correcto.
 
 ### 4.10 Background services
 
-**IHostedService / BackgroundService** — Servicios en segundo plano que corren con la vida de la aplicación. `ExecuteAsync` con `CancellationToken`.
+**IHostedService / BackgroundService**: Servicios en segundo plano que corren con la vida de la aplicación. `ExecuteAsync` con `CancellationToken`.
 
-**PeriodicTimer** — Timer que no acumula drift. Preferible a `Task.Delay` en bucles de ejecución periódica.
+**PeriodicTimer**: Timer que no acumula drift. Preferible a `Task.Delay` en bucles de ejecución periódica.
 
-**Channel<T>** — Cola en memoria para comunicación productor-consumidor dentro del proceso. Alternativa ligera a un broker externo para volúmenes bajos.
+**Channel<T>**: Cola en memoria para comunicación productor-consumidor dentro del proceso. Alternativa ligera a un broker externo para volúmenes bajos.
 
-**Hangfire** — Jobs persistentes con dashboard web. Soporta enqueueing, scheduling y recurrentes. Persiste en PostgreSQL.
+**Hangfire**: Jobs persistentes con dashboard web. Soporta enqueueing, scheduling y recurrentes. Persiste en PostgreSQL.
 
-**Tenant en jobs** — Regla crítica: cada job debe recibir el `TenantId` como parámetro explícito. Nunca asumir el contexto del thread actual.
+**Tenant en jobs**: Regla crítica: cada job debe recibir el `TenantId` como parámetro explícito. Nunca asumir el contexto del thread actual.
 
 ### 4.11 Performance en .NET
 
-**Span<T>** — Representa un segmento de memoria contigua sin allocar. Permite procesar strings, arrays y buffers sin copias. Solo en stack.
+**Span<T>**: Representa un segmento de memoria contigua sin allocar. Permite procesar strings, arrays y buffers sin copias. Solo en stack.
 
-**Memory<T>** — Versión de Span<T> que puede almacenarse en heap. Útil en async.
+**Memory<T>**: Versión de Span<T> que puede almacenarse en heap. Útil en async.
 
-**MemoryPool<T>** — Pool de buffers reutilizables. Evita allocations en hot paths.
+**MemoryPool<T>**: Pool de buffers reutilizables. Evita allocations en hot paths.
 
-**ObjectPool<T>** — Pool de objetos costosos de crear (`StringBuilder`, conexiones, etc.).
+**ObjectPool<T>**: Pool de objetos costosos de crear (`StringBuilder`, conexiones, etc.).
 
-**BenchmarkDotNet** — Framework para micro-benchmarks en .NET. `[MemoryDiagnoser]` reporta allocations y GC collections junto con tiempo.
+**BenchmarkDotNet**: Framework para micro-benchmarks en .NET. `[MemoryDiagnoser]` reporta allocations y GC collections junto con tiempo.
 
-**StringBuilder** — Concatenar strings con `+` en bucles produce N-1 strings intermedios. `StringBuilder` es O(n). `StringWriter` es aún más eficiente para output pesado.
+**StringBuilder**: Concatenar strings con `+` en bucles produce N-1 strings intermedios. `StringBuilder` es O(n). `StringWriter` es aún más eficiente para output pesado.
 
 ### 4.12 Testing
 
-**xUnit** — Framework de testing dominante en .NET. `[Fact]` para tests individuales, `[Theory]` con `[InlineData]` / `[MemberData]` para tests parametrizados.
+**xUnit**: Framework de testing dominante en .NET. `[Fact]` para tests individuales, `[Theory]` con `[InlineData]` / `[MemberData]` para tests parametrizados.
 
-**Fluent Assertions** — API expresiva para assertions. `result.Should().BeEquivalentTo(expected)`.
+**Fluent Assertions**: API expresiva para assertions. `result.Should().BeEquivalentTo(expected)`.
 
-**Unit Tests** — Prueban lógica de dominio aislada. Sin IO. Sin mocks de base de datos. Rápidos.
+**Unit Tests**: Prueban lógica de dominio aislada. Sin IO. Sin mocks de base de datos. Rápidos.
 
-**Integration Tests** — Prueban la integración de capas reales. Usan base de datos real (no mock).
+**Integration Tests**: Prueban la integración de capas reales. Usan base de datos real (no mock).
 
-**Testcontainers** — Levanta contenedores Docker en el test. Permite PostgreSQL, Redis real en integration tests.
+**Testcontainers**: Levanta contenedores Docker en el test. Permite PostgreSQL, Redis real en integration tests.
 
-**TDD (Test-Driven Development)** — Red → Green → Refactor. Escribir el test primero fuerza a pensar en el API antes que en la implementación.
+**TDD (Test-Driven Development)**: Red, Green, Refactor. Escribir el test primero fuerza a pensar en el API antes que en la implementación.
 
-**Evaluación semántica** — En tests de LLMs no se verifica igualdad exacta sino criterios: contiene palabras clave, tiene longitud razonable, está en el idioma correcto.
+**Evaluación semántica**: En tests de LLMs no se verifica igualdad exacta sino criterios: contiene palabras clave, tiene longitud razonable, está en el idioma correcto.
 
-**Snapshot testing** — Serializa el resultado y lo compara contra un archivo guardado. Útil para respuestas de API complejas. `Verify.Xunit`.
+**Snapshot testing**: Serializa el resultado y lo compara contra un archivo guardado. Útil para respuestas de API complejas. `Verify.Xunit`.
 
 ---
 
@@ -539,21 +539,21 @@ public sealed class QueryCachingBehavior<TRequest, TResponse>
 
 ### 5.1 Conceptos fundamentales
 
-**RDBMS** — Motor de bases de datos relacionales. PostgreSQL, SQL Server, MySQL.
+**RDBMS**: Motor de bases de datos relacionales. PostgreSQL, SQL Server, MySQL.
 
-**Tabla** — Estructura tabular con columnas (atributos) y filas (registros).
+**Tabla**: Estructura tabular con columnas (atributos) y filas (registros).
 
-**Esquema** — Conjunto lógico de objetos (tablas, vistas, procedimientos). En multi-tenant "schema per tenant", cada tenant tiene su esquema.
+**Esquema**: Conjunto lógico de objetos (tablas, vistas, procedimientos). En multi-tenant "schema per tenant", cada tenant tiene su esquema.
 
-**Llave primaria (PK)** — Columna que identifica unívocamente cada fila.
+**Llave primaria (PK)**: Columna que identifica unívocamente cada fila.
 
-**Llave foránea (FK)** — Columna que referencia la PK de otra tabla. Mantiene integridad referencial.
+**Llave foránea (FK)**: Columna que referencia la PK de otra tabla. Mantiene integridad referencial.
 
-**Índice** — Estructura que acelera búsquedas. Cada índice acelera lecturas pero penaliza escrituras.
+**Índice**: Estructura que acelera búsquedas. Cada índice acelera lecturas pero penaliza escrituras.
 
-**Vista** — Consulta guardada que se comporta como tabla.
+**Vista**: Consulta guardada que se comporta como tabla.
 
-**Trigger** — Código que se dispara automáticamente ante eventos. Útil para auditoría; peligroso si se usa para lógica de negocio.
+**Trigger**: Código que se dispara automáticamente ante eventos. Útil para auditoría; peligroso si se usa para lógica de negocio.
 
 ### 5.2 Modelado y normalización
 
@@ -563,71 +563,71 @@ public sealed class QueryCachingBehavior<TRequest, TResponse>
 | 2NF | Cumple 1NF y los atributos no clave dependen de toda la PK. |
 | 3NF | Cumple 2NF y los atributos no clave dependen solo de la PK. |
 
-**Desnormalización** — Introducir redundancia controlada por rendimiento. Se hace cuando se ha medido, no por costumbre.
+**Desnormalización**: Introducir redundancia controlada por rendimiento. Se hace cuando se ha medido, no por costumbre.
 
-**OLTP** — Cargas transaccionales: muchas escrituras pequeñas, baja latencia.
+**OLTP**: Cargas transaccionales: muchas escrituras pequeñas, baja latencia.
 
-**OLAP** — Cargas analíticas: pocas consultas pesadas sobre grandes volúmenes.
+**OLAP**: Cargas analíticas: pocas consultas pesadas sobre grandes volúmenes.
 
 ### 5.3 Multi-tenant en bases de datos
 
-**TenantId column** — En modelo pool, columna presente en cada tabla del dominio. Toda query la filtra, toda inserción la pone explícitamente.
+**TenantId column**: En modelo pool, columna presente en cada tabla del dominio. Toda query la filtra, toda inserción la pone explícitamente.
 
-**Row-Level Security (RLS)** — Feature de PostgreSQL que aplica filtros automáticamente a nivel de fila según el contexto de sesión. Defensa crítica en pool.
+**Row-Level Security (RLS)**: Feature de PostgreSQL que aplica filtros automáticamente a nivel de fila según el contexto de sesión. Defensa crítica en pool.
 
-**Composite PK con TenantId** — Hacer `(TenantId, Id)` la llave primaria garantiza por diseño que no se mezclan entidades entre tenants.
+**Composite PK con TenantId**: Hacer `(TenantId, Id)` la llave primaria garantiza por diseño que no se mezclan entidades entre tenants.
 
-**Índices con TenantId al inicio** — Todo índice debe tener TenantId como primera columna. Las queries siempre filtran por tenant; el índice debe servir ese patrón.
+**Índices con TenantId al inicio**: Todo índice debe tener TenantId como primera columna. Las queries siempre filtran por tenant; el índice debe servir ese patrón.
 
-**Sharding por tenant** — Distribuir tenants entre múltiples bases físicas para escalar. Necesario solo a gran escala.
+**Sharding por tenant**: Distribuir tenants entre múltiples bases físicas para escalar. Necesario solo a gran escala.
 
 ### 5.4 SQL avanzado
 
-**CTE (Common Table Expression)** — Sub-consulta nombrada con `WITH`. Mejora legibilidad y permite recursión.
+**CTE (Common Table Expression)**: Sub-consulta nombrada con `WITH`. Mejora legibilidad y permite recursión.
 
-**Window Functions** — Funciones que calculan valores sobre una "ventana" de filas relacionadas sin colapsar el resultado.
-- `ROW_NUMBER()` — Numeración única por partición.
-- `RANK()` / `DENSE_RANK()` — Ranking con o sin gaps en empates.
-- `LAG()` / `LEAD()` — Valor de la fila anterior/siguiente.
-- `SUM() OVER (PARTITION BY ... ORDER BY ...)` — Totales acumulados.
+**Window Functions**: Funciones que calculan valores sobre una "ventana" de filas relacionadas sin colapsar el resultado.
+- `ROW_NUMBER()`: Numeración única por partición.
+- `RANK()` / `DENSE_RANK()`: Ranking con o sin gaps en empates.
+- `LAG()` / `LEAD()`: Valor de la fila anterior/siguiente.
+- `SUM() OVER (PARTITION BY ... ORDER BY ...)`: Totales acumulados.
 
-**JOIN** — `INNER` (solo coincidencias), `LEFT` (todo de izquierda), `RIGHT`, `FULL`.
+**JOIN**: `INNER` (solo coincidencias), `LEFT` (todo de izquierda), `RIGHT`, `FULL`.
 
-**DDL / DML / DCL / TCL** — Data Definition, Manipulation, Control, Transaction Language.
+**DDL / DML / DCL / TCL**: Data Definition, Manipulation, Control, Transaction Language.
 
 ### 5.5 Transacciones y concurrencia
 
-**Transacción** — Conjunto de operaciones que se completan todas o se deshacen todas.
+**Transacción**: Conjunto de operaciones que se completan todas o se deshacen todas.
 
-**ACID** — Atomicidad, Consistencia, Aislamiento, Durabilidad.
+**ACID**: Atomicidad, Consistencia, Aislamiento, Durabilidad.
 
-**Niveles de aislamiento** — READ UNCOMMITTED, READ COMMITTED, REPEATABLE READ, SERIALIZABLE, SNAPSHOT.
+**Niveles de aislamiento**: READ UNCOMMITTED, READ COMMITTED, REPEATABLE READ, SERIALIZABLE, SNAPSHOT.
 
-**Deadlock** — Dos transacciones se bloquean mutuamente. El motor detecta y aborta la "víctima".
+**Deadlock**: Dos transacciones se bloquean mutuamente. El motor detecta y aborta la "víctima".
 
-**Optimistic concurrency** — Asumir que los conflictos son raros. Validar al guardar con una columna `Version`. Si `rowsAffected == 0`, hubo conflicto.
+**Optimistic concurrency**: Asumir que los conflictos son raros. Validar al guardar con una columna `Version`. Si `rowsAffected == 0`, hubo conflicto.
 
-**Pessimistic concurrency** — Bloquear el recurso al leerlo (`SELECT FOR UPDATE`). Más restrictivo, menor concurrencia. Se usa cuando el conflicto es probable.
+**Pessimistic concurrency**: Bloquear el recurso al leerlo (`SELECT FOR UPDATE`). Más restrictivo, menor concurrencia. Se usa cuando el conflicto es probable.
 
 ### 5.6 Rendimiento y planes de ejecución
 
-**EXPLAIN ANALYZE** — Muestra el plan real de ejecución con tiempos y costos. El principal instrumento de diagnóstico en PostgreSQL.
+**EXPLAIN ANALYZE**: Muestra el plan real de ejecución con tiempos y costos. El principal instrumento de diagnóstico en PostgreSQL.
 
 Patrones de alerta en un plan:
-- `Seq Scan` en tabla grande → falta índice.
-- `Rows Removed by Filter: N` alto → el índice no aplica o el filtro no es sargable.
-- `Nested Loop` con miles de iteraciones → N+1 problem.
-- `Sort` → considerar índice sobre las columnas del ORDER BY.
+- `Seq Scan` en tabla grande: falta índice.
+- `Rows Removed by Filter: N` alto: el índice no aplica o el filtro no es sargable.
+- `Nested Loop` con miles de iteraciones: N+1 problem.
+- `Sort`: considerar índice sobre las columnas del ORDER BY.
 
-**Sargability** — Una condición es "sargable" si permite usar índice. `WHERE YEAR(fecha) = 2025` NO es sargable. `WHERE fecha >= '2025-01-01'` sí lo es.
+**Sargability**: Una condición es "sargable" si permite usar índice. `WHERE YEAR(fecha) = 2025` NO es sargable. `WHERE fecha >= '2025-01-01'` sí lo es.
 
-**N+1 problem** — Una query principal y luego una por cada resultado. Solución: `Include`/`Join` explícitos.
+**N+1 problem**: Una query principal y luego una por cada resultado. Solución: `Include`/`Join` explícitos.
 
 ### 5.7 Particionamiento en PostgreSQL
 
-**PARTITION BY RANGE** — Divide una tabla en sub-tablas por rango de valores (fecha, ID). Mejora rendimiento de queries que filtran por esa columna.
+**PARTITION BY RANGE**: Divide una tabla en sub-tablas por rango de valores (fecha, ID). Mejora rendimiento de queries que filtran por esa columna.
 
-**PARTITION BY LIST** — Divide por valores discretos. Útil para particionar por `TenantId` cuando los tenants son estables.
+**PARTITION BY LIST**: Divide por valores discretos. Útil para particionar por `TenantId` cuando los tenants son estables.
 
 ### 5.8 PostgreSQL para SaaS
 
@@ -643,15 +643,15 @@ Patrones de alerta en un plan:
 
 ### 6.1 React: conceptos centrales
 
-**Componente** — Función que recibe props y devuelve JSX. Unidad de composición.
+**Componente**: Función que recibe props y devuelve JSX. Unidad de composición.
 
-**JSX** — Sintaxis que mezcla XML con JavaScript. Se compila a `React.createElement`. No es HTML.
+**JSX**: Sintaxis que mezcla XML con JavaScript. Se compila a `React.createElement`. No es HTML.
 
-**Props** — Datos que un componente recibe del padre. Inmutables dentro del componente.
+**Props**: Datos que un componente recibe del padre. Inmutables dentro del componente.
 
-**State** — Datos internos del componente que sí cambian. Cuando cambia, el componente se re-renderiza.
+**State**: Datos internos del componente que sí cambian. Cuando cambia, el componente se re-renderiza.
 
-**Hook** — Función que permite usar características de React en componentes funcionales.
+**Hook**: Función que permite usar características de React en componentes funcionales.
 
 | Hook | Para qué sirve |
 |---|---|
@@ -663,21 +663,21 @@ Patrones de alerta en un plan:
 | `useRef` | Referencia mutable que no causa re-render |
 | `useReducer` | State complejo con lógica de actualización |
 
-**Custom Hook** — Función propia que combina otros hooks. Extrae y reutiliza lógica con estado.
+**Custom Hook**: Función propia que combina otros hooks. Extrae y reutiliza lógica con estado.
 
-**Virtual DOM** — Representación en memoria del árbol de componentes. React calcula el diff y aplica solo los cambios al DOM real.
+**Virtual DOM**: Representación en memoria del árbol de componentes. React calcula el diff y aplica solo los cambios al DOM real.
 
 ### 6.2 Patrones modernos en React
 
-**Composición** — Construir componentes complejos a partir de simples. Prefiere composición sobre configuraciones gigantes.
+**Composición**: Construir componentes complejos a partir de simples. Prefiere composición sobre configuraciones gigantes.
 
-**Lifting state up** — Mover el estado al ancestro común más cercano cuando varios componentes lo necesitan compartir.
+**Lifting state up**: Mover el estado al ancestro común más cercano cuando varios componentes lo necesitan compartir.
 
-**Compound components** — Familia de componentes que trabajan juntos: `<Tabs>`, `<Tabs.List>`, `<Tabs.Tab>`.
+**Compound components**: Familia de componentes que trabajan juntos: `<Tabs>`, `<Tabs.List>`, `<Tabs.Tab>`.
 
-**Suspense** — Muestra un fallback mientras un hijo asíncrono carga.
+**Suspense**: Muestra un fallback mientras un hijo asíncrono carga.
 
-**Error Boundary** — Captura errores de sus hijos y muestra UI de respaldo.
+**Error Boundary**: Captura errores de sus hijos y muestra UI de respaldo.
 
 ### 6.3 State management
 
@@ -690,37 +690,37 @@ Patrones de alerta en un plan:
 
 ### 6.4 Vite
 
-**Dev server** — Sirve módulos individualmente con HMR instantáneo.
+**Dev server**: Sirve módulos individualmente con HMR instantáneo.
 
-**HMR** — Reemplaza módulos sin recargar la página.
+**HMR**: Reemplaza módulos sin recargar la página.
 
-**Build** — Para producción usa Rollup: tree-shaking, code splitting, optimización.
+**Build**: Para producción usa Rollup: tree-shaking, code splitting, optimización.
 
-**Alias** — `'@components/Button'` resuelve a `'src/components/Button'`. Evita rutas relativas frágiles.
+**Alias**: `'@components/Button'` resuelve a `'src/components/Button'`. Evita rutas relativas frágiles.
 
-**Proxy** — El dev server puede proxiar peticiones a APIs reales evitando CORS en desarrollo.
+**Proxy**: El dev server puede proxiar peticiones a APIs reales evitando CORS en desarrollo.
 
-**Variables de entorno** — Solo las variables con prefijo `VITE_` se exponen al cliente. Nunca poner secretos con ese prefijo.
+**Variables de entorno**: Solo las variables con prefijo `VITE_` se exponen al cliente. Nunca poner secretos con ese prefijo.
 
 ### 6.5 Tailwind CSS
 
-**Utility class** — Clase que hace una sola cosa: `p-4`, `text-lg`, `bg-slate-900`.
+**Utility class**: Clase que hace una sola cosa: `p-4`, `text-lg`, `bg-slate-900`.
 
-**Responsive prefixes** — `md:flex` aplica `flex` a partir del breakpoint mediano. Mobile-first por defecto.
+**Responsive prefixes**: `md:flex` aplica `flex` a partir del breakpoint mediano. Mobile-first por defecto.
 
-**Variants** — `hover:`, `focus:`, `disabled:`, `dark:` aplican utilidades en estados específicos.
+**Variants**: `hover:`, `focus:`, `disabled:`, `dark:` aplican utilidades en estados específicos.
 
-**Design system** — Centralizar combinaciones de utilidades en tokens semánticos. `ui.controls.primaryButton`.
+**Design system**: Centralizar combinaciones de utilidades en tokens semánticos. `ui.controls.primaryButton`.
 
-**Tailwind 4** — Engine completamente reescrito. Configuración por CSS, sin `tailwind.config.js` obligatorio.
+**Tailwind 4**: Engine completamente reescrito. Configuración por CSS, sin `tailwind.config.js` obligatorio.
 
 ### 6.6 White-labeling y theming
 
-**Theme tokens** — Colores, fuentes, radios definidos como variables CSS. Cambiarlos por tenant cambia toda la UI sin tocar componentes.
+**Theme tokens**: Colores, fuentes, radios definidos como variables CSS. Cambiarlos por tenant cambia toda la UI sin tocar componentes.
 
-**CSS variables** — Variables nativas (`--color-primary`). Cambian en runtime sin recompilar.
+**CSS variables**: Variables nativas (`--color-primary`). Cambian en runtime sin recompilar.
 
-**Custom domain** — `tenant.cliente.com` en lugar de `tenant.miproducto.com`. Implica DNS y SSL automático.
+**Custom domain**: `tenant.cliente.com` en lugar de `tenant.miproducto.com`. Implica DNS y SSL automático.
 
 ---
 
@@ -728,21 +728,21 @@ Patrones de alerta en un plan:
 
 ### 7.1 Conceptos centrales
 
-**Repositorio (repo)** — Carpeta versionada con todo el histórico.
+**Repositorio (repo)**: Carpeta versionada con todo el histórico.
 
-**Commit** — Snapshot inmutable del proyecto con autor, fecha, mensaje y hash SHA único.
+**Commit**: Snapshot inmutable del proyecto con autor, fecha, mensaje y hash SHA único.
 
-**Branch** — Línea de desarrollo paralela. Es solo un puntero a un commit; crear una rama es gratis.
+**Branch**: Línea de desarrollo paralela. Es solo un puntero a un commit; crear una rama es gratis.
 
-**HEAD** — Puntero al commit actual.
+**HEAD**: Puntero al commit actual.
 
-**Working directory** — Los archivos tal como están en disco.
+**Working directory**: Los archivos tal como están en disco.
 
-**Staging area (index)** — Área intermedia donde preparas qué va al próximo commit.
+**Staging area (index)**: Área intermedia donde preparas qué va al próximo commit.
 
-**Remote** — Repositorio remoto. `origin` es el alias convencional del remoto principal.
+**Remote**: Repositorio remoto. `origin` es el alias convencional del remoto principal.
 
-**Tag** — Puntero inmutable a un commit. Marca versiones. En releases siempre usa tags anotados.
+**Tag**: Puntero inmutable a un commit. Marca versiones. En releases siempre usa tags anotados.
 
 ### 7.2 Comandos esenciales
 
@@ -773,11 +773,11 @@ Puede automatizarse con un script de prueba: Git marca automáticamente cada com
 
 ### 7.4 Estrategias de branching
 
-**GitFlow** — `main` (producción), `develop` (integración), `feature/*`, `release/*`, `hotfix/*`. Ideal para releases planeados.
+**GitFlow**: `main` (producción), `develop` (integración), `feature/*`, `release/*`, `hotfix/*`. Ideal para releases planeados.
 
-**GitHub Flow** — `main` siempre desplegable, ramas feature, pull requests, deploy continuo.
+**GitHub Flow**: `main` siempre desplegable, ramas feature, pull requests, deploy continuo.
 
-**Trunk-Based Development** — Ramas muy cortas (horas o un día), integración constante a main, feature flags para código no terminado. Modelo de equipos de alto rendimiento.
+**Trunk-Based Development**: Ramas muy cortas (horas o un día), integración constante a main, feature flags para código no terminado. Modelo de equipos de alto rendimiento.
 
 ### 7.5 Conventional Commits
 
@@ -801,9 +801,9 @@ Puede automatizarse con un script de prueba: Git marca automáticamente cada com
 ### 7.6 Semantic Versioning (SemVer)
 
 `MAJOR.MINOR.PATCH`:
-- **MAJOR** — Cambios incompatibles (breaking changes).
-- **MINOR** — Nueva funcionalidad compatible hacia atrás.
-- **PATCH** — Corrección de bug compatible hacia atrás.
+- **MAJOR**: Cambios incompatibles (breaking changes).
+- **MINOR**: Nueva funcionalidad compatible hacia atrás.
+- **PATCH**: Corrección de bug compatible hacia atrás.
 
 Versiones pre-release: `1.2.0-alpha.1`, `1.2.0-rc.2`.
 
@@ -820,19 +820,19 @@ Versiones pre-release: `1.2.0-alpha.1`, `1.2.0-rc.2`.
 
 ### 8.1 Conceptos centrales
 
-**Imagen** — Plantilla inmutable. Contiene sistema base, dependencias, código y configuración.
+**Imagen**: Plantilla inmutable. Contiene sistema base, dependencias, código y configuración.
 
-**Contenedor** — Instancia en ejecución de una imagen. Tiene su propia red, sistema de archivos y procesos.
+**Contenedor**: Instancia en ejecución de una imagen. Tiene su propia red, sistema de archivos y procesos.
 
-**Dockerfile** — Receta para construir una imagen. Cada instrucción crea una capa cacheable.
+**Dockerfile**: Receta para construir una imagen. Cada instrucción crea una capa cacheable.
 
-**Capa (layer)** — Cada instrucción del Dockerfile produce una capa inmutable y reutilizable.
+**Capa (layer)**: Cada instrucción del Dockerfile produce una capa inmutable y reutilizable.
 
-**Volumen** — Mecanismo para persistir datos fuera del ciclo de vida del contenedor.
+**Volumen**: Mecanismo para persistir datos fuera del ciclo de vida del contenedor.
 
-**Red (network)** — Mecanismo de comunicación entre contenedores. Una red bridge permite que se vean por nombre.
+**Red (network)**: Mecanismo de comunicación entre contenedores. Una red bridge permite que se vean por nombre.
 
-**Registry** — Almacén de imágenes. Docker Hub (público), Harbor, ACR, AWS ECR (privados).
+**Registry**: Almacén de imágenes. Docker Hub (público), Harbor, ACR, AWS ECR (privados).
 
 ### 8.2 Dockerfile
 
@@ -853,7 +853,7 @@ EXPOSE 8080
 ENTRYPOINT ["dotnet", "Saas.Api.dll"]
 ```
 
-**Multi-stage build** — Compila en una etapa con SDK completo, copia solo el binario a la etapa runtime. Imagen final pequeña.
+**Multi-stage build**: Compila en una etapa con SDK completo, copia solo el binario a la etapa runtime. Imagen final pequeña.
 
 **Instrucciones clave:**
 
@@ -870,13 +870,13 @@ ENTRYPOINT ["dotnet", "Saas.Api.dll"]
 
 ### 8.3 Seguridad en Dockerfiles
 
-**Non-root user** — Crear un usuario sin privilegios y ejecutar el proceso con él. Un contenedor root que es comprometido tiene acceso root al host si el aislamiento falla.
+**Non-root user**: Crear un usuario sin privilegios y ejecutar el proceso con él. Un contenedor root que es comprometido tiene acceso root al host si el aislamiento falla.
 
-**No secrets en el Dockerfile** — Las capas son inspeccionables. Los secretos se pasan por variables de entorno o secret managers en runtime.
+**No secrets en el Dockerfile**: Las capas son inspeccionables. Los secretos se pasan por variables de entorno o secret managers en runtime.
 
-**Distroless images** — Imágenes sin shell ni herramientas del sistema. Superficie de ataque mínima. `gcr.io/distroless/dotnet`.
+**Distroless images**: Imágenes sin shell ni herramientas del sistema. Superficie de ataque mínima. `gcr.io/distroless/dotnet`.
 
-**BuildKit — mount secrets** — `--mount=type=secret` permite pasar tokens y credenciales durante el build sin que queden en ninguna capa.
+**BuildKit — mount secrets**: `--mount=type=secret` permite pasar tokens y credenciales durante el build sin que queden en ninguna capa.
 
 ```dockerfile
 RUN --mount=type=secret,id=nuget_token \
@@ -888,15 +888,15 @@ RUN --mount=type=secret,id=nuget_token \
 
 Orquesta múltiples contenedores con un solo archivo YAML. Ideal para desarrollo local y despliegues simples.
 
-**compose.test.yaml** — Variante de Compose para tests de integración en CI. Levanta solo las dependencias (PostgreSQL, Redis) sin el API, que corre directamente en el runner de CI.
+**compose.test.yaml**: Variante de Compose para tests de integración en CI. Levanta solo las dependencias (PostgreSQL, Redis) sin el API, que corre directamente en el runner de CI.
 
-**Depends on** — Controla el orden de inicio de servicios. `condition: service_healthy` espera a que el health check del servicio sea verde.
+**Depends on**: Controla el orden de inicio de servicios. `condition: service_healthy` espera a que el health check del servicio sea verde.
 
 ### 8.5 Registries y versionado
 
-**Image digest** — Hash SHA256 inmutable. Más confiable que el tag para producción.
+**Image digest**: Hash SHA256 inmutable. Más confiable que el tag para producción.
 
-**Vulnerability scanning** — Harbor, ACR y ECR integran escaneo contra CVEs.
+**Vulnerability scanning**: Harbor, ACR y ECR integran escaneo contra CVEs.
 
 **Reglas de operación seria:**
 - Una imagen por release. El tag de imagen coincide con el tag de Git: `v1.3.0 → :v1.3.0`.
@@ -906,17 +906,17 @@ Orquesta múltiples contenedores con un solo archivo YAML. Ideal para desarrollo
 
 ### 8.6 Kubernetes (cuando hace falta)
 
-**Kubernetes (K8s)** — Orquestador de contenedores. Programa contenedores en un cluster, los reinicia si fallan, escala automáticamente.
+**Kubernetes (K8s)**: Orquestador de contenedores. Programa contenedores en un cluster, los reinicia si fallan, escala automáticamente.
 
-**Pod** — Unidad mínima de despliegue.
+**Pod**: Unidad mínima de despliegue.
 
-**Deployment** — Especifica cuántas réplicas queremos.
+**Deployment**: Especifica cuántas réplicas queremos.
 
-**Service** — IP y nombre estable para un conjunto de pods.
+**Service**: IP y nombre estable para un conjunto de pods.
 
-**Ingress** — Reglas para exponer servicios al exterior.
+**Ingress**: Reglas para exponer servicios al exterior.
 
-**Helm** — Gestor de paquetes para K8s.
+**Helm**: Gestor de paquetes para K8s.
 
 Para muchos SaaS, Docker Compose en uno o dos servidores es suficiente durante años.
 
@@ -926,63 +926,63 @@ Para muchos SaaS, Docker Compose en uno o dos servidores es suficiente durante a
 
 ### 9.1 Conceptos
 
-**Continuous Integration (CI)** — Cada cambio se integra al tronco principal con frecuencia. Cada integración dispara build y pruebas automáticas.
+**Continuous Integration (CI)**: Cada cambio se integra al tronco principal con frecuencia. Cada integración dispara build y pruebas automáticas.
 
-**Continuous Delivery (CD)** — Cada commit que pasa CI queda en un estado desplegable.
+**Continuous Delivery (CD)**: Cada commit que pasa CI queda en un estado desplegable.
 
-**Continuous Deployment** — Cada cambio que pasa pruebas se despliega automáticamente.
+**Continuous Deployment**: Cada cambio que pasa pruebas se despliega automáticamente.
 
-**Pipeline** — Secuencia automatizada de etapas: build, test, paquete, deploy. Definida como código (YAML).
+**Pipeline**: Secuencia automatizada de etapas: build, test, paquete, deploy. Definida como código (YAML).
 
-**Stage** — Bloque lógico del pipeline.
+**Stage**: Bloque lógico del pipeline.
 
-**Job** — Unidad de ejecución dentro de un stage. Puede correr en paralelo.
+**Job**: Unidad de ejecución dentro de un stage. Puede correr en paralelo.
 
-**Step / Task** — Acción dentro de un job: restore, build, docker push.
+**Step / Task**: Acción dentro de un job: restore, build, docker push.
 
-**Trigger** — Evento que dispara el pipeline: push, tag, schedule, manual.
+**Trigger**: Evento que dispara el pipeline: push, tag, schedule, manual.
 
-**Artifact** — Producto del pipeline: binarios, imágenes Docker. Se publican y consumen entre jobs.
+**Artifact**: Producto del pipeline: binarios, imágenes Docker. Se publican y consumen entre jobs.
 
 ### 9.2 Azure DevOps
 
-**Pipeline YAML** — Definición versionada del pipeline. Vive en el repo, evoluciona con el código.
+**Pipeline YAML**: Definición versionada del pipeline. Vive en el repo, evoluciona con el código.
 
-**Variable groups** — Grupos de variables compartidas entre pipelines. Donde viven secrets en Library.
+**Variable groups**: Grupos de variables compartidas entre pipelines. Donde viven secrets en Library.
 
-**Service connection** — Credencial guardada para conectar con servicios externos.
+**Service connection**: Credencial guardada para conectar con servicios externos.
 
-**Environment** — Representación de un ambiente (staging, production) con gates de aprobación.
+**Environment**: Representación de un ambiente (staging, production) con gates de aprobación.
 
-**Approval** — Paso manual antes de continuar. Para producción.
+**Approval**: Paso manual antes de continuar. Para producción.
 
 ### 9.3 GitHub Actions
 
-**Workflow** — Archivo YAML en `.github/workflows/`. Se dispara por eventos del repositorio.
+**Workflow**: Archivo YAML en `.github/workflows/`. Se dispara por eventos del repositorio.
 
-**Reusable workflow** — Workflow que puede ser invocado por otros workflows con `workflow_call`. Permite compartir lógica de CI/CD entre repositorios del mismo equipo.
+**Reusable workflow**: Workflow que puede ser invocado por otros workflows con `workflow_call`. Permite compartir lógica de CI/CD entre repositorios del mismo equipo.
 
-**OIDC (OpenID Connect)** — Permite que GitHub Actions obtenga credenciales de AWS/Azure temporales sin guardar access keys como secrets. El workflow solicita un token OIDC de GitHub, AWS lo valida contra una política de confianza y devuelve credenciales temporales. Elimina la necesidad de credenciales de larga vida en el repositorio.
+**OIDC (OpenID Connect)**: Permite que GitHub Actions obtenga credenciales de AWS/Azure temporales sin guardar access keys como secrets. El workflow solicita un token OIDC de GitHub, AWS lo valida contra una política de confianza y devuelve credenciales temporales. Elimina la necesidad de credenciales de larga vida en el repositorio.
 
 ### 9.4 Terraform
 
-**Infrastructure as Code (IaC)** — La infraestructura se define en archivos de configuración versionables y reproducibles.
+**Infrastructure as Code (IaC)**: La infraestructura se define en archivos de configuración versionables y reproducibles.
 
-**Provider** — Plugin que conecta Terraform con un cloud (aws, azurerm, google).
+**Provider**: Plugin que conecta Terraform con un cloud (aws, azurerm, google).
 
-**Resource** — Un componente de infraestructura (instancia EC2, base de datos, etc.).
+**Resource**: Un componente de infraestructura (instancia EC2, base de datos, etc.).
 
-**Data Source** — Lee información de recursos ya existentes sin crearlos.
+**Data Source**: Lee información de recursos ya existentes sin crearlos.
 
-**State** — Archivo (`terraform.tfstate`) que representa el estado actual de la infraestructura. Se guarda en S3 con DynamoDB para locking en equipos.
+**State**: Archivo (`terraform.tfstate`) que representa el estado actual de la infraestructura. Se guarda en S3 con DynamoDB para locking en equipos.
 
-**Plan** — `terraform plan` muestra qué va a cambiar sin aplicar. Siempre revisar antes de `apply`.
+**Plan**: `terraform plan` muestra qué va a cambiar sin aplicar. Siempre revisar antes de `apply`.
 
-**Variable `sensitive = true`** — No se muestra en logs ni en output. Obligatorio para passwords y tokens.
+**Variable `sensitive = true`**: No se muestra en logs ni en output. Obligatorio para passwords y tokens.
 
-**Deployment circuit breaker en ECS** — Rollback automático si el deploy falla el health check.
+**Deployment circuit breaker en ECS**: Rollback automático si el deploy falla el health check.
 
-**deletion_protection en RDS** — Protección contra `terraform destroy` accidental.
+**deletion_protection en RDS**: Protección contra `terraform destroy` accidental.
 
 ### 9.5 Agentes self-hosted
 
@@ -1024,27 +1024,27 @@ Los agentes self-hosted acceden a la red interna, tienen herramientas precargada
 | `ss -tulnp` | Ver puertos en escucha |
 | `scp / rsync` | Copiar archivos entre máquinas |
 
-**systemd** — Sistema de inicio y gestión de servicios en Linux moderno.
+**systemd**: Sistema de inicio y gestión de servicios en Linux moderno.
 
-**Cron** — Programador de tareas. Útil para backups y mantenimiento.
+**Cron**: Programador de tareas. Útil para backups y mantenimiento.
 
-**SSH key** — Par de llaves (pública/privada) para autenticarse sin password.
+**SSH key**: Par de llaves (pública/privada) para autenticarse sin password.
 
-**Bash scripting** — `set -euo pipefail` en todo script de producción: falla ante error (`-e`), variable no definida (`-u`) o error en pipe (`-o pipefail`).
+**Bash scripting**: `set -euo pipefail` en todo script de producción: falla ante error (`-e`), variable no definida (`-u`) o error en pipe (`-o pipefail`).
 
 ### 10.2 Nginx
 
-**Reverse proxy** — Recibe peticiones del exterior y las redirige a servidores internos. Centraliza TLS, balanceo, headers, caching.
+**Reverse proxy**: Recibe peticiones del exterior y las redirige a servidores internos. Centraliza TLS, balanceo, headers, caching.
 
-**Server block** — Configuración para un dominio o sitio específico.
+**Server block**: Configuración para un dominio o sitio específico.
 
-**TLS / HTTPS** — Nginx termina TLS; las apps internas hablan HTTP plano.
+**TLS / HTTPS**: Nginx termina TLS; las apps internas hablan HTTP plano.
 
-**Let's Encrypt + certbot** — Certificados TLS gratuitos automatizables.
+**Let's Encrypt + certbot**: Certificados TLS gratuitos automatizables.
 
-**Wildcard certificate** — Cubre todos los subdominios (`*.miproducto.com`) sin necesidad de uno por cada tenant.
+**Wildcard certificate**: Cubre todos los subdominios (`*.miproducto.com`) sin necesidad de uno por cada tenant.
 
-**SNI (Server Name Indication)** — Permite servir muchos dominios desde la misma IP.
+**SNI (Server Name Indication)**: Permite servir muchos dominios desde la misma IP.
 
 ### 10.3 Cloud computing
 
@@ -1096,31 +1096,31 @@ Los agentes self-hosted acceden a la red interna, tienen herramientas precargada
 
 **Tres pilares: logs, métricas, trazas.**
 
-**Logs estructurados** — Eventos con campos consultables. Permiten filtrar "todos los errores del tenant X en la última hora".
+**Logs estructurados**: Eventos con campos consultables. Permiten filtrar "todos los errores del tenant X en la última hora".
 
-**Métricas técnicas** — CPU, memoria, latencia, throughput, tasas de error.
+**Métricas técnicas**: CPU, memoria, latencia, throughput, tasas de error.
 
-**Métricas de negocio** — Signups, MRR, conversiones, churn.
+**Métricas de negocio**: Signups, MRR, conversiones, churn.
 
-**APM** — Datadog, New Relic, Application Insights. Combinan los tres pilares.
+**APM**: Datadog, New Relic, Application Insights. Combinan los tres pilares.
 
-**SLI (Service Level Indicator)** — Métrica real que mide calidad: porcentaje de peticiones bajo 200 ms en los últimos 30 días.
+**SLI (Service Level Indicator)**: Métrica real que mide calidad: porcentaje de peticiones bajo 200 ms en los últimos 30 días.
 
-**SLO (Service Level Objective)** — Objetivo medible de calidad: "99.9% de peticiones bajo 200 ms". Más estricto que el SLA.
+**SLO (Service Level Objective)**: Objetivo medible de calidad: "99.9% de peticiones bajo 200 ms". Más estricto que el SLA.
 
-**SLA (Service Level Agreement)** — Compromiso contractual con el cliente. Penalización económica si se incumple.
+**SLA (Service Level Agreement)**: Compromiso contractual con el cliente. Penalización económica si se incumple.
 
-**Error Budget** — Margen de incumplimiento tolerado por un SLO. Si el budget se gasta, se prioriza estabilidad sobre nuevas features.
+**Error Budget**: Margen de incumplimiento tolerado por un SLO. Si el budget se gasta, se prioriza estabilidad sobre nuevas features.
 
-**OpenTelemetry** — Estándar abierto para emitir trazas, métricas y logs. Vendor-neutral.
+**OpenTelemetry**: Estándar abierto para emitir trazas, métricas y logs. Vendor-neutral.
 
-**Serilog** — Logging estructurado para .NET. Emite eventos con propiedades, no cadenas.
+**Serilog**: Logging estructurado para .NET. Emite eventos con propiedades, no cadenas.
 
-**Prometheus** — Sistema de métricas con scraping. Combinado con Grafana, es el estándar abierto.
+**Prometheus**: Sistema de métricas con scraping. Combinado con Grafana, es el estándar abierto.
 
-**Health Checks** — Endpoints que reportan si la app y sus dependencias están sanas.
+**Health Checks**: Endpoints que reportan si la app y sus dependencias están sanas.
 
-**Tenant en logs** — Cada log debe incluir `TenantId` como propiedad estructurada.
+**Tenant en logs**: Cada log debe incluir `TenantId` como propiedad estructurada.
 
 ### 10.7 Secretos en producción
 
@@ -1131,11 +1131,11 @@ Los agentes self-hosted acceden a la red interna, tienen herramientas precargada
 - Rotación periódica. Cada secreto tiene fecha de caducidad.
 - Acceso mínimo. Cada servicio usa un secreto distinto con permisos mínimos.
 
-**detect-secrets** — Herramienta de Yelp que escanea archivos y commits buscando patrones de secretos (tokens, passwords, API keys). Se instala como pre-commit hook para bloquear commits con secretos.
+**detect-secrets**: Herramienta de Yelp que escanea archivos y commits buscando patrones de secretos (tokens, passwords, API keys). Se instala como pre-commit hook para bloquear commits con secretos.
 
-**AWS Macie** — Servicio de AWS que escanea buckets S3 buscando datos sensibles con ML.
+**AWS Macie**: Servicio de AWS que escanea buckets S3 buscando datos sensibles con ML.
 
-**GitHub Secret Scanning** — Escaneo automático de secretos en repositorios de GitHub.
+**GitHub Secret Scanning**: Escaneo automático de secretos en repositorios de GitHub.
 
 ### 10.8 Seguridad web (OWASP Top 10)
 
@@ -1153,34 +1153,34 @@ Los agentes self-hosted acceden a la red interna, tienen herramientas precargada
 | A10 | SSRF | Validar y allowlist URLs en requests del servidor |
 
 **Security headers obligatorios:**
-- `X-Frame-Options: DENY` — Previene clickjacking.
-- `X-Content-Type-Options: nosniff` — Previene MIME sniffing.
-- `Content-Security-Policy` — Controla qué recursos puede cargar el browser.
-- `Strict-Transport-Security` — Solo HTTPS.
-- `Permissions-Policy` — Deshabilita APIs del browser no necesarias.
+- `X-Frame-Options: DENY`: Previene clickjacking.
+- `X-Content-Type-Options: nosniff`: Previene MIME sniffing.
+- `Content-Security-Policy`: Controla qué recursos puede cargar el browser.
+- `Strict-Transport-Security`: Solo HTTPS.
+- `Permissions-Policy`: Deshabilita APIs del browser no necesarias.
 
-**CORS restrictivo** — Solo origenes conocidos (`WithOrigins`). Nunca `AllowAnyOrigin()` con `AllowCredentials()`.
+**CORS restrictivo**: Solo origenes conocidos (`WithOrigins`). Nunca `AllowAnyOrigin()` con `AllowCredentials()`.
 
-**Rate limiting** — Limitar peticiones en endpoints de auth por IP. `.NET 7+` incluye middleware nativo.
+**Rate limiting**: Limitar peticiones en endpoints de auth por IP. `.NET 7+` incluye middleware nativo.
 
 ### 10.9 Zero Trust
 
-**Modelo perimetral (viejo)** — "Si estás dentro del firewall, eres de confianza". Si un atacante entra a la red, tiene acceso a todo.
+**Modelo perimetral (viejo)**: "Si estás dentro del firewall, eres de confianza". Si un atacante entra a la red, tiene acceso a todo.
 
-**Zero Trust** — "Nunca confiar, siempre verificar". Cada request se autentica y autoriza independientemente del origen.
+**Zero Trust**: "Nunca confiar, siempre verificar". Cada request se autentica y autoriza independientemente del origen.
 
 **Los cinco pilares:**
-1. Verificar identidad — autenticación fuerte (MFA) para usuarios y servicios.
-2. Verificar el dispositivo — solo dispositivos conocidos y sanos acceden.
-3. Limitar acceso — least privilege: acceso mínimo necesario.
-4. Inspeccionar el tráfico — cifrar y monitorear incluso tráfico interno.
-5. Asumir breach — diseñar como si el atacante ya estuviera dentro.
+1. Verificar identidad: autenticación fuerte (MFA) para usuarios y servicios.
+2. Verificar el dispositivo: solo dispositivos conocidos y sanos acceden.
+3. Limitar acceso: least privilege: acceso mínimo necesario.
+4. Inspeccionar el tráfico: cifrar y monitorear incluso tráfico interno.
+5. Asumir breach: diseñar como si el atacante ya estuviera dentro.
 
-**mTLS (Mutual TLS)** — Ambos lados (cliente y servidor) validan el certificado del otro. Estándar para autenticación entre microservicios.
+**mTLS (Mutual TLS)**: Ambos lados (cliente y servidor) validan el certificado del otro. Estándar para autenticación entre microservicios.
 
-**Least Privilege** — Policies granulares por operación (`Orders:Read`, `Orders:Write`, `Orders:Delete`) en lugar de roles amplios (`Admin`).
+**Least Privilege**: Policies granulares por operación (`Orders:Read`, `Orders:Write`, `Orders:Delete`) en lugar de roles amplios (`Admin`).
 
-**Asumir Breach** — Validar datos en cada capa, aunque el request venga de un microservicio interno. Una capa comprometida no debe dar acceso ilimitado.
+**Asumir Breach**: Validar datos en cada capa, aunque el request venga de un microservicio interno. Una capa comprometida no debe dar acceso ilimitado.
 
 ### 10.10 Costos en cloud
 
@@ -1196,21 +1196,21 @@ Los agentes self-hosted acceden a la red interna, tienen herramientas precargada
 
 ### 11.1 Conceptos
 
-**LLM (Large Language Model)** — Modelo de lenguaje grande: GPT, Claude, Gemini, Llama. Generan texto y código a partir de un prompt.
+**LLM (Large Language Model)**: Modelo de lenguaje grande: GPT, Claude, Gemini, Llama. Generan texto y código a partir de un prompt.
 
-**Prompt** — Instrucción que le das al modelo. La calidad del prompt es el factor más determinante de la calidad de la respuesta.
+**Prompt**: Instrucción que le das al modelo. La calidad del prompt es el factor más determinante de la calidad de la respuesta.
 
-**Context window** — Cantidad máxima de tokens que el modelo puede procesar en una sola interacción.
+**Context window**: Cantidad máxima de tokens que el modelo puede procesar en una sola interacción.
 
-**Token** — Unidad de procesamiento del modelo. ~0.75 palabras en inglés. Las APIs se facturan en tokens.
+**Token**: Unidad de procesamiento del modelo. ~0.75 palabras en inglés. Las APIs se facturan en tokens.
 
-**Vibe coding** — Programar colaborativamente con asistentes de IA: el desarrollador define intención y restricciones, la IA propone implementación. El humano valida, ajusta y decide.
+**Vibe coding**: Programar colaborativamente con asistentes de IA: el desarrollador define intención y restricciones, la IA propone implementación. El humano valida, ajusta y decide.
 
-**Agente** — Sistema que combina LLM + herramientas + ejecución autónoma. Recibe un objetivo y ejecuta acciones (leer archivos, ejecutar comandos, llamar APIs) hasta cumplirlo.
+**Agente**: Sistema que combina LLM + herramientas + ejecución autónoma. Recibe un objetivo y ejecuta acciones (leer archivos, ejecutar comandos, llamar APIs) hasta cumplirlo.
 
-**CLAUDE.md / AGENTS.md** — Archivo de contexto para agentes en un proyecto. Documenta convenciones, stack, reglas y patrones.
+**CLAUDE.md / AGENTS.md**: Archivo de contexto para agentes en un proyecto. Documenta convenciones, stack, reglas y patrones.
 
-**ReAct (Reason + Act)** — Patrón de razonamiento de agentes: Thought → Action → Observation → Thought → ... El agente alterna entre razonamiento interno y acciones en el entorno.
+**ReAct (Reason + Act)**: Patrón de razonamiento de agentes: Thought, Action, Observation; el ciclo se repite hasta completar el objetivo. El agente alterna entre razonamiento interno y acciones en el entorno.
 
 ### 11.2 Configurar un proyecto para vibe coding
 
@@ -1240,7 +1240,7 @@ Un buen archivo de contexto incluye:
 
 ### 11.4 LLMOps
 
-**LLMOps** — Conjunto de prácticas para diseñar, deployar, monitorear y mejorar aplicaciones que usan LLMs en producción.
+**LLMOps**: Conjunto de prácticas para diseñar, deployar, monitorear y mejorar aplicaciones que usan LLMs en producción.
 
 ```
 DevOps:  código determinista → tests unitarios → CI/CD tradicional
@@ -1248,19 +1248,19 @@ MLOps:   modelo estadístico → métricas de modelo (accuracy, F1) → reentren
 LLMOps:  LLM no determinista → evaluación semántica → fine-tuning / prompt engineering
 ```
 
-**Abstracción del proveedor** — `IAICompletionService` como interfaz única. La implementación concreta (`AnthropicCompletionService`, `OpenAiCompletionService`) puede reemplazarse sin cambiar la capa de aplicación.
+**Abstracción del proveedor**: `IAICompletionService` como interfaz única. La implementación concreta (`AnthropicCompletionService`, `OpenAiCompletionService`) puede reemplazarse sin cambiar la capa de aplicación.
 
-**Streaming de tokens** — `IAsyncEnumerable<string>` con SSE (Server-Sent Events) para respuestas incrementales en tiempo real.
+**Streaming de tokens**: `IAsyncEnumerable<string>` con SSE (Server-Sent Events) para respuestas incrementales en tiempo real.
 
-**Versionado de prompts** — Los prompts son código: se versionan, se testean y se despliegan con el mismo rigor. Un `PromptVersion` enum permite A/B testing entre versiones.
+**Versionado de prompts**: Los prompts son código: se versionan, se testean y se despliegan con el mismo rigor. Un `PromptVersion` enum permite A/B testing entre versiones.
 
-**Evaluación semántica** — No verificar igualdad exacta sino criterios: contiene palabras clave, tiene longitud razonable, está en el idioma correcto, no contiene información sensible.
+**Evaluación semántica**: No verificar igualdad exacta sino criterios: contiene palabras clave, tiene longitud razonable, está en el idioma correcto, no contiene información sensible.
 
-**Guardrails** — Validar que la respuesta del LLM cumple restricciones antes de devolverla al usuario: bloquear patrones de información sensible, verificar idioma, limitar longitud.
+**Guardrails**: Validar que la respuesta del LLM cumple restricciones antes de devolverla al usuario: bloquear patrones de información sensible, verificar idioma, limitar longitud.
 
-**Observabilidad de LLMs** — Loguear por cada llamada: modelo usado, tokens estimados, longitud de respuesta, latencia. Decorator `ObservableAIService` alrededor del servicio base.
+**Observabilidad de LLMs**: Loguear por cada llamada: modelo usado, tokens estimados, longitud de respuesta, latencia. Decorator `ObservableAIService` alrededor del servicio base.
 
-**Control de costos** — Middleware que limita tokens por usuario/tenant por día. Si se supera el límite, devolver `429 Too Many Requests`.
+**Control de costos**: Middleware que limita tokens por usuario/tenant por día. Si se supera el límite, devolver `429 Too Many Requests`.
 
 **Cuándo construir vs usar servicio gestionado:**
 
@@ -1300,7 +1300,7 @@ Construir SaaS amplifica esto: cada decisión de diseño impacta a múltiples cl
 - La industria cambia de moda cada año. Los fundamentos cambian cada veinte.
 - Especialízate en algo, mantente alfabetizado en mucho.
 - Lee código de otros, especialmente mejor que el tuyo.
-- Construye un producto propio en algún momento. Vivir el ciclo completo — idea, build, ship, soporte, churn — enseña lo que ningún empleo puede.
+- Construye un producto propio en algún momento. Vivir el ciclo completo (idea, build, ship, soporte, churn) enseña lo que ningún empleo puede.
 
 ---
 

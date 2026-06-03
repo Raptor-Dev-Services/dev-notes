@@ -24,7 +24,7 @@ Mayo 2026
 
 El Glosario Maestro cubre los conceptos: qué es cada cosa y cuándo se usa. Este manual cubre lo operativo: cómo se configura, cómo se conecta, cómo se despliega, cómo se diagnostica. Es el material que se aprende con dolor en producción y que rara vez aparece en libros.
 
-La versión 2.0 incorpora un capítulo final dedicado a la librería Common de Raptor-Dev-Services — la base de código que cada nuevo SaaS arranca con los problemas transversales ya resueltos: logging, observabilidad, multi-tenancy, mediator, results y conexiones a base de datos por tenant.
+La versión 2.0 incorpora un capítulo final dedicado a la librería Common de Raptor-Dev-Services. Es la base de código que cada nuevo SaaS arranca con los problemas transversales ya resueltos: logging, observabilidad, multi-tenancy, mediator, results y conexiones a base de datos por tenant.
 
 El manual está pensado como una referencia consultable. No se lee de corrido: se busca el escenario que estás resolviendo y se aplica. Cada sección incluye archivos completos de ejemplo, comandos exactos y los errores más comunes.
 
@@ -75,7 +75,7 @@ Vite tiene un sistema simple pero estricto. Solo expone al cliente las variables
 | `.env.development.local` | Override local de development. |
 | `.env.production.local` | Override local de production. |
 
-Orden de precedencia (de menor a mayor): `.env` → `.env.{mode}` → `.env.local` → `.env.{mode}.local`. Los archivos `.local` **nunca** se comitean.
+Orden de precedencia (de menor a mayor): `.env`, `.env.{mode}`, `.env.local` y `.env.{mode}.local`. Los archivos `.local` **nunca** se comitean.
 
 ```ini
 # .env (compartido, va al repo)
@@ -97,7 +97,7 @@ VITE_ENABLE_DEVTOOLS=false
 VITE_API_BASE_URL=http://192.168.1.50:5000/api
 ```
 
-**Centralizar el acceso — nunca dispersar `import.meta.env`**
+**Centralizar el acceso: nunca dispersar `import.meta.env`**
 
 ```typescript
 // src/config/env.ts
@@ -126,11 +126,11 @@ if (!config.apiBaseUrl) {
 
 **Orden de precedencia (de menor a mayor)**
 
-1. `appsettings.json` — la base, va al repo, valores neutros.
-2. `appsettings.{Environment}.json` — overrides por ambiente.
-3. User Secrets (solo en Development) — secretos locales del dev, NO van al repo.
-4. Variables de entorno — sobreescriben todo lo anterior.
-5. Argumentos de línea de comandos — la última palabra.
+1. `appsettings.json`: la base, va al repo, valores neutros.
+2. `appsettings.{Environment}.json`: overrides por ambiente.
+3. User Secrets (solo en Development): secretos locales del dev, NO van al repo.
+4. Variables de entorno: sobreescriben todo lo anterior.
+5. Argumentos de línea de comandos: la última palabra.
 
 **`IOptions<T>` tipado (patrón recomendado)**
 
@@ -230,7 +230,7 @@ En desarrollo local, User Secrets resuelve. En producción, los secretos viven e
 - **Cero secretos en el repositorio.** Nunca, bajo ninguna circunstancia.
 - **Cero secretos en el Dockerfile.** Una imagen es pública dentro del registry; sus capas son inspeccionables.
 - **Cero secretos en logs.** Los strings sensibles se enmascaran al loggear.
-- **Rotación periódica.** Cada secreto tiene fecha de caducidad — al menos cada 90 días.
+- **Rotación periódica.** Cada secreto tiene fecha de caducidad. Al menos cada 90 días.
 - **Acceso mínimo.** Cada servicio usa un secreto distinto con permisos mínimos. No reutilizar.
 - **Auditoría.** Cada acceso a un secreto queda registrado y es auditable.
 
@@ -2022,12 +2022,12 @@ jobs:
 
 ### 20.4 Diagnóstico rápido cuando algo falla en producción
 
-1. **Health checks** — `/health` responde 200 en cada servicio?
-2. **Logs** — en Seq buscar errores en los últimos 15 minutos.
-3. **Métricas** — latencia p95, tasa de error, uso de CPU/memoria.
-4. **Conexiones BD** — ¿hay pool agotado? ¿queries lentas?
-5. **Servicios externos** — ¿Stripe está caído? ¿el SMTP responde?
-6. **Última versión** — ¿este bug existía antes? ¿coincide con un deploy reciente?
+1. **Health checks**: ¿`/health` responde 200 en cada servicio?
+2. **Logs**: en Seq buscar errores en los últimos 15 minutos.
+3. **Métricas**: latencia p95, tasa de error, uso de CPU/memoria.
+4. **Conexiones BD**: ¿hay pool agotado? ¿queries lentas?
+5. **Servicios externos**: ¿Stripe está caído? ¿el SMTP responde?
+6. **Última versión**: ¿este bug existía antes? ¿coincide con un deploy reciente?
 
 ---
 
@@ -2046,7 +2046,7 @@ Antes de Common, cada proyecto nuevo repetía las mismas cien líneas de plumbin
 - Multi-tenancy correctamente implementado desde el día uno, sin parches a futuro.
 - Tenant propagado automáticamente en HTTP clients salientes.
 - Health checks integrados para Postgres y Redis sin escribir código por proyecto.
-- Mediator propio sin dependencia externa — evita romper cuando MediatR cambia su licenciamiento.
+- Mediator propio sin dependencia externa: evita romper cuando MediatR cambia su licenciamiento.
 - Factories de conexión Npgsql con Dapper y logging integrado.
 
 ### 21.2 Mapa de módulos
@@ -2083,7 +2083,7 @@ Antes de Common, cada proyecto nuevo repetía las mismas cien líneas de plumbin
 
 ### 21.4 Cómo consumirla en un proyecto nuevo
 
-**Paso 1 — Referenciar el proyecto**
+**Paso 1: Referenciar el proyecto**
 
 ```xml
 <!-- En el .csproj del Web API -->
@@ -2092,7 +2092,7 @@ Antes de Common, cada proyecto nuevo repetía las mismas cien líneas de plumbin
 </ItemGroup>
 ```
 
-**Paso 2 — Registrar servicios principales**
+**Paso 2: Registrar servicios principales**
 
 ```csharp
 var builder = WebApplication.CreateBuilder(args);
@@ -2113,7 +2113,7 @@ builder.Services
     .AddTenantPropagation();
 ```
 
-**Paso 3 — Registrar middlewares base**
+**Paso 3: Registrar middlewares base**
 
 ```csharp
 var app = builder.Build();
@@ -2481,7 +2481,7 @@ Common es una librería de opinión. No tiene sentido en estos casos:
 
 - **Sistemas mono-tenant** donde el overhead de multi-tenancy es ruido.
 - **Microservicios mínimos** tipo Lambda donde la huella de runtime importa más que la productividad.
-- **Apps con infraestructura propia consolidada** — migrar a Common solo se justifica con cambios graduales.
+- **Apps con infraestructura propia consolidada**: migrar a Common solo se justifica con cambios graduales.
 - **Equipos que prefieren MediatR, EF Core con providers exóticos** o stacks de observabilidad diferentes.
 
 La regla simple: si vas a construir un SaaS multi-tenant nuevo en .NET, parte de Common. Si no, evalúa si los módulos individuales (Logging, Observability) te sirven aislados.
@@ -2500,7 +2500,7 @@ El manual evolucionará. Cada vez que un integrante del equipo tope con un probl
 
 ---
 
-> Fuente: *Apps and Services with .NET 8* (Mark J. Price) — Ch. 2-4 Dependency Injection y Configuración; *Web API Development with ASP.NET Core 8* (Quan Nguyen) — Ch. 5-9 Seguridad y Middleware; *Full Stack React, TypeScript, and Node* (David Choi) — Ch. 8-12 Frontend de producción; *Docker: Up and Running 3rd Ed* (Sean Kane) — Ch. 4 Variables de entorno y secretos
+> Fuente: *Apps and Services with .NET 8* (Mark J. Price): Ch. 2-4 Dependency Injection y Configuración; *Web API Development with ASP.NET Core 8* (Quan Nguyen): Ch. 5-9 Seguridad y Middleware; *Full Stack React, TypeScript, and Node* (David Choi): Ch. 8-12 Frontend de producción; *Docker: Up and Running 3rd Ed* (Sean Kane): Ch. 4 Variables de entorno y secretos
 
 ---
 

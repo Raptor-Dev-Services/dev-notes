@@ -42,7 +42,7 @@ public async Task<GetUserResponse> Handle(GetUserRequest req, CancellationToken 
 
 ## Implementación en este proyecto
 
-El proyecto usa `Common.Results` — interfaces que tipan el resultado:
+El proyecto usa `Common.Results`. Las interfaces que tipan el resultado:
 
 ```csharp
 // Common.Results — las interfaces base
@@ -437,12 +437,12 @@ switch (result.Status)
 ## Ventajas y desventajas del Operation Result (Ferreira)
 
 ### Ventajas
-- **Explicitud:** el tipo de retorno documenta todos los estados posibles — más claro que saber qué excepciones pueden volar.
+- **Explicitud:** el tipo de retorno documenta todos los estados posibles. Más claro que saber qué excepciones pueden volar.
 - **Rendimiento:** retornar un objeto es marginalmente más rápido que crear un stack trace de excepción.
 - **Flexibilidad de diseño:** permite transportar mensajes de advertencia e información, no solo errores.
 
 ### Desventajas
-- **Propagación manual:** el resultado debe pasarse hacia arriba en la pila de llamadas de forma explícita — si debe recorrer muchos niveles, se vuelve tedioso.
+- **Propagación manual:** el resultado debe pasarse hacia arriba en la pila de llamadas de forma explícita. Si debe recorrer muchos niveles, se vuelve tedioso.
 - **Superficie de API grande:** es fácil exponer propiedades que no aplican a todos los escenarios (ej. `Value` puede ser null en error). El trade-off es siempre legibilidad vs perfección de diseño.
 
 > **Regla de Ferreira:** "Cuando las ventajas superan los impactos menores de las violaciones de SOLID, es aceptable dejarlas pasar. Los principios son ideales, no leyes."

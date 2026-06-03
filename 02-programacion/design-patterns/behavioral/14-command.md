@@ -16,7 +16,7 @@ Tienes una barra de herramientas con botones. Cada botón necesita hacer algo di
 
 ## Analogía
 
-Un restaurante. El mesero no cocina — toma tu pedido y lo escribe en una nota (el comando). La nota viaja a la cocina (el receptor). El chef puede ejecutar el pedido inmediatamente o más tarde. El gerente puede cancelar el pedido antes de que llegue a la cocina. La nota es el objeto que encapsula toda la información del pedido.
+Un restaurante. El mesero no cocina; toma tu pedido y lo escribe en una nota (el comando). La nota viaja a la cocina (el receptor). El chef puede ejecutar el pedido inmediatamente o más tarde. El gerente puede cancelar el pedido antes de que llegue a la cocina. La nota es el objeto que encapsula toda la información del pedido.
 
 ---
 
@@ -253,8 +253,8 @@ _ = await Mediator.Send(request, ct);  // Invoker → envía Command → Handler
 ```
 
 **Ventajas en este proyecto:**
-- Cada request es un objeto serializable — fácil de loguear, auditar, poner en cola.
-- Los handlers son puros — fáciles de testear en aislamiento.
+- Cada request es un objeto serializable. Fácil de loguear, auditar y poner en cola.
+- Los handlers son puros. Fáciles de testear en aislamiento.
 - El controller (Invoker) no sabe qué hace el handler (Receiver).
 
 ---
@@ -264,8 +264,8 @@ _ = await Mediator.Send(request, ct);  // Invoker → envía Command → Handler
 - Cuando quieres parametrizar objetos con operaciones.
 - Cuando quieres poner en cola operaciones, programarlas para ejecución diferida.
 - Cuando necesitas implementar operaciones reversibles (Undo/Redo).
-- Cuando quieres auditar o loguear operaciones — cada comando es un registro.
-- CQRS — separar escrituras (Commands) de lecturas (Queries).
+- Cuando quieres auditar o loguear operaciones. Cada comando es un registro.
+- CQRS: separar escrituras (Commands) de lecturas (Queries).
 
 ## Cuándo NO usar
 

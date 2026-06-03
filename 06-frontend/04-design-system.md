@@ -2,7 +2,7 @@
 
 Cuando los strings de clases Tailwind están dispersos en cada componente, cambiar el color de los botones primarios requiere buscar y reemplazar en todo el proyecto. Centralizar las clases en un objeto de tokens (`ui`) asegura que todos los componentes consuman el mismo lenguaje visual y que los cambios de estilo sean un cambio en un solo lugar.
 
-> Fuentes: *Full-Stack Web Development with TypeScript 5* (Daishi Kato) — Ch.5 Building a Component Design System; *Full Stack React, TypeScript, and Node* (David Choi) — Ch.4 Styling with Tailwind CSS; WCAG 2.1 (W3C)
+> Fuentes: *Full-Stack Web Development with TypeScript 5* (Daishi Kato): Ch.5 Building a Component Design System; *Full Stack React, TypeScript, and Node* (David Choi): Ch.4 Styling with Tailwind CSS; WCAG 2.1 (W3C)
 
 ---
 

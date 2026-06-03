@@ -2,7 +2,7 @@
 
 `CLAUDE.md` es el mecanismo de Claude Code para incluir instrucciones persistentes en el repositorio. Es equivalente a un README para el LLM: describe el proyecto, las convenciones, las restricciones y el contexto que el agente necesita para trabajar bien sin que el desarrollador tenga que repetirlo en cada sesión.
 
-> Fuente: Documentación oficial Claude Code — https://docs.anthropic.com/en/docs/claude-code/overview
+> Fuente: Documentación oficial Claude Code: https://docs.anthropic.com/en/docs/claude-code/overview
 
 ---
 
@@ -72,7 +72,7 @@ Claude Code carga automáticamente los archivos en este orden (de mayor a menor 
 src/components/CLAUDE.md     ← subdirectorio — instrucciones específicas de ese módulo
 ```
 
-Los archivos de subdirectorio se cargan cuando Claude Code trabaja en ese directorio — útil para instrucciones específicas de frontend vs backend dentro del mismo monorepo.
+Los archivos de subdirectorio se cargan cuando Claude Code trabaja en ese directorio. Son útiles para instrucciones específicas de frontend vs backend dentro del mismo monorepo.
 
 ```markdown
 # src/components/CLAUDE.md — ejemplo de instrucciones de subdirectorio
@@ -188,7 +188,7 @@ Naming estándar:
 - Al agregar una nueva dependencia o patrón al proyecto
 - Al cambiar la estructura de directorios
 - Al establecer una nueva convención de equipo
-- Al detectar que el LLM repite el mismo error — agregar restricción explícita
+- Al detectar que el LLM repite el mismo error, agregar restricción explícita
 
 ---
 

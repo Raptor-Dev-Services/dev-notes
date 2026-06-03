@@ -1,6 +1,6 @@
 # 06 — Connection Strings y Manejo por Ambiente
 
-La cadena de conexión es uno de los secretos más sensibles del sistema. Un leak permite acceso completo a la base de datos — merece la misma disciplina que cualquier secreto.
+La cadena de conexión es uno de los secretos más sensibles del sistema. Un leak permite acceso completo a la base de datos. Merece la misma disciplina que cualquier secreto.
 
 > Fuente: *Apps and Services with .NET 8* (Mark J. Price) — Ch.3 Building Data Access Layers
 

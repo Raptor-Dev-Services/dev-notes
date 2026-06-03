@@ -1,8 +1,8 @@
-﻿# 07 — Métodos en C#
+﻿# 07: Métodos en C#
 
-Los métodos definen el comportamiento de un objeto — qué puede hacer y cómo.
+Los métodos definen el comportamiento de un objeto: qué puede hacer y cómo.
 
-> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.4 Writing, Debugging, and Testing Functions
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price). Ch.4 Writing, Debugging, and Testing Functions
 
 ---
 
@@ -38,7 +38,7 @@ public       async    Task<GetExampleUserResponse>          Handle(          Get
 
 ## Tipos de retorno
 
-### `void` — sin retorno
+### `void`: sin retorno
 
 ```csharp
 public void LogError(Exception ex, string message)
@@ -56,7 +56,7 @@ public string FormatearNombre(string nombre, string apellido) => $"{nombre} {ape
 public bool EsActivo(ExampleUser user) => user.IsActive && user.UpdatedAtUtc > DateTime.UtcNow.AddDays(-30);
 ```
 
-### `Task` — void asíncrono
+### `Task`: void asíncrono
 
 ```csharp
 // "Hace algo asíncrono pero no retorna valor"
@@ -67,7 +67,7 @@ public async Task EnviarEmailAsync(string destinatario, CancellationToken ct)
 }
 ```
 
-### `Task<T>` — valor asíncrono
+### `Task<T>`: valor asíncrono
 
 ```csharp
 public async Task<ExampleUser?> GetByPublicIdAsync(Guid publicId, CancellationToken ct = default)
@@ -122,7 +122,7 @@ var dto = new ExampleUserDto(
     UpdatedAtUtc: user.UpdatedAtUtc);
 ```
 
-### `params` — número variable de argumentos
+### `params`: número variable de argumentos
 
 ```csharp
 public void LogMultiple(string template, params object[] values)
@@ -136,7 +136,7 @@ LogMultiple("Usuario {Name} autenticado", "Ana");
 LogMultiple("Error genérico");  // sin valores
 ```
 
-### `ref` — pasar por referencia (mutable)
+### `ref`: pasar por referencia (mutable)
 
 ```csharp
 public void Incrementar(ref int contador)
@@ -149,7 +149,7 @@ Incrementar(ref n);
 Console.WriteLine(n);  // 6 — el original cambió
 ```
 
-### `out` — parámetro de salida
+### `out`: parámetro de salida
 
 ```csharp
 // El método DEBE asignar el parámetro out antes de retornar
@@ -166,7 +166,7 @@ if (TryParseGuid(idStr, out Guid id))
 }
 ```
 
-### `in` — pasar por referencia (solo lectura)
+### `in`: pasar por referencia (solo lectura)
 
 ```csharp
 // Eficiente para structs grandes — no copia, no modifica
@@ -267,7 +267,7 @@ public static class StringExtensions
 
 ---
 
-## Expression-bodied members — forma concisa
+## Expression-bodied members: forma concisa
 
 Cuando el cuerpo del método es una sola expresión:
 
@@ -340,7 +340,7 @@ public async Task<IActionResult> GetById(Guid id, CancellationToken ct = default
 
 ---
 
-## Lambdas — métodos anónimos
+## Lambdas: métodos anónimos
 
 ```csharp
 // Lambda de una línea

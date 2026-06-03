@@ -2,7 +2,7 @@
 
 Archivos de configuración que todo proyecto debe incluir en el repositorio para garantizar consistencia entre desarrolladores, IDEs y entornos de CI.
 
-> Fuente: *Pro Git 2nd Ed* (Scott Chacon, Ben Straub) — Ch.8 Customizing Git
+> Fuente: *Pro Git 2nd Ed* (Scott Chacon, Ben Straub): Ch.8 Customizing Git
 
 ---
 
@@ -56,7 +56,7 @@ local.settings.json
 
 ## `.dockerignore`
 
-Excluye archivos que no necesita la imagen Docker — reduce el contexto del build significativamente (de GB a MB):
+Excluye archivos que no necesita la imagen Docker. Reduce el contexto del build significativamente (de GB a MB):
 
 ```dockerignore
 **/.git
@@ -85,7 +85,7 @@ Excluye archivos que no necesita la imagen Docker — reduce el contexto del bui
 
 ## `.editorconfig`
 
-Estandariza indentación, line endings y charset entre todos los editores del equipo. El archivo se hereda — una regla en el root aplica a todo el proyecto:
+Estandariza indentación, line endings y charset entre todos los editores del equipo. El archivo se hereda. Una regla en el root aplica a todo el proyecto:
 
 ```ini
 root = true
@@ -115,7 +115,7 @@ trim_trailing_whitespace = false
 
 ## Husky + lint-staged (Frontend)
 
-Ejecuta lint y format automáticamente en cada commit — el desarrollador no necesita recordarlo:
+Ejecuta lint y format automáticamente en cada commit. El desarrollador no necesita recordarlo:
 
 ```bash
 # instalación
@@ -147,7 +147,7 @@ npx lint-staged
 
 ## Dependabot
 
-Abre PRs automáticos cuando hay actualizaciones disponibles en dependencias — sin Dependabot las vulnerabilidades de librerías antiguas se acumulan silenciosamente:
+Abre PRs automáticos cuando hay actualizaciones disponibles en dependencias. Sin Dependabot las vulnerabilidades de librerías antiguas se acumulan silenciosamente:
 
 ```yaml
 # .github/dependabot.yml
@@ -179,7 +179,7 @@ updates:
 
 ## `.gitattributes`
 
-Normaliza line endings — previene diffs de archivos completos por cambios de CRLF/LF:
+Normaliza line endings. Previene diffs de archivos completos por cambios de CRLF/LF:
 
 ```gitattributes
 # Normalizar a LF en el repositorio

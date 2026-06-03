@@ -9,7 +9,7 @@ CORS es el mecanismo del navegador que restringe peticiones JavaScript a un orig
 
 ## Cómo funciona
 
-CORS no es un mecanismo de seguridad del servidor — es una restricción del **navegador**. El servidor indica qué orígenes puede confiar. Herramientas como Postman o curl no están afectadas por CORS.
+CORS no es un mecanismo de seguridad del servidor. Es una restricción del **navegador**. El servidor indica qué orígenes puede confiar. Herramientas como Postman o curl no están afectadas por CORS.
 
 ```
 Preflight request (navegador → servidor):

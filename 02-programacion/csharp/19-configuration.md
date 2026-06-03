@@ -1,8 +1,8 @@
-﻿# 19 — Configuración: IConfiguration e IOptions\<T\>
+﻿# 19: Configuración: IConfiguration e IOptions\<T\>
 
 ASP.NET Core tiene un sistema de configuración unificado que lee valores de múltiples fuentes (archivos JSON, variables de entorno, secrets) y los expone a través de `IConfiguration` e `IOptions<T>`.
 
-> Fuente: *Apps and Services with .NET 8* (Mark J. Price) — Ch.2 Managing Configuration and Secrets
+> Fuente: *Apps and Services with .NET 8* (Mark J. Price). Ch.2 Managing Configuration and Secrets
 
 ---
 
@@ -55,7 +55,7 @@ ConnectionStrings__MainDbConnection=Host=prod-server;...
 
 ---
 
-## IConfiguration — acceso directo
+## IConfiguration: acceso directo
 
 Inyecta `IConfiguration` en constructores para leer valores directamente:
 
@@ -109,7 +109,7 @@ var jwtSettings = configuration.GetSection("Jwt").Get<JwtSettings>();
 
 ---
 
-## IOptions\<T\> — el patrón recomendado
+## IOptions\<T\>: el patrón recomendado
 
 En lugar de leer con strings y perder el tipado, define una clase de settings y usa `IOptions<T>`:
 
@@ -240,7 +240,7 @@ public sealed class JwtSettings
 
 ---
 
-## Variables de entorno — formato ASP.NET Core
+## Variables de entorno: formato ASP.NET Core
 
 ASP.NET Core convierte `__` (doble guión bajo) en `:` para mapear variables de entorno a secciones:
 
@@ -265,7 +265,7 @@ env_file:
 
 ---
 
-## User Secrets — desarrollo local sin exponer secretos
+## User Secrets: desarrollo local sin exponer secretos
 
 `dotnet user-secrets` guarda secretos en la máquina local fuera del repositorio:
 
@@ -355,7 +355,7 @@ public static IServiceCollection AddInfrastructureServices(
 
 ## Errores comunes
 
-### Error 1 — Guardar secretos en appsettings.json
+### Error 1: guardar secretos en appsettings.json
 
 ```json
 // ❌ NUNCA en appsettings.json — se sube al repositorio
@@ -374,7 +374,7 @@ public static IServiceCollection AddInfrastructureServices(
 }
 ```
 
-### Error 2 — No validar configuración al inicio
+### Error 2: no validar configuración al inicio
 
 ```csharp
 // ❌ La app arranca aunque Jwt:Key esté vacío — falla en la primera request
@@ -392,7 +392,7 @@ public JwtTokenService(IConfiguration config)
 // O usar ValidateOnStart() con IOptions<T>
 ```
 
-### Error 3 — Inyectar IConfiguration en capas internas
+### Error 3: inyectar IConfiguration en capas internas
 
 ```csharp
 // ❌ Application o Domain no deberían conocer IConfiguration

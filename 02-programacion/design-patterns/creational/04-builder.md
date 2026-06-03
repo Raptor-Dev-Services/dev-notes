@@ -24,7 +24,7 @@ Alternativa con setters: el objeto queda en estado incompleto e inválido durant
 
 ## Analogía
 
-Un director de obra y su equipo. El director da instrucciones paso a paso: "construye los cimientos", "levanta las paredes", "coloca el techo". El equipo de construcción (builder) sabe cómo ejecutar cada paso. Al final, el director pide el resultado terminado. La misma secuencia de instrucciones puede producir una casa de madera o una de piedra — depende del builder que uses.
+Un director de obra y su equipo. El director da instrucciones paso a paso: "construye los cimientos", "levanta las paredes", "coloca el techo". El equipo de construcción (builder) sabe cómo ejecutar cada paso. Al final, el director pide el resultado terminado. La misma secuencia de instrucciones puede producir una casa de madera o una de piedra, según el builder que se use.
 
 ---
 
@@ -255,8 +255,8 @@ app.UseAuthentication()
 
 ## Cuándo NO usar
 
-- Para objetos simples con pocos parámetros — un constructor basta.
-- Cuando los pasos de construcción son siempre los mismos — no hay variabilidad.
+- Para objetos simples con pocos parámetros. Un constructor basta.
+- Cuando los pasos de construcción son siempre los mismos. No hay variabilidad.
 - Cuando C# records con object initializers resuelven el problema más simplemente:
   ```csharp
   var user = new CreateUserCommand { Name = "Ana", Email = "ana@test.com" };

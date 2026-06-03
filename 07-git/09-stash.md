@@ -118,7 +118,7 @@ git stash push -a -m "todo incluyendo ignorados"
 | aplicar el mismo cambio exploratorio en varias ramas | — |
 
 
-> Fuente: *Learning Git* (Anna Skoulikari) — Ch.8 Stashing and Cleaning
+> Fuente: *Learning Git* (Anna Skoulikari): Ch.8 Stashing and Cleaning
 
 ---
 

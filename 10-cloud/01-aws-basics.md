@@ -1,10 +1,10 @@
 # 01 · AWS — Servicios esenciales
 
-> Fuente: *AWS Certified Solutions Architect – Associate Guide* (Gabriel Ramirez, Packt) — Ch.1 IAM, Ch.2 Infraestructura global y S3, Ch.3 EC2, Ch.9 Storage y RDS, Ch.13 Access Control
+> Fuente: *AWS Certified Solutions Architect – Associate Guide* (Gabriel Ramirez, Packt): Ch.1 IAM, Ch.2 Infraestructura global y S3, Ch.3 EC2, Ch.9 Storage y RDS, Ch.13 Access Control
 
 ## Problema que resuelve
 
-Un equipo que empieza a operar en AWS necesita entender la infraestructura global, los servicios de cómputo, almacenamiento y base de datos, y el sistema de permisos antes de desplegar cualquier aplicación. Este documento es el índice del bloque AWS de esta base de conocimiento — los detalles de cada servicio están en los documentos especializados referenciados al final.
+Un equipo que empieza a operar en AWS necesita entender la infraestructura global, los servicios de cómputo, almacenamiento y base de datos, y el sistema de permisos antes de desplegar cualquier aplicación. Este documento es el índice del bloque AWS de esta base de conocimiento. Los detalles de cada servicio están en los documentos especializados referenciados al final.
 
 ## Infraestructura global
 

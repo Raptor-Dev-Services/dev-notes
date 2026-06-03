@@ -170,7 +170,7 @@ Client
 
 ## Event Sourcing (extensión de CQRS)
 
-Event Sourcing es una extensión donde el estado no se guarda directamente — se guardan los **eventos** que llevaron a ese estado. El estado actual se reconstruye reproduciendo los eventos.
+Event Sourcing es una extensión donde el estado no se guarda directamente. Se guardan los **eventos** que llevaron a ese estado. El estado actual se reconstruye reproduciendo los eventos.
 
 ```
 // Modelo tradicional (este proyecto):
@@ -192,7 +192,7 @@ ExampleUsersEvents table:
 
 **Cuándo usar Event Sourcing:** auditoría completa requerida (finanzas, salud, legal), necesitas "time travel" al estado en cualquier punto del pasado, la historia de cambios es tan importante como el estado actual.
 
-**Cuándo NO usar Event Sourcing:** la mayoría de los casos — es significativamente más complejo.
+**Cuándo NO usar Event Sourcing:** la mayoría de los casos. Es significativamente más complejo.
 
 ---
 
@@ -258,7 +258,7 @@ public async Task Handle_UserExists_ReturnsSuccess()
 
 ## Cuándo no usar CQRS
 
-CQRS agrega complejidad. Para una API puramente CRUD (sin lógica de negocio significativa) un Controller → Repository directo es suficiente y más simple. CQRS paga su costo cuando:
+CQRS agrega complejidad. Para una API puramente CRUD (sin lógica de negocio significativa) un Controller que llame al Repository directamente es suficiente y más simple. CQRS paga su costo cuando:
 
 - Hay lógica de negocio que varía entre casos de uso del mismo recurso
 - El equipo crece y necesita trabajar en casos de uso en paralelo sin conflictos
@@ -269,7 +269,7 @@ CQRS agrega complejidad. Para una API puramente CRUD (sin lógica de negocio sig
 ## Proyecciones en CQRS
 > Fuente: *.NET Microservices Architecture* — Ch.7 Creating and Evolving Event Sourced Aggregates
 
-Una **proyección** es un modelo de lectura derivado del estado de escritura. En CQRS, las proyecciones son los Read Models que el Query side usa — pueden ser vistas materializadas, tablas denormalizadas o caché.
+Una **proyección** es un modelo de lectura derivado del estado de escritura. En CQRS, las proyecciones son los Read Models que el Query side usa: pueden ser vistas materializadas, tablas denormalizadas o caché.
 
 ```
 Write Side                           Read Side

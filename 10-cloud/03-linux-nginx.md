@@ -1,6 +1,6 @@
 # 03 · Linux y Nginx
 
-> Fuente: *Learning Modern Linux* (O'Reilly) — Ch.3 Shells y scripting, Ch.4 Control de acceso, Ch.6 systemd, Ch.7 Networking
+> Fuente: *Learning Modern Linux* (O'Reilly): Ch.3 Shells y scripting, Ch.4 Control de acceso, Ch.6 systemd, Ch.7 Networking
 
 ## Problema que resuelve
 
@@ -206,7 +206,7 @@ ufw status
 ---
 
 ## Scripting Bash esencial para automatización
-> Fuente: *Efficient Linux at the Command Line* (Barrett) — Ch.4 Shell Scripting
+> Fuente: *Efficient Linux at the Command Line* (Barrett): Ch.4 Shell Scripting
 
 ```bash
 #!/usr/bin/env bash

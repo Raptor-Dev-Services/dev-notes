@@ -1,6 +1,6 @@
 ﻿# 01 — Conceptos de Docker
 
-> Fuente: *Docker: Up and Running 3rd Ed* (Sean Kane, Karl Matthias) — Ch.1 Introduction to Docker
+> Fuente: *Docker: Up and Running 3rd Ed* (Sean Kane, Karl Matthias): Ch.1 Introduction to Docker
 
 ---
 

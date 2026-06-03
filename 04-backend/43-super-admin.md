@@ -96,7 +96,7 @@ public sealed class AdminTenantsController : BaseApiController
 
 ---
 
-## Repository de admin — sin filtros de tenant
+## Repository de admin: sin filtros de tenant
 
 ```csharp
 // Tenancy.Infrastructure/Repositories/AdminTenantRepository.cs
@@ -355,7 +355,7 @@ Adicionalmente, en producción el panel de admin puede estar en un subdominio se
 - [ ] Acciones destructivas bloqueadas durante impersonación
 - [ ] Panel de admin detrás de IP whitelist o VPN
 - [ ] Swagger separado para endpoints admin (`GroupName = "admin"`)
-- [ ] Impersonación requiere rol `SuperAdmin` — nunca disponible para roles de tenant
+- [ ] Impersonación requiere rol `SuperAdmin`: nunca disponible para roles de tenant
 
 ---
 

@@ -17,7 +17,7 @@ Tenant B
 └── Usuario Marta   → rol: Operator
 ```
 
-Los roles son **por tenant** — Ana es Admin de Tenant A, no de todo el sistema. Un rol en el JWT solo tiene significado dentro del `tenant_id` que lo emitió.
+Los roles son **por tenant**. Ana es Admin de Tenant A, no de todo el sistema. Un rol en el JWT solo tiene significado dentro del `tenant_id` que lo emitió.
 
 ---
 
@@ -32,7 +32,7 @@ Operator — operaciones básicas (crear, leer registros operativos)
 Viewer   — solo lectura en todo
 ```
 
-Cada endpoint tiene un conjunto de roles permitidos. No hay herencia — si un endpoint requiere `Manager`, un `Viewer` no puede aunque sea "menor".
+Cada endpoint tiene un conjunto de roles permitidos. No hay herencia. Si un endpoint requiere `Manager`, un `Viewer` no puede aunque sea "menor".
 
 ### Jerárquico (cada rol incluye permisos del rol inferior)
 
@@ -59,7 +59,7 @@ var claims = new[]
 };
 ```
 
-Usar `ClaimTypes.Role` (que es `http://schemas.microsoft.com/ws/2008/06/identity/claims/role`) en lugar del string `"role"` — ASP.NET Core lo reconoce automáticamente para `[Authorize(Roles = "Admin")]`.
+Usar `ClaimTypes.Role` (que es `http://schemas.microsoft.com/ws/2008/06/identity/claims/role`) en lugar del string `"role"`. ASP.NET Core lo reconoce automáticamente para `[Authorize(Roles = "Admin")]`.
 
 ---
 
@@ -154,9 +154,9 @@ public async Task<IActionResult> GetAll(CancellationToken ct)
 
 ---
 
-## Roles en el handler — evitar lógica de rol en el handler
+## Roles en el handler: evitar lógica de rol en el handler
 
-El handler no debe saber sobre roles — eso es responsabilidad del controller/presentación. El handler recibe parámetros que ya reflejan la decisión:
+El handler no debe saber sobre roles. Eso es responsabilidad del controller/presentación. El handler recibe parámetros que ya reflejan la decisión:
 
 ```csharp
 // ✓ El controller toma la decisión de rol antes de llamar al handler
@@ -174,7 +174,7 @@ La excepción: si la misma operación tiene comportamientos muy distintos por ro
 
 ## RBAC a nivel de recurso (Resource-Based Authorization)
 
-A veces no basta con el rol — también importa si el recurso pertenece al usuario que lo solicita. Ejemplo: un `Operator` puede editar sus propios registros, pero no los de otro operador.
+A veces no basta con el rol. También importa si el recurso pertenece al usuario que lo solicita. Ejemplo: un `Operator` puede editar sus propios registros, pero no los de otro operador.
 
 ```csharp
 [HttpPut("orders/{id:guid}")]
@@ -251,7 +251,7 @@ private static bool IsValidRole(string role) =>
 
 ## SuperAdmin — rol del operador del SaaS
 
-El SuperAdmin es el rol del equipo que opera el SaaS. NO es un rol del tenant — es un rol del sistema:
+El SuperAdmin es el rol del equipo que opera el SaaS. NO es un rol del tenant. Es un rol del sistema:
 
 ```csharp
 public static class SystemRoles
@@ -270,7 +270,7 @@ public sealed class SuperAdminController : BaseApiController
 }
 ```
 
-El JWT de un SuperAdmin **no lleva** `tenant_id` — o lleva `tenant_id = 0`. Los repositorios que accede el SuperAdmin usan `IgnoreQueryFilters()`.
+El JWT de un SuperAdmin **no lleva** `tenant_id`. O lleva `tenant_id = 0`. Los repositorios que accede el SuperAdmin usan `IgnoreQueryFilters()`.
 
 ---
 
@@ -288,7 +288,7 @@ El JWT de un SuperAdmin **no lleva** `tenant_id` — o lleva `tenant_id = 0`. Lo
 | GET /settings | ✓ | ✗ | ✗ | ✗ |
 | PUT /settings | ✓ | ✗ | ✗ | ✗ |
 
-Mantener esta tabla actualizada es tan importante como el código — es el contrato de autorización del sistema.
+Mantener esta tabla actualizada es tan importante como el código. Es el contrato de autorización del sistema.
 
 ---
 

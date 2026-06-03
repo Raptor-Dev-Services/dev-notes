@@ -26,7 +26,7 @@ SaaS                           Sistema del Tenant (ERP, custom app, etc.)
 
 ## Entidades
 
-### WebhookEndpoint — URL registrada por el tenant
+### WebhookEndpoint: URL registrada por el tenant
 
 ```csharp
 // Webhooks.Domain/Entities/WebhookEndpoint.cs
@@ -44,7 +44,7 @@ public sealed class WebhookEndpoint
 }
 ```
 
-### WebhookDelivery — intento de entrega
+### WebhookDelivery: intento de entrega
 
 ```csharp
 // Webhooks.Domain/Entities/WebhookDelivery.cs
@@ -135,7 +135,7 @@ public async Task<CreateOrderResponse> Handle(
 
 ---
 
-## IWebhookPublisher — encolar la entrega
+## IWebhookPublisher: encolar la entrega
 
 ```csharp
 // Webhooks.Application/Services/WebhookPublisher.cs
@@ -194,7 +194,7 @@ public sealed record WebhookPayload
 
 ---
 
-## WebhookDeliveryWorker — Background Service que entrega
+## WebhookDeliveryWorker: Background Service que entrega
 
 ```csharp
 // Webhooks.Infrastructure/BackgroundJobs/WebhookDeliveryWorker.cs
@@ -418,12 +418,12 @@ public async Task<List<WebhookEndpoint>> GetByTenantAndEventAsync(
 - [ ] Payload firmado con HMAC-SHA256 usando el secret del endpoint
 - [ ] Header `X-Webhook-Signature: sha256=...` en cada request
 - [ ] Timeout de 30 segundos en el HTTP request
-- [ ] No reintentar errores 4xx (son del cliente — no van a cambiar)
+- [ ] No reintentar errores 4xx (son del cliente, no van a cambiar)
 - [ ] Backoff exponencial para errores 5xx y timeouts
 - [ ] Máximo 5 intentos antes de marcar como Exhausted
 - [ ] Historial de deliveries visible para el Admin del tenant
 - [ ] Re-envío manual disponible para deliveries fallidas
-- [ ] Secret del endpoint diferente por tenant — nunca compartido
+- [ ] Secret del endpoint diferente por tenant: nunca compartido
 - [ ] El feature de webhooks solo disponible en planes que lo incluyen (ver `04-backend/31-planes-limites.md`)
 
 ---

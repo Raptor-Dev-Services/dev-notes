@@ -2,7 +2,7 @@
 
 El problema con "funciona en mi máquina" desaparece cuando toda la pila — API, base de datos, servidor de logs — corre en contenedores definidos como código. Este documento cubre el setup completo de Docker para el stack del proyecto.
 
-> Fuente: Documentación oficial Docker Compose v2 — https://docs.docker.com/compose/
+> Fuente: Documentación oficial Docker Compose v2: https://docs.docker.com/compose/
 
 ---
 

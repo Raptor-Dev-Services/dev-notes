@@ -14,7 +14,7 @@ Cliente → POST /api/orders      → 201 Created  (otro reintento)
 Resultado: 3 órdenes idénticas en la base de datos
 ```
 
-Con retry automático en el cliente (Axios, HttpClient, fetch con retry), este problema ocurre constantemente — especialmente en mobile con conexión intermitente.
+Con retry automático en el cliente (Axios, HttpClient, fetch con retry), este problema ocurre constantemente. Es especialmente frecuente en mobile con conexión intermitente.
 
 ---
 
@@ -57,7 +57,7 @@ public sealed class IdempotencyRecord
 }
 ```
 
-La key del cliente se guarda como hash SHA-256 — nunca el valor raw — para ahorrar espacio y evitar fugas si alguien accede a la tabla.
+La key del cliente se guarda como hash SHA-256, nunca el valor raw, para ahorrar espacio y evitar fugas si alguien accede a la tabla.
 
 ---
 
@@ -306,7 +306,7 @@ app.MapControllers();
 
 ---
 
-## Idempotency en el handler (enfoque alternativo — por use case)
+## Idempotency en el handler (enfoque alternativo por use case)
 
 Para endpoints que lo necesitan explícitamente sin el middleware global:
 
@@ -389,7 +389,7 @@ if (existing is not null)
 
 ---
 
-## Idempotency con Stripe — pagos
+## Idempotency con Stripe: pagos
 
 Stripe acepta su propio sistema de idempotency keys. El patrón es pasar la key del cliente directamente a Stripe:
 
@@ -451,7 +451,7 @@ Esto significa que:
 - `tenant:1 branch:10 key:abc` → orden creada en la sucursal 10
 - `tenant:1 branch:20 key:abc` → otra orden en la sucursal 20 (key diferente en contexto diferente)
 
-Las mismas keys en branches distintos son operaciones distintas — correcto, porque son contextos de negocio distintos.
+Las mismas keys en branches distintos son operaciones distintas. Son contextos de negocio distintos.
 
 ---
 
@@ -534,7 +534,7 @@ X-Idempotency-Replayed: true
 }
 ```
 
-El header `X-Idempotency-Replayed: true` permite que el cliente sepa que recibió una respuesta cacheada — útil para logging y debugging.
+El header `X-Idempotency-Replayed: true` permite que el cliente sepa que recibió una respuesta cacheada. Es útil para logging y debugging.
 
 ---
 
@@ -587,11 +587,11 @@ async function createOrder(orderData: CreateOrderRequest): Promise<Order> {
 ## Checklist
 
 - [ ] `IdempotencyRecord` con `KeyHash` SHA-256 (nunca la key raw), `TenantId`, `BranchId`, `Endpoint`, `ExpiresAtUtc`
-- [ ] Índice único en `(tenant_id, key_hash, endpoint)` — o `(tenant_id, branch_id, key_hash, endpoint)` con branches
-- [ ] Solo cachear respuestas 2xx y 4xx — nunca 5xx (puede haber error transitorio)
+- [ ] Índice único en `(tenant_id, key_hash, endpoint)`: o `(tenant_id, branch_id, key_hash, endpoint)` con branches
+- [ ] Solo cachear respuestas 2xx y 4xx: nunca 5xx (puede haber error transitorio)
 - [ ] Rechazar misma key con body diferente (HTTP 422)
 - [ ] Header `X-Idempotency-Replayed: true` en respuestas cacheadas
-- [ ] Expiration de 7 días — job de limpieza nocturno
+- [ ] Expiration de 7 días: job de limpieza nocturno
 - [ ] Manejar race condition (dos requests simultáneas con misma key) con catch de unique constraint
 - [ ] Endpoints de auth (login/refresh) excluidos de idempotency
 - [ ] Stripe: usar `IdempotencyKey` en `RequestOptions` para pagos críticos

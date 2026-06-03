@@ -1,8 +1,8 @@
-﻿# 16 — Namespaces y using
+﻿# 16: Namespaces y using
 
 Los namespaces organizan el código en espacios de nombres jerárquicos. Los `using` importan esos espacios.
 
-> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price) — Ch.2 Speaking C#: Namespaces and Assemblies
+> Fuente: *C# 13 and .NET 9: Modern Cross-Platform Development* (Mark J. Price). Ch.2 Speaking C#: Namespaces and Assemblies
 
 ---
 
@@ -21,7 +21,7 @@ public sealed class GetExampleUserHandler
 }
 ```
 
-Sin namespace, todos los tipos del mundo estarían en el mismo espacio global — colisiones inevitables.
+Sin namespace, todos los tipos del mundo estarían en el mismo espacio global. Las colisiones serían inevitables.
 
 ---
 
@@ -45,7 +45,7 @@ Namespace:   WebApi.EndPoints.ExampleUsers.Presenters
 
 ---
 
-## File-scoped namespace — C# 10+
+## File-scoped namespace: C# 10+
 
 La forma moderna. Un solo `namespace` al inicio del archivo, sin llaves. Todo el archivo pertenece a ese namespace.
 
@@ -65,11 +65,11 @@ namespace Application.UseCases.ExampleUsers.GetExampleUser
 }
 ```
 
-**Este proyecto usa file-scoped** — menos indentación, más legible.
+Este proyecto usa file-scoped. Menos indentación, más legible.
 
 ---
 
-## `using` — importar namespaces
+## `using`: importar namespaces
 
 Sin `using`, necesitas el nombre completo cada vez:
 
@@ -106,7 +106,7 @@ public sealed class GetExampleUserHandler { }
 
 ---
 
-## `global using` — importar para todo el proyecto
+## `global using`: importar para todo el proyecto
 
 C# 10+. Un `global using` en un archivo aplica a **todos** los archivos del proyecto.
 
@@ -131,7 +131,7 @@ global using Domain.Repositories.ExampleUsers;
 
 ---
 
-## `using static` — importar miembros estáticos
+## `using static`: importar miembros estáticos
 
 Importa los métodos estáticos de una clase sin necesidad de calificarlos:
 
@@ -146,7 +146,7 @@ double a = PI * r * r;     // en vez de: Math.PI
 
 ---
 
-## `using` aliases — renombrar tipos importados
+## `using` aliases: renombrar tipos importados
 
 ```csharp
 // Cuando dos namespaces tienen un tipo con el mismo nombre:
@@ -160,9 +160,9 @@ IdentityUser identidad   = new IdentityUser();
 
 ---
 
-## `using` para disposables — liberar recursos
+## `using` para disposables: liberar recursos
 
-Diferente del `using` de namespace — este es para objetos `IDisposable`:
+Diferente del `using` de namespace. Este aplica a objetos `IDisposable`:
 
 ```csharp
 // Sintaxis clásica — Dispose al salir del bloque
@@ -207,13 +207,13 @@ Host/
     Services/                      → namespace Host.Services
 ```
 
-La jerarquía del namespace **refleja exactamente la jerarquía de carpetas**. Si ves `Infrastructure.Repositories.ExampleUsers`, sabes exactamente dónde buscar el archivo.
+La jerarquía del namespace refleja exactamente la jerarquía de carpetas. Si ves `Infrastructure.Repositories.ExampleUsers`, sabes exactamente dónde buscar el archivo.
 
 ---
 
 ## Errores comunes
 
-### Error 1 — Namespace que no coincide con la carpeta
+### Error 1: namespace que no coincide con la carpeta
 
 ```csharp
 // Archivo en: Infrastructure/Repositories/ExampleUsers/ExampleUserRepository.cs
@@ -224,7 +224,7 @@ namespace Infrastructure.Data.Users;
 namespace Infrastructure.Repositories.ExampleUsers;
 ```
 
-### Error 2 — Namespace demasiado genérico
+### Error 2: namespace demasiado genérico
 
 ```csharp
 // ❌ "Utils" es un namespace basura — no dice nada
@@ -236,7 +236,7 @@ namespace Application.Helpers;
 public static class DateHelper { }
 ```
 
-### Error 3 — `using` dentro del namespace
+### Error 3: `using` dentro del namespace
 
 ```csharp
 // ✓ El estándar — usings fuera del namespace (antes del namespace)

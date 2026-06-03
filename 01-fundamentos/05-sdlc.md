@@ -185,7 +185,7 @@ Prácticas clave:
 - CI/CD: cada PR dispara tests automáticos y despliegue a staging
 - Infrastructure as Code (Terraform, Bicep): el servidor se define en código
 - Observabilidad: logs estructurados + métricas + trazas distribuidas
-- Feature flags: desplegar sin activar → activar sin desplegar
+- Feature flags: desplegar sin activar; activar sin desplegar
 
 ---
 
@@ -273,7 +273,7 @@ Un Cycle Time corto con Lead Time largo indica cuellos de botella: revisiones le
 
 ## 7. Deuda técnica y el SDLC
 
-La deuda técnica es el costo futuro de atajos tomados hoy. No es inherentemente mala — a veces es una decisión deliberada. El problema es cuando se acumula sin control.
+La deuda técnica es el costo futuro de atajos tomados hoy. No es inherentemente mala: a veces es una decisión deliberada. El problema es cuando se acumula sin control.
 
 ### En qué fases aparece cada tipo de deuda
 

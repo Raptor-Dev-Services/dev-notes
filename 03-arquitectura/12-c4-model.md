@@ -1,6 +1,6 @@
 # 12 · C4 Model — Diagramas de arquitectura por niveles
 
-Comunicar la arquitectura de un sistema es difícil: un diagrama de clases es demasiado detallado para un manager de producto, y un diagrama de alto nivel deja a los ingenieros sin suficiente contexto. El C4 model resuelve esto con cuatro niveles de granularidad — cada uno diseñado para una audiencia distinta — que permiten describir un sistema desde su contexto de negocio hasta el código, usando solo texto como fuente de verdad.
+Comunicar la arquitectura de un sistema es difícil: un diagrama de clases es demasiado detallado para un manager de producto, y un diagrama de alto nivel deja a los ingenieros sin suficiente contexto. El C4 model resuelve esto con cuatro niveles de granularidad, cada uno diseñado para una audiencia distinta, que permiten describir un sistema desde su contexto de negocio hasta el código, usando solo texto como fuente de verdad.
 
 > Fuente: *Enterprise Architecture with .NET* (Colinet) — Ch.7 C4 and Other Approaches; c4model.com (Simon Brown)
 

@@ -1,6 +1,6 @@
 # 33 — Rate Limiting por Tenant
 
-El rate limiting por tenant evita que una empresa abuse de la API y degrade el servicio para los demás. A diferencia del rate limiting global (por IP), el rate limiting por tenant usa el `tenant_id` del JWT como clave — múltiples usuarios del mismo tenant comparten la misma cuota.
+El rate limiting por tenant evita que una empresa abuse de la API y degrade el servicio para los demás. A diferencia del rate limiting global (por IP), el rate limiting por tenant usa el `tenant_id` del JWT como clave. Múltiples usuarios del mismo tenant comparten la misma cuota.
 
 ---
 
@@ -23,7 +23,7 @@ Con rate limiting por tenant:
 
 ASP.NET Core incluye `Microsoft.AspNetCore.RateLimiting` (desde .NET 7). No hay que instalar nada extra.
 
-### 1. Fixed Window — ventana fija (más simple)
+### 1. Fixed Window: ventana fija (más simple)
 
 ```csharp
 // Host.Api/Extensions/RateLimitingExtensions.cs
@@ -87,7 +87,7 @@ public static IServiceCollection AddAppRateLimiting(this IServiceCollection serv
 }
 ```
 
-### 2. Sliding Window — ventana deslizante (más suave)
+### 2. Sliding Window: ventana deslizante (más suave)
 
 ```csharp
 return RateLimitPartition.GetSlidingWindowLimiter(key, _ =>
@@ -100,7 +100,7 @@ return RateLimitPartition.GetSlidingWindowLimiter(key, _ =>
     });
 ```
 
-La ventana deslizante distribuye mejor los picos — si el tenant hace 200 req en los primeros 15 segundos, en el siguiente segmento ya tiene cuota disponible proporcional.
+La ventana deslizante distribuye mejor los picos. Si el tenant hace 200 req en los primeros 15 segundos, en el siguiente segmento ya tiene cuota disponible proporcional.
 
 ---
 
@@ -228,7 +228,7 @@ var key      = branchId is not null
 
 ---
 
-## Headers de respuesta — informar al cliente
+## Headers de respuesta: informar al cliente
 
 El cliente debe saber cuánto límite le queda:
 
@@ -303,7 +303,7 @@ options.OnRejected = async (context, ct) =>
 - [ ] Política `tenant` aplicada como default en todos los controllers con `[Authorize]`
 - [ ] Política `strict` para endpoints de alto costo (reportes, exportaciones, búsquedas pesadas)
 - [ ] `[DisableRateLimiting]` en health check y webhooks entrantes
-- [ ] `UseRateLimiter()` después de `UseAuthentication()` — necesita el claim `tenant_id`
+- [ ] `UseRateLimiter()` después de `UseAuthentication()`: necesita el claim `tenant_id`
 - [ ] Headers `Retry-After` en respuestas 429
 - [ ] Límites diferenciados por plan (Enterprise > Pro > Free)
 - [ ] Redis para rate limiting con múltiples instancias (horizontal scaling)

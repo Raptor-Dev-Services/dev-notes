@@ -216,8 +216,8 @@ No hay una clase IAbstractFactory explícita, pero el concepto aplica:
 
 ## Cuándo NO usar
 
-- Cuando solo tienes un tipo de producto que varía — usa Factory Method.
-- Cuando agregar nuevos tipos de productos es frecuente — requiere cambiar la interfaz de la fábrica y todas sus implementaciones.
+- Cuando solo tienes un tipo de producto que varía. Usar Factory Method.
+- Cuando agregar nuevos tipos de productos es frecuente. Requiere cambiar la interfaz de la fábrica y todas sus implementaciones.
 - Cuando la complejidad no está justificada por la variabilidad real.
 
 

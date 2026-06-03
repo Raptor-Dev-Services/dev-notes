@@ -25,7 +25,7 @@ ITarget target = adaptee;  // ← ERROR: no implementa ITarget
 
 ## Analogía
 
-Un adaptador de enchufes de viaje. Tu laptop tiene un enchufe tipo A (EE.UU.) pero el tomacorriente del hotel en Europa es tipo C. El adaptador de viaje no cambia la funcionalidad de tu laptop ni la del tomacorriente — solo conecta interfaces incompatibles.
+Un adaptador de enchufes de viaje. Tu laptop tiene un enchufe tipo A (EE.UU.) pero el tomacorriente del hotel en Europa es tipo C. El adaptador de viaje no cambia la funcionalidad de tu laptop ni la del tomacorriente. Solo conecta interfaces incompatibles.
 
 ---
 
@@ -128,7 +128,7 @@ class ClassAdapter : Adaptee, ITarget
 // Desventaja: acoplado a la clase concreta Adaptee (no funciona con subclases)
 ```
 
-**En C#: usar Object Adapter (composición) es la norma** — no existe herencia múltiple de clases.
+**En C#: usar Object Adapter (composición) es la norma.** No existe herencia múltiple de clases.
 
 ---
 
@@ -220,13 +220,13 @@ public sealed class MainDapperDbConnection
 - Cuando quieres usar una clase existente pero su interfaz no es compatible con el resto del código.
 - Cuando quieres crear una clase reutilizable que coopere con clases que no tienen interfaces compatibles.
 - Cuando necesitas integrar librerías de terceros sin modificarlas.
-- Cuando migras un sistema antiguo — el Adapter permite que el código nuevo y viejo coexistan.
+- Cuando migras un sistema antiguo. El Adapter permite que el código nuevo y viejo coexistan.
 
 ## Cuándo NO usar
 
 - Cuando puedes modificar directamente la interfaz del Adaptee.
-- Cuando la diferencia entre interfaces es tan grande que el Adapter se convierte en una traducción compleja — puede ser mejor refactorizar.
-- Cuando agregas tanta lógica en el Adapter que se vuelve un God Object — mantenerlo enfocado en la traducción.
+- Cuando la diferencia entre interfaces es tan grande que el Adapter se convierte en una traducción compleja. Puede ser mejor refactorizar.
+- Cuando agregas tanta lógica en el Adapter que se vuelve un God Object. Mantenerlo enfocado en la traducción.
 
 
 ---

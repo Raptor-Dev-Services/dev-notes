@@ -16,7 +16,7 @@ Tienes un objeto pesado que solo debería crearse cuando realmente se necesita (
 
 ## Analogía
 
-Una tarjeta de crédito. Cuando pagas con tarjeta, el comercio no accede directamente a tu cuenta bancaria. La tarjeta es un proxy de tu cuenta — misma interfaz (pago), pero añade: verificación de fondos, registro de transacción, protección de fraude, y diferimiento del cobro real. El comercio usa la misma interfaz sin saber los detalles del banco.
+Una tarjeta de crédito. Cuando pagas con tarjeta, el comercio no accede directamente a tu cuenta bancaria. La tarjeta es un proxy de tu cuenta con la misma interfaz de pago, pero añade: verificación de fondos, registro de transacción, protección de fraude y diferimiento del cobro real. El comercio usa la misma interfaz sin saber los detalles del banco.
 
 ---
 
@@ -272,7 +272,7 @@ public sealed class MainDapperDbConnection
 ## Cuándo NO usar
 
 - Cuando el procesamiento adicional añade latencia inaceptable en el camino crítico.
-- Cuando el objeto real es simple — el overhead del proxy no está justificado.
+- Cuando el objeto real es simple. El overhead del proxy no está justificado.
 - Cuando puedes añadir el comportamiento directamente al objeto real sin violaciones de principios.
 
 

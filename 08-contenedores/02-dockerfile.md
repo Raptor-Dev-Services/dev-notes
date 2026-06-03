@@ -318,7 +318,7 @@ docker run --rm -it --entrypoint /bin/sh aspnet:10.0
 ---
 
 ## Seguridad en Dockerfiles
-> Fuente: *Docker Up and Running* (Kane, Matthias) — Ch.11 Docker Security
+> Fuente: *Docker Up and Running* (Kane, Matthias): Ch.11 Docker Security
 
 ```dockerfile
 # ❌ Prácticas inseguras comunes
