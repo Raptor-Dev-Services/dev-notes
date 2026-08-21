@@ -1,8 +1,10 @@
 # 06 — Frontend con React
 
-Documentación sobre el stack frontend: Vite, React, Tailwind CSS v4, Headless UI, Axios y patrones de componentes.
+Documentación sobre el stack frontend: Vite, React, Tailwind CSS v4, Headless UI, Axios, patrones de componentes y arquitectura de la aplicación.
 
 ## Archivos
+
+### Stack y componentes
 
 | Archivo | Contenido |
 |---------|-----------|
@@ -12,6 +14,16 @@ Documentación sobre el stack frontend: Vite, React, Tailwind CSS v4, Headless U
 | [04-design-system.md](04-design-system.md) | Design tokens: objeto `ui` con layout, surface, typography, controls, badge |
 | [05-componentes-primitivos.md](05-componentes-primitivos.md) | FormField, Modal (Headless UI), AppNavbar, AppShell, lazy routing |
 | [06-feature-hook.md](06-feature-hook.md) | Patrón feature hook: CRUD + filtros + paginación + useMediaQuery + apiClient |
+
+### Arquitectura de la aplicación
+
+| Archivo | Contenido |
+|---------|-----------|
+| [07-capa-dominio-acl.md](07-capa-dominio-acl.md) | Sacar el negocio de la vista: ACL, modelo de dominio, Strategy, capas en un sentido |
+| [08-estado-donde-vive.md](08-estado-donde-vive.md) | Escalera de estado: local, elevado, URL, Context, store con selectores; persistencia |
+| [09-componentes-headless.md](09-componentes-headless.md) | Separar comportamiento de apariencia: hook headless, prop getters, HOC vs render props |
+| [10-fronteras-import.md](10-fronteras-import.md) | app -> features -> shared enforzado con `import/no-restricted-paths` |
+| [11-practicas-codigo-real.md](11-practicas-codigo-real.md) | Patrones de producción que mejoran el ejemplo de libro, con el incidente que los originó |
 
 
 ---

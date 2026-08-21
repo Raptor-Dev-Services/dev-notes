@@ -88,11 +88,31 @@
 
 | Libro | Autor |
 |-------|-------|
-| Full Stack React, TypeScript, and Node | David Choi |
-| Full-Stack Web Development with TypeScript 5 | Daishi Kato |
+| Full-Stack React, TypeScript, and Node | David Choi |
+| Full-Stack Web Development with TypeScript 5 | Mykyta Chernenko |
 | Modern Full-Stack Web Development with ASP.NET Core | Rui Gu |
 | JavaScript from Beginner to Professional | Laurence Lars Svekis |
 | Mastering JavaScript Functional Programming | Federico Kereki |
+
+### React in Production Mega Bundle 2026 (Packt)
+> Carpeta: `Downloads\React in Production Mega Bundle 2026 by Packt`
+
+| Libro | Autor | Usado en |
+|-------|-------|----------|
+| React Anti-Patterns | Juntao Qiu | [07](../../06-frontend/07-capa-dominio-acl.md), [09](../../06-frontend/09-componentes-headless.md) |
+| React Design Patterns and Best Practices (5ª ed., React 19) | Carlos Santana Roldán | [08](../../06-frontend/08-estado-donde-vive.md) |
+| React Application Architecture for Production (2ª ed.) | Alan Alickovic, Anthony Alicea | [10](../../06-frontend/10-fronteras-import.md) |
+| React Key Concepts (2ª ed.) | Maximilian Schwarzmüller | — |
+| Learn React with TypeScript (3ª ed.) | Carl Rippon | — |
+| Learn React Hooks (2ª ed.) | Daniel Bugl | — |
+| Modern Full-Stack React Projects | Daniel Bugl | — |
+| React and React Native (6ª ed.) | Mikhail Sakhniuk, Rodrigo Lobenwein, Adam Boduch | — |
+| Simplifying State Management in React Native | Aleksandra Desmurs-Linczewska | — |
+| React Interview Guide | Sudheer Jonna, Andrew Baisden | — |
+| TypeScript 5 Design Patterns and Best Practices (2ª ed.) | Theofanis Despoudis | — |
+| Clean Code with TypeScript | Rukevwe Ojigbo, Sanjay Krishna Anbalagan | — |
+| Full Stack Development with Spring Boot 3 and React (4ª ed.) | Juha Hinkula | — |
+| Full-Stack Flask and React | Olatunde Adedeji | — |
 
 ---
 
@@ -192,6 +212,7 @@
 | Building Data-Driven Applications with LlamaIndex | Andrei Gheorghiu |
 | Mastering NLP from Foundations to LLMs | Lior Gazit, Meysam Ghaffari |
 | Responsible AI in the Enterprise | Adnan Masood, Heather Dawe |
+| Learn Model Context Protocol with TypeScript | Christoffer Noring |
 
 ---
 

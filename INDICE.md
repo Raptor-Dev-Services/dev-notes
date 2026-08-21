@@ -229,7 +229,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 06 — Frontend React (6 docs)
+## 06 — Frontend React (11 docs)
 
 | # | Doc | Tema |
 |---|-----|------|
@@ -239,6 +239,11 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 | 04 | [Design System](06-frontend/04-design-system.md) | Semantic tokens, tipografía, ARIA, Modal, FormField |
 | 05 | [Componentes Primitivos](06-frontend/05-componentes-primitivos.md) | Button, Input, Table — base del design system |
 | 06 | [Feature Hook](06-frontend/06-feature-hook.md) | Patrón de hook por feature (useExampleUser) |
+| 07 | [Capa de Dominio y ACL](06-frontend/07-capa-dominio-acl.md) | Anti-Corruption Layer, modelo de dominio, Strategy, capas |
+| 08 | [Estado: dónde vive](06-frontend/08-estado-donde-vive.md) | Local, URL, Context, store con selectores, persistencia |
+| 09 | [Componentes Headless](06-frontend/09-componentes-headless.md) | Prop getters, hook vs render prop vs HOC, sobre-abstracción |
+| 10 | [Fronteras de Import](06-frontend/10-fronteras-import.md) | app -> features -> shared con `import/no-restricted-paths` |
+| 11 | [Prácticas del Código Real](06-frontend/11-practicas-codigo-real.md) | Máquina de estados, AbortController, Result en cliente, incidentes |
 
 ---
 
@@ -317,7 +322,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 11 — Vibe Coding / AI-Assisted Development (5 docs)
+## 11 — Vibe Coding / AI-Assisted Development (6 docs)
 
 | # | Doc | Tema |
 |---|-----|------|
@@ -326,6 +331,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 | 03 | [AI Workflow](11-vibe-coding/03-ai-workflow.md) | Integrar LLMs en el ciclo de desarrollo |
 | 04 | [Context Management](11-vibe-coding/04-context-management.md) | Gestión de contexto en sesiones largas |
 | 05 | [LLMOps](11-vibe-coding/05-llmops.md) | Operaciones para sistemas basados en LLMs |
+| 06 | [Arquitectura Agéntica](11-vibe-coding/06-arquitectura-agentica.md) | Catálogo de agentes, skills y reglas; placeholders y matriz de selección |
 
 ---
 

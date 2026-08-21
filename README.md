@@ -13,12 +13,12 @@ Base de conocimiento personal de **Rogelio Arriaga** para desarrollo de software
 | [03-arquitectura](03-arquitectura/) | DDD, CQRS, Clean Architecture, Vertical Slice, microservicios, Keycloak, API design | 13 |
 | [04-backend](04-backend/) | ASP.NET Core: Result Pattern, Repository, Pipeline Behaviors, auth, caching, validación, EF Core, performance, memoria, JWT + testing | 24 |
 | [05-bases-de-datos](05-bases-de-datos/) | SQL, índices, transacciones, PostgreSQL avanzado, Dapper, connection strings | 6 |
-| [06-frontend](06-frontend/) | React 19, Vite, Tailwind v4, design system, componentes primitivos, feature hook | 6 |
+| [06-frontend](06-frontend/) | React 19, Vite, Tailwind v4, design system, componentes primitivos, feature hook, capa de dominio, estado, headless, fronteras de import | 11 |
 | [07-git](07-git/) | Tooling, SemVer, Git Flow, tags, conventional commits, merge strategies, rollback, stash | 9 |
 | [08-contenedores](08-contenedores/) | Docker: conceptos, Dockerfile multi-stage, Compose, comandos | 5 |
 | [09-cicd](09-cicd/) | Checklists, GitHub Actions (OIDC + AWS), Azure DevOps, Terraform | 4 |
 | [10-cloud](10-cloud/) | AWS, Azure, Linux+Nginx, observabilidad, secretos, costos, seguridad web (OWASP), Zero Trust, tracing distribuido | 9 |
-| [11-vibe-coding](11-vibe-coding/) | CLAUDE.md, prompts efectivos, AI workflow, manejo de contexto, LLMOps | 5 |
+| [11-vibe-coding](11-vibe-coding/) | CLAUDE.md, prompts efectivos, AI workflow, manejo de contexto, LLMOps, arquitectura agéntica | 6 |
 | [resources](resources/) | Bibliografía indexada | — |
 
 ---
@@ -83,7 +83,12 @@ dev-notes/
 │   ├── 03-tailwind.md
 │   ├── 04-design-system.md
 │   ├── 05-componentes-primitivos.md
-│   └── 06-feature-hook.md
+│   ├── 06-feature-hook.md
+│   ├── 07-capa-dominio-acl.md
+│   ├── 08-estado-donde-vive.md
+│   ├── 09-componentes-headless.md
+│   ├── 10-fronteras-import.md
+│   └── 11-practicas-codigo-real.md
 ├── 07-git/
 │   ├── 01-project-tooling.md
 │   ├── 02-semver.md
@@ -116,11 +121,12 @@ dev-notes/
 │   ├── 08-zero-trust.md
 │   └── 09-tracing-distribuido.md
 ├── 11-vibe-coding/
-│   ├── 01-agents-md.md
+│   ├── 01-claude-md.md
 │   ├── 02-prompts-efectivos.md
 │   ├── 03-ai-workflow.md
 │   ├── 04-context-management.md
-│   └── 05-llmops.md
+│   ├── 05-llmops.md
+│   └── 06-arquitectura-agentica.md
 └── resources/
     └── books/README.md             (índice de biblioteca — Capacitacion\Bibliografias)
 ```
