@@ -232,7 +232,7 @@ Empezar con cero permisos y agregar solo lo estrictamente necesario.
     ],
     "Resource": [
       "arn:aws:secretsmanager:us-east-1:123456789:secret:prod/backtemplate/*",
-      "arn:aws:s3:::gtm-suite-prod-files/uploads/*"
+      "arn:aws:s3:::{{PROJECT_SLUG}}-prod-files/uploads/*"
     ]
   }
 }
@@ -523,13 +523,13 @@ aws iam get-credential-report \
         "s3:DeleteObject",
         "s3:GetObjectAttributes"
       ],
-      "Resource": "arn:aws:s3:::gtm-suite-prod-files/*"
+      "Resource": "arn:aws:s3:::{{PROJECT_SLUG}}-prod-files/*"
     },
     {
       "Sid": "S3ListBucket",
       "Effect": "Allow",
       "Action": "s3:ListBucket",
-      "Resource": "arn:aws:s3:::gtm-suite-prod-files"
+      "Resource": "arn:aws:s3:::{{PROJECT_SLUG}}-prod-files"
     },
     {
       "Sid": "CloudWatch",

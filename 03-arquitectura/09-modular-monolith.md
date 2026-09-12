@@ -23,7 +23,7 @@ Microservicios          Monolito Modular         Monolito Big Ball of Mud
 ---
 
 ## Ventajas del Monolito Modular
-> Fuente: *Architecting ASP.NET Core Applications* (Ferreira) — Ch.20 Modular Monolith
+> Fuente: *Architecting ASP.NET Core Applications* (Marcotte) — Ch.20 Modular Monolith
 
 | Ventaja | Descripción |
 |---------|-------------|
@@ -174,7 +174,7 @@ El mediator (`Common.Messaging.IMediator`) ejecuta todos los handlers del evento
 ---
 
 ## Convenciones compartidas entre módulos
-> Fuente: *Architecting ASP.NET Core Applications* (Ferreira) — Ch.20 Modular Monolith
+> Fuente: *Architecting ASP.NET Core Applications* (Marcotte) — Ch.20 Modular Monolith
 
 Los módulos comparten cuatro elementos de infraestructura. Usar el nombre del módulo como discriminador evita conflictos:
 
@@ -341,7 +341,7 @@ builder.Services.AddUsersWebApiServices();
 ---
 
 ## Retos y problemas comunes
-> Fuente: *Architecting ASP.NET Core Applications* (Ferreira) — Ch.20 Modular Monolith
+> Fuente: *Architecting ASP.NET Core Applications* (Marcotte) — Ch.20 Modular Monolith
 
 | Problema | Señal de alerta | Mitigación |
 |----------|----------------|------------|
@@ -354,7 +354,7 @@ builder.Services.AddUsersWebApiServices();
 ---
 
 ## Transición a microservicios
-> Fuente: *Architecting ASP.NET Core Applications* (Ferreira) — Ch.20 Modular Monolith
+> Fuente: *Architecting ASP.NET Core Applications* (Marcotte) — Ch.20 Modular Monolith
 
 No hay obligación de migrar. Un monolito bien construido puede ir muy lejos. Si llega el momento:
 

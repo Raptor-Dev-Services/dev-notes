@@ -1,4 +1,4 @@
-﻿# 07 — Pipeline Behaviors
+﻿# 03 — Pipeline Behaviors
 
 Los Pipeline Behaviors son middlewares del mediador. Interceptan cada Request antes y después de que llegue al Handler. Permiten agregar comportamiento cross-cutting (que aplica a todos los casos de uso) sin modificar cada Handler individualmente.
 

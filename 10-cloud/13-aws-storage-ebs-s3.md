@@ -161,12 +161,12 @@ Reglas obligatorias:
   - No puede ser una IP
 
 ✓ Nombres correctos:
-  gtm-suite-prod-files
+  {{PROJECT_SLUG}}-prod-files
   raptor-backups-2026
   misaas-tenant-assets
 
 ❌ Nombres incorrectos:
-  GTM-Suite-Prod    (mayúsculas)
+  MiProyecto-Prod    (mayúsculas)
   my.bucket.name    (puntos — evitar para SSL)
   192.168.1.1       (formato IP)
 ```
@@ -235,7 +235,7 @@ cat > lifecycle.json << 'EOF'
 EOF
 
 aws s3api put-bucket-lifecycle-configuration \
-  --bucket gtm-suite-prod-files \
+  --bucket {{PROJECT_SLUG}}-prod-files \
   --lifecycle-configuration file://lifecycle.json
 ```
 
@@ -257,23 +257,23 @@ Cuando se habilita el versioning, S3 conserva todas las versiones de un objeto. 
 ```bash
 # Habilitar versioning
 aws s3api put-bucket-versioning \
-  --bucket gtm-suite-prod-files \
+  --bucket {{PROJECT_SLUG}}-prod-files \
   --versioning-configuration Status=Enabled
 
 # Listar versiones de un objeto
 aws s3api list-object-versions \
-  --bucket gtm-suite-prod-files \
+  --bucket {{PROJECT_SLUG}}-prod-files \
   --prefix uploads/tenant-abc/contract.pdf
 
 # Restaurar version anterior (copiar la version deseada sobre la actual)
 aws s3api copy-object \
-  --bucket gtm-suite-prod-files \
-  --copy-source gtm-suite-prod-files/uploads/tenant-abc/contract.pdf?versionId=abc123 \
+  --bucket {{PROJECT_SLUG}}-prod-files \
+  --copy-source {{PROJECT_SLUG}}-prod-files/uploads/tenant-abc/contract.pdf?versionId=abc123 \
   --key uploads/tenant-abc/contract.pdf
 
 # Eliminar una version especifica (permanente)
 aws s3api delete-object \
-  --bucket gtm-suite-prod-files \
+  --bucket {{PROJECT_SLUG}}-prod-files \
   --key uploads/tenant-abc/contract.pdf \
   --version-id abc123
 ```
@@ -301,7 +301,7 @@ aws s3api delete-object \
 ```bash
 # Habilitado por defecto desde 2023 en todos los buckets nuevos
 # Para forzar en objetos:
-aws s3 cp archivo.pdf s3://gtm-bucket/ \
+aws s3 cp archivo.pdf s3://{{PROJECT_SLUG}}-bucket/ \
   --server-side-encryption AES256
 ```
 
@@ -312,7 +312,7 @@ aws s3 cp archivo.pdf s3://gtm-bucket/ \
 ### SSE-KMS (Server-Side Encryption con AWS KMS)
 
 ```bash
-aws s3 cp archivo.pdf s3://gtm-bucket/ \
+aws s3 cp archivo.pdf s3://{{PROJECT_SLUG}}-bucket/ \
   --server-side-encryption aws:kms \
   --ssekms-key-id arn:aws:kms:us-east-1:123456789:key/abc-123
 
@@ -327,7 +327,7 @@ aws s3 cp archivo.pdf s3://gtm-bucket/ \
 
 ```bash
 # El cliente provee la clave en cada request — AWS no la almacena
-aws s3 cp archivo.pdf s3://gtm-bucket/ \
+aws s3 cp archivo.pdf s3://{{PROJECT_SLUG}}-bucket/ \
   --sse-customer-algorithm AES256 \
   --sse-customer-key <base64-encoded-key>
 ```
@@ -344,7 +344,7 @@ aws s3 cp archivo.pdf s3://gtm-bucket/ \
     "Effect": "Deny",
     "Principal": "*",
     "Action": "s3:*",
-    "Resource": ["arn:aws:s3:::gtm-bucket", "arn:aws:s3:::gtm-bucket/*"],
+    "Resource": ["arn:aws:s3:::{{PROJECT_SLUG}}-bucket", "arn:aws:s3:::{{PROJECT_SLUG}}-bucket/*"],
     "Condition": {
       "Bool": {"aws:SecureTransport": "false"}
     }
@@ -369,14 +369,14 @@ aws s3 cp archivo.pdf s3://gtm-bucket/ \
         "AWS": "arn:aws:iam::123456789:role/BackTemplateInstanceRole"
       },
       "Action": ["s3:GetObject", "s3:PutObject", "s3:DeleteObject"],
-      "Resource": "arn:aws:s3:::gtm-suite-prod-files/*"
+      "Resource": "arn:aws:s3:::{{PROJECT_SLUG}}-prod-files/*"
     },
     {
       "Sid": "DenyPublicAccess",
       "Effect": "Deny",
       "Principal": "*",
       "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::gtm-suite-prod-files/*",
+      "Resource": "arn:aws:s3:::{{PROJECT_SLUG}}-prod-files/*",
       "Condition": {
         "StringNotEquals": {
           "aws:SourceVpc": "vpc-87654321"
@@ -392,7 +392,7 @@ aws s3 cp archivo.pdf s3://gtm-bucket/ \
 ```bash
 # SIEMPRE activado en buckets de produccion con datos privados
 aws s3api put-public-access-block \
-  --bucket gtm-suite-prod-files \
+  --bucket {{PROJECT_SLUG}}-prod-files \
   --public-access-block-configuration \
     BlockPublicAcls=true,\
     IgnorePublicAcls=true,\
@@ -417,7 +417,7 @@ Permiten acceso temporal a objetos privados sin exponer credenciales ni hacer el
 
 ```bash
 # Generar URL de descarga válida por 1 hora (3600 segundos)
-aws s3 presign s3://gtm-suite-prod-files/uploads/tenant-abc/report.pdf \
+aws s3 presign s3://{{PROJECT_SLUG}}-prod-files/uploads/tenant-abc/report.pdf \
   --expires-in 3600
 
 # Resultado: URL temporal firmada que incluye credenciales en los query params
@@ -454,12 +454,12 @@ Para archivos grandes (recomendado para +100 MB, obligatorio para +5 GB).
 ```bash
 # Iniciar multipart upload
 aws s3api create-multipart-upload \
-  --bucket gtm-suite-prod-files \
+  --bucket {{PROJECT_SLUG}}-prod-files \
   --key uploads/tenant-abc/video-grande.mp4
 
 # Subir cada parte (minimo 5 MB por parte, excepto la ultima)
 aws s3api upload-part \
-  --bucket gtm-suite-prod-files \
+  --bucket {{PROJECT_SLUG}}-prod-files \
   --key uploads/tenant-abc/video-grande.mp4 \
   --part-number 1 \
   --upload-id abc123 \
@@ -467,7 +467,7 @@ aws s3api upload-part \
 
 # Completar el upload
 aws s3api complete-multipart-upload \
-  --bucket gtm-suite-prod-files \
+  --bucket {{PROJECT_SLUG}}-prod-files \
   --key uploads/tenant-abc/video-grande.mp4 \
   --upload-id abc123 \
   --multipart-upload '{
@@ -490,13 +490,13 @@ Replica objetos automáticamente a un bucket en otra región.
 
 ```bash
 aws s3api put-bucket-replication \
-  --bucket gtm-suite-prod-files \
+  --bucket {{PROJECT_SLUG}}-prod-files \
   --replication-configuration '{
     "Role": "arn:aws:iam::123456789:role/S3ReplicationRole",
     "Rules": [{
       "Status": "Enabled",
       "Destination": {
-        "Bucket": "arn:aws:s3:::gtm-suite-dr-files",
+        "Bucket": "arn:aws:s3:::{{PROJECT_SLUG}}-dr-files",
         "StorageClass": "STANDARD_IA"
       }
     }]
@@ -521,7 +521,7 @@ Disparan acciones automáticas cuando se sube, crea o elimina un objeto.
 
 ```bash
 aws s3api put-bucket-notification-configuration \
-  --bucket gtm-suite-prod-files \
+  --bucket {{PROJECT_SLUG}}-prod-files \
   --notification-configuration '{
     "LambdaFunctionConfigurations": [
       {

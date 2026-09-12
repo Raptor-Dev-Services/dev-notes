@@ -133,7 +133,7 @@ Encenderlo de golpe en un repo grande produce cientos de errores y termina en `e
 
 ## Nota sobre la convención de carpetas
 
-El nombre de las capas importa menos que el sentido único. `sociofit-webclient` usa `src/features/` para los módulos, `src/api/` para el acceso HTTP, y `src/ui/`, `src/utils/`, `src/auth/`, `src/config/` como compartidos. Es la misma jerarquía con otros nombres: ajusta los globs, no la estructura.
+El nombre de las capas importa menos que el sentido único. `{{REPO_NAME}}` usa `src/features/` para los módulos, `src/api/` para el acceso HTTP, y `src/ui/`, `src/utils/`, `src/auth/`, `src/config/` como compartidos. Es la misma jerarquía con otros nombres: ajusta los globs, no la estructura.
 
 Si tu proyecto separa por `src/pages/` + `src/components/<modulo>/` en vez de carpeta por feature, la restricción sigue aplicando: lo importante es la separación por capa, no la ruta exacta.
 

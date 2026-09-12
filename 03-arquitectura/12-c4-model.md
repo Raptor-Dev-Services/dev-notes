@@ -24,8 +24,8 @@ Cada nivel detalla el interior de una caja del nivel anterior. Las dependencias 
 Muestra el sistema como una caja negra: solo sus actores externos (usuarios, sistemas externos) y cómo interactúan con él. No se muestran tecnologías ni detalles internos.
 
 ```
-[Usuario Final]  →  [GTM Suite (SaaS)]  →  [SendGrid (emails)]
-[Super Admin]    →  [GTM Suite (SaaS)]  →  [Stripe (billing)]
+[Usuario Final]  →  [{{PROJECT_NAME}} (SaaS)]  →  [SendGrid (emails)]
+[Super Admin]    →  [{{PROJECT_NAME}} (SaaS)]  →  [Stripe (billing)]
                                         →  [AWS S3 (archivos)]
                                         →  [Keycloak/OIDC (auth)]
 ```
@@ -44,7 +44,7 @@ Abre la caja del sistema y muestra sus unidades de despliegue independientes: ap
 [Cliente React SPA]
         |  HTTPS API calls
         ↓
-[GTM Suite API (.NET 10 / ASP.NET Core)]  ←→  [PostgreSQL (RDS)]
+[{{PROJECT_NAME}} API (.NET 10 / ASP.NET Core)]  ←→  [PostgreSQL (RDS)]
         |                                  ←→  [Redis Cache]
         |  Publica eventos
         ↓
@@ -65,7 +65,7 @@ Abre la caja del sistema y muestra sus unidades de despliegue independientes: ap
 Abre uno de los containers y muestra sus módulos internos (en .NET: proyectos, assemblies, capas de Clean Architecture).
 
 ```
-GTM Suite API — componentes internos:
+{{PROJECT_NAME}} API — componentes internos:
 
 [WebApi Layer]          → Controllers, Presenters, ViewModels
      ↓ Mediator.Send()
@@ -116,15 +116,15 @@ ExampleUsersController
 ### Structurizr DSL — fuente de verdad en texto
 
 ```dsl
-workspace "GTM Suite" "SaaS Multi-Tenant .NET" {
+workspace "{{PROJECT_NAME}}" "SaaS Multi-Tenant .NET" {
 
   model {
     user = person "Usuario Final" "Accede via browser"
     admin = person "Super Admin" "Panel de administración"
 
-    gtmsuite = softwareSystem "GTM Suite" "SaaS de trazabilidad" {
+    sistema = softwareSystem "{{PROJECT_NAME}}" "{{PROJECT_DOMAIN}}" {
       spa = container "React SPA" "Vite + React 19" "TypeScript"
-      api = container "GTM Suite API" ".NET 10 ASP.NET Core" "C#" {
+      api = container "{{PROJECT_NAME}} API" ".NET 10 ASP.NET Core" "C#" {
         webapi = component "WebApi" "Controllers + Presenters"
         application = component "Application" "Handlers CQRS"
         domain = component "Domain" "Entidades + Interfaces"
@@ -147,11 +147,11 @@ workspace "GTM Suite" "SaaS Multi-Tenant .NET" {
   }
 
   views {
-    systemContext gtmsuite "Context" {
+    systemContext sistema "Context" {
       include *
       autoLayout
     }
-    container gtmsuite "Containers" {
+    container sistema "Containers" {
       include *
       autoLayout
     }
@@ -170,7 +170,7 @@ graph TB
     User[👤 Usuario Final]
     Admin[👤 Super Admin]
     SPA[React SPA<br/>Vite + React 19]
-    API[GTM Suite API<br/>.NET 10]
+    API["{{PROJECT_NAME}} API<br/>.NET 10"]
     DB[(PostgreSQL<br/>RDS Multi-AZ)]
     Redis[(Redis Cache<br/>ElastiCache)]
     Stripe[Stripe<br/>Billing]
@@ -191,8 +191,8 @@ El back-template implementa directamente lo que el Nivel 3 (Component) del C4 mo
 
 | Nivel C4 | Elemento del back-template |
 |----------|--------------------------|
-| System (L1) | La aplicación GTM Suite completa |
-| Container (L2) | `GTM.Suite.WebApi` + PostgreSQL + Redis + Hangfire Worker |
+| System (L1) | La aplicación {{PROJECT_NAME}} completa |
+| Container (L2) | `{{ROOT_NAMESPACE}}.WebApi` + PostgreSQL + Redis + Hangfire Worker |
 | Component (L3) | `Domain`, `Application`, `Infrastructure`, `WebApi`, `Host` |
 | Code (L4) | El flujo `Controller → Mediator → Handler → Repository → DB` |
 

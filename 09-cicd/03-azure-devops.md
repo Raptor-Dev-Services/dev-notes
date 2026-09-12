@@ -80,7 +80,7 @@ pool:
 variables:
   - group: prod-secrets               # variable group con secrets
   - name: imageRepository
-    value: gtm-suite-api
+    value: {{PROJECT_SLUG}}-api
   - name: containerRegistry
     value: miacr.azurecr.io
   - name: dockerfilePath
@@ -122,7 +122,7 @@ stages:
                   displayName: Deploy to App Service (staging)
                   inputs:
                     azureSubscription: azure-service-connection
-                    appName: gtm-suite-staging
+                    appName: {{PROJECT_SLUG}}-staging
                     containers: $(containerRegistry)/$(imageRepository):$(tag)
 
   # ── STAGE 3: Deploy a Producción (con aprobación manual) ─────────
@@ -141,7 +141,7 @@ stages:
                   displayName: Deploy to App Service (prod)
                   inputs:
                     azureSubscription: azure-service-connection
-                    appName: gtm-suite-api
+                    appName: {{PROJECT_SLUG}}-api
                     containers: $(containerRegistry)/$(imageRepository):$(tag)
 ```
 
@@ -215,14 +215,14 @@ stages:
                 - task: Docker@2
                   inputs:
                     command: buildAndPush
-                    repository: gtm-suite-api
+                    repository: {{PROJECT_SLUG}}-api
                     containerRegistry: acr-service-connection
                     tags: $(Build.BuildId)
                 - task: AzureWebAppContainer@1
                   inputs:
                     azureSubscription: azure-service-connection
-                    appName: gtm-suite-api
-                    containers: miacr.azurecr.io/gtm-suite-api:$(Build.BuildId)
+                    appName: {{PROJECT_SLUG}}-api
+                    containers: miacr.azurecr.io/{{PROJECT_SLUG}}-api:$(Build.BuildId)
 ```
 
 `ne(variables['Build.Reason'], 'PullRequest')` evita que el stage de deploy corra en PRs.

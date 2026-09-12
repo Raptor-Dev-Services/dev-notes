@@ -101,7 +101,7 @@ Los identificadores numéricos se comparan numéricamente; los alfanuméricos le
 
 ## Relación con back-template
 
-En el back-template los proyectos NuGet (`GTM.Common`, `GTM.Domain`) siguen SemVer. El archivo `.csproj` define la versión:
+En el back-template los proyectos NuGet (`{{ROOT_NAMESPACE}}.Common`, `{{ROOT_NAMESPACE}}.Domain`) siguen SemVer. El archivo `.csproj` define la versión:
 
 ```xml
 <Version>1.2.0</Version>

@@ -34,10 +34,10 @@ FROM mcr.microsoft.com/dotnet/sdk:10.0 AS restore
 WORKDIR /src
 # Copiar solo los .csproj primero — Docker cachea esta capa si no cambian
 COPY ["Host/Host.csproj",                               "Host/"]
-COPY ["GTM.Suite.Domain/GTM.Suite.Domain.csproj",       "GTM.Suite.Domain/"]
-COPY ["GTM.Suite.Application/GTM.Suite.Application.csproj", "GTM.Suite.Application/"]
-COPY ["GTM.Suite.Infrastructure/GTM.Suite.Infrastructure.csproj", "GTM.Suite.Infrastructure/"]
-COPY ["GTM.Suite.WebApi/GTM.Suite.WebApi.csproj",       "GTM.Suite.WebApi/"]
+COPY ["{{ROOT_NAMESPACE}}.Domain/{{ROOT_NAMESPACE}}.Domain.csproj",       "{{ROOT_NAMESPACE}}.Domain/"]
+COPY ["{{ROOT_NAMESPACE}}.Application/{{ROOT_NAMESPACE}}.Application.csproj", "{{ROOT_NAMESPACE}}.Application/"]
+COPY ["{{ROOT_NAMESPACE}}.Infrastructure/{{ROOT_NAMESPACE}}.Infrastructure.csproj", "{{ROOT_NAMESPACE}}.Infrastructure/"]
+COPY ["{{ROOT_NAMESPACE}}.WebApi/{{ROOT_NAMESPACE}}.WebApi.csproj",       "{{ROOT_NAMESPACE}}.WebApi/"]
 RUN dotnet restore "Host/Host.csproj"
 
 # ── Etapa 2: Build ────────────────────────────────────────────────────────────
@@ -122,12 +122,12 @@ services:
     build:
       context: ./back-template
       dockerfile: Dockerfile
-    image: gtm-api:dev
-    container_name: gtm-api
+    image: {{PROJECT_SLUG}}-api:dev
+    container_name: {{PROJECT_SLUG}}-api
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: http://+:8080
-      ConnectionStrings__Default: "Host=postgres;Port=5432;Database=gtm_dev;Username=app_user;Password=dev_pass"
+      ConnectionStrings__Default: "Host=postgres;Port=5432;Database={{PRIMARY_DB}}_dev;Username=app_user;Password=dev_pass"
       Jwt__SigningKey: ${JWT_SIGNING_KEY}          # ← viene del .env
       Seq__ServerUrl: http://seq:5341
     ports:
@@ -136,7 +136,7 @@ services:
       postgres:
         condition: service_healthy      # espera a que postgres esté listo
     networks:
-      - gtm-network
+      - {{PROJECT_SLUG}}-network
     volumes:
       - ~/.aspnet/https:/home/appuser/.aspnet/https:ro   # certificado HTTPS dev
 
@@ -146,20 +146,20 @@ services:
       dockerfile: Dockerfile
       args:
         VITE_API_URL: http://localhost:8080
-    image: gtm-frontend:dev
-    container_name: gtm-frontend
+    image: {{PROJECT_SLUG}}-frontend:dev
+    container_name: {{PROJECT_SLUG}}-frontend
     ports:
       - "3000:80"
     networks:
-      - gtm-network
+      - {{PROJECT_SLUG}}-network
     depends_on:
       - api
 
   postgres:
     image: postgres:17-alpine
-    container_name: gtm-postgres
+    container_name: {{PROJECT_SLUG}}-postgres
     environment:
-      POSTGRES_DB: gtm_dev
+      POSTGRES_DB: {{PRIMARY_DB}}_dev
       POSTGRES_USER: app_user
       POSTGRES_PASSWORD: dev_pass
     volumes:
@@ -168,9 +168,9 @@ services:
     ports:
       - "5432:5432"
     networks:
-      - gtm-network
+      - {{PROJECT_SLUG}}-network
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U app_user -d gtm_dev"]
+      test: ["CMD-SHELL", "pg_isready -U app_user -d {{PRIMARY_DB}}_dev"]
       interval: 5s
       timeout: 5s
       retries: 10
@@ -178,7 +178,7 @@ services:
 
   seq:
     image: datalust/seq:2024.3
-    container_name: gtm-seq
+    container_name: {{PROJECT_SLUG}}-seq
     environment:
       ACCEPT_EULA: "Y"
     volumes:
@@ -187,14 +187,14 @@ services:
       - "5341:5341"   # ingest API
       - "8081:80"     # UI en http://localhost:8081
     networks:
-      - gtm-network
+      - {{PROJECT_SLUG}}-network
 
 volumes:
   pgdata:
   seqdata:
 
 networks:
-  gtm-network:
+  {{PROJECT_SLUG}}-network:
     driver: bridge
 ```
 
@@ -239,7 +239,7 @@ docker compose config  # muestra la config con variables interpoladas
 # docker-compose.prod.yml — para producción (no incluir en git; generar en CI)
 services:
   api:
-    image: registry.midominio.com/gtm-api:${APP_VERSION}
+    image: registry.midominio.com/{{PROJECT_SLUG}}-api:${APP_VERSION}
     restart: unless-stopped
     environment:
       ASPNETCORE_ENVIRONMENT: Production
@@ -260,7 +260,7 @@ services:
     logging:
       driver: "awslogs"
       options:
-        awslogs-group: /gtm-suite/api
+        awslogs-group: /{{PROJECT_SLUG}}/api
         awslogs-region: us-east-1
         awslogs-stream-prefix: api
 ```
@@ -284,7 +284,7 @@ docker compose build api && docker compose up -d api
 docker compose exec api sh
 
 # Entrar al contenedor de PostgreSQL y abrir psql
-docker compose exec postgres psql -U app_user -d gtm_dev
+docker compose exec postgres psql -U app_user -d {{PRIMARY_DB}}_dev
 
 # Ver recursos usados por cada contenedor
 docker stats
@@ -300,7 +300,7 @@ docker compose ps
 
 # Aplicar migrations desde el host (usa Migrate at startup en la API)
 # O bien correrlo manualmente:
-docker compose exec api dotnet ef database update --project GTM.Suite.Infrastructure
+docker compose exec api dotnet ef database update --project {{ROOT_NAMESPACE}}.Infrastructure
 ```
 
 ---

@@ -109,7 +109,7 @@ systemctl enable nginx && systemctl start nginx
 ### Configuración básica
 
 ```nginx
-# /etc/nginx/sites-available/gtm-suite
+# /etc/nginx/sites-available/{{PROJECT_SLUG}}
 server {
     listen 80;
     server_name api.raptordev.io;
@@ -147,7 +147,7 @@ server {
 
 ```bash
 # activar el sitio
-ln -s /etc/nginx/sites-available/gtm-suite /etc/nginx/sites-enabled/
+ln -s /etc/nginx/sites-available/{{PROJECT_SLUG}} /etc/nginx/sites-enabled/
 
 # validar configuración
 nginx -t
@@ -216,7 +216,7 @@ set -euo pipefail
 # set -o pipefail: el pipe falla si cualquier parte falla
 
 # Variables y tipos básicos
-APP_NAME="gtm-suite"
+APP_NAME="{{PROJECT_SLUG}}"
 VERSION="${1:-latest}"              # primer argumento o "latest" como default
 LOG_DIR="/var/log/${APP_NAME}"
 
@@ -277,7 +277,7 @@ lsof -i :5000
 ss -tlnp | grep 5000
 
 # Logs en tiempo real con filtro
-journalctl -u gtm-suite -f | grep -E "(ERROR|WARN)"
+journalctl -u {{PROJECT_SLUG}} -f | grep -E "(ERROR|WARN)"
 tail -f /var/log/nginx/access.log | grep " 5[0-9][0-9] "   # solo 5xx
 
 # Monitorear un proceso hasta que arranque
@@ -288,9 +288,9 @@ done
 echo "Servicio disponible"
 
 # Crear servicio systemd para la app .NET
-cat > /etc/systemd/system/gtm-suite.service << 'EOF'
+cat > /etc/systemd/system/{{PROJECT_SLUG}}.service << 'EOF'
 [Unit]
-Description=GTM Suite API
+Description={{PROJECT_NAME}} API
 After=network.target
 
 [Service]
@@ -301,15 +301,15 @@ Restart=always
 RestartSec=10
 Environment=ASPNETCORE_ENVIRONMENT=Production
 Environment=ASPNETCORE_HTTP_PORTS=5000
-EnvironmentFile=/etc/gtm-suite/env
+EnvironmentFile=/etc/{{PROJECT_SLUG}}/env
 
 [Install]
 WantedBy=multi-user.target
 EOF
 
 systemctl daemon-reload
-systemctl enable gtm-suite
-systemctl start gtm-suite
+systemctl enable {{PROJECT_SLUG}}
+systemctl start {{PROJECT_SLUG}}
 ```
 
 

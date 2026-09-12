@@ -114,7 +114,7 @@ app.Run();
 ```json
 {
   "CustomLogging": {
-    "Project": "GTM-Suite",
+    "Project": "{{PROJECT_NAME}}",
     "SeqUri": "http://localhost:5341",
     "LogEventLevel": "Information",
     "Application": "MiWebApi",

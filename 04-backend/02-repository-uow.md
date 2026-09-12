@@ -1,4 +1,4 @@
-# 04 — Repository Pattern y Unit of Work
+# 02 — Repository Pattern y Unit of Work
 
 Dos patrones de acceso a datos que trabajan juntos: Repository abstrae la persistencia, Unit of Work coordina las operaciones dentro de una transacción.
 

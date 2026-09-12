@@ -9,13 +9,13 @@ EF Core es el ORM de .NET. Gestiona el mapeo entre clases C# y tablas de base de
 
 ```bash
 # Crear una nueva migration
-dotnet ef migrations add AgregarTablaExampleUsers --project src/GTM.Infrastructure
+dotnet ef migrations add AgregarTablaExampleUsers --project src/{{ROOT_NAMESPACE}}.Infrastructure
 
 # Aplicar la migration a la DB local
-dotnet ef database update --project src/GTM.Infrastructure
+dotnet ef database update --project src/{{ROOT_NAMESPACE}}.Infrastructure
 
 # Generar script SQL (para revisar y aplicar en producción)
-dotnet ef migrations script --project src/GTM.Infrastructure
+dotnet ef migrations script --project src/{{ROOT_NAMESPACE}}.Infrastructure
 
 # Script idempotente — seguro de re-ejecutar (para CI/CD)
 dotnet ef migrations script --idempotent -o migrate.sql

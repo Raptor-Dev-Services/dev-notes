@@ -1,4 +1,4 @@
-# 09 · Tracing distribuido — OpenTelemetry, Tempo y correlación
+# 17 · Tracing distribuido — OpenTelemetry, Tempo y correlación
 
 > Fuente: *Building Microservices* (Sam Newman): Ch.10 Distributed Tracing; *Web API Development with ASP.NET Core 8* (Quan Nguyen): Ch.12 Observability
 

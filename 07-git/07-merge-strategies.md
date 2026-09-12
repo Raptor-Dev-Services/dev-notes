@@ -18,14 +18,14 @@ Fast-forward fusiona commits directamente en la rama destino, sin crear un merge
 
 ```bash
 git checkout develop
-git merge --no-ff feature/GTM-123-user-auth
+git merge --no-ff feature/{{TASK_ID_PREFIX}}123-user-auth
 git push origin develop
 ```
 
 El historial queda:
 
 ```
-*   a4f3c21 Merge branch 'feature/GTM-123-user-auth' into develop
+*   a4f3c21 Merge branch 'feature/{{TASK_ID_PREFIX}}123-user-auth' into develop
 |\
 | * 9e2b1a0 feat(auth): validate JWT expiry
 | * 3c7d4f1 feat(auth): add token refresh endpoint
@@ -50,7 +50,7 @@ Aplana todos los commits de la rama en uno solo antes de integrar. Útil cuando 
 
 ```bash
 git checkout develop
-git merge --squash feature/GTM-456-cleanup
+git merge --squash feature/{{TASK_ID_PREFIX}}456-cleanup
 git commit -m "feat(users): add bulk delete endpoint"
 git push origin develop
 ```
@@ -65,7 +65,7 @@ El historial queda:
 La rama original sigue existiendo con su historial completo hasta que se borre.
 
 ```bash
-git branch -d feature/GTM-456-cleanup
+git branch -d feature/{{TASK_ID_PREFIX}}456-cleanup
 ```
 
 ## Rebase
@@ -74,7 +74,7 @@ Reescribe los commits de la rama actual aplicándolos sobre la punta de la rama 
 
 ```bash
 # desde la feature branch, ponerse al día con develop
-git checkout feature/GTM-789-reports
+git checkout feature/{{TASK_ID_PREFIX}}789-reports
 git rebase develop
 ```
 

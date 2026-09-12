@@ -67,7 +67,7 @@ git commit -m "fix(orders): prevent duplicate invoice generation
 Previously, a race condition in the checkout flow could create two invoices
 for the same order when the user double-clicked the submit button.
 
-Closes #GTM-421"
+Closes #{{TASK_ID_PREFIX}}421"
 
 # breaking change
 git commit -m "feat(api)!: replace userId with tenantUserId in all responses

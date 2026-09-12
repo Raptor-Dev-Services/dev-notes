@@ -68,7 +68,7 @@ Alerta cuando el gasto supera un umbral:
 aws budgets create-budget \
   --account-id 123456789012 \
   --budget '{
-    "BudgetName": "gtm-monthly-budget",
+    "BudgetName": "{{PROJECT_SLUG}}-monthly-budget",
     "BudgetLimit": {"Amount": "200", "Unit": "USD"},
     "TimeUnit": "MONTHLY",
     "BudgetType": "COST"
@@ -100,14 +100,14 @@ Sin tags es imposible saber qué proyecto o ambiente genera cada costo.
 # etiquetar recursos al crearlos
 aws ec2 create-tags \
   --resources i-1234567890 \
-  --tags Key=Project,Value=GTM Key=Environment,Value=production Key=Owner,Value=raptor-dev
+  --tags Key=Project,Value={{PROJECT_SLUG}} Key=Environment,Value=production Key=Owner,Value=raptor-dev
 ```
 
 Convención de tags recomendada:
 
 | Tag | Valores ejemplo |
 |-----|-----------------|
-| `Project` | GTM, front-template, client-a |
+| `Project` | {{PROJECT_SLUG}}, front-template, client-a |
 | `Environment` | production, staging, development |
 | `Owner` | raptor-dev, client-a |
 | `CostCenter` | engineering, ops |
@@ -158,7 +158,7 @@ Separar producción y desarrollo en cuentas AWS distintas da:
 # crear cuenta hija para staging
 aws organizations create-account \
   --email staging@raptordev.io \
-  --account-name "GTM Staging"
+  --account-name "{{PROJECT_NAME}} Staging"
 ```
 
 ## Cuándo usar / no usar

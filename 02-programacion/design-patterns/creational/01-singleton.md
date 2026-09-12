@@ -201,7 +201,7 @@ public class MyService  // registrado como Singleton
 // Resultado: un repositorio compartido por TODAS las requests. Comportamiento indefinido.
 ```
 
-**Solución:** Ver documento [09 — DI Lifetimes](../../csharp-primer/09-lifetimes.md).
+**Solución:** Ver documento [09 — DI Lifetimes](../../csharp/09-lifetimes.md).
 
 ---
 

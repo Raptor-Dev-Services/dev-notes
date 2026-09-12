@@ -1,4 +1,4 @@
-# 03 — Domain-Driven Design (DDD)
+# 01 — Domain-Driven Design (DDD)
 
 DDD es una forma de diseñar software centrada en el dominio del negocio. No es un framework ni una librería. Es un conjunto de patrones y principios para modelar la lógica de negocio de forma que refleje el mundo real.
 

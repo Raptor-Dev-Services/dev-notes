@@ -22,17 +22,17 @@ Equivalente a EC2 + ECS para aplicaciones web.
 ```bash
 # crear App Service Plan (define capacidad)
 az appservice plan create \
-  --name gtm-plan \
-  --resource-group gtm-rg \
+  --name {{PROJECT_SLUG}}-plan \
+  --resource-group {{PROJECT_SLUG}}-rg \
   --sku B2 \
   --is-linux
 
 # crear Web App para contenedor Docker
 az webapp create \
-  --name gtm-suite-api \
-  --resource-group gtm-rg \
-  --plan gtm-plan \
-  --deployment-container-image-name miacr.azurecr.io/gtm-suite-api:latest
+  --name {{PROJECT_SLUG}}-api \
+  --resource-group {{PROJECT_SLUG}}-rg \
+  --plan {{PROJECT_SLUG}}-plan \
+  --deployment-container-image-name miacr.azurecr.io/{{PROJECT_SLUG}}-api:latest
 ```
 
 ### SKUs de App Service Plan
@@ -50,14 +50,14 @@ Equivalente a Amazon ECR.
 
 ```bash
 # crear registry
-az acr create --name miacr --resource-group gtm-rg --sku Basic
+az acr create --name miacr --resource-group {{PROJECT_SLUG}}-rg --sku Basic
 
 # login
 az acr login --name miacr
 
 # push imagen
-docker tag gtm-suite-api miacr.azurecr.io/gtm-suite-api:v1.0.0
-docker push miacr.azurecr.io/gtm-suite-api:v1.0.0
+docker tag {{PROJECT_SLUG}}-api miacr.azurecr.io/{{PROJECT_SLUG}}-api:v1.0.0
+docker push miacr.azurecr.io/{{PROJECT_SLUG}}-api:v1.0.0
 ```
 
 ## Azure SQL / PostgreSQL Flexible Server
@@ -67,8 +67,8 @@ Equivalente a RDS.
 ```bash
 # crear servidor PostgreSQL Flexible Server
 az postgres flexible-server create \
-  --name gtm-db \
-  --resource-group gtm-rg \
+  --name {{PROJECT_SLUG}}-db \
+  --resource-group {{PROJECT_SLUG}}-rg \
   --location eastus \
   --admin-user admin \
   --admin-password "S3cur3Pass!" \
@@ -85,7 +85,7 @@ Equivalente a S3.
 # crear cuenta de storage
 az storage account create \
   --name gtmstorage \
-  --resource-group gtm-rg \
+  --resource-group {{PROJECT_SLUG}}-rg \
   --sku Standard_LRS \
   --kind StorageV2
 
@@ -109,14 +109,14 @@ Equivalente a IAM Roles. Permite que App Service, AKS o Azure Functions accedan 
 ```bash
 # asignar identidad al App Service
 az webapp identity assign \
-  --name gtm-suite-api \
-  --resource-group gtm-rg
+  --name {{PROJECT_SLUG}}-api \
+  --resource-group {{PROJECT_SLUG}}-rg
 
 # dar acceso al ACR con la identidad
 az role assignment create \
   --assignee <principalId> \
   --role AcrPull \
-  --scope /subscriptions/.../resourceGroups/gtm-rg/providers/Microsoft.ContainerRegistry/registries/miacr
+  --scope /subscriptions/.../resourceGroups/{{PROJECT_SLUG}}-rg/providers/Microsoft.ContainerRegistry/registries/miacr
 ```
 
 Con Managed Identity, el App Service puede leer de Key Vault y ACR sin ninguna clave almacenada.

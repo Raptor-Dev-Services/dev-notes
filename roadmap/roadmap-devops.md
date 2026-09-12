@@ -81,7 +81,7 @@
 > Ver qué pasa dentro del sistema en producción.
 
 - [ ] [Observabilidad](../10-cloud/04-observabilidad.md) — OpenTelemetry, Loki, Prometheus, Grafana, Tempo
-- [ ] [Tracing Distribuido](../10-cloud/09-tracing-distribuido.md) — Jaeger, W3C TraceContext, correlación de requests
+- [ ] [Tracing Distribuido](../10-cloud/17-tracing-distribuido.md) — Jaeger, W3C TraceContext, correlación de requests
 - [ ] [Linux + Nginx](../10-cloud/03-linux-nginx.md) — servidor web, reverse proxy, SSL/TLS con Let's Encrypt
 - [ ] [Secretos Producción](../10-cloud/05-secretos-produccion.md) — AWS Secrets Manager, Parameter Store, rotación automática
 

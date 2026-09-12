@@ -6,7 +6,7 @@ El primer intento de configurar un asistente de código siempre es el mismo: un 
 
 La salida es dejar de tratar la configuración como un documento y tratarla como **arquitectura**: piezas separadas por tipo, cada una con su formato y su momento de carga, y un catálogo central del que cada proyecto toma solo lo que aplica.
 
-Este doc describe la arquitectura del catálogo interno (`Raptor-Dev-Services/agents`), que hoy son 10 agentes, 23 skills, 47 reglas, 6 comandos y 8 templates.
+Este doc describe la arquitectura del catálogo interno (`Raptor-Dev-Services/agents`), que a septiembre de 2026 son 14 agentes, 39 skills, 62 reglas, 31 comandos y 15 templates.
 
 Complementa `01-claude-md.md`, que cubre el `CLAUDE.md` de un proyecto. Aquí va la capa de arriba: de dónde sale ese contenido y cómo se organiza para reusarlo.
 
@@ -23,9 +23,9 @@ La decisión central es la taxonomía. Tres tipos de pieza que **se complementan
 El tamaño promedio en el catálogo confirma que la separación es real, no nominal:
 
 ```
-reglas    51 lineas promedio   (declarativas: dicen QUE, no COMO)
-skills   182 lineas promedio   (procedimentales: pasos, codigo, checklist)
-agentes  175 lineas promedio   (persona: identidad, criterio, prioridades)
+reglas    81 lineas promedio   (declarativas: dicen QUE, no COMO)
+skills   230 lineas promedio   (procedimentales: pasos, codigo, checklist)
+agentes  196 lineas promedio   (persona: identidad, criterio, prioridades)
 ```
 
 **El test para saber cuál es cuál:**

@@ -1,4 +1,4 @@
-﻿# 02 — Result Pattern
+﻿# 01 — Result Pattern
 
 El Result Pattern modela el resultado de una operación como un objeto con dos estados posibles: éxito o fallo. Es la alternativa a usar excepciones para controlar el flujo de negocio.
 
@@ -188,9 +188,9 @@ else if (notification is GetUsersSuccess success)
 
 ---
 
-## Variantes del Operation Result (Ferreira)
+## Variantes del Operation Result (Marcotte)
 
-Ferreira (*Architecting ASP.NET Core Applications*, Ch.13) documenta una progresión de implementaciones desde la más simple hasta la más robusta. Cada forma es válida; la elección depende de cuánta información necesita el caller.
+Marcotte (*Architecting ASP.NET Core Applications*, Ch.13) documenta una progresión de implementaciones desde la más simple hasta la más robusta. Cada forma es válida; la elección depende de cuánta información necesita el caller.
 
 ### Forma 1 — Indicador booleano simple
 
@@ -342,7 +342,7 @@ return OperationResult.Failure(new OperationResultMessage("Error.", OperationRes
 
 ---
 
-## Ejemplo de dominio real — registro a concierto (Ferreira)
+## Ejemplo de dominio real — registro a concierto (Marcotte)
 
 Ilustra cómo el pattern se aplica a un caso de negocio real con factory methods y `MemberNotNullWhen`:
 
@@ -413,7 +413,7 @@ app.MapPost("/concerts/{concertId}/register",
 
 ## Estado parcial (`OperationStatus`)
 
-Ferreira sugiere agregar un tercer estado para operaciones con resultados mixtos:
+Marcotte sugiere agregar un tercer estado para operaciones con resultados mixtos:
 
 ```csharp
 public enum OperationStatus { Success, Failure, PartialSuccess }
@@ -434,7 +434,7 @@ switch (result.Status)
 
 ---
 
-## Ventajas y desventajas del Operation Result (Ferreira)
+## Ventajas y desventajas del Operation Result (Marcotte)
 
 ### Ventajas
 - **Explicitud:** el tipo de retorno documenta todos los estados posibles. Más claro que saber qué excepciones pueden volar.
@@ -445,7 +445,7 @@ switch (result.Status)
 - **Propagación manual:** el resultado debe pasarse hacia arriba en la pila de llamadas de forma explícita. Si debe recorrer muchos niveles, se vuelve tedioso.
 - **Superficie de API grande:** es fácil exponer propiedades que no aplican a todos los escenarios (ej. `Value` puede ser null en error). El trade-off es siempre legibilidad vs perfección de diseño.
 
-> **Regla de Ferreira:** "Cuando las ventajas superan los impactos menores de las violaciones de SOLID, es aceptable dejarlas pasar. Los principios son ideales, no leyes."
+> **Regla de Marcotte:** "Cuando las ventajas superan los impactos menores de las violaciones de SOLID, es aceptable dejarlas pasar. Los principios son ideales, no leyes."
 
 ---
 
@@ -565,6 +565,6 @@ return _viewModel.IsSuccess ? Ok(_viewModel) : StatusCode(500, _viewModel);
 
 ---
 
-> Fuente adicional: *Architecting ASP.NET Core Applications* (Carl-Hugo Marcotte / Ferreira) — Ch.13 Operation Result Pattern
+> Fuente adicional: *Architecting ASP.NET Core Applications* (Carl-Hugo Marcotte) — Ch.13 Operation Result Pattern
 
 *Rogelio Arriaga Gonzalez*

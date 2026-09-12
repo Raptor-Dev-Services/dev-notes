@@ -8,11 +8,11 @@ Guía completa de Docker para este proyecto, desde conceptos hasta workflows de 
 
 | # | Documento | Temas cubiertos |
 |---|-----------|-----------------|
-| 1 | [Conceptos](docker/01-conceptos.md) | Contenedor vs VM, imagen vs contenedor, capas (layers), volúmenes, redes, `host.docker.internal`, ciclo de vida, registries |
-| 2 | [Dockerfile](docker/02-dockerfile.md) | Instrucciones (FROM, RUN, COPY, ENV, ARG, EXPOSE, USER, ENTRYPOINT, CMD), multi-stage builds, `.dockerignore`, ARG vs ENV, optimizaciones de caché, imágenes base .NET |
-| 3 | [Docker Compose](docker/03-compose.md) | `image` vs `build`, ports, environment, volumes, `depends_on`, healthcheck, restart, networks, `.env`, override files, profiles, `deploy`, init containers |
-| 4 | [Este Proyecto](docker/04-proyecto.md) | Los 4 compose files (`compose-db.yaml`, `compose-dev.yaml`, `compose-staging.yaml`, `compose.yaml`), flujo recomendado dev, variables de entorno, troubleshooting |
-| 5 | [Comandos](docker/05-comandos.md) | `docker build`, `docker run`, `docker ps`, `docker logs`, `docker exec`, `docker inspect`, `docker stats`, `docker system prune`, todos los subcomandos de `docker compose` |
+| 1 | [Conceptos](01-conceptos.md) | Contenedor vs VM, imagen vs contenedor, capas (layers), volúmenes, redes, `host.docker.internal`, ciclo de vida, registries |
+| 2 | [Dockerfile](02-dockerfile.md) | Instrucciones (FROM, RUN, COPY, ENV, ARG, EXPOSE, USER, ENTRYPOINT, CMD), multi-stage builds, `.dockerignore`, ARG vs ENV, optimizaciones de caché, imágenes base .NET |
+| 3 | [Docker Compose](03-compose.md) | `image` vs `build`, ports, environment, volumes, `depends_on`, healthcheck, restart, networks, `.env`, override files, profiles, `deploy`, init containers |
+| 4 | [Proyecto Real](04-proyecto-real.md) | Dockerfile multi-stage del back y del front, docker-compose de desarrollo, override, `.env`, compose de producción, health checks, workflow diario, troubleshooting |
+| 5 | [Comandos](05-comandos.md) | `docker build`, `docker run`, `docker ps`, `docker logs`, `docker exec`, `docker inspect`, `docker stats`, `docker system prune`, todos los subcomandos de `docker compose` |
 
 ---
 

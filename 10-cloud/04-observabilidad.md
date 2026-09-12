@@ -478,7 +478,7 @@ services:
       - ./infra/prometheus.yml:/etc/prometheus/prometheus.yml:ro
       - prometheus-data:/prometheus
 
-  # Traces (ver 09-tracing-distribuido.md)
+  # Traces (ver 17-tracing-distribuido.md)
   tempo:
     image: grafana/tempo:latest
     restart: unless-stopped

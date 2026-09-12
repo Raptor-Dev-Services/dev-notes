@@ -33,13 +33,13 @@ Administrar PostgreSQL directamente en EC2 requiere gestionar backups, parches d
 ```bash
 # Crear subnet group (debe abarcar minimo 2 AZs)
 aws rds create-db-subnet-group \
-  --db-subnet-group-name gtm-db-subnet-group \
+  --db-subnet-group-name {{PROJECT_SLUG}}-db-subnet-group \
   --db-subnet-group-description "Subnets privadas para RDS del back-template" \
   --subnet-ids subnet-data-1a subnet-data-1b
 
 # Crear instance RDS PostgreSQL con configuracion de produccion
 aws rds create-db-instance \
-  --db-instance-identifier gtm-suite-prod \
+  --db-instance-identifier {{PROJECT_SLUG}}-prod \
   --db-instance-class db.t3.large \
   --engine postgres \
   --engine-version 16.3 \
@@ -50,7 +50,7 @@ aws rds create-db-instance \
   --storage-type gp3 \
   --storage-encrypted \
   --kms-key-id arn:aws:kms:us-east-1:123456789:key/prod-rds-key \
-  --db-subnet-group-name gtm-db-subnet-group \
+  --db-subnet-group-name {{PROJECT_SLUG}}-db-subnet-group \
   --vpc-security-group-ids sg-db \
   --db-name gtmdb \
   --multi-az \
@@ -65,7 +65,7 @@ aws rds create-db-instance \
 
 # Obtener el endpoint de conexion
 aws rds describe-db-instances \
-  --db-instance-identifier gtm-suite-prod \
+  --db-instance-identifier {{PROJECT_SLUG}}-prod \
   --query 'DBInstances[0].Endpoint.Address'
 ```
 
@@ -99,13 +99,13 @@ Los Parameter Groups son la forma de modificar los parámetros de PostgreSQL en 
 ```bash
 # Crear parameter group personalizado
 aws rds create-db-parameter-group \
-  --db-parameter-group-name gtm-postgres16-params \
+  --db-parameter-group-name {{PROJECT_SLUG}}-postgres16-params \
   --db-parameter-group-family postgres16 \
   --description "Parametros PostgreSQL optimizados para back-template"
 
 # Modificar parametros clave
 aws rds modify-db-parameter-group \
-  --db-parameter-group-name gtm-postgres16-params \
+  --db-parameter-group-name {{PROJECT_SLUG}}-postgres16-params \
   --parameters \
     "ParameterName=shared_buffers,ParameterValue={DBInstanceClassMemory/4},ApplyMethod=pending-reboot" \
     "ParameterName=max_connections,ParameterValue=200,ApplyMethod=pending-reboot" \
@@ -117,8 +117,8 @@ aws rds modify-db-parameter-group \
 
 # Asociar el parameter group a la instancia
 aws rds modify-db-instance \
-  --db-instance-identifier gtm-suite-prod \
-  --db-parameter-group-name gtm-postgres16-params \
+  --db-instance-identifier {{PROJECT_SLUG}}-prod \
+  --db-parameter-group-name {{PROJECT_SLUG}}-postgres16-params \
   --apply-immediately
 ```
 
@@ -149,7 +149,7 @@ Multi-AZ crea una réplica síncrona en una AZ diferente. Es transparente para l
   │                 │             │   conexiones)    │
   └─────────────────┘             └─────────────────┘
            ↑
-  Endpoint: gtm-suite-prod.xyz.us-east-1.rds.amazonaws.com
+  Endpoint: {{PROJECT_SLUG}}-prod.xyz.us-east-1.rds.amazonaws.com
   (CNAME que apunta al primary)
 
   Si falla us-east-1a:
@@ -163,12 +163,12 @@ Multi-AZ crea una réplica síncrona en una AZ diferente. Es transparente para l
 ```bash
 # Verificar que Multi-AZ esta habilitado
 aws rds describe-db-instances \
-  --db-instance-identifier gtm-suite-prod \
+  --db-instance-identifier {{PROJECT_SLUG}}-prod \
   --query 'DBInstances[0].MultiAZ'
 
 # Forzar un failover manual (prueba de DR)
 aws rds reboot-db-instance \
-  --db-instance-identifier gtm-suite-prod \
+  --db-instance-identifier {{PROJECT_SLUG}}-prod \
   --force-failover
 ```
 
@@ -193,21 +193,21 @@ Replication lag: normalmente milisegundos, puede ser mayor bajo carga alta
 ```bash
 # Crear Read Replica en la misma region
 aws rds create-db-instance-read-replica \
-  --db-instance-identifier gtm-suite-prod-replica \
-  --source-db-instance-identifier gtm-suite-prod \
+  --db-instance-identifier {{PROJECT_SLUG}}-prod-replica \
+  --source-db-instance-identifier {{PROJECT_SLUG}}-prod \
   --db-instance-class db.t3.medium \
   --availability-zone us-east-1c
 
 # Crear Read Replica en otra region (para latencia o DR)
 aws rds create-db-instance-read-replica \
-  --db-instance-identifier gtm-suite-prod-replica-west \
-  --source-db-instance-identifier arn:aws:rds:us-east-1:123456789:db:gtm-suite-prod \
+  --db-instance-identifier {{PROJECT_SLUG}}-prod-replica-west \
+  --source-db-instance-identifier arn:aws:rds:us-east-1:123456789:db:{{PROJECT_SLUG}}-prod \
   --db-instance-class db.t3.medium \
   --destination-region us-west-2
 
 # Obtener endpoint de la replica (endpoint diferente al primary)
 aws rds describe-db-instances \
-  --db-instance-identifier gtm-suite-prod-replica \
+  --db-instance-identifier {{PROJECT_SLUG}}-prod-replica \
   --query 'DBInstances[0].Endpoint.Address'
 ```
 
@@ -243,22 +243,22 @@ RDS toma backups automáticos durante la ventana de backup configurada.
 ```bash
 # Ver ventana de backup
 aws rds describe-db-instances \
-  --db-instance-identifier gtm-suite-prod \
+  --db-instance-identifier {{PROJECT_SLUG}}-prod \
   --query 'DBInstances[0].[PreferredBackupWindow,BackupRetentionPeriod]'
 
 # Cambiar retension a 14 dias (maximo es 35)
 aws rds modify-db-instance \
-  --db-instance-identifier gtm-suite-prod \
+  --db-instance-identifier {{PROJECT_SLUG}}-prod \
   --backup-retention-period 14 \
   --apply-immediately
 
 # Restaurar a un punto en el tiempo (crea una NUEVA instancia)
 aws rds restore-db-instance-to-point-in-time \
-  --source-db-instance-identifier gtm-suite-prod \
-  --target-db-instance-identifier gtm-suite-restored-20260601 \
+  --source-db-instance-identifier {{PROJECT_SLUG}}-prod \
+  --target-db-instance-identifier {{PROJECT_SLUG}}-restored-20260601 \
   --restore-time "2026-06-01T03:00:00Z" \
   --db-instance-class db.t3.large \
-  --db-subnet-group-name gtm-db-subnet-group
+  --db-subnet-group-name {{PROJECT_SLUG}}-db-subnet-group
 ```
 
 **PITR (Point-in-Time Recovery):**
@@ -286,11 +286,11 @@ Con RDS Proxy:
 ```bash
 # Crear RDS Proxy
 aws rds create-db-proxy \
-  --db-proxy-name gtm-rds-proxy \
+  --db-proxy-name {{PROJECT_SLUG}}-rds-proxy \
   --engine-family POSTGRESQL \
   --auth '[{
     "AuthScheme": "SECRETS",
-    "SecretArn": "arn:aws:secretsmanager:us-east-1:123456789:secret:rds/gtm-prod",
+    "SecretArn": "arn:aws:secretsmanager:us-east-1:123456789:secret:rds/{{PROJECT_SLUG}}-prod",
     "IAMAuth": "REQUIRED"
   }]' \
   --role-arn arn:aws:iam::123456789:role/RDSProxyRole \
@@ -300,7 +300,7 @@ aws rds create-db-proxy \
 
 # Obtener endpoint del proxy (usar este en lugar del RDS directo)
 aws rds describe-db-proxies \
-  --db-proxy-name gtm-rds-proxy \
+  --db-proxy-name {{PROJECT_SLUG}}-rds-proxy \
   --query 'DBProxies[0].Endpoint'
 ```
 
@@ -313,7 +313,7 @@ aws rds describe-db-proxies \
 ```bash
 # Verificar que publicly-accessible sea false
 aws rds describe-db-instances \
-  --db-instance-identifier gtm-suite-prod \
+  --db-instance-identifier {{PROJECT_SLUG}}-prod \
   --query 'DBInstances[0].PubliclyAccessible'
 # Debe retornar: false
 
@@ -330,14 +330,14 @@ aws ec2 authorize-security-group-ingress \
 ```bash
 # En el parameter group
 aws rds modify-db-parameter-group \
-  --db-parameter-group-name gtm-postgres16-params \
+  --db-parameter-group-name {{PROJECT_SLUG}}-postgres16-params \
   --parameters "ParameterName=rds.force_ssl,ParameterValue=1,ApplyMethod=immediate"
 ```
 
 **Connection string desde .NET con SSL:**
 
 ```
-Host=gtm-suite-prod.xyz.us-east-1.rds.amazonaws.com;
+Host={{PROJECT_SLUG}}-prod.xyz.us-east-1.rds.amazonaws.com;
 Port=5432;
 Database=gtmdb;
 Username=gtmadmin;
@@ -355,18 +355,18 @@ aws rds create-db-instance ... --storage-encrypted --kms-key-id <key-arn>
 
 # Para cifrar una instancia existente:
 # 1. Crear snapshot de la instancia no cifrada
-aws rds create-db-snapshot --db-instance-identifier gtm-suite-prod --db-snapshot-identifier gtm-snap-uncrypted
+aws rds create-db-snapshot --db-instance-identifier {{PROJECT_SLUG}}-prod --db-snapshot-identifier {{PROJECT_SLUG}}-snap-uncrypted
 
 # 2. Copiar el snapshot con cifrado habilitado
 aws rds copy-db-snapshot \
-  --source-db-snapshot-identifier gtm-snap-uncrypted \
-  --target-db-snapshot-identifier gtm-snap-encrypted \
+  --source-db-snapshot-identifier {{PROJECT_SLUG}}-snap-uncrypted \
+  --target-db-snapshot-identifier {{PROJECT_SLUG}}-snap-encrypted \
   --kms-key-id arn:aws:kms:us-east-1:123456789:key/prod-rds-key
 
 # 3. Restaurar desde el snapshot cifrado (nueva instancia)
 aws rds restore-db-instance-from-db-snapshot \
-  --db-instance-identifier gtm-suite-prod-encrypted \
-  --db-snapshot-identifier gtm-snap-encrypted
+  --db-instance-identifier {{PROJECT_SLUG}}-prod-encrypted \
+  --db-snapshot-identifier {{PROJECT_SLUG}}-snap-encrypted
 ```
 
 ---
@@ -378,7 +378,7 @@ Performance Insights muestra qué queries están consumiendo más recursos en la
 ```bash
 # Habilitar Performance Insights en instancia existente
 aws rds modify-db-instance \
-  --db-instance-identifier gtm-suite-prod \
+  --db-instance-identifier {{PROJECT_SLUG}}-prod \
   --enable-performance-insights \
   --performance-insights-retention-period 7 \
   --apply-immediately

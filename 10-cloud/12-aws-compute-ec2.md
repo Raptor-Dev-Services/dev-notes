@@ -243,7 +243,7 @@ Mecanismo:
         "s3:GetObject",
         "s3:DeleteObject"
       ],
-      "Resource": "arn:aws:s3:::gtm-files-prod/*"
+      "Resource": "arn:aws:s3:::{{PROJECT_SLUG}}-files-prod/*"
     },
     {
       "Effect": "Allow",
@@ -294,7 +294,7 @@ Ejemplo:
 ```bash
 # Crear politica de Scale Out (agregar instancias cuando CPU > 70%)
 aws autoscaling put-scaling-policy \
-  --auto-scaling-group-name gtm-asg \
+  --auto-scaling-group-name {{PROJECT_SLUG}}-asg \
   --policy-name scale-out-cpu \
   --policy-type TargetTrackingScaling \
   --target-tracking-configuration '{
@@ -342,14 +342,14 @@ Listener  → escucha en un puerto (80 o 443)
 ```bash
 # Crear ALB
 aws elbv2 create-load-balancer \
-  --name gtm-alb \
+  --name {{PROJECT_SLUG}}-alb \
   --subnets subnet-public-1a subnet-public-1b \
   --security-groups sg-alb \
   --type application
 
 # Crear target group
 aws elbv2 create-target-group \
-  --name gtm-tg \
+  --name {{PROJECT_SLUG}}-tg \
   --protocol HTTP \
   --port 8080 \
   --vpc-id vpc-87654321 \

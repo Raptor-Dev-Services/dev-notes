@@ -1,4 +1,4 @@
-﻿# 15 — API Versioning: Versionar sin Romper Clientes
+﻿# 06 — API Versioning: Versionar sin Romper Clientes
 
 Estrategia para evolucionar una API pública sin romper los clientes existentes.
 

@@ -213,9 +213,9 @@ var result = await authValidator.Validate(httpRequest);
 
 ---
 
-## Implementación ASP.NET Core (Ferreira)
+## Implementación ASP.NET Core (Marcotte)
 
-Ferreira (*Architecting ASP.NET Core Applications*, Ch.12) implementa un intérprete de mensajes de alarma y muestra cómo combinar Chain of Responsibility con Template Method para eliminar código duplicado.
+Marcotte (*Architecting ASP.NET Core Applications*, Ch.12) implementa un intérprete de mensajes de alarma y muestra cómo combinar Chain of Responsibility con Template Method para eliminar código duplicado.
 
 ### Cadena de handlers sin clase base
 
@@ -279,7 +279,7 @@ builder.Services
 
 ### Mezclar Template Method + Chain of Responsibility (diseño mejorado)
 
-Ferreira extrae el código duplicado (inyección del siguiente, lógica de delegación) a una clase base usando Template Method, dejando cada handler solo con su responsabilidad:
+Marcotte extrae el código duplicado (inyección del siguiente, lógica de delegación) a una clase base usando Template Method, dejando cada handler solo con su responsabilidad:
 
 ```csharp
 // Clase base — Template Method para el plumbing de la cadena
@@ -470,7 +470,7 @@ app.MapControllers();        // handler final: ejecuta el controller
 | InteractorPipeline | Cadena de behaviors del mediador del proyecto que orquesta el flujo Handler → Publish → Presenter |
 | Petición no manejada | Resultado cuando ningún handler procesa la petición y llega al final de la cadena sin ser atendida |
 | Configuración en runtime | Capacidad de ensamblar y reordenar la cadena dinámicamente sin modificar los handlers existentes |
-| `MessageHandlerBase` | Clase base de Ferreira que usa Template Method para encapsular el plumbing de la cadena — los handlers concretos solo implementan `CanHandle` y `Process` |
+| `MessageHandlerBase` | Clase base de Marcotte que usa Template Method para encapsular el plumbing de la cadena — los handlers concretos solo implementan `CanHandle` y `Process` |
 | `SingleMessageHandlerBase` | Subclase de `MessageHandlerBase` para handlers que procesan un solo tipo de mensaje — implementa `CanHandle` comparando `message.Name == HandledMessageName` |
 | `MultipleMessageHandlerBase` | Subclase de `MessageHandlerBase` para handlers que procesan varios tipos de mensaje — `CanHandle` verifica si el nombre está en un array |
 | Handler terminal | Handler al final de la cadena que no delega al siguiente — notifica cuando ningún handler pudo procesar el mensaje (ej. lanza `NotSupportedException`) |

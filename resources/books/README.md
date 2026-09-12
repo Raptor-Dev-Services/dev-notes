@@ -42,10 +42,10 @@
 | Software Architecture with C# 12 and .NET 8 | Gabriel Baptista, Francesco Abbruzzese |
 | .NET Microservices: Architecture for Containerized .NET Apps | Cesar de la Torre et al. |
 | Microservices Design Patterns in .NET | Trevoir Williams |
-| Pragmatic Microservices with C# and Azure | Neel Bhatt |
+| Pragmatic Microservices with C# and Azure | Christian Nagel |
 | Keycloak: Identity and Access Management for Modern Apps | Stian Thorgersen, Pedro Igor Silva |
 | Architecting Modern Web Apps with ASP.NET Core and Azure | Steve Smith |
-| Enterprise Architecture with .NET | Gildas Quéméner |
+| Enterprise Architecture with .NET | Jean-Philippe Gouigoux |
 
 ---
 
@@ -56,14 +56,14 @@
 |-------|-------|
 | C# 13 and .NET 9: Modern Cross-Platform Development | Mark J. Price |
 | Apps and Services with .NET 8 (2ª ed.) | Mark J. Price |
-| ASP.NET Core 9 Essentials | Onur Gumus |
+| ASP.NET Core 9 Essentials | Albert S. Tanure |
 | Web API Development with ASP.NET Core 8 | Xiaodi Yan |
-| Programming APIs with C# and .NET | David Barkol |
+| Programming APIs with C# and .NET | Jesse Liberty, Joseph Dluzen |
 | Real-World Web Development with .NET 9 | Mark J. Price |
 | Minimal APIs in ASP.NET 9 | Andrea Tosato, Marco Minerva |
 | Entity Framework Core in Action | Jon P. Smith |
 | High-Performance Programming in C# and .NET | Jason Alls |
-| Effective .NET Memory Management | Jeffrey Richter |
+| Effective .NET Memory Management | Trevoir Williams |
 | Systems Programming with C# and .NET | Dennis Vroegop |
 | JWT Handbook | Sebastian E. Peyrott |
 
@@ -90,7 +90,7 @@
 |-------|-------|
 | Full-Stack React, TypeScript, and Node | David Choi |
 | Full-Stack Web Development with TypeScript 5 | Mykyta Chernenko |
-| Modern Full-Stack Web Development with ASP.NET Core | Rui Gu |
+| Modern Full-Stack Web Development with ASP.NET Core | Alexandre Malavasi |
 | JavaScript from Beginner to Professional | Laurence Lars Svekis |
 | Mastering JavaScript Functional Programming | Federico Kereki |
 
@@ -147,7 +147,7 @@
 |-------|-------|
 | Terraform: Up and Running (3ª ed.) | Yevgeniy Brikman |
 | Learning GitHub Actions | Brent Laster |
-| Learning DevSecOps | Mark Rendell |
+| Learning DevSecOps | Steve Suehring |
 | Ansible: Up and Running (3ª ed.) | Bas Meijer, Lorin Hochstein |
 | AWS Certified DevOps Engineer Professional | Cybellium |
 
@@ -202,7 +202,7 @@
 
 | Libro | Autor |
 |-------|-------|
-| Essential Guide to LLMOps | Stephen Jankiewicz |
+| Essential Guide to LLMOps | Ryan Doan |
 | Building LLM Powered Applications | Valentina Alto |
 | Building AI Applications with ChatGPT APIs | Martin Yanev |
 | Generative AI with LangChain | Ben Auffarth |

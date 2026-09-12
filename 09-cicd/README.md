@@ -9,6 +9,7 @@ Documentación sobre pipelines de integración y entrega continua.
 | [01-checklists.md](01-checklists.md) | Checklists de commit, merge, deploy y diagnóstico en producción |
 | [02-github-actions.md](02-github-actions.md) | CI en PR + CD a AWS ECR + ECS Fargate, permisos IAM mínimos |
 | [03-azure-devops.md](03-azure-devops.md) | Pipelines YAML: CI, CD a ACR + App Service, environments con aprobación |
+| [04-terraform.md](04-terraform.md) | HCL, módulos, estado remoto en S3 con bloqueo en DynamoDB, entornos separados |
 
 
 ---

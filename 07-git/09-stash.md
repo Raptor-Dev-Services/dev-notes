@@ -15,7 +15,7 @@ git stash push -u -m "wip: incluye nuevos archivos"
 
 # listar el stash
 git stash list
-# stash@{0}: On feature/GTM-123: wip: user validation
+# stash@{0}: On feature/{{TASK_ID_PREFIX}}123: wip: user validation
 # stash@{1}: On develop: fix in progress
 
 # recuperar el último stash y eliminarlo de la pila
@@ -43,8 +43,8 @@ Escenario: comenzaste a trabajar en `main` por error y el trabajo pertenece a un
 git stash push -m "wip: auth feature"
 
 # 2. ir a la rama correcta (o crearla)
-git checkout feature/GTM-123-user-auth
-# o: git checkout -b feature/GTM-123-user-auth
+git checkout feature/{{TASK_ID_PREFIX}}123-user-auth
+# o: git checkout -b feature/{{TASK_ID_PREFIX}}123-user-auth
 
 # 3. recuperar el trabajo
 git stash pop
@@ -56,7 +56,7 @@ Si el contexto cambió y el stash ya no aplica limpiamente a la rama actual:
 
 ```bash
 # crear rama desde el punto donde se guardó el stash
-git stash branch feature/GTM-new-branch stash@{0}
+git stash branch feature/{{TASK_ID_PREFIX}}124-new-branch stash@{0}
 ```
 
 Esto crea la rama en el commit donde se hizo el stash, aplica los cambios y elimina la entrada del stash si no hay conflictos.

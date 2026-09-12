@@ -1,4 +1,4 @@
-# 09 — Specification Pattern
+# 05 — Specification Pattern
 
 El Specification Pattern encapsula una regla de negocio (o criterio de filtrado) en un objeto reutilizable y composable. Resuelve el problema de queries complejos que se duplican y de lógica de filtrado dispersa en los repositorios.
 

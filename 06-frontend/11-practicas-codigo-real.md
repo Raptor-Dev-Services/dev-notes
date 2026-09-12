@@ -4,7 +4,7 @@
 
 Los ejemplos de libro están escritos para caber en una página: un `useState` para `loading`, otro para `error`, un `fetch` sin cancelar, y una lista que se filtra en memoria. Funcionan como ilustración y se rompen en producción por motivos que el libro no llega a mostrar.
 
-Este doc recoge patrones tomados de `sociofit-webclient` que **mejoran** el ejemplo canónico, con el motivo por el que se adoptaron. Varios nacieron de un incidente real, y ese contexto vale más que el patrón.
+Este doc recoge patrones tomados de un cliente web en producción (`{{REPO_NAME}}`) que **mejoran** el ejemplo canónico, con el motivo por el que se adoptaron. Varios nacieron de un incidente real, y ese contexto vale más que el patrón.
 
 ## 1. Máquina de estados en vez de booleanos sueltos
 
@@ -161,7 +161,7 @@ Dos valores separados a propósito: `searchInput` es lo que se ve en el campo (r
 
 ## 5. Un helper compartido nace de un incidente, no de una previsión
 
-Tres módulos de `sociofit-webclient` existen porque algo se rompió antes:
+Tres módulos de `{{REPO_NAME}}` existen porque algo se rompió antes:
 
 | Módulo | Qué consolidó | Qué pasaba |
 |--------|---------------|------------|
@@ -190,7 +190,7 @@ La práctica que sostiene a las cinco anteriores. Cada uno de esos módulos abre
 //
 // Seguridad: solo se permite el esquema http/https. Bloquea vectores como `javascript:` o `data:`
 // que un tenant podria poner en un campo de URL de su micrositio y que, al hacer clic un usuario
-// logueado, se ejecutarian en el ORIGEN de SocioFit.
+// logueado, se ejecutarian en el ORIGEN de {{PROJECT_NAME}}.
 ```
 
 Un comentario que dice *qué* hace la función es ruido: el código ya lo dice. Un comentario que dice *qué se rompió* y *qué decisión se tomó* es lo único que evita que alguien lo deshaga por parecerle innecesario.
@@ -208,7 +208,7 @@ Es la diferencia entre `// convierte centavos a unidades` y "existían seis copi
 | Consolidar a la segunda copia | Esperar a que "duela" | Las copias divergen en silencio |
 | Comentario que explica el incidente | Comentario que describe el código | Nadie deshace la decisión por creerla innecesaria |
 
-> Fuente: código de producción de `sociofit-webclient` (React 19 · Vite · React Router 7 · Axios). Los puntos 4 y 5 contrastan con el ejemplo de `06-feature-hook.md`, que muestra filtrado en cliente: sigue siendo válido para conjuntos completos sin paginar.
+> Fuente: código de producción de `{{REPO_NAME}}` (React 19 · Vite · React Router 7 · Axios). Los puntos 4 y 5 contrastan con el ejemplo de `06-feature-hook.md`, que muestra filtrado en cliente: sigue siendo válido para conjuntos completos sin paginar.
 
 ---
 

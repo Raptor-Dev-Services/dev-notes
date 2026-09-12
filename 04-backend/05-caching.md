@@ -1,4 +1,4 @@
-# 11 — Caching: IMemoryCache, IDistributedCache y Redis
+# 05 — Caching: IMemoryCache, IDistributedCache y Redis
 
 Guardar temporalmente resultados costosos para no recalcularlos en cada request. El problema central es cuándo invalidar esa copia.
 

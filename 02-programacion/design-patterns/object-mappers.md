@@ -141,7 +141,7 @@ app.MapPost("/products/{productId}/remove-stocks", async (
     CancellationToken ct) => { ... });
 ```
 
-**Regla de Ferreira:** más de 3-4 dependencias es una señal para investigar si la clase tiene demasiadas responsabilidades. Dos soluciones:
+**Regla de Marcotte:** más de 3-4 dependencias es una señal para investigar si la clase tiene demasiadas responsabilidades. Dos soluciones:
 
 1. **Aggregate Services** — agrupa mappers relacionados en un servicio.
 2. **Mapping Facade** — expone un método genérico `Map<TSource, TDestination>`.

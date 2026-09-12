@@ -18,8 +18,8 @@ Sin una convención de ramas, los equipos mezclan trabajo en progreso con códig
 ## Convenciones de nombres
 
 ```
-feature/GTM-123-descripcion-corta
-bugfix/GTM-456-fix-login-error
+feature/{{TASK_ID_PREFIX}}123-descripcion-corta
+bugfix/{{TASK_ID_PREFIX}}456-fix-login-error
 release/1.2.0
 hotfix/1.2.1-fix-null-pointer
 ```
@@ -35,11 +35,11 @@ Reglas:
 # feature nueva desde develop
 git checkout develop
 git pull origin develop
-git checkout -b feature/GTM-123-user-auth
+git checkout -b feature/{{TASK_ID_PREFIX}}123-user-auth
 
 # bugfix en develop
 git checkout develop
-git checkout -b bugfix/GTM-456-fix-email-validation
+git checkout -b bugfix/{{TASK_ID_PREFIX}}456-fix-email-validation
 
 # release desde develop
 git checkout develop
@@ -58,7 +58,7 @@ git checkout -b hotfix/1.2.1-fix-crash-on-login
 ```
 develop ──────────────────────────────────────► develop
          \                                    /
-          feature/GTM-123 ──── commits ──────
+          feature/{{TASK_ID_PREFIX}}123 ──── commits ──────
 ```
 
 ```bash
@@ -68,9 +68,9 @@ git commit -m "feat(auth): add JWT validation"
 
 # cuando está lista, merge a develop
 git checkout develop
-git merge --no-ff feature/GTM-123-user-auth
+git merge --no-ff feature/{{TASK_ID_PREFIX}}123-user-auth
 git push origin develop
-git branch -d feature/GTM-123-user-auth
+git branch -d feature/{{TASK_ID_PREFIX}}123-user-auth
 ```
 
 ### Release

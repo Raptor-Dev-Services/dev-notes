@@ -404,7 +404,7 @@ aws route53 change-resource-record-sets \
         "Type": "A",
         "AliasTarget": {
           "HostedZoneId": "Z35SXDOTRQ7X7K",
-          "DNSName": "gtm-alb-123456.us-east-1.elb.amazonaws.com",
+          "DNSName": "{{PROJECT_SLUG}}-alb-123456.us-east-1.elb.amazonaws.com",
           "EvaluateTargetHealth": true
         }
       }

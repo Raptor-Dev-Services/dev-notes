@@ -2,7 +2,7 @@
 
 Principios y decisiones de diseño que hacen una API predecible, robusta y fácil de consumir.
 
-> Fuente: *Programming APIs with C# and .NET* (David Barkol) — Ch.8 API Design Best Practices
+> Fuente: *Programming APIs with C# and .NET* (Jesse Liberty, Joseph Dluzen) — Ch.8 API Design Best Practices
 
 ---
 

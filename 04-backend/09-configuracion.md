@@ -254,7 +254,7 @@ Ver `04-backend/10-secretos.md` para gestión de secretos en producción (Azure 
 ---
 
 ## Inyectar la clase Options directamente (sin IOptions)
-> Fuente: *Architecting ASP.NET Core Applications* (Ferreira) — Ch.9 Injecting Options Objects Directly
+> Fuente: *Architecting ASP.NET Core Applications* (Marcotte) — Ch.9 Injecting Options Objects Directly
 
 El problema con `IOptions<T>`, `IOptionsSnapshot<T>`, etc. es que el consumidor controla el lifetime. Eso rompe Inversion of Control. La solución es inyectar la clase POCO directamente desde el composition root:
 
@@ -291,7 +291,7 @@ Con este patrón:
 ---
 
 ## FluentValidation para validar opciones
-> Fuente: *Architecting ASP.NET Core Applications* (Ferreira) — Ch.9 Validating Options Using FluentValidation
+> Fuente: *Architecting ASP.NET Core Applications* (Marcotte) — Ch.9 Validating Options Using FluentValidation
 
 Puente entre FluentValidation y el sistema de validación de Options de .NET:
 
@@ -345,7 +345,7 @@ La ventaja sobre `ValidateDataAnnotations()`: las reglas de validación viven en
 ---
 
 ## `[OptionsValidator]` — source generator (.NET 8)
-> Fuente: *Architecting ASP.NET Core Applications* (Ferreira) — Ch.9 Using the Options Validation Source Generator
+> Fuente: *Architecting ASP.NET Core Applications* (Marcotte) — Ch.9 Using the Options Validation Source Generator
 
 Para proyectos con AOT (Ahead-of-Time compilation) o trimming, el generador de código crea el validador en tiempo de compilación, sin reflection:
 

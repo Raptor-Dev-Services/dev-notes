@@ -69,7 +69,7 @@ REPR es especialmente adecuado para **Minimal APIs** de ASP.NET Core porque el m
 
 ---
 
-## Variantes de organización (Ferreira)
+## Variantes de organización (Marcotte)
 
 ### Variante 1 — Handler separado del registro
 
@@ -168,7 +168,7 @@ app.MapUpperCase();
 
 ## Proyecto e-commerce con REPR + CQS + FluentValidation + Mapperly
 
-El ejemplo completo de Ferreira usa un stack con dependencias adicionales para un proyecto realista:
+El ejemplo completo de Marcotte usa un stack con dependencias adicionales para un proyecto realista:
 
 ```
 ASP.NET Core Minimal API        ← backbone

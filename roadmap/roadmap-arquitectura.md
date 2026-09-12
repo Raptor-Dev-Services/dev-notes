@@ -24,8 +24,7 @@
 > Los tres estilos que dan forma al back-template.
 
 - [ ] [Hexagonal (Ports & Adapters)](../03-arquitectura/03-hexagonal.md) — puertos, adaptadores, composición
-- [ ] [Clean Architecture](../03-arquitectura/11-clean-arch.md) — capas, regla de dependencia, Ferreira Ch.14
-- [ ] [Hexagonal vs Clean](../03-arquitectura/03-hexagonal-vs-clean.md) — comparativa y casos de uso
+- [ ] [Clean Architecture](../03-arquitectura/11-clean-arch.md) — capas, regla de dependencia, Marcotte Ch.14
 - [ ] [Vertical Slice](../03-arquitectura/04-vertical-slice.md) — feature folders, coupling por feature
 
 **Al terminar esta fase puedes:** elegir el estilo arquitectónico correcto para un proyecto y defenderlo.

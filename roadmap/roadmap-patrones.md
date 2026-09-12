@@ -74,7 +74,7 @@
 - [ ] [12 — Proxy](../02-programacion/design-patterns/structural/12-proxy.md)
   - Sustituto con control de acceso, logging o lazy loading
 
-**Doc adicional:** [Structural ASP.NET Core](../02-programacion/design-patterns/structural-aspnet.md) — Decorator, Composite, Adapter, Façade con ejemplos reales del back-template (Ferreira Ch.11)
+**Doc adicional:** [Structural ASP.NET Core](../02-programacion/design-patterns/structural-aspnet.md) — Decorator, Composite, Adapter, Façade con ejemplos reales del back-template (Marcotte Ch.11)
 
 **Al terminar esta fase puedes:** componer comportamiento dinámicamente sin modificar clases existentes.
 
@@ -97,7 +97,7 @@
 - [ ] [13 — Chain of Responsibility](../02-programacion/design-patterns/behavioral/13-chain-of-responsibility.md)
   - Cadena de manejadores — pipeline de comportamientos
   - En ASP.NET Core: middleware pipeline, MediatR pipeline behaviors
-  - Ferreira Ch.12: intérprete de alarmas + Scrutor Decorate
+  - Marcotte Ch.12: intérprete de alarmas + Scrutor Decorate
 
 - [ ] [18 — Observer](../02-programacion/design-patterns/behavioral/18-observer.md)
   - Notificar cambios a múltiples suscriptores
@@ -105,7 +105,7 @@
 
 - [ ] [21 — Template Method](../02-programacion/design-patterns/behavioral/21-template-method.md)
   - Esqueleto de algoritmo con pasos variables en subclases
-  - Ferreira Ch.12: SearchMachine abstracta con LinearSearch / BinarySearch
+  - Marcotte Ch.12: SearchMachine abstracta con LinearSearch / BinarySearch
 
 ### Grupo B — Complementarios
 
@@ -136,7 +136,7 @@
 
 > Más allá del GoF: patrones que emergen del stack .NET.
 
-- [ ] [Object Mappers](../02-programacion/design-patterns/object-mappers.md) — manual mapping, AutoMapper, Mapperly (Ferreira Ch.15)
+- [ ] [Object Mappers](../02-programacion/design-patterns/object-mappers.md) — manual mapping, AutoMapper, Mapperly (Marcotte Ch.15)
   - Manual: `IMapper<TSource, TDestination>` — control total, sin magia
   - AutoMapper: perfiles, `ProjectTo`, validación de configuración
   - Mapperly: source generator, código generado visible, sin reflection

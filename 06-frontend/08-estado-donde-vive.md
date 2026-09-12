@@ -30,7 +30,7 @@ Tres preguntas resuelven casi todo:
 
 El estado local no compite con la URL en jerarquía sino en propósito.
 
-Filtros y paginación en `useState` dentro del hook de la pantalla están **bien** mientras la vista sea de operación interna y nadie necesite compartir ni volver a ese resultado exacto. Es más simple y el hook queda autocontenido. Así lo hace `useMembers` en `sociofit-webclient`.
+Filtros y paginación en `useState` dentro del hook de la pantalla están **bien** mientras la vista sea de operación interna y nadie necesite compartir ni volver a ese resultado exacto. Es más simple y el hook queda autocontenido. Así lo hace `useMembers` en `{{REPO_NAME}}`.
 
 Súbelos a la URL cuando aparezca una de estas:
 
@@ -46,7 +46,7 @@ Un cambio en el `value` re-renderiza a **todos** los consumidores, lean o no el 
 
 Context tampoco permite suscribirse a **una parte** del valor: es todo o nada. Ese es el límite estructural y no se arregla memoizando mejor.
 
-`sociofit-webclient` tiene exactamente cuatro contextos y los cuatro son de nivel 4: `branding`, `entitlements`, `theme`, `i18n`. Ninguno cambia por interacción del usuario. Ese es el uso correcto.
+`{{REPO_NAME}}` tiene exactamente cuatro contextos y los cuatro son de nivel 4: `branding`, `entitlements`, `theme`, `i18n`. Ninguno cambia por interacción del usuario. Ese es el uso correcto.
 
 **Señales de que Context se quedó corto:**
 
@@ -158,7 +158,7 @@ Migrar de Context a store es un cambio local **si desde el principio consumiste 
 | Ya partiste el Context en tres Providers y sigue re-renderizando | Datos de la API: eso es estado de servidor |
 | Dos slices se afectan y necesitas coordinarlas | Estado que solo lee un componente |
 
-> Fuente: *React 19 Design Patterns and Best Practices* (Carlos Santana Roldán) — Ch.4 Advanced State Management Techniques. Ejemplos de contextos y filtros de `sociofit-webclient`.
+> Fuente: *React 19 Design Patterns and Best Practices* (Carlos Santana Roldán) — Ch.4 Advanced State Management Techniques. Ejemplos de contextos y filtros de `{{REPO_NAME}}`.
 
 ---
 

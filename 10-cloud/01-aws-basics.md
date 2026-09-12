@@ -100,7 +100,7 @@ Base de datos relacional gestionada. AWS gestiona backups, patches, failover.
 ```bash
 # crear instancia RDS PostgreSQL
 aws rds create-db-instance \
-  --db-instance-identifier gtm-db \
+  --db-instance-identifier {{PROJECT_SLUG}}-db \
   --db-instance-class db.t3.micro \
   --engine postgres \
   --engine-version 16.3 \
@@ -123,7 +123,7 @@ aws rds create-db-instance \
 ```
 # appsettings.Production.json — valor desde Secrets Manager
 "ConnectionStrings": {
-  "Default": "Host=gtm-db.xyz.us-east-1.rds.amazonaws.com;Port=5432;Database=gtm;Username=admin;Password=..."
+  "Default": "Host={{PROJECT_SLUG}}-db.xyz.us-east-1.rds.amazonaws.com;Port=5432;Database={{PRIMARY_DB}};Username=admin;Password=..."
 }
 ```
 

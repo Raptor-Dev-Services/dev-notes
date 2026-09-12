@@ -33,7 +33,7 @@ Dimensión: InstanceId = i-1234567890abcdef0
 
 Namespace: AWS/RDS
 Métrica: DatabaseConnections
-Dimensión: DBInstanceIdentifier = gtm-suite-prod
+Dimensión: DBInstanceIdentifier = {{PROJECT_SLUG}}-prod
 → Conexiones a la instancia RDS específica
 ```
 
@@ -127,15 +127,15 @@ cat > /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json << 'EOF'
       "files": {
         "collect_list": [
           {
-            "file_path": "/var/log/gtm-suite/app.log",
-            "log_group_name": "/gtm-suite/prod/application",
+            "file_path": "/var/log/{{PROJECT_SLUG}}/app.log",
+            "log_group_name": "/{{PROJECT_SLUG}}/prod/application",
             "log_stream_name": "{instance_id}",
             "timestamp_format": "%Y-%m-%dT%H:%M:%S",
             "multi_line_start_pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}"
           },
           {
-            "file_path": "/var/log/gtm-suite/error.log",
-            "log_group_name": "/gtm-suite/prod/errors",
+            "file_path": "/var/log/{{PROJECT_SLUG}}/error.log",
+            "log_group_name": "/{{PROJECT_SLUG}}/prod/errors",
             "log_stream_name": "{instance_id}",
             "timestamp_format": "%Y-%m-%dT%H:%M:%S"
           }
@@ -164,12 +164,12 @@ systemctl status amazon-cloudwatch-agent
 ### Conceptos
 
 ```
-Log Group  → contenedor lógico de logs. Ej: /gtm-suite/prod/application
+Log Group  → contenedor lógico de logs. Ej: /{{PROJECT_SLUG}}/prod/application
 Log Stream → fuente individual dentro del grupo. Ej: i-1234567890abcdef0
 Log Event  → una línea/entrada de log con timestamp y mensaje
 
 Jerarquía:
-  /gtm-suite/prod/application (Log Group)
+  /{{PROJECT_SLUG}}/prod/application (Log Group)
   ├── i-1234567890abcdef0 (Log Stream — instancia 1)
   └── i-abcdef1234567890 (Log Stream — instancia 2)
 ```
@@ -179,10 +179,10 @@ Jerarquía:
 ```bash
 # Crear log group con retención de 30 días
 aws logs create-log-group \
-  --log-group-name /gtm-suite/prod/application
+  --log-group-name /{{PROJECT_SLUG}}/prod/application
 
 aws logs put-retention-policy \
-  --log-group-name /gtm-suite/prod/application \
+  --log-group-name /{{PROJECT_SLUG}}/prod/application \
   --retention-in-days 30
 
 # Otros valores válidos: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, ...
@@ -193,7 +193,7 @@ aws logs put-retention-policy \
 ```bash
 # Buscar errores en los últimos 15 minutos
 aws logs start-query \
-  --log-group-name /gtm-suite/prod/application \
+  --log-group-name /{{PROJECT_SLUG}}/prod/application \
   --start-time $(date -d '15 minutes ago' +%s) \
   --end-time $(date +%s) \
   --query-string 'fields @timestamp, @message
@@ -203,7 +203,7 @@ aws logs start-query \
 
 # Contar errores por tipo en la última hora
 aws logs start-query \
-  --log-group-name /gtm-suite/prod/application \
+  --log-group-name /{{PROJECT_SLUG}}/prod/application \
   --start-time $(date -d '1 hour ago' +%s) \
   --end-time $(date +%s) \
   --query-string 'fields @message
@@ -233,10 +233,10 @@ fields @timestamp, tenantId, @message
 
 ```bash
 aws logs create-export-task \
-  --log-group-name /gtm-suite/prod/application \
+  --log-group-name /{{PROJECT_SLUG}}/prod/application \
   --from $(date -d '30 days ago' +%s000) \
   --to $(date +%s000) \
-  --destination gtm-suite-prod-logs \
+  --destination {{PROJECT_SLUG}}-prod-logs \
   --destination-prefix "cloudwatch-exports/application/$(date +%Y/%m)"
 ```
 
@@ -340,11 +340,11 @@ Configuración:
 ```bash
 # 1. CPU del servidor de aplicacion > 80% por 5 minutos
 aws cloudwatch put-metric-alarm \
-  --alarm-name "gtm-prod-cpu-high" \
+  --alarm-name "{{PROJECT_SLUG}}-prod-cpu-high" \
   --alarm-description "CPU del servidor de aplicacion supera el 80%" \
   --namespace AWS/EC2 \
   --metric-name CPUUtilization \
-  --dimensions Name=AutoScalingGroupName,Value=gtm-asg \
+  --dimensions Name=AutoScalingGroupName,Value={{PROJECT_SLUG}}-asg \
   --statistic Average \
   --period 300 \
   --evaluation-periods 2 \
@@ -356,7 +356,7 @@ aws cloudwatch put-metric-alarm \
 
 # 2. Disco > 85%
 aws cloudwatch put-metric-alarm \
-  --alarm-name "gtm-prod-disk-high" \
+  --alarm-name "{{PROJECT_SLUG}}-prod-disk-high" \
   --alarm-description "Disco del servidor supera el 85%" \
   --namespace CWAgent \
   --metric-name disk_used_percent \
@@ -371,11 +371,11 @@ aws cloudwatch put-metric-alarm \
 
 # 3. Errores 5xx del ALB > 5 por minuto
 aws cloudwatch put-metric-alarm \
-  --alarm-name "gtm-prod-5xx-errors" \
+  --alarm-name "{{PROJECT_SLUG}}-prod-5xx-errors" \
   --alarm-description "ALB devuelve mas de 5 errores 5xx por minuto" \
   --namespace AWS/ApplicationELB \
   --metric-name HTTPCode_Target_5XX_Count \
-  --dimensions Name=LoadBalancer,Value=app/gtm-alb/1234567890 \
+  --dimensions Name=LoadBalancer,Value=app/{{PROJECT_SLUG}}-alb/1234567890 \
   --statistic Sum \
   --period 60 \
   --evaluation-periods 2 \
@@ -387,11 +387,11 @@ aws cloudwatch put-metric-alarm \
 
 # 4. Latencia p99 del ALB > 500ms
 aws cloudwatch put-metric-alarm \
-  --alarm-name "gtm-prod-latency-high" \
+  --alarm-name "{{PROJECT_SLUG}}-prod-latency-high" \
   --alarm-description "Latencia p99 del ALB supera 500ms" \
   --namespace AWS/ApplicationELB \
   --metric-name TargetResponseTime \
-  --dimensions Name=LoadBalancer,Value=app/gtm-alb/1234567890 \
+  --dimensions Name=LoadBalancer,Value=app/{{PROJECT_SLUG}}-alb/1234567890 \
   --extended-statistic p99 \
   --period 60 \
   --evaluation-periods 3 \
@@ -402,11 +402,11 @@ aws cloudwatch put-metric-alarm \
 
 # 5. Conexiones a RDS > 80% del maximo (max_connections del parameter group)
 aws cloudwatch put-metric-alarm \
-  --alarm-name "gtm-prod-rds-connections" \
+  --alarm-name "{{PROJECT_SLUG}}-prod-rds-connections" \
   --alarm-description "Conexiones a RDS superan el 80% del maximo" \
   --namespace AWS/RDS \
   --metric-name DatabaseConnections \
-  --dimensions Name=DBInstanceIdentifier,Value=gtm-suite-prod \
+  --dimensions Name=DBInstanceIdentifier,Value={{PROJECT_SLUG}}-prod \
   --statistic Maximum \
   --period 60 \
   --evaluation-periods 2 \
@@ -417,11 +417,11 @@ aws cloudwatch put-metric-alarm \
 
 # 6. Memoria > 85% (requiere CloudWatch Agent)
 aws cloudwatch put-metric-alarm \
-  --alarm-name "gtm-prod-memory-high" \
+  --alarm-name "{{PROJECT_SLUG}}-prod-memory-high" \
   --alarm-description "Uso de memoria supera el 85%" \
   --namespace CWAgent \
   --metric-name mem_used_percent \
-  --dimensions Name=AutoScalingGroupName,Value=gtm-asg \
+  --dimensions Name=AutoScalingGroupName,Value={{PROJECT_SLUG}}-asg \
   --statistic Average \
   --period 300 \
   --evaluation-periods 2 \
@@ -471,7 +471,7 @@ aws cloudwatch put-dashboard \
           "title": "CPU del Servidor",
           "metrics": [
             ["AWS/EC2", "CPUUtilization",
-             "AutoScalingGroupName", "gtm-asg",
+             "AutoScalingGroupName", "{{PROJECT_SLUG}}-asg",
              {"stat": "Average", "period": 60}]
           ],
           "view": "timeSeries",
@@ -487,13 +487,13 @@ aws cloudwatch put-dashboard \
           "title": "Latencia ALB (p50, p90, p99)",
           "metrics": [
             ["AWS/ApplicationELB", "TargetResponseTime",
-             "LoadBalancer", "app/gtm-alb/1234567890",
+             "LoadBalancer", "app/{{PROJECT_SLUG}}-alb/1234567890",
              {"stat": "p50", "label": "p50"}],
             ["AWS/ApplicationELB", "TargetResponseTime",
-             "LoadBalancer", "app/gtm-alb/1234567890",
+             "LoadBalancer", "app/{{PROJECT_SLUG}}-alb/1234567890",
              {"stat": "p90", "label": "p90"}],
             ["AWS/ApplicationELB", "TargetResponseTime",
-             "LoadBalancer", "app/gtm-alb/1234567890",
+             "LoadBalancer", "app/{{PROJECT_SLUG}}-alb/1234567890",
              {"stat": "p99", "label": "p99"}]
           ],
           "view": "timeSeries",
@@ -527,7 +527,7 @@ CloudWatch Metric Math permite crear alarmas basadas en expresiones que combinan
 ```bash
 # Alarma: tasa de error > 1% de las requests
 aws cloudwatch put-metric-alarm \
-  --alarm-name "gtm-prod-error-rate" \
+  --alarm-name "{{PROJECT_SLUG}}-prod-error-rate" \
   --alarm-description "Tasa de error supera el 1% de las requests" \
   --metrics '[
     {
@@ -536,7 +536,7 @@ aws cloudwatch put-metric-alarm \
         "Metric": {
           "Namespace": "AWS/ApplicationELB",
           "MetricName": "HTTPCode_Target_5XX_Count",
-          "Dimensions": [{"Name": "LoadBalancer", "Value": "app/gtm-alb/1234"}]
+          "Dimensions": [{"Name": "LoadBalancer", "Value": "app/{{PROJECT_SLUG}}-alb/1234"}]
         },
         "Period": 60,
         "Stat": "Sum"
@@ -549,7 +549,7 @@ aws cloudwatch put-metric-alarm \
         "Metric": {
           "Namespace": "AWS/ApplicationELB",
           "MetricName": "RequestCount",
-          "Dimensions": [{"Name": "LoadBalancer", "Value": "app/gtm-alb/1234"}]
+          "Dimensions": [{"Name": "LoadBalancer", "Value": "app/{{PROJECT_SLUG}}-alb/1234"}]
         },
         "Period": 60,
         "Stat": "Sum"
@@ -589,7 +589,7 @@ aws cloudwatch put-metric-alarm \
 
 ## Relación con back-template
 
-El back-template integra OpenTelemetry para tracing distribuido (ver `09-tracing-distribuido.md`). Las métricas de CloudWatch complementan el tracing:
+El back-template integra OpenTelemetry para tracing distribuido (ver `17-tracing-distribuido.md`). Las métricas de CloudWatch complementan el tracing:
 
 ```
 Tracing (OTel/Tempo)   → correlacionar requests individuales

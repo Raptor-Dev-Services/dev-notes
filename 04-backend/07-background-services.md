@@ -1,4 +1,4 @@
-# 13 — Background Services: IHostedService y BackgroundService
+# 07 — Background Services: IHostedService y BackgroundService
 
 Ejecutar trabajo en segundo plano dentro del proceso de la API: limpieza periódica, procesamiento de colas, tareas de mantenimiento.
 

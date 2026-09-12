@@ -2,134 +2,72 @@
 
 Base de conocimiento personal de **Rogelio Arriaga** para desarrollo de software. Organizado por los 11 dominios del Glosario Maestro de SaaS Multi-Tenant.
 
+El listado completo de documentos está en [INDICE.md](INDICE.md) y las rutas de estudio en [roadmap/](roadmap/).
+
 ---
 
 ## Dominios
 
 | Dominio | Descripción | Docs |
 |---------|-------------|------|
-| [01-fundamentos](01-fundamentos/) | SOLID, Clean Code, Refactoring | 3 |
-| [02-programacion](02-programacion/) | C# completo (19 docs) + Patrones GoF (22 docs) | 41 |
-| [03-arquitectura](03-arquitectura/) | DDD, CQRS, Clean Architecture, Vertical Slice, microservicios, Keycloak, API design | 13 |
-| [04-backend](04-backend/) | ASP.NET Core: Result Pattern, Repository, Pipeline Behaviors, auth, caching, validación, EF Core, performance, memoria, JWT + testing | 24 |
-| [05-bases-de-datos](05-bases-de-datos/) | SQL, índices, transacciones, PostgreSQL avanzado, Dapper, connection strings | 6 |
+| [01-fundamentos](01-fundamentos/) | SOLID, Clean Code, Refactoring, Agile/Scrum, SDLC, estimación, stakeholders, deuda técnica | 8 |
+| [02-programacion](02-programacion/) | C# (19 docs) + Patrones GoF (22 docs) + patrones en ASP.NET Core (2 docs) | 43 |
+| [03-arquitectura](03-arquitectura/) | DDD, CQRS, hexagonal, vertical slice, specification, versionado, microservicios, Keycloak, monolito modular, Clean Architecture, C4, REPR + API design (5 docs) | 18 |
+| [04-backend](04-backend/) | ASP.NET Core: result pattern, repository, pipeline behaviors, validación, caching, EF Core, Dapper, JWT, performance, multi-tenancy SaaS + testing (5 docs) | 51 |
+| [05-bases-de-datos](05-bases-de-datos/) | SQL, índices, transacciones, PostgreSQL avanzado, Dapper, connection strings, migraciones multi-tenant, RLS | 8 |
 | [06-frontend](06-frontend/) | React 19, Vite, Tailwind v4, design system, componentes primitivos, feature hook, capa de dominio, estado, headless, fronteras de import | 11 |
-| [07-git](07-git/) | Tooling, SemVer, Git Flow, tags, conventional commits, merge strategies, rollback, stash | 9 |
-| [08-contenedores](08-contenedores/) | Docker: conceptos, Dockerfile multi-stage, Compose, comandos | 5 |
-| [09-cicd](09-cicd/) | Checklists, GitHub Actions (OIDC + AWS), Azure DevOps, Terraform | 4 |
-| [10-cloud](10-cloud/) | AWS, Azure, Linux+Nginx, observabilidad, secretos, costos, seguridad web (OWASP), Zero Trust, tracing distribuido | 9 |
+| [07-git](07-git/) | Tooling, SemVer, config, Git Flow, tags, conventional commits, merge strategies, rollback, stash | 9 |
+| [08-contenedores](08-contenedores/) | Docker: conceptos, Dockerfile multi-stage, Compose, proyecto real, comandos | 5 |
+| [09-cicd](09-cicd/) | Checklists DevSecOps, GitHub Actions (OIDC + AWS), Azure DevOps, Terraform | 4 |
+| [10-cloud](10-cloud/) | AWS y Azure, Linux + Nginx, observabilidad, secretos, costos, seguridad web, Zero Trust, AWS en profundidad, tracing distribuido | 17 |
 | [11-vibe-coding](11-vibe-coding/) | CLAUDE.md, prompts efectivos, AI workflow, manejo de contexto, LLMOps, arquitectura agéntica | 6 |
-| [resources](resources/) | Bibliografía indexada | — |
+| [roadmap](roadmap/) | Rutas de aprendizaje por objetivo | 7 |
+| [resources](resources/books/README.md) | Bibliografía indexada | — |
+
+Además, en la raíz: [Glosario Maestro SaaS](Glosario_Maestro_SaaS.md) y [Manual Práctico del Stack](Manual_Practico_Stack.md).
 
 ---
 
-## Estructura completa
+## Estructura
 
 ```
 dev-notes/
-├── 01-fundamentos/
-│   ├── 01-solid.md
-│   ├── 02-clean-code.md
-│   └── 03-refactoring.md
+├── 01-fundamentos/          8 docs
 ├── 02-programacion/
-│   ├── csharp/                     (01–19: classes → configuration)
-│   └── design-patterns/
-│       ├── creational/             (01–05: Singleton → Prototype)
-│       ├── structural/             (06–12: Adapter → Proxy)
-│       └── behavioral/             (13–22: Chain → Visitor)
-├── 03-arquitectura/
-│   ├── 01-ddd.md
-│   ├── 02-cqrs.md
-│   ├── 03-hexagonal-vs-clean.md
-│   ├── 04-vertical-slice.md
-│   ├── 05-specification.md
-│   ├── 06-api-versioning.md
-│   ├── 07-microservicios.md
-│   ├── 08-autenticacion-keycloak.md
-│   └── api-design/                 (01–05: HTTP → buenas prácticas)
-├── 04-backend/
-│   ├── 01-result-pattern.md
-│   ├── 02-repository-uow.md
-│   ├── 03-pipeline-behaviors.md
-│   ├── 04-resiliencia-polly.md
-│   ├── 05-caching.md
-│   ├── 06-validation.md
-│   ├── 07-background-services.md
-│   ├── 08-problem-details.md
-│   ├── 09-configuracion.md
-│   ├── 10-secretos.md
-│   ├── 11-cors.md
-│   ├── 12-rate-limiting.md
-│   ├── 13-http-client.md
-│   ├── 14-hangfire.md
-│   ├── 15-openapi.md
-│   ├── 16-output-caching.md
-│   ├── 17-ef-core.md
-│   ├── 18-common-library.md
-│   ├── 19-performance.md
-│   ├── 20-memoria-gc.md
-│   ├── 21-jwt.md
-│   └── testing/                    (01–05: xUnit → TDD)
-├── 05-bases-de-datos/
-│   ├── 01-consultas.md
-│   ├── 02-indices.md
-│   ├── 03-transacciones.md
-│   ├── 04-postgresql-avanzado.md
-│   ├── 05-postgresql-dapper.md
-│   └── 06-connection-strings.md
-├── 06-frontend/
-│   ├── 01-variables-entorno-vite.md
-│   ├── 02-react-produccion.md
-│   ├── 03-tailwind.md
-│   ├── 04-design-system.md
-│   ├── 05-componentes-primitivos.md
-│   ├── 06-feature-hook.md
-│   ├── 07-capa-dominio-acl.md
-│   ├── 08-estado-donde-vive.md
-│   ├── 09-componentes-headless.md
-│   ├── 10-fronteras-import.md
-│   └── 11-practicas-codigo-real.md
-├── 07-git/
-│   ├── 01-project-tooling.md
-│   ├── 02-semver.md
-│   ├── 03-git-config.md
-│   ├── 04-git-flow.md
-│   ├── 05-tags.md
-│   ├── 06-commit-conventions.md
-│   ├── 07-merge-strategies.md
-│   ├── 08-rollback.md
-│   └── 09-stash.md
-├── 08-contenedores/
-│   ├── 01-conceptos.md
-│   ├── 02-dockerfile.md
-│   ├── 03-compose.md
-│   ├── 04-proyecto.md
-│   └── 05-comandos.md
-├── 09-cicd/
-│   ├── 01-checklists.md
-│   ├── 02-github-actions.md
-│   ├── 03-azure-devops.md
-│   └── 04-terraform.md
-├── 10-cloud/
-│   ├── 01-aws-basics.md
-│   ├── 02-azure-basics.md
-│   ├── 03-linux-nginx.md
-│   ├── 04-observabilidad.md
-│   ├── 05-secretos-produccion.md
-│   ├── 06-costos.md
-│   ├── 07-seguridad-web.md
-│   ├── 08-zero-trust.md
-│   └── 09-tracing-distribuido.md
-├── 11-vibe-coding/
-│   ├── 01-claude-md.md
-│   ├── 02-prompts-efectivos.md
-│   ├── 03-ai-workflow.md
-│   ├── 04-context-management.md
-│   ├── 05-llmops.md
-│   └── 06-arquitectura-agentica.md
-└── resources/
-    └── books/README.md             (índice de biblioteca — Capacitacion\Bibliografias)
+│   ├── csharp/              19 docs (01-19)
+│   └── design-patterns/     22 GoF (creational 01-05, structural 06-12, behavioral 13-22)
+│                            + 2 de ASP.NET Core + referencias-csharp/ (ejemplos compilables)
+├── 03-arquitectura/         13 docs (01-13) + api-design/ (5 docs)
+├── 04-backend/              46 docs (01-46) + testing/ (5 docs)
+├── 05-bases-de-datos/       8 docs
+├── 06-frontend/             11 docs
+├── 07-git/                  9 docs
+├── 08-contenedores/         5 docs
+├── 09-cicd/                 4 docs
+├── 10-cloud/                17 docs (01-17)
+├── 11-vibe-coding/          6 docs
+├── roadmap/                 7 rutas
+├── resources/books/         índice de biblioteca
+├── INDICE.md
+├── Glosario_Maestro_SaaS.md
+└── Manual_Practico_Stack.md
 ```
+
+---
+
+## Convención de placeholders
+
+Los ejemplos no usan nombres de proyectos reales. Donde un ejemplo necesita un nombre concreto aparece un placeholder `{{UPPER_SNAKE}}`: sustitúyelo por el valor de tu proyecto. No confundir con `${{ }}` de GitHub Actions, que sí es sintaxis del workflow.
+
+| Placeholder | Qué sustituye | Ejemplo |
+|-------------|---------------|---------|
+| `{{PROJECT_NAME}}` | Nombre del producto | `Mi SaaS` |
+| `{{PROJECT_SLUG}}` | Nombre en kebab-case para recursos: buckets, contenedores, realms, log groups | `mi-saas` |
+| `{{ROOT_NAMESPACE}}` | Prefijo de los namespaces y proyectos .NET | `MiSaas` |
+| `{{PRIMARY_DB}}` | Nombre de la base de datos principal | `mi_saas` |
+| `{{PROJECT_DOMAIN}}` | Dominio de negocio del producto | `reservas para clínicas` |
+| `{{REPO_NAME}}` | Nombre del repositorio | `mi-saas-webclient` |
+| `{{TASK_ID_PREFIX}}` | Prefijo del id de tarjeta, con su guion | `MS-` |
 
 ---
 
@@ -139,8 +77,8 @@ Los ejemplos de código de este repositorio están basados en las dos plantillas
 
 | Repo | Stack | Cubre |
 |------|-------|-------|
-| [`back-template`](../back-template) | .NET 10 · Clean Architecture · PostgreSQL · Docker | `01-fundamentos`, `02-programacion`, `03-arquitectura`, `04-backend`, `05-bases-de-datos`, `07-git`, `08-contenedores`, `09-cicd`, `10-cloud` |
-| [`front-template`](../front-template) | React 19 · Vite · Tailwind v4 · Axios · SignalR | `06-frontend` |
+| [`back-template`](https://github.com/Raptor-Dev-Services/back-template) | .NET 10 · Clean Architecture · PostgreSQL · Docker | `01-fundamentos`, `02-programacion`, `03-arquitectura`, `04-backend`, `05-bases-de-datos`, `07-git`, `08-contenedores`, `09-cicd`, `10-cloud` |
+| [`front-template`](https://github.com/Raptor-Dev-Services/front-template) | React 19 · Vite · Tailwind v4 · Axios · SignalR | `06-frontend` |
 
 ---
 

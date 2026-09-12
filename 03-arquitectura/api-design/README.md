@@ -8,11 +8,11 @@ Diseño de APIs REST: semántica HTTP, recursos, paginación, errores y evoluci�
 
 | # | Documento | Temas cubiertos |
 |---|-----------|-----------------|
-| 1 | [HTTP](api-design/01-http.md) | Verbos, idempotencia, status codes, 401 vs 403, headers request/response |
-| 2 | [REST](api-design/02-rest.md) | Recursos, URLs, constraints REST, verbos como sub-recursos, Richardson Maturity Model |
-| 3 | [Paginación](api-design/03-paginacion.md) | Offset pagination, cursor/keyset, filtros, ordenamiento, problemas de OFFSET |
-| 4 | [Errores y Contratos](api-design/04-errores-contratos.md) | 4xx vs 5xx, error codes, mensajes seguros, validación por campo, cliente-side handling |
-| 5 | [Buenas Prácticas](api-design/05-buenas-practicas.md) | Consistencia, UUIDs públicos, backwards compatibility, idempotency keys, checklist |
+| 1 | [HTTP](01-http.md) | Verbos, idempotencia, status codes, 401 vs 403, headers request/response |
+| 2 | [REST](02-rest.md) | Recursos, URLs, constraints REST, verbos como sub-recursos, Richardson Maturity Model |
+| 3 | [Paginación](03-paginacion.md) | Offset pagination, cursor/keyset, filtros, ordenamiento, problemas de OFFSET |
+| 4 | [Errores y Contratos](04-errores-contratos.md) | 4xx vs 5xx, error codes, mensajes seguros, validación por campo, cliente-side handling |
+| 5 | [Buenas Prácticas](05-buenas-practicas.md) | Consistencia, UUIDs públicos, backwards compatibility, idempotency keys, checklist |
 
 ---
 
@@ -30,11 +30,11 @@ Diseño de APIs REST: semántica HTTP, recursos, paginación, errores y evoluci�
 
 ## Orden de lectura sugerido
 
-1. [HTTP](api-design/01-http.md) — semántica base
-2. [REST](api-design/02-rest.md) — diseño de URLs y recursos
-3. [Errores y Contratos](api-design/04-errores-contratos.md) — qué comunica la API cuando falla
-4. [Paginación](api-design/03-paginacion.md) — colecciones grandes
-5. [Buenas Prácticas](api-design/05-buenas-practicas.md) — evolución y mantenimiento
+1. [HTTP](01-http.md) — semántica base
+2. [REST](02-rest.md) — diseño de URLs y recursos
+3. [Errores y Contratos](04-errores-contratos.md) — qué comunica la API cuando falla
+4. [Paginación](03-paginacion.md) — colecciones grandes
+5. [Buenas Prácticas](05-buenas-practicas.md) — evolución y mantenimiento
 
 
 ---

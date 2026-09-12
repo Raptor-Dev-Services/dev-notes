@@ -31,8 +31,8 @@ builder.Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
-        options.Authority   = "https://auth.midominio.com/realms/gtm-suite";
-        options.Audience    = "gtm-api";
+        options.Authority   = "https://auth.midominio.com/realms/{{PROJECT_SLUG}}";
+        options.Audience    = "{{PROJECT_SLUG}}-api";
         options.TokenValidationParameters.ValidateIssuer = true;
     });
 // La API no sabe de contraseñas. Keycloak los gestiona; la API solo valida la firma JWT.
@@ -45,7 +45,7 @@ builder.Services
 | Concepto | Descripción |
 |---------|------------|
 | **Realm** | Espacio de configuración aislado — usuarios, clientes, roles. Un realm por entorno o por tenant |
-| **Client** | Aplicación registrada en Keycloak (`gtm-api`, `gtm-frontend`) |
+| **Client** | Aplicación registrada en Keycloak (`{{PROJECT_SLUG}}-api`, `{{PROJECT_SLUG}}-frontend`) |
 | **User** | Identidad en Keycloak — puede federarse desde LDAP, AD o Google |
 | **Role** | Permiso asignable a usuarios — realm roles (globales) y client roles (por aplicación) |
 | **Scope** | Claim opcional que el cliente puede solicitar (`openid`, `email`, `profile`, `roles`) |
@@ -63,7 +63,7 @@ builder.Services
 Frontend (React)                     Keycloak                   Back-template API
      │                                    │                            │
      │── GET /auth?response_type=code ───►│                            │
-     │   &client_id=gtm-frontend          │                            │
+     │   &client_id={{PROJECT_SLUG}}-frontend          │                            │
      │   &code_challenge=S256             │                            │
      │                                    │ [Login form]               │
      │◄── redirect + code ───────────────│                            │
@@ -80,7 +80,7 @@ Frontend (React)                     Keycloak                   Back-template AP
 
 ```bash
 # Servicio A llama a servicio B sin usuario — usa client_id + client_secret
-curl -X POST https://auth.midominio.com/realms/gtm-suite/protocol/openid-connect/token \
+curl -X POST https://auth.midominio.com/realms/{{PROJECT_SLUG}}/protocol/openid-connect/token \
   -d "grant_type=client_credentials" \
   -d "client_id=billing-service" \
   -d "client_secret=secret"
@@ -97,11 +97,11 @@ builder.Services
     .AddJwtBearer(options =>
     {
         options.Authority = builder.Configuration["Keycloak:Authority"];
-        // Authority = "https://auth.midominio.com/realms/gtm-suite"
+        // Authority = "https://auth.midominio.com/realms/{{PROJECT_SLUG}}"
         // Keycloak expone JWKS en {Authority}/.well-known/openid-configuration
 
         options.Audience = builder.Configuration["Keycloak:Audience"];
-        // Audience = "gtm-api" — el client_id del recurso API en Keycloak
+        // Audience = "{{PROJECT_SLUG}}-api" — el client_id del recurso API en Keycloak
 
         options.TokenValidationParameters = new TokenValidationParameters
         {
@@ -130,8 +130,8 @@ builder.Services.AddAuthorization();
 // appsettings.json
 // {
 //   "Keycloak": {
-//     "Authority": "https://auth.midominio.com/realms/gtm-suite",
-//     "Audience": "gtm-api"
+//     "Authority": "https://auth.midominio.com/realms/{{PROJECT_SLUG}}",
+//     "Audience": "{{PROJECT_SLUG}}-api"
 //   }
 // }
 ```
@@ -143,8 +143,8 @@ builder.Services.AddAuthorization();
 ```json
 {
   "sub": "d4e5f6a7-...",
-  "iss": "https://auth.midominio.com/realms/gtm-suite",
-  "aud": ["gtm-api", "account"],
+  "iss": "https://auth.midominio.com/realms/{{PROJECT_SLUG}}",
+  "aud": ["{{PROJECT_SLUG}}-api", "account"],
   "exp": 1735000000,
   "iat": 1734999100,
   "email": "rogelio@alfacorp.com",
@@ -154,7 +154,7 @@ builder.Services.AddAuthorization();
     "roles": ["admin", "user"]
   },
   "resource_access": {
-    "gtm-api": {
+    "{{PROJECT_SLUG}}-api": {
       "roles": ["reports:read", "users:write"]
     }
   }
@@ -208,7 +208,7 @@ var tenantSlug = issuer?.Split('/').LastOrDefault();
 ### Opción B — Un realm + claim tenant_id (recomendado para empezar)
 
 ```
-Realm: gtm-suite  → todos los tenants
+Realm: {{PROJECT_SLUG}}  → todos los tenants
   Usuario: rogelio@alfacorp.com
     Custom claim: tenant_id = "alfacorp"
     Custom claim: branch_id = "sucursal-norte"
@@ -256,7 +256,7 @@ services:
 ```bash
 # Exportar realm para versionarlo en el repo
 docker exec -it keycloak /opt/keycloak/bin/kc.sh export \
-  --realm gtm-suite \
+  --realm {{PROJECT_SLUG}} \
   --dir /opt/keycloak/data/export
 ```
 
@@ -389,7 +389,7 @@ public sealed class KeycloakTokenService(HttpClient http, IConfiguration config)
 | IAM | Identity and Access Management — gestión centralizada de identidades y permisos |
 | Keycloak | Servidor de identidad open-source de Red Hat — gestiona usuarios, SSO y tokens OAuth2/OIDC |
 | Realm | Unidad de configuración aislada en Keycloak — agrupa usuarios, clientes y roles |
-| Client | Aplicación registrada en Keycloak que solicita tokens (`gtm-api`, `gtm-frontend`) |
+| Client | Aplicación registrada en Keycloak que solicita tokens (`{{PROJECT_SLUG}}-api`, `{{PROJECT_SLUG}}-frontend`) |
 | OIDC | OpenID Connect — capa de identidad sobre OAuth2 que añade el ID Token con datos del usuario |
 | OAuth2 | Protocolo de autorización — define cómo obtener tokens de acceso a recursos protegidos |
 | Authorization Code + PKCE | Flujo seguro para SPAs/móvil — usa code_verifier para evitar interceptación del código |

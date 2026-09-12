@@ -1,4 +1,4 @@
-﻿# 10 — Resiliencia: Circuit Breaker y Retry (Polly)
+﻿# 04 — Resiliencia: Circuit Breaker y Retry (Polly)
 
 Polly es la librería estándar de .NET para políticas de resiliencia. Resuelve el problema de qué hacer cuando una operación falla: reintentar, esperar, o cortar el circuito para proteger el sistema.
 

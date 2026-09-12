@@ -1,8 +1,8 @@
-# Patrones Estructurales — ASP.NET Core (Ferreira Ch.11)
+# Patrones Estructurales — ASP.NET Core (Marcotte Ch.11)
 
 Los patrones estructurales del GoF resuelven cómo organizar jerarquías de objetos de forma mantenible: cómo añadir comportamientos dinámicamente, cómo gestionar estructuras complejas de objetos, y cómo conectar interfaces incompatibles. En un stack ASP.NET Core con Clean Architecture, estos patrones aparecen en capas clave: registro de dependencias en el composition root, pipelines de mediator, organización de módulos y simplificación del acceso a subsistemas de infraestructura.
 
-> Fuente: *Architecting ASP.NET Core Applications* (Ferreira) — Ch.11 Structural Patterns
+> Fuente: *Architecting ASP.NET Core Applications* (Marcotte) — Ch.11 Structural Patterns
 
 ---
 

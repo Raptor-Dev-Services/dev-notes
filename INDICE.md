@@ -46,7 +46,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 02 — Programación: Patrones de Diseño GoF (23 + 3 docs)
+## 02 — Programación: Patrones de Diseño GoF (22 + 2 docs)
 
 ### Creacionales (5)
 
@@ -85,12 +85,12 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 | 21 | [Template Method](02-programacion/design-patterns/behavioral/21-template-method.md) | Esqueleto de algoritmo con pasos variables |
 | 22 | [Visitor](02-programacion/design-patterns/behavioral/22-visitor.md) | Operación nueva sin modificar clases |
 
-### Patrones ASP.NET Core específicos (3)
+### Patrones ASP.NET Core específicos (2)
 
 | Doc | Tema |
 |-----|------|
-| [Structural ASP.NET](02-programacion/design-patterns/structural-aspnet.md) | Decorator, Composite, Adapter, Façade — Ferreira Ch.11 |
-| [Object Mappers](02-programacion/design-patterns/object-mappers.md) | Manual mapping, AutoMapper, Mapperly — Ferreira Ch.15 |
+| [Structural ASP.NET](02-programacion/design-patterns/structural-aspnet.md) | Decorator, Composite, Adapter, Façade — Marcotte Ch.11 |
+| [Object Mappers](02-programacion/design-patterns/object-mappers.md) | Manual mapping, AutoMapper, Mapperly — Marcotte Ch.15 |
 
 ---
 
@@ -101,16 +101,14 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 | 01 | [DDD](03-arquitectura/01-ddd.md) | Domain-Driven Design: entidades, agregados, bounded contexts |
 | 02 | [CQRS](03-arquitectura/02-cqrs.md) | Command/Query separation, MediatR, message types |
 | 03 | [Hexagonal](03-arquitectura/03-hexagonal.md) | Ports & Adapters, composición de adaptadores |
-| — | [Hexagonal vs Clean](03-arquitectura/03-hexagonal-vs-clean.md) | Comparativa de estilos arquitectónicos |
 | 04 | [Vertical Slice](03-arquitectura/04-vertical-slice.md) | Feature folders, Jimmy Bogard, coupling |
 | 05 | [Specification](03-arquitectura/05-specification.md) | Specification pattern para queries reutilizables |
 | 06 | [API Versioning](03-arquitectura/06-api-versioning.md) | Estrategias de versioning de APIs REST |
 | 07 | [Microservicios](03-arquitectura/07-microservicios.md) | EDA, Pub-Sub, message brokers, DLQ |
 | 08 | [Keycloak](03-arquitectura/08-keycloak.md) | IAM, OIDC, SSO, multi-tenancy con claims |
-| — | [Autenticación Keycloak](03-arquitectura/08-autenticacion-keycloak.md) | Configuración detallada de Keycloak |
 | 09 | [Monolito Modular](03-arquitectura/09-modular-monolith.md) | Módulos con Contracts, reglas de referencia |
 | 10 | [Tenant Subdomain Routing](03-arquitectura/10-tenant-subdomain-routing.md) | Middleware de resolución de tenant por subdominio |
-| 11 | [Clean Architecture](03-arquitectura/11-clean-arch.md) | Capas, regla de dependencia, Ferreira Ch.14 |
+| 11 | [Clean Architecture](03-arquitectura/11-clean-arch.md) | Capas, regla de dependencia, Marcotte Ch.14 |
 | 12 | [C4 Model](03-arquitectura/12-c4-model.md) | Diagramas de arquitectura como código (Structurizr DSL) |
 | 13 | [REPR Pattern](03-arquitectura/13-repr.md) | Request-EndPoint-Response para Minimal APIs |
 
@@ -132,7 +130,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 | # | Doc | Tema |
 |---|-----|------|
-| 01 | [Result Pattern](04-backend/01-result-pattern.md) | ISuccess/IFailure, Operation Result — Ferreira Ch.13 |
+| 01 | [Result Pattern](04-backend/01-result-pattern.md) | ISuccess/IFailure, Operation Result — Marcotte Ch.13 |
 | 02 | [Repository + UoW](04-backend/02-repository-uow.md) | Repositorio e interfaz, Unit of Work |
 | 03 | [Pipeline Behaviors](04-backend/03-pipeline-behaviors.md) | MediatR behaviors: logging, validation, timing |
 | 06 | [Validation](04-backend/06-validation.md) | FluentValidation, reglas, extensiones |
@@ -183,7 +181,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 | [Testcontainers](04-backend/testing/04-testcontainers.md) | PostgreSQL en Docker para tests |
 | [TDD](04-backend/testing/05-tdd.md) | Red-Green-Refactor, ciclo TDD |
 
-### Multi-tenancy SaaS (24 docs)
+### Multi-tenancy SaaS (22 docs)
 
 | # | Doc | Tema |
 |---|-----|------|
@@ -217,12 +215,10 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 | Doc | Tema |
 |-----|------|
 | [SQL Fundamentos](05-bases-de-datos/01-sql-fundamentos.md) | SELECT, JOINs, CTEs, window functions, ACID, índices |
-| [Consultas](05-bases-de-datos/01-consultas.md) | Consultas avanzadas SQL |
 | [Índices](05-bases-de-datos/02-indices.md) | B-Tree, GIN, GiST, partial, EXPLAIN |
 | [Transacciones](05-bases-de-datos/03-transacciones.md) | ACID, isolation levels, deadlocks |
 | [PostgreSQL Avanzado](05-bases-de-datos/04-postgresql-avanzado.md) | JSONB, arrays, full-text search, vacío |
 | [Dapper Queries](05-bases-de-datos/05-dapper-queries.md) | QueryMultiple, multi-mapping, DynamicParameters, paginación |
-| [PostgreSQL + Dapper](05-bases-de-datos/05-postgresql-dapper.md) | Integración Dapper con PostgreSQL / Npgsql |
 | [Connection Strings](05-bases-de-datos/06-connection-strings.md) | Formato, pooling, resiliencia |
 | [Migrations Multi-Tenant](05-bases-de-datos/07-migrations-multi-tenant.md) | Estrategias de migration por tenant |
 | [Row Level Security](05-bases-de-datos/08-row-level-security.md) | RLS en PostgreSQL: políticas, bypass, performance |
@@ -308,14 +304,14 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 | [IAM](10-cloud/15-aws-iam-seguridad.md) | Users, roles, policies, OIDC IRSA, least privilege |
 | [CloudWatch](10-cloud/16-aws-cloudwatch.md) | Métricas, logs, dashboards, alarmas, X-Ray |
 
-### Operaciones y Seguridad (6 docs)
+### Operaciones y Seguridad (7 docs)
 
 | Doc | Tema |
 |-----|------|
 | [Observabilidad](10-cloud/04-observabilidad.md) | OpenTelemetry, Loki, Prometheus, Grafana, Tempo |
 | [Secretos Producción](10-cloud/05-secretos-produccion.md) | AWS Secrets Manager, Parameter Store, rotación |
 | [File Storage Tenant](10-cloud/09-file-storage-tenant.md) | S3 por tenant, presigned URLs, lifecycle |
-| [Tracing Distribuido](10-cloud/09-tracing-distribuido.md) | Jaeger, Zipkin, W3C TraceContext |
+| [Tracing Distribuido](10-cloud/17-tracing-distribuido.md) | Jaeger, Zipkin, W3C TraceContext |
 | [Seguridad Web](10-cloud/07-seguridad-web.md) | OWASP Top 10, WAF, headers de seguridad |
 | [Zero Trust](10-cloud/08-zero-trust.md) | Nunca confiar, siempre verificar — modelo de seguridad |
 | [Costos](10-cloud/06-costos.md) | Optimización de costos AWS/Azure, Reserved Instances |
@@ -361,4 +357,4 @@ Ver [`roadmap/`](roadmap/) para rutas estructuradas por objetivo:
 
 ---
 
-*Rogelio Arriaga Gonzalez — actualizado 2026-06-02*
+*Rogelio Arriaga Gonzalez — actualizado 2026-09-12*

@@ -14,7 +14,7 @@ Tres términos que se confunden frecuentemente:
 |----------|-----------|---------|
 | **Layer** (capa) | Unidad lógica de organización del código | Domain, Application, Infrastructure |
 | **Tier** (nivel) | Unidad física de despliegue (máquina) | API server + DB server = 2 tiers |
-| **Assembly** | Unidad compilada de .NET (.dll) | `GTM.Suite.Domain.dll` |
+| **Assembly** | Unidad compilada de .NET (.dll) | `{{ROOT_NAMESPACE}}.Domain.dll` |
 
 No existe relación 1:1: tres layers pueden residir en el mismo assembly, o cada layer puede ser un assembly separado. Un assembly no garantiza que las layers estén desacopladas. La disciplina del equipo lo hace.
 
@@ -156,12 +156,12 @@ El back-template implementa Clean Architecture con estas capas:
 
 | Capa | Proyecto | Responsabilidad |
 |------|---------|----------------|
-| **Domain** | `GTM.Suite.Domain` | Entidades, interfaces de repositorio |
-| **Application** | `GTM.Suite.Application` | Handlers CQRS, Requests, Responses, DTOs, Pipeline Behaviors |
-| **Infrastructure** | `GTM.Suite.Infrastructure` | Repositorios concretos (Dapper/EF Core), SQL classes, migraciones, EF configs |
-| **WebApi** | `GTM.Suite.WebApi` | Controllers, Presenters, ViewModels |
-| **Host** | `GTM.Suite.Host` | Program.cs, composition root, `ServiceCollectionEx` por capa |
-| **Common** | `GTM.Suite.Common` | IMediator, IRequest, IResponse, ISuccess\<T\>, IFailure — sin dependencias externas |
+| **Domain** | `{{ROOT_NAMESPACE}}.Domain` | Entidades, interfaces de repositorio |
+| **Application** | `{{ROOT_NAMESPACE}}.Application` | Handlers CQRS, Requests, Responses, DTOs, Pipeline Behaviors |
+| **Infrastructure** | `{{ROOT_NAMESPACE}}.Infrastructure` | Repositorios concretos (Dapper/EF Core), SQL classes, migraciones, EF configs |
+| **WebApi** | `{{ROOT_NAMESPACE}}.WebApi` | Controllers, Presenters, ViewModels |
+| **Host** | `{{ROOT_NAMESPACE}}.Host` | Program.cs, composition root, `ServiceCollectionEx` por capa |
+| **Common** | `{{ROOT_NAMESPACE}}.Common` | IMediator, IRequest, IResponse, ISuccess\<T\>, IFailure — sin dependencias externas |
 
 ### Reglas de referencia entre proyectos
 

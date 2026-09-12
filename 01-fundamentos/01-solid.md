@@ -375,10 +375,10 @@ Las clases que cambian juntas por las mismas razones deben estar en el mismo com
 
 ```
 // ✓ CCP aplicado en la estructura del back-template
-GTM.Suite.Domain/           ← cambia cuando cambian las reglas de negocio
-GTM.Suite.Application/      ← cambia cuando cambian los casos de uso
-GTM.Suite.Infrastructure/   ← cambia cuando cambia la tecnología (DB, servicios externos)
-GTM.Suite.WebApi/           ← cambia cuando cambia el protocolo HTTP
+{{ROOT_NAMESPACE}}.Domain/           ← cambia cuando cambian las reglas de negocio
+{{ROOT_NAMESPACE}}.Application/      ← cambia cuando cambian los casos de uso
+{{ROOT_NAMESPACE}}.Infrastructure/   ← cambia cuando cambia la tecnología (DB, servicios externos)
+{{ROOT_NAMESPACE}}.WebApi/           ← cambia cuando cambia el protocolo HTTP
 ```
 
 Cada proyecto tiene una razón de cambio diferente. Un cambio de base de datos no debería tocar `Domain`. Un cambio de regla de negocio no debería tocar `Infrastructure`.

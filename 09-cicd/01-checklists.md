@@ -2,7 +2,7 @@
 
 Los checklists mecanizan las decisiones repetibles en el ciclo de vida de un cambio: antes del commit, antes del merge, antes del deploy y durante un incidente. El concepto de **shift-left** integra la seguridad en cada etapa temprana del pipeline en lugar de revisarla al final.
 
-> Fuentes: *Learning DevSecOps* (Mark Rendell): Ch.3 Integrating Security, Ch.5 Moving Toward Deployment; *Learning GitHub Actions* (Brent Laster): Ch.9 Actions and Security, Ch.12 Advanced Workflows
+> Fuentes: *Learning DevSecOps* (Steve Suehring): Ch.3 Integrating Security, Ch.5 Moving Toward Deployment; *Learning GitHub Actions* (Brent Laster): Ch.9 Actions and Security, Ch.12 Advanced Workflows
 
 ---
 

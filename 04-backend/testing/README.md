@@ -8,11 +8,11 @@ Tests automatizados en .NET: unitarios, integración, base de datos real y TDD.
 
 | # | Documento | Temas cubiertos |
 |---|-----------|-----------------|
-| 1 | [xUnit](testing/01-xunit.md) | Fact, Theory, InlineData, MemberData, FluentAssertions, IClassFixture, IAsyncLifetime, convenciones |
-| 2 | [Unit Tests](testing/02-unit-tests.md) | NSubstitute, Substitute.For, Returns, Received, tests de Handlers, Presenters y Validators |
-| 3 | [Integration Tests](testing/03-integration-tests.md) | WebApplicationFactory, TestServer, JWT en tests, estado compartido, limpiar DB |
-| 4 | [TestContainers](testing/04-testcontainers.md) | PostgreSQL real, DatabaseFixture, ICollectionFixture, transacciones por test, WebApp + DB |
-| 5 | [TDD](testing/05-tdd.md) | Red/Green/Refactor, example completo Handler de login, TDD outside-in |
+| 1 | [xUnit](01-xunit.md) | Fact, Theory, InlineData, MemberData, FluentAssertions, IClassFixture, IAsyncLifetime, convenciones |
+| 2 | [Unit Tests](02-unit-tests.md) | NSubstitute, Substitute.For, Returns, Received, tests de Handlers, Presenters y Validators |
+| 3 | [Integration Tests](03-integration-tests.md) | WebApplicationFactory, TestServer, JWT en tests, estado compartido, limpiar DB |
+| 4 | [TestContainers](04-testcontainers.md) | PostgreSQL real, DatabaseFixture, ICollectionFixture, transacciones por test, WebApp + DB |
+| 5 | [TDD](05-tdd.md) | Red/Green/Refactor, example completo Handler de login, TDD outside-in |
 
 ---
 
@@ -49,11 +49,11 @@ Tests automatizados en .NET: unitarios, integración, base de datos real y TDD.
 
 ## Orden de lectura sugerido
 
-1. [xUnit](testing/01-xunit.md) — estructura base y assertions
-2. [Unit Tests](testing/02-unit-tests.md) — la mayoría de los tests del proyecto
-3. [TDD](testing/05-tdd.md) — cómo integrar los tests en el flujo de desarrollo
-4. [TestContainers](testing/04-testcontainers.md) — cuando se necesita DB real
-5. [Integration Tests](testing/03-integration-tests.md) — tests de la API completa
+1. [xUnit](01-xunit.md) — estructura base y assertions
+2. [Unit Tests](02-unit-tests.md) — la mayoría de los tests del proyecto
+3. [TDD](05-tdd.md) — cómo integrar los tests en el flujo de desarrollo
+4. [TestContainers](04-testcontainers.md) — cuando se necesita DB real
+5. [Integration Tests](03-integration-tests.md) — tests de la API completa
 
 
 ---

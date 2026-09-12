@@ -22,7 +22,7 @@ Configurar en: Settings → Secrets and variables → Actions
 | `AWS_SECRET_ACCESS_KEY` | clave del IAM user |
 | `AWS_REGION` | ej. `us-east-1` |
 | `ECR_REGISTRY` | ej. `123456789.dkr.ecr.us-east-1.amazonaws.com` |
-| `ECR_REPOSITORY` | nombre del repo en ECR, ej. `gtm-suite-api` |
+| `ECR_REPOSITORY` | nombre del repo en ECR, ej. `{{PROJECT_SLUG}}-api` |
 | `ECS_CLUSTER` | nombre del cluster ECS |
 | `ECS_SERVICE` | nombre del servicio ECS |
 | `ECS_TASK_DEFINITION` | nombre de la task definition |
@@ -288,7 +288,7 @@ jobs:
 
       - name: Build and push to ECR
         run: |
-          IMAGE=${{ steps.login-ecr.outputs.registry }}/gtm-suite-api:${{ github.sha }}
+          IMAGE=${{ steps.login-ecr.outputs.registry }}/{{PROJECT_SLUG}}-api:${{ github.sha }}
           docker build -t $IMAGE .
           docker push $IMAGE
 ```

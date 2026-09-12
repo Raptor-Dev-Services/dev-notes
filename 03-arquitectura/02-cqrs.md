@@ -1,4 +1,4 @@
-# 05 — CQRS (Command Query Responsibility Segregation)
+# 02 — CQRS (Command Query Responsibility Segregation)
 
 CQRS separa las operaciones de lectura (Queries) de las de escritura (Commands) en modelos distintos. Es el principio arquitectónico que da estructura a los casos de uso de este proyecto.
 
@@ -358,7 +358,7 @@ public sealed class UserRegisteredEventHandler
 ---
 
 ## MediatR — tipos de mensajes
-> Fuente: *Architecting ASP.NET Core Applications* (Ferreira) — Ch.16 Mediator and CQS Patterns
+> Fuente: *Architecting ASP.NET Core Applications* (Marcotte) — Ch.16 Mediator and CQS Patterns
 
 MediatR soporta tres tipos de mensajes:
 

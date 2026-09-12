@@ -38,7 +38,7 @@ Cada `??` en una vista es una decisión del negocio sin dueño, sin nombre y sin
 Este es el que más se escapa, porque parece configuración de botones:
 
 ```jsx
-// MAL - visto en sociofit-webclient, SubscriptionSection.jsx
+// MAL - visto en {{REPO_NAME}}, SubscriptionSection.jsx
 const ALLOWED = {
   renew: ['Active', 'Expired'],
   pause: ['Active'],
@@ -95,7 +95,7 @@ Con eso el componente se queda sin traducción y sin defensivos:
 
 Un backend propio bien portado (.NET, Spring, NestJS) manda los campos con nombres razonables, así que el renombrado deja de ser el motivo. **La fuga sigue existiendo** con otras caras:
 
-- **Defensivos de forma repetidos en la capa de API.** En `sociofit-webclient`, `Array.isArray(data) ? data : (data?.items ?? [])` aparece cuatro veces solo en `api/members.js`, porque el endpoint a veces pagina y a veces no. Es una decisión sobre el contrato tomada cuatro veces.
+- **Defensivos de forma repetidos en la capa de API.** En `{{REPO_NAME}}`, `Array.isArray(data) ? data : (data?.items ?? [])` aparece cuatro veces solo en `api/members.js`, porque el endpoint a veces pagina y a veces no. Es una decisión sobre el contrato tomada cuatro veces.
 - **Unidades crudas.** El importe llega en centavos y la fecha en UTC. Convertir es dominio; hacerlo en cada vista garantiza que una lo haga distinto.
 - **Estados como cadenas sueltas.** `status === 'Paused'` regado por componentes, sin un lugar que diga qué estados existen.
 
@@ -190,7 +190,7 @@ domain/    Reglas, calculos, ACL. JS puro, sin React.
 
 ## Caso real: por qué la duplicación es cara
 
-La conversión de centavos a unidades vivía copiada en seis features de `sociofit-webclient`, con **ocho nombres** para dos operaciones. Cinco copias eran idénticas y la sexta devolvía `"0.00"` donde las demás devolvían cadena vacía, **bajo el mismo nombre de función**.
+La conversión de centavos a unidades vivía copiada en seis features de `{{REPO_NAME}}`, con **ocho nombres** para dos operaciones. Cinco copias eran idénticas y la sexta devolvía `"0.00"` donde las demás devolvían cadena vacía, **bajo el mismo nombre de función**.
 
 Consecuencia: mover un componente de un feature a otro cambiaba lo que se veía en pantalla. No había error, no había test rojo, y el diagnóstico costó más que el arreglo.
 
@@ -216,9 +216,9 @@ No reescribas la pantalla. Ve por capas, de abajo hacia arriba:
 | El mismo concepto lo consumen dos o más features | Un solo feature, sin cálculos, sin previsión de crecer |
 | Quieres testear reglas sin renderizar componentes | Prototipo desechable |
 
-> **TypeScript no es requisito.** Los ejemplos van en JS porque `sociofit-webclient` es JS puro. Lo que TS agregaría es que el cambio de contrato falle en el build; sin TS esa red la pone la prueba del transformer, que pasa de recomendable a obligatoria.
+> **TypeScript no es requisito.** Los ejemplos van en JS porque `{{REPO_NAME}}` es JS puro. Lo que TS agregaría es que el cambio de contrato falle en el build; sin TS esa red la pone la prueba del transformer, que pasa de recomendable a obligatoria.
 
-> Fuente: *React Anti-Patterns* (Juntao Qiu) — Ch.8 Exploring Data Management in React, Ch.11 Introducing Layered Architecture in React. Ejemplos reales de `sociofit-webclient`.
+> Fuente: *React Anti-Patterns* (Juntao Qiu) — Ch.8 Exploring Data Management in React, Ch.11 Introducing Layered Architecture in React. Ejemplos reales de `{{REPO_NAME}}`.
 
 ---
 

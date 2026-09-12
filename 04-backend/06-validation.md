@@ -1,4 +1,4 @@
-﻿# 12 — Validación: FluentValidation + Pipeline Behavior
+﻿# 06 — Validación: FluentValidation + Pipeline Behavior
 
 Validar los datos de entrada antes de que lleguen al Handler, de forma centralizada y componible.
 

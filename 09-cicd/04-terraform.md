@@ -54,11 +54,11 @@ terraform {
 
   # Backend remoto — el estado se guarda en S3 (no en local)
   backend "s3" {
-    bucket         = "gtm-suite-terraform-state"
+    bucket         = "{{PROJECT_SLUG}}-terraform-state"
     key            = "production/terraform.tfstate"
     region         = "us-east-1"
     encrypt        = true
-    dynamodb_table = "gtm-suite-terraform-locks"   # para locking
+    dynamodb_table = "{{PROJECT_SLUG}}-terraform-locks"   # para locking
   }
 }
 
@@ -69,13 +69,13 @@ provider "aws" {
 
 ---
 
-## Recursos principales para el stack GTM Suite
+## Recursos principales para el stack {{PROJECT_NAME}}
 
 ```hcl
 # variables.tf
 variable "aws_region"    { default = "us-east-1" }
 variable "environment"   { default = "production" }
-variable "app_name"      { default = "gtm-suite" }
+variable "app_name"      { default = "{{PROJECT_SLUG}}" }
 variable "db_password"   {
   type      = string
   sensitive = true   # no se muestra en logs ni output
@@ -174,7 +174,7 @@ resource "aws_db_instance" "postgres" {
   allocated_storage     = 20
   max_allocated_storage = 100   # auto-scaling de storage
 
-  db_name  = "gtmsuite"
+  db_name  = "sistema"
   username = "gtmadmin"
   password = var.db_password
 
@@ -224,7 +224,7 @@ terraform state show aws_ecs_service.api
 terraform destroy
 
 # Importar un recurso existente al estado
-terraform import aws_s3_bucket.logs gtm-suite-logs-bucket
+terraform import aws_s3_bucket.logs {{PROJECT_SLUG}}-logs-bucket
 
 # Formatear archivos .tf
 terraform fmt
@@ -384,7 +384,7 @@ output "service_arn" {
 module "api_service" {
   source = "../../modules/ecs-service"
 
-  service_name  = "gtm-api-staging"
+  service_name  = "{{PROJECT_SLUG}}-api-staging"
   docker_image  = "${var.ecr_url}:staging-latest"
   desired_count = 1   # menos réplicas en staging
   container_port = 8080
@@ -394,7 +394,7 @@ module "api_service" {
 module "api_service" {
   source = "../../modules/ecs-service"
 
-  service_name  = "gtm-api-production"
+  service_name  = "{{PROJECT_SLUG}}-api-production"
   docker_image  = "${var.ecr_url}:v1.2.0"
   desired_count = 3   # más réplicas en producción
   container_port = 8080
@@ -409,7 +409,7 @@ module "api_service" {
 module "api_service" {
   source = "github.com/mi-org/infra-modules//ecs-service?ref=v0.0.2"
 
-  service_name  = "gtm-api-staging"
+  service_name  = "{{PROJECT_SLUG}}-api-staging"
   docker_image  = "${var.ecr_url}:staging"
   desired_count = 1
 }
@@ -418,7 +418,7 @@ module "api_service" {
 module "api_service" {
   source = "github.com/mi-org/infra-modules//ecs-service?ref=v0.0.1"
 
-  service_name  = "gtm-api-production"
+  service_name  = "{{PROJECT_SLUG}}-api-production"
   docker_image  = "${var.ecr_url}:v1.2.0"
   desired_count = 3
 }
@@ -448,7 +448,7 @@ provider "aws" { region = "us-east-1" }
 
 # Bucket S3 para el state — nombre debe ser globalmente único
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "gtm-suite-terraform-state"
+  bucket = "{{PROJECT_SLUG}}-terraform-state"
   lifecycle { prevent_destroy = true }   # protección contra terraform destroy accidental
 }
 
@@ -477,7 +477,7 @@ resource "aws_s3_bucket_public_access_block" "public_access" {
 
 # Tabla DynamoDB para state locking — hash_key debe ser "LockID" exactamente
 resource "aws_dynamodb_table" "terraform_locks" {
-  name         = "gtm-suite-terraform-locks"
+  name         = "{{PROJECT_SLUG}}-terraform-locks"
   billing_mode = "PAY_PER_REQUEST"
   hash_key     = "LockID"
 
@@ -500,10 +500,10 @@ terraform apply
 # infra/global/state-backend/main.tf — agregar backend al mismo archivo
 terraform {
   backend "s3" {
-    bucket         = "gtm-suite-terraform-state"
+    bucket         = "{{PROJECT_SLUG}}-terraform-state"
     key            = "global/state-backend/terraform.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "gtm-suite-terraform-locks"
+    dynamodb_table = "{{PROJECT_SLUG}}-terraform-locks"
     encrypt        = true
   }
 }
@@ -543,7 +543,7 @@ output "rds_endpoint" {
 data "terraform_remote_state" "rds" {
   backend = "s3"
   config = {
-    bucket = "gtm-suite-terraform-state"
+    bucket = "{{PROJECT_SLUG}}-terraform-state"
     key    = "production/rds/terraform.tfstate"   # path del state del módulo RDS
     region = "us-east-1"
   }
@@ -574,9 +574,9 @@ El bloque `backend "s3"` no acepta variables de Terraform (`var.bucket_name` no 
 
 ```hcl
 # backend.hcl — valores compartidos (commitear sin secretos)
-bucket         = "gtm-suite-terraform-state"
+bucket         = "{{PROJECT_SLUG}}-terraform-state"
 region         = "us-east-1"
-dynamodb_table = "gtm-suite-terraform-locks"
+dynamodb_table = "{{PROJECT_SLUG}}-terraform-locks"
 encrypt        = true
 ```
 
@@ -638,10 +638,10 @@ infra/
 # staging/services/api/main.tf — backend propio por ambiente
 terraform {
   backend "s3" {
-    bucket         = "gtm-suite-staging-tfstate"
+    bucket         = "{{PROJECT_SLUG}}-staging-tfstate"
     key            = "services/api/terraform.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "gtm-suite-staging-tf-locks"
+    dynamodb_table = "{{PROJECT_SLUG}}-staging-tf-locks"
     encrypt        = true
   }
 }
@@ -649,10 +649,10 @@ terraform {
 # production/services/api/main.tf — bucket y tabla DynamoDB distintos
 terraform {
   backend "s3" {
-    bucket         = "gtm-suite-prod-tfstate"    # bucket diferente → cuenta AWS diferente
+    bucket         = "{{PROJECT_SLUG}}-prod-tfstate"    # bucket diferente → cuenta AWS diferente
     key            = "services/api/terraform.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "gtm-suite-prod-tf-locks"
+    dynamodb_table = "{{PROJECT_SLUG}}-prod-tf-locks"
     encrypt        = true
   }
 }

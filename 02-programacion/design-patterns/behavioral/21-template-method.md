@@ -241,11 +241,11 @@ miner.Mine("data.xml");
 
 ---
 
-## Implementación ASP.NET Core (Ferreira)
+## Implementación ASP.NET Core (Marcotte)
 
 ### Maquina de búsqueda — hooks abstractos y opcionales
 
-Ferreira (*Architecting ASP.NET Core Applications*, Ch.12) implementa el patrón con una máquina de búsqueda para ilustrar los dos tipos de hooks:
+Marcotte (*Architecting ASP.NET Core Applications*, Ch.12) implementa el patrón con una máquina de búsqueda para ilustrar los dos tipos de hooks:
 
 ```csharp
 // AbstractClass — el esqueleto del algoritmo
@@ -455,7 +455,7 @@ public sealed class ExampleUsersController : BaseApiController
 | `override` | Modificador de C# que indica que un método sobreescribe la implementación del padre |
 | `BaseApiController` | Clase base del proyecto que implementa el esqueleto: proporciona `Mediator` como operación base compartida |
 | Template Method vs Strategy | Template Method usa herencia (el esqueleto es fijo, se compilan los pasos); Strategy usa composición (todo el algoritmo es intercambiable) |
-| `SearchMachine` | Clase abstracta del ejemplo de Ferreira que encapsula el esqueleto del algoritmo de búsqueda — las subclases implementan el algoritmo concreto |
+| `SearchMachine` | Clase abstracta del ejemplo de Marcotte que encapsula el esqueleto del algoritmo de búsqueda — las subclases implementan el algoritmo concreto |
 | Hook obligatorio | Método `abstract` que la subclase debe implementar — el Template Method delega este paso al concreto |
 | Hook opcional | Método `virtual` con implementación por defecto vacía — la subclase puede o no sobreescribirlo |
 | `IEnumerable<T>` en DI | Patrón de ASP.NET Core que permite inyectar todas las implementaciones registradas de un tipo base — útil para ejecutar múltiples estrategias del Template Method |

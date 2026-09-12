@@ -22,10 +22,10 @@ Vault completamente gestionado con rotación automática de secretos.
 ```bash
 # crear secreto con JSON (connection string + JWT)
 aws secretsmanager create-secret \
-  --name "gtm-suite/production" \
-  --description "Secrets for GTM Suite API in production" \
+  --name "{{PROJECT_SLUG}}/production" \
+  --description "Secrets for {{PROJECT_NAME}} API in production" \
   --secret-string '{
-    "ConnectionStrings__Default": "Host=gtm-db.xyz.rds.amazonaws.com;...",
+    "ConnectionStrings__Default": "Host={{PROJECT_SLUG}}-db.xyz.rds.amazonaws.com;...",
     "Jwt__Secret": "super-secret-key-256-bits",
     "Redis__ConnectionString": "redis.xyz.cache.amazonaws.com:6380,ssl=true"
   }'
@@ -42,9 +42,9 @@ dotnet add package Amazon.SecretsManager.AWSSDK.Extensions.NETCore.Setup
 // Program.cs
 builder.Configuration.AddSecretsManager(region: RegionEndpoint.USEast1, configurator: opts =>
 {
-    opts.SecretFilter = entry => entry.Name.StartsWith("gtm-suite/");
+    opts.SecretFilter = entry => entry.Name.StartsWith("{{PROJECT_SLUG}}/");
     opts.KeyGenerator = (entry, key) => key
-        .Replace("gtm-suite/production:", "")
+        .Replace("{{PROJECT_SLUG}}/production:", "")
         .Replace("__", ":");
 });
 ```
@@ -63,7 +63,7 @@ Con esto, `Jwt__Secret` del secreto de AWS mapea a `Jwt:Secret` en la configurac
         "secretsmanager:GetSecretValue",
         "secretsmanager:DescribeSecret"
       ],
-      "Resource": "arn:aws:secretsmanager:us-east-1:123456789:secret:gtm-suite/*"
+      "Resource": "arn:aws:secretsmanager:us-east-1:123456789:secret:{{PROJECT_SLUG}}/*"
     }
   ]
 }
@@ -76,7 +76,7 @@ Esta política se adjunta al IAM Role de la task definition de ECS. La app nunca
 ```bash
 # rotar el secreto cada 30 días con una Lambda
 aws secretsmanager rotate-secret \
-  --secret-id "gtm-suite/production" \
+  --secret-id "{{PROJECT_SLUG}}/production" \
   --rotation-lambda-arn arn:aws:lambda:us-east-1:123456789:function:SecretsRotation \
   --rotation-rules AutomaticallyAfterDays=30
 ```
@@ -88,14 +88,14 @@ Alternativa más simple (y más barata) para secretos sin rotación automática.
 ```bash
 # crear parámetro cifrado con KMS
 aws ssm put-parameter \
-  --name "/gtm-suite/production/jwt-secret" \
+  --name "/{{PROJECT_SLUG}}/production/jwt-secret" \
   --type SecureString \
   --value "super-secret-key" \
   --description "JWT signing key"
 
 # leer el valor
 aws ssm get-parameter \
-  --name "/gtm-suite/production/jwt-secret" \
+  --name "/{{PROJECT_SLUG}}/production/jwt-secret" \
   --with-decryption \
   --query Parameter.Value \
   --output text
@@ -117,15 +117,15 @@ Equivalente en Azure.
 ```bash
 # crear Key Vault
 az keyvault create \
-  --name gtm-keyvault \
-  --resource-group gtm-rg \
+  --name {{PROJECT_SLUG}}-keyvault \
+  --resource-group {{PROJECT_SLUG}}-rg \
   --location eastus
 
 # agregar secreto
 az keyvault secret set \
-  --vault-name gtm-keyvault \
+  --vault-name {{PROJECT_SLUG}}-keyvault \
   --name "ConnectionStrings--Default" \
-  --value "Host=gtm-db.postgres.database.azure.com;..."
+  --value "Host={{PROJECT_SLUG}}-db.postgres.database.azure.com;..."
 ```
 
 ### Leer desde .NET con Managed Identity
@@ -137,7 +137,7 @@ dotnet add package Azure.Identity
 
 ```csharp
 // Program.cs
-var keyVaultUri = new Uri($"https://gtm-keyvault.vault.azure.net/");
+var keyVaultUri = new Uri($"https://{{PROJECT_SLUG}}-keyvault.vault.azure.net/");
 builder.Configuration.AddAzureKeyVault(keyVaultUri, new DefaultAzureCredential());
 ```
 
@@ -148,7 +148,7 @@ builder.Configuration.AddAzureKeyVault(keyVaultUri, new DefaultAzureCredential()
 ```bash
 # dar permiso de lectura al App Service (usando su Managed Identity)
 az keyvault set-policy \
-  --name gtm-keyvault \
+  --name {{PROJECT_SLUG}}-keyvault \
   --object-id <managed-identity-object-id> \
   --secret-permissions get list
 ```
@@ -245,7 +245,7 @@ aws macie2 create-classification-job \
     "bucketDefinitions": [
       {
         "accountId": "123456789",
-        "buckets": ["gtm-suite-uploads", "gtm-suite-backups"]
+        "buckets": ["{{PROJECT_SLUG}}-uploads", "{{PROJECT_SLUG}}-backups"]
       }
     ]
   }'
