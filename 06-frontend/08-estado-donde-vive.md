@@ -158,7 +158,7 @@ Migrar de Context a store es un cambio local **si desde el principio consumiste 
 | Ya partiste el Context en tres Providers y sigue re-renderizando | Datos de la API: eso es estado de servidor |
 | Dos slices se afectan y necesitas coordinarlas | Estado que solo lee un componente |
 
-> Fuente: *React 19 Design Patterns and Best Practices* (Carlos Santana Roldán) — Ch.4 Advanced State Management Techniques. Ejemplos de contextos y filtros de `{{REPO_NAME}}`.
+> Fuente: *React 19 Design Patterns and Best Practices* (Carlos Santana Roldán): Ch.4 Advanced State Management Techniques. Ejemplos de contextos y filtros de `{{REPO_NAME}}`.
 
 ---
 

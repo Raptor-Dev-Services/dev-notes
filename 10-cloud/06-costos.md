@@ -4,7 +4,7 @@
 
 ## Problema que resuelve
 
-AWS cobra por uso — sin gestión activa los costos crecen con el tiempo por recursos olvidados, sobredimensionamiento y falta de estrategias de ahorro. Este documento cubre las palancas principales para controlar el gasto en una startup SaaS.
+AWS cobra por uso: sin gestión activa los costos crecen con el tiempo por recursos olvidados, sobredimensionamiento y falta de estrategias de ahorro. Este documento cubre las palancas principales para controlar el gasto en una startup SaaS.
 
 ## Modelos de precio en EC2
 
@@ -18,7 +18,7 @@ AWS cobra por uso — sin gestión activa los costos crecen con el tiempo por re
 
 ### Savings Plans vs Reserved Instances
 
-Savings Plans son más flexibles: el compromiso es un gasto mínimo por hora (ej. $0.10/hr), y aplica automáticamente a cualquier instancia EC2, Fargate o Lambda que uses — sin especificar el tipo de instancia o región de antemano.
+Savings Plans son más flexibles: el compromiso es un gasto mínimo por hora (ej. $0.10/hr), y aplica automáticamente a cualquier instancia EC2, Fargate o Lambda que uses, sin especificar el tipo de instancia o región de antemano.
 
 ```
 Recomendación para startup:

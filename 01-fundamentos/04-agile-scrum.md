@@ -2,7 +2,7 @@
 
 Agile es un conjunto de valores y principios para el desarrollo de software que prioriza la colaboración, la entrega incremental y la adaptación al cambio. Scrum es el framework ágil más utilizado. Es una implementación concreta de los principios Agile con roles, eventos y artefactos definidos.
 
-> Fuente: *Agile Manifesto* (Beck et al., 2001), *Scrum Guide* (Schwaber & Sutherland, 2020), *Scrum: The Art of Doing Twice the Work in Half the Time* — Sutherland
+> Fuente: *Agile Manifesto* (Beck et al., 2001), *Scrum Guide* (Schwaber & Sutherland, 2020), *Scrum: The Art of Doing Twice the Work in Half the Time* (Sutherland)
 
 ---
 

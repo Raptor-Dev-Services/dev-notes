@@ -14,7 +14,7 @@ Push de tag v*.*.*→ CD: igual que main, con tag de versión
 
 ## Secrets requeridos en GitHub
 
-Configurar en: Settings → Secrets and variables → Actions
+Configurar en: Settings > Secrets and variables > Actions
 
 | Secret | Valor |
 |--------|-------|
@@ -211,7 +211,7 @@ En producción, reemplazar `"Resource": "*"` con los ARNs específicos del clust
 
 ## Relación con back-template
 
-El `Dockerfile` del back-template usa multi-stage build. El step de `docker build` en el pipeline usa ese archivo sin modificación. Las variables de entorno de producción (connection strings, secrets) no van en la imagen — se inyectan como variables de entorno en la task definition de ECS o desde AWS Secrets Manager (ver `10-cloud/05-secretos-produccion.md`).
+El `Dockerfile` del back-template usa multi-stage build. El step de `docker build` en el pipeline usa ese archivo sin modificación. Las variables de entorno de producción (connection strings, secrets) no van en la imagen: se inyectan como variables de entorno en la task definition de ECS o desde AWS Secrets Manager (ver `10-cloud/05-secretos-produccion.md`).
 
 ## Cuándo usar / no usar
 

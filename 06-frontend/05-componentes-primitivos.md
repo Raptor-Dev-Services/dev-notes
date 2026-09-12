@@ -203,7 +203,7 @@ Cada página es un chunk separado. El `<Suspense>` muestra un spinner mientras c
 | lazy routing para páginas pesadas | lazy en componentes pequeños que no justifican el overhead de chunk |
 
 
-> Fuente: *Full Stack React, TypeScript, and Node* (David Choi) — Ch.5 React Component Patterns
+> Fuente: *Full Stack React, TypeScript, and Node* (David Choi): Ch.5 React Component Patterns
 
 ---
 

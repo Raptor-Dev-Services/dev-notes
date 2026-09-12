@@ -1,12 +1,12 @@
 # Design Patterns — Índice
 
-Guía completa de los 22 patrones de diseño (GoF — Gang of Four), con ejemplos en C# del código fuente en [`referencias-csharp/`](referencias-csharp/) y relación con este proyecto.
+Guía completa de los 22 patrones de diseño (GoF, Gang of Four), con ejemplos en C# del código fuente en [`referencias-csharp/`](referencias-csharp/) y relación con este proyecto.
 
 ---
 
 ## ¿Qué es un patrón de diseño?
 
-Un patrón de diseño es una solución probada y reutilizable a un problema recurrente en el diseño de software. No es código — es una plantilla o receta que describes cómo resolver un problema. Los patrones fueron catalogados en 1994 por el libro *Design Patterns* (Gang of Four: Gamma, Helm, Johnson, Vlissides).
+Un patrón de diseño es una solución probada y reutilizable a un problema recurrente en el diseño de software. No es código: es una plantilla o receta que describes cómo resolver un problema. Los patrones fueron catalogados en 1994 por el libro *Design Patterns* (Gang of Four: Gamma, Helm, Johnson, Vlissides).
 
 **Tres categorías:**
 
@@ -74,34 +74,34 @@ Un patrón de diseño es una solución probada y reutilizable a un problema recu
 
 ### Sub-junior — empezar aquí
 
-1. [Singleton](creational/01-singleton.md) — el más simple y cotidiano
-2. [Factory Method](creational/02-factory-method.md) — delegación de creación
-3. [Facade](structural/10-facade.md) — ocultar complejidad
-4. [Strategy](behavioral/20-strategy.md) — algoritmos intercambiables
-5. [Observer](behavioral/18-observer.md) — eventos y notificaciones
+1. [Singleton](creational/01-singleton.md): el más simple y cotidiano
+2. [Factory Method](creational/02-factory-method.md): delegación de creación
+3. [Facade](structural/10-facade.md): ocultar complejidad
+4. [Strategy](behavioral/20-strategy.md): algoritmos intercambiables
+5. [Observer](behavioral/18-observer.md): eventos y notificaciones
 
 ### Junior — continuar aquí
 
-6. [Builder](creational/04-builder.md) — construcción fluida
-7. [Adapter](structural/06-adapter.md) — integrar código incompatible
-8. [Decorator](structural/09-decorator.md) — capas de comportamiento
-9. [Command](behavioral/14-command.md) — encapsular acciones
-10. [Mediator](behavioral/16-mediator.md) — desacoplar comunicación
-11. [Template Method](behavioral/21-template-method.md) — algoritmos con ganchos
+6. [Builder](creational/04-builder.md): construcción fluida
+7. [Adapter](structural/06-adapter.md): integrar código incompatible
+8. [Decorator](structural/09-decorator.md): capas de comportamiento
+9. [Command](behavioral/14-command.md): encapsular acciones
+10. [Mediator](behavioral/16-mediator.md): desacoplar comunicación
+11. [Template Method](behavioral/21-template-method.md): algoritmos con ganchos
 
 ### Semi-senior / Senior — completar con
 
-12. [Abstract Factory](creational/03-abstract-factory.md) — familias de objetos
-13. [Prototype](creational/05-prototype.md) — clonación profunda/superficial
-14. [Bridge](structural/07-bridge.md) — separar abstracciones
-15. [Composite](structural/08-composite.md) — estructuras de árbol
-16. [Proxy](structural/12-proxy.md) — control de acceso
-17. [Flyweight](structural/11-flyweight.md) — optimización de memoria
-18. [Chain of Responsibility](behavioral/13-chain-of-responsibility.md) — pipelines
-19. [Iterator](behavioral/15-iterator.md) — recorrido de colecciones
-20. [State](behavioral/19-state.md) — máquinas de estado
-21. [Memento](behavioral/17-memento.md) — deshacer/rehacer
-22. [Visitor](behavioral/22-visitor.md) — doble dispatch
+12. [Abstract Factory](creational/03-abstract-factory.md): familias de objetos
+13. [Prototype](creational/05-prototype.md): clonación profunda/superficial
+14. [Bridge](structural/07-bridge.md): separar abstracciones
+15. [Composite](structural/08-composite.md): estructuras de árbol
+16. [Proxy](structural/12-proxy.md): control de acceso
+17. [Flyweight](structural/11-flyweight.md): optimización de memoria
+18. [Chain of Responsibility](behavioral/13-chain-of-responsibility.md): pipelines
+19. [Iterator](behavioral/15-iterator.md): recorrido de colecciones
+20. [State](behavioral/19-state.md): máquinas de estado
+21. [Memento](behavioral/17-memento.md): deshacer/rehacer
+22. [Visitor](behavioral/22-visitor.md): doble dispatch
 
 ---
 

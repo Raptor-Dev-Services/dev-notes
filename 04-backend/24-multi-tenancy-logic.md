@@ -320,7 +320,7 @@ mb.Entity<UserProfile>().HasQueryFilter(e =>
     e.TenantId == CurrentTenantId && e.IsActive);
 ```
 
-**Índices:** siempre agregar `tenant_id` como primera columna de los índices más frecuentes — los queries siempre filtran por tenant:
+**Índices:** siempre agregar `tenant_id` como primera columna de los índices más frecuentes, porque los queries siempre filtran por tenant:
 ```csharp
 b.HasIndex(e => new { e.TenantId, e.PublicId }).IsUnique();
 b.HasIndex(e => new { e.TenantId, e.IsActive });

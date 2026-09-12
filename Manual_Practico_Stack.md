@@ -1,6 +1,6 @@
 # Manual Práctico del Stack
 
-**v2.0 — Edición ampliada**  
+**v2.0 · Edición ampliada**  
 Configuraciones, archivos y rutas del día a día  
 \+ Implementación práctica con la librería Common (Raptor-Dev-Services)
 

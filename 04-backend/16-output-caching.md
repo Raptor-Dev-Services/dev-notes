@@ -2,8 +2,8 @@
 
 ASP.NET Core ofrece dos tipos de caching a nivel de respuesta HTTP. Output caching (nativo desde .NET 7) es el más flexible: soporta invalidación por tags, variación por headers/query, y políticas personalizadas.
 
-> Fuente: *Apps and Services with .NET 8* (Mark J. Price) — Ch.9 Caching, Queuing, and Resilient Background Services  
-> Fuente: *ASP.NET Core 9 Essentials* (Packt) — Ch.7 Adding Capabilities to Applications
+> Fuente: *Apps and Services with .NET 8* (Mark J. Price): Ch.9 Caching, Queuing, and Resilient Background Services  
+> Fuente: *ASP.NET Core 9 Essentials* (Packt): Ch.7 Adding Capabilities to Applications
 
 ---
 

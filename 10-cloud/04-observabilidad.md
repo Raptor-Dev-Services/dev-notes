@@ -160,7 +160,7 @@ select percentile(Elapsed, 95) as p95 from stream
 
 Seq permite crear alertas que disparan un webhook cuando una condición se cumple:
 
-1. **Dashboard → Signals → New Signal**
+1. **Dashboard > Signals > New Signal**
 2. Condición: `@Level = 'Error' and @Timestamp > Now() - 5m`
 3. Threshold: `count(*) > 10`
 4. Notificación: webhook a Slack o PagerDuty
@@ -566,13 +566,13 @@ Uptime Kuma envía notificaciones por: **Slack, Teams, Telegram, Discord, Email,
 
 Para conectar con el webhook de la API:
 
-1. Settings → Notifications → Add Notification → Webhook
+1. Settings > Notifications > Add Notification > Webhook
 2. URL: `https://api.taskflow.com/internal/alerts/uptime`
 3. El body llega como JSON con `monitor`, `heartbeat`, `msg`
 
 ### Status page
 
-Uptime Kuma puede servir una **página de estado pública** (tipo `status.taskflow.com`) mostrando el uptime histórico de cada servicio. Se configura en: Status Pages → New Status Page.
+Uptime Kuma puede servir una **página de estado pública** (tipo `status.taskflow.com`) mostrando el uptime histórico de cada servicio. Se configura en: Status Pages > New Status Page.
 
 ---
 

@@ -357,4 +357,4 @@ Ver [`roadmap/`](roadmap/) para rutas estructuradas por objetivo:
 
 ---
 
-*Rogelio Arriaga Gonzalez — actualizado 2026-09-12*
+*Rogelio Arriaga Gonzalez · actualizado 2026-09-12*

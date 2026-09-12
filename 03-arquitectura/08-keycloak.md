@@ -2,7 +2,7 @@
 
 Keycloak es un servidor de identidad y acceso (IAM) open-source. Centraliza autenticación, autorización, SSO y gestión de usuarios fuera de la aplicación. El back-template valida tokens JWT emitidos por Keycloak. No gestiona contraseñas ni sesiones directamente.
 
-> Fuente: Documentación oficial Keycloak 25 — https://www.keycloak.org/documentation
+> Fuente: Documentación oficial Keycloak 25: https://www.keycloak.org/documentation
 
 ---
 

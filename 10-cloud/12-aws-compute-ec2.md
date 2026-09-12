@@ -27,7 +27,7 @@ r6g.xlarge  → familia r, generación 6, variante Graviton (ARM), tamaño xlarg
 | **i** (storage optimized) | NVMe de alta velocidad | Bases de datos NoSQL, data warehouses | `i3.large` |
 | **p/g** (GPU) | GPU NVIDIA | Machine learning, inferencia, rendering | `p3.2xlarge`, `g4dn.xlarge` |
 
-**Instancias burstable (familia t) — cómo funcionan los créditos:**
+**Cómo funcionan los créditos de las instancias burstable (familia t):**
 
 ```
 Acumulación de créditos cuando CPU < baseline (ej. 10% para t3.micro)

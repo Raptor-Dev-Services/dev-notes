@@ -279,7 +279,7 @@ Para agregar un background service al proyecto:
 ---
 
 ## PeriodicTimer — alternativa moderna a Task.Delay
-> Fuente: *Apps and Services with .NET 8* (Price) — Ch.12 Background Services
+> Fuente: *Apps and Services with .NET 8* (Price): Ch.12 Background Services
 
 `PeriodicTimer` (introducido en .NET 6) es más preciso que `Task.Delay` en loops de polling porque no acumula drift de tiempo.
 

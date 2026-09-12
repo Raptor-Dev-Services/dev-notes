@@ -2,7 +2,7 @@
 
 La cadena de conexión es uno de los secretos más sensibles del sistema. Un leak permite acceso completo a la base de datos. Merece la misma disciplina que cualquier secreto.
 
-> Fuente: *Apps and Services with .NET 8* (Mark J. Price) — Ch.3 Building Data Access Layers
+> Fuente: *Apps and Services with .NET 8* (Mark J. Price): Ch.3 Building Data Access Layers
 
 ---
 

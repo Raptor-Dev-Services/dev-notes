@@ -2,7 +2,7 @@
 
 Cuando una clase crea sus propias dependencias con `new`, queda acoplada a la implementación concreta: no se puede testear en aislamiento, no se puede swappear por otra implementación, y el contenedor no puede gestionar el ciclo de vida del objeto. Dependency Injection (DI) resuelve esto moviendo la creación de dependencias al contenedor.
 
-> Fuente: *Architecting ASP.NET Core Applications* (Carl-Hugo Marcotte, 3rd Ed) — Ch.7 Strategy/Singleton/Factory, Ch.8 Dependency Injection, Ch.11 Structural Patterns
+> Fuente: *Architecting ASP.NET Core Applications* (Carl-Hugo Marcotte, 3rd Ed): Ch.7 Strategy/Singleton/Factory, Ch.8 Dependency Injection, Ch.11 Structural Patterns
 
 ---
 
@@ -30,8 +30,8 @@ public class OrderService(IOrderRepository repo)
 
 **Regla de oro:** nunca usar `new` para crear dependencias volátiles (clases de negocio, repositorios, servicios). Reservar `new` para dependencias estables (DTOs, tipos del BCL de .NET).
 
-- **Dependencias estables:** DTOs, tipos del BCL (`List<T>`, `StringBuilder`), clases sin estado externo — su cambio nunca rompe nada.
-- **Dependencias volátiles:** repositorios, servicios HTTP, clases de negocio, acceso a BD — candidatos a inyección.
+- **Dependencias estables:** DTOs, tipos del BCL (`List<T>`, `StringBuilder`), clases sin estado externo. Su cambio nunca rompe nada.
+- **Dependencias volátiles:** repositorios, servicios HTTP, clases de negocio, acceso a BD. Son candidatos a inyección.
 
 ---
 

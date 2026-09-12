@@ -7,9 +7,9 @@ Aplicar cambios de esquema en un SaaS con tenants reales en producción es difer
 ## El problema
 
 En un sistema multi-tenant con cientos de tenants, una migración que:
-- Bloquea una tabla durante minutos → todos los tenants experimentan downtime
-- Elimina una columna que el código anterior todavía lee → crash inmediato
-- Renombra una columna sin backwards compatibility → incompatibilidad código-esquema
+- Bloquea una tabla durante minutos: todos los tenants experimentan downtime
+- Elimina una columna que el código anterior todavía lee: crash inmediato
+- Renombra una columna sin backwards compatibility: incompatibilidad código-esquema
 
 ```
 PELIGROSO:
@@ -323,8 +323,8 @@ protected override void Up(MigrationBuilder migrationBuilder)
 ## Checklist de migración en producción
 
 - [ ] Revisar el SQL generado (`dotnet ef migrations script`)
-- [ ] Las columnas nuevas son `nullable` o tienen `DEFAULT` — no bloquean
-- [ ] Índices nuevos usan `CONCURRENTLY` — no bloquean lecturas
+- [ ] Las columnas nuevas son `nullable` o tienen `DEFAULT`: no bloquean
+- [ ] Índices nuevos usan `CONCURRENTLY`: no bloquean lecturas
 - [ ] `lock_timeout` configurado para evitar bloqueos largos
 - [ ] La migración es backwards-compatible con el código anterior
 - [ ] Probar la migración en staging antes de producción

@@ -267,7 +267,7 @@ CQRS agrega complejidad. Para una API puramente CRUD (sin lógica de negocio sig
 ---
 
 ## Proyecciones en CQRS
-> Fuente: *.NET Microservices Architecture* — Ch.7 Creating and Evolving Event Sourced Aggregates
+> Fuente: *.NET Microservices Architecture*: Ch.7 Creating and Evolving Event Sourced Aggregates
 
 Una **proyección** es un modelo de lectura derivado del estado de escritura. En CQRS, las proyecciones son los Read Models que el Query side usa: pueden ser vistas materializadas, tablas denormalizadas o caché.
 
@@ -358,7 +358,7 @@ public sealed class UserRegisteredEventHandler
 ---
 
 ## MediatR — tipos de mensajes
-> Fuente: *Architecting ASP.NET Core Applications* (Marcotte) — Ch.16 Mediator and CQS Patterns
+> Fuente: *Architecting ASP.NET Core Applications* (Marcotte): Ch.16 Mediator and CQS Patterns
 
 MediatR soporta tres tipos de mensajes:
 
@@ -424,7 +424,7 @@ public class NotFoundExceptionHandler<TRequest, TResponse, TException>
 ---
 
 ## CQRS con MediatR — pipeline de behaviors
-> Fuente: *.NET Microservices Architecture* — Ch.6 CQRS Patterns
+> Fuente: *.NET Microservices Architecture*: Ch.6 CQRS Patterns
 
 MediatR permite agregar comportamientos transversales (cross-cutting concerns) como validación, logging y caché en el pipeline sin tocar los Handlers.
 

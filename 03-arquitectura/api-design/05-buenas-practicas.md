@@ -2,7 +2,7 @@
 
 Principios y decisiones de diseño que hacen una API predecible, robusta y fácil de consumir.
 
-> Fuente: *Programming APIs with C# and .NET* (Jesse Liberty, Joseph Dluzen) — Ch.8 API Design Best Practices
+> Fuente: *Programming APIs with C# and .NET* (Jesse Liberty, Joseph Dluzen): Ch.8 API Design Best Practices
 
 ---
 
@@ -223,9 +223,9 @@ Antes de hacer PR:
 ## Relación con back-template
 
 La plantilla ya implementa muchos de estos patrones:
-- `ResultViewModel<T>` — respuesta consistente en todos los endpoints
-- `PublicId` UUID — nunca se expone el `Id` serial
-- JWT Bearer — autenticación stateless
+- `ResultViewModel<T>`: respuesta consistente en todos los endpoints
+- `PublicId` UUID: nunca se expone el `Id` serial
+- JWT Bearer: autenticación stateless
 - Rate limiting disponible en `Security.md`
 - Swagger con Bearer UI configurado
 

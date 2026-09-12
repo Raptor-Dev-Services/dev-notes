@@ -448,8 +448,8 @@ var existing = await idempotency.GetAsync(
 ```
 
 Esto significa que:
-- `tenant:1 branch:10 key:abc` → orden creada en la sucursal 10
-- `tenant:1 branch:20 key:abc` → otra orden en la sucursal 20 (key diferente en contexto diferente)
+- `tenant:1 branch:10 key:abc`: orden creada en la sucursal 10
+- `tenant:1 branch:20 key:abc`: otra orden en la sucursal 20 (key diferente en contexto diferente)
 
 Las mismas keys en branches distintos son operaciones distintas. Son contextos de negocio distintos.
 

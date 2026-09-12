@@ -98,9 +98,9 @@ git branch -d hotfix/1.2.1-fix-crash
 - [ ] evaluar el impacto en usuarios activos
 
 **B. Decisión**
-- [ ] ¿se puede revertir con un deploy del tag anterior? → estrategia A
-- [ ] ¿el bug está en el código y hay fix en minutos? → ir directo a D
-- [ ] ¿es un problema de datos o de infra, no de código? → no hacer rollback de Git
+- [ ] ¿se puede revertir con un deploy del tag anterior? Entonces, estrategia A
+- [ ] ¿el bug está en el código y hay fix en minutos? Entonces, ir directo a D
+- [ ] ¿es un problema de datos o de infra, no de código? Entonces, no hacer rollback de Git
 
 **C. Rollback operacional (estrategia A)**
 - [ ] identificar el tag de la versión estable anterior

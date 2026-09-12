@@ -53,7 +53,7 @@ aws iam create-login-profile \
 **Buenas prácticas para usuarios:**
 - Un usuario por persona (nunca compartidos)
 - MFA obligatorio para todos los usuarios con acceso a consola
-- Rotar access keys cada 90 días (o no usarlas — preferir roles)
+- Rotar access keys cada 90 días (o no usarlas y preferir roles)
 - Password policy fuerte: mínimo 12 caracteres, letras + números + símbolos
 
 ---

@@ -331,7 +331,7 @@ El mismo "Cliente" tiene propiedades distintas en cada contexto. Intentar tener 
 ---
 
 ## Servicios de Dominio (Domain Services)
-> Fuente: *.NET Microservices Architecture* — Ch.6 Tackling Business Complexity
+> Fuente: *.NET Microservices Architecture*: Ch.6 Tackling Business Complexity
 
 Un Servicio de Dominio contiene **lógica de negocio que no pertenece a ninguna entidad ni Value Object específico**. Aplica cuando la operación involucra múltiples agregados o cuando la lógica no encaja naturalmente en ninguna entidad.
 
@@ -407,7 +407,7 @@ public sealed class UserMergeService : IUserMergeService
 ---
 
 ## Patrones de integración entre Bounded Contexts
-> Fuente: *.NET Microservices Architecture* — Ch.4 Strategic DDD; *Domain-Driven Design* (Evans) Ch.14
+> Fuente: *.NET Microservices Architecture*: Ch.4 Strategic DDD; *Domain-Driven Design* (Evans) Ch.14
 
 Cuando dos Bounded Contexts necesitan comunicarse, el patrón que uses determina el nivel de acoplamiento.
 
@@ -517,7 +517,7 @@ public sealed class UserCreatedIntegrationEventHandler : INotificationHandler<Us
 ---
 
 ## Outbox Pattern — publicación confiable de eventos
-> Fuente: *.NET Microservices Architecture* — Ch.6 Implementing DDD with .NET; Ch.8 Resilience
+> Fuente: *.NET Microservices Architecture*: Ch.6 Implementing DDD with .NET; Ch.8 Resilience
 
 El problema con publicar Domain Events directamente después de `SaveChangesAsync` es que si el bus falla, el evento se pierde pero la transacción ya se confirmó. El **Outbox Pattern** resuelve esto garantizando que el evento y el cambio de estado se guardan en la misma transacción.
 

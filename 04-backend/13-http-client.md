@@ -2,7 +2,7 @@
 
 Crear `HttpClient` con `new HttpClient()` es uno de los bugs más comunes en .NET: agota puertos TCP del sistema (socket exhaustion) porque `HttpClient` no libera conexiones correctamente cuando se descarta. La solución es `IHttpClientFactory`.
 
-> Fuente: *Apps and Services with .NET 8* (Mark J. Price) — Ch.5 Building Microservices Using Web API
+> Fuente: *Apps and Services with .NET 8* (Mark J. Price): Ch.5 Building Microservices Using Web API
 
 ---
 

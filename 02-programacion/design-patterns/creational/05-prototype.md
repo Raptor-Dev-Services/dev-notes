@@ -4,7 +4,7 @@
 
 **Intención:** Permite copiar objetos existentes sin que el código dependa de sus clases.
 
-> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.3 Creational Patterns: Prototype
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets): Ch.3 Creational Patterns: Prototype
 
 ---
 

@@ -2,9 +2,9 @@
 
 Toda la teoría del manual converge en una librería real. `Common` es la base de código que cada SaaS arranca con los problemas transversales ya resueltos. Construida en .NET 10, resuelve de un golpe los temas más dolorosos del bootstrap: logging estructurado con Seq, observabilidad con OpenTelemetry, mediator propio, multi-tenancy con resolución por header y subdominio, factories de conexión a Postgres, propagación automática de tenant en HTTP clients, y health checks listos.
 
-> **Repositorio:** `github.com/Raptor-Dev-Services/Common` — Librería base reutilizable para Web APIs en .NET 10.
+> **Repositorio:** `github.com/Raptor-Dev-Services/Common`. Librería base reutilizable para Web APIs en .NET 10.
 
-> Fuente: *Architecting ASP.NET Core Applications* (Carl-Hugo Marcotte) — Ch.16 Building a Shared Kernel
+> Fuente: *Architecting ASP.NET Core Applications* (Carl-Hugo Marcotte): Ch.16 Building a Shared Kernel
 
 ---
 
@@ -59,7 +59,7 @@ Common centraliza esa infraestructura:
 
 ## Cómo consumirla en un proyecto nuevo
 
-**Paso 1 — Referenciar el proyecto:**
+**Paso 1. Referenciar el proyecto:**
 
 ```xml
 <!-- En el .csproj del Web API que consume Common -->
@@ -68,7 +68,7 @@ Common centraliza esa infraestructura:
 </ItemGroup>
 ```
 
-**Paso 2 — Registrar servicios principales:**
+**Paso 2. Registrar servicios principales:**
 
 ```csharp
 var builder = WebApplication.CreateBuilder(args);
@@ -89,7 +89,7 @@ builder.Services
     .AddTenantPropagation();
 ```
 
-**Paso 3 — Registrar middlewares base:**
+**Paso 3. Registrar middlewares base:**
 
 ```csharp
 var app = builder.Build();
@@ -168,7 +168,7 @@ app.Run();
 
 ## Conexión a base de datos por tenant
 
-Common ofrece una jerarquía de factories. El patrón usa una clase vacía como marcador de tipo — la factory genérica usa `typeof` para resolver el nombre de la connection string:
+Common ofrece una jerarquía de factories. El patrón usa una clase vacía como marcador de tipo: la factory genérica usa `typeof` para resolver el nombre de la connection string:
 
 ```csharp
 // 1. Clase marcadora — solo identifica el tipo, sin lógica
@@ -210,7 +210,7 @@ public class CustomerRepository(ConfigurationMainDbConnectionFactory factory)
 
 ## Ejecución de jobs con contexto de tenant
 
-Los jobs en background son donde se pierde el contexto de tenant — ya no hay request HTTP. Common provee `ITenantExecutionContextRunner`:
+Los jobs en background son donde se pierde el contexto de tenant: ya no hay request HTTP. Common provee `ITenantExecutionContextRunner`:
 
 ```csharp
 public class DailyReportsJob(
@@ -447,10 +447,10 @@ Estas ~40 líneas dan: logging estructurado con tenant y correlation id automát
 
 Common sirve a equipos que construyen SaaS multi-tenant con .NET, Postgres, Seq y OpenTelemetry. No tiene sentido en:
 
-- **Sistemas mono-tenant** — el overhead de multi-tenancy es ruido innecesario
-- **Microservicios mínimos** (tipo Lambda) — la huella de runtime importa más que la productividad
-- **Apps con infraestructura propia consolidada** — migrar solo se justifica gradualmente
-- **Equipos con stacks diferentes** — MediatR, EF Core con providers exóticos, observabilidad diferente
+- **Sistemas mono-tenant**: el overhead de multi-tenancy es ruido innecesario
+- **Microservicios mínimos** (tipo Lambda): la huella de runtime importa más que la productividad
+- **Apps con infraestructura propia consolidada**: migrar solo se justifica gradualmente
+- **Equipos con stacks diferentes**: MediatR, EF Core con providers exóticos, observabilidad diferente
 
 ---
 

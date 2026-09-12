@@ -300,7 +300,7 @@ Los integration tests son más lentos que los unit tests. La convención habitua
 ---
 
 ## Organización de tests y convenciones de nombres
-> Fuente: *Tools and Skills for .NET 8* — Ch.5 Integration Testing Strategies
+> Fuente: *Tools and Skills for .NET 8*: Ch.5 Integration Testing Strategies
 
 ```
 Tests/

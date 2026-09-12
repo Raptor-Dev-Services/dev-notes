@@ -2,7 +2,7 @@
 
 Un índice es una estructura auxiliar que permite a PostgreSQL encontrar filas sin leer toda la tabla.
 
-> Fuente: *Procesamiento de Bases de Datos 8ed* (David M. Kroenke) — Ch.10 Database Redesign: Indexes and Performance
+> Fuente: *Procesamiento de Bases de Datos 8ed* (David M. Kroenke): Ch.10 Database Redesign: Indexes and Performance
 
 ---
 

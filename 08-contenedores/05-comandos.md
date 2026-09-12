@@ -428,7 +428,7 @@ O con un cliente externo como DBeaver: `localhost:5432`, user `postgres`, passwo
 
 ### Ver queries lentos en Seq
 
-Abrir `http://localhost:5341` → filter: `@Properties['QueryTime'] > 500`
+Abrir `http://localhost:5341` y filtrar con `@Properties['QueryTime'] > 500`
 
 ### Inspeccionar la imagen final
 

@@ -510,7 +510,7 @@ aws s3api put-bucket-replication \
 ### Same-Region Replication (SRR)
 
 Réplica en la misma región pero en un bucket diferente. Casos de uso:
-- Ambiente de producción → bucket de staging (con mismos datos)
+- Copiar el bucket de producción a uno de staging (con los mismos datos)
 - Cumplimiento: copia de seguridad inmutable separada
 
 ---

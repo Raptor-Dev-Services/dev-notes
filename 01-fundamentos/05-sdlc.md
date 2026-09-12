@@ -319,12 +319,12 @@ No es refactoring masivo: es agregar un test faltante, extraer un método largo,
 
 ## Referencias
 
-- Fowler, M. — *Refactoring: Improving the Design of Existing Code* (2018) — Ch.1 "What Is Refactoring"
-- Forsgren, N. et al. — *Accelerate: The Science of Lean Software and DevOps* (2018) — métricas DORA
-- Bass, L. et al. — *Software Architecture in Practice* (4th ed.) — SDLC y decisiones de arquitectura
-- `dev-notes/01-fundamentos/01-solid.md` — principios que previenen deuda de diseño
-- `dev-notes/01-fundamentos/02-clean-code.md` — prevención de deuda de código
-- `dev-notes/01-fundamentos/03-refactoring.md` — cómo pagar la deuda técnica existente
+- Fowler, M.: *Refactoring: Improving the Design of Existing Code* (2018), Ch.1 "What Is Refactoring"
+- Forsgren, N. et al.: *Accelerate: The Science of Lean Software and DevOps* (2018), métricas DORA
+- Bass, L. et al.: *Software Architecture in Practice* (4th ed.), SDLC y decisiones de arquitectura
+- `dev-notes/01-fundamentos/01-solid.md`: principios que previenen deuda de diseño
+- `dev-notes/01-fundamentos/02-clean-code.md`: prevención de deuda de código
+- `dev-notes/01-fundamentos/03-refactoring.md`: cómo pagar la deuda técnica existente
 
 ---
 

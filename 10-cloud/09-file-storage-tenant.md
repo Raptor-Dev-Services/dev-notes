@@ -401,13 +401,13 @@ public async Task CleanupOrphanedFilesAsync(CancellationToken ct)
 
 ## Checklist
 
-- [ ] Paths incluyen `tenant_id` (y `branch_id` si aplica) — nunca paths planos
-- [ ] Bucket privado — acceso solo por presigned URLs
+- [ ] Paths incluyen `tenant_id` (y `branch_id` si aplica): nunca paths planos
+- [ ] Bucket privado: acceso solo por presigned URLs
 - [ ] Presigned URL de download válida 5 minutos (ajustar según caso de uso)
 - [ ] Presigned URL de upload válida 15 minutos
 - [ ] Validar plan/cuota ANTES de generar la presigned URL de upload
 - [ ] Confirmar el upload registrando el archivo en la DB
-- [ ] Sanitizar nombres de archivo — no permitir paths traversal (`../`)
+- [ ] Sanitizar nombres de archivo: no permitir paths traversal (`../`)
 - [ ] Archivos de un branch no accesibles desde otro branch
 - [ ] Job de cleanup para archivos de tenants eliminados
 

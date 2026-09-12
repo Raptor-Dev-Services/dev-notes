@@ -261,7 +261,7 @@ La petición termina limpiamente — sin trabajo innecesario
 
 ### `CancellationToken.None` y `default`
 
-Equivalentes — "no hay cancelación":
+Equivalentes, "no hay cancelación":
 
 ```csharp
 await repo.GetByPublicIdAsync(id);                           // ct = default
@@ -352,7 +352,7 @@ var user = repo.GetByPublicIdAsync(id, ct).GetAwaiter().GetResult();  // ídem
 var user = await repo.GetByPublicIdAsync(id, ct);
 ```
 
-**Deadlock:** el hilo espera que el Task termine; el Task espera que el hilo esté disponible → deadlock.
+**Deadlock:** el hilo espera que el Task termine; el Task espera que el hilo esté disponible. Resultado: deadlock.
 
 ### Error 3 — Olvidar `await`
 

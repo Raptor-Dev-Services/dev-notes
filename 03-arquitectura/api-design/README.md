@@ -30,11 +30,11 @@ Diseño de APIs REST: semántica HTTP, recursos, paginación, errores y evoluci�
 
 ## Orden de lectura sugerido
 
-1. [HTTP](01-http.md) — semántica base
-2. [REST](02-rest.md) — diseño de URLs y recursos
-3. [Errores y Contratos](04-errores-contratos.md) — qué comunica la API cuando falla
-4. [Paginación](03-paginacion.md) — colecciones grandes
-5. [Buenas Prácticas](05-buenas-practicas.md) — evolución y mantenimiento
+1. [HTTP](01-http.md): semántica base
+2. [REST](02-rest.md): diseño de URLs y recursos
+3. [Errores y Contratos](04-errores-contratos.md): qué comunica la API cuando falla
+4. [Paginación](03-paginacion.md): colecciones grandes
+5. [Buenas Prácticas](05-buenas-practicas.md): evolución y mantenimiento
 
 
 ---

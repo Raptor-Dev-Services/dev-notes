@@ -154,7 +154,7 @@
 ---
 
 ## 10 — Cloud, Linux y Operaciones
-> Carpeta: `10_Cloud_Linux_Operacion` → subcarpetas `01_Linux` y `02_AWS_Azure`
+> Carpeta: `10_Cloud_Linux_Operacion`, con subcarpetas `01_Linux` y `02_AWS_Azure`
 
 ### Linux
 | Libro | Autor |

@@ -34,31 +34,31 @@ Guía completa de C# y .NET orientada a este proyecto. Cada documento cubre un t
 
 ### Sub-junior — empezar aquí
 
-1. [Clases](01-classes.md) — qué es una clase, modificadores de acceso, tipos
-2. [Propiedades y Campos](06-properties-fields.md) — cómo almacena datos un objeto
-3. [Métodos](07-methods.md) — cómo hace cosas un objeto
-4. [Constructores y DI](03-constructors-di.md) — cómo nace un objeto, DI básico
-5. [Interfaces](02-interfaces.md) — contratos y por qué son centrales
-6. [Namespaces y using](16-namespaces.md) — organización del código
-7. [Strings](15-strings.md) — manipulación de texto
+1. [Clases](01-classes.md): qué es una clase, modificadores de acceso, tipos
+2. [Propiedades y Campos](06-properties-fields.md): cómo almacena datos un objeto
+3. [Métodos](07-methods.md): cómo hace cosas un objeto
+4. [Constructores y DI](03-constructors-di.md): cómo nace un objeto, DI básico
+5. [Interfaces](02-interfaces.md): contratos y por qué son centrales
+6. [Namespaces y using](16-namespaces.md): organización del código
+7. [Strings](15-strings.md): manipulación de texto
 
 ### Junior — continuar aquí
 
-8. [Records](04-records.md) — tipos inmutables, base de DTOs y Responses
-9. [Herencia y Polimorfismo](05-inheritance.md) — reutilizar y extender
-10. [Nulabilidad](13-nullability.md) — evitar NullReferenceException
-11. [Colecciones y LINQ](12-collections.md) — trabajar con listas
-12. [Excepciones](14-exceptions.md) — manejo de errores robusto
-13. [async / await / Task](08-async.md) — operaciones asíncronas
+8. [Records](04-records.md): tipos inmutables, base de DTOs y Responses
+9. [Herencia y Polimorfismo](05-inheritance.md): reutilizar y extender
+10. [Nulabilidad](13-nullability.md): evitar NullReferenceException
+11. [Colecciones y LINQ](12-collections.md): trabajar con listas
+12. [Excepciones](14-exceptions.md): manejo de errores robusto
+13. [async / await / Task](08-async.md): operaciones asíncronas
 
 ### Semi-senior / Senior — completar con
 
-14. [DI Lifetimes](09-lifetimes.md) — cuánto vive cada objeto
-15. [Genéricos](10-generics.md) — código reutilizable entre tipos
-16. [Pattern Matching](11-pattern-matching.md) — lógica expresiva y segura
-17. [Enums](17-enums.md) — tipos enumerados, Flags, serialización
-18. [Atributos](18-attributes.md) — metadata, ASP.NET Core, xUnit, personalización
-19. [Configuración](19-configuration.md) — IOptions, capas, User Secrets
+14. [DI Lifetimes](09-lifetimes.md): cuánto vive cada objeto
+15. [Genéricos](10-generics.md): código reutilizable entre tipos
+16. [Pattern Matching](11-pattern-matching.md): lógica expresiva y segura
+17. [Enums](17-enums.md): tipos enumerados, Flags, serialización
+18. [Atributos](18-attributes.md): metadata, ASP.NET Core, xUnit, personalización
+19. [Configuración](19-configuration.md): IOptions, capas, User Secrets
 
 ---
 

@@ -2,8 +2,8 @@
 
 En desarrollo local, `dotnet user-secrets` resuelve. En producción, los secretos viven en gestores especializados. Nunca en archivos de configuración, repositorios, ni variables de entorno expuestas en logs.
 
-> Fuente: *Building Secure and Reliable Systems* (Heather Adkins et al.) — Ch.8 Design for Security  
-> Fuente: *ASP.NET Core 9 Essentials* (Packt) — Ch.6 Enhancing Security and Quality
+> Fuente: *Building Secure and Reliable Systems* (Heather Adkins et al.): Ch.8 Design for Security  
+> Fuente: *ASP.NET Core 9 Essentials* (Packt): Ch.6 Enhancing Security and Quality
 
 ---
 

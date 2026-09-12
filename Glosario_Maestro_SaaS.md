@@ -876,7 +876,7 @@ ENTRYPOINT ["dotnet", "Saas.Api.dll"]
 
 **Distroless images**: Imágenes sin shell ni herramientas del sistema. Superficie de ataque mínima. `gcr.io/distroless/dotnet`.
 
-**BuildKit — mount secrets**: `--mount=type=secret` permite pasar tokens y credenciales durante el build sin que queden en ninguna capa.
+**BuildKit mount secrets**: `--mount=type=secret` permite pasar tokens y credenciales durante el build sin que queden en ninguna capa.
 
 ```dockerfile
 RUN --mount=type=secret,id=nuget_token \

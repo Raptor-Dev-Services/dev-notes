@@ -324,7 +324,7 @@ El cliente crea una nueva key, actualiza su integración para usar la nueva, y l
 
 ## Checklist
 
-- [ ] La key en texto claro solo se muestra al crear — nunca se recupera después
+- [ ] La key en texto claro solo se muestra al crear y nunca se recupera después
 - [ ] Almacenar solo el hash SHA-256: no la key en claro
 - [ ] Prefijo en la key para identificar sin revelar (`sk_live_c8f2...`)
 - [ ] Scopes granulares: no dar acceso total por defecto

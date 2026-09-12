@@ -2,7 +2,7 @@
 
 La estimación de software es el proceso de predecir cuánto esfuerzo, tiempo o recursos requiere completar un trabajo. Es una de las habilidades más difíciles en ingeniería de software, y también una de las más malentendidas.
 
-> Fuente: *Software Estimation: Demystifying the Black Art* — McConnell, *Agile Estimating and Planning* — Cohn, *The Mythical Man-Month* — Brooks
+> Fuente: *Software Estimation: Demystifying the Black Art* (McConnell), *Agile Estimating and Planning* (Cohn), *The Mythical Man-Month* (Brooks)
 
 ---
 

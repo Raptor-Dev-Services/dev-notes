@@ -2,7 +2,7 @@
 
 El patrón Object Mapper encapsula la lógica de copiar las propiedades de un objeto a otro. Surge inevitablemente cuando distintas capas de la aplicación usan modelos diferentes (entidad de dominio, DTO de respuesta, DTO de entrada) y alguien debe hacer la conversión entre ellos.
 
-> Fuente: *Architecting ASP.NET Core Applications, 3a ed.* (Carl-Hugo Marcotte) — Ch.15 Object Mappers
+> Fuente: *Architecting ASP.NET Core Applications, 3a ed.* (Carl-Hugo Marcotte): Ch.15 Object Mappers
 
 ---
 
@@ -143,8 +143,8 @@ app.MapPost("/products/{productId}/remove-stocks", async (
 
 **Regla de Marcotte:** más de 3-4 dependencias es una señal para investigar si la clase tiene demasiadas responsabilidades. Dos soluciones:
 
-1. **Aggregate Services** — agrupa mappers relacionados en un servicio.
-2. **Mapping Facade** — expone un método genérico `Map<TSource, TDestination>`.
+1. **Aggregate Services**: agrupa mappers relacionados en un servicio.
+2. **Mapping Facade**: expone un método genérico `Map<TSource, TDestination>`.
 
 ---
 
@@ -190,7 +190,7 @@ public class ProductsController
 }
 ```
 
-> **Advertencia:** mover dependencias a un aggregate no resuelve el problema si la clase subyacente sigue teniendo demasiadas responsabilidades — solo lo oculta. Usar aggregates solo cuando hay cohesión real entre las dependencias agrupadas.
+> **Advertencia:** mover dependencias a un aggregate no resuelve el problema si la clase subyacente sigue teniendo demasiadas responsabilidades; solo lo oculta. Usar aggregates solo cuando hay cohesión real entre las dependencias agrupadas.
 
 ---
 
@@ -297,9 +297,9 @@ public async Task AutoMapper_configuration_is_valid()
 - Para eliminar boilerplate de mapping que no aporta lógica de negocio.
 
 **Cuándo NO usar AutoMapper:**
-- Cuando la lógica de conversión es compleja — el magic de convenciones dificulta el debug.
-- Cuando el mapping es mínimo — agregar AutoMapper por 2-3 conversiones es sobreingeniería.
-- Cuando el rendimiento es crítico — Mapperly es significativamente más rápido.
+- Cuando la lógica de conversión es compleja: el magic de convenciones dificulta el debug.
+- Cuando el mapping es mínimo: agregar AutoMapper por 2-3 conversiones es sobreingeniería.
+- Cuando el rendimiento es crítico: Mapperly es significativamente más rápido.
 
 ---
 
@@ -471,15 +471,15 @@ public async Task<GetExampleUserResponse> Handle(
 ## Cuándo usar
 
 - Cuando la aplicación tiene múltiples capas con modelos propios (Domain entity, Application DTO, API ViewModel).
-- Cuando el mapping manual se repite en varios handlers — centralizar en una clase de mapper.
-- Cuando el mapping es mecánico (nombres de propiedades iguales) — usar Mapperly o AutoMapper.
-- Cuando se necesita testear la lógica de conversión por separado — los mappers son fáciles de unit-testear.
+- Cuando el mapping manual se repite en varios handlers: centralizar en una clase de mapper.
+- Cuando el mapping es mecánico (nombres de propiedades iguales): usar Mapperly o AutoMapper.
+- Cuando se necesita testear la lógica de conversión por separado: los mappers son fáciles de unit-testear.
 
 ## Cuándo NO usar
 
-- Cuando las capas comparten el mismo modelo — mapear es overhead innecesario.
-- Cuando solo hay 1-2 conversiones simples — un mapper es sobreingeniería.
-- Cuando la lógica de conversión es tan específica que no justifica una abstracción — hacerla inline con un comentario explicativo es válido.
+- Cuando las capas comparten el mismo modelo: mapear es overhead innecesario.
+- Cuando solo hay 1-2 conversiones simples: un mapper es sobreingeniería.
+- Cuando la lógica de conversión es tan específica que no justifica una abstracción: hacerla inline con un comentario explicativo es válido.
 
 ---
 

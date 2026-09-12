@@ -2,7 +2,7 @@
 
 Devolver grandes colecciones de datos en partes manejables.
 
-> Fuente: *Programming APIs with C# and .NET* (Jesse Liberty, Joseph Dluzen) — Ch.4 Pagination, Filtering, and Sorting
+> Fuente: *Programming APIs with C# and .NET* (Jesse Liberty, Joseph Dluzen): Ch.4 Pagination, Filtering, and Sorting
 
 ---
 

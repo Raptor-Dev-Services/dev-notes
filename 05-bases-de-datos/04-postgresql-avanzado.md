@@ -293,7 +293,7 @@ public Task<IEnumerable<UserSummaryDto>> GetSummaryAsync(CancellationToken ct) =
 ---
 
 ## EXPLAIN ANALYZE — entender el plan de ejecución
-> Fuente: *Empezando con PostgreSQL* — Ch.9 Optimización de consultas
+> Fuente: *Empezando con PostgreSQL*: Ch.9 Optimización de consultas
 
 `EXPLAIN ANALYZE` muestra el plan de ejecución real de una query: qué índices usa, cuántas filas lee, cuánto tarda.
 

@@ -5,7 +5,7 @@ Los microservicios dividen una aplicación en servicios pequeños e independient
 ---
 
 ## Monolito vs Microservicios — cuándo migrar
-> Fuente: *.NET Microservices Architecture* (Cesarini et al.) — Ch.1 Introduction
+> Fuente: *.NET Microservices Architecture* (Cesarini et al.): Ch.1 Introduction
 
 ```
 Monolito                              Microservicios
@@ -251,7 +251,7 @@ app.MapHealthChecks("/health/live", new HealthCheckOptions
 ---
 
 ## Event Sourcing — historial inmutable de eventos
-> Fuente: *Microservices Design Patterns in .NET* — Ch.6 Applying Event Sourcing Patterns
+> Fuente: *Microservices Design Patterns in .NET*: Ch.6 Applying Event Sourcing Patterns
 
 En lugar de guardar el **estado actual** de una entidad, Event Sourcing guarda la **secuencia de eventos** que llevaron a ese estado. El estado se reconstruye reproduciendo los eventos.
 
@@ -348,7 +348,7 @@ Evento 1 → Evento 50 → Snapshot v50 → Evento 51 → Evento 100 → Snapsho
 ---
 
 ## Event-Driven Architecture — tipos de eventos
-> Fuente: *Architecting ASP.NET Core Applications* (Marcotte, 3rd Ed) — Ch.19 Introduction to Microservices Architecture
+> Fuente: *Architecting ASP.NET Core Applications* (Marcotte, 3rd Ed): Ch.19 Introduction to Microservices Architecture
 
 EDA es un paradigma donde los componentes se comunican emitiendo y consumiendo eventos en lugar de llamarse directamente. Los tres términos clave:
 
@@ -400,7 +400,7 @@ public sealed class ExampleUserCreatedDomainEventHandler
 
 ## Publish-Subscribe pattern
 
-En lugar de un queue (un mensaje → un consumidor), Pub-Sub permite que **un publicador envíe un evento a cero o más suscriptores**. El publicador no conoce a los suscriptores: fire and forget.
+En lugar de un queue (un mensaje, un consumidor), Pub-Sub permite que **un publicador envíe un evento a cero o más suscriptores**. El publicador no conoce a los suscriptores: fire and forget.
 
 ```
 Queue:      Publisher → Message → [Queue] → 1 Consumer

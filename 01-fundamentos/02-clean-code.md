@@ -31,7 +31,7 @@ La lógica es idéntica. La diferencia es cuánto tiempo tarda el lector en ente
 ---
 
 ## Nombres significativos
-> Fuente: *Clean Code* (Martin) — Ch.2 Meaningful Names
+> Fuente: *Clean Code* (Martin): Ch.2 Meaningful Names
 
 ### Clases y métodos
 
@@ -89,7 +89,7 @@ public sealed record FullName(string First, string Last)
 ---
 
 ## Funciones limpias
-> Fuente: *Clean Code* (Martin) — Ch.3 Functions
+> Fuente: *Clean Code* (Martin): Ch.3 Functions
 
 ### Regla 1: tamaño pequeño
 
@@ -182,7 +182,7 @@ user.SetBirthDate(request.BirthDate);
 ---
 
 ## Comentarios
-> Fuente: *Clean Code* (Martin) — Ch.4 Comments
+> Fuente: *Clean Code* (Martin): Ch.4 Comments
 
 El mejor comentario es el que no se necesita. El código bien nombrado se explica solo.
 
@@ -208,7 +208,7 @@ var hash = BCrypt.Net.BCrypt.HashPassword(password, workFactor: 10);
 ---
 
 ## Formato y estructura
-> Fuente: *Clean Code* (Martin) — Ch.5 Formatting
+> Fuente: *Clean Code* (Martin): Ch.5 Formatting
 
 ```csharp
 // ✓ Separar conceptos con líneas en blanco — como párrafos
@@ -270,7 +270,7 @@ public sealed record ExampleUserDto(
 ---
 
 ## Cohesión y acoplamiento
-> Fuente: *Clean Code with C#* — Ch.3 Classes, Objects, and Data Structures
+> Fuente: *Clean Code with C#*: Ch.3 Classes, Objects, and Data Structures
 
 **Alta cohesión**: una clase tiene una responsabilidad bien definida y sus métodos son todos relevantes a esa responsabilidad. El resultado: código fácil de entender, probar y modificar.
 
@@ -315,7 +315,7 @@ public sealed class ExampleUserService
 ---
 
 ## Manejo de errores
-> Fuente: *Clean Code* (Martin) — Ch.7 Error Handling
+> Fuente: *Clean Code* (Martin): Ch.7 Error Handling
 
 ```csharp
 // ❌ Código de error mezclado con lógica de negocio

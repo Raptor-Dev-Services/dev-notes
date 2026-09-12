@@ -2,7 +2,7 @@
 
 El Result Pattern modela el resultado de una operación como un objeto con dos estados posibles: éxito o fallo. Es la alternativa a usar excepciones para controlar el flujo de negocio.
 
-> Fuente: *Clean Code with C# 2nd Ed* (Jason Alls) — Ch.3 Classes, Objects, and Error Handling
+> Fuente: *Clean Code with C# 2nd Ed* (Jason Alls): Ch.3 Classes, Objects, and Error Handling
 
 ---
 
@@ -459,7 +459,7 @@ switch (result.Status)
 | Rendimiento | ✓ Sin overhead de stack trace | ✗ Crear un stack trace es costoso |
 | Composabilidad | ✓ Se encadena bien con pattern matching | ✗ El anidado de try/catch es verboso |
 
-**Regla práctica:** si el fallo es algo que el código del llamador *espera y maneja* (usuario no encontrado, validación falló, conflicto de unicidad) → Result Pattern. Si es un error que nadie espera (NullReferenceException, OutOfMemoryException, bug) → deja que la excepción suba y el global handler la capture.
+**Regla práctica:** si el fallo es algo que el código del llamador *espera y maneja* (usuario no encontrado, validación falló, conflicto de unicidad), usa Result Pattern. Si es un error que nadie espera (NullReferenceException, OutOfMemoryException, bug), deja que la excepción suba y el global handler la capture.
 
 ```csharp
 // ✓ Result — el caller espera que el usuario pueda no existir
@@ -565,6 +565,6 @@ return _viewModel.IsSuccess ? Ok(_viewModel) : StatusCode(500, _viewModel);
 
 ---
 
-> Fuente adicional: *Architecting ASP.NET Core Applications* (Carl-Hugo Marcotte) — Ch.13 Operation Result Pattern
+> Fuente adicional: *Architecting ASP.NET Core Applications* (Carl-Hugo Marcotte): Ch.13 Operation Result Pattern
 
 *Rogelio Arriaga Gonzalez*

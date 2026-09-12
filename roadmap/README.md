@@ -22,9 +22,9 @@ Cada roadmap indica el orden de lectura, los prerequisitos y qué puedes constru
 ## Cómo usar los roadmaps
 
 1. **Elegir un roadmap** según tu objetivo y nivel actual
-2. **Leer en el orden indicado** — cada fase tiene prerequisitos de la fase anterior
-3. **Practicar con el back-template** — los ejemplos de código corresponden al proyecto real
-4. **Marcar tu progreso** — usa la lista de checkboxes en cada roadmap
+2. **Leer en el orden indicado**: cada fase tiene prerequisitos de la fase anterior
+3. **Practicar con el back-template**: los ejemplos de código corresponden al proyecto real
+4. **Marcar tu progreso**: usa la lista de checkboxes en cada roadmap
 
 ---
 

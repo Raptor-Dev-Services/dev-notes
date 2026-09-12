@@ -146,7 +146,7 @@ Si tu proyecto separa por `src/pages/` + `src/components/<modulo>/` en vez de ca
 | Ya hubo un "mover esto rompió aquello" | El equipo aún está definiendo la estructura |
 | Quieres que features se prueben aislados | No hay CI que corra el lint |
 
-> Fuente: *React Application Architecture for Production*, 2ª ed. (Alan Alickovic, Anthony Alicea) — Ch.2 Setup and Project Structure Overview.
+> Fuente: *React Application Architecture for Production*, 2ª ed. (Alan Alickovic, Anthony Alicea): Ch.2 Setup and Project Structure Overview.
 
 ---
 

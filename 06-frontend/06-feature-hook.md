@@ -254,7 +254,7 @@ El `resolveApiEnvelope` consume exactamente el `Result<T>` que el back-template 
 | vistas distintas por breakpoint con lógica diferente | cuando solo se necesita cambiar layout CSS (usar breakpoints Tailwind) |
 
 
-> Fuente: *Full Stack React, TypeScript, and Node* (David Choi) — Ch.6 React Hooks in Depth
+> Fuente: *Full Stack React, TypeScript, and Node* (David Choi): Ch.6 React Hooks in Depth
 
 ---
 

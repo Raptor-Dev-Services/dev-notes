@@ -4,7 +4,7 @@
 
 **Intención:** Define una familia de algoritmos, los encapsula en clases separadas y hace sus objetos intercambiables. Strategy permite cambiar el algoritmo usado dentro de un objeto en runtime.
 
-> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.5 Behavioral Patterns: Strategy
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets): Ch.5 Behavioral Patterns: Strategy
 
 ---
 

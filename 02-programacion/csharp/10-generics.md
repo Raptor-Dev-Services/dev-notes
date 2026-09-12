@@ -25,7 +25,7 @@ var cs = new Contenedor<string>       { Valor = "hola" };
 var cu = new Contenedor<ExampleUser>  { Valor = new ExampleUser() };
 ```
 
-`T` es un **parámetro de tipo** — es un placeholder que se reemplaza por el tipo real al instanciar.
+`T` es un **parámetro de tipo**: un placeholder que se reemplaza por el tipo real al instanciar.
 
 ---
 

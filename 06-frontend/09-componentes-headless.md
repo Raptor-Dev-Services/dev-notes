@@ -162,7 +162,7 @@ Extrae **después de la segunda apariencia real**, no antes. La duplicación de 
 | Lógica con teclado y `aria-*` que quieres testear aislada | Componente de display sin interacción |
 | Quieres que la accesibilidad viaje con el comportamiento | El problema es estructura: usa composición con `children` |
 
-> Fuente: *React Anti-Patterns* (Juntao Qiu) — Ch.9 Applying Design Principles in React, Ch.10 Diving Deep into Composition Patterns.
+> Fuente: *React Anti-Patterns* (Juntao Qiu): Ch.9 Applying Design Principles in React, Ch.10 Diving Deep into Composition Patterns.
 
 ---
 

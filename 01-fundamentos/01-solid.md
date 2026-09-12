@@ -268,7 +268,7 @@ Es que los módulos de **alto nivel** (reglas de negocio) no dependan de los de 
 
 ## Principios complementarios a SOLID
 
-> Fuente: *Clean Code* (Martin) — Ch.2 Nombres, Ch.3 Funciones, Ch.17 Smells and Heuristics; *Clean Architecture* Ch.12-14 Cohesión y Acoplamiento de Componentes
+> Fuente: *Clean Code* (Martin): Ch.2 Nombres, Ch.3 Funciones, Ch.17 Smells and Heuristics; *Clean Architecture* Ch.12-14 Cohesión y Acoplamiento de Componentes
 
 ### DRY — Don't Repeat Yourself
 
@@ -367,7 +367,7 @@ YAGNI no significa ignorar la mantenibilidad. Significa no adelantarse a requisi
 
 ## Cohesión y acoplamiento de componentes
 
-> Fuente: *Clean Architecture* — Part IV Component Principles (Ch.12-14)
+> Fuente: *Clean Architecture*: Part IV Component Principles (Ch.12-14)
 
 ### Principio de Cierre Común (CCP)
 

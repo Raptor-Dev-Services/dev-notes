@@ -252,7 +252,7 @@ public async Task InsertWithRoleAsync(
 ---
 
 ## Bloqueos optimistas vs pesimistas
-> Fuente: *Procesamiento de Bases de Datos* (Kroenke) — Ch.11 Concurrencia y Recuperación
+> Fuente: *Procesamiento de Bases de Datos* (Kroenke): Ch.11 Concurrencia y Recuperación
 
 ### Bloqueo pesimista (Pessimistic Locking)
 

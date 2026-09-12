@@ -18,7 +18,7 @@ Vite tiene un sistema simple pero estricto. Solo expone al cliente las variables
 | `.env.production.local` | Override local de production |
 
 **Orden de precedencia** (de menor a mayor):  
-`.env` → `.env.{mode}` → `.env.local` → `.env.{mode}.local`
+`.env`, `.env.{mode}`, `.env.local`, `.env.{mode}.local`
 
 Los archivos `.local` **nunca** se comitean. Deben estar en `.gitignore`.
 

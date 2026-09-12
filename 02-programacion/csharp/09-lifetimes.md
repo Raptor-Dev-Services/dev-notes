@@ -75,7 +75,7 @@ Petición 2 llega
 - Objetos que guardan estado de la petición actual (contexto de usuario, transacciones)
 - La gran mayoría de los servicios de una API
 
-**En este proyecto:** casi todo — repositorios, handlers, presenters, ViewModels, conexión DB.
+**En este proyecto:** casi todo: repositorios, handlers, presenters, ViewModels, conexión DB.
 
 ---
 
@@ -86,7 +86,7 @@ services.AddTransient<IEmailSender, EmailSender>();
 ```
 
 - Se crea **cada vez** que el container lo resuelve.
-- No hay reutilización — cada `GetService<T>()` crea un objeto nuevo.
+- No hay reutilización: cada `GetService<T>()` crea un objeto nuevo.
 - Se destruye cuando el scope que lo pidió termina (si implementa IDisposable).
 
 **Analogía:** una hoja de papel. Cada vez que la pides, te dan una nueva.
@@ -140,7 +140,7 @@ services.AddScoped<MainDapperDbConnection>(); // Scoped
 // ASP.NET Core detecta esto y lanza InvalidOperationException al arrancar (en modo desarrollo)
 ```
 
-**Solución — opciones:**
+**Opciones de solución:**
 
 ```csharp
 // Opción A — Hacer todo Singleton (si es thread-safe)
@@ -322,7 +322,7 @@ public class MiWorker : BackgroundService
 ## Resumen de reglas
 
 1. **Usa `Singleton`** para: fábricas, configuraciones, clientes HTTP, objetos sin estado que son costosos de crear.
-2. **Usa `Scoped`** para: todo lo que necesita estado por petición — repositorios, handlers, presenters, ViewModels, transacciones.
+2. **Usa `Scoped`** para: todo lo que necesita estado por petición: repositorios, handlers, presenters, ViewModels, transacciones.
 3. **Usa `Transient`** para: objetos muy ligeros sin estado que no deben compartirse (raramente necesario).
 4. **Nunca** inyectes un Scoped en un Singleton.
 5. **Nunca** inyectes un Transient en un Singleton si el Transient tiene estado.

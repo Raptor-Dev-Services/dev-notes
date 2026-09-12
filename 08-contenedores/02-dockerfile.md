@@ -133,7 +133,7 @@ ENTRYPOINT ["dotnet", "Host.dll"]
 **Por qué multi-stage:**
 - La imagen final solo tiene el `publish` output + runtime `.NET` (~100 MB)
 - Sin SDK (hundreds of MB), sin código fuente, sin dependencias de build
-- Sin shell ni utilidades → menor superficie de ataque
+- Sin shell ni utilidades: menor superficie de ataque
 - Imagen de prod más pequeña = deploys más rápidos, menos costo de storage
 
 ---

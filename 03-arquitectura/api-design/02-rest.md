@@ -1,8 +1,8 @@
 ﻿# 02 — REST: Recursos, URLs y Constraints
 
-REST no es un protocolo ni un estándar — es un estilo arquitectónico. Las APIs "RESTful" siguen sus constraints para ser predecibles e interoperables.
+REST no es un protocolo ni un estándar: es un estilo arquitectónico. Las APIs "RESTful" siguen sus constraints para ser predecibles e interoperables.
 
-> Fuente: *Programming APIs with C# and .NET* (Jesse Liberty, Joseph Dluzen) — Ch.2 RESTful Patterns and Conventions
+> Fuente: *Programming APIs with C# and .NET* (Jesse Liberty, Joseph Dluzen): Ch.2 RESTful Patterns and Conventions
 
 ---
 
@@ -207,7 +207,7 @@ Nivel 2: Verbos HTTP  — GET/POST/PUT/DELETE correctamente usados ← back-temp
 Nivel 3: HATEOAS      — responses con links a acciones disponibles
 ```
 
-La mayoría de APIs "REST" están en nivel 2 — es suficiente para la mayoría de casos.
+La mayoría de APIs "REST" están en nivel 2, y es suficiente para la mayoría de casos.
 
 
 ---

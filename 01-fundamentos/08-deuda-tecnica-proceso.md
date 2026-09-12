@@ -2,7 +2,7 @@
 
 La deuda técnica es el costo implícito del trabajo adicional causado por elegir una solución rápida ahora en lugar de una mejor solución que tomaría más tiempo. Como la deuda financiera, acumula intereses: cada nueva funcionalidad construida sobre código de baja calidad cuesta más de lo que debería.
 
-> Fuente: Ward Cunningham (inventor del término), *Refactoring* — Fowler, *Working Effectively with Legacy Code* — Feathers
+> Fuente: Ward Cunningham (inventor del término), *Refactoring* (Fowler), *Working Effectively with Legacy Code* (Feathers)
 
 ---
 
@@ -214,10 +214,10 @@ Cuando un módulo supere 500 requests/segundo de forma sostenida durante
 
 ## Referencias
 
-- Fowler, M. — *Refactoring: Improving the Design of Existing Code* (2018)
-- Feathers, M. — *Working Effectively with Legacy Code* (2004)
-- Cunningham, W. — "The WyCash Portfolio Management System" (OOPSLA 1992)
-- Sonmez, J. — *Soft Skills: The Software Developer's Life Manual* — Cap. Deuda técnica
+- Fowler, M.: *Refactoring: Improving the Design of Existing Code* (2018)
+- Feathers, M.: *Working Effectively with Legacy Code* (2004)
+- Cunningham, W.: "The WyCash Portfolio Management System" (OOPSLA 1992)
+- Sonmez, J.: *Soft Skills: The Software Developer's Life Manual*, Cap. Deuda técnica
 
 ---
 

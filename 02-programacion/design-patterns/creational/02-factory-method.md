@@ -4,7 +4,7 @@
 
 **Intención:** Define una interfaz para crear un objeto, pero deja que las subclases decidan qué clase instanciar. El Factory Method delega la instanciación a las subclases.
 
-> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.3 Creational Patterns: Factory Method
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets): Ch.3 Creational Patterns: Factory Method
 
 ---
 

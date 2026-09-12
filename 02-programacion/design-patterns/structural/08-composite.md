@@ -4,7 +4,7 @@
 
 **Intención:** Permite componer objetos en estructuras de árbol para representar jerarquías parte-todo. El Composite permite a los clientes tratar objetos individuales y composiciones de objetos de manera uniforme.
 
-> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.4 Structural Patterns: Composite
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets): Ch.4 Structural Patterns: Composite
 
 ---
 

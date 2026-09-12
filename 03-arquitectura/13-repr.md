@@ -2,7 +2,7 @@
 
 El patrón REPR (se pronuncia "reaper") organiza cada endpoint de una API como una unidad autónoma de tres piezas: el objeto de entrada, la lógica del endpoint, y el objeto de salida. Es una alternativa al modelo MVC que alinea el diseño del backend directamente con la semántica HTTP de request-response.
 
-> Fuente: *Architecting ASP.NET Core Applications, 3a ed.* (Carl-Hugo Marcotte) — Ch.18 Request-EndPoint-Response (REPR)
+> Fuente: *Architecting ASP.NET Core Applications, 3a ed.* (Carl-Hugo Marcotte): Ch.18 Request-EndPoint-Response (REPR)
 
 ---
 

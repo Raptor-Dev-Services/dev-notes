@@ -239,9 +239,9 @@ No commitear. Agregar a .gitignore si no están.
 
 ### ✗ Qué no incluir
 
-- Código de producción o lógica de negocio — va en el código, no en CLAUDE.md
-- Información que cambia a diario — Claude.md debe mantenerse, no desactualizarse
-- Secretos o credenciales — nunca, aunque sea solo para contexto
+- Código de producción o lógica de negocio: va en el código, no en CLAUDE.md
+- Información que cambia a diario: Claude.md debe mantenerse, no desactualizarse
+- Secretos o credenciales: nunca, aunque sea solo para contexto
 
 ---
 
@@ -306,7 +306,7 @@ API REST en .NET 10 con Clean Architecture, PostgreSQL y Dapper.
 
 El `CLAUDE.md` de este repositorio (`dev-notes`) define:
 - Los nombres estándar de ejemplo que aparecen en todo el código de todos los docs
-- La estructura fija de cada documento (problema → ❌ → ✓ → código → relación → cuándo usar → glosario)
+- La estructura fija de cada documento (problema, ❌, ✓, código, relación, cuándo usar, glosario)
 - Las restricciones de commits (sin Co-Authored-By, no commitear CLAUDE.md/TODO.md/Lib/Scripts)
 - El estado del repo con archivos pendientes de commit
 

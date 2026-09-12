@@ -70,7 +70,7 @@ Imagen: back-template:latest
 
 ## Volúmenes
 
-Los contenedores son efímeros — cuando se eliminan, sus datos desaparecen. Los **volúmenes** persisten datos fuera del contenedor:
+Los contenedores son efímeros: cuando se eliminan, sus datos desaparecen. Los **volúmenes** persisten datos fuera del contenedor:
 
 ```yaml
 # Docker Compose — volumen nombrado

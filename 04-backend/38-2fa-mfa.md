@@ -455,9 +455,9 @@ public sealed class AesEncryptionService : IEncryptionService
 
 Para agregar 2FA al back-template:
 1. `Authentication.Domain/Entities/UserMfaConfig.cs`, `MfaRecoveryCode.cs`, `MfaPendingToken.cs`
-2. `Shared/Database/EntityTypeConfigurations/` — 3 configuraciones EF Core
+2. `Shared/Database/EntityTypeConfigurations/`: 3 configuraciones EF Core
 3. `Authentication.Application/UseCases/SetupMfa/`, `ConfirmMfaSetup/`, `VerifyMfa/`
-4. `LoginHandler` — modificar para retornar `LoginMfaRequiredSuccess` cuando hay 2FA activo
+4. `LoginHandler`: modificar para retornar `LoginMfaRequiredSuccess` cuando hay 2FA activo
 5. `AesEncryptionService` + `IEncryptionService` en `Common/`
 
 Ver `04-backend/21-jwt.md` para el flujo de tokens.

@@ -388,7 +388,7 @@ public sealed class InsertExampleUserValidatorTests
 ---
 
 ## Parametrización y teorías
-> Fuente: *Tools and Skills for .NET 8* — Ch.4 Unit Testing Patterns
+> Fuente: *Tools and Skills for .NET 8*: Ch.4 Unit Testing Patterns
 
 xUnit ofrece `[Theory]` + `[InlineData]` para evitar duplicar tests con variaciones de datos.
 

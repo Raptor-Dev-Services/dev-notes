@@ -305,11 +305,11 @@ app.UseProblemDetailsMiddleware();  // de Common.Web
 ```
 
 El middleware de `Common.Web` captura:
-- `ArgumentException` → 400 Bad Request
-- `UnauthorizedAccessException` → 401 Unauthorized
-- `KeyNotFoundException` → 404 Not Found
-- `InvalidOperationException` → 422 Unprocessable Entity
-- Cualquier otra `Exception` → 500 Internal Server Error
+- `ArgumentException`: 400 Bad Request
+- `UnauthorizedAccessException`: 401 Unauthorized
+- `KeyNotFoundException`: 404 Not Found
+- `InvalidOperationException`: 422 Unprocessable Entity
+- Cualquier otra `Exception`: 500 Internal Server Error
 
 ---
 

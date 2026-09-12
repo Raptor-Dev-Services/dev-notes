@@ -314,7 +314,7 @@ Menos formal que Specification pero adecuado cuando la lógica es simple y en me
 ---
 
 ## Specification para filtros dinámicos de UI
-> Fuente: *Enterprise Architecture Patterns with .NET* — Ch.5 Query Object; *Patterns of Enterprise Application Architecture* (Fowler) — Query Object
+> Fuente: *Enterprise Architecture Patterns with .NET*: Ch.5 Query Object; *Patterns of Enterprise Application Architecture* (Fowler): Query Object
 
 Un caso muy común es construir queries con filtros opcionales que el usuario activa desde la UI. La Specification es ideal para esto: cada filtro activo se agrega como una spec al pipeline.
 

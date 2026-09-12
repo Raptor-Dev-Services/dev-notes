@@ -5,7 +5,7 @@ Refactoring es el proceso de reestructurar código existente sin cambiar su comp
 ---
 
 ## Qué es y qué no es refactoring
-> Fuente: *Refactoring with C#* — Ch.1 What Is Refactoring?
+> Fuente: *Refactoring with C#*: Ch.1 What Is Refactoring?
 
 ```
 Refactoring:
@@ -27,7 +27,7 @@ No es refactoring:
 "Deja el código más limpio de como lo encontraste." No hace falta un sprint de refactoring. Mejorar un poco cada vez que se toca el código.
 
 ### Deuda técnica y código legado
-> Fuente: *Refactoring with C#* — Ch.1 What Is Refactoring?
+> Fuente: *Refactoring with C#*: Ch.1 What Is Refactoring?
 
 **Deuda técnica** es el costo adicional de trabajo futuro causado por tomar atajos en el presente. Acumula intereses: cada feature nueva cuesta más cuando el código subyacente es difícil de entender o modificar.
 
@@ -46,7 +46,7 @@ Señales de deuda acumulada:
 - Leer el código no revela claramente su intención
 
 ### Deuda técnica como riesgo — registro de riesgos
-> Fuente: *Refactoring with C#* — Ch.15 Managing Technical Debt
+> Fuente: *Refactoring with C#*: Ch.15 Managing Technical Debt
 
 La deuda técnica no pagada es riesgo de proyecto. Para priorizarla de forma objetiva, tratarla como riesgos con probabilidad e impacto medibles.
 
@@ -330,7 +330,7 @@ public sealed class MexicanAddress : Address
 ```
 
 ### Introduce Local Variable — eliminar expresiones repetidas
-> Fuente: *Refactoring with C#* — Ch.2 Simplifying Methods
+> Fuente: *Refactoring with C#*: Ch.2 Simplifying Methods
 
 ```csharp
 // Antes — la misma expresión calculada múltiples veces
@@ -350,7 +350,7 @@ public decimal CalculateFinalPrice(Order order)
 ```
 
 ### Introduce Constant — eliminar números mágicos
-> Fuente: *Refactoring with C#* — Ch.2 Simplifying Methods
+> Fuente: *Refactoring with C#*: Ch.2 Simplifying Methods
 
 ```csharp
 // Antes — ¿qué significan estos números?
@@ -377,7 +377,7 @@ public string GetExampleUserTier(ExampleUser user) => user.TotalPurchases switch
 ```
 
 ### Invert If — retorno temprano para eliminar anidamiento
-> Fuente: *Refactoring with C#* — Ch.3 Conditional Logic
+> Fuente: *Refactoring with C#*: Ch.3 Conditional Logic
 
 ```csharp
 // Antes — lógica principal anidada dentro de múltiples if
@@ -417,7 +417,7 @@ public async Task<ProcessResult> ProcessOrderAsync(Guid userId, Guid orderId, Ca
 ```
 
 ### Drop Else After Return — eliminar else redundante
-> Fuente: *Refactoring with C#* — Ch.3 Conditional Logic
+> Fuente: *Refactoring with C#*: Ch.3 Conditional Logic
 
 ```csharp
 // Antes — else después de return no aporta información; solo agrega anidamiento
@@ -481,7 +481,7 @@ git add -A && git commit -m "refactor(users): use Email value object in InsertHa
 ---
 
 ## Refactoring a gran escala — Strangler Fig pattern
-> Fuente: *Refactoring with C#* — Ch.17 Refactoring Large Applications
+> Fuente: *Refactoring with C#*: Ch.17 Refactoring Large Applications
 
 Cuando el sistema legado es demasiado grande para refactorizar in-situ, el patrón Strangler Fig permite reemplazarlo incrementalmente sin detener el desarrollo ni hacer una reescritura total.
 
@@ -609,7 +609,7 @@ public sealed class GetReportHandler
 ```
 
 ### Estrategias ágiles de refactoring
-> Fuente: *Refactoring with C#* — Ch.17 Agile Refactoring Strategies
+> Fuente: *Refactoring with C#*: Ch.17 Agile Refactoring Strategies
 
 ```
 Opción 1 — Work items dedicados

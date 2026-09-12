@@ -4,7 +4,7 @@
 
 **Intención:** Proporciona una interfaz para crear familias de objetos relacionados o dependientes sin especificar sus clases concretas.
 
-> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.3 Creational Patterns: Abstract Factory
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets): Ch.3 Creational Patterns: Abstract Factory
 
 ---
 

@@ -33,7 +33,7 @@ ExampleUser? userONull = null;     // puede ser null
 
 ### Tipos de valor (int, bool, DateTime, struct, Guid)
 
-Por defecto NO pueden ser null (son tipos de valor — viven en el stack):
+Por defecto NO pueden ser null (son tipos de valor y viven en el stack):
 
 ```csharp
 int numero = 0;    // nunca es null — 0 es un valor válido de int

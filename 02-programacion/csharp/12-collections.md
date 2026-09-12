@@ -283,7 +283,7 @@ var enAmbos  = a.Intersect(b); // elementos en A y en B
 
 ## LINQ lazy vs materializado
 
-LINQ es **lazy (diferido)** — la consulta no se ejecuta hasta que necesitas los resultados:
+LINQ es **lazy (diferido)**. La consulta no se ejecuta hasta que necesitas los resultados:
 
 ```csharp
 // Esto NO ejecuta nada todavía:

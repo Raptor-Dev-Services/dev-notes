@@ -41,19 +41,19 @@ Tests automatizados en .NET: unitarios, integración, base de datos real y TDD.
 ```
 
 **Distribución recomendada:**
-- 70% unit tests (Handlers, Validators, Presenters) — rápidos, baratos de multiplicar
-- 20% integration tests (endpoints HTTP + DB) — verifican el DI y el flujo completo
+- 70% unit tests (Handlers, Validators, Presenters): rápidos, baratos de multiplicar
+- 20% integration tests (endpoints HTTP + DB): verifican el DI y el flujo completo
 - 10% E2E tests (Playwright, si hay frontend)
 
 ---
 
 ## Orden de lectura sugerido
 
-1. [xUnit](01-xunit.md) — estructura base y assertions
-2. [Unit Tests](02-unit-tests.md) — la mayoría de los tests del proyecto
-3. [TDD](05-tdd.md) — cómo integrar los tests en el flujo de desarrollo
-4. [TestContainers](04-testcontainers.md) — cuando se necesita DB real
-5. [Integration Tests](03-integration-tests.md) — tests de la API completa
+1. [xUnit](01-xunit.md): estructura base y assertions
+2. [Unit Tests](02-unit-tests.md): la mayoría de los tests del proyecto
+3. [TDD](05-tdd.md): cómo integrar los tests en el flujo de desarrollo
+4. [TestContainers](04-testcontainers.md): cuando se necesita DB real
+5. [Integration Tests](03-integration-tests.md): tests de la API completa
 
 
 ---

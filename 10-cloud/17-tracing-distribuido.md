@@ -6,7 +6,7 @@
 
 ## El problema que resuelve
 
-En una arquitectura con múltiples servicios, una sola request del usuario puede pasar por: API Gateway → Auth Service → Orders API → Inventory API → Notification Service. Si algo falla o tarda, los logs de cada servicio son islas de información. Sin un trace distribuido, el diagnóstico es: comparar timestamps a ojo en cinco dashboards distintos.
+En una arquitectura con múltiples servicios, una sola request del usuario puede pasar por: API Gateway, Auth Service, Orders API, Inventory API y Notification Service. Si algo falla o tarda, los logs de cada servicio son islas de información. Sin un trace distribuido, el diagnóstico es: comparar timestamps a ojo en cinco dashboards distintos.
 
 Un trace distribuido une todos esos fragmentos bajo un único ID (`TraceId`) que viaja con la request. Se puede ver la cadena completa, qué servicio tardó más, dónde se generó el error, y correlacionarlo con los logs de cada paso.
 

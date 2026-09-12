@@ -2,7 +2,7 @@
 
 SQL (Structured Query Language) es el lenguaje estándar para consultar y manipular bases de datos relacionales. Dominar SQL es prerequisito para usar correctamente Dapper, EF Core y para diagnosticar problemas de rendimiento en producción.
 
-> Fuente: *Learning SQL* — Alan Beaulieu (O'Reilly); Documentación oficial PostgreSQL 16
+> Fuente: *Learning SQL* (Alan Beaulieu, O'Reilly); Documentación oficial PostgreSQL 16
 
 ---
 

@@ -2,7 +2,7 @@
 
 Los stakeholders son todas las personas o grupos que tienen interés en el resultado de un proyecto de software, desde los usuarios finales hasta el equipo de operaciones. Gestionarlos bien determina si un proyecto técnicamente exitoso se percibe como un fracaso, o viceversa.
 
-> Fuente: *Soft Skills* — Sonmez, *The Manager's Path* — Fournier, *Staff Engineer* — Larson
+> Fuente: *Soft Skills* (Sonmez), *The Manager's Path* (Fournier), *Staff Engineer* (Larson)
 
 ---
 
@@ -119,7 +119,7 @@ ajustar la fecha a [nueva fecha]. ¿Cuál prefieres?"
 ---
 
 ## Clasificación de stakeholders por dependencia
-> Fuente: *The Software Engineer's Guidebook* (Orosz) — Ch.18 Stakeholder Management
+> Fuente: *The Software Engineer's Guidebook* (Orosz): Ch.18 Stakeholder Management
 
 Además del cuadrante poder/interés, clasificar stakeholders por dirección de dependencia:
 

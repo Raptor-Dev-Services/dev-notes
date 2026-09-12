@@ -1,6 +1,6 @@
 # 15 — API Versioning, OpenAPI y Documentación
 
-> Fuente: *Web API Development with ASP.NET Core 8* (Xiaodi Yan) — Ch.3 Working with OpenAPI and Swagger
+> Fuente: *Web API Development with ASP.NET Core 8* (Xiaodi Yan): Ch.3 Working with OpenAPI and Swagger
 
 ---
 

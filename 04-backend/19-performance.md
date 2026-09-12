@@ -1,11 +1,11 @@
 # 19 — Performance en .NET: Identificar y resolver cuellos de botella
 
-La optimización prematura es el origen de todos los males (Knuth). El proceso correcto es: medir → identificar el cuello de botella → optimizar ese punto específico → medir de nuevo.
+La optimización prematura es el origen de todos los males (Knuth). El proceso correcto es: medir, identificar el cuello de botella, optimizar ese punto específico y medir de nuevo.
 
 ---
 
 ## El proceso de optimización
-> Fuente: *High-Performance Programming in C# and .NET* — Ch.1 Performance Methodology
+> Fuente: *High-Performance Programming in C# and .NET*: Ch.1 Performance Methodology
 
 ```
 1. Establecer una baseline (¿qué tan lento está ahora?)
@@ -57,7 +57,7 @@ public class ExampleUserSerializationBenchmarks
 
 ## Strings y allocations
 
-Las strings en .NET son inmutables — cada concatenación crea un nuevo objeto en el heap.
+Las strings en .NET son inmutables: cada concatenación crea un nuevo objeto en el heap.
 
 ```csharp
 // ❌ Concatenación en loop — O(n²) allocations
@@ -252,7 +252,7 @@ public sealed class ExampleUserCsvExporter
 ---
 
 ## LINQ — patrones de rendimiento
-> Fuente: *High-Performance Programming in C# and .NET* — Ch.7 LINQ Performance
+> Fuente: *High-Performance Programming in C# and .NET*: Ch.7 LINQ Performance
 
 ### Acceso al último elemento
 

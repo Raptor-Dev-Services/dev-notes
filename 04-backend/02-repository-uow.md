@@ -307,7 +307,7 @@ public static IServiceCollection AddInfrastructureServices(
 ---
 
 ## Repository con EF Core
-> Fuente: *Entity Framework Core in Action* (Smith) — Ch.2 Querying; Ch.11 Repository Pattern
+> Fuente: *Entity Framework Core in Action* (Smith): Ch.2 Querying; Ch.11 Repository Pattern
 
 Con EF Core el Repository encapsula el `DbContext` y usa LINQ en lugar de SQL crudo. Esto cambia cómo se construyen los queries pero no el contrato de la interfaz.
 

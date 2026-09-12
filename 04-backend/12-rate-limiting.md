@@ -2,8 +2,8 @@
 
 Rate limiting protege la API contra abuso, ataques DDoS y tenants que saturan recursos. Desde .NET 7 hay middleware nativo en `Microsoft.AspNetCore.RateLimiting`.
 
-> Fuente: *Web API Development with ASP.NET Core 8* (Xiaodi Yan) — Ch.11 Rate Limiting  
-> Fuente: *ASP.NET Core 9 Essentials* (Packt) — Ch.8 Enhancing Applications with Middleware
+> Fuente: *Web API Development with ASP.NET Core 8* (Xiaodi Yan): Ch.11 Rate Limiting  
+> Fuente: *ASP.NET Core 9 Essentials* (Packt): Ch.8 Enhancing Applications with Middleware
 
 ---
 

@@ -4,7 +4,7 @@
 
 **Intención:** Garantizar que una clase tenga una única instancia y proporcionar un punto de acceso global a ella.
 
-> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.3 Creational Patterns: Singleton
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets): Ch.3 Creational Patterns: Singleton
 
 ---
 
@@ -201,7 +201,7 @@ public class MyService  // registrado como Singleton
 // Resultado: un repositorio compartido por TODAS las requests. Comportamiento indefinido.
 ```
 
-**Solución:** Ver documento [09 — DI Lifetimes](../../csharp/09-lifetimes.md).
+**Solución:** Ver documento [09 · DI Lifetimes](../../csharp/09-lifetimes.md).
 
 ---
 

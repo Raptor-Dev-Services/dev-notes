@@ -4,7 +4,7 @@
 
 **Intención:** Permite a un objeto alterar su comportamiento cuando su estado interno cambia. Parece como si el objeto cambiara de clase.
 
-> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.5 Behavioral Patterns: State
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets): Ch.5 Behavioral Patterns: State
 
 ---
 

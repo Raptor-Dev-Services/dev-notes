@@ -2,7 +2,7 @@
 
 Una API bien diseñada comunica los errores de forma que el cliente pueda entenderlos y reaccionar correctamente.
 
-> Fuente: *Web API Development with ASP.NET Core 8* (Xiaodi Yan) — Ch.9 Error Handling and Problem Details
+> Fuente: *Web API Development with ASP.NET Core 8* (Xiaodi Yan): Ch.9 Error Handling and Problem Details
 
 ---
 
@@ -29,7 +29,7 @@ Una API bien diseñada comunica los errores de forma que el cliente pueda entend
 
 ### 4xx — el cliente debe cambiar algo
 
-El cliente envió algo incorrecto. Reintentar la misma request no ayuda — debe corregir primero.
+El cliente envió algo incorrecto. Reintentar la misma request no ayuda: debe corregir primero.
 
 ```
 400 Bad Request

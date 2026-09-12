@@ -4,7 +4,7 @@
 
 **Intención:** Define el esqueleto de un algoritmo en la clase base, pero deja que las subclases sobrescriban pasos específicos del algoritmo sin cambiar su estructura general.
 
-> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.5 Behavioral Patterns: Template Method
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets): Ch.5 Behavioral Patterns: Template Method
 
 ---
 
@@ -463,6 +463,6 @@ public sealed class ExampleUsersController : BaseApiController
 
 ---
 
-> Fuente adicional: *Architecting ASP.NET Core Applications, 3a ed.* (Carl-Hugo Marcotte) — Ch.12 Behavioral Patterns
+> Fuente adicional: *Architecting ASP.NET Core Applications, 3a ed.* (Carl-Hugo Marcotte): Ch.12 Behavioral Patterns
 
 *Rogelio Arriaga Gonzalez*

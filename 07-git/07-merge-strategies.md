@@ -36,7 +36,7 @@ El historial queda:
 Ventajas:
 - se puede revertir toda la feature con `git revert -m 1 <merge-commit-sha>`
 - el historial muestra exactamente qué commits pertenecen a cada feature
-- trazabilidad completa feature → commits → código
+- trazabilidad completa de la feature a sus commits y al código
 
 Configurar como default:
 

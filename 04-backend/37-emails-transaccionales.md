@@ -374,7 +374,7 @@ Resend__ApiKey=re_live_xxxx
 ## Checklist
 
 - [ ] Todos los tokens de email (invitación, verificación, reset) son GUIDs de un solo uso con expiración
-- [ ] `ForgotPassword` siempre retorna éxito — no revelar si el email existe
+- [ ] `ForgotPassword` siempre retorna éxito, para no revelar si el email existe
 - [ ] Emails branded con nombre del tenant en el From y logo en el HTML
 - [ ] HTML compatible con Outlook (tablas, inline styles)
 - [ ] Retry automático en fallo del proveedor (3 intentos)

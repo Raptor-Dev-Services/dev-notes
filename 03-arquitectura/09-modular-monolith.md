@@ -8,7 +8,7 @@ Un Monolito Modular combina la simplicidad operacional de un monolito (un solo p
 
 Los microservicios resuelven el problema de escalar equipos y despliegues de forma independiente. Pero tienen un costo alto: red, serialización, distributed tracing, eventual consistency, operaciones complejas.
 
-La mayoría de sistemas SaaS con un solo equipo de desarrollo no necesitan microservicios — necesitan **modularidad sin la complejidad operacional**. El Monolito Modular es ese punto medio.
+La mayoría de sistemas SaaS con un solo equipo de desarrollo no necesitan microservicios: necesitan **modularidad sin la complejidad operacional**. El Monolito Modular es ese punto medio.
 
 ```
 Microservicios          Monolito Modular         Monolito Big Ball of Mud
@@ -23,7 +23,7 @@ Microservicios          Monolito Modular         Monolito Big Ball of Mud
 ---
 
 ## Ventajas del Monolito Modular
-> Fuente: *Architecting ASP.NET Core Applications* (Marcotte) — Ch.20 Modular Monolith
+> Fuente: *Architecting ASP.NET Core Applications* (Marcotte): Ch.20 Modular Monolith
 
 | Ventaja | Descripción |
 |---------|-------------|
@@ -64,7 +64,7 @@ Las fronteras mal definidas son el error más costoso. Si dos módulos están co
 
 ## Estructura de un módulo
 
-Cada módulo es una unidad funcional independiente con **6 proyectos `.csproj`**. Las fronteras son reales en tiempo de compilación — si violas una dependencia, el build falla.
+Cada módulo es una unidad funcional independiente con **6 proyectos `.csproj`**. Las fronteras son reales en tiempo de compilación: si violas una dependencia, el build falla.
 
 ```
 Modules/{Modulo}/
@@ -114,7 +114,7 @@ Si borras el folder de implementación de un módulo (dejando solo su `.Contract
 # Si Authentication.Application falla → tiene una dependencia oculta → monolito disfrazado ✗
 ```
 
-`Host.Api` sí va a fallar (es el composition root — le falta registrar los servicios del módulo borrado). Eso es correcto y esperado. `Host.Api` no es un módulo — es el orquestador.
+`Host.Api` sí va a fallar (es el composition root y le falta registrar los servicios del módulo borrado). Eso es correcto y esperado. `Host.Api` no es un módulo: es el orquestador.
 
 ---
 
@@ -174,7 +174,7 @@ El mediator (`Common.Messaging.IMediator`) ejecuta todos los handlers del evento
 ---
 
 ## Convenciones compartidas entre módulos
-> Fuente: *Architecting ASP.NET Core Applications* (Marcotte) — Ch.20 Modular Monolith
+> Fuente: *Architecting ASP.NET Core Applications* (Marcotte): Ch.20 Modular Monolith
 
 Los módulos comparten cuatro elementos de infraestructura. Usar el nombre del módulo como discriminador evita conflictos:
 
@@ -219,7 +219,7 @@ public static IEndpointRouteBuilder MapBasketModule(this IEndpointRouteBuilder e
 }
 ```
 
-Patrón: `{NombreMódulo}:{Clave}` — evita colisiones entre módulos.
+Patrón: `{NombreMódulo}:{Clave}`. Evita colisiones entre módulos.
 
 ### Esquema de base de datos por módulo
 
@@ -241,7 +241,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 }
 ```
 
-Resultado: aunque ambos módulos tengan una tabla `Products`, son `products.products` y `baskets.products` — sin conflicto. Cada módulo puede aplicar permisos SQL distintos por schema.
+Resultado: aunque ambos módulos tengan una tabla `Products`, son `products.products` y `baskets.products`, sin conflicto. Cada módulo puede aplicar permisos SQL distintos por schema.
 
 ---
 
@@ -256,7 +256,7 @@ Shared/
 └── Authentication/   → Identidad, JWT (módulo transversal — todos los módulos necesitan auth)
 ```
 
-`Authentication` vive en `Shared/` porque si estuviera en `Modules/`, todos los demás módulos tendrían que referenciar `Modules/Authentication.Contracts` — haciendo de `Authentication` un "módulo dios". Al estar en `Shared/`, queda claro que es infraestructura compartida.
+`Authentication` vive en `Shared/` porque si estuviera en `Modules/`, todos los demás módulos tendrían que referenciar `Modules/Authentication.Contracts`, haciendo de `Authentication` un "módulo dios". Al estar en `Shared/`, queda claro que es infraestructura compartida.
 
 ---
 
@@ -275,7 +275,7 @@ public sealed class AppDbContext : DbContext
 }
 ```
 
-Las `EntityTypeConfiguration<T>` viven en `Shared/Database/EntityTypeConfigurations/` — no en el módulo propietario, porque `AppDbContext` las descubre por assembly.
+Las `EntityTypeConfiguration<T>` viven en `Shared/Database/EntityTypeConfigurations/`, no en el módulo propietario, porque `AppDbContext` las descubre por assembly.
 
 **Consecuencia:** si un módulo Users quiere leer datos de Authentication (por ejemplo, el email), debe hacerlo vía Integration Event o contrato, no accediendo directamente a `_db.Credentials`. Mantiene las fronteras lógicas aunque compartan DB física.
 
@@ -303,21 +303,21 @@ builder.Services.AddUsersWebApiServices();
 // ...
 ```
 
-`Host.Api` no tiene lógica de negocio — solo composición. Si `Host.Api` falla al borrar un módulo, el fix es quitar 3 líneas de `Program.cs`.
+`Host.Api` no tiene lógica de negocio: solo composición. Si `Host.Api` falla al borrar un módulo, el fix es quitar 3 líneas de `Program.cs`.
 
 ---
 
 ## Checklist para un módulo nuevo
 
 - [ ] Crear los 6 proyectos `.csproj` con las dependencias correctas
-- [ ] `.Contracts` solo referencia `Common` — sin dependencias de implementación
+- [ ] `.Contracts` solo referencia `Common`, sin dependencias de implementación
 - [ ] `.Infrastructure` **no** referencia `.Application`
 - [ ] `.Application` **no** referencia `.Infrastructure`
 - [ ] Crear `{Entidad}Configuration.cs` en `Shared/Database/EntityTypeConfigurations/`
 - [ ] Agregar `DbSet<T>` en `AppDbContext`
 - [ ] Crear tests de arquitectura (7 reglas de dependencia) en `{Modulo}.Tests/Architecture/`
 - [ ] Registrar en `Host.Api/Program.cs` y `Host.Api.csproj`
-- [ ] `dotnet build Host.Api/Host.Api.csproj` — 0 errores
+- [ ] `dotnet build Host.Api/Host.Api.csproj`: 0 errores
 
 ---
 
@@ -335,13 +335,13 @@ builder.Services.AddUsersWebApiServices();
 - El módulo tiene requisitos de disponibilidad diferentes (SLA distinto)
 
 **No usar cuando:**
-- El sistema es simple y tiene un solo subdominio — un monolito simple funciona mejor
-- El equipo aún no entiende bien las fronteras del dominio — las fronteras incorrectas son peores que ninguna frontera
+- El sistema es simple y tiene un solo subdominio: un monolito simple funciona mejor
+- El equipo aún no entiende bien las fronteras del dominio: las fronteras incorrectas son peores que ninguna frontera
 
 ---
 
 ## Retos y problemas comunes
-> Fuente: *Architecting ASP.NET Core Applications* (Marcotte) — Ch.20 Modular Monolith
+> Fuente: *Architecting ASP.NET Core Applications* (Marcotte): Ch.20 Modular Monolith
 
 | Problema | Señal de alerta | Mitigación |
 |----------|----------------|------------|
@@ -354,7 +354,7 @@ builder.Services.AddUsersWebApiServices();
 ---
 
 ## Transición a microservicios
-> Fuente: *Architecting ASP.NET Core Applications* (Marcotte) — Ch.20 Modular Monolith
+> Fuente: *Architecting ASP.NET Core Applications* (Marcotte): Ch.20 Modular Monolith
 
 No hay obligación de migrar. Un monolito bien construido puede ir muy lejos. Si llega el momento:
 
@@ -367,9 +367,9 @@ Estrategia:
 5. Una vez estable, eliminar el módulo del monolito
 ```
 
-**Patrón de código compartido:** si varios microservicios necesitan la misma configuración (registros de DI, serialización, logging), crear un assembly compartido. Cuidado: al actualizar ese assembly, se actualizan todos los microservicios — pierden independencia de deploy. En mono-repo esto es referencia directa a proyecto; en multi-repo requiere paquete NuGet versionado.
+**Patrón de código compartido:** si varios microservicios necesitan la misma configuración (registros de DI, serialización, logging), crear un assembly compartido. Cuidado: al actualizar ese assembly, se actualizan todos los microservicios, que pierden independencia de deploy. En mono-repo esto es referencia directa a proyecto; en multi-repo requiere paquete NuGet versionado.
 
-La arquitectura event-driven del Modular Monolith ya define los contratos de integración entre módulos. Al extraer un módulo, esos contratos se convierten en los contratos entre microservicios — el trabajo grueso ya está hecho.
+La arquitectura event-driven del Modular Monolith ya define los contratos de integración entre módulos. Al extraer un módulo, esos contratos se convierten en los contratos entre microservicios: el trabajo grueso ya está hecho.
 
 ---
 
@@ -379,7 +379,7 @@ El back-template implementa este patrón con:
 - `Modules/Tenancy/`, `Modules/Users/`, `Shared/Authentication/`
 - `Common.Messaging.IMediator` como mecanismo de integration events y mediador de use cases
 - `AppDbContext` compartido con global query filters de multi-tenancy
-- Tests de arquitectura con `NetArchTest.Rules` — verifican las fronteras en CI
+- Tests de arquitectura con `NetArchTest.Rules`: verifican las fronteras en CI
 
 Ver `CLAUDE.md` del back-template para las reglas de implementación específicas.
 

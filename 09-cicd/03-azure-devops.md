@@ -149,9 +149,9 @@ stages:
 
 Los environments de Azure DevOps permiten requerir aprobación manual antes de que un stage ejecute:
 
-1. Ir a **Pipelines → Environments**
+1. Ir a **Pipelines > Environments**
 2. Abrir el environment `production`
-3. **Approvals and checks → Add check → Approvals**
+3. **Approvals and checks > Add check > Approvals**
 4. Agregar los aprobadores y configurar timeout
 
 El pipeline se pausa en `DeployProd` hasta que un aprobador confirme desde Azure DevOps.
@@ -164,9 +164,9 @@ variables:
   - group: prod-secrets    # contiene CONNECTIONSTRING, JWT_SECRET, etc.
 ```
 
-Los variable groups pueden estar vinculados a Azure Key Vault — los secretos se sincronizan automáticamente y no se almacenan en Azure DevOps.
+Los variable groups pueden estar vinculados a Azure Key Vault: los secretos se sincronizan automáticamente y no se almacenan en Azure DevOps.
 
-Configuración: **Pipelines → Library → Variable Groups → Link secrets from Azure Key Vault**.
+Configuración: **Pipelines > Library > Variable Groups > Link secrets from Azure Key Vault**.
 
 ## Pipeline completo CI + CD en un archivo
 
@@ -234,7 +234,7 @@ stages:
 | `acr-service-connection` | Docker Registry | push a Azure Container Registry |
 | `azure-service-connection` | Azure Resource Manager | deploy a App Service |
 
-Configurar en: **Project Settings → Service connections**.
+Configurar en: **Project Settings > Service connections**.
 
 ## Relación con back-template
 

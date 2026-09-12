@@ -253,7 +253,7 @@ aws macie2 create-classification-job \
 
 ### GitHub Secret Scanning
 
-GitHub escanea automáticamente los repositorios en busca de patrones de secretos conocidos (AWS keys, GitHub tokens, Stripe keys, etc.). Habilitar en: Settings → Security → Secret scanning.
+GitHub escanea automáticamente los repositorios en busca de patrones de secretos conocidos (AWS keys, GitHub tokens, Stripe keys, etc.). Habilitar en: Settings > Security > Secret scanning.
 
 ```bash
 # Si GitHub detecta un secreto expuesto:

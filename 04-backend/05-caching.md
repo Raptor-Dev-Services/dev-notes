@@ -267,7 +267,7 @@ El proyecto no tiene caché configurado por defecto. Para agregarlo:
 ---
 
 ## Caché por pipeline behavior (MediatR)
-> Fuente: *Apps and Services with .NET 8* (Price) — Ch.8 Caching Strategies
+> Fuente: *Apps and Services with .NET 8* (Price): Ch.8 Caching Strategies
 
 En lugar de poner lógica de caché en cada Handler, se centraliza en un Pipeline Behavior de MediatR. Así los Handlers no saben nada del caché.
 
@@ -370,7 +370,7 @@ public sealed class UpdateExampleUserHandler
 
 ## Stampede de caché y cómo evitarlo
 
-El **cache stampede** ocurre cuando muchos requests llegan al mismo tiempo mientras el caché expiró — todos van a la DB al mismo tiempo.
+El **cache stampede** ocurre cuando muchos requests llegan al mismo tiempo mientras el caché expiró: todos van a la DB al mismo tiempo.
 
 ```
 Problema:

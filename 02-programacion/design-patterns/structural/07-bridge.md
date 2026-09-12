@@ -4,7 +4,7 @@
 
 **Intención:** Separa una clase grande o un conjunto de clases relacionadas en dos jerarquías separadas: abstracción e implementación. Ambas pueden desarrollarse independientemente.
 
-> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.4 Structural Patterns: Bridge
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets): Ch.4 Structural Patterns: Bridge
 
 ---
 

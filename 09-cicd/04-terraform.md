@@ -604,7 +604,7 @@ terraform init -backend-config=../../../backend.hcl
 
 Los workspaces de Terraform parecen una solución obvia para staging/producción, pero tienen problemas:
 - Todos los workspaces comparten el mismo backend (mismo bucket S3, mismas credenciales IAM)
-- No son visibles en el código — es fácil ejecutar `terraform destroy` en el workspace equivocado
+- No son visibles en el código: es fácil ejecutar `terraform destroy` en el workspace equivocado
 - No proveen verdadero aislamiento de permisos entre ambientes
 
 ### Estructura recomendada: carpetas separadas por ambiente

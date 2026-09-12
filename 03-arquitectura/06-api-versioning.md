@@ -2,7 +2,7 @@
 
 Estrategia para evolucionar una API pública sin romper los clientes existentes.
 
-> Fuente: *Web API Development with ASP.NET Core 8* (Xiaodi Yan) — Ch.12 API Versioning Strategies
+> Fuente: *Web API Development with ASP.NET Core 8* (Xiaodi Yan): Ch.12 API Versioning Strategies
 
 ---
 

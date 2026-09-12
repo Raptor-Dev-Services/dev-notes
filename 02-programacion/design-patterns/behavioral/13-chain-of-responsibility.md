@@ -4,7 +4,7 @@
 
 **Intención:** Permite pasar peticiones a lo largo de una cadena de handlers. Al recibir una petición, cada handler decide procesarla o pasarla al siguiente handler de la cadena.
 
-> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.5 Behavioral Patterns: Chain of Responsibility
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets): Ch.5 Behavioral Patterns: Chain of Responsibility
 
 ---
 
@@ -481,6 +481,6 @@ app.MapControllers();        // handler final: ejecuta el controller
 
 ---
 
-> Fuente adicional: *Architecting ASP.NET Core Applications, 3a ed.* (Carl-Hugo Marcotte) — Ch.12 Behavioral Patterns
+> Fuente adicional: *Architecting ASP.NET Core Applications, 3a ed.* (Carl-Hugo Marcotte): Ch.12 Behavioral Patterns
 
 *Rogelio Arriaga Gonzalez*

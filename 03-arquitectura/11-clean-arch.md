@@ -2,7 +2,7 @@
 
 El modelo clásico de tres capas (Presentación, Dominio, Datos) genera acoplamiento directo entre capas: el Dominio depende de la capa de Datos, lo que impide testear la lógica de negocio sin una base de datos real y obliga a reescribir el Dominio cada vez que cambia el origen de datos. Clean Architecture resuelve esto invirtiendo el flujo de dependencias: el núcleo no conoce a nadie, y todas las capas externas lo conocen a él.
 
-> Fuente: *Architecting ASP.NET Core Applications* (Marcotte, 3rd Ed) — Ch.14 Layering and Clean Architecture
+> Fuente: *Architecting ASP.NET Core Applications* (Marcotte, 3rd Ed): Ch.14 Layering and Clean Architecture
 
 ---
 

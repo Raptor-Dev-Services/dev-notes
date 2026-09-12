@@ -2,7 +2,7 @@
 
 Tareas que corren fuera del request HTTP: envío de emails, generación de reportes, sincronizaciones, procesamiento batch. Elegir la herramienta correcta depende de si los jobs necesitan persistencia y visibilidad.
 
-> Fuente: *Apps and Services with .NET 8* (Mark J. Price) — Ch.12 Scheduling Jobs with Background Services
+> Fuente: *Apps and Services with .NET 8* (Mark J. Price): Ch.12 Scheduling Jobs with Background Services
 
 ---
 
@@ -55,7 +55,7 @@ public class EmailSenderService : BackgroundService
 builder.Services.AddHostedService<EmailSenderService>();
 ```
 
-**Limitaciones:** sin persistencia — si el proceso cae, el job se pierde. Sin UI de monitoreo.
+**Limitaciones:** sin persistencia: si el proceso cae, el job se pierde. Sin UI de monitoreo.
 
 ---
 
@@ -101,7 +101,7 @@ BackgroundJob.ContinueJobWith<IEmailService>(firstJobId, svc => svc.SendReportAs
 
 ## Regla crítica para jobs en SaaS multi-tenant
 
-Cada job **debe** recibir el `TenantId` como parámetro explícito. Los jobs corren en otro thread/proceso — el contexto HTTP del tenant original ya no existe.
+Cada job **debe** recibir el `TenantId` como parámetro explícito. Los jobs corren en otro thread/proceso: el contexto HTTP del tenant original ya no existe.
 
 ```csharp
 // ❌ El job no sabe a qué tenant pertenece

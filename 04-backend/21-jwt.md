@@ -5,7 +5,7 @@ JWT es el estándar para transmitir información de forma segura entre partes co
 ---
 
 ## Estructura de un JWT
-> Fuente: *JWT Handbook* — Ch.2 Practical Applications of JWT
+> Fuente: *JWT Handbook*: Ch.2 Practical Applications of JWT
 
 ```
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9     ← Header (base64url)
@@ -204,7 +204,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 ## Revocación de tokens
 
-JWT es stateless por diseño — una vez emitido no se puede invalidar sin un store adicional.
+JWT es stateless por diseño: una vez emitido no se puede invalidar sin un store adicional.
 
 ```csharp
 // Estrategia 1: Token Blacklist (blocklist) en Redis
@@ -297,9 +297,9 @@ var ecCreds      = new SigningCredentials(ecPrivateKey, SecurityAlgorithms.Ecdsa
 ---
 
 ## JWE — JSON Web Encryption (tokens cifrados)
-> Fuente: *JWT Handbook* — Ch.5 JSON Web Encryption
+> Fuente: *JWT Handbook*: Ch.5 JSON Web Encryption
 
-Por defecto el payload de un JWT está codificado en base64url — **no cifrado**. Cualquiera que intercepte el token puede leer su contenido. JWE cifra el payload para que sea ilegible sin la clave de descifrado.
+Por defecto el payload de un JWT está codificado en base64url, **no cifrado**. Cualquiera que intercepte el token puede leer su contenido. JWE cifra el payload para que sea ilegible sin la clave de descifrado.
 
 ```
 JWT (JWS):  header.payload.signature
@@ -334,7 +334,7 @@ Usar JWE cuando el payload contiene datos sensibles (PII, datos médicos o finan
 ---
 
 ## Consideraciones de seguridad
-> Fuente: *JWT Handbook* — Ch.2 Practical Applications of JWT
+> Fuente: *JWT Handbook*: Ch.2 Practical Applications of JWT
 
 ### Signature Stripping
 
@@ -378,7 +378,7 @@ options.Cookie = new CookieBuilder
 ---
 
 ## JWK — JSON Web Keys y JWKS endpoint
-> Fuente: *JWT Handbook* (Sebastian Peyrott, Auth0) — Ch.6 JSON Web Keys
+> Fuente: *JWT Handbook* (Sebastian Peyrott, Auth0): Ch.6 JSON Web Keys
 
 Un JSON Web Key (JWK) es un formato estandarizado (RFC 7517) para representar claves criptográficas. Permite distribuir claves públicas de forma interoperable para que múltiples servicios puedan verificar tokens emitidos por un servidor de autenticación central.
 

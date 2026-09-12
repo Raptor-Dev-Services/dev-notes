@@ -2,7 +2,7 @@
 
 Los patrones estructurales del GoF resuelven cómo organizar jerarquías de objetos de forma mantenible: cómo añadir comportamientos dinámicamente, cómo gestionar estructuras complejas de objetos, y cómo conectar interfaces incompatibles. En un stack ASP.NET Core con Clean Architecture, estos patrones aparecen en capas clave: registro de dependencias en el composition root, pipelines de mediator, organización de módulos y simplificación del acceso a subsistemas de infraestructura.
 
-> Fuente: *Architecting ASP.NET Core Applications* (Marcotte) — Ch.11 Structural Patterns
+> Fuente: *Architecting ASP.NET Core Applications* (Marcotte): Ch.11 Structural Patterns
 
 ---
 
@@ -10,7 +10,7 @@ Los patrones estructurales del GoF resuelven cómo organizar jerarquías de obje
 
 ### El problema
 
-Tienes una clase `ExampleUserRepository` y necesitas añadirle caché, logging de timing y circuit-breaking — pero solo en algunos contextos. Con herencia se produce explosión combinatoria estática. El código que consume el repositorio no debería saber que está decorado.
+Tienes una clase `ExampleUserRepository` y necesitas añadirle caché, logging de timing y circuit-breaking, pero solo en algunos contextos. Con herencia se produce explosión combinatoria estática. El código que consume el repositorio no debería saber que está decorado.
 
 ```csharp
 // ❌ Con herencia — estático y combinatorio
@@ -129,7 +129,7 @@ builder.Services
 
 ### El problema
 
-Tienes una estructura jerárquica (tenants → sucursales → departamentos → usuarios). El código consumidor necesita tratar un único usuario y una sucursal con 500 usuarios de la misma forma: calcular totales, serializar, aplicar permisos. Sin Composite, el consumidor necesita saber si maneja un leaf o una colección.
+Tienes una estructura jerárquica (tenants, sus sucursales, sus departamentos y sus usuarios). El código consumidor necesita tratar un único usuario y una sucursal con 500 usuarios de la misma forma: calcular totales, serializar, aplicar permisos. Sin Composite, el consumidor necesita saber si maneja un leaf o una colección.
 
 ```csharp
 // ❌ Sin Composite — el consumidor decide según el tipo concreto
@@ -321,7 +321,7 @@ builder.Services.AddScoped<IExampleUserRepository, ExternalUserSdkAdapter>();
 
 ### El problema
 
-Un handler necesita coordinar tres servicios de infraestructura (inventario, procesamiento de órdenes, envío) para completar una operación de negocio. Sin Facade, el handler conoce los tres servicios y el orden exacto de invocación — alto acoplamiento y difícil de testear.
+Un handler necesita coordinar tres servicios de infraestructura (inventario, procesamiento de órdenes, envío) para completar una operación de negocio. Sin Facade, el handler conoce los tres servicios y el orden exacto de invocación: alto acoplamiento y difícil de testear.
 
 ```csharp
 // ❌ Sin Facade — el handler orquesta N subsistemas directamente

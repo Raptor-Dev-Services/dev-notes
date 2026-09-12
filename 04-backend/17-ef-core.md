@@ -5,7 +5,7 @@ EF Core es el ORM de .NET. Gestiona el mapeo entre clases C# y tablas de base de
 ---
 
 ## Workflow de migrations
-> Fuente: *Entity Framework Core in Action* (Smith) — Ch.3 Migrations
+> Fuente: *Entity Framework Core in Action* (Smith): Ch.3 Migrations
 
 ```bash
 # Crear una nueva migration
@@ -108,7 +108,7 @@ public sealed class AppDbContext : DbContext
 ---
 
 ## Consultas eficientes
-> Fuente: *Entity Framework Core in Action* (Smith) — Ch.2 Querying the Database
+> Fuente: *Entity Framework Core in Action* (Smith): Ch.2 Querying the Database
 
 ```csharp
 // ✓ AsNoTracking para Queries de solo lectura — sin change tracking, más rápido
@@ -313,7 +313,7 @@ public sealed class ExampleUser : IAuditable, ISoftDeletable
 ---
 
 ## Interceptors — lógica transversal en la capa de persistencia
-> Fuente: *Entity Framework Core in Action* (Smith) — Ch.16 Advanced Features
+> Fuente: *Entity Framework Core in Action* (Smith): Ch.16 Advanced Features
 
 Los interceptors de EF Core permiten ejecutar código antes/después de queries y SaveChanges, sin modificar el DbContext directamente.
 

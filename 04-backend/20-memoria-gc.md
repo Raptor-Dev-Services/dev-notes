@@ -5,7 +5,7 @@ Entender cómo .NET gestiona la memoria permite escribir código que no presiona
 ---
 
 ## Stack vs Heap — dónde viven los datos
-> Fuente: *Effective .NET Memory Management* — Ch.1 The Basics of .NET Memory
+> Fuente: *Effective .NET Memory Management*: Ch.1 The Basics of .NET Memory
 
 ```
 Stack                                  Heap
@@ -267,7 +267,7 @@ public readonly record struct UserId(Guid Value)
 ---
 
 ## ObjectPool — reutilizar objetos costosos
-> Fuente: *Effective .NET Memory Management* — Ch.2 Object Allocation and Deallocation
+> Fuente: *Effective .NET Memory Management*: Ch.2 Object Allocation and Deallocation
 
 Crear y destruir objetos repetidamente presiona al GC. Un pool mantiene instancias listas para reutilizar, eliminando el costo de allocación y recolección en hot paths.
 
@@ -310,7 +310,7 @@ Usar `ObjectPool<T>` para objetos costosos de crear (regex compilados, conexione
 ---
 
 ## ArrayPool — reutilizar arrays grandes
-> Fuente: *Effective .NET Memory Management* — Ch.2 Object Allocation and Deallocation
+> Fuente: *Effective .NET Memory Management*: Ch.2 Object Allocation and Deallocation
 
 Arrays de más de 85 KB van al LOH (Large Object Heap), que el GC no compacta. `ArrayPool<T>` permite reutilizarlos sin generar presión al LOH.
 
@@ -337,7 +337,7 @@ Regla práctica: cualquier array temporal mayor a ~80 KB debe venir de `ArrayPoo
 ---
 
 ## WeakReference — referenciar sin prevenir la recolección
-> Fuente: *Effective .NET Memory Management* — Ch.2 Object Allocation and Deallocation
+> Fuente: *Effective .NET Memory Management*: Ch.2 Object Allocation and Deallocation
 
 Una referencia débil permite mantener un puntero a un objeto sin impedir que el GC lo recolecte cuando no hay otras referencias fuertes.
 
@@ -374,9 +374,9 @@ Usar `WeakReference<T>` para cachés opcionales donde perder la entrada es acept
 ---
 
 ## Optimización de strings
-> Fuente: *Effective .NET Memory Management* — Ch.2 Object Allocation and Deallocation
+> Fuente: *Effective .NET Memory Management*: Ch.2 Object Allocation and Deallocation
 
-Los strings son inmutables — cada concatenación crea un objeto nuevo en el heap.
+Los strings son inmutables: cada concatenación crea un objeto nuevo en el heap.
 
 ```csharp
 // ❌ Concatenación en loop — crea N strings intermedios en el heap

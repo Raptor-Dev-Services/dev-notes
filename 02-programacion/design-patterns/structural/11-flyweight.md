@@ -4,7 +4,7 @@
 
 **Intención:** Permite incluir más objetos en la RAM disponible compartiendo partes comunes del estado entre múltiples objetos, en lugar de mantener todos los datos en cada objeto.
 
-> Fuente: *Dive Into Design Patterns* (Alexander Shvets) — Ch.4 Structural Patterns: Flyweight
+> Fuente: *Dive Into Design Patterns* (Alexander Shvets): Ch.4 Structural Patterns: Flyweight
 
 ---
 

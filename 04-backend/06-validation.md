@@ -2,7 +2,7 @@
 
 Validar los datos de entrada antes de que lleguen al Handler, de forma centralizada y componible.
 
-> Fuente: *Web API Development with ASP.NET Core 8* (Xiaodi Yan) — Ch.5 Model Validation and Data Annotations
+> Fuente: *Web API Development with ASP.NET Core 8* (Xiaodi Yan): Ch.5 Model Validation and Data Annotations
 
 ---
 

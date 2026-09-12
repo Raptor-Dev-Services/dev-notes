@@ -218,7 +218,7 @@ No reescribas la pantalla. Ve por capas, de abajo hacia arriba:
 
 > **TypeScript no es requisito.** Los ejemplos van en JS porque `{{REPO_NAME}}` es JS puro. Lo que TS agregaría es que el cambio de contrato falle en el build; sin TS esa red la pone la prueba del transformer, que pasa de recomendable a obligatoria.
 
-> Fuente: *React Anti-Patterns* (Juntao Qiu) — Ch.8 Exploring Data Management in React, Ch.11 Introducing Layered Architecture in React. Ejemplos reales de `{{REPO_NAME}}`.
+> Fuente: *React Anti-Patterns* (Juntao Qiu): Ch.8 Exploring Data Management in React, Ch.11 Introducing Layered Architecture in React. Ejemplos reales de `{{REPO_NAME}}`.
 
 ---
 

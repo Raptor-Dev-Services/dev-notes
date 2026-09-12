@@ -211,7 +211,7 @@ aws rds describe-db-instances \
   --query 'DBInstances[0].Endpoint.Address'
 ```
 
-**Uso en el back-template — separar lecturas de escrituras:**
+**Separar lecturas de escrituras en el back-template:**
 
 ```csharp
 // En DI configuration

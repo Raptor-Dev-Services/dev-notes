@@ -2,7 +2,7 @@
 
 Dapper es un micro-ORM que ejecuta SQL directo y mapea los resultados a objetos C#. El back-template usa Dapper para todas las lecturas. Ofrece control total sobre el SQL y rendimiento cercano al ADO.NET puro, con una API mucho más simple.
 
-> Fuente: Documentación oficial Dapper — https://github.com/DapperLib/Dapper; *Using Dapper* — Marc Gravell
+> Fuente: Documentación oficial Dapper: https://github.com/DapperLib/Dapper; *Using Dapper* (Marc Gravell)
 
 ---
 
