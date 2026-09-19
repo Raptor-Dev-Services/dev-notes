@@ -22,7 +22,7 @@ Se sobrescribe en cada handoff: lo que pasó en cada sesión vive en los mensaje
 
 Medidas hoy, con los números reales:
 
-- **Documentación:** `python3 herramientas/verifica-docs.py` sobre 205 documentos. Cero enlaces internos rotos, cero títulos con número distinto al de su archivo, cero prefijos duplicados, cero nombres de clientes o productos reales, y cero guiones largos o flechas en la prosa.
+- **Documentación:** `python3 herramientas/verifica-docs.py`. Cuenta 206 documentos en esta copia y 205 en un clon limpio: la diferencia es `.claude/rules/stable-dependencies.md`, que está ignorado y no se clona. Cero enlaces internos rotos, cero títulos con número distinto al de su archivo, cero prefijos duplicados, cero nombres de clientes o productos reales, y cero guiones largos o flechas en la prosa.
 - **Ejemplos de patrones en C#:** `dotnet build 02-programacion/design-patterns/referencias-csharp/RefactoringGuru.DesignPatterns.sln` compila con 0 errores y 1 aviso, el de `string.Copy` obsoleto en `Prototype.Conceptual`.
 - **No se ejecutaron** esos ejemplos: apuntan a `net8.0` y la máquina solo tiene el runtime 10.
 
