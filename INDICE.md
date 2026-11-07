@@ -94,7 +94,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 03 — Arquitectura (13 + 5 docs)
+## 03 — Arquitectura (15 + 5 docs)
 
 | # | Doc | Tema |
 |---|-----|------|
@@ -111,6 +111,8 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 | 11 | [Clean Architecture](03-arquitectura/11-clean-arch.md) | Capas, regla de dependencia, Marcotte Ch.14 |
 | 12 | [C4 Model](03-arquitectura/12-c4-model.md) | Diagramas de arquitectura como código (Structurizr DSL) |
 | 13 | [REPR Pattern](03-arquitectura/13-repr.md) | Request-EndPoint-Response para Minimal APIs |
+| 14 | [Monolito modular con hosts por rol](03-arquitectura/14-monolito-modular-hosts-por-rol.md) | Un código, varios procesos por rol de operación |
+| 15 | [Monolito modular desacoplado por dominio](03-arquitectura/15-monolito-modular-por-dominio.md) | Contratos, dueño único por tabla y esquema por módulo |
 
 ### API Design (5 docs)
 
