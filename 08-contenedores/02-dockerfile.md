@@ -114,7 +114,7 @@ FROM mcr.microsoft.com/dotnet/aspnet:10.0-noble-chiseled AS final
 # - Sin package manager (apt)
 # - Sin utilidades del sistema
 # - Solo lo necesario para correr .NET
-# - Imagen ~60 MB vs ~200 MB de la base normal
+# - Unos 57 MB comprimida, frente a 98 MB de aspnet:10.0
 
 WORKDIR /app
 
@@ -131,7 +131,7 @@ ENTRYPOINT ["dotnet", "Host.dll"]
 ```
 
 **Por qué multi-stage:**
-- La imagen final solo tiene el `publish` output + runtime `.NET` (~100 MB)
+- La imagen final solo tiene el `publish` output + runtime `.NET` (unos 125 MB en disco, más tu app)
 - Sin SDK (hundreds of MB), sin código fuente, sin dependencias de build
 - Sin shell ni utilidades: menor superficie de ataque
 - Imagen de prod más pequeña = deploys más rápidos, menos costo de storage
@@ -278,13 +278,17 @@ RUN dotnet build
 
 ## Imágenes base de .NET — cuándo usar cuál
 
-| Imagen | Tamaño | Contiene | Usar para |
-|--------|--------|----------|-----------|
-| `sdk:10.0` | ~740 MB | SDK + runtime + herramientas de build | Build (stages 1-3) |
-| `aspnet:10.0` | ~220 MB | Runtime + ASP.NET | Producción estándar |
-| `aspnet:10.0-noble-chiseled` | ~110 MB | Runtime + ASP.NET, sin shell | Producción segura (este proyecto) |
-| `runtime:10.0` | ~190 MB | Solo runtime .NET | Consolas, workers (sin web) |
-| `runtime-deps:10.0` | ~120 MB | Solo dependencias nativas | Self-contained deployments |
+| Imagen | Comprimida | Desempaquetada | Contiene | Usar para |
+|--------|------------|----------------|----------|-----------|
+| `sdk:10.0` | ~354 MB | ~916 MB | SDK + runtime + herramientas de build | Build (stages 1-3) |
+| `aspnet:10.0` | ~98 MB | ~234 MB | Runtime + ASP.NET | Producción estándar |
+| `aspnet:10.0-noble-chiseled` | ~57 MB | ~124 MB | Runtime + ASP.NET, sin shell | Producción segura (este proyecto) |
+| `runtime:10.0` | ~85 MB | ~207 MB | Solo runtime .NET | Consolas, workers (sin web) |
+| `runtime-deps:10.0` | ~47 MB | ~124 MB | Solo dependencias nativas | Self-contained deployments |
+
+Medido el 7 de noviembre de 2026 para `linux/amd64`, con las capas publicadas en el registro. Comprimida es lo que se descarga; desempaquetada, lo que ocupa ya extraída. Las cifras cambian con cada parche, y en arm64 son parecidas: `aspnet:10.0-noble-chiseled` da 52 MB y 132 MB.
+
+Cuidado al compararlas con `docker images`. Desde Docker Engine 29, las instalaciones nuevas usan el almacén de containerd, que guarda cada imagen comprimida y también sin comprimir. Por eso la salida trae dos columnas: `CONTENT SIZE` es lo comprimido y `DISK USAGE` el espacio total en disco. La imagen chiseled aparece ahí con 185 MB, y eso no significa que pese más: está guardada dos veces.
 
 ---
 
