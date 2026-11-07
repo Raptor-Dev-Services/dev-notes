@@ -74,7 +74,7 @@ Guía completa de C# y .NET orientada a este proyecto. Cada documento cubre un t
 | Propiedades | Entidades en `Domain/Entities/`, DTOs |
 | Métodos | Sql classes, repositorios, handlers |
 | async/await | Todo el acceso a datos y handlers |
-| Lifetimes | `ServiceCollectionEx.cs`Singleton/Scoped decisions |
+| Lifetimes | `ServiceCollectionEx.cs` - Singleton/Scoped decisions |
 | Genéricos | `ResultViewModel<T>`, `IRequestHandler<,>`, `ISuccess<T>` |
 | Pattern matching | Todos los Presenters |
 | Colecciones | Responses de colecciones, LINQ en handlers |

@@ -430,8 +430,8 @@ Las migrations se aplican automáticamente al iniciar si `ASPNETCORE_ENVIRONMENT
 | depends_on | Directiva de Compose para especificar orden de arranque - con `condition: service_healthy` espera al health check |
 | Health check | Comando que Docker ejecuta periódicamente para saber si un contenedor está listo para recibir tráfico |
 | Volume | Directorio persistente fuera del contenedor - los datos sobreviven a reinicios y recreaciones |
-| Named volume | `pgdata:`gestionado por Docker, persiste entre `docker compose down` (se elimina con `-v`) |
-| Bind mount | `./codigo:/src`monta un directorio del host dentro del contenedor - útil para hot reload |
+| Named volume | `pgdata:` - gestionado por Docker, persiste entre `docker compose down` (se elimina con `-v`) |
+| Bind mount | `./codigo:/src` - monta un directorio del host dentro del contenedor - útil para hot reload |
 | Network bridge | Red virtual privada entre contenedores - se comunican por nombre de servicio (`postgres`, `seq`) |
 | `docker compose override` | Archivo que se fusiona automáticamente - permite diferencias entre dev y CI sin duplicar YAML |
 | `.env` | Archivo de variables de entorno que Docker Compose carga automáticamente - va en `.gitignore` |

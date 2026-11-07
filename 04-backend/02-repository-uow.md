@@ -373,8 +373,8 @@ await _db.SaveChangesAsync(ct);                        // ← detecta el cambio 
 
 | Escenario | ¿Tracking? |
 |-----------|------------|
-| Query (solo lectura) | `AsNoTracking()`más rápido, menos memoria |
-| Command (va a modificar) | Sin `AsNoTracking`EF detecta los cambios |
+| Query (solo lectura) | `AsNoTracking()` - más rápido, menos memoria |
+| Command (va a modificar) | Sin `AsNoTracking` - EF detecta los cambios |
 | Proyección a DTO | No aplica - EF no trackea tipos no mapeados |
 
 ### Unit of Work con EF Core

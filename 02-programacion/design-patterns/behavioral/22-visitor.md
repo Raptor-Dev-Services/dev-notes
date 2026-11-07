@@ -334,7 +334,7 @@ Si **las operaciones** cambian frecuentemente: usar Visitor (agregar una operaci
 | Pattern matching como Visitor | En C# moderno, el `switch` sobre tipos concretos es un Visitor implícito sin las clases adicionales |
 | `IExpressionVisitor<T>` | Visitor genérico que permite aplicar diferentes operaciones (evaluar, imprimir) sobre el mismo árbol de expresiones |
 | Estabilidad de tipos vs operaciones | Usar Visitor cuando las operaciones cambian frecuentemente (nuevas operaciones = nuevo Visitor); evitarlo si los tipos cambian frecuentemente |
-| Presenters como Visitors | En el proyecto, el Presenter visita cada tipo concreto de respuesta con `is INotFoundFailure`, `is ISuccess<T>`Visitor implícito |
+| Presenters como Visitors | En el proyecto, el Presenter visita cada tipo concreto de respuesta con `is INotFoundFailure`, `is ISuccess<T>` - Visitor implícito |
 
 ---
 

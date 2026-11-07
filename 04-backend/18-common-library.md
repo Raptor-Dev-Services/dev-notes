@@ -29,7 +29,7 @@ Common centraliza esa infraestructura:
 | **Logging** | `Common.Logging` | Serilog con sinks Console/Seq y enriquecimiento automático con TenantId |
 | **Observability** | `Common.Observability` | OpenTelemetry: traces y metrics por OTLP, exporter Prometheus |
 | **Results** | `Common.Results` | `Result<T>` tipado - éxito/falla sin excepciones de control |
-| **Errors** | `Common.Errors` | `ErrorList`acumula errores de validación o dominio |
+| **Errors** | `Common.Errors` | `ErrorList` - acumula errores de validación o dominio |
 | **Exceptions** | `Common.Exceptions` | Excepciones de dominio reutilizables |
 | **Messaging** | `Common.Messaging` | Contratos `IRequest`, `IMediator` y pipeline behaviors |
 | **Abstractions** | `Common.Abstractions` | Interfaces base de interactores y presenters |

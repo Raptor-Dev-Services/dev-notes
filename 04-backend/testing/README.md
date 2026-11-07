@@ -20,10 +20,10 @@ Tests automatizados en .NET: unitarios, integración, base de datos real y TDD.
 
 | Documento | Dónde se aplica en el proyecto |
 |-----------|-------------------------------|
-| xUnit | `Tests/Tests.csproj`configuración base y convenciones |
-| Unit Tests | `Tests/Unit/`todos los Handlers, Presenters y Validators |
-| Integration Tests | `Tests/Integration/`endpoints HTTP completos |
-| TestContainers | `Tests/Fixtures/DatabaseFixture.cs`tests de repositorios con PostgreSQL 17 real |
+| xUnit | `Tests/Tests.csproj` - configuración base y convenciones |
+| Unit Tests | `Tests/Unit/` - todos los Handlers, Presenters y Validators |
+| Integration Tests | `Tests/Integration/` - endpoints HTTP completos |
+| TestContainers | `Tests/Fixtures/DatabaseFixture.cs` - tests de repositorios con PostgreSQL 17 real |
 | TDD | Flujo de desarrollo: escribir test antes de implementar el Handler |
 
 ---

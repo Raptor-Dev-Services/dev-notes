@@ -31,7 +31,7 @@ networks:            # redes personalizadas (opcional — Docker crea una por de
 
 ---
 
-## `services`la sección principal
+## `services` - la sección principal
 
 ### `image` vs `build`
 
@@ -57,7 +57,7 @@ services:
     build: .
 ```
 
-### `ports`exponer puertos
+### `ports` - exponer puertos
 
 ```yaml
 services:
@@ -77,7 +77,7 @@ services:
       - "5342:5341"        # Ingestion port
 ```
 
-### `environment`variables de entorno
+### `environment` - variables de entorno
 
 ```yaml
 services:
@@ -98,7 +98,7 @@ services:
       - .env.production     # sobreescribe .env si hay colisiones
 ```
 
-### `volumes`montar volúmenes
+### `volumes` - montar volúmenes
 
 ```yaml
 services:
@@ -123,7 +123,7 @@ volumes:
     name: shared_db_data  # nombre exacto del volumen externo
 ```
 
-### `depends_on`orden de inicio
+### `depends_on` - orden de inicio
 
 ```yaml
 services:
@@ -172,7 +172,7 @@ services:
       disable: true
 ```
 
-### `restart`política de reinicio
+### `restart` - política de reinicio
 
 ```yaml
 services:
@@ -186,7 +186,7 @@ services:
 
 ---
 
-## `networks`redes personalizadas
+## `networks` - redes personalizadas
 
 ```yaml
 services:
@@ -278,7 +278,7 @@ docker compose --profile tools --profile logging up  # ambos
 
 ---
 
-## `deploy`recursos y réplicas (Swarm / producción)
+## `deploy` - recursos y réplicas (Swarm / producción)
 
 ```yaml
 services:
@@ -321,7 +321,7 @@ PORT: ${APP_PORT-8080}
 
 ---
 
-## `configs` y `secrets`Swarm mode
+## `configs` y `secrets` - Swarm mode
 
 ```yaml
 # Para datos sensibles en producción con Docker Swarm:

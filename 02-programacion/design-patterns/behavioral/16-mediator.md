@@ -275,7 +275,7 @@ public sealed class InsertExampleUserPresenter
 | Término | Definición |
 |---------|-----------|
 | Mediator | Patrón conductual que centraliza la comunicación entre objetos en un objeto intermediario, eliminando las dependencias directas entre ellos |
-| `IMediator` | Interfaz del proyecto en `Common.Messaging` que define `Send()` y `Publish()`punto central de comunicación |
+| `IMediator` | Interfaz del proyecto en `Common.Messaging` que define `Send()` y `Publish()` - punto central de comunicación |
 | `Mediator.Send()` | Método que envía un Request al Handler correspondiente y devuelve la respuesta |
 | `Mediator.Publish()` | Método que notifica a todos los `INotificationHandler<T>` suscritos a un tipo de respuesta |
 | InteractorPipeline | Componente del proyecto que orquesta el flujo: Handler -> Publish -> Presenter usando el mediador |

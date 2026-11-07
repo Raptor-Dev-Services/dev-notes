@@ -38,7 +38,7 @@ Un patrón de diseño es una solución probada y reutilizable a un problema recu
 | 7 | [Bridge](structural/07-bridge.md) | Separar abstracción de implementación | Repositorios: `IExampleUserRepository` ↔ implementación concreta |
 | 8 | [Composite](structural/08-composite.md) | Árbol donde partes y todo se tratan igual | Pipeline de middleware ASP.NET Core |
 | 9 | [Decorator](structural/09-decorator.md) | Agregar comportamiento sin modificar clase | `[Authorize]`, `[HttpGet]` como decoradores; pipeline behaviors |
-| 10 | [Facade](structural/10-facade.md) | Interfaz simple sobre sistema complejo | `BaseApiController`oculta complejidad del mediador |
+| 10 | [Facade](structural/10-facade.md) | Interfaz simple sobre sistema complejo | `BaseApiController` - oculta complejidad del mediador |
 | 11 | [Flyweight](structural/11-flyweight.md) | Compartir estado común entre muchos objetos | Cache de queries SQL compiladas en Dapper |
 | 12 | [Proxy](structural/12-proxy.md) | Sustituto que controla acceso al objeto real | `MainDapperDbConnection` como proxy de Dapper |
 
@@ -49,14 +49,14 @@ Un patrón de diseño es una solución probada y reutilizable a un problema recu
 | # | Patrón | Problema que resuelve | En el proyecto |
 |---|--------|----------------------|----------------|
 | 13 | [Chain of Responsibility](behavioral/13-chain-of-responsibility.md) | Pasar petición por cadena de handlers | Pipeline de middleware HTTP; `InteractorPipeline` del mediador |
-| 14 | [Command](behavioral/14-command.md) | Encapsular petición como objeto | `IRequest` / `{Accion}Request`cada caso de uso es un comando |
+| 14 | [Command](behavioral/14-command.md) | Encapsular petición como objeto | `IRequest` / `{Accion}Request` - cada caso de uso es un comando |
 | 15 | [Iterator](behavioral/15-iterator.md) | Recorrer colección sin exponer su estructura | `IEnumerable<T>`, `foreach`, LINQ |
-| 16 | [Mediator](behavioral/16-mediator.md) | Reducir dependencias directas entre objetos | `Common.Messaging.IMediator`núcleo del flujo Controller->Handler->Presenter |
+| 16 | [Mediator](behavioral/16-mediator.md) | Reducir dependencias directas entre objetos | `Common.Messaging.IMediator` - núcleo del flujo Controller->Handler->Presenter |
 | 17 | [Memento](behavioral/17-memento.md) | Guardar y restaurar estado de un objeto | No aplica - sin estado mutable que deshacer en este template |
-| 18 | [Observer](behavioral/18-observer.md) | Notificar a múltiples objetos de un evento | `INotificationHandler<TResponse>`el presenter es el observer |
-| 19 | [State](behavioral/19-state.md) | Cambiar comportamiento cuando cambia el estado | `ResultViewModel<T>`estado `IsSuccess` determina el flujo |
+| 18 | [Observer](behavioral/18-observer.md) | Notificar a múltiples objetos de un evento | `INotificationHandler<TResponse>` - el presenter es el observer |
+| 19 | [State](behavioral/19-state.md) | Cambiar comportamiento cuando cambia el estado | `ResultViewModel<T>` - estado `IsSuccess` determina el flujo |
 | 20 | [Strategy](behavioral/20-strategy.md) | Familia de algoritmos intercambiables | Presenters por acción - cada uno es una estrategia de presentación |
-| 21 | [Template Method](behavioral/21-template-method.md) | Esqueleto de algoritmo con pasos extensibles | `BaseApiController`define el esqueleto del endpoint |
+| 21 | [Template Method](behavioral/21-template-method.md) | Esqueleto de algoritmo con pasos extensibles | `BaseApiController` - define el esqueleto del endpoint |
 | 22 | [Visitor](behavioral/22-visitor.md) | Separar algoritmo del objeto sobre el que opera | Pattern matching en presenters - el switch es un visitor implícito |
 
 ---

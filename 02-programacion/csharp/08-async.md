@@ -271,7 +271,7 @@ await repo.GetByPublicIdAsync(id, CancellationToken.None);   // también
 
 Úsalos en tests y en código que no tiene contexto de request HTTP.
 
-### `CancellationTokenSource`crear tu propio token
+### `CancellationTokenSource` - crear tu propio token
 
 ```csharp
 // Crear un token que se cancela después de 5 segundos
@@ -421,7 +421,7 @@ public Task<string> GetNameAsync() => Task.FromResult("Ana");
 
 ---
 
-## `ValueTask<T>`optimización avanzada
+## `ValueTask<T>` - optimización avanzada
 
 `ValueTask<T>` es como `Task<T>` pero evita allocations cuando el resultado está disponible inmediatamente (ej. desde cache).
 

@@ -472,8 +472,8 @@ builder.Services
 
 | Patrón | Dónde aparece en el stack |
 |--------|---------------------------|
-| Decorator | Pipeline behaviors del mediator (`LoggingBehavior`, `ValidationBehavior`) envuelven el `Handler`Decorator puro. `[Authorize]` en controllers es un Decorator declarativo. |
-| Decorator + Scrutor | `builder.Services.Decorate<IExampleUserRepository, CachedExampleUserRepository>()` en `InfrastructureServiceCollectionEx`añade caché sin tocar la implementación base. |
+| Decorator | Pipeline behaviors del mediator (`LoggingBehavior`, `ValidationBehavior`) envuelven el `Handler` - Decorator puro. `[Authorize]` en controllers es un Decorator declarativo. |
+| Decorator + Scrutor | `builder.Services.Decorate<IExampleUserRepository, CachedExampleUserRepository>()` en `InfrastructureServiceCollectionEx` - añade caché sin tocar la implementación base. |
 | Composite | Estructuras de jerarquía multi-tenant: Tenant -> Branch -> Department -> User. Cada nodo gestiona su `Count` y serialización. |
 | Adapter | `ExternalUserSdkAdapter : IExampleUserRepository` cuando se integra con un SDK externo (Keycloak, AWS Cognito, proveedores de identidad). El Handler solo ve `IExampleUserRepository`. |
 | Facade (Opaque) | Class libraries de módulos en Monolito Modular: `AddQualityModule()` registra todos los servicios internos sin exponerlos. El composition root queda limpio. |

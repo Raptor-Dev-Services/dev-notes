@@ -64,7 +64,7 @@ EF Core y Npgsql/SqlClient mantienen un pool de conexiones TCP reutilizables. El
 |----------|---------------|
 | `Maximum Pool Size` | 100 por instancia de API. Con 4 instancias = 400 conexiones a la BD |
 | Límite del servidor | PostgreSQL default acepta 100 conexiones totales - ajustar `max_connections` si se escala |
-| Síntoma de pool agotado | Errores `timeout obtaining connection`subir pool size o investigar conexiones no liberadas |
+| Síntoma de pool agotado | Errores `timeout obtaining connection` - subir pool size o investigar conexiones no liberadas |
 | Conexiones zombi | Si no se usa `using`/`await using` al abrir `NpgsqlConnection`, las conexiones quedan tomadas - bug clásico con Dapper manual |
 
 ---

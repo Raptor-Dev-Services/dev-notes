@@ -157,15 +157,15 @@
 
 | Patrón | Dónde aparece en el back-template |
 |--------|----------------------------------|
-| Mediator | `IMediator.Send(request)`cada handler es un Mediator |
+| Mediator | `IMediator.Send(request)` - cada handler es un Mediator |
 | Chain of Responsibility | MediatR pipeline behaviors: logging -> validation -> handler |
 | Strategy | Estrategias de pricing, algoritmos de búsqueda inyectables |
-| Observer | `INotificationHandler<T>`eventos de dominio |
+| Observer | `INotificationHandler<T>` - eventos de dominio |
 | Template Method | `SearchMachine` abstracta, base classes de repositorio |
 | Decorator | `CachedExampleUserRepository` vía Scrutor |
 | Facade | `IExampleUserService` que agrupa múltiples repositorios |
 | Adapter | `ExampleUserRepository` que envuelve Dapper detrás de `IExampleUserRepository` |
-| Singleton | `MainDbConnectionFactory`una instancia global |
+| Singleton | `MainDbConnectionFactory` - una instancia global |
 | Factory Method | `IHttpClientFactory` para HttpClient por nombre |
 | Builder | `WebApplicationBuilder` en Program.cs |
 | Proxy | Middleware de autenticación, caché como proxy de repositorio |
