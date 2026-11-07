@@ -11,7 +11,7 @@ CQRS viene de **Command Query Separation (CQS)** de Bertrand Meyer:
 > Un método debe ser o un **Command** (modifica estado, no retorna datos) o una **Query** (retorna datos, no modifica estado). Nunca los dos a la vez.
 
 ```csharp
-// ❌ Viola CQS — modifica Y retorna al mismo tiempo
+// Mal: Viola CQS — modifica Y retorna al mismo tiempo
 public User InsertAndReturn(CreateUserDto dto)
 {
     var user = /* crear usuario */;
@@ -19,7 +19,7 @@ public User InsertAndReturn(CreateUserDto dto)
     return user;  // ← retorna el usuario recién insertado
 }
 
-// ✓ CQS — separados
+// Bien: CQS — separados
 public void Insert(CreateUserDto dto) { _db.Insert(/* ... */); }   // Command: modifica, no retorna
 public User GetById(Guid id) { return _db.Get(id); }               // Query: retorna, no modifica
 ```

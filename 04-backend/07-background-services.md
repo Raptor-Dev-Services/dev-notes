@@ -9,7 +9,7 @@ Ejecutar trabajo en segundo plano dentro del proceso de la API: limpieza periód
 Algunas tareas no encajan en el ciclo request/response:
 
 ```
-❌ Problemas que no resuelve una request HTTP:
+No: Problemas que no resuelve una request HTTP:
    - Enviar emails de recordatorio cada hora
    - Purgar sesiones expiradas cada noche
    - Procesar una cola de trabajos de forma continua
@@ -85,7 +85,7 @@ public sealed class SessionCleanupService : BackgroundService
 
     private async Task DoWorkAsync(CancellationToken ct)
     {
-        // ⚠️ IHostedService es Singleton — los Scoped services requieren un scope propio
+        // Atención: IHostedService es Singleton — los Scoped services requieren un scope propio
         await using var scope = _scopeFactory.CreateAsyncScope();
         var repo = scope.ServiceProvider.GetRequiredService<ISessionRepository>();
 
@@ -100,7 +100,7 @@ public sealed class SessionCleanupService : BackgroundService
 Los `BackgroundService` son **Singleton**. Los repositorios y handlers son **Scoped**. No se pueden inyectar directamente. La dependencia capturada (captive dependency) causa bugs.
 
 ```csharp
-// ❌ Captive dependency — el Singleton captura un Scoped
+// Mal: Captive dependency — el Singleton captura un Scoped
 public sealed class MyService : BackgroundService
 {
     private readonly IExampleUserRepository _repo;  // ← Scoped inyectado en Singleton: BUG
@@ -108,7 +108,7 @@ public sealed class MyService : BackgroundService
     // El repo vive para siempre aunque debería descartarse por request
 }
 
-// ✓ Correcto — crear un scope por ciclo de trabajo
+// Correcto — crear un scope por ciclo de trabajo
 await using var scope = _scopeFactory.CreateAsyncScope();
 var repo = scope.ServiceProvider.GetRequiredService<IExampleUserRepository>();
 ```
@@ -268,13 +268,13 @@ Para agregar un background service al proyecto:
 
 | Escenario | Decisión |
 |-----------|----------|
-| Tarea periódica simple (purga, limpieza) | ✓ BackgroundService con Task.Delay |
-| Precarga al arrancar | ✓ IHostedService.StartAsync |
-| Cola de mensajes simple (outbox pattern) | ✓ BackgroundService con polling |
-| Cron jobs complejos | ✓ Considerar Quartz.NET o Hangfire |
-| Tareas de larga duración distribuidas | ✓ Considerar workers separados o Azure Functions |
-| Lógica que depende de un usuario autenticado | ✗ No tiene contexto de request — usar ICurrentUserService solo para audit trail en handlers regulares |
-| Trabajo que puede perderse si la app se cae | ✗ No — usar una cola externa persistente (RabbitMQ, Azure Service Bus) |
+| Tarea periódica simple (purga, limpieza) | BackgroundService con Task.Delay |
+| Precarga al arrancar | IHostedService.StartAsync |
+| Cola de mensajes simple (outbox pattern) | BackgroundService con polling |
+| Cron jobs complejos | Considerar Quartz.NET o Hangfire |
+| Tareas de larga duración distribuidas | Considerar workers separados o Azure Functions |
+| Lógica que depende de un usuario autenticado | No tiene contexto de request — usar ICurrentUserService solo para audit trail en handlers regulares |
+| Trabajo que puede perderse si la app se cae | No — usar una cola externa persistente (RabbitMQ, Azure Service Bus) |
 
 ---
 
@@ -284,7 +284,7 @@ Para agregar un background service al proyecto:
 `PeriodicTimer` (introducido en .NET 6) es más preciso que `Task.Delay` en loops de polling porque no acumula drift de tiempo.
 
 ```csharp
-// ❌ Task.Delay — el intervalo incluye el tiempo de ejecución + el delay
+// Mal: Task.Delay — el intervalo incluye el tiempo de ejecución + el delay
 // Si el trabajo toma 2s y el delay es 5s → el loop real es cada 7s, se va desviando
 protected override async Task ExecuteAsync(CancellationToken stoppingToken)
 {
@@ -295,7 +295,7 @@ protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     }
 }
 
-// ✓ PeriodicTimer — el tick ocurre en el intervalo exacto, independientemente del tiempo de trabajo
+// Bien: PeriodicTimer — el tick ocurre en el intervalo exacto, independientemente del tiempo de trabajo
 public sealed class SessionCleanupService : BackgroundService
 {
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -419,10 +419,10 @@ builder.Services.AddHostedService<EmailSenderService>();
 
 | Criterio | Channel<T> (en proceso) | RabbitMQ / Azure Service Bus |
 |----------|------------------------|------------------------------|
-| Simplicidad | ✓ Sin dependencias externas | ✗ Requiere broker externo |
-| Durabilidad | ✗ Mensajes se pierden si la app cae | ✓ Mensajes persisten |
-| Escala horizontal | ✗ Solo una instancia consume | ✓ Múltiples consumidores |
-| Volumen | ✓ Hasta ~1M mensajes/s en memoria | ✓ Cualquier volumen |
+| Simplicidad | Sin dependencias externas | Requiere broker externo |
+| Durabilidad | Mensajes se pierden si la app cae | Mensajes persisten |
+| Escala horizontal | Solo una instancia consume | Múltiples consumidores |
+| Volumen | Hasta ~1M mensajes/s en memoria | Cualquier volumen |
 | **Usar cuando** | Emails de bienvenida, notificaciones | Pagos, órdenes, eventos críticos |
 
 

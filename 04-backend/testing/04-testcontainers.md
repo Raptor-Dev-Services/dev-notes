@@ -11,11 +11,11 @@ Levanta contenedores Docker reales en los tests (PostgreSQL, Redis, RabbitMQ) de
 Los tests de repositorios necesitan una base de datos real. Las alternativas insatisfactorias:
 
 ```
-❌ In-memory provider (SQLite) — semántica diferente, índices inexistentes, funciones de PostgreSQL no funcionan
-❌ DB de desarrollo compartida — tests se interfieren entre sí, datos sucios, no reproducible en CI
-❌ Configuración manual en CI — complejo, frágil, depende del ambiente
+No: In-memory provider (SQLite) — semántica diferente, índices inexistentes, funciones de PostgreSQL no funcionan
+No: DB de desarrollo compartida — tests se interfieren entre sí, datos sucios, no reproducible en CI
+No: Configuración manual en CI — complejo, frágil, depende del ambiente
 
-✓ TestContainers — levanta un PostgreSQL limpio, idéntico al de producción, en el propio test
+Sí: TestContainers — levanta un PostgreSQL limpio, idéntico al de producción, en el propio test
 ```
 
 ---
@@ -310,13 +310,13 @@ El proyecto ya tiene `Tests/Tests.csproj`. Para agregar TestContainers:
 
 | Escenario | Decisión |
 |-----------|----------|
-| Tests de repositorios (`...Sql` classes, queries) | ✓ TestContainers — única forma real |
-| Tests de migraciones SQL | ✓ TestContainers — verificar idempotencia |
-| Tests de índices y rendimiento de queries | ✓ TestContainers |
-| Integration tests de la API completa con DB | ✓ TestContainers + WebApplicationFactory |
-| Tests de Handlers (lógica) | ✗ No necesario — unit test con mock del repo |
-| CI/CD pipeline | ✓ TestContainers — Docker disponible en GitHub Actions |
-| Máquina sin Docker | ✗ No funciona — requiere Docker |
+| Tests de repositorios (`...Sql` classes, queries) | TestContainers — única forma real |
+| Tests de migraciones SQL | TestContainers — verificar idempotencia |
+| Tests de índices y rendimiento de queries | TestContainers |
+| Integration tests de la API completa con DB | TestContainers + WebApplicationFactory |
+| Tests de Handlers (lógica) | No necesario — unit test con mock del repo |
+| CI/CD pipeline | TestContainers — Docker disponible en GitHub Actions |
+| Máquina sin Docker | No funciona — requiere Docker |
 
 
 ---

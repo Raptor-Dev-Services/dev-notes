@@ -11,7 +11,7 @@ Validar los datos de entrada antes de que lleguen al Handler, de forma centraliz
 Sin validación centralizada, cada Handler tiene que verificar manualmente sus precondiciones:
 
 ```csharp
-// ❌ Validación dispersa — lógica de validación mezclada con lógica de negocio
+// Mal: Validación dispersa — lógica de validación mezclada con lógica de negocio
 public async Task<InsertExampleUserResponse> Handle(
     InsertExampleUserRequest request, CancellationToken ct)
 {
@@ -231,7 +231,7 @@ public async ValueTask<bool> TryHandleAsync(
 ## El Handler limpio después de extraer la validación
 
 ```csharp
-// ✓ Handler sin validación — solo lógica de negocio
+// Bien: Handler sin validación — solo lógica de negocio
 public async Task<InsertExampleUserResponse> Handle(
     InsertExampleUserRequest request, CancellationToken ct)
 {
@@ -273,10 +273,10 @@ Para implementarlo en el proyecto:
 
 | Escenario | Decisión |
 |-----------|----------|
-| Validar campos de entrada de usuario (HTTP body) | ✓ FluentValidation |
-| Verificar que una entidad existe en DB | ✓ Validator async o dentro del Handler |
-| Reglas de negocio complejas con múltiples entidades | ✗ No en validator — en el Handler |
-| Invariantes de la entidad de dominio | ✗ No en validator — en el constructor/método de la entidad |
+| Validar campos de entrada de usuario (HTTP body) | FluentValidation |
+| Verificar que una entidad existe en DB | Validator async o dentro del Handler |
+| Reglas de negocio complejas con múltiples entidades | No en validator — en el Handler |
+| Invariantes de la entidad de dominio | No en validator — en el constructor/método de la entidad |
 | Requests internos entre servicios conocidos | Depende — si el origen es confiable, validación mínima |
 
 **Separación clave:** FluentValidation valida el *formato* de la entrada (campos requeridos, longitudes, regex). La *lógica de negocio* ("el email ya existe", "el usuario puede editar este recurso") va en el Handler.

@@ -13,7 +13,7 @@
 Tienes un `Navigator` GPS que calcula rutas. Inicialmente solo tiene rutas en auto. Luego agregan: a pie, en bici, por bus, rutas turísticas. El código del Navigator crece con if/switch enormes y la clase se vuelve difícil de mantener.
 
 ```csharp
-// ❌ Sin Strategy — Navigator contiene todos los algoritmos
+// Mal: Sin Strategy — Navigator contiene todos los algoritmos
 class Navigator
 {
     public void BuildRoute(Point from, Point to, string type)

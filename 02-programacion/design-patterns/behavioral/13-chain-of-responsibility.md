@@ -13,7 +13,7 @@
 Tienes un sistema de soporte técnico con tres niveles: básico, técnico, y manager. Una petición de soporte debe pasar por el nivel básico primero; si no puede resolverla, la escala al técnico; si tampoco puede, al manager. Sin el patrón, el código de enrutamiento quedaría en un único lugar con if/else encadenados.
 
 ```csharp
-// ❌ Sin Chain of Responsibility — if/else monolítico
+// Mal: Sin Chain of Responsibility — if/else monolítico
 public string Handle(SupportRequest request)
 {
     if (request.Type == "basic")

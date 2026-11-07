@@ -248,11 +248,11 @@ Tests/
 ```
 {Metodo}_{Escenario}_{ResultadoEsperado}
 
-Handle_UserNotFound_ReturnsNotFoundFailure      ✓
-Handle_ValidRequest_CallsRepositoryOnce         ✓
-Validate_EmptyEmail_ReturnsValidationError      ✓
+Handle_UserNotFound_ReturnsNotFoundFailure      Sí
+Handle_ValidRequest_CallsRepositoryOnce         Sí
+Validate_EmptyEmail_ReturnsValidationError      Sí
 
-TestLogin()                                     ✗ — no describe qué ni resultado
+TestLogin()                                     No: — no describe qué ni resultado
 ```
 
 ---

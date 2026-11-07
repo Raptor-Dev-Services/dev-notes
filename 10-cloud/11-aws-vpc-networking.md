@@ -85,9 +85,9 @@ Internet
 **El atributo "pública" NO es inherente a la subnet**. Lo que determina si una subnet es pública o privada es su tabla de enrutamiento:
 
 ```
-❌ Concepto erróneo: "esta subnet tiene el flag 'público' activado"
+No: Concepto erróneo: "esta subnet tiene el flag 'público' activado"
 
-✓ Correcto:
+Correcto:
   - Subnet pública = su route table tiene 0.0.0.0/0 → Internet Gateway
   - Subnet privada = su route table NO tiene ruta a Internet (o tiene 0.0.0.0/0 → NAT Gateway)
 ```
@@ -159,11 +159,11 @@ aws ec2 create-route \
 Permite que recursos en subredes PRIVADAS inicien conexiones a Internet (para descargar paquetes, llamar APIs externas) sin que Internet pueda iniciar conexiones hacia ellos.
 
 ```
-❌ El problema sin NAT:
+No: El problema sin NAT:
   EC2 en subred privada no puede descargar actualizaciones de Linux,
   no puede llamar a APIs de terceros, no puede enviar emails via SES.
 
-✓ La solución:
+Sí: La solución:
   NAT Gateway en subred PÚBLICA con Elastic IP.
   La subred privada tiene ruta 0.0.0.0/0 → NAT Gateway.
   El NAT traduce la IP privada a su Elastic IP pública (NAT).
@@ -221,11 +221,11 @@ us-east-1 (N. Virginia)
 ### Alta disponibilidad real con Multi-AZ
 
 ```
-❌ Diseño de una sola AZ:
+No: Diseño de una sola AZ:
   EC2 en us-east-1a + RDS en us-east-1a
   → si falla us-east-1a, cae todo el servicio
 
-✓ Diseño Multi-AZ correcto:
+Sí: Diseño Multi-AZ correcto:
   ALB             → distribuye entre las 2 AZs
   EC2 en 1a       → maneja tráfico cuando 1b falla
   EC2 en 1b       → maneja tráfico cuando 1a falla
@@ -275,11 +275,11 @@ aws ec2 authorize-security-group-ingress \
 **Por qué referenciar SG en lugar de IPs:**
 
 ```
-❌ Regla con IP: --cidr 10.0.11.0/24
+No: Regla con IP: --cidr 10.0.11.0/24
   Problema: permite CUALQUIER IP en ese rango,
   incluso si un atacante llega a esa subnet.
 
-✓ Regla con referencia a SG: --source-group sg-app
+Sí: Regla con referencia a SG: --source-group sg-app
   Solo instancias que tengan el sg-app pueden conectar.
   Si el EC2 pierde ese SG, pierde acceso automáticamente.
 ```
@@ -369,10 +369,10 @@ aws ec2 create-vpc-endpoint \
 **Por qué ALIAS es especial en AWS:**
 
 ```
-❌ CNAME en el apex del dominio (miapp.com) → NO permitido por DNS estándar
+No: CNAME en el apex del dominio (miapp.com) → NO permitido por DNS estándar
    CNAME solo funciona en subdominios (www.miapp.com)
 
-✓ ALIAS resuelve esto:
+Sí: ALIAS resuelve esto:
   - Funciona en el apex del dominio (miapp.com) → ALB
   - Apunta a recursos AWS: ALB, CloudFront, S3 website, API Gateway
   - No tiene costo por query (AWS lo absorbe)

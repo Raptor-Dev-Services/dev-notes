@@ -11,11 +11,11 @@ Polly es la librería estándar de .NET para políticas de resiliencia. Resuelve
 Las llamadas a recursos externos (HTTP, base de datos, servicios de terceros) fallan. La pregunta no es si fallará, sino qué hace el sistema cuando falla:
 
 ```csharp
-// ❌ Sin resiliencia — un timeout de red tumba toda la request
+// Mal: Sin resiliencia — un timeout de red tumba toda la request
 var result = await _httpClient.GetAsync("/api/payment/validate");
 // si el servicio de pagos está lento, la request del usuario espera indefinidamente
 
-// ❌ Sin retry — un error transitorio de red falla permanentemente
+// Mal: Sin retry — un error transitorio de red falla permanentemente
 var conn = await _factory.OpenConnectionAsync();
 // si PostgreSQL estaba bajo carga por 100ms, la operación falla aunque sería exitosa si se reintentara
 ```
@@ -302,13 +302,13 @@ var products = await combinedPolicy.ExecuteAsync(() => _productService.GetAllAsy
 ## Qué NO hacer con reintentos
 
 ```csharp
-// ❌ Reintentar operaciones no idempotentes sin protección
+// Mal: Reintentar operaciones no idempotentes sin protección
 // Si InsertUser falla después de ejecutar el INSERT (en el network response),
 // reintentar puede insertar el usuario dos veces
 var retryPolicy = Policy.Handle<Exception>().RetryAsync(3);
 await retryPolicy.ExecuteAsync(() => _repo.InsertAsync(user, ct));  // ← peligroso
 
-// ✓ Solo reintentar operaciones idempotentes o con detección de duplicados
+// Bien: Solo reintentar operaciones idempotentes o con detección de duplicados
 // GET, DELETE by ID, UPDATE con versión/timestamp → seguros de reintentar
 // INSERT sin idempotency key → requiere manejo especial (UUID generado en el cliente)
 ```

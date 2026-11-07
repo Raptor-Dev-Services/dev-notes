@@ -9,7 +9,7 @@ El patrón Object Mapper encapsula la lógica de copiar las propiedades de un ob
 ## El problema que resuelve
 
 ```csharp
-// ❌ Sin mapper — la lógica de conversión está inline en cada endpoint
+// Mal: Sin mapper — la lógica de conversión está inline en cada endpoint
 app.MapGet("/products", async (IProductRepository repo, CancellationToken ct) =>
 {
     var products = await repo.AllAsync(ct);
@@ -30,7 +30,7 @@ app.MapGet("/products", async (IProductRepository repo, CancellationToken ct) =>
 Con mappers, la transformación vive en una sola clase y los endpoints la delegan:
 
 ```csharp
-// ✓ Con mapper — el endpoint no conoce los detalles de la conversión
+// Bien: Con mapper — el endpoint no conoce los detalles de la conversión
 app.MapGet("/products", async (
     IProductRepository repo,
     IMapper<Product, ProductDetails> mapper,
@@ -131,7 +131,7 @@ builder.Services
 Al inyectar un `IMapper` separado por cada conversión, los endpoints acumulan dependencias rápidamente:
 
 ```csharp
-// ❌ Demasiadas dependencias — señal de que la clase hace demasiado
+// Mal: Demasiadas dependencias — señal de que la clase hace demasiado
 app.MapPost("/products/{productId}/remove-stocks", async (
     int productId,
     RemoveStocksCommand command,
@@ -416,9 +416,9 @@ catch (NotEnoughStockException ex)
 
 | Aspecto | Manual | Aggregate Service | AutoMapper | Mapperly |
 |---------|--------|------------------|-----------|---------|
-| Velocidad runtime | ✓ | ✓ | Regular (reflexión) | ✓ (código generado) |
+| Velocidad runtime | Sí | Sí | Regular (reflexión) | (código generado) |
 | Magia implícita | Ninguna | Ninguna | Alta (convenciones) | Baja (contratos explícitos) |
-| Error en compilación | Si el tipo no coincide | Si el tipo no coincide | No — error en runtime | ✓ — errores en compilación (RMG013) |
+| Error en compilación | Si el tipo no coincide | Si el tipo no coincide | No — error en runtime | — errores en compilación (RMG013) |
 | Boilerplate | Alto | Medio | Bajo | Muy bajo |
 | Depuración | Trivial | Trivial | Difícil | Fácil (ver código generado) |
 | Configuración avanzada | Código C# directo | Código C# directo | Profiles, TypeConverters | Attributes de Mapperly |

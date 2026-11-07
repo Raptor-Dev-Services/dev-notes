@@ -9,10 +9,10 @@ Una API bien diseñada comunica los errores de forma que el cliente pueda entend
 ## El principio: errores para máquinas, mensajes para humanos
 
 ```json
-// ❌ Error para humanos — la máquina no puede reaccionar diferente según el error
+// Error para humanos — la máquina no puede reaccionar diferente según el error
 { "error": "Something went wrong. Please try again." }
 
-// ✓ Error para máquinas + mensaje para humanos
+// Error para máquinas + mensaje para humanos
 {
   "type":   "https://httpstatuses.io/409",
   "title":  "Conflict",
@@ -81,13 +81,13 @@ El cliente no puede hacer nada. Reintentar puede funcionar (si es un error trans
 El error de validación más útil incluye exactamente qué campo falló y por qué:
 
 ```json
-// ❌ Poco útil — el cliente no sabe qué cambiar
+// Mal: Poco útil — el cliente no sabe qué cambiar
 {
   "status": 400,
   "detail": "Validation failed"
 }
 
-// ✓ Útil — el cliente sabe exactamente qué campos y por qué
+// Bien: Útil — el cliente sabe exactamente qué campos y por qué
 {
   "type":   "https://httpstatuses.io/400",
   "title":  "Validation Error",
@@ -183,7 +183,7 @@ public async Task<IActionResult> Insert([FromBody] InsertExampleUserBody body, C
 ### No incluir
 
 ```json
-// ❌ Nunca en producción — expone información interna
+// Nunca en producción — expone información interna
 {
   "exception": "NpgsqlException",
   "stackTrace": "at Npgsql.NpgsqlConnector...",

@@ -83,13 +83,13 @@ Riesgo:      "Sin este cambio, la promesa de 'WhatsApp en 2 semanas' no es alcan
 ### Cómo decir "no" con alternativas
 
 ```
-❌ "Eso no es posible."
-❌ "No tenemos tiempo."
+No: "Eso no es posible."
+No: "No tenemos tiempo."
 
-✅ "Podemos hacer X en 2 sprints. Si lo priorizamos sobre Y, que está en el backlog,
+Sí: "Podemos hacer X en 2 sprints. Si lo priorizamos sobre Y, que está en el backlog,
     tendríamos X listo para el 15 de junio. ¿Eso funciona?"
 
-✅ "La versión básica de X cabe en este sprint. La versión completa que describes
+Sí: "La versión básica de X cabe en este sprint. La versión completa que describes
     requiere 3 sprints más. ¿Arrancamos con la básica?"
 ```
 
@@ -108,9 +108,9 @@ ajustar la fecha a [nueva fecha]. ¿Cuál prefieres?"
 ### Deuda técnica traducida a riesgo de negocio
 
 ```
-❌ "Hay mucha deuda técnica en el módulo de conversaciones."
+No: "Hay mucha deuda técnica en el módulo de conversaciones."
 
-✅ "El módulo de conversaciones tiene un riesgo de deuda técnica medio-alto.
+Sí: "El módulo de conversaciones tiene un riesgo de deuda técnica medio-alto.
     Síntomas: los últimos 3 bugs de producción vinieron de ahí.
     Impacto: si no lo atendemos, la probabilidad de incidente aumenta 40%
     conforme añadamos los filtros avanzados planeados para Q3."
@@ -220,12 +220,12 @@ Por eso: invertir en DX y autonomía técnica tiene ROI positivo.
 
 | Decisión | Involucrar al PO | Razón |
 |----------|-----------------|-------|
-| Cambiar base de datos (PostgreSQL → MySQL) | ✅ Sí — ADR formal | Impacta costos, skills, soporte |
-| Refactoring interno sin cambio de API | ❌ No | Decisión técnica pura |
-| Agregar Redis para caching | ✅ Sí — informar | Nueva infraestructura = nuevo costo |
-| Renombrar variables | ❌ No | Detalles de implementación |
-| Introducir dependency injection framework | ✅ Sí — ADR | Cambio de arquitectura |
-| Extraer un método largo | ❌ No | Boy scout rule |
+| Cambiar base de datos (PostgreSQL → MySQL) | Sí — ADR formal | Impacta costos, skills, soporte |
+| Refactoring interno sin cambio de API | No | Decisión técnica pura |
+| Agregar Redis para caching | Sí — informar | Nueva infraestructura = nuevo costo |
+| Renombrar variables | No | Detalles de implementación |
+| Introducir dependency injection framework | Sí — ADR | Cambio de arquitectura |
+| Extraer un método largo | No | Boy scout rule |
 
 ### RFC Process (Request for Comments)
 
@@ -256,10 +256,10 @@ Para decisiones técnicas grandes, hacer un RFC antes del ADR:
 ### Checklist pre-reunión
 
 ```
-✓ Hay una agenda escrita y enviada con ≥ 24h de anticipación
-✓ Los decisores correctos están invitados (no "por si acaso")
-✓ El objetivo es claro: ¿decisión, alineación o update?
-✓ Duración máxima definida (defaultear a 30 min, no 60)
+Sí: Hay una agenda escrita y enviada con ≥ 24h de anticipación
+Sí: Los decisores correctos están invitados (no "por si acaso")
+Sí: El objetivo es claro: ¿decisión, alineación o update?
+Sí: Duración máxima definida (defaultear a 30 min, no 60)
 ```
 
 ### Tipos de reunión y formato correcto

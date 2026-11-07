@@ -12,10 +12,10 @@ La cuenta root tiene acceso irrestricto a TODOS los recursos y NUNCA puede ser l
 
 ```
 Cuenta root — solo usarla para:
-  ✓ Habilitar MFA en la cuenta root (primera vez)
-  ✓ Cambiar el plan de soporte
-  ✓ Cerrar la cuenta
-  ✓ Restaurar acceso si todos los admins IAM están bloqueados
+  Sí: Habilitar MFA en la cuenta root (primera vez)
+  Sí: Cambiar el plan de soporte
+  Sí: Cerrar la cuenta
+  Sí: Restaurar acceso si todos los admins IAM están bloqueados
 
 Para todo lo demás:
   → Crear usuario IAM con permisos administrativos limitados
@@ -217,13 +217,13 @@ Empezar con cero permisos y agregar solo lo estrictamente necesario.
 
 ```json
 {
-  "❌ MAL — acceso completo a todos los servicios": {
+  "MAL — acceso completo a todos los servicios": {
     "Effect": "Allow",
     "Action": "*",
     "Resource": "*"
   },
 
-  "✓ BIEN — solo lo necesario": {
+  "BIEN — solo lo necesario": {
     "Effect": "Allow",
     "Action": [
       "secretsmanager:GetSecretValue",
@@ -250,7 +250,7 @@ Empezar con cero permisos y agregar solo lo estrictamente necesario.
 
 ```
 Problema:
-  ❌ Guardar access keys en el servidor
+  No: Guardar access keys en el servidor
      AWS_ACCESS_KEY_ID=AKIA...  → en /etc/environment
      AWS_SECRET_ACCESS_KEY=...  → en el código
      
@@ -258,7 +258,7 @@ Problema:
      Las keys estáticas nunca expiran.
 
 Solución:
-  ✓ IAM Instance Profile
+  Sí: IAM Instance Profile
   
   1. Crear IAM Role con trust policy para ec2.amazonaws.com
   2. Adjuntar las políticas necesarias al role

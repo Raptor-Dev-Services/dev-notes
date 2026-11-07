@@ -13,14 +13,14 @@ Los patrones estructurales del GoF resuelven cómo organizar jerarquías de obje
 Tienes una clase `ExampleUserRepository` y necesitas añadirle caché, logging de timing y circuit-breaking, pero solo en algunos contextos. Con herencia se produce explosión combinatoria estática. El código que consume el repositorio no debería saber que está decorado.
 
 ```csharp
-// ❌ Con herencia — estático y combinatorio
+// Mal: Con herencia — estático y combinatorio
 class CachedLoggingExampleUserRepository : ExampleUserRepository { /* combina N comportamientos */ }
 // No puedes activar/desactivar en runtime
 // Cada combinación nueva requiere una clase nueva
 ```
 
 ```csharp
-// ✓ Con Decorator — dinámico y componible en el composition root
+// Bien: Con Decorator — dinámico y componible en el composition root
 public interface IExampleUserRepository
 {
     Task<ExampleUserDto?> GetByPublicIdAsync(Guid publicId, CancellationToken ct);
@@ -93,7 +93,7 @@ public class TimedExampleUserRepository : IExampleUserRepository
 Sin Scrutor el composition root se complica con `new` anidados:
 
 ```csharp
-// ❌ Sin Scrutor — verboso y gestión manual de lifetimes
+// Mal: Sin Scrutor — verboso y gestión manual de lifetimes
 builder.Services.AddScoped<IExampleUserRepository>(sp =>
     new TimedExampleUserRepository(
         new CachedExampleUserRepository(
@@ -105,7 +105,7 @@ builder.Services.AddScoped<IExampleUserRepository>(sp =>
 Con Scrutor el composition root queda declarativo:
 
 ```csharp
-// ✓ Con Scrutor — el contenedor gestiona los lifetimes y las dependencias transitivas
+// Bien: Con Scrutor — el contenedor gestiona los lifetimes y las dependencias transitivas
 // dotnet add package Scrutor
 builder.Services
     .AddScoped<IExampleUserRepository, ExampleUserRepository>()
@@ -132,14 +132,14 @@ builder.Services
 Tienes una estructura jerárquica (tenants, sus sucursales, sus departamentos y sus usuarios). El código consumidor necesita tratar un único usuario y una sucursal con 500 usuarios de la misma forma: calcular totales, serializar, aplicar permisos. Sin Composite, el consumidor necesita saber si maneja un leaf o una colección.
 
 ```csharp
-// ❌ Sin Composite — el consumidor decide según el tipo concreto
+// Mal: Sin Composite — el consumidor decide según el tipo concreto
 int count = item is SingleUser u ? 1
           : item is BranchGroup g ? g.Users.Sum(x => x.Count)
           : 0; // no se puede extender sin tocar este código
 ```
 
 ```csharp
-// ✓ Con Composite — el consumidor trata todo como IComponent
+// Bien: Con Composite — el consumidor trata todo como IComponent
 public interface IComponent
 {
     int Count { get; }
@@ -232,7 +232,7 @@ Console.WriteLine(acme.Count); // 3 (Alice + Bob + Manager)
 Quieres reutilizar una librería externa (o un SDK de terceros) que tiene su propia interfaz, incompatible con la que usa tu dominio. No puedes modificar la librería. Refactorizar todos los consumidores para usar la API externa directamente acopla tu dominio a un proveedor externo.
 
 ```csharp
-// ❌ Sin Adapter — el handler conoce la API del proveedor externo directamente
+// Mal: Sin Adapter — el handler conoce la API del proveedor externo directamente
 public class GetExampleUserHandler : IRequestHandler<GetExampleUserRequest, IResponse>
 {
     private readonly ExternalUserSdkClient _sdk; // dependencia directa del SDK
@@ -247,7 +247,7 @@ public class GetExampleUserHandler : IRequestHandler<GetExampleUserRequest, IRes
 ```
 
 ```csharp
-// ✓ Con Adapter — el dominio depende de su propia abstracción
+// Bien: Con Adapter — el dominio depende de su propia abstracción
 
 // Interfaz de destino: definida por el dominio
 public interface IExampleUserRepository
@@ -324,7 +324,7 @@ builder.Services.AddScoped<IExampleUserRepository, ExternalUserSdkAdapter>();
 Un handler necesita coordinar tres servicios de infraestructura (inventario, procesamiento de órdenes, envío) para completar una operación de negocio. Sin Facade, el handler conoce los tres servicios y el orden exacto de invocación: alto acoplamiento y difícil de testear.
 
 ```csharp
-// ❌ Sin Facade — el handler orquesta N subsistemas directamente
+// Mal: Sin Facade — el handler orquesta N subsistemas directamente
 public async Task<IResponse> Handle(PlaceOrderRequest request, CancellationToken ct)
 {
     var inStock = await _inventoryService.CheckStockAsync(request.ProductId, request.Quantity);
@@ -338,7 +338,7 @@ public async Task<IResponse> Handle(PlaceOrderRequest request, CancellationToken
 ```
 
 ```csharp
-// ✓ Con Facade — el handler delega a una interfaz simple
+// Bien: Con Facade — el handler delega a una interfaz simple
 
 // Interfaz de la Facade
 public interface IOrderFacade
@@ -453,7 +453,7 @@ builder.Services
 | Aspecto | Opaque Facade | Transparent Facade |
 |---------|---------------|-------------------|
 | Visibilidad subsistemas | `internal` | `public` con interfaces |
-| Extensibilidad desde el consumidor | ✗ | ✓ |
+| Extensibilidad desde el consumidor | No | Sí |
 | Control de acceso | Alto | Medio |
 | Registro DI en subsistema | `new` manual (constructor `internal`) | `TryAdd` normal |
 | Uso recomendado | Librería sin extensión planeada | Módulo extendible en monolito |
@@ -462,9 +462,9 @@ builder.Services
 
 | Principio | Opaque | Transparent |
 |-----------|--------|-------------|
-| S — Single Responsibility | ✓ Facade cohesiva | ✓ Facade cohesiva |
-| O — Open/Closed | Limitado (oculta subsistema) | ✓ Subsistema extendible sin modificar |
-| D — Dependency Inversion | Facade sí; subsistemas no | ✓ Todo depende de abstracciones |
+| S — Single Responsibility | Facade cohesiva | Facade cohesiva |
+| O — Open/Closed | Limitado (oculta subsistema) | Subsistema extendible sin modificar |
+| D — Dependency Inversion | Facade sí; subsistemas no | Todo depende de abstracciones |
 
 ---
 

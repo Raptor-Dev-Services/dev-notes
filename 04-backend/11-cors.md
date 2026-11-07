@@ -118,7 +118,7 @@ app.MapControllers()
 | Error | Causa | Fix |
 |-------|-------|-----|
 | `AllowAnyOrigin()` + `AllowCredentials()` | Combinación inválida | Usar `WithOrigins(...)` cuando se necesitan credentials |
-| `UseCors` después de `UseRouting` pero antes de `MapControllers` | ✓ correcto | Poner `UseCors` después de `UseRouting` y antes de `UseAuthentication` |
+| `UseCors` después de `UseRouting` pero antes de `MapControllers` | correcto | Poner `UseCors` después de `UseRouting` y antes de `UseAuthentication` |
 | El preflight falla con 401 | El middleware de auth rechaza OPTIONS antes de CORS | `UseCors` debe ir ANTES de `UseAuthentication` |
 | Headers personalizados bloqueados | No están en `AllowAnyHeader()` o `WithHeaders(...)` | Agregar el header a la política |
 

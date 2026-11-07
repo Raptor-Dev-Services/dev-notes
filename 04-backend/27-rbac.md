@@ -159,10 +159,10 @@ public async Task<IActionResult> GetAll(CancellationToken ct)
 El handler no debe saber sobre roles. Eso es responsabilidad del controller/presentación. El handler recibe parámetros que ya reflejan la decisión:
 
 ```csharp
-// ✓ El controller toma la decisión de rol antes de llamar al handler
+// Bien: El controller toma la decisión de rol antes de llamar al handler
 _ = await Mediator.Send(new GetUsersRequest(tenantId, includeInactive: isAdmin), ct);
 
-// ❌ El handler no debe verificar el rol directamente
+// Mal: El handler no debe verificar el rol directamente
 // public async Task Handle(request, ct) {
 //     if (request.RequesterRole != "Admin") return Forbidden;  ← no hagas esto
 // }
@@ -278,15 +278,15 @@ El JWT de un SuperAdmin **no lleva** `tenant_id`. O lleva `tenant_id = 0`. Los r
 
 | Endpoint | Admin | Manager | Operator | Viewer |
 |----------|-------|---------|----------|--------|
-| GET /users | ✓ | ✓ | ✗ | ✗ |
-| GET /users/{id} | ✓ | ✓ | propio | propio |
-| PUT /users/{id} | ✓ | ✓ | propio | ✗ |
-| DELETE /users/{id} | ✓ | ✗ | ✗ | ✗ |
-| GET /orders | ✓ | ✓ | ✓ | ✓ |
-| POST /orders | ✓ | ✓ | ✓ | ✗ |
-| DELETE /orders/{id} | ✓ | ✓ | ✗ | ✗ |
-| GET /settings | ✓ | ✗ | ✗ | ✗ |
-| PUT /settings | ✓ | ✗ | ✗ | ✗ |
+| GET /users | Sí | Sí | No | No |
+| GET /users/{id} | Sí | Sí | propio | propio |
+| PUT /users/{id} | Sí | Sí | propio | No |
+| DELETE /users/{id} | Sí | No | No | No |
+| GET /orders | Sí | Sí | Sí | Sí |
+| POST /orders | Sí | Sí | Sí | No |
+| DELETE /orders/{id} | Sí | Sí | No | No |
+| GET /settings | Sí | No | No | No |
+| PUT /settings | Sí | No | No | No |
 
 Mantener esta tabla actualizada es tan importante como el código. Es el contrato de autorización del sistema.
 
@@ -347,9 +347,9 @@ public sealed class RbacTests
 
 **Hardcodear roles en el handler:**
 ```csharp
-// ❌
+// No
 if (request.RequesterRole != "Admin") return Forbidden;
-// ✓ — la restricción de rol va en [Authorize], no en el handler
+// Bien: — la restricción de rol va en [Authorize], no en el handler
 ```
 
 **Crear demasiados roles:**
@@ -357,9 +357,9 @@ Empezar con 3-4 roles planos. Agregar más solo cuando hay un caso de uso real d
 
 **Roles en el body del request:**
 ```csharp
-// ❌ — el cliente no debe declarar su propio rol
+// Mal: — el cliente no debe declarar su propio rol
 public sealed record CreateOrderRequest(long TenantId, string RequesterRole, ...);
-// ✓ — el rol viene del JWT siempre
+// Bien: — el rol viene del JWT siempre
 ```
 
 **No tener al menos un Admin por tenant:**

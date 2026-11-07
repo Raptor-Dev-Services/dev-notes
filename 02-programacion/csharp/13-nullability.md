@@ -128,9 +128,9 @@ if (user is null)
 // Aquí: el compilador sabe que user NO es null (porque si fuera null ya retornamos)
 // No necesitas user! ni verificar de nuevo
 return new GetExampleUserSuccess(new ExampleUserDto(
-    user.PublicId,      // ✓ seguro — el compilador sabe que user no es null
-    user.FullName,      // ✓ seguro
-    user.Email,         // ✓ seguro
+    user.PublicId,      // Bien: seguro — el compilador sabe que user no es null
+    user.FullName,      // Bien: seguro
+    user.Email,         // Bien: seguro
     user.IsActive,
     user.CreatedAtUtc,
     user.UpdatedAtUtc));
@@ -247,27 +247,27 @@ Con `enable`, el compilador:
 ### Error 1: ignorar la advertencia de nullable
 
 ```csharp
-// ❌ Ignorar el warning — puede crashear en producción
+// Mal: Ignorar el warning — puede crashear en producción
 ExampleUser? user = await repo.GetByPublicIdAsync(id, ct);
 Console.WriteLine(user.FullName);  // Warning: Dereference of a possibly null reference
 // Si user es null → NullReferenceException en producción
 
-// ✓ Verificar primero
+// Bien: Verificar primero
 if (user is null) return NotFound();
-Console.WriteLine(user.FullName);  // ✓ seguro aquí
+Console.WriteLine(user.FullName);  // Bien: seguro aquí
 ```
 
 ### Error 2: abusar del `!` para silenciar warnings
 
 ```csharp
-// ❌ Silenciar todos los warnings con !
+// Mal: Silenciar todos los warnings con !
 ExampleUser? user = await repo.GetByPublicIdAsync(id, ct);
 Console.WriteLine(user!.FullName);  // "confío en que no es null"
 // Si user SÍ es null → NullReferenceException sin warning
 
-// ✓ Manejar correctamente
+// Bien: Manejar correctamente
 if (user is null) return new GetExampleUserNotFoundFailure("...");
-Console.WriteLine(user.FullName);  // ✓
+Console.WriteLine(user.FullName);  // Sí
 ```
 
 ### Error 3: string vacío vs null
@@ -292,17 +292,17 @@ if (string.IsNullOrWhiteSpace(nombre))
 // int? tiene un valor bool HasValue y acceso por .Value
 int? numero = null;
 
-// ❌ Acceder a Value sin verificar
+// Mal: Acceder a Value sin verificar
 int resultado = numero.Value;  // InvalidOperationException si es null
 
-// ✓ Verificar primero
+// Bien: Verificar primero
 if (numero.HasValue)
     int resultado = numero.Value;
 
-// ✓ O usar ?? para default
+// Bien: O usar ?? para default
 int resultado = numero ?? 0;
 
-// ✓ O con pattern matching
+// Bien: O con pattern matching
 if (numero is int n)
     Console.WriteLine(n);
 ```

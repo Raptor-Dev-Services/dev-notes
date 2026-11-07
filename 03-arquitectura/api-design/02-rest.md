@@ -43,26 +43,26 @@ Instancia     → Colección + ID
 ### Reglas
 
 ```
-✓ Sustantivos, nunca verbos
-   /api/users          ✓
-   /api/getUsers       ✗
-   /api/createUser     ✗
+Sí: Sustantivos, nunca verbos
+   /api/users          Sí
+   /api/getUsers       No
+   /api/createUser     No
 
-✓ Plural para colecciones
-   /api/users          ✓
-   /api/user           ✗
+Sí: Plural para colecciones
+   /api/users          Sí
+   /api/user           No
 
-✓ Minúsculas con guiones
-   /api/example-users  ✓
-   /api/ExampleUsers   ✗
-   /api/example_users  ✗ (guion bajo es menos legible en URLs subrayadas)
+Sí: Minúsculas con guiones
+   /api/example-users  Sí
+   /api/ExampleUsers   No
+   /api/example_users  No: (guion bajo es menos legible en URLs subrayadas)
 
-✓ Jerarquía solo cuando hay relación real de posesión
-   /api/users/123/orders          ✓ (órdenes de un usuario)
-   /api/users/123/recent-activity ✓
+Sí: Jerarquía solo cuando hay relación real de posesión
+   /api/users/123/orders          Sí: (órdenes de un usuario)
+   /api/users/123/recent-activity Sí
 
-✗ No anidar más de 2 niveles
-   /api/users/123/orders/456/items/789    ✗ (demasiado anidado)
+No anidar más de 2 niveles
+   /api/users/123/orders/456/items/789    No: (demasiado anidado)
    → Preferir: /api/order-items/789
 ```
 
@@ -84,7 +84,7 @@ POST /api/invoices/123/send         — enviar una factura (side-effect, no CRUD
 ## URLs en el proyecto back-template
 
 ```csharp
-// ✓ Convención del proyecto
+// Bien: Convención del proyecto
 [Route("api/example/users")]
 public sealed class ExampleUsersController : BaseApiController
 {
@@ -164,11 +164,11 @@ El proyecto usa PUT para simplificar: el frontend siempre envía el objeto compl
 ## Dates — formato ISO 8601
 
 ```json
-// ✓ ISO 8601 con UTC explícito — el estándar
+// Bien: ISO 8601 con UTC explícito — el estándar
 "createdAt": "2025-05-11T10:30:00Z"
 "updatedAt": "2025-05-11T10:30:00.000Z"
 
-// ✗ Formatos ambiguos — nunca en APIs
+// Mal: Formatos ambiguos — nunca en APIs
 "createdAt": "05/11/2025"       — mes/día/año o día/mes/año?
 "createdAt": "11-05-2025"       — ambiguo
 "createdAt": 1747037400         — Unix timestamp en segundos — difícil de debuggear

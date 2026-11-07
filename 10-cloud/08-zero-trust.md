@@ -99,10 +99,10 @@ builder.Services.AddHttpClient("orders-service-mtls")
 // Policies granulares en lugar de roles amplios
 builder.Services.AddAuthorization(options =>
 {
-    // ❌ Policy amplia — cualquier admin puede hacer cualquier cosa
+    // Mal: Policy amplia — cualquier admin puede hacer cualquier cosa
     options.AddPolicy("Admin", policy => policy.RequireRole("admin"));
 
-    // ✓ Policies por operación específica
+    // Bien: Policies por operación específica
     options.AddPolicy("Orders:Read",   policy => policy.RequireClaim("permission", "orders:read"));
     options.AddPolicy("Orders:Write",  policy => policy.RequireClaim("permission", "orders:write"));
     options.AddPolicy("Orders:Delete", policy => policy.RequireClaim("permission", "orders:delete"));
@@ -247,7 +247,7 @@ builder.Services.AddHealthChecks()
 ## Principio "Asumir Breach" — diseño defensivo en código
 
 ```csharp
-// ✓ Validar los datos en cada capa, no solo en la entrada
+// Bien: Validar los datos en cada capa, no solo en la entrada
 // Aunque el request venga de otro microservicio interno, validar de todas formas
 
 public sealed class ProcessPaymentHandler

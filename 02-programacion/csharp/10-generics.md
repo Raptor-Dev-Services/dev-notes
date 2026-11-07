@@ -174,8 +174,8 @@ public interface IRequestHandler<TRequest, TResponse>
 }
 
 // Solo acepta tipos que implementen IRequest<TResponse>:
-// IRequestHandler<GetExampleUserRequest, GetExampleUserResponse> ✓
-// IRequestHandler<string, GetExampleUserResponse>                ✗ string no implementa IRequest
+// IRequestHandler<GetExampleUserRequest, GetExampleUserResponse> Sí
+// IRequestHandler<string, GetExampleUserResponse>                Mal: string no implementa IRequest
 ```
 
 ### `where T : ClaseBase`: T debe heredar de una clase
@@ -283,7 +283,7 @@ Para interfaces y delegates genéricos.
 ```csharp
 // IEnumerable<T> es covariante — puedes asignar IEnumerable<Perro> a IEnumerable<Animal>
 IEnumerable<Perro> perros = new List<Perro> { new Perro() };
-IEnumerable<Animal> animales = perros;  // ✓ funciona con "out T"
+IEnumerable<Animal> animales = perros;  // Bien: funciona con "out T"
 ```
 
 ### Contravarianza (`in T`): puedes usar un tipo menos derivado
@@ -291,7 +291,7 @@ IEnumerable<Animal> animales = perros;  // ✓ funciona con "out T"
 ```csharp
 // Action<T> es contravariante — puedes asignar Action<Animal> a Action<Perro>
 Action<Animal> procesarAnimal = a => Console.WriteLine(a.Nombre);
-Action<Perro>  procesarPerro  = procesarAnimal;  // ✓ funciona con "in T"
+Action<Perro>  procesarPerro  = procesarAnimal;  // Bien: funciona con "in T"
 ```
 
 ---
@@ -301,7 +301,7 @@ Action<Perro>  procesarPerro  = procesarAnimal;  // ✓ funciona con "in T"
 ### Error 1: usar `object` en vez de genérico
 
 ```csharp
-// ❌ Pierde type-safety
+// Mal: Pierde type-safety
 public class Repositorio
 {
     public object GetById(int id) { /* ... */ }
@@ -310,7 +310,7 @@ public class Repositorio
 var result = repo.GetById(1);
 var user = (ExampleUser)result;  // cast en runtime — puede explotar
 
-// ✓ Genérico — type-safe
+// Bien: Genérico — type-safe
 public class Repositorio<T>
 {
     public T GetById(int id) { /* ... */ }
@@ -323,24 +323,24 @@ ExampleUser user = repo.GetById(1);  // el compilador sabe el tipo
 ### Error 2: registrar genérico cerrado cuando debería ser abierto
 
 ```csharp
-// ❌ Solo funciona para ProductsController
+// Mal: Solo funciona para ProductsController
 services.AddScoped<ResultViewModel<ProductsController>>();
 // Los otros controllers no tienen su ViewModel
 
-// ✓ Genérico abierto — funciona para cualquier T
+// Bien: Genérico abierto — funciona para cualquier T
 services.AddScoped(typeof(ResultViewModel<>));
 ```
 
 ### Error 3: constraint demasiado restrictivo
 
 ```csharp
-// ❌ where T : ExampleUser — solo acepta ExampleUser (entonces para qué el genérico?)
+// Mal: where T : ExampleUser — solo acepta ExampleUser (entonces para qué el genérico?)
 public Task<T> GetUserAsync<T>(Guid id) where T : ExampleUser
 {
     return /* ... */;
 }
 
-// ✓ Si solo funciona con ExampleUser, no necesitas genérico
+// Si solo funciona con ExampleUser, no necesitas genérico
 public Task<ExampleUser> GetUserAsync(Guid id)
 {
     return /* ... */;

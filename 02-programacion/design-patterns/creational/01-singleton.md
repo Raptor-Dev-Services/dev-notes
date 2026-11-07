@@ -13,7 +13,7 @@
 Imagina que tienes una clase `ConfigurationManager` que lee un archivo de configuración. Si cada parte del sistema crea su propia instancia, tienes N lecturas del archivo, posibles estados inconsistentes, y desperdicio de recursos.
 
 ```csharp
-// ❌ Sin Singleton — cada llamada crea una instancia nueva
+// Mal: Sin Singleton — cada llamada crea una instancia nueva
 var config1 = new ConfigurationManager();  // lee el archivo
 var config2 = new ConfigurationManager();  // lee el archivo OTRA VEZ
 // config1 y config2 son objetos distintos
@@ -145,7 +145,7 @@ En .NET moderno, el patrón Singleton se implementa generalmente a través del c
 services.AddSingleton<IMyService, MyService>();
 // El contenedor garantiza que solo existe una instancia por aplicación.
 
-// ❌ Evitar Singleton manual en código de aplicación:
+// Evitar Singleton manual en código de aplicación:
 // Dificulta el testing (no se puede mockear)
 // Crea estado global difícil de razonar
 ```
@@ -187,7 +187,7 @@ services.AddSingleton<MainDbConnectionFactory>();
 ### Captive Dependency — el error más peligroso
 
 ```csharp
-// ❌ Singleton consume un Scoped — el Scoped queda "capturado" en el Singleton
+// Mal: Singleton consume un Scoped — el Scoped queda "capturado" en el Singleton
 public class MyService  // registrado como Singleton
 {
     private readonly IRepository _repo;  // registrado como Scoped

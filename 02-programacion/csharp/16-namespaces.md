@@ -89,7 +89,7 @@ GetExampleUserHandler handler = new GetExampleUserHandler(repo);
 Convención: al inicio del archivo, antes del namespace:
 
 ```csharp
-// ✓ Orden recomendado (no obligatorio pero convencional):
+// Bien: Orden recomendado (no obligatorio pero convencional):
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -217,21 +217,21 @@ La jerarquía del namespace refleja exactamente la jerarquía de carpetas. Si ve
 
 ```csharp
 // Archivo en: Infrastructure/Repositories/ExampleUsers/ExampleUserRepository.cs
-// ❌ Namespace incorrecto — confunde al lector
+// Mal: Namespace incorrecto — confunde al lector
 namespace Infrastructure.Data.Users;
 
-// ✓ Correcto — namespace = ruta
+// Correcto — namespace = ruta
 namespace Infrastructure.Repositories.ExampleUsers;
 ```
 
 ### Error 2: namespace demasiado genérico
 
 ```csharp
-// ❌ "Utils" es un namespace basura — no dice nada
+// Mal: "Utils" es un namespace basura — no dice nada
 namespace Utils;
 public static class DateHelper { }
 
-// ✓ Descriptivo
+// Bien: Descriptivo
 namespace Application.Helpers;
 public static class DateHelper { }
 ```
@@ -239,7 +239,7 @@ public static class DateHelper { }
 ### Error 3: `using` dentro del namespace
 
 ```csharp
-// ✓ El estándar — usings fuera del namespace (antes del namespace)
+// Bien: El estándar — usings fuera del namespace (antes del namespace)
 using System.Threading;
 namespace Application.UseCases;
 

@@ -271,10 +271,10 @@ SELECT * FROM users WHERE tenant_id = '...' AND is_active = true;
 ## NULL y comparaciones
 
 ```sql
--- ❌ NULL no se compara con = — siempre retorna NULL (falso)
+-- Mal: NULL no se compara con = — siempre retorna NULL (falso)
 SELECT * FROM users WHERE deleted_at = NULL;    -- nunca retorna filas
 
--- ✓ Usar IS NULL / IS NOT NULL
+-- Bien: Usar IS NULL / IS NOT NULL
 SELECT * FROM users WHERE deleted_at IS NULL;   -- usuarios no eliminados
 
 -- COALESCE — primer valor no NULL

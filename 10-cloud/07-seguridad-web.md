@@ -31,7 +31,7 @@ Tres cambios de fondo respecto a 2021:
 ## A01 — Broken Access Control (Control de acceso roto)
 
 ```csharp
-// ❌ Confiar en el ID del recurso sin verificar ownership
+// Mal: Confiar en el ID del recurso sin verificar ownership
 [HttpGet("{publicId}")]
 public async Task<IActionResult> GetOrder(Guid publicId)
 {
@@ -39,7 +39,7 @@ public async Task<IActionResult> GetOrder(Guid publicId)
     return Ok(order);   // ← cualquier usuario autenticado puede ver cualquier orden
 }
 
-// ✓ Verificar que el recurso pertenece al usuario actual
+// Bien: Verificar que el recurso pertenece al usuario actual
 [HttpGet("{publicId}")]
 [Authorize]
 public async Task<IActionResult> GetOrder(Guid publicId)
@@ -67,7 +67,7 @@ public async Task<GetOrderResponse> Handle(GetOrderRequest request, Cancellation
 ```
 
 ```csharp
-// ✓ Usar [Authorize] con policies en lugar de checks manuales
+// Bien: Usar [Authorize] con policies en lugar de checks manuales
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("OrderOwner", policy =>
@@ -97,11 +97,11 @@ public sealed class OrderOwnerHandler
 Server-Side Request Forgery ocurre cuando la app hace una petición a una URL que decide el usuario. Desde dentro de tu red, el servidor llega a lo que el atacante no alcanza: otros servicios internos o el endpoint de metadatos del proveedor de nube.
 
 ```csharp
-// ❌ El usuario decide a dónde llama el servidor
+// Mal: El usuario decide a dónde llama el servidor
 var contenido = await _http.GetStringAsync(request.Url);
 // Si Url = "http://169.254.169.254/latest/meta-data/", el servidor consulta los metadatos de la nube
 
-// ✓ Lista de hosts permitidos y solo HTTPS
+// Bien: Lista de hosts permitidos y solo HTTPS
 private static readonly HashSet<string> HostsPermitidos =
     new(StringComparer.OrdinalIgnoreCase) { "api.proveedor.example" };
 
@@ -110,7 +110,7 @@ public static bool EsUrlPermitida(string url) =>
     && uri.Scheme == Uri.UriSchemeHttps
     && HostsPermitidos.Contains(uri.Host);
 
-// ✓ Sin seguir redirecciones: una URL permitida no debe poder mandarte a otro host
+// Bien: Sin seguir redirecciones: una URL permitida no debe poder mandarte a otro host
 builder.Services.AddHttpClient("proveedor")
     .ConfigurePrimaryHttpMessageHandler(() =>
         new SocketsHttpHandler { AllowAutoRedirect = false });
@@ -214,14 +214,14 @@ La cadena no termina en NuGet: las acciones de GitHub se fijan por SHA, como exp
 ## A04 — Fallos criptográficos
 
 ```csharp
-// ❌ MD5 o SHA1 para passwords — crackeables con rainbow tables
+// Mal: MD5 o SHA1 para passwords — crackeables con rainbow tables
 var hash = MD5.HashData(Encoding.UTF8.GetBytes(password));
 
-// ❌ Modo ECB — no autentica, y dos bloques iguales cifran igual
+// Mal: Modo ECB — no autentica, y dos bloques iguales cifran igual
 var aes = Aes.Create();
 aes.Mode = CipherMode.ECB;
 
-// ✓ AES-GCM — modo autenticado; si alguien altera el dato, Decrypt lanza una excepción
+// Bien: AES-GCM — modo autenticado; si alguien altera el dato, Decrypt lanza una excepción
 var nonce      = RandomNumberGenerator.GetBytes(AesGcm.NonceByteSizes.MaxSize);
 var ciphertext = new byte[plaintext.Length];
 var tag        = new byte[AesGcm.TagByteSizes.MaxSize];
@@ -229,11 +229,11 @@ var tag        = new byte[AesGcm.TagByteSizes.MaxSize];
 using var gcm = new AesGcm(key, AesGcm.TagByteSizes.MaxSize);   // key de 256 bits de preferencia
 gcm.Encrypt(nonce, plaintext, ciphertext, tag);
 
-// ✓ BCrypt para passwords — diseñado para ser lento (protege contra brute force)
+// Bien: BCrypt para passwords — diseñado para ser lento (protege contra brute force)
 var hash  = BCrypt.Net.BCrypt.HashPassword(password, workFactor: 12);
 var valid = BCrypt.Net.BCrypt.Verify(password, hash);
 
-// ✓ HTTPS obligatorio en producción
+// Bien: HTTPS obligatorio en producción
 builder.Services.AddHsts(options =>
 {
     options.Preload           = true;
@@ -245,9 +245,9 @@ builder.Services.AddHsts(options =>
 app.UseHttpsRedirection();
 app.UseHsts();
 
-// ✓ No loguear datos sensibles
-logger.LogInformation("Login attempt for {Email}", email);   // ✓ email (identificador)
-logger.LogInformation("Password: {Password}", password);     // ❌ nunca loguear passwords
+// No loguear datos sensibles
+logger.LogInformation("Login attempt for {Email}", email);   // Bien: email (identificador)
+logger.LogInformation("Password: {Password}", password);     // nunca loguear passwords
 ```
 
 Dos precisiones de OWASP. Para contraseñas recomienda Argon2id, luego scrypt, y deja bcrypt para sistemas heredados, con un factor de trabajo mínimo de 10 y un límite de 72 bytes de entrada: el ejemplo usa bcrypt porque es lo que trae back-template. Para AES pide una clave de al menos 128 bits, idealmente 256, y modos autenticados como GCM.
@@ -257,7 +257,7 @@ Dos precisiones de OWASP. Para contraseñas recomienda Argon2id, luego scrypt, y
 ## A05 — Injection (SQL y Command Injection)
 
 ```csharp
-// ❌ SQL Injection — concatenar input del usuario en SQL
+// Mal: SQL Injection — concatenar input del usuario en SQL
 public async Task<ExampleUser?> GetByEmailAsync(string email)
 {
     var sql = $"SELECT * FROM ExampleUsers WHERE Email = '{email}'";
@@ -266,7 +266,7 @@ public async Task<ExampleUser?> GetByEmailAsync(string email)
     return await _db.QuerySingleOrDefaultAsync<ExampleUser>(sql);
 }
 
-// ✓ Parámetros — nunca concatenar valores del usuario en SQL
+// Bien: Parámetros — nunca concatenar valores del usuario en SQL
 public async Task<ExampleUser?> GetByEmailAsync(string email, CancellationToken ct)
     => await _db.QuerySingleOrDefaultAsync<ExampleUser>(
         "SELECT * FROM ExampleUsers WHERE Email = @email",
@@ -275,7 +275,7 @@ public async Task<ExampleUser?> GetByEmailAsync(string email, CancellationToken 
 ```
 
 ```csharp
-// ❌ Command Injection — pasar input del usuario por un shell
+// Mal: Command Injection — pasar input del usuario por un shell
 public async Task<string> ConvertFileAsync(string fileName)
 {
     var process = new Process
@@ -287,7 +287,7 @@ public async Task<string> ConvertFileAsync(string fileName)
     // ...
 }
 
-// ✓ Validar y sanitizar el nombre del archivo antes de usarlo
+// Bien: Validar y sanitizar el nombre del archivo antes de usarlo
 public async Task<string> ConvertFileAsync(string fileName)
 {
     // Validar que solo contiene caracteres permitidos
@@ -350,7 +350,7 @@ La partición por IP es parte del diseño. Con `AddFixedWindowLimiter("login", .
 ## A07 — Fallos de autenticación: manejo seguro de tokens
 
 ```csharp
-// ✓ Guardar tokens de forma segura en el cliente
+// Bien: Guardar tokens de forma segura en el cliente
 // En SPA: HttpOnly Cookie (no accesible por JavaScript) > localStorage
 
 // En el servidor — devolver el access token en cookie HttpOnly
@@ -375,7 +375,7 @@ public async Task<IActionResult> Login([FromBody] LoginRequest request)
     return Ok(new { message = "Login exitoso." });
 }
 
-// ✓ Invalidar la cookie en logout
+// Bien: Invalidar la cookie en logout
 [HttpPost("logout")]
 [Authorize]
 public IActionResult Logout()
@@ -392,11 +392,11 @@ public IActionResult Logout()
 Código o datos que se aceptan como confiables sin verificarlo. Según OWASP, mira la integridad a un nivel más bajo que A03: cada artefacto, actualización o dato crítico. La deserialización insegura vive aquí.
 
 ```csharp
-// ❌ El JSON decide qué tipo se instancia: "$type" puede crear cualquier clase cargada
+// Mal: El JSON decide qué tipo se instancia: "$type" puede crear cualquier clase cargada
 var datos = JsonConvert.DeserializeObject<object>(json,
     new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All });
 
-// ✓ System.Text.Json con un DTO concreto: "$type" se ignora
+// Bien: System.Text.Json con un DTO concreto: "$type" se ignora
 var pedido = JsonSerializer.Deserialize<PedidoDto>(json);
 ```
 
@@ -409,7 +409,7 @@ var pedido = JsonSerializer.Deserialize<PedidoDto>(json);
 OWASP cambió el nombre para subrayar la alerta: un registro que nadie mira no provoca ninguna reacción. Hay que registrar los fallos de login, de acceso y de validación, y además avisar cuando se disparan.
 
 ```csharp
-// ✓ Registrar el evento sin datos sensibles, y contarlo para poder alertar
+// Bien: Registrar el evento sin datos sensibles, y contarlo para poder alertar
 private static readonly Counter<long> LoginsFallidos =
     new Meter("Seguridad.Auth").CreateCounter<long>("auth.login.failed");
 
@@ -440,14 +440,14 @@ Categoría nueva. Trata de la app que no previene una condición anormal, no la 
 ### Fallar cerrado
 
 ```csharp
-// ❌ Falla abierta: si el servicio de permisos cae, todos pasan
+// Mal: Falla abierta: si el servicio de permisos cae, todos pasan
 public async Task<bool> PuedeVerAsync(Guid userId, Guid recursoId, CancellationToken ct)
 {
     try { return await _permisos.TieneAccesoAsync(userId, recursoId, ct); }
     catch { return true; }
 }
 
-// ✓ Falla cerrada: ante la duda se niega, y queda registrado
+// Bien: Falla cerrada: ante la duda se niega, y queda registrado
 public async Task<bool> PuedeVerAsync(Guid userId, Guid recursoId, CancellationToken ct)
 {
     try { return await _permisos.TieneAccesoAsync(userId, recursoId, ct); }
@@ -462,11 +462,11 @@ public async Task<bool> PuedeVerAsync(Guid userId, Guid recursoId, CancellationT
 ### Deshacer lo que quedó a medias
 
 ```csharp
-// ❌ Sin transacción: si cae entre los dos pasos, el dinero desaparece
+// Mal: Sin transacción: si cae entre los dos pasos, el dinero desaparece
 await db.ExecuteAsync("UPDATE cuentas SET saldo = saldo - @monto WHERE id = @origen", datos);
 await db.ExecuteAsync("UPDATE cuentas SET saldo = saldo + @monto WHERE id = @destino", datos);
 
-// ✓ Todo o nada: sin CommitAsync, la transacción se revierte al salir del bloque
+// Bien: Todo o nada: sin CommitAsync, la transacción se revierte al salir del bloque
 await using var tx = await db.BeginTransactionAsync(ct);
 await db.ExecuteAsync("UPDATE cuentas SET saldo = saldo - @monto WHERE id = @origen", datos, tx);
 await db.ExecuteAsync("UPDATE cuentas SET saldo = saldo + @monto WHERE id = @destino", datos, tx);
@@ -478,12 +478,12 @@ Con saldos de 100 y 0, y una caída entre los dos pasos, sin transacción quedan
 ### Liberar los recursos
 
 ```csharp
-// ❌ Si ProcesarAsync lanza, Dispose nunca corre y el archivo queda abierto
+// Si ProcesarAsync lanza, Dispose nunca corre y el archivo queda abierto
 var stream = File.OpenRead(ruta);
 await ProcesarAsync(stream, ct);
 stream.Dispose();
 
-// ✓ await using libera también cuando hay excepción
+// Bien: await using libera también cuando hay excepción
 await using var stream = File.OpenRead(ruta);
 await ProcesarAsync(stream, ct);
 ```
@@ -501,11 +501,11 @@ Prevenir también cuenta. Los límites de tasa, las cuotas y los topes de tamañ
 OWASP cuenta una mala configuración de CORS dentro de A01.
 
 ```csharp
-// ❌ CORS permisivo — acepta cualquier origen
+// Mal: CORS permisivo — acepta cualquier origen
 builder.Services.AddCors(opts =>
     opts.AddDefaultPolicy(p => p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
 
-// ✓ CORS restrictivo — solo origenes conocidos
+// Bien: CORS restrictivo — solo origenes conocidos
 builder.Services.AddCors(opts =>
 {
     opts.AddPolicy("AllowedOrigins", policy =>

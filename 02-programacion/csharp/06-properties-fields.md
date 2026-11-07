@@ -330,13 +330,13 @@ public sealed record PaginacionDto(int Page, int PageSize, int Total)
 ### Error 1: Campo público en vez de propiedad
 
 ```csharp
-// ❌ Campo público — no encapsulado, no se puede agregar lógica después
+// Mal: Campo público — no encapsulado, no se puede agregar lógica después
 public class Usuario
 {
     public string Email;  // campo, no propiedad
 }
 
-// ✓ Propiedad — encapsulado, extensible
+// Bien: Propiedad — encapsulado, extensible
 public class Usuario
 {
     public string Email { get; set; } = string.Empty;
@@ -346,7 +346,7 @@ public class Usuario
 ### Error 2: Olvidar `readonly` en dependencias
 
 ```csharp
-// ❌ Sin readonly — permite reasignación accidental
+// Mal: Sin readonly — permite reasignación accidental
 public sealed class GetExampleUserHandler
 {
     private IExampleUserRepository _repo;  // mutable
@@ -357,7 +357,7 @@ public sealed class GetExampleUserHandler
     }
 }
 
-// ✓ Con readonly — inmutable después del constructor
+// Bien: Con readonly — inmutable después del constructor
 public sealed class GetExampleUserHandler
 {
     private readonly IExampleUserRepository _repo;  // no se puede reasignar
@@ -367,14 +367,14 @@ public sealed class GetExampleUserHandler
 ### Error 3: Propiedad mutable en un record
 
 ```csharp
-// ❌ Record con set mutable — rompe la promesa de inmutabilidad
+// Mal: Record con set mutable — rompe la promesa de inmutabilidad
 public sealed record ExampleUserDto(Guid UserId)
 {
     // override de la propiedad posicional — ahora es mutable
     public Guid UserId { get; set; }  // ya no es init
 }
 
-// ✓ Mantén init en records
+// Bien: Mantén init en records
 public sealed record ExampleUserDto(Guid UserId);
 // UserId es { get; init; } — solo se asigna al crear
 ```

@@ -11,10 +11,10 @@ Este documento cubre los conceptos tácticos de DDD: los bloques de construcció
 El primer principio de DDD: **usar las mismas palabras que el negocio**. El código, los tests, las conversaciones con el cliente y los documentos deben usar el mismo vocabulario.
 
 ```csharp
-// ❌ Vocabulario técnico — no refleja el negocio
+// Mal: Vocabulario técnico — no refleja el negocio
 public class UserRecord { public int status_flag { get; set; } }
 
-// ✓ Vocabulario del dominio
+// Bien: Vocabulario del dominio
 public class ExampleUser
 {
     public bool IsActive { get; private set; }  // "activo" es el término del negocio
@@ -67,13 +67,13 @@ public sealed class ExampleUser
 Un Value Object es un objeto definido completamente por sus atributos. No tiene identidad propia. Dos instancias con los mismos valores son intercambiables.
 
 ```csharp
-// ❌ Email como string — sin validación, fácil de pasar un email inválido
+// Mal: Email como string — sin validación, fácil de pasar un email inválido
 public class User
 {
     public string Email { get; init; } = string.Empty;  // nadie garantiza que sea válido
 }
 
-// ✓ Email como Value Object — se valida al crearse, inmutable, autocontenido
+// Bien: Email como Value Object — se valida al crearse, inmutable, autocontenido
 public sealed record Email
 {
     public string Value { get; }
@@ -116,10 +116,10 @@ Console.WriteLine(email);  // "usuario@example.com"
 - Reemplazable: en lugar de mutar, se reemplaza por un nuevo valor
 
 ```csharp
-// ❌ Mutar un Value Object — no tiene sentido
+// Mal: Mutar un Value Object — no tiene sentido
 address.Street = "Calle Nueva";  // si la dirección cambió, es una dirección NUEVA
 
-// ✓ Reemplazar
+// Bien: Reemplazar
 user.Address = new Address("Calle Nueva", "Ciudad", "CP");
 ```
 
@@ -139,11 +139,11 @@ Pedido (Aggregate Root)
 ```
 
 ```csharp
-// ❌ Modificar una entidad hija directamente — viola la integridad del agregado
+// Mal: Modificar una entidad hija directamente — viola la integridad del agregado
 var item = order.Items.First();
 item.Quantity = 0;   // ← bypasa validaciones del Order
 
-// ✓ Toda modificación pasa por el Aggregate Root
+// Bien: Toda modificación pasa por el Aggregate Root
 public sealed class Order   // ← Aggregate Root
 {
     private readonly List<OrderLine> _items = new();
@@ -338,13 +338,13 @@ Un Servicio de Dominio contiene **lógica de negocio que no pertenece a ninguna 
 **Regla:** si no sabes en qué entidad poner la lógica, probablemente es un servicio de dominio.
 
 ```csharp
-// ❌ ¿Dónde va la lógica de transferencia? No pertenece solo a la cuenta origen ni a la destino
+// Mal: ¿Dónde va la lógica de transferencia? No pertenece solo a la cuenta origen ni a la destino
 public class BankAccount
 {
     public void Transfer(BankAccount destination, decimal amount) { ... }  // ← acoplamiento entre agregados
 }
 
-// ✓ Servicio de dominio — coordina múltiples agregados sin pertenecer a ninguno
+// Bien: Servicio de dominio — coordina múltiples agregados sin pertenecer a ninguno
 // Domain/Services/ITransferDomainService.cs
 public interface ITransferDomainService
 {
@@ -419,13 +419,13 @@ Traduce el modelo externo al modelo propio. Úsalo cuando integras con un sistem
 // El contexto externo (ERP legado) tiene su propio modelo de "cliente"
 // ErpClient { cliente_id, nom_cliente, dir_fiscal, rfc_num }
 
-// ❌ Sin ACL — el modelo externo contamina el dominio propio
+// Mal: Sin ACL — el modelo externo contamina el dominio propio
 public async Task SyncCustomer(ErpClient erpClient)
 {
     var user = new ExampleUser { FullName = erpClient.nom_cliente, ... };  // ← acoplamiento directo
 }
 
-// ✓ Con ACL — traducción en la capa de infraestructura
+// Bien: Con ACL — traducción en la capa de infraestructura
 // Infrastructure/ExternalServices/Erp/ErpCustomerTranslator.cs
 public sealed class ErpCustomerTranslator
 {
@@ -461,7 +461,7 @@ Dos contextos comparten un subconjunto pequeño y estable del modelo. Ambos equi
 
 ```csharp
 // Shared/Domain/UserId.cs — value object compartido entre "Usuarios" y "Pedidos"
-// ⚠ Modificar esto requiere coordinación entre ambos equipos
+// Atención: Modificar esto requiere coordinación entre ambos equipos
 public sealed record UserId(Guid Value)
 {
     public static UserId New() => new(Guid.NewGuid());
@@ -524,7 +524,7 @@ El problema con publicar Domain Events directamente después de `SaveChangesAsyn
 ```
 Flujo sin Outbox (problema):
     1. SaveChangesAsync()   → OK
-    2. Publish(event)       → ❌ bus caído → evento perdido, inconsistencia
+    2. Publish(event)       → No: bus caído → evento perdido, inconsistencia
 
 Flujo con Outbox (solución):
     1. SaveChangesAsync()   → guarda User + OutboxMessage en la misma transacción

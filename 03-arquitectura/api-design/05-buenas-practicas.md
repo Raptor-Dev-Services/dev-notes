@@ -11,14 +11,14 @@ Principios y decisiones de diseño que hacen una API predecible, robusta y fáci
 Una API inconsistente es más difícil de usar que una API que sigue convenciones no ideales pero consistentes.
 
 ```
-❌ Inconsistente:
+No: Inconsistente:
 GET /api/users             → { "data": [...], "total": 100 }
 GET /api/orders            → { "orders": [...], "count": 50 }
 GET /api/products          → [ {...}, {...} ]      ← array directo
 POST /api/users/create     → { "success": true }
 POST /api/orders           → { "id": 123 }
 
-✓ Consistente:
+Sí: Consistente:
 GET /api/users             → { "isSuccess": true, "data": { "items": [...], "total": 100 } }
 GET /api/orders            → { "isSuccess": true, "data": { "items": [...], "total": 50 } }
 POST /api/users            → { "isSuccess": true, "data": { "publicId": "...", ... } }
@@ -30,12 +30,12 @@ POST /api/orders           → { "isSuccess": true, "data": { "publicId": "...",
 ## IDs — nunca exponer IDs internos
 
 ```json
-// ❌ Expone IDs secuenciales — enumeration attack
+// Mal: Expone IDs secuenciales — enumeration attack
 GET /api/users/1
 GET /api/users/2
 GET /api/users/999   ← fácil iterar todos los usuarios
 
-// ✓ UUID públicos
+// Bien: UUID públicos
 GET /api/users/550e8400-e29b-41d4-a716-446655440000
 // Imposible enumerar — no revela cuántos usuarios hay
 ```
@@ -47,11 +47,11 @@ El proyecto usa `Id` (serial interno) para joins en DB y `PublicId` (UUID) para 
 ## Nulls — ser explícito
 
 ```json
-// ❌ Ausencia de campo — el cliente no sabe si no existe o no aplica
+// Mal: Ausencia de campo — el cliente no sabe si no existe o no aplica
 { "fullName": "John", "deletedAt": null }
 { "fullName": "Jane" }
 
-// ✓ Siempre incluir el campo, aunque sea null — el cliente sabe qué esperar
+// Bien: Siempre incluir el campo, aunque sea null — el cliente sabe qué esperar
 { "fullName": "John", "deletedAt": null }
 { "fullName": "Jane", "deletedAt": null }
 ```
@@ -92,8 +92,8 @@ return result;
 Agregar versionado desde v1, aunque no se prevean cambios:
 
 ```
-✓ /api/v1/users      — desde el día 1
-✗ /api/users         — sin versión → cuando haya un breaking change, no hay cómo migrar gradualmente
+Sí: /api/v1/users      — desde el día 1
+No: /api/users         — sin versión → cuando haya un breaking change, no hay cómo migrar gradualmente
 ```
 
 Cuando se necesita un breaking change:
@@ -107,14 +107,14 @@ Cuando se necesita un breaking change:
 ## Backwards compatibility — qué es breaking y qué no
 
 ```
-✓ NO es breaking change (backwards compatible):
+NO es breaking change (backwards compatible):
    - Agregar campo OPCIONAL en la response
    - Agregar campo OPCIONAL en el request body
    - Agregar un nuevo endpoint
    - Cambiar el orden de los campos en el JSON (los clients deben ignorar el orden)
    - Agregar un nuevo valor a un enum (si el cliente es tolerante a valores desconocidos)
 
-✗ SÍ es breaking change:
+No: SÍ es breaking change:
    - Renombrar un campo
    - Cambiar el tipo de un campo (string → int)
    - Eliminar un campo
@@ -185,7 +185,7 @@ El cliente legítimo puede leer `Retry-After` y esperar el tiempo correcto sin b
 ## Timeout y Cancellation
 
 ```csharp
-// ✓ Respetar el CancellationToken en todos los handlers
+// Bien: Respetar el CancellationToken en todos los handlers
 public async Task<GetExampleUserResponse> Handle(
     GetExampleUserRequest request, CancellationToken ct)
 {

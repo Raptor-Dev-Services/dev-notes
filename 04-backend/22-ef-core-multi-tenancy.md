@@ -9,13 +9,13 @@ Los Global Query Filters de EF Core son condiciones `WHERE` que se aplican autom
 Sin filtros globales, cada query en cada repositorio debe incluir el filtro de tenant. Es fácil olvidarlo:
 
 ```csharp
-// ❌ Repositorio sin filtro global — fuga de datos si olvidamos el Where
+// Mal: Repositorio sin filtro global — fuga de datos si olvidamos el Where
 public async Task<UserProfile?> GetByPublicIdAsync(Guid publicId, CancellationToken ct = default) =>
     await _db.UserProfiles
         .AsNoTracking()
         .FirstOrDefaultAsync(e => e.PublicId == publicId, ct);  // ← devuelve perfiles de CUALQUIER tenant
 
-// ❌ Queremos tenantId=5 pero el dev olvidó el filtro
+// Mal: Queremos tenantId=5 pero el dev olvidó el filtro
 var profile = await _repo.GetByPublicIdAsync(publicId);  // retorna datos de otro tenant
 ```
 
@@ -58,7 +58,7 @@ public sealed class AppDbContext : DbContext
 Ahora el mismo repositorio sin filtro explícito ya es seguro:
 
 ```csharp
-// ✓ El filtro global agrega WHERE TenantId = @currentTenantId automáticamente
+// Bien: El filtro global agrega WHERE TenantId = @currentTenantId automáticamente
 public async Task<UserProfile?> GetByPublicIdAsync(Guid publicId, CancellationToken ct = default) =>
     await _db.UserProfiles
         .AsNoTracking()

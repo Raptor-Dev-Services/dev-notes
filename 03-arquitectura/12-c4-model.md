@@ -167,8 +167,8 @@ workspace "{{PROJECT_NAME}}" "SaaS Multi-Tenant .NET" {
 
 ```mermaid
 graph TB
-    User[👤 Usuario Final]
-    Admin[👤 Super Admin]
+    User[Usuario Final]
+    Admin[Super Admin]
     SPA[React SPA<br/>Vite + React 19]
     API["{{PROJECT_NAME}} API<br/>.NET 10"]
     DB[(PostgreSQL<br/>RDS Multi-AZ)]

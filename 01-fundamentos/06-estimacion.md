@@ -44,11 +44,11 @@ Story points miden la **complejidad relativa** de una historia de usuario, no el
 
 ```
 Factores que influyen en los story points:
-  ✓ Complejidad del trabajo (¿cuántos componentes involucra?)
-  ✓ Esfuerzo requerido (¿cuántas decisiones hay que tomar?)
-  ✓ Riesgo e incertidumbre (¿cuánto no sabemos?)
-  ✗ Horas absolutas (NO es lo que miden)
-  ✗ El mejor dev vs el dev más lento
+  Sí: Complejidad del trabajo (¿cuántos componentes involucra?)
+  Sí: Esfuerzo requerido (¿cuántas decisiones hay que tomar?)
+  Sí: Riesgo e incertidumbre (¿cuánto no sabemos?)
+  No: Horas absolutas (NO es lo que miden)
+  No: El mejor dev vs el dev más lento
 ```
 
 ### Por qué no horas
@@ -102,8 +102,8 @@ Planning Poker es una técnica para estimar historias en equipo con votos simult
 ### Por qué votar en secreto
 
 ```
-❌ Si el dev más senior habla primero: todos anclan en su número
-✅ Votos simultáneos: cada dev revela su modelo mental independiente
+Si el dev más senior habla primero: todos anclan en su número
+Sí: Votos simultáneos: cada dev revela su modelo mental independiente
    → Las divergencias revelan supuestos ocultos, no diferencias de habilidad
 ```
 
@@ -176,37 +176,37 @@ Capacity total: 37 dev-días × (velocity / días de sprint)
 ### 1. Estimar en horas trabajo complejo
 
 ```
-❌ "Esta historia toma 8 horas."
+No: "Esta historia toma 8 horas."
    → Las horas son precisas para trabajo repetitivo, no para trabajo creativo/exploratorio.
    
-✅ "Esta historia es un 5 (media complejidad)."
+Sí: "Esta historia es un 5 (media complejidad)."
    → El equipo tiene contexto de qué significa un 5 basado en historias anteriores.
 ```
 
 ### 2. El dev más rápido estima por todos
 
 ```
-❌ El tech lead dice "eso es fácil, 2 puntos" y todos asienten.
+No: El tech lead dice "eso es fácil, 2 puntos" y todos asienten.
    → Se perdió el riesgo que el dev junior habría detectado (él desconoce esa parte del código).
    
-✅ Planning Poker con votos simultáneos.
+Sí: Planning Poker con votos simultáneos.
 ```
 
 ### 3. Presión del PO altera los puntos
 
 ```
-❌ PO: "¿No puede ser 3 en lugar de 8? Necesitamos que entre en este sprint."
+No: PO: "¿No puede ser 3 en lugar de 8? Necesitamos que entre en este sprint."
    → Los story points no son negociables. El scope sí.
    
-✅ "La historia tal como está es un 8. Podemos entregar solo la parte de X (3 puntos)
+Sí: "La historia tal como está es un 8. Podemos entregar solo la parte de X (3 puntos)
     y dejar Y para el siguiente sprint."
 ```
 
 ### 4. Sin calibración histórica
 
 ```
-❌ El equipo estima todo en la primera semana sin haber completado ninguna historia.
-✅ Primero completar 3-5 historias pequeñas, luego calibrar la escala.
+No: El equipo estima todo en la primera semana sin haber completado ninguna historia.
+Sí: Primero completar 3-5 historias pequeñas, luego calibrar la escala.
    → Usar esas historias como "historias de referencia" para calibrar las siguientes.
 ```
 

@@ -259,13 +259,13 @@ Ver `04-backend/10-secretos.md` para gestión de secretos en producción (Azure 
 El problema con `IOptions<T>`, `IOptionsSnapshot<T>`, etc. es que el consumidor controla el lifetime. Eso rompe Inversion of Control. La solución es inyectar la clase POCO directamente desde el composition root:
 
 ```csharp
-// ❌ El consumidor controla el lifetime al elegir IOptionsSnapshot vs IOptions vs IOptionsMonitor
+// Mal: El consumidor controla el lifetime al elegir IOptionsSnapshot vs IOptions vs IOptionsMonitor
 public class ExampleUserService(IOptionsSnapshot<JwtOptions> options)   // ← acoplamiento a IOptionsSnapshot
 {
     private readonly JwtOptions _jwt = options.Value;
 }
 
-// ✓ El consumer no sabe nada de lifetimes — solo recibe JwtOptions
+// Bien: El consumer no sabe nada de lifetimes — solo recibe JwtOptions
 public class ExampleUserService(JwtOptions jwt)   // ← solo depende del POCO
 {
     private readonly JwtOptions _jwt = jwt;

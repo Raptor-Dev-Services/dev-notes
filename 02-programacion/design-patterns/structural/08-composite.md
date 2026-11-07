@@ -13,7 +13,7 @@
 Tienes una app de gestión de tareas. Una tarea puede ser simple o puede ser un grupo de tareas (proyecto). Quieres calcular el tiempo total de todas las tareas de un proyecto, incluyendo sub-proyectos. Con clases separadas para "tarea simple" y "grupo de tareas", el cliente necesita verificar el tipo en cada operación:
 
 ```csharp
-// ❌ Sin Composite — el cliente tiene que distinguir los tipos
+// Mal: Sin Composite — el cliente tiene que distinguir los tipos
 public void CalculateTime(object item)
 {
     if (item is SimpleTask task)

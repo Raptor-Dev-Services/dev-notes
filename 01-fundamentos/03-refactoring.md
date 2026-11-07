@@ -9,17 +9,17 @@ Refactoring es el proceso de reestructurar código existente sin cambiar su comp
 
 ```
 Refactoring:
-  ✓ Renombrar variable para más claridad
-  ✓ Extraer un método largo en métodos más pequeños
-  ✓ Eliminar código duplicado
-  ✓ Simplificar lógica condicional compleja
+  Sí: Renombrar variable para más claridad
+  Sí: Extraer un método largo en métodos más pequeños
+  Sí: Eliminar código duplicado
+  Sí: Simplificar lógica condicional compleja
   → El comportamiento externo NO cambia
 
 No es refactoring:
-  ✗ Agregar nueva funcionalidad (eso es feature development)
-  ✗ Corregir un bug (eso es bug fix)
-  ✗ Optimizar performance (eso puede cambiar el comportamiento observable)
-  ✗ Reescribir desde cero (eso es rewrite)
+  No: Agregar nueva funcionalidad (eso es feature development)
+  No: Corregir un bug (eso es bug fix)
+  No: Optimizar performance (eso puede cambiar el comportamiento observable)
+  No: Reescribir desde cero (eso es rewrite)
 ```
 
 ### La regla del Boy Scout
@@ -85,7 +85,7 @@ Los "code smells" son patrones en el código que indican un problema subyacente.
 ### 1. Long Method (Método largo)
 
 ```csharp
-// ❌ Método de 80 líneas que hace todo
+// Mal: Método de 80 líneas que hace todo
 public async Task<IActionResult> ProcessPayment(PaymentRequest request)
 {
     // validar usuario (15 líneas)
@@ -96,7 +96,7 @@ public async Task<IActionResult> ProcessPayment(PaymentRequest request)
     // registrar auditoría (10 líneas)
 }
 
-// ✓ Extraer métodos — cada uno hace una cosa
+// Bien: Extraer métodos — cada uno hace una cosa
 public async Task<IActionResult> ProcessPayment(PaymentRequest request)
 {
     var user       = await ValidateUserAsync(request.UserId);
@@ -114,7 +114,7 @@ public async Task<IActionResult> ProcessPayment(PaymentRequest request)
 ### 2. Duplicated Code (Código duplicado)
 
 ```csharp
-// ❌ La misma validación de email en tres handlers
+// Mal: La misma validación de email en tres handlers
 // InsertExampleUserHandler:
 if (string.IsNullOrWhiteSpace(request.Email) || !request.Email.Contains('@'))
     return new InsertExampleUserValidationFailure("Email inválido.");
@@ -123,7 +123,7 @@ if (string.IsNullOrWhiteSpace(request.Email) || !request.Email.Contains('@'))
 if (string.IsNullOrWhiteSpace(request.NewEmail) || !request.NewEmail.Contains('@'))
     return new UpdateExampleUserValidationFailure("Email inválido.");
 
-// ✓ Extraer a un Value Object o método compartido
+// Bien: Extraer a un Value Object o método compartido
 public sealed record Email
 {
     public string Value { get; }
@@ -143,12 +143,12 @@ var email = new Email(request.Email);  // lanza ArgumentException si inválido
 ### 3. Long Parameter List (Lista de parámetros larga)
 
 ```csharp
-// ❌ 7 parámetros — señal de que la función hace demasiado o falta encapsulación
+// Mal: 7 parámetros — señal de que la función hace demasiado o falta encapsulación
 public void CreateExampleUser(
     string firstName, string lastName, string email, string password,
     string role, Guid tenantId, bool sendWelcomeEmail)
 
-// ✓ Encapsular en un command/request
+// Bien: Encapsular en un command/request
 public sealed record CreateExampleUserCommand(
     string FullName,
     string Email,
@@ -163,7 +163,7 @@ public void CreateExampleUser(CreateExampleUserCommand command)
 ### 4. Feature Envy (Envidia de características)
 
 ```csharp
-// ❌ El método usa más datos de ExampleUser que de su propia clase
+// Mal: El método usa más datos de ExampleUser que de su propia clase
 public sealed class OrderService
 {
     public decimal CalculateDiscount(Order order, ExampleUser user)
@@ -175,7 +175,7 @@ public sealed class OrderService
     }
 }
 
-// ✓ El método pertenece donde están los datos
+// Bien: El método pertenece donde están los datos
 public sealed class ExampleUser
 {
     public decimal CalculateDiscount(decimal orderTotal)
@@ -190,7 +190,7 @@ public sealed class ExampleUser
 ### 5. Switch Statements (Switch/if-else encadenados por tipo)
 
 ```csharp
-// ❌ Switch sobre tipo — se extiende en múltiples lugares
+// Mal: Switch sobre tipo — se extiende en múltiples lugares
 public decimal CalculateShipping(Order order)
 {
     switch (order.ShippingType)
@@ -203,7 +203,7 @@ public decimal CalculateShipping(Order order)
 }
 // Este switch se repite en CalculateDeliveryTime, CalculateInsurance, etc.
 
-// ✓ Polimorfismo — cada tipo sabe calcular su propio costo
+// Bien: Polimorfismo — cada tipo sabe calcular su propio costo
 public abstract class ShippingStrategy
 {
     public abstract decimal CalculateCost(decimal weight);
@@ -489,11 +489,11 @@ Cuando el sistema legado es demasiado grande para refactorizar in-situ, el patr�
 
 ```
 El "rewrite trap":
-  ✗ El equipo estima 6 meses → tarda 2 años
-  ✗ El sistema legado sigue recibiendo bugs mientras se construye el nuevo
-  ✗ Al llegar, el nuevo sistema tiene los mismos problemas de diseño
+  No: El equipo estima 6 meses → tarda 2 años
+  No: El sistema legado sigue recibiendo bugs mientras se construye el nuevo
+  No: Al llegar, el nuevo sistema tiene los mismos problemas de diseño
      que el viejo (porque el equipo no entendía el dominio)
-  ✗ El negocio perdió 2 años de features
+  No: El negocio perdió 2 años de features
 
 Strangler Fig es mejor: reemplazar por rebanadas verticales,
 incrementalmente, sin detener el negocio.

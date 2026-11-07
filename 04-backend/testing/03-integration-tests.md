@@ -284,13 +284,13 @@ Los integration tests son más lentos que los unit tests. La convención habitua
 
 | Escenario | Decisión |
 |-----------|----------|
-| Verificar que el DI está configurado correctamente | ✓ Integration test |
-| Verificar routing y serialización JSON | ✓ Integration test |
-| Verificar auth/authorize | ✓ Integration test |
-| Verificar flujo completo Controller → DB | ✓ Integration test con TestContainers |
-| Lógica de negocio del Handler | ✓ Unit test (más rápido) |
-| Reglas de validación | ✓ Unit test del Validator |
-| Cada combinación de input/output | ✓ Unit test (barato de multiplicar) |
+| Verificar que el DI está configurado correctamente | Integration test |
+| Verificar routing y serialización JSON | Integration test |
+| Verificar auth/authorize | Integration test |
+| Verificar flujo completo Controller → DB | Integration test con TestContainers |
+| Lógica de negocio del Handler | Unit test (más rápido) |
+| Reglas de validación | Unit test del Validator |
+| Cada combinación de input/output | Unit test (barato de multiplicar) |
 
 ---
 

@@ -497,19 +497,19 @@ public sealed class IdempotencyCleanupJob : BackgroundService
 ## Endpoints que NECESITAN idempotency keys
 
 ```
-✓ POST /api/orders           → crear orden (dinero en juego)
-✓ POST /api/payments         → procesar pago
-✓ POST /api/invoices         → generar factura
-✓ POST /api/users/invite     → enviar invitación (evitar emails duplicados)
-✓ POST /api/data/export      → solicitar exportación
-✓ POST /api/reports/generate → generar reporte (proceso costoso)
-✓ POST /api/subscriptions    → crear suscripción en Stripe
+Sí: POST /api/orders           → crear orden (dinero en juego)
+Sí: POST /api/payments         → procesar pago
+Sí: POST /api/invoices         → generar factura
+Sí: POST /api/users/invite     → enviar invitación (evitar emails duplicados)
+Sí: POST /api/data/export      → solicitar exportación
+Sí: POST /api/reports/generate → generar reporte (proceso costoso)
+Sí: POST /api/subscriptions    → crear suscripción en Stripe
 
-✗ GET  /api/orders           → idempotente por naturaleza
-✗ GET  /api/users/:id        → idempotente por naturaleza
-✗ DELETE /api/orders/:id     → idempotente por diseño (borrar lo ya borrado = ok)
-✗ POST /api/auth/login       → no se debe cachear (cada login es un evento nuevo)
-✗ POST /api/auth/refresh     → no se debe cachear
+No: GET  /api/orders           → idempotente por naturaleza
+No: GET  /api/users/:id        → idempotente por naturaleza
+No: DELETE /api/orders/:id     → idempotente por diseño (borrar lo ya borrado = ok)
+No: POST /api/auth/login       → no se debe cachear (cada login es un evento nuevo)
+No: POST /api/auth/refresh     → no se debe cachear
 ```
 
 ---

@@ -291,7 +291,7 @@ public sealed record GatoRecord(string Nombre, bool EsIndoor) : AnimalRecord(Nom
 | Inmutabilidad | Manual (`readonly`, `init`) | Por diseño (`init` en posicionales) |
 | `ToString()` | `NombreClase` | `NombreClase { Prop1 = val1, ... }` |
 | `Equals()` | Referencia | Todos los campos/props |
-| `with` expression | No | ✓ |
+| `with` expression | No | Sí |
 | `Deconstruct` | Manual | Automático (posicionales) |
 | Herencia | Clases y abstract | Solo records |
 | Mutabilidad | Configurable | Posible pero desaconsejado |
@@ -304,21 +304,21 @@ public sealed record GatoRecord(string Nombre, bool EsIndoor) : AnimalRecord(Nom
 ### 1. Cuando el objeto tiene estado mutable
 
 ```csharp
-// ❌ Un repositorio NO es un record — tiene estado (la conexión) que cambia
+// Mal: Un repositorio NO es un record — tiene estado (la conexión) que cambia
 public sealed record ExampleUserRepository(ExampleUsersSql sql) : IExampleUserRepository
 {
     // El record se compara por valor — dos repos con la misma sql serían "iguales"
     // Eso no tiene sentido para un repositorio
 }
 
-// ✓ Clase normal
+// Bien: Clase normal
 public sealed class ExampleUserRepository : IExampleUserRepository { }
 ```
 
 ### 2. Cuando necesitas la misma instancia (identidad)
 
 ```csharp
-// ❌ Si dos peticiones crean el mismo GetExampleUserRequest, son "iguales"
+// Si dos peticiones crean el mismo GetExampleUserRequest, son "iguales"
 // como records — pero podrían ser peticiones distintas del mismo usuario
 // (en algunos casos quieres distinguirlas)
 ```
@@ -328,7 +328,7 @@ public sealed class ExampleUserRepository : IExampleUserRepository { }
 **IMPORTANTE**: trampa del proyecto:
 
 ```csharp
-// ❌ NO implementar ISuccess<TSelf> en un record con Data => this
+// NO implementar ISuccess<TSelf> en un record con Data => this
 // Crea una referencia circular en la serialización JSON
 public sealed record GetExampleUsersSuccess(...)
     : GetExampleUsersResponse, ISuccess<GetExampleUsersSuccess>
@@ -336,7 +336,7 @@ public sealed record GetExampleUsersSuccess(...)
     public GetExampleUsersSuccess Data => this;  // ← CIRCULAR — Data.Data.Data...
 }
 
-// ✓ Implementar ISuccess (sin genérico) cuando el éxito contiene múltiples campos
+// Bien: Implementar ISuccess (sin genérico) cuando el éxito contiene múltiples campos
 public sealed record GetExampleUsersSuccess(
     IReadOnlyCollection<ExampleUserDto> Users, int Total, int Page, int PageSize)
     : GetExampleUsersResponse, ISuccess;  // ISuccess sin <T>

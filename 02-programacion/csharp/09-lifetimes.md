@@ -122,7 +122,7 @@ Petición 1 llega
 Ocurre cuando **un Singleton captura un Scoped**. El Scoped debería vivir solo una petición, pero el Singleton lo retiene para siempre.
 
 ```csharp
-// ❌ ERROR GRAVE — Singleton con dependencia Scoped
+// ERROR GRAVE — Singleton con dependencia Scoped
 public sealed class CacheGlobal   // Singleton
 {
     private readonly MainDapperDbConnection _db;  // Scoped — vive solo una petición

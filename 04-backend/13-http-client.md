@@ -9,7 +9,7 @@ Crear `HttpClient` con `new HttpClient()` es uno de los bugs más comunes en .NE
 ## El problema con `new HttpClient()`
 
 ```csharp
-// ❌ Socket exhaustion — cada instancia abre nuevas conexiones TCP
+// Mal: Socket exhaustion — cada instancia abre nuevas conexiones TCP
 public class PaymentService
 {
     public async Task<string> ChargeAsync(decimal amount)
@@ -19,7 +19,7 @@ public class PaymentService
     }
 }
 
-// ❌ También incorrecto — singleton de HttpClient no respeta cambios de DNS
+// Mal: También incorrecto — singleton de HttpClient no respeta cambios de DNS
 public class PaymentService
 {
     private static readonly HttpClient _client = new();  // ← no rota, ignora DNS TTL

@@ -13,9 +13,9 @@ Metodología creada por desarrolladores de Heroku para construir aplicaciones mo
 ### Factor 1 — Codebase: un repositorio, múltiples deploys
 
 ```
-✓ Un repositorio por contexto de aplicación (un repo para la API, otro para infra)
-✓ El mismo código se despliega en staging y producción — solo cambia la config
-✗ Un repo para staging y otro para producción = divergencia garantizada
+Sí: Un repositorio por contexto de aplicación (un repo para la API, otro para infra)
+Sí: El mismo código se despliega en staging y producción — solo cambia la config
+No: Un repo para staging y otro para producción = divergencia garantizada
 ```
 
 Buenas prácticas: gestión de ramas (Git Flow o trunk-based), revisiones de código, documentación en el mismo repo.
@@ -23,9 +23,9 @@ Buenas prácticas: gestión de ramas (Git Flow o trunk-based), revisiones de có
 ### Factor 2 — Dependencies: declarar y aislar dependencias
 
 ```
-✓ Todas las dependencias en el archivo de proyecto (.csproj)
-✓ dotnet restore descarga exactamente lo declarado — sin "instalar a mano"
-✗ Asumir que la librería X ya está instalada en el servidor
+Sí: Todas las dependencias en el archivo de proyecto (.csproj)
+Sí: dotnet restore descarga exactamente lo declarado — sin "instalar a mano"
+No: Asumir que la librería X ya está instalada en el servidor
 ```
 
 ```bash
@@ -39,8 +39,8 @@ dotnet build --no-restore
 ### Factor 3 — Config: configuración en el entorno, no en el código
 
 ```
-✓ Connection strings, API keys, feature flags → variables de entorno o Azure App Configuration
-✗ appsettings.json con credenciales de producción commiteadas al repo
+Sí: Connection strings, API keys, feature flags → variables de entorno o Azure App Configuration
+No: appsettings.json con credenciales de producción commiteadas al repo
 
 # La misma imagen Docker se ejecuta en staging y producción
 # La diferencia es solo en las variables de entorno inyectadas
@@ -53,9 +53,9 @@ Ver: `10-cloud/05-secretos-produccion.md` para implementación con Azure Key Vau
 ### Factor 4 — Backing Services: tratar servicios externos como recursos adjuntos
 
 ```
-✓ La base de datos, Redis, el servicio de email → referenciados por URL/credencial
-✓ Se puede cambiar la DB de staging a producción cambiando una variable
-✗ Conexión hardcodeada a un servidor físico específico
+Sí: La base de datos, Redis, el servicio de email → referenciados por URL/credencial
+Sí: Se puede cambiar la DB de staging a producción cambiando una variable
+No: Conexión hardcodeada a un servidor físico específico
 
 Ejemplos de backing services:
   Base de datos      → referenciada por connection string
@@ -73,25 +73,25 @@ Build   → compilar el código, descargar dependencias, generar artefacto
 Release → combinar artefacto + config del ambiente (staging, prod)
 Run     → ejecutar el artefacto en el ambiente con su config
 
-✓ CI genera el artefacto (build)
-✓ CD lo despliega con config por ambiente (release + run)
-✓ Rollback = regresar a la release anterior sin recompilar
-✗ Modificar código directamente en el servidor de producción
+Sí: CI genera el artefacto (build)
+Sí: CD lo despliega con config por ambiente (release + run)
+Sí: Rollback = regresar a la release anterior sin recompilar
+No: Modificar código directamente en el servidor de producción
 ```
 
 ### Factor 6 — Processes: procesos stateless
 
 ```
-✓ Cada request es independiente — no hay estado en memoria entre requests
-✓ El estado persiste en backing services (DB, Redis), no en la app
-✗ Guardar sesiones en memoria del proceso (InMemory Session sin Redis)
+Sí: Cada request es independiente — no hay estado en memoria entre requests
+Sí: El estado persiste en backing services (DB, Redis), no en la app
+No: Guardar sesiones en memoria del proceso (InMemory Session sin Redis)
 
-// ✓ Stateless: el contexto del usuario viene en el JWT de cada request
+// Bien: Stateless: el contexto del usuario viene en el JWT de cada request
 // No hay estado de sesión en el servidor
 app.UseAuthentication();   // extrae claims del token en cada request
 app.UseAuthorization();
 
-// ✓ Si necesitas sesión distribuida: usar Redis como backing service
+// Si necesitas sesión distribuida: usar Redis como backing service
 builder.Services.AddStackExchangeRedisCache(options =>
     options.Configuration = builder.Configuration["Redis:Connection"]);
 builder.Services.AddSession(options =>
@@ -118,9 +118,9 @@ docker run -p 80:8080 mi-api
 Vertical   = agregar más CPU/RAM a un servidor (límite físico)
 Horizontal = agregar más instancias del mismo proceso (elástico)
 
-✓ Kubernetes HPA (Horizontal Pod Autoscaler) — escala réplicas de pods
-✓ ECS Service desired_count → aumentar réplicas
-✓ Azure App Service scale-out → más instancias del mismo contenedor
+Sí: Kubernetes HPA (Horizontal Pod Autoscaler) — escala réplicas de pods
+Sí: ECS Service desired_count → aumentar réplicas
+Sí: Azure App Service scale-out → más instancias del mismo contenedor
 ```
 
 Para trabajo de larga duración, usar procesos worker separados de los HTTP handlers.
@@ -153,20 +153,20 @@ protected override async Task ExecuteAsync(CancellationToken ct)
 ### Factor 10 — Dev/Prod Parity: ambientes lo más similares posible
 
 ```
-✓ Usar Docker en desarrollo → mismo runtime que producción
-✓ docker-compose con las mismas versiones de PostgreSQL, Redis, etc. que prod
-✗ SQL Server en producción y SQLite en desarrollo
-✗ Windows en desarrollo y Linux en producción (diferencias de paths, encodings)
+Sí: Usar Docker en desarrollo → mismo runtime que producción
+Sí: docker-compose con las mismas versiones de PostgreSQL, Redis, etc. que prod
+No: SQL Server en producción y SQLite en desarrollo
+No: Windows en desarrollo y Linux en producción (diferencias de paths, encodings)
 ```
 
 ### Factor 11 — Logs: tratar logs como streams de eventos
 
 ```
-✓ Escribir logs a stdout/stderr — el entorno los captura y enruta
-✓ No abrir/cerrar archivos de log en la app: el orchestrator los gestiona
-✓ Structured logging (JSON) para que el sistema de agregación indexe los campos
+Sí: Escribir logs a stdout/stderr — el entorno los captura y enruta
+No abrir/cerrar archivos de log en la app: el orchestrator los gestiona
+Sí: Structured logging (JSON) para que el sistema de agregación indexe los campos
 
-// ✓ Serilog escribiendo a stdout con structured JSON
+// Bien: Serilog escribiendo a stdout con structured JSON
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console(new JsonFormatter())
     .CreateLogger();
@@ -178,9 +178,9 @@ Log.Logger = new LoggerConfiguration()
 ### Factor 12 — Admin Processes: tareas administrativas como procesos one-off
 
 ```
-✓ Migraciones de DB → comando separado en el pipeline de CI/CD, no en startup
-✓ Scripts de seed → ejecutar una vez antes del deploy
-✗ Correr migraciones en el constructor del DbContext (corre en cada instancia)
+Sí: Migraciones de DB → comando separado en el pipeline de CI/CD, no en startup
+Sí: Scripts de seed → ejecutar una vez antes del deploy
+No: Correr migraciones en el constructor del DbContext (corre en cada instancia)
 
 # Pipeline de CI/CD:
 1. dotnet ef database update     ← admin process one-off
@@ -200,7 +200,7 @@ Un sistema reactivo tiene 4 propiedades:
 El sistema responde en tiempo razonable bajo cualquier condición. Si una operación toma tiempo (ej: generar un PDF), responder inmediatamente con "trabajo enviado" y notificar cuando termine. Nunca hacer esperar al usuario en un request bloqueante.
 
 ```csharp
-// ✓ Responsivo: respuesta inmediata con ID de trabajo
+// Bien: Responsivo: respuesta inmediata con ID de trabajo
 [HttpPost("reports/generate")]
 public async Task<IActionResult> GenerateReport(ReportRequest request, CancellationToken ct)
 {
@@ -214,7 +214,7 @@ public async Task<IActionResult> GenerateReport(ReportRequest request, Cancellat
 El sistema permanece responsivo ante fallas. Degradar funcionalidad gracefully en lugar de fallar completamente.
 
 ```csharp
-// ✓ Resiliente: circuit breaker + fallback cuando el servicio externo falla
+// Bien: Resiliente: circuit breaker + fallback cuando el servicio externo falla
 builder.Services.AddHttpClient<IInventoryClient, InventoryClient>()
     .AddResilienceHandler("inventory", pipeline =>
     {
@@ -247,7 +247,7 @@ ECS:            desired_count ajustado por auto-scaling policies
 Los componentes se comunican por mensajes asíncronos para lograr desacoplamiento y absorber picos de carga.
 
 ```csharp
-// ✓ Message-driven: el handler publica un evento en lugar de llamar directamente
+// Bien: Message-driven: el handler publica un evento en lugar de llamar directamente
 // Si el servicio de email está caído, el mensaje queda en la cola — no se pierde
 await _bus.PublishAsync(new UserRegisteredEvent(user.Id, user.Email), ct);
 // EmailService consume el evento cuando esté disponible
@@ -272,29 +272,29 @@ await _bus.PublishAsync(new UserRegisteredEvent(user.Id, user.Email), ct);
 
 ```
 Stateless:
-  ✓ No hay datos de usuario en memoria entre requests
-  ✓ Sesiones en Redis si se necesitan
-  ✓ No hay static mutable state compartido entre requests
+  No hay datos de usuario en memoria entre requests
+  Sí: Sesiones en Redis si se necesitan
+  No hay static mutable state compartido entre requests
 
 Config:
-  ✓ Sin secretos en el código ni en appsettings.json commiteados
-  ✓ Variables de entorno o Key Vault para credenciales
-  ✓ La misma imagen funciona en staging y producción
+  Sí: Sin secretos en el código ni en appsettings.json commiteados
+  Sí: Variables de entorno o Key Vault para credenciales
+  Sí: La misma imagen funciona en staging y producción
 
 Observabilidad:
-  ✓ Structured logging a stdout
-  ✓ Health checks en /health/live y /health/ready
-  ✓ Métricas exportadas (OpenTelemetry)
-  ✓ Trazas distribuidas
+  Sí: Structured logging a stdout
+  Sí: Health checks en /health/live y /health/ready
+  Sí: Métricas exportadas (OpenTelemetry)
+  Sí: Trazas distribuidas
 
 Resiliencia:
-  ✓ Polly para reintentos y circuit breakers en llamadas externas
-  ✓ Graceful shutdown con CancellationToken
-  ✓ Startup rápido (< 5 segundos)
+  Sí: Polly para reintentos y circuit breakers en llamadas externas
+  Sí: Graceful shutdown con CancellationToken
+  Sí: Startup rápido (< 5 segundos)
 
 Backing services:
-  ✓ DB, Redis, S3 referenciados solo por connection string/URL
-  ✓ La app puede cambiar de DB con solo cambiar la config
+  Sí: DB, Redis, S3 referenciados solo por connection string/URL
+  Sí: La app puede cambiar de DB con solo cambiar la config
 ```
 
 ---

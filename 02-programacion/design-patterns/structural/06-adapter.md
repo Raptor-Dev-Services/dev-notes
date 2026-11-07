@@ -16,7 +16,7 @@ Tienes una clase que espera datos en formato XML, pero la librería que quieres 
 // El cliente espera ITarget.GetRequest()
 // La librería tiene Adaptee.GetSpecificRequest() — distinto nombre, distinto formato
 
-// ❌ Sin Adapter — incompatible
+// Mal: Sin Adapter — incompatible
 Adaptee adaptee = new Adaptee();
 ITarget target = adaptee;  // ← ERROR: no implementa ITarget
 ```

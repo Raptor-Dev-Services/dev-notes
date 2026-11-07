@@ -203,7 +203,7 @@ UPDATE dbo.Accounts SET Balance = Balance + 50  WHERE Id = 1;  -- quiere lock en
 **1. Ordenar los locks consistentemente:** siempre adquirir locks en el mismo orden:
 
 ```sql
--- ✓ Siempre actualizar primero la cuenta con menor Id
+-- Bien: Siempre actualizar primero la cuenta con menor Id
 -- T1 y T2 siempre adquieren locks en el mismo orden → no hay deadlock
 UPDATE dbo.Accounts SET Balance = Balance - 100 WHERE Id = 1;  -- menor Id primero
 UPDATE dbo.Accounts SET Balance = Balance + 100 WHERE Id = 2;

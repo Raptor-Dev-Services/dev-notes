@@ -358,14 +358,14 @@ public static IServiceCollection AddInfrastructureServices(
 ### Error 1: guardar secretos en appsettings.json
 
 ```json
-// ❌ NUNCA en appsettings.json — se sube al repositorio
+// NUNCA en appsettings.json — se sube al repositorio
 {
   "Jwt": {
     "Key": "mi-clave-secreta-real"   // ← exposición de credenciales
   }
 }
 
-// ✓ Usar variables de entorno o User Secrets
+// Bien: Usar variables de entorno o User Secrets
 // En appsettings.json dejar vacío o comentario:
 {
   "Jwt": {
@@ -377,13 +377,13 @@ public static IServiceCollection AddInfrastructureServices(
 ### Error 2: no validar configuración al inicio
 
 ```csharp
-// ❌ La app arranca aunque Jwt:Key esté vacío — falla en la primera request
+// Mal: La app arranca aunque Jwt:Key esté vacío — falla en la primera request
 public JwtTokenService(IConfiguration config)
 {
     _key = config["Jwt:Key"] ?? "";  // string vacío silenciado
 }
 
-// ✓ Fail fast al inicio — la app no arranca si falta configuración crítica
+// Bien: Fail fast al inicio — la app no arranca si falta configuración crítica
 public JwtTokenService(IConfiguration config)
 {
     _key = config["Jwt:Key"]
@@ -395,7 +395,7 @@ public JwtTokenService(IConfiguration config)
 ### Error 3: inyectar IConfiguration en capas internas
 
 ```csharp
-// ❌ Application o Domain no deberían conocer IConfiguration
+// Mal: Application o Domain no deberían conocer IConfiguration
 // Viola la dirección de dependencias (Application no depende de Infrastructure)
 public class GetUserHandler : IRequestHandler<...>
 {
@@ -405,7 +405,7 @@ public class GetUserHandler : IRequestHandler<...>
     }
 }
 
-// ✓ La configuración se inyecta en la capa de composición (Host/Extensions)
+// Bien: La configuración se inyecta en la capa de composición (Host/Extensions)
 // o en Infrastructure donde tiene sentido
 // Application solo recibe lo que necesita — no IConfiguration
 ```

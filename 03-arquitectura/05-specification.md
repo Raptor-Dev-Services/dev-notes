@@ -7,7 +7,7 @@ El Specification Pattern encapsula una regla de negocio (o criterio de filtrado)
 ## El problema que resuelve
 
 ```csharp
-// ❌ Lógica de filtrado dispersa — repetida en varios handlers y repositorios
+// Mal: Lógica de filtrado dispersa — repetida en varios handlers y repositorios
 public class GetActiveUsersHandler
 {
     public async Task<...> Handle(...)
@@ -29,7 +29,7 @@ public class SendWelcomeEmailHandler
     }
 }
 
-// ❌ Repositorio con métodos específicos por combinación de filtros
+// Mal: Repositorio con métodos específicos por combinación de filtros
 public interface IUserRepository
 {
     Task<IEnumerable<User>> GetActiveAsync();

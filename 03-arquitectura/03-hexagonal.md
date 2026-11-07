@@ -9,7 +9,7 @@ La arquitectura hexagonal aísla el dominio de negocio de todo lo que lo rodea: 
 ## El problema que resuelve
 
 ```csharp
-// ❌ El dominio depende directamente de infraestructura
+// Mal: El dominio depende directamente de infraestructura
 public class ExampleUserService
 {
     private readonly SqlConnection _sql;   // ← acoplado a SQL Server
@@ -25,7 +25,7 @@ public class ExampleUserService
 ```
 
 ```csharp
-// ✓ El dominio depende de una abstracción (puerto)
+// Bien: El dominio depende de una abstracción (puerto)
 public class ExampleUserService
 {
     private readonly IExampleUserRepository _repo;  // ← solo la interfaz
@@ -44,9 +44,9 @@ public class ExampleUserService
                     ┌─────────────────────────────────┐
                     │        APLICACIÓN (hexágono)     │
                     │                                  │
-[HTTP Request]  ──► │ Puerto primario                  │ Puerto secundario ──► [Base de datos]
-[CLI]           ──► │ IExampleUserController (driving) │ IExampleUserRepository (driven) ──► [Cache]
-[Test]          ──► │                                  │                       ──► [Email]
+[HTTP Request]  ──> │ Puerto primario                  │ Puerto secundario ──> [Base de datos]
+[CLI]           ──> │ IExampleUserController (driving) │ IExampleUserRepository (driven) ──> [Cache]
+[Test]          ──> │                                  │                       ──> [Email]
                     │         Dominio puro             │
                     └─────────────────────────────────┘
 ```
@@ -207,12 +207,12 @@ Driven Adapter    → Infrastructure        → ExampleUserRepository + ExampleU
 > **Las dependencias de código solo pueden apuntar hacia adentro.** Nada en una capa interna puede conocer nada de una capa externa.
 
 ```
-✓ Application conoce Domain
-✓ Infrastructure conoce Domain
-✓ WebApi conoce Application
-✗ Domain conoce Infrastructure      ← viola la regla
-✗ Application conoce Infrastructure ← viola la regla
-✗ Domain conoce WebApi              ← viola la regla
+Sí: Application conoce Domain
+Sí: Infrastructure conoce Domain
+Sí: WebApi conoce Application
+No: Domain conoce Infrastructure      ← viola la regla
+No: Application conoce Infrastructure ← viola la regla
+No: Domain conoce WebApi              ← viola la regla
 ```
 
 Se implementa con DI: la capa externa implementa la interface definida en la capa interna. La capa interna nunca importa la externa.

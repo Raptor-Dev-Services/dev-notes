@@ -13,7 +13,7 @@
 Necesitas una copia exacta de un objeto. El problema: no siempre conoces la clase concreta del objeto (solo tienes una referencia a la interfaz), y los campos del objeto pueden ser privados.
 
 ```csharp
-// ❌ Problema: campos privados, no sabes la clase concreta
+// Mal: Problema: campos privados, no sabes la clase concreta
 IAnimal animal = GetAnimalFromSomewhere();  // puede ser Dog, Cat, Wolf...
 // No puedes hacer: var copy = new ??? (animal.GetType())
 // No puedes acceder a los campos privados para copiarlos manualmente
@@ -84,9 +84,9 @@ Person p3 = p1.DeepCopy();     // copia profunda
 p1.Age = 32;
 p1.IdInfo.IdNumber = 7878;
 
-Console.WriteLine(p2.Age);           // 42 → ✓ int se copió por valor
-Console.WriteLine(p2.IdInfo.IdNumber); // 7878 → ❌ comparten el mismo IdInfo
-Console.WriteLine(p3.IdInfo.IdNumber); // 666  → ✓ IdInfo independiente
+Console.WriteLine(p2.Age);           // 42 → Bien: int se copió por valor
+Console.WriteLine(p2.IdInfo.IdNumber); // 7878 → Mal: comparten el mismo IdInfo
+Console.WriteLine(p3.IdInfo.IdNumber); // 666  → Bien: IdInfo independiente
 ```
 
 **Conclusión:**

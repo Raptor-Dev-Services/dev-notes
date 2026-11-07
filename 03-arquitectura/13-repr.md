@@ -9,7 +9,7 @@ El patrón REPR (se pronuncia "reaper") organiza cada endpoint de una API como u
 ## El problema que resuelve
 
 ```csharp
-// ❌ Con MVC — el endpoint vive en un controller genérico que agrupa
+// Mal: Con MVC — el endpoint vive en un controller genérico que agrupa
 // operaciones no relacionadas; el model binding es indirecto y verbose
 
 [ApiController]
@@ -29,7 +29,7 @@ public class ProductsController : ControllerBase
 Con REPR, cada operación es una clase independiente con todo su código en un solo lugar:
 
 ```csharp
-// ✓ REPR — la feature ShuffleText es autocontenida
+// Bien: REPR — la feature ShuffleText es autocontenida
 public class ShuffleText
 {
     public record class Request(string Text);   // entrada

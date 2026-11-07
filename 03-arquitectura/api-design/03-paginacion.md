@@ -194,8 +194,8 @@ public static (DateTime CreatedAt, Guid PublicId) DecodeCursor(string cursor)
 |---|--------|--------|
 | Implementación | Simple | Más compleja |
 | Rendimiento en páginas profundas | Degrada | Constante |
-| Saltar a página N | ✓ (/api/users?page=50) | ✗ (no hay "página 50") |
-| Datos consistentes al paginar | ✗ (duplicados si hay inserts) | ✓ |
+| Saltar a página N | (/api/users?page=50) | (no hay "página 50") |
+| Datos consistentes al paginar | (duplicados si hay inserts) | Sí |
 | Ideal para | Dashboards, búsqueda admin | Feeds, scroll infinito |
 
 ---

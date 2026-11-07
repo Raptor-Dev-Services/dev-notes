@@ -111,7 +111,7 @@ public sealed class AppDbContext : DbContext
 > Fuente: *Entity Framework Core in Action* (Smith): Ch.2 Querying the Database
 
 ```csharp
-// ✓ AsNoTracking para Queries de solo lectura — sin change tracking, más rápido
+// Bien: AsNoTracking para Queries de solo lectura — sin change tracking, más rápido
 var users = await _db.ExampleUsers
     .AsNoTracking()
     .Where(u => u.IsActive)
@@ -120,14 +120,14 @@ var users = await _db.ExampleUsers
     .Take(pageSize)
     .ToListAsync(ct);
 
-// ✓ Proyección directa a DTO — EF solo carga los campos que necesita
+// Bien: Proyección directa a DTO — EF solo carga los campos que necesita
 var dtos = await _db.ExampleUsers
     .AsNoTracking()
     .Where(u => u.IsActive)
     .Select(u => new ExampleUserDto(u.PublicId, u.FullName, u.Email, u.IsActive))
     .ToListAsync(ct);
 
-// ✓ Include para relaciones — evita N+1 queries
+// Bien: Include para relaciones — evita N+1 queries
 var usersWithRoles = await _db.ExampleUsers
     .AsNoTracking()
     .Include(u => u.Roles)
@@ -138,19 +138,19 @@ var usersWithRoles = await _db.ExampleUsers
 ### Problema N+1 y cómo evitarlo
 
 ```csharp
-// ❌ N+1 — EF hace un query por cada usuario para cargar sus roles
+// Mal: N+1 — EF hace un query por cada usuario para cargar sus roles
 var users = await _db.ExampleUsers.ToListAsync(ct);   // 1 query
 foreach (var user in users)
 {
     var roles = user.Roles;  // N queries — uno por usuario → problema en producción
 }
 
-// ✓ Eager loading con Include — un solo JOIN
+// Bien: Eager loading con Include — un solo JOIN
 var users = await _db.ExampleUsers
     .Include(u => u.Roles)
     .ToListAsync(ct);   // 1 query con JOIN
 
-// ✓ Split queries para colecciones grandes (evita producto cartesiano)
+// Bien: Split queries para colecciones grandes (evita producto cartesiano)
 var users = await _db.ExampleUsers
     .Include(u => u.Roles)
     .AsSplitQuery()   // 2 queries separados en lugar de un JOIN
@@ -364,12 +364,12 @@ builder.Services.AddDbContext<AppDbContext>((sp, opts) =>
 
 | Criterio | EF Core | Dapper |
 |----------|---------|--------|
-| Migrations automáticas | ✓ Integrado | ✗ Manual |
-| Queries simples CRUD | ✓ LINQ fluido | ✓ SQL directo |
-| Queries complejos | ✗ LINQ complejo, difícil de optimizar | ✓ SQL completo |
-| Change tracking | ✓ Automático | ✗ Manual |
-| Soft delete / Auditoría global | ✓ Global filters + interceptors | ✗ Lógica manual en cada repo |
-| Rendimiento en queries masivos | ✗ Overhead del ORM | ✓ Más rápido con SQL puro |
+| Migrations automáticas | Integrado | Manual |
+| Queries simples CRUD | LINQ fluido | SQL directo |
+| Queries complejos | LINQ complejo, difícil de optimizar | SQL completo |
+| Change tracking | Automático | Manual |
+| Soft delete / Auditoría global | Global filters + interceptors | Lógica manual en cada repo |
+| Rendimiento en queries masivos | Overhead del ORM | Más rápido con SQL puro |
 | **Usar cuando** | Escrituras con relaciones, migrations, auditoría | Reportes, queries analíticos, optimización fina |
 
 **Estrategia mixta (recomendada):** EF Core para Commands (escrituras con change tracking), Dapper para Queries (lecturas optimizadas).

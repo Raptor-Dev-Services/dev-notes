@@ -14,10 +14,10 @@ Sin subdomain routing:
 Con subdomain routing:
    alfacorp.misaas.com → el tenant se conoce ANTES del login
    Ventajas:
-   ✓ UI personalizada (logo, color) antes de autenticar
-   ✓ Validación temprana ("este subdominio no existe")
-   ✓ Segregación visual por empresa
-   ✓ Permite SSO por tenant (cada empresa tiene su propio IDP)
+   Sí: UI personalizada (logo, color) antes de autenticar
+   Sí: Validación temprana ("este subdominio no existe")
+   Sí: Segregación visual por empresa
+   Sí: Permite SSO por tenant (cada empresa tiene su propio IDP)
 ```
 
 ---

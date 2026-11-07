@@ -7,7 +7,7 @@ El código se escribe una vez y se lee decenas de veces. Clean Code (Robert C. M
 ## Por qué importa la legibilidad
 
 ```csharp
-// ❌ Código técnicamente correcto pero ilegible
+// Mal: Código técnicamente correcto pero ilegible
 public List<int[]> getThem()
 {
     var list1 = new List<int[]>();
@@ -16,7 +16,7 @@ public List<int[]> getThem()
     return list1;
 }
 
-// ✓ El mismo código con nombres significativos
+// Bien: El mismo código con nombres significativos
 public List<Cell> GetFlaggedCells()
 {
     var flaggedCells = new List<Cell>();
@@ -41,13 +41,13 @@ La lógica es idéntica. La diferencia es cuánto tiempo tarda el lector en ente
 // Método = verbo o frase verbal
 // Booleano = pregunta (IsActive, HasPermission, CanDelete)
 
-// ❌ Nombres vagos o abreviados
+// Mal: Nombres vagos o abreviados
 public class DU { }             // ¿qué es DU?
 public class Manager { }        // ¿qué maneja?
 public void Process() { }       // ¿procesa qué?
 public bool Flag { get; set; }  // ¿qué flag?
 
-// ✓ Nombres que revelan intención
+// Bien: Nombres que revelan intención
 public sealed class ExampleUser { }
 public sealed class ExampleUserRepository { }
 public void RegisterUser(string fullName, string email) { }
@@ -57,29 +57,29 @@ public bool IsEmailVerified { get; private set; }
 ### Una palabra por concepto
 
 ```csharp
-// ❌ Varios nombres para el mismo concepto
+// Mal: Varios nombres para el mismo concepto
 GetExampleUser()   // en un service
 FetchUser()        // en otro service
 RetrieveAccount()  // en un tercero
 
-// ✓ Un nombre consistente para el mismo concepto
+// Bien: Un nombre consistente para el mismo concepto
 GetExampleUser()   // siempre "Get" para recuperar un recurso
 ```
 
 ### Contexto significativo
 
 ```csharp
-// ❌ Necesita comentario para entenderse
+// Mal: Necesita comentario para entenderse
 string s1;   // first name
 string s2;   // last name
 int d;       // days elapsed
 
-// ✓ El nombre es el comentario
+// Bien: El nombre es el comentario
 string firstName;
 string lastName;
 int daysElapsed;
 
-// ✓ Mejor aún — agrupar en un Value Object si pertenecen juntos
+// Mejor aún — agrupar en un Value Object si pertenecen juntos
 public sealed record FullName(string First, string Last)
 {
     public override string ToString() => $"{First} {Last}";
@@ -94,7 +94,7 @@ public sealed record FullName(string First, string Last)
 ### Regla 1: tamaño pequeño
 
 ```csharp
-// ❌ Función demasiado larga — hace demasiado
+// Mal: Función demasiado larga — hace demasiado
 public async Task<Result> ProcessOrder(CreateOrderRequest request)
 {
     // validar usuario (10 líneas)
@@ -118,7 +118,7 @@ public async Task<Result> ProcessOrder(CreateOrderRequest request)
     // ...
 }
 
-// ✓ Cada función hace UNA cosa
+// Bien: Cada función hace UNA cosa
 public async Task<Result> ProcessOrder(CreateOrderRequest request)
 {
     var userResult = await ValidateUserAsync(request.UserId);
@@ -140,7 +140,7 @@ public async Task<Result> ProcessOrder(CreateOrderRequest request)
 ### Regla 2: un nivel de abstracción por función
 
 ```csharp
-// ❌ Mezcla niveles de abstracción — algunos pasos son de alto nivel, otros de bajo nivel
+// Mal: Mezcla niveles de abstracción — algunos pasos son de alto nivel, otros de bajo nivel
 public async Task Handle(RegisterUserRequest request, CancellationToken ct)
 {
     if (string.IsNullOrWhiteSpace(request.Email) || !request.Email.Contains('@'))
@@ -152,7 +152,7 @@ public async Task Handle(RegisterUserRequest request, CancellationToken ct)
     smtp.Send(new MailMessage("from@example.com", request.Email, "Bienvenido", "..."));
 }
 
-// ✓ Un nivel de abstracción por función
+// Bien: Un nivel de abstracción por función
 public async Task Handle(RegisterUserRequest request, CancellationToken ct)
 {
     _validator.ValidateAndThrow(request);
@@ -165,15 +165,15 @@ public async Task Handle(RegisterUserRequest request, CancellationToken ct)
 ### Regla 3: argumentos mínimos
 
 ```csharp
-// ❌ Demasiados argumentos — indica que la función hace demasiado
+// Mal: Demasiados argumentos — indica que la función hace demasiado
 public void CreateUser(
     string name, string email, string password,
     string role, string tenantId, bool isActive, DateTime birthDate)
 
-// ✓ Encapsular en un objeto
+// Bien: Encapsular en un objeto
 public void CreateUser(CreateUserCommand command)
 
-// ✓ O usar el patrón builder para objetos complejos
+// Bien: O usar el patrón builder para objetos complejos
 var user = ExampleUser.Create(request.FullName, request.Email);   // solo los obligatorios
 user.SetRole(request.Role);      // opcionales por separado
 user.SetBirthDate(request.BirthDate);
@@ -187,20 +187,20 @@ user.SetBirthDate(request.BirthDate);
 El mejor comentario es el que no se necesita. El código bien nombrado se explica solo.
 
 ```csharp
-// ❌ Comentario que explica QUÉ hace el código (redundante si el nombre es bueno)
+// Mal: Comentario que explica QUÉ hace el código (redundante si el nombre es bueno)
 // Incrementa el contador de reintentos del usuario
 user.RetryCount++;
 
-// ❌ Comentario desactualizado (más peligroso que no tener comentario)
+// Mal: Comentario desactualizado (más peligroso que no tener comentario)
 // Retorna el usuario por email
 public async Task<ExampleUser?> GetByPublicIdAsync(Guid publicId, CancellationToken ct)
 // ... (el nombre del método cambió pero el comentario no)
 
-// ✓ Comentario válido: explica el POR QUÉ (no el qué)
+// Bien: Comentario válido: explica el POR QUÉ (no el qué)
 // BCrypt es intencional — scrypt sería más seguro pero causa timeouts en la RAM de los Lambdas
 var hash = BCrypt.Net.BCrypt.HashPassword(password, workFactor: 10);
 
-// ✓ Comentario válido: advertencia o invariante no obvio
+// Bien: Comentario válido: advertencia o invariante no obvio
 // Thread-safe: IMemoryCache es thread-safe pero IDistributedCache.GetAsync no es idempotente
 // bajo alta concurrencia — usar el SemaphoreSlim en esta clase para evitar stampede
 ```
@@ -211,7 +211,7 @@ var hash = BCrypt.Net.BCrypt.HashPassword(password, workFactor: 10);
 > Fuente: *Clean Code* (Martin): Ch.5 Formatting
 
 ```csharp
-// ✓ Separar conceptos con líneas en blanco — como párrafos
+// Bien: Separar conceptos con líneas en blanco — como párrafos
 public sealed class GetExampleUserHandler
     : IRequestHandler<GetExampleUserRequest, GetExampleUserResponse>
 {
@@ -252,14 +252,14 @@ public sealed class GetExampleUserHandler
 ### Ley de Demeter — no hablar con extraños
 
 ```csharp
-// ❌ La ley de Demeter: no encadenar más de un nivel de acceso
+// Mal: La ley de Demeter: no encadenar más de un nivel de acceso
 var city = user.Address.HomeAddress.City.Name;
 // Si Address cambia, o HomeAddress cambia, o City cambia → esta línea rompe
 
-// ✓ El objeto expone lo que se necesita
+// Bien: El objeto expone lo que se necesita
 var city = user.GetHomeCity();
 
-// ✓ O en el contexto del Read Model — un DTO plano evita el problema
+// Bien: O en el contexto del Read Model — un DTO plano evita el problema
 public sealed record ExampleUserDto(
     Guid   PublicId,
     string FullName,
@@ -277,7 +277,7 @@ public sealed record ExampleUserDto(
 **Bajo acoplamiento**: las clases interactúan solo a través de abstracciones (interfaces). Cambiar una clase no obliga a cambiar las demás.
 
 ```csharp
-// ❌ Baja cohesión — una clase con responsabilidades no relacionadas
+// Mal: Baja cohesión — una clase con responsabilidades no relacionadas
 public sealed class ExampleUserManager
 {
     public ExampleUser GetUser(Guid id) { ... }
@@ -286,20 +286,20 @@ public sealed class ExampleUserManager
     public void GeneratePayStub(ExampleUser user) { ... }     // ← responsabilidad de nómina
 }
 
-// ✓ Alta cohesión — cada clase hace una sola cosa
+// Bien: Alta cohesión — cada clase hace una sola cosa
 public sealed class ExampleUserRepository { ... }     // solo acceso a datos
 public sealed class EmailService { ... }              // solo envío de emails
 public sealed class TaxCalculator { ... }             // solo cálculo de impuestos
 ```
 
 ```csharp
-// ❌ Acoplamiento fuerte — ExampleUserService depende de una implementación concreta
+// Mal: Acoplamiento fuerte — ExampleUserService depende de una implementación concreta
 public sealed class ExampleUserService
 {
     private readonly SqlExampleUserRepository _repo = new SqlExampleUserRepository();  // ← hardcoded
 }
 
-// ✓ Acoplamiento débil — depende de la abstracción, no de la implementación
+// Bien: Acoplamiento débil — depende de la abstracción, no de la implementación
 public sealed class ExampleUserService
 {
     private readonly IExampleUserRepository _repo;
@@ -318,7 +318,7 @@ public sealed class ExampleUserService
 > Fuente: *Clean Code* (Martin): Ch.7 Error Handling
 
 ```csharp
-// ❌ Código de error mezclado con lógica de negocio
+// Mal: Código de error mezclado con lógica de negocio
 public async Task<ExampleUser?> RegisterAsync(string name, string email)
 {
     if (string.IsNullOrEmpty(name)) return null;    // ¿null significa qué?
@@ -329,7 +329,7 @@ public async Task<ExampleUser?> RegisterAsync(string name, string email)
     return user;
 }
 
-// ✓ Usar Result Pattern o excepciones con tipos específicos
+// Bien: Usar Result Pattern o excepciones con tipos específicos
 public async Task<Result<ExampleUser>> RegisterAsync(string name, string email)
 {
     if (string.IsNullOrWhiteSpace(name))

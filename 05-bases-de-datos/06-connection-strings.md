@@ -119,12 +119,12 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 ## Checklist de seguridad
 
 ```
-✗ Nunca incluir la connection string real en appsettings.json del repo
-✗ Nunca loggear la connection string — enmascarar en Serilog con destructuring
-✓ Usar Application Name para identificar la app en slow query logs
-✓ SSL/TLS habilitado en producción (Ssl Mode=Require / Encrypt=True)
-✓ Usuario de BD con permisos mínimos — solo SELECT/INSERT/UPDATE/DELETE en su schema
-✓ Rotación de contraseña de BD con AWS Secrets Manager RDS rotation o Azure Managed Identity
+Nunca incluir la connection string real en appsettings.json del repo
+Nunca loggear la connection string — enmascarar en Serilog con destructuring
+Sí: Usar Application Name para identificar la app en slow query logs
+Sí: SSL/TLS habilitado en producción (Ssl Mode=Require / Encrypt=True)
+Sí: Usuario de BD con permisos mínimos — solo SELECT/INSERT/UPDATE/DELETE en su schema
+Sí: Rotación de contraseña de BD con AWS Secrets Manager RDS rotation o Azure Managed Identity
 ```
 
 ---

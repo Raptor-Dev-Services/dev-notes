@@ -17,15 +17,15 @@ Fácil de desarrollar al inicio        Complejo desde el principio
 Difícil de escalar por componente     Escala por componente
 
 Migrar cuando:
-✓ El equipo crece y hay conflictos frecuentes en el monolito
-✓ Necesitas escalar partes independientes (ej: módulo de reportes)
-✓ Diferentes módulos tienen ciclos de release distintos
-✓ Diferentes módulos necesitan tecnologías distintas
+Sí: El equipo crece y hay conflictos frecuentes en el monolito
+Sí: Necesitas escalar partes independientes (ej: módulo de reportes)
+Sí: Diferentes módulos tienen ciclos de release distintos
+Sí: Diferentes módulos necesitan tecnologías distintas
 
 No migrar cuando:
-✗ El equipo es pequeño (<8 personas)
-✗ El dominio no está bien entendido aún
-✗ Es una app nueva (empezar con monolito, migrar cuando sea necesario)
+No: El equipo es pequeño (<8 personas)
+No: El dominio no está bien entendido aún
+No: Es una app nueva (empezar con monolito, migrar cuando sea necesario)
 ```
 
 ---
@@ -409,7 +409,7 @@ Pub-Sub:    Publisher → Event → [Broker / Topic] → N Consumers (0, 1, o mu
 ```
 
 ```csharp
-// ❌ Sin Pub-Sub — AuthServer conoce todos los pasos post-registro (acoplamiento)
+// Mal: Sin Pub-Sub — AuthServer conoce todos los pasos post-registro (acoplamiento)
 public async Task RegisterUserAsync(RegisterUserCommand cmd, CancellationToken ct)
 {
     var user = ExampleUser.Create(cmd.Email, cmd.FullName);
@@ -420,7 +420,7 @@ public async Task RegisterUserAsync(RegisterUserCommand cmd, CancellationToken c
     await _mailboxService.SendOnboardingMessageAsync(user.PublicId, ct); // acoplado
 }
 
-// ✓ Con Pub-Sub — AuthServer solo publica el evento; cada servicio reacciona independientemente
+// Bien: Con Pub-Sub — AuthServer solo publica el evento; cada servicio reacciona independientemente
 public async Task RegisterUserAsync(RegisterUserCommand cmd, CancellationToken ct)
 {
     var user = ExampleUser.Create(cmd.Email, cmd.FullName);

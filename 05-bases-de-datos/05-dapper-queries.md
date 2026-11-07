@@ -24,8 +24,8 @@ Dapper es un micro-ORM que ejecuta SQL directo y mapea los resultados a objetos 
 Dapper mapea columnas a propiedades por nombre (case-insensitive). El nombre SQL debe coincidir con el de C#:
 
 ```sql
--- ✓ Columna: PublicId → Propiedad: PublicId
--- ✗ Columna: public_id → Propiedad: PublicId (snake_case no mapea automáticamente)
+-- Bien: Columna: PublicId → Propiedad: PublicId
+-- Mal: Columna: public_id → Propiedad: PublicId (snake_case no mapea automáticamente)
 -- Solución: usar alias  SELECT public_id AS PublicId FROM users
 ```
 
@@ -86,15 +86,15 @@ public class MainDbConnectionFactory(IConfiguration config)
 ## SQL Injection — regla absoluta
 
 ```csharp
-// ❌ SQL Injection — NUNCA concatenar o interpolar valores del usuario
+// Mal: SQL Injection — NUNCA concatenar o interpolar valores del usuario
 _db.QueryAsync<ExampleUser>($"SELECT * FROM users WHERE email = '{email}'");
 
-// ✓ Siempre parámetros nombrados con @
+// Bien: Siempre parámetros nombrados con @
 _db.QueryAsync<ExampleUser>(
     "SELECT * FROM users WHERE email = @Email AND tenant_id = @TenantId",
     new { Email = email, TenantId = tenantId });
 
-// ✓ Colecciones — Dapper expande automáticamente con ANY (PostgreSQL)
+// Bien: Colecciones — Dapper expande automáticamente con ANY (PostgreSQL)
 var ids = new[] { id1, id2, id3 };
 _db.QueryAsync<ExampleUser>(
     "SELECT * FROM users WHERE public_id = ANY(@Ids)",

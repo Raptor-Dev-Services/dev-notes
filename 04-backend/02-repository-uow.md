@@ -11,7 +11,7 @@ Dos patrones de acceso a datos que trabajan juntos: Repository abstrae la persis
 Sin Repository, los handlers conocen directamente la base de datos. Imposible testear sin una DB real, imposible cambiar el motor de persistencia:
 
 ```csharp
-// ❌ Handler acoplado a la persistencia — no testeable, viola DIP
+// Mal: Handler acoplado a la persistencia — no testeable, viola DIP
 public class GetExampleUserHandler
 {
     private readonly NpgsqlConnection _conn;
@@ -117,7 +117,7 @@ public async Task InsertWithProfileAsync(ExampleUser user, UserProfile profile, 
 Cuando una operación debe modificar múltiples tablas de forma atómica: todo o nada. Sin Unit of Work, las operaciones son independientes y una falla parcial deja la DB en estado inconsistente.
 
 ```csharp
-// ❌ Sin transacción — el sistema puede quedar en estado inconsistente
+// Mal: Sin transacción — el sistema puede quedar en estado inconsistente
 await _userRepo.InsertAsync(user, ct);        // OK
 await _profileRepo.InsertAsync(profile, ct);  // FALLA → usuario sin perfil
 ```
@@ -257,7 +257,7 @@ Operación en DOS+ tablas:  Repository + UoW → transacción atómica
 ## Repositorio genérico vs específico
 
 ```csharp
-// ❌ Repositorio genérico — cómodo al principio, problemático después
+// Mal: Repositorio genérico — cómodo al principio, problemático después
 public interface IRepository<T>
 {
     Task<T?> GetByIdAsync(int id, CancellationToken ct);
@@ -269,7 +269,7 @@ public interface IRepository<T>
 // Problemas: GetAll sin paginación, no permite queries específicos de cada entidad,
 // las diferencias entre entidades fuerzan hacks en la interfaz genérica
 
-// ✓ Repositorio específico — expone exactamente lo que cada entidad necesita
+// Bien: Repositorio específico — expone exactamente lo que cada entidad necesita
 public interface IExampleUserRepository
 {
     Task<ExampleUser?> GetByPublicIdAsync(Guid publicId, CancellationToken ct);
@@ -359,12 +359,12 @@ public sealed class EfExampleUserRepository : IExampleUserRepository
 ### AsNoTracking — cuándo usarlo
 
 ```csharp
-// ✓ AsNoTracking para Queries — no necesitan change tracking
+// Bien: AsNoTracking para Queries — no necesitan change tracking
 var user = await _db.ExampleUsers
     .AsNoTracking()                  // EF no rastrea cambios → más rápido
     .FirstOrDefaultAsync(u => u.PublicId == id, ct);
 
-// ✗ No usar AsNoTracking para Commands — EF necesita rastrear cambios para SaveChanges
+// No usar AsNoTracking para Commands — EF necesita rastrear cambios para SaveChanges
 var user = await _db.ExampleUsers
     .FirstOrDefaultAsync(u => u.PublicId == id, ct);   // ← tracking ON
 user.UpdateEmail(newEmail);

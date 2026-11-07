@@ -9,7 +9,7 @@ El Result Pattern modela el resultado de una operación como un objeto con dos e
 ## El problema que resuelve
 
 ```csharp
-// ❌ Con excepciones para flujo de negocio — varias razones para fallar,
+// Mal: Con excepciones para flujo de negocio — varias razones para fallar,
 // el caller tiene que saber qué excepción capturar y cuál dejar subir
 public async Task<User> GetUserAsync(Guid id)
 {
@@ -33,7 +33,7 @@ catch (Exception)            { return StatusCode(500); }
 Con el Result Pattern, la firma del método **documenta** todos los resultados posibles:
 
 ```csharp
-// ✓ La firma dice exactamente qué puede pasar
+// Bien: La firma dice exactamente qué puede pasar
 public async Task<GetUserResponse> Handle(GetUserRequest req, CancellationToken ct)
     // puede retornar: GetUserSuccess | GetUserNotFoundFailure | GetUserInactiveFailure
 ```
@@ -169,14 +169,14 @@ else if (notification is ISuccess)
 Cuando el éxito tiene múltiples campos (paginación):
 
 ```csharp
-// ❌ NO hacer esto — referencia circular al serializar
+// NO hacer esto — referencia circular al serializar
 public sealed record GetUsersSuccess(IReadOnlyCollection<ExampleUserDto> Users, int Total)
     : GetUsersResponse, ISuccess<GetUsersSuccess>   // ← Data => this → recursión infinita en JSON
 {
     public GetUsersSuccess Data => this;
 }
 
-// ✓ Implementar ISuccess (sin genérico) y pasar el objeto completo al ViewModel
+// Bien: Implementar ISuccess (sin genérico) y pasar el objeto completo al ViewModel
 public sealed record GetUsersSuccess(
     IReadOnlyCollection<ExampleUserDto> Users, int Total, int Page, int PageSize)
     : GetUsersResponse, ISuccess;
@@ -453,19 +453,19 @@ switch (result.Status)
 
 | Aspecto | Result Pattern | Excepciones |
 |---------|---------------|-------------|
-| Flujo de negocio esperado | ✓ Ideal — fallo es un valor | ✗ Costoso, semántica incorrecta |
-| Error inesperado (bug, null ref) | ✗ No aplica — deja que burbujee | ✓ Correcto — capturar en el handler global |
-| Visibilidad en la firma | ✓ La firma documenta los resultados | ✗ Invisible — hay que leer la implementación |
-| Rendimiento | ✓ Sin overhead de stack trace | ✗ Crear un stack trace es costoso |
-| Composabilidad | ✓ Se encadena bien con pattern matching | ✗ El anidado de try/catch es verboso |
+| Flujo de negocio esperado | Ideal — fallo es un valor | Costoso, semántica incorrecta |
+| Error inesperado (bug, null ref) | No aplica — deja que burbujee | Correcto — capturar en el handler global |
+| Visibilidad en la firma | La firma documenta los resultados | Invisible — hay que leer la implementación |
+| Rendimiento | Sin overhead de stack trace | Crear un stack trace es costoso |
+| Composabilidad | Se encadena bien con pattern matching | El anidado de try/catch es verboso |
 
 **Regla práctica:** si el fallo es algo que el código del llamador *espera y maneja* (usuario no encontrado, validación falló, conflicto de unicidad), usa Result Pattern. Si es un error que nadie espera (NullReferenceException, OutOfMemoryException, bug), deja que la excepción suba y el global handler la capture.
 
 ```csharp
-// ✓ Result — el caller espera que el usuario pueda no existir
+// Bien: Result — el caller espera que el usuario pueda no existir
 return new GetExampleUserNotFoundFailure("No encontrado.");
 
-// ✓ Excepción — nadie espera que la DB esté caída; el global handler la registra
+// Bien: Excepción — nadie espera que la DB esté caída; el global handler la registra
 var conn = _factory.OpenConnection();  // lanza si no puede conectar → 500 automático
 ```
 

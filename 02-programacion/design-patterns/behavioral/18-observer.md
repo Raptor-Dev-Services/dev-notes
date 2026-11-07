@@ -13,7 +13,7 @@
 Tienes un objeto `Store` que tiene stock de productos. Otros objetos (clientes, notificadores, analytics) quieren saber cuando llega nuevo stock. Sin Observer, el Store necesita conocer directamente a todos los objetos interesados, lo que genera un acoplamiento fuerte.
 
 ```csharp
-// ❌ Sin Observer — Store está acoplado a todos los observadores
+// Mal: Sin Observer — Store está acoplado a todos los observadores
 class Store
 {
     private CustomerNotifier _notifier;

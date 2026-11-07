@@ -13,7 +13,7 @@
 Tienes código para analizar datos de diferentes formatos (CSV, XML, JSON). El proceso siempre sigue cuatro pasos: leer datos, parsear, analizar y generar reporte. Los pasos "leer" y "generar reporte" son iguales en todos. "Parsear" y "analizar" varían por formato. Sin el patrón, duplicas el esqueleto del algoritmo en cada subclase.
 
 ```csharp
-// ❌ Sin Template Method — el esqueleto se duplica en cada clase
+// Mal: Sin Template Method — el esqueleto se duplica en cada clase
 class CsvParser
 {
     public void Process(string file)

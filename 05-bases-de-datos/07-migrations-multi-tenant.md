@@ -24,16 +24,16 @@ ALTER TABLE dbo.user_profiles RENAME COLUMN full_name TO display_name;
 **Solo agregar, nunca eliminar ni renombrar en un solo paso.**
 
 ```
-✓ ADD COLUMN
-✓ ADD TABLE
-✓ ADD INDEX (CONCURRENTLY en PostgreSQL)
-✓ ADD NULLABLE COLUMN
-✓ ADD FOREIGN KEY DEFERRABLE
+Sí: ADD COLUMN
+Sí: ADD TABLE
+Sí: ADD INDEX (CONCURRENTLY en PostgreSQL)
+Sí: ADD NULLABLE COLUMN
+Sí: ADD FOREIGN KEY DEFERRABLE
 
-❌ DROP COLUMN       → primero eliminar del código, luego de la DB
-❌ RENAME COLUMN     → agregar nueva columna, migrar datos, eliminar la vieja
-❌ DROP TABLE        → idem
-❌ ADD NOT NULL sin DEFAULT  → bloquea la tabla durante el backfill
+No: DROP COLUMN       → primero eliminar del código, luego de la DB
+No: RENAME COLUMN     → agregar nueva columna, migrar datos, eliminar la vieja
+No: DROP TABLE        → idem
+No: ADD NOT NULL sin DEFAULT  → bloquea la tabla durante el backfill
 ```
 
 ---

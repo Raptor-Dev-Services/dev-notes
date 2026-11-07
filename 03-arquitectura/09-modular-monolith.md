@@ -13,11 +13,11 @@ La mayoría de sistemas SaaS con un solo equipo de desarrollo no necesitan micro
 ```
 Microservicios          Monolito Modular         Monolito Big Ball of Mud
 ─────────────────       ──────────────────       ──────────────────────────
-✓ fronteras explícitas  ✓ fronteras explícitas   ✗ sin fronteras
-✓ deploy independiente  ✗ deploy conjunto         ✗ deploy conjunto
-✗ complejidad red       ✓ sin overhead de red     ✓ sin overhead de red
-✗ distributed tracing   ✓ tracing simple          ✓ tracing simple
-✗ equipo grande needed  ✓ equipo pequeño          ✓ equipo pequeño
+Sí: fronteras explícitas  Sí: fronteras explícitas   No: sin fronteras
+Sí: deploy independiente  No: deploy conjunto         No: deploy conjunto
+No: complejidad red       Sí: sin overhead de red     Sí: sin overhead de red
+No: distributed tracing   Sí: tracing simple          Sí: tracing simple
+No: equipo grande needed  Sí: equipo pequeño          Sí: equipo pequeño
 ```
 
 ---
@@ -110,8 +110,8 @@ Si borras el folder de implementación de un módulo (dejando solo su `.Contract
 # Escenario: borrar Users.Application, Users.Infrastructure, Users.Presentation
 # Mantener: Users.Contracts (con los DTOs e interfaces públicas)
 
-# Si Authentication.Application todavía compila → modularidad real ✓
-# Si Authentication.Application falla → tiene una dependencia oculta → monolito disfrazado ✗
+# Si Authentication.Application todavía compila → modularidad real Sí
+# Si Authentication.Application falla → tiene una dependencia oculta → monolito disfrazado No
 ```
 
 `Host.Api` sí va a fallar (es el composition root y le falta registrar los servicios del módulo borrado). Eso es correcto y esperado. `Host.Api` no es un módulo: es el orquestador.

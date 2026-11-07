@@ -340,7 +340,7 @@ services.AddMediator(typeof(GetExampleUserHandler).Assembly);
 ### Anti-patrón 1: Herencia para reutilizar código (favorece composición)
 
 ```csharp
-// ❌ Herencia incorrecta — Cuadrado hereda de Rectángulo solo para reutilizar código
+// Mal: Herencia incorrecta — Cuadrado hereda de Rectángulo solo para reutilizar código
 // pero viola el Liskov Substitution Principle: si tienes un Rectangulo, 
 // puedes cambiar Ancho y Alto independientemente — con Cuadrado no puedes
 public class Cuadrado : Rectangulo
@@ -352,7 +352,7 @@ public class Cuadrado : Rectangulo
     }
 }
 
-// ✓ Composición — Cuadrado TIENE un lado, no ES un Rectangulo
+// Bien: Composición — Cuadrado TIENE un lado, no ES un Rectangulo
 public sealed class Cuadrado
 {
     public double Lado { get; init; }
@@ -364,10 +364,10 @@ public sealed class Cuadrado
 ### Anti-patrón 2: Herencia profunda
 
 ```csharp
-// ❌ Cadena larga de herencia — difícil de seguir y mantener
+// Mal: Cadena larga de herencia — difícil de seguir y mantener
 Animal → Mamifero → Vertebrado → Perro → Labrador → LabradorNegro
 
-// ✓ Plana con interfaces — más mantenible
+// Bien: Plana con interfaces — más mantenible
 public interface IAnimal { string HacerSonido(); }
 public interface IDomestico { string ObtenerDuenio(); }
 public sealed class Labrador : IAnimal, IDomestico
@@ -380,7 +380,7 @@ public sealed class Labrador : IAnimal, IDomestico
 ### Anti-patrón 3: Sobreescribir para cambiar el comportamiento esperado (viola LSP)
 
 ```csharp
-// ❌ Viola Liskov Substitution Principle
+// Mal: Viola Liskov Substitution Principle
 public class RepoBase
 {
     public virtual Task<Usuario?> GetByIdAsync(Guid id) { /* DB query */ }
@@ -390,7 +390,7 @@ public class RepoCacheado : RepoBase
 {
     public override Task<Usuario?> GetByIdAsync(Guid id)
     {
-        // ❌ Si el cache falla, lanza excepción en vez de retornar null
+        // Si el cache falla, lanza excepción en vez de retornar null
         // El código que usaba RepoBase espera null, no excepción
         throw new CacheException("Cache caído");
     }

@@ -123,11 +123,11 @@ interface ImportMeta {
 > Las variables `VITE_*` se incrustan en el bundle final que el navegador descarga. Cualquier usuario puede leerlas inspeccionando el código fuente.
 
 ```
-✗ VITE_DB_PASSWORD       — contraseña de base de datos
-✗ VITE_STRIPE_SECRET_KEY — sk_live_... (clave secreta de Stripe)
-✗ VITE_JWT_SECRET        — clave de firma de tokens
-✓ VITE_STRIPE_PUBLIC_KEY — pk_live_... (clave pública — diseñada para el navegador)
-✓ VITE_API_BASE_URL      — URL de la API (no es un secreto)
+No: VITE_DB_PASSWORD       — contraseña de base de datos
+No: VITE_STRIPE_SECRET_KEY — sk_live_... (clave secreta de Stripe)
+No: VITE_JWT_SECRET        — clave de firma de tokens
+Sí: VITE_STRIPE_PUBLIC_KEY — pk_live_... (clave pública — diseñada para el navegador)
+Sí: VITE_API_BASE_URL      — URL de la API (no es un secreto)
 ```
 
 Los secretos reales van en variables de entorno sin prefijo `VITE_`. Son accesibles en build scripts de Node, no en el bundle del navegador.

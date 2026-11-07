@@ -11,7 +11,7 @@ Los 5 principios que guían el diseño orientado a objetos. No son reglas arbitr
 "Razón para cambiar" = un actor o stakeholder que puede pedir una modificación. Si dos actores distintos pueden pedir cambios a la misma clase, tiene dos responsabilidades.
 
 ```csharp
-// ❌ Viola SRP — mezcla lógica de negocio + persistencia + presentación
+// Mal: Viola SRP — mezcla lógica de negocio + persistencia + presentación
 public class UserService
 {
     public string GetUserJson(Guid id)
@@ -25,7 +25,7 @@ public class UserService
     }
 }
 
-// ✓ Cada clase tiene UNA responsabilidad
+// Bien: Cada clase tiene UNA responsabilidad
 public class GetExampleUserHandler   // responsabilidad: orquestar el caso de uso
 {
     private readonly IExampleUserRepository _repo;
@@ -53,7 +53,7 @@ public class GetExampleUserPresenter  // responsabilidad: traducir Response → 
 Agregar comportamiento nuevo sin tocar código existente. Se logra con abstracciones (interfaces, clases abstractas, polimorfismo).
 
 ```csharp
-// ❌ Viola OCP — para agregar un nuevo tipo de notificación hay que modificar esta clase
+// Mal: Viola OCP — para agregar un nuevo tipo de notificación hay que modificar esta clase
 public class NotificationService
 {
     public void Send(string type, string message)
@@ -65,7 +65,7 @@ public class NotificationService
     }
 }
 
-// ✓ OCP — agregar un canal nuevo = agregar una clase nueva, sin tocar lo existente
+// Bien: OCP — agregar un canal nuevo = agregar una clase nueva, sin tocar lo existente
 public interface INotificationChannel
 {
     Task SendAsync(string message, CancellationToken ct);
@@ -98,7 +98,7 @@ public class NotificationService
 Si `B extends A`, cualquier código que espera `A` debe funcionar correctamente con una instancia de `B`. Viola LSP cuando la subclase debilita precondiciones, fortalece postcondiciones, o lanza excepciones que la base no lanzaría.
 
 ```csharp
-// ❌ Viola LSP — ReadOnlyList dice que es una List pero no puede Insert
+// Mal: Viola LSP — ReadOnlyList dice que es una List pero no puede Insert
 public class ReadOnlyList<T> : List<T>
 {
     public new void Add(T item)    => throw new NotSupportedException();
@@ -106,7 +106,7 @@ public class ReadOnlyList<T> : List<T>
     // código que espera List<T> y llama Add() se rompe
 }
 
-// ✓ LSP con records — las subclases son sustitutos válidos de la base
+// Bien: LSP con records — las subclases son sustitutos válidos de la base
 public abstract record GetExampleUserResponse : IResponse;
 
 public sealed record GetExampleUserSuccess(ExampleUserDto Data)
@@ -136,7 +136,7 @@ public Task Handle(GetExampleUserResponse notification, CancellationToken ct)
 Interfaces grandes fuerzan a implementar métodos innecesarios. Interfaces pequeñas y específicas dan más flexibilidad.
 
 ```csharp
-// ❌ Viola ISP — un repositorio de solo-lectura se ve forzado a implementar métodos de escritura
+// Mal: Viola ISP — un repositorio de solo-lectura se ve forzado a implementar métodos de escritura
 public interface IUserRepository
 {
     Task<User?> GetByIdAsync(Guid id, CancellationToken ct);
@@ -146,7 +146,7 @@ public interface IUserRepository
     Task DeleteAsync(Guid id, CancellationToken ct);         // ← no lo necesito
 }
 
-// ✓ ISP — interfaces separadas por responsabilidad
+// Bien: ISP — interfaces separadas por responsabilidad
 public interface IUserReadRepository
 {
     Task<User?> GetByIdAsync(Guid id, CancellationToken ct);
@@ -190,7 +190,7 @@ public interface IValidationFailure : IFailure { }
 La dirección de dependencias en el código debe ser la inversa a la dirección del flujo de datos.
 
 ```csharp
-// ❌ Viola DIP — Application depende de una clase concreta de Infrastructure
+// Mal: Viola DIP — Application depende de una clase concreta de Infrastructure
 // Application sabe que hay PostgreSQL → cambiar de DB requiere tocar Application
 public class GetExampleUserHandler
 {
@@ -198,7 +198,7 @@ public class GetExampleUserHandler
     //                ↑ Application no debería conocer esto
 }
 
-// ✓ DIP — Application depende de una abstracción, Infrastructure implementa esa abstracción
+// Bien: DIP — Application depende de una abstracción, Infrastructure implementa esa abstracción
 // Domain define el contrato:
 public interface IExampleUserRepository       // ← en Domain
 {
@@ -277,7 +277,7 @@ Es que los módulos de **alto nivel** (reglas de negocio) no dependan de los de 
 No se trata solo de no copiar código. Se trata de no duplicar *conocimiento*. Dos bloques de código pueden ser similares en estructura pero representar lógica distinta; eso no viola DRY.
 
 ```csharp
-// ❌ Viola DRY — la regla "email debe tener @" está duplicada en tres lugares
+// Mal: Viola DRY — la regla "email debe tener @" está duplicada en tres lugares
 public class RegistrationService
 {
     public void Register(string email)
@@ -305,7 +305,7 @@ public class InvitationService
     }
 }
 
-// ✓ DRY — la regla vive en un solo lugar (Value Object)
+// Bien: DRY — la regla vive en un solo lugar (Value Object)
 public sealed record Email
 {
     public string Value { get; }
@@ -330,13 +330,13 @@ public class InvitationService    { public void Invite(Email email) { ... } }
 La complejidad innecesaria es deuda técnica inmediata. Antes de agregar una capa de abstracción, preguntarse: ¿qué problema concreto resuelve hoy?
 
 ```csharp
-// ❌ Over-engineered para un CRUD simple
+// Mal: Over-engineered para un CRUD simple
 public interface IExampleUserQueryStrategy { }
 public class ActiveUserQueryStrategy : IExampleUserQueryStrategy { }
 public class ExampleUserQueryStrategyFactory { ... }
 public class ExampleUserQueryBuilder { ... }
 
-// ✓ KISS — un repositorio con un método claro
+// Bien: KISS — un repositorio con un método claro
 public interface IExampleUserRepository
 {
     Task<IEnumerable<ExampleUser>> GetAllActiveAsync(CancellationToken ct);
@@ -348,13 +348,13 @@ public interface IExampleUserRepository
 **No implementar funcionalidad hasta que sea necesaria.** No diseñar para requisitos hipotéticos futuros.
 
 ```csharp
-// ❌ YAGNI violado — "por si algún día necesitamos soportar múltiples DBs"
+// Mal: YAGNI violado — "por si algún día necesitamos soportar múltiples DBs"
 public interface IDatabaseProvider { }
 public class PostgreSqlProvider : IDatabaseProvider { }
 public class SqlServerProvider  : IDatabaseProvider { } // nadie lo pidió
 public class MongoDbProvider    : IDatabaseProvider { } // nadie lo pidió
 
-// ✓ YAGNI — solo lo que se necesita hoy
+// Bien: YAGNI — solo lo que se necesita hoy
 public class ExampleUserRepository
 {
     private readonly NpgsqlConnection _connection; // PostgreSQL, punto
@@ -374,7 +374,7 @@ YAGNI no significa ignorar la mantenibilidad. Significa no adelantarse a requisi
 Las clases que cambian juntas por las mismas razones deben estar en el mismo componente (proyecto/namespace). Las clases que cambian por razones distintas deben estar en componentes distintos.
 
 ```
-// ✓ CCP aplicado en la estructura del back-template
+// Bien: CCP aplicado en la estructura del back-template
 {{ROOT_NAMESPACE}}.Domain/           ← cambia cuando cambian las reglas de negocio
 {{ROOT_NAMESPACE}}.Application/      ← cambia cuando cambian los casos de uso
 {{ROOT_NAMESPACE}}.Infrastructure/   ← cambia cuando cambia la tecnología (DB, servicios externos)
@@ -404,7 +404,7 @@ Las reglas de negocio (Domain) deben estar en el componente más estable. Las im
 Los nombres son el comentario más importante del código. Un buen nombre elimina la necesidad de un comentario.
 
 ```csharp
-// ❌ Nombres que obligan a leer el cuerpo para entender qué hacen
+// Mal: Nombres que obligan a leer el cuerpo para entender qué hacen
 public List<int[]> getThem()
 {
     List<int[]> list1 = new();
@@ -413,7 +413,7 @@ public List<int[]> getThem()
     return list1;
 }
 
-// ✓ Nombres que explican la intención
+// Bien: Nombres que explican la intención
 public List<Cell> getFlaggedCells()
 {
     List<Cell> flaggedCells = new();
@@ -439,7 +439,7 @@ public List<Cell> getFlaggedCells()
 ## Funciones limpias (Clean Code Ch.3)
 
 ```csharp
-// ❌ Función con múltiples niveles de abstracción mezclados
+// Mal: Función con múltiples niveles de abstracción mezclados
 public async Task ProcessUser(CreateUserDto dto)
 {
     // nivel alto: validar
@@ -453,7 +453,7 @@ public async Task ProcessUser(CreateUserDto dto)
     await _mediator.Publish(new UserCreatedEvent(dto.Email));
 }
 
-// ✓ Un nivel de abstracción por función — cada función hace una cosa
+// Bien: Un nivel de abstracción por función — cada función hace una cosa
 public async Task<InsertExampleUserResponse> Handle(
     InsertExampleUserRequest req, CancellationToken ct)
 {

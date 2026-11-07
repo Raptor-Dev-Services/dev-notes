@@ -23,21 +23,21 @@ No existe relación 1:1: tres layers pueden residir en el mismo assembly, o cada
 ## El modelo clásico de 3 capas
 
 ```
-❌ Flujo clásico — acoplamiento directo hacia abajo
+No: Flujo clásico — acoplamiento directo hacia abajo
 
 Presentation
      │ depende de
-     ▼
+     v
   Domain
      │ depende de
-     ▼
+     v
    Data
 ```
 
 El problema concreto:
 
 ```csharp
-// ❌ Domain depende directamente de la implementación concreta de datos
+// Mal: Domain depende directamente de la implementación concreta de datos
 public class OrderService
 {
     private readonly OrderRepository _repo;  // clase concreta — no interfaz
@@ -79,7 +79,7 @@ Clean Architecture organiza las capas como círculos concéntricos donde **las d
 **Regla de dependencia:** ninguna capa interna conoce a las capas externas. La capa de Domain no importa nada de Infrastructure; Infrastructure importa de Application y Domain.
 
 ```
-✓ Flujo invertido — el Domain no depende de Data
+Sí: Flujo invertido — el Domain no depende de Data
 
   Infrastructure → Application → Domain
        UI       → Application → Domain
@@ -90,7 +90,7 @@ Clean Architecture organiza las capas como círculos concéntricos donde **las d
 La inversión se logra con interfaces en el Domain/Application e implementaciones en Infrastructure:
 
 ```csharp
-// ✓ Domain — define la interfaz (contrato), sin implementación
+// Bien: Domain — define la interfaz (contrato), sin implementación
 // Domain/Repositories/IExampleUserRepository.cs
 public interface IExampleUserRepository
 {
@@ -101,7 +101,7 @@ public interface IExampleUserRepository
 ```
 
 ```csharp
-// ✓ Infrastructure — implementa la interfaz (Dapper en el back-template)
+// Bien: Infrastructure — implementa la interfaz (Dapper en el back-template)
 // Infrastructure/Repositories/ExampleUserRepository.cs
 public sealed class ExampleUserRepository(IMainDbConnectionFactory connectionFactory)
     : IExampleUserRepository
@@ -129,7 +129,7 @@ public sealed class ExampleUserRepository(IMainDbConnectionFactory connectionFac
 ```
 
 ```csharp
-// ✓ Application — usa la interfaz, no conoce la implementación
+// Bien: Application — usa la interfaz, no conoce la implementación
 // Application/UseCases/GetExampleUser/GetExampleUserHandler.cs
 public sealed class GetExampleUserHandler(IExampleUserRepository repository)
     : IRequestHandler<GetExampleUserRequest, GetExampleUserResponse>
@@ -183,25 +183,25 @@ Host           ← todos los anteriores (solo el Host ensambla todo)
 ```
 HTTP Request
      │
-     ▼
+     v
 Controller (WebApi)
      │  Mediator.Send(GetExampleUserRequest)
-     ▼
+     v
 [Pipeline Behaviors] → ValidationBehavior → LoggingBehavior
      │
-     ▼
+     v
 GetExampleUserHandler (Application)
      │  repository.GetByPublicIdAsync(...)
-     ▼
+     v
 ExampleUserRepository (Infrastructure) → Dapper → PostgreSQL
      │
-     ▼
+     v
 GetExampleUserSuccess(ExampleUserDto) ← o GetExampleUserNotFoundFailure
      │
-     ▼  Mediator.Publish(response)
+     v  Mediator.Publish(response)
 GetExampleUserPresenter (WebApi)
      │  _viewModel = response
-     ▼
+     v
 Controller → _viewModel.IsSuccess ? Ok(_viewModel) : NotFound(...)
 ```
 

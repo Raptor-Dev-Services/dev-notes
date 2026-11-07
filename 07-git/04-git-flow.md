@@ -56,7 +56,7 @@ git checkout -b hotfix/1.2.1-fix-crash-on-login
 ### Feature normal
 
 ```
-develop ──────────────────────────────────────► develop
+develop ──────────────────────────────────────> develop
          \                                    /
           feature/{{TASK_ID_PREFIX}}123 ──── commits ──────
 ```
@@ -140,7 +140,7 @@ En proyectos con despliegue continuo (CI/CD agresivo), Git Flow puede ser overhe
 
 ```
 Git Flow:             Trunk-Based:
-main ─────────        main ──────────────────────► (siempre deployable)
+main ─────────        main ──────────────────────> (siempre deployable)
       ↑                    ↑  ↑  ↑  ↑
    release                 |  |  |  |
       ↑                short-lived feature branches (max 1-2 días)
@@ -154,10 +154,10 @@ main ─────────        main ───────────�
 | Criterio | Git Flow | Trunk-Based |
 |----------|----------|-------------|
 | Ciclo de release | Semanas/meses | Diario/continuo |
-| Múltiples versiones en producción | ✓ | ✗ |
+| Múltiples versiones en producción | Sí | No |
 | Feature flags disponibles | No necesario | Casi obligatorio |
 | Tamaño del equipo | Cualquiera | Mejor con equipo maduro en CI/CD |
-| QA formal antes de release | ✓ | Tests automatizados reemplazan QA manual |
+| QA formal antes de release | Sí | Tests automatizados reemplazan QA manual |
 
 ### Feature flags con trunk-based
 
@@ -187,11 +187,11 @@ public async Task<GetExampleUserResponse> Handle(
 # Configurar en: Settings → Branches → Branch protection rules
 
 # Requisitos recomendados:
-# ✓ Require pull request before merging
-# ✓ Require status checks to pass (CI)
-# ✓ Require branches to be up to date before merging
-# ✓ Require linear history (para trunk-based)
-# ✓ Restrict who can push to main (solo CI/CD o leads)
+# Bien: Require pull request before merging
+# Bien: Require status checks to pass (CI)
+# Bien: Require branches to be up to date before merging
+# Bien: Require linear history (para trunk-based)
+# Bien: Restrict who can push to main (solo CI/CD o leads)
 ```
 
 

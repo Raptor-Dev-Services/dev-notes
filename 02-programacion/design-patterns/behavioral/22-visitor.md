@@ -13,7 +13,7 @@
 Tienes una jerarquía de formas geométricas: `Circle`, `Rectangle`, `Triangle`. Quieres agregar operaciones: exportar a XML, calcular área, serializar a JSON. Sin Visitor, cada operación nueva requiere modificar todas las clases de la jerarquía, lo que viola el Open/Closed Principle.
 
 ```csharp
-// ❌ Sin Visitor — cada nueva operación modifica todas las clases
+// Mal: Sin Visitor — cada nueva operación modifica todas las clases
 class Circle
 {
     public string ExportXml() { /* ... */ }   // operación 1
