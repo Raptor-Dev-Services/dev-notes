@@ -51,32 +51,37 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+
 jobs:
   secret-scan:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
         with:
           fetch-depth: 0   # historia completa para TruffleHog
+          persist-credentials: false
       - name: TruffleHog — secret scan
-        uses: trufflesecurity/trufflehog@main
+        uses: trufflesecurity/trufflehog@ea68ca03c865c5f324e86e849ced20ed3cf9dbbb  # v3.99.8
         with:
-          path: ./
-          base: ${{ github.event.repository.default_branch }}
-          head: HEAD
+          version: 3.99.8   # sin esto, la acción corre la imagen latest
 
   dependency-scan:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
       - name: OWASP Dependency-Check
-        uses: dependency-check/Dependency-Check_Action@main
+        # Sin release desde 2021: se fija el último commit de main, del 2025-12-10
+        uses: dependency-check/Dependency-Check_Action@1e54355a8b4c8abaa8cc7d0b70aa655a3bb15a6c
         with:
           project: 'mi-proyecto'
           path: '.'
           format: 'HTML'
           args: --failOnCVSS 7   # falla si hay CVE con score ≥ 7
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9  # v7.0.2
         if: always()
         with:
           name: dependency-check-report
@@ -85,15 +90,20 @@ jobs:
   codeql-analysis:
     runs-on: ubuntu-latest
     permissions:
+      contents: read
       security-events: write   # necesario para publicar resultados en GitHub Security
     steps:
-      - uses: actions/checkout@v4
-      - uses: github/codeql-action/init@v3
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: github/codeql-action/init@33d7b85da1a04171e211befe2c739303b9a4c066  # v4.39.3
         with:
           languages: 'csharp'
-      - uses: github/codeql-action/autobuild@v3
-      - uses: github/codeql-action/analyze@v3
+      - uses: github/codeql-action/autobuild@33d7b85da1a04171e211befe2c739303b9a4c066  # v4.39.3
+      - uses: github/codeql-action/analyze@33d7b85da1a04171e211befe2c739303b9a4c066  # v4.39.3
 ```
+
+En un `pull_request`, la acción de TruffleHog toma sola la base y la cabeza del PR, por eso no lleva `base` ni `head`.
 
 ---
 
@@ -121,11 +131,20 @@ Un atacante que controla un repositorio de action puede cambiar la etiqueta `@v3
 
 ```yaml
 # ✗ etiqueta mutable
-- uses: actions/checkout@v3
+- uses: actions/checkout@v7
 
 # ✓ SHA inmutable (auditado y congelado)
-- uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+- uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
 ```
+
+```bash
+# El SHA de una etiqueta, para no copiarlo a mano
+gh api repos/actions/checkout/commits/v7.0.1 --jq .sha
+```
+
+Los SHA de esta nota se consultaron el 7 de noviembre de 2026. El comentario con la versión no es adorno: Dependabot lo actualiza junto con el SHA, y sin él nadie sabe qué versión quedó fijada.
+
+Fijar el SHA congela la acción, no siempre lo que corre dentro. La acción de TruffleHog usa la imagen `latest` si no le pasas `version`, y la de Dependency-Check se construye `FROM owasp/dependency-check-action:latest`, sin una entrada para evitarlo. Antes de confiar en un pin, lee el `action.yml` y el `Dockerfile` de la acción.
 
 ### Secretos en workflows
 
@@ -167,8 +186,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-dotnet@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73  # v6.1.0
         with:
           dotnet-version: ${{ inputs.dotnet-version }}
       - run: dotnet build --configuration Release
@@ -177,10 +198,13 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
       - name: Scan imagen Docker
-        run: trivy image ${{ inputs.image-name }}
+        run: trivy image "$IMAGE_NAME"   # por env: una expresión dentro de run se inyecta como código
         env:
+          IMAGE_NAME: ${{ inputs.image-name }}
           TRIVY_TOKEN: ${{ secrets.registry-token }}
 ```
 
@@ -190,9 +214,12 @@ name: CI
 
 on: [push]
 
+permissions:
+  contents: read
+
 jobs:
   pipeline:
-    uses: mi-org/common/.github/workflows/build-and-scan.yml@main
+    uses: mi-org/common/.github/workflows/build-and-scan.yml@0123456789abcdef0123456789abcdef01234567  # v1.2.0, usa el SHA real
     with:
       image-name: 'mi-org/mi-app:latest'
     secrets:
@@ -251,7 +278,7 @@ Un SBOM es un inventario de todos los componentes de software (dependencias, ver
 
 ```bash
 # Generar SBOM con Syft (CycloneDX format)
-syft packages dir:. -o cyclonedx-json=sbom.cdx.json
+syft scan dir:. -o cyclonedx-json=sbom.cdx.json
 
 # Escanear el SBOM con Grype para CVEs
 grype sbom:./sbom.cdx.json --fail-on critical
@@ -260,13 +287,13 @@ grype sbom:./sbom.cdx.json --fail-on critical
 ```yaml
 # En el pipeline CI — generar y archivar SBOM
 - name: Generar SBOM
-  uses: anchore/sbom-action@v0
+  uses: anchore/sbom-action@66cbf4bc1f1c0d2edc94016e65bc221b6bb0ad6c  # v0.24.3
   with:
     path: .
     format: cyclonedx-json
     output-file: sbom.cdx.json
 
-- uses: actions/upload-artifact@v4
+- uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9  # v7.0.2
   with:
     name: sbom
     path: sbom.cdx.json
