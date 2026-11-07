@@ -1,4 +1,4 @@
-# 10 — Tenant Subdomain Routing
+# 10 - Tenant Subdomain Routing
 
 El subdomain routing resuelve el tenant desde el subdominio de la URL en lugar del JWT claim. Cuando un usuario accede a `alfacorp.misaas.com`, el sistema infiere que pertenece al tenant "alfacorp" antes de validar el JWT. Es el patrón estándar en SaaS B2B (Slack, Notion, Vercel, etc.).
 
@@ -167,14 +167,14 @@ public async Task InvokeAsync(HttpContext context)
 
 Para que los subdominios funcionen en producción:
 
-### DNS — wildcard record
+### DNS - wildcard record
 
 ```
 # En tu proveedor DNS (ej. Cloudflare, Route53)
 *.misaas.com  CNAME  misaas.com   (o A record a la IP del load balancer)
 ```
 
-### Nginx — wildcard SSL
+### Nginx - wildcard SSL
 
 ```nginx
 # /etc/nginx/sites-available/misaas
@@ -195,7 +195,7 @@ server {
 }
 ```
 
-### Let's Encrypt — wildcard certificate
+### Let's Encrypt - wildcard certificate
 
 ```bash
 certbot certonly --dns-cloudflare \
@@ -228,7 +228,7 @@ var host = context.Request.Host.Host;   // ya es "alfacorp.misaas.com" aunque ll
 
 Para probar subdominios en local sin DNS real:
 
-### Opción A — /etc/hosts (Windows: C:\Windows\System32\drivers\etc\hosts)
+### Opción A - /etc/hosts (Windows: C:\Windows\System32\drivers\etc\hosts)
 
 ```
 127.0.0.1   alfacorp.localhost
@@ -242,7 +242,7 @@ Para probar subdominios en local sin DNS real:
 }
 ```
 
-### Opción B — LocalTunnel / ngrok
+### Opción B - LocalTunnel / ngrok
 
 ```bash
 ngrok http 5080 --subdomain misaas
@@ -250,7 +250,7 @@ ngrok http 5080 --subdomain misaas
 # Para subdominos: necesita plan ngrok pro con wildcard
 ```
 
-### Opción C — Header X-Tenant-Slug para dev (solo en ambiente Local)
+### Opción C - Header X-Tenant-Slug para dev (solo en ambiente Local)
 
 Para evitar la complejidad de subdominios en dev, aceptar el slug en un header:
 
@@ -295,7 +295,7 @@ El dominio custom requiere que el cliente apunte `crm.alfacorp.com` CNAME a `mis
 
 ---
 
-## Slug en el login — vincular subdominio con credenciales
+## Slug en el login - vincular subdominio con credenciales
 
 El endpoint de login recibe el slug del subdominio para validar que el usuario pertenece a ese tenant:
 

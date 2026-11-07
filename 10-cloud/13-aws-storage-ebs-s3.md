@@ -1,4 +1,4 @@
-# 13 · AWS Storage — EBS, S3 y Snapshots
+# 13 - AWS Storage - EBS, S3 y Snapshots
 
 ## Problema que resuelve
 
@@ -6,7 +6,7 @@ Una aplicación de producción necesita almacenamiento para datos persistentes d
 
 ---
 
-## EBS — Elastic Block Store
+## EBS - Elastic Block Store
 
 EBS son discos virtuales que se adjuntan a instancias EC2. Son el "disco duro" de la instancia. Los datos persisten aunque la instancia se detenga o reinicie (a diferencia del instance store).
 
@@ -40,7 +40,7 @@ Base de datos en RDS:        gp3 o io2 (RDS gestiona automáticamente)
 Logs y archivos temporales:  gp3 suficiente
 ```
 
-### gp3 vs gp2 — por qué preferir gp3
+### gp3 vs gp2 - por qué preferir gp3
 
 ```
 gp2: 3 IOPS por GB. Un volumen de 100 GB tiene 300 IOPS base.
@@ -100,7 +100,7 @@ aws ec2 create-volume \
 # Snapshot del volumen en 1a → nuevo volumen en 1b
 ```
 
-### DLM — Data Lifecycle Manager
+### DLM - Data Lifecycle Manager
 
 Automatiza la creación y retención de snapshots sin necesitar scripts manuales.
 
@@ -139,7 +139,7 @@ Mensual:  retener 12 snapshots (último año)
 
 ---
 
-## S3 — Simple Storage Service
+## S3 - Simple Storage Service
 
 S3 es almacenamiento de objetos serverless. No hay servidores que gestionar, no hay disco que provisionar. Paga solo por lo que usas.
 
@@ -177,13 +177,13 @@ No: Nombres incorrectos:
 
 | Clase | Acceso | Disponibilidad | Min días | Costo GB/mes | Caso de uso |
 |-------|--------|---------------|----------|-------------|-------------|
-| **Standard** | Inmediato, frecuente | 99.99% | — | $0.023 | Assets activos, uploads de usuarios |
+| **Standard** | Inmediato, frecuente | 99.99% | - | $0.023 | Assets activos, uploads de usuarios |
 | **Standard-IA** | Inmediato, infrecuente | 99.9% | 30 días | $0.0125 | Backups semanales, logs viejos |
 | **One Zone-IA** | Inmediato, infrecuente | 99.5% | 30 días | $0.01 | Datos secundarios que se pueden regenerar |
 | **Glacier Instant Retrieval** | Milisegundos | 99.9% | 90 días | $0.004 | Archivos médicos, imágenes de compliance |
 | **Glacier Flexible Retrieval** | Minutos a horas | 99.9% | 90 días | $0.0036 | Auditoría anual, compliance largo plazo |
 | **Glacier Deep Archive** | 12-48 horas | 99.9% | 180 días | $0.00099 | Retención regulatoria 7+ años |
-| **Intelligent-Tiering** | Variable | 99.9% | — | $0.023 + fee monitoreo | Datos con acceso impredecible |
+| **Intelligent-Tiering** | Variable | 99.9% | - | $0.023 + fee monitoreo | Datos con acceso impredecible |
 
 **Costo de recuperación (retrieval):** las clases IA y Glacier cobran por GB recuperado. El costo total = almacenamiento + recuperaciones. Para datos que se acceden más de una vez al mes, Standard puede ser más económico que Standard-IA.
 
@@ -620,7 +620,7 @@ public class GenerateUploadUrlHandler : IRequestHandler<GenerateUploadUrlRequest
 | CRR | Cross-Region Replication. Réplica automática a un bucket en otra región. |
 | Block Public Access | Configuración de seguridad que bloquea todo acceso público, prevaleciendo sobre policies. |
 
-> Fuente: *AWS Certified Solutions Architect – Associate Guide* (Gabriel Ramirez, Packt): Ch.6 S3, Ch.7 Encryption y Storage Security
+> Fuente: *AWS Certified Solutions Architect - Associate Guide* (Gabriel Ramirez, Packt): Ch.6 S3, Ch.7 Encryption y Storage Security
 
 ---
 

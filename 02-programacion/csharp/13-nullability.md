@@ -115,7 +115,7 @@ var jwtKey = configuration["Jwt:Key"]!;
 
 ---
 
-## Flow analysis — el compilador rastrea nullabilidad
+## Flow analysis - el compilador rastrea nullabilidad
 
 ```csharp
 ExampleUser? user = await repo.GetByPublicIdAsync(id, ct);
@@ -160,7 +160,7 @@ public async Task<GetExampleUserResponse> Handle(
 
 ## Patrones comunes en el proyecto
 
-### TryGet — retornar null si no existe
+### TryGet - retornar null si no existe
 
 ```csharp
 // Convención: métodos que pueden no encontrar resultado retornan T?

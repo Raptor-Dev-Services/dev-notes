@@ -1,4 +1,4 @@
-# 11 · Layering y Clean Architecture
+# 11 - Layering y Clean Architecture
 
 El modelo clásico de tres capas (Presentación, Dominio, Datos) genera acoplamiento directo entre capas: el Dominio depende de la capa de Datos, lo que impide testear la lógica de negocio sin una base de datos real y obliga a reescribir el Dominio cada vez que cambia el origen de datos. Clean Architecture resuelve esto invirtiendo el flujo de dependencias: el núcleo no conoce a nadie, y todas las capas externas lo conocen a él.
 
@@ -6,7 +6,7 @@ El modelo clásico de tres capas (Presentación, Dominio, Datos) genera acoplami
 
 ---
 
-## Capas, tiers y assemblies — la diferencia conceptual
+## Capas, tiers y assemblies - la diferencia conceptual
 
 Tres términos que se confunden frecuentemente:
 
@@ -59,7 +59,7 @@ Consecuencias:
 
 ---
 
-## Clean Architecture — el flujo invertido
+## Clean Architecture - el flujo invertido
 
 Clean Architecture organiza las capas como círculos concéntricos donde **las dependencias solo apuntan hacia adentro**:
 
@@ -85,7 +85,7 @@ Sí: Flujo invertido — el Domain no depende de Data
        UI       → Application → Domain
 ```
 
-### Implementación en .NET — la técnica de inversión
+### Implementación en .NET - la técnica de inversión
 
 La inversión se logra con interfaces en el Domain/Application e implementaciones en Infrastructure:
 
@@ -161,7 +161,7 @@ El back-template implementa Clean Architecture con estas capas:
 | **Infrastructure** | `{{ROOT_NAMESPACE}}.Infrastructure` | Repositorios concretos (Dapper/EF Core), SQL classes, migraciones, EF configs |
 | **WebApi** | `{{ROOT_NAMESPACE}}.WebApi` | Controllers, Presenters, ViewModels |
 | **Host** | `{{ROOT_NAMESPACE}}.Host` | Program.cs, composition root, `ServiceCollectionEx` por capa |
-| **Common** | `{{ROOT_NAMESPACE}}.Common` | IMediator, IRequest, IResponse, ISuccess\<T\>, IFailure — sin dependencias externas |
+| **Common** | `{{ROOT_NAMESPACE}}.Common` | IMediator, IRequest, IResponse, ISuccess\<T\>, IFailure - sin dependencias externas |
 
 ### Reglas de referencia entre proyectos
 
@@ -178,7 +178,7 @@ Host           ← todos los anteriores (solo el Host ensambla todo)
 
 ---
 
-## Flujo por request — de extremo a extremo
+## Flujo por request - de extremo a extremo
 
 ```
 HTTP Request
@@ -262,7 +262,7 @@ El back-template usa **anemic model**: las entidades son DTOs de base de datos y
 
 ---
 
-## SQL classes — separación de SQL del repositorio
+## SQL classes - separación de SQL del repositorio
 
 El back-template extrae las queries SQL a clases separadas, manteniendo el repositorio limpio:
 
@@ -291,7 +291,7 @@ internal static class ExampleUsersSql
 
 ---
 
-## Result Pattern — sin excepciones para flujo de negocio
+## Result Pattern - sin excepciones para flujo de negocio
 
 El back-template reemplaza las excepciones de negocio con el Result Pattern:
 
@@ -331,7 +331,7 @@ public sealed class GetExampleUserPresenter : INotificationHandler<GetExampleUse
 
 ---
 
-## Composition Root — Host/ServiceCollectionEx.cs
+## Composition Root - Host/ServiceCollectionEx.cs
 
 Toda la configuración de DI se concentra en el Host, que es el único proyecto que conoce todas las capas:
 
@@ -374,7 +374,7 @@ El back-template implementa Clean Architecture con estas decisiones concretas:
 | Decisión | Elección | Razón |
 |----------|---------|-------|
 | ORM | Dapper (no EF Core) | Control total sobre SQL, sin overhead de tracking |
-| Modelo | Anemic | REST API stateless — la lógica en Handlers es suficiente |
+| Modelo | Anemic | REST API stateless - la lógica en Handlers es suficiente |
 | Patrón de use case | CQRS con MediatR custom | Un Handler por caso de uso, testeable en aislamiento |
 | Result Pattern | `ISuccess<T>` / `IFailure` | Sin excepciones para flujo de negocio |
 | SQL | Clases `...Sql` separadas | Queries legibles y versionables fuera del repositorio |
@@ -397,17 +397,17 @@ El back-template implementa Clean Architecture con estas decisiones concretas:
 
 | Término | Definición |
 |---------|-----------|
-| Layer (capa) | unidad lógica de organización del código — no implica un assembly ni un tier separado |
+| Layer (capa) | unidad lógica de organización del código - no implica un assembly ni un tier separado |
 | Tier | unidad física de despliegue; una sola máquina que ejecuta múltiples layers sigue siendo un tier |
-| Assembly | unidad compilada de .NET (.dll) — varios layers pueden estar en el mismo assembly |
+| Assembly | unidad compilada de .NET (.dll) - varios layers pueden estar en el mismo assembly |
 | Clean Architecture | patrón de organización de capas donde las dependencias solo apuntan hacia el núcleo (inward) |
-| Core | capa central de Clean Architecture que contiene Entities + Use Cases — sin dependencias externas |
+| Core | capa central de Clean Architecture que contiene Entities + Use Cases - sin dependencias externas |
 | Infrastructure | capa externa que contiene implementaciones concretas (BD, HTTP, colas, almacenamiento) |
 | Dependency Rule | regla de Clean Architecture: ninguna capa interna puede importar de una capa externa |
-| Rich Domain Model | entidad que encapsula su propia lógica en métodos — orientada a objetos pura |
+| Rich Domain Model | entidad que encapsula su propia lógica en métodos - orientada a objetos pura |
 | Anemic Domain Model | entidad que es solo un contenedor de datos; la lógica vive en servicios/handlers |
 | Result Pattern | patrón que reemplaza excepciones para flujo de negocio con tipos discriminados (`ISuccess<T>` / `IFailure`) |
-| CQRS | Command Query Responsibility Segregation — separa operaciones de lectura de escritura en handlers distintos |
+| CQRS | Command Query Responsibility Segregation - separa operaciones de lectura de escritura en handlers distintos |
 | Composition Root | punto único donde se configuran todas las dependencias del contenedor DI (Program.cs / Host) |
 | Persistence Ignorance | capacidad de testear lógica de dominio sin necesidad de una base de datos real |
 | Repository pattern | abstracción de acceso a datos que expone operaciones en términos del dominio, no de SQL |

@@ -1,4 +1,4 @@
-# 11 · AWS VPC y Networking
+# 11 - AWS VPC y Networking
 
 ## Problema que resuelve
 
@@ -6,7 +6,7 @@ Cuando se despliega una aplicación en AWS sin entender la red, todos los recurs
 
 ---
 
-## VPC — Virtual Private Cloud
+## VPC - Virtual Private Cloud
 
 Una VPC es una red virtual privada dentro de AWS completamente aislada de otras cuentas. Todo recurso (EC2, RDS, Lambda en VPC) vive dentro de una VPC.
 
@@ -21,7 +21,7 @@ AWS crea una VPC por defecto en cada región con CIDR `172.31.0.0/16`. Es funcio
 
 ---
 
-## Direccionamiento CIDR — cómo partir una red
+## Direccionamiento CIDR - cómo partir una red
 
 CIDR (Classless Inter-Domain Routing) define bloques de direcciones IP. El número después de `/` indica cuántos bits son la red (el resto son hosts).
 
@@ -80,7 +80,7 @@ Internet
 
 ---
 
-## Subredes — pública vs privada
+## Subredes - pública vs privada
 
 **El atributo "pública" NO es inherente a la subnet**. Lo que determina si una subnet es pública o privada es su tabla de enrutamiento:
 
@@ -94,14 +94,14 @@ Correcto:
 
 | Característica | Subnet Pública | Subnet Privada |
 |----------------|---------------|----------------|
-| Ruta a Internet | 0.0.0.0/0 → IGW | No hay / usa NAT |
+| Ruta a Internet | 0.0.0.0/0 -> IGW | No hay / usa NAT |
 | Recursos típicos | ALB, NAT GW, Bastion | EC2 de app, RDS |
 | Asignación de IP pública | Automática (opcional) | Nunca |
 | Accesible desde Internet | Si el SG lo permite | No directamente |
 
 ---
 
-## Route Tables — tablas de enrutamiento
+## Route Tables - tablas de enrutamiento
 
 Cada subnet tiene una route table asociada. AWS evalúa las rutas de más específica a menos específica.
 
@@ -286,7 +286,7 @@ Sí: Regla con referencia a SG: --source-group sg-app
 
 ---
 
-## NACLs — Network Access Control Lists
+## NACLs - Network Access Control Lists
 
 Las NACLs son firewalls **stateless** a nivel de subnet. Stateless significa que debes crear reglas explícitas para el tráfico de ida Y el de vuelta.
 
@@ -353,16 +353,16 @@ aws ec2 create-vpc-endpoint \
 
 ---
 
-## Route 53 — DNS gestionado
+## Route 53 - DNS gestionado
 
 ### Tipos de registro DNS
 
 | Tipo | Descripción | Caso de uso |
 |------|-------------|-------------|
-| A | Nombre → IPv4 | `api.miapp.com` → `52.1.2.3` |
-| AAAA | Nombre → IPv6 | Igual que A pero IPv6 |
-| CNAME | Nombre → otro nombre | `www` → `miapp.com` |
-| ALIAS | Nombre → recurso AWS | `api.miapp.com` → ALB/CloudFront |
+| A | Nombre -> IPv4 | `api.miapp.com` -> `52.1.2.3` |
+| AAAA | Nombre -> IPv6 | Igual que A pero IPv6 |
+| CNAME | Nombre -> otro nombre | `www` -> `miapp.com` |
+| ALIAS | Nombre -> recurso AWS | `api.miapp.com` -> ALB/CloudFront |
 | MX | Mail exchange | Servidor de correo |
 | TXT | Texto arbitrario | Verificación de dominio, SPF |
 
@@ -385,7 +385,7 @@ Sí: ALIAS resuelve esto:
 |--------|---------------|-------------|
 | Simple | Un solo destino | Aplicación básica |
 | Weighted | Porcentaje de tráfico a cada destino | Canary deployment (10%/90%) |
-| Failover | Primario → Secundario si falla health check | Disaster recovery |
+| Failover | Primario -> Secundario si falla health check | Disaster recovery |
 | Latency | Dirige al recurso con menor latencia | App multi-región |
 | Geolocation | Dirige por ubicación geográfica del cliente | GDPR, contenido localizado |
 | Multivalue | Responde con hasta 8 IPs (solo registros sanos) | Distribución básica |
@@ -482,7 +482,7 @@ El `SubdomainTenantMiddleware` del back-template necesita que el DNS resuelva `*
 | Elastic IP | IP pública fija asignada a tu cuenta. No cambia al reiniciar instancias. |
 | ENI | Elastic Network Interface. Interfaz de red virtual que pueden tener EC2, RDS, Lambda. |
 
-> Fuente: *AWS Certified Solutions Architect – Associate Guide* (Gabriel Ramirez, Packt): Ch.5 VPC, Networking y Route 53
+> Fuente: *AWS Certified Solutions Architect - Associate Guide* (Gabriel Ramirez, Packt): Ch.5 VPC, Networking y Route 53
 
 ---
 

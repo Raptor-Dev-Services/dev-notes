@@ -22,7 +22,7 @@ El listado completo de documentos está en [INDICE.md](INDICE.md) y las rutas de
 | [10-cloud](10-cloud/) | AWS y Azure, Linux + Nginx, observabilidad, secretos, costos, seguridad web, Zero Trust, AWS en profundidad, tracing distribuido | 17 |
 | [11-vibe-coding](11-vibe-coding/) | CLAUDE.md, prompts efectivos, AI workflow, manejo de contexto, LLMOps, arquitectura agéntica | 6 |
 | [roadmap](roadmap/) | Rutas de aprendizaje por objetivo | 7 |
-| [resources](resources/books/README.md) | Bibliografía indexada | — |
+| [resources](resources/books/README.md) | Bibliografía indexada | - |
 
 Además, en la raíz: [Glosario Maestro SaaS](Glosario_Maestro_SaaS.md) y [Manual Práctico del Stack](Manual_Practico_Stack.md).
 
@@ -77,8 +77,8 @@ Los ejemplos de código de este repositorio están basados en las dos plantillas
 
 | Repo | Stack | Cubre |
 |------|-------|-------|
-| [`back-template`](https://github.com/Raptor-Dev-Services/back-template) | .NET 10 · Clean Architecture · PostgreSQL · Docker | `01-fundamentos`, `02-programacion`, `03-arquitectura`, `04-backend`, `05-bases-de-datos`, `07-git`, `08-contenedores`, `09-cicd`, `10-cloud` |
-| [`front-template`](https://github.com/Raptor-Dev-Services/front-template) | React 19 · Vite · Tailwind v4 · Axios · SignalR | `06-frontend` |
+| [`back-template`](https://github.com/Raptor-Dev-Services/back-template) | .NET 10 - Clean Architecture - PostgreSQL - Docker | `01-fundamentos`, `02-programacion`, `03-arquitectura`, `04-backend`, `05-bases-de-datos`, `07-git`, `08-contenedores`, `09-cicd`, `10-cloud` |
+| [`front-template`](https://github.com/Raptor-Dev-Services/front-template) | React 19 - Vite - Tailwind v4 - Axios - SignalR | `06-frontend` |
 
 ---
 

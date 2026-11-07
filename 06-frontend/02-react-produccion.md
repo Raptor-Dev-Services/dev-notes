@@ -1,4 +1,4 @@
-# 02 — React de Producción
+# 02 - React de Producción
 
 Patrones y librerías del stack frontend para apps SaaS: routing protegido, cliente HTTP con refresh automático, formularios con validación, fechas, i18n y actualizaciones optimistas.
 
@@ -6,7 +6,7 @@ Patrones y librerías del stack frontend para apps SaaS: routing protegido, clie
 
 ---
 
-## React Router — routing con lazy loading y layout protegido
+## React Router - routing con lazy loading y layout protegido
 
 ```jsx
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -50,7 +50,7 @@ export function ProtectedLayout() {
 
 ---
 
-## Axios — cliente HTTP con interceptors JWT y refresh automático
+## Axios - cliente HTTP con interceptors JWT y refresh automático
 
 El interceptor de respuesta captura los 401 y hace refresh del token automáticamente, transparente para todos los componentes:
 
@@ -106,7 +106,7 @@ api.interceptors.response.use(
 
 ---
 
-## React Hook Form + Zod — formularios con validación tipada
+## React Hook Form + Zod - formularios con validación tipada
 
 ```tsx
 import { useForm } from 'react-hook-form';
@@ -157,7 +157,7 @@ export function LoginForm() {
 
 ---
 
-## date-fns — fechas sin Moment.js
+## date-fns - fechas sin Moment.js
 
 `date-fns` es modular: solo importar las funciones que se usan. `dayjs` es una alternativa más pequeña (2 KB vs 15 KB gzipped).
 
@@ -277,7 +277,7 @@ function useToggleTask() {
 
 ---
 
-## TanStack Query — patrones clave
+## TanStack Query - patrones clave
 
 ```js
 // Query con stale time y paginación
@@ -310,7 +310,7 @@ const onHover = () => {
 | Optimistic update | técnica que actualiza la UI inmediatamente antes de recibir la confirmación del servidor, mejorando la percepción de velocidad |
 | staleTime | configuración de TanStack Query que define cuánto tiempo se considera fresco un dato antes de revalidarlo |
 | Error Boundary | componente de React que captura errores de sus hijos y muestra una UI de error en lugar de colapsar la aplicación |
-| i18n | internacionalización — preparación del código para soportar múltiples idiomas y regiones |
+| i18n | internacionalización - preparación del código para soportar múltiples idiomas y regiones |
 | date-fns | librería modular de manipulación de fechas para JavaScript, más ligera que Moment.js |
 | Prefetch | carga anticipada de datos que el usuario probablemente necesitará pronto, antes de que los solicite explícitamente |
 

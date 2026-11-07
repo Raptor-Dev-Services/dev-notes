@@ -1,10 +1,10 @@
-﻿# 08 · Estrategias de rollback
+﻿# 08 - Estrategias de rollback
 
 ## Problema que resuelve
 
 Cuando una versión en producción tiene un defecto crítico hay dos presiones simultáneas: restaurar el servicio lo antes posible y no destruir el historial de Git. Las estrategias de rollback se dividen según el objetivo: volver el sistema al estado anterior (operacional) o corregir y avanzar (Git history).
 
-## Estrategia A — Redespliegue del tag anterior (recomendada)
+## Estrategia A - Redespliegue del tag anterior (recomendada)
 
 La forma más rápida de restaurar producción es redesplegar la versión que funcionaba. No toca Git en absoluto.
 
@@ -21,7 +21,7 @@ git show v1.2.0 --stat
 
 **Cuándo:** incidente en producción, se necesita restaurar en minutos.
 
-## Estrategia B — git revert (historial limpio)
+## Estrategia B - git revert (historial limpio)
 
 Crea un nuevo commit que deshace los cambios de un commit anterior. No reescribe historial; es la forma segura en ramas compartidas.
 
@@ -39,7 +39,7 @@ El `-m 1` indica que se quiere revertir al primer padre del merge (la rama desti
 
 **Cuándo:** el bug llegó a `main`, se quiere dejar evidencia en el historial de que hubo una reversión.
 
-## Estrategia C — git reset (local, antes de push)
+## Estrategia C - git reset (local, antes de push)
 
 Solo válido cuando el commit problemático no se ha publicado en remoto.
 
@@ -56,7 +56,7 @@ git reset --hard HEAD~1
 
 **Cuándo:** el commit local está mal, todavía no se ha hecho push.
 
-## Estrategia D — Hotfix desde el tag anterior
+## Estrategia D - Hotfix desde el tag anterior
 
 Cuando el código en `main` está roto y se necesita una corrección urgente:
 
@@ -85,12 +85,12 @@ git branch -d hotfix/1.2.1-fix-crash
 
 | Estrategia | Velocidad | Toca historial | Código resultante |
 |-----------|-----------|----------------|-------------------|
-| A — redespliegue de tag | muy rápida | no | versión anterior en prod |
-| B — git revert | media | agrega commit | avanza con reversión |
-| C — git reset | rápida | reescribe | solo local, antes de push |
-| D — hotfix desde tag | lenta (ciclo completo) | agrega commits | versión corregida en prod |
+| A - redespliegue de tag | muy rápida | no | versión anterior en prod |
+| B - git revert | media | agrega commit | avanza con reversión |
+| C - git reset | rápida | reescribe | solo local, antes de push |
+| D - hotfix desde tag | lenta (ciclo completo) | agrega commits | versión corregida en prod |
 
-## Checklist de incidente — decisión de rollback
+## Checklist de incidente - decisión de rollback
 
 **A. Detección**
 - [ ] identificar el síntoma exacto (error 500, timeout, datos corruptos)

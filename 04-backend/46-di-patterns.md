@@ -1,4 +1,4 @@
-# 46 — Patrones de Dependency Injection en ASP.NET Core
+# 46 - Patrones de Dependency Injection en ASP.NET Core
 
 Cuando una clase crea sus propias dependencias con `new`, queda acoplada a la implementación concreta: no se puede testear en aislamiento, no se puede swappear por otra implementación, y el contenedor no puede gestionar el ciclo de vida del objeto. Dependency Injection (DI) resuelve esto moviendo la creación de dependencias al contenedor.
 
@@ -6,7 +6,7 @@ Cuando una clase crea sus propias dependencias con `new`, queda acoplada a la im
 
 ---
 
-## IoC — la diferencia conceptual
+## IoC - la diferencia conceptual
 
 IoC (Inversion of Control) es el principio. DI es una forma de aplicarlo.
 
@@ -35,7 +35,7 @@ public class OrderService(IOrderRepository repo)
 
 ---
 
-## Composition Root — Program.cs
+## Composition Root - Program.cs
 
 Toda la configuración de DI debe concentrarse en un único lugar: la composition root.
 
@@ -60,7 +60,7 @@ builder.Services.AddInventoryModule(builder.Configuration);
 
 ---
 
-## Lifetimes — los tres ciclos de vida
+## Lifetimes - los tres ciclos de vida
 
 | Lifetime | Instancias por... | Cuándo usar |
 |----------|-------------------|-------------|
@@ -75,7 +75,7 @@ builder.Services.AddScoped<IExampleUserRepository, ExampleUserRepository>();
 builder.Services.AddTransient<IEmailRenderer, HandlebarsEmailRenderer>();
 ```
 
-### Captive dependency — el error más común de lifetime
+### Captive dependency - el error más común de lifetime
 
 Un Scoped inyectado en un Singleton queda "capturado" por el Singleton y nunca se libera, lo que puede causar datos de otro usuario filtrándose:
 
@@ -99,7 +99,7 @@ public class OrderSyncJob(IServiceScopeFactory scopeFactory)
 
 ---
 
-## Service Locator — el anti-pattern
+## Service Locator - el anti-pattern
 
 El Service Locator es resolver dependencias manualmente desde `IServiceProvider` dentro de la clase. Oculta las dependencias, dificulta el testing y viola IoC.
 
@@ -196,7 +196,7 @@ builder.Services.Decorate<IExampleUserRepository, LoggedExampleUserRepository>()
 
 ---
 
-## Keyed Services — múltiples implementaciones de la misma interfaz
+## Keyed Services - múltiples implementaciones de la misma interfaz
 
 .NET 8+ permite registrar y resolver múltiples implementaciones de una interfaz con una clave:
 
@@ -231,7 +231,7 @@ public class DynamicStorageSelector(IServiceProvider sp, IConfiguration config)
 
 ---
 
-## Guard clauses — validar entradas
+## Guard clauses - validar entradas
 
 Un guard clause es un chequeo temprano que lanza excepción si el argumento es inválido. Evita que el error aparezca tarde con un mensaje confuso.
 
@@ -358,11 +358,11 @@ public static class ServiceCollectionEx
 
 | Término | Definición |
 |---------|-----------|
-| IoC (Inversion of Control) | principio donde el control del flujo del programa se invierte — el framework/contenedor llama al código, no al revés |
+| IoC (Inversion of Control) | principio donde el control del flujo del programa se invierte - el framework/contenedor llama al código, no al revés |
 | DI (Dependency Injection) | técnica para implementar IoC: las dependencias se pasan al objeto en lugar de que el objeto las cree |
 | Composition Root | punto único de la aplicación donde se configuran todas las dependencias (Program.cs en ASP.NET Core) |
-| Volatile dependency | clase de negocio o acceso a datos que puede cambiar — candidata a inyección con interfaz |
-| Stable dependency | tipo del BCL o DTO sin comportamiento — puede crearse con `new` |
+| Volatile dependency | clase de negocio o acceso a datos que puede cambiar - candidata a inyección con interfaz |
+| Stable dependency | tipo del BCL o DTO sin comportamiento - puede crearse con `new` |
 | Control Freak | anti-pattern donde una clase crea sus dependencias con `new` en lugar de recibirlas |
 | Service Locator | anti-pattern donde se usa `IServiceProvider` dentro de clases de negocio para resolver dependencias |
 | Captive dependency | bug de lifetime: un Singleton captura un Scoped, que nunca es liberado por el contenedor |

@@ -1,10 +1,10 @@
-# 01 — SOLID
+# 01 - SOLID
 
 Los 5 principios que guían el diseño orientado a objetos. No son reglas arbitrarias. Cada uno resuelve un tipo de fragilidad concreta que aparece en proyectos reales.
 
 ---
 
-## S — Single Responsibility Principle (SRP)
+## S - Single Responsibility Principle (SRP)
 
 **Una clase tiene una sola razón para cambiar.**
 
@@ -46,7 +46,7 @@ public class GetExampleUserPresenter  // responsabilidad: traducir Response → 
 
 ---
 
-## O — Open/Closed Principle (OCP)
+## O - Open/Closed Principle (OCP)
 
 **Las entidades de software deben estar abiertas a extensión y cerradas a modificación.**
 
@@ -91,7 +91,7 @@ public class NotificationService
 
 ---
 
-## L — Liskov Substitution Principle (LSP)
+## L - Liskov Substitution Principle (LSP)
 
 **Los objetos de una subclase deben poder reemplazar a los de la clase base sin alterar la corrección del programa.**
 
@@ -129,7 +129,7 @@ public Task Handle(GetExampleUserResponse notification, CancellationToken ct)
 
 ---
 
-## I — Interface Segregation Principle (ISP)
+## I - Interface Segregation Principle (ISP)
 
 **Los clientes no deben depender de interfaces que no usan.**
 
@@ -183,7 +183,7 @@ public interface IValidationFailure : IFailure { }
 
 ---
 
-## D — Dependency Inversion Principle (DIP)
+## D - Dependency Inversion Principle (DIP)
 
 **Los módulos de alto nivel no deben depender de módulos de bajo nivel. Ambos deben depender de abstracciones.**
 
@@ -270,7 +270,7 @@ Es que los módulos de **alto nivel** (reglas de negocio) no dependan de los de 
 
 > Fuente: *Clean Code* (Martin): Ch.2 Nombres, Ch.3 Funciones, Ch.17 Smells and Heuristics; *Clean Architecture* Ch.12-14 Cohesión y Acoplamiento de Componentes
 
-### DRY — Don't Repeat Yourself
+### DRY - Don't Repeat Yourself
 
 **Cada pieza de conocimiento debe tener una representación única, inequívoca y autoritativa en el sistema.**
 
@@ -323,7 +323,7 @@ public class ProfileService       { public void UpdateEmail(Email email) { ... }
 public class InvitationService    { public void Invite(Email email) { ... } }
 ```
 
-### KISS — Keep It Simple, Stupid
+### KISS - Keep It Simple, Stupid
 
 **La solución más simple que funciona correctamente es siempre preferible a la más sofisticada.**
 
@@ -343,7 +343,7 @@ public interface IExampleUserRepository
 }
 ```
 
-### YAGNI — You Aren't Gonna Need It
+### YAGNI - You Aren't Gonna Need It
 
 **No implementar funcionalidad hasta que sea necesaria.** No diseñar para requisitos hipotéticos futuros.
 
@@ -487,7 +487,7 @@ public async Task<InsertExampleUserResponse> Handle(
 | YAGNI (You Aren't Gonna Need It) | principio que establece no implementar funcionalidad hasta que sea necesaria |
 | CCP (Common Closure Principle) | las clases que cambian juntas por las mismas razones deben estar en el mismo componente |
 | Value Object | objeto definido completamente por sus atributos, sin identidad propia, e inmutable |
-| Acoplamiento | grado de dependencia entre módulos — bajo acoplamiento facilita el cambio independiente |
+| Acoplamiento | grado de dependencia entre módulos - bajo acoplamiento facilita el cambio independiente |
 | Cohesión | medida de cuán relacionadas están las responsabilidades dentro de un componente |
 
 ---

@@ -1,4 +1,4 @@
-﻿# 21 — Template Method
+﻿# 21 - Template Method
 
 **Categoría:** Conductual
 
@@ -231,7 +231,7 @@ miner.Mine("data.xml");
 
 ---
 
-## Abstract vs Hook — cuándo usar cada uno
+## Abstract vs Hook - cuándo usar cada uno
 
 | Tipo | Modificador | Semántica |
 |------|------------|-----------|
@@ -243,7 +243,7 @@ miner.Mine("data.xml");
 
 ## Implementación ASP.NET Core (Marcotte)
 
-### Maquina de búsqueda — hooks abstractos y opcionales
+### Maquina de búsqueda - hooks abstractos y opcionales
 
 Marcotte (*Architecting ASP.NET Core Applications*, Ch.12) implementa el patrón con una máquina de búsqueda para ilustrar los dos tipos de hooks:
 
@@ -446,20 +446,20 @@ public sealed class ExampleUsersController : BaseApiController
 | Término | Definición |
 |---------|-----------|
 | Template Method | Patrón conductual que define el esqueleto de un algoritmo en la clase base y delega pasos específicos a las subclases |
-| Método plantilla | El método de la clase base que define el orden fijo de los pasos — no se sobreescribe (`sealed` implícito) |
-| Paso abstracto | Método `abstract` que las subclases deben implementar obligatoriamente — varía en cada implementación concreta |
-| Hook | Método `virtual` con implementación vacía que las subclases pueden sobreescribir opcionalmente — punto de extensión flexible |
+| Método plantilla | El método de la clase base que define el orden fijo de los pasos - no se sobreescribe (`sealed` implícito) |
+| Paso abstracto | Método `abstract` que las subclases deben implementar obligatoriamente - varía en cada implementación concreta |
+| Hook | Método `virtual` con implementación vacía que las subclases pueden sobreescribir opcionalmente - punto de extensión flexible |
 | Operación base | Método con implementación en la clase base que es común a todas las subclases y no se sobreescribe |
 | `abstract` | Modificador de C# para métodos que no tienen implementación en la clase base y deben ser implementados por las subclases |
-| `virtual` | Modificador de C# que permite sobreescribir un método en subclases — base de los hooks del Template Method |
+| `virtual` | Modificador de C# que permite sobreescribir un método en subclases - base de los hooks del Template Method |
 | `override` | Modificador de C# que indica que un método sobreescribe la implementación del padre |
 | `BaseApiController` | Clase base del proyecto que implementa el esqueleto: proporciona `Mediator` como operación base compartida |
 | Template Method vs Strategy | Template Method usa herencia (el esqueleto es fijo, se compilan los pasos); Strategy usa composición (todo el algoritmo es intercambiable) |
-| `SearchMachine` | Clase abstracta del ejemplo de Marcotte que encapsula el esqueleto del algoritmo de búsqueda — las subclases implementan el algoritmo concreto |
-| Hook obligatorio | Método `abstract` que la subclase debe implementar — el Template Method delega este paso al concreto |
-| Hook opcional | Método `virtual` con implementación por defecto vacía — la subclase puede o no sobreescribirlo |
-| `IEnumerable<T>` en DI | Patrón de ASP.NET Core que permite inyectar todas las implementaciones registradas de un tipo base — útil para ejecutar múltiples estrategias del Template Method |
-| Fake en tests | Implementación mínima de la clase abstracta creada solo para tests — permite verificar el comportamiento de la clase base sin ejecutar el hook concreto |
+| `SearchMachine` | Clase abstracta del ejemplo de Marcotte que encapsula el esqueleto del algoritmo de búsqueda - las subclases implementan el algoritmo concreto |
+| Hook obligatorio | Método `abstract` que la subclase debe implementar - el Template Method delega este paso al concreto |
+| Hook opcional | Método `virtual` con implementación por defecto vacía - la subclase puede o no sobreescribirlo |
+| `IEnumerable<T>` en DI | Patrón de ASP.NET Core que permite inyectar todas las implementaciones registradas de un tipo base - útil para ejecutar múltiples estrategias del Template Method |
+| Fake en tests | Implementación mínima de la clase abstracta creada solo para tests - permite verificar el comportamiento de la clase base sin ejecutar el hook concreto |
 
 ---
 

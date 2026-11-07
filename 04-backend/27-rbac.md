@@ -1,4 +1,4 @@
-# 27 — RBAC: Control de Acceso Basado en Roles
+# 27 - RBAC: Control de Acceso Basado en Roles
 
 RBAC (Role-Based Access Control) es el modelo de autorización donde los permisos se asignan a roles, y los roles se asignan a usuarios. En un SaaS multi-tenant, cada usuario tiene un rol dentro de su tenant. El rol determina qué endpoints puede llamar y qué datos puede ver o modificar.
 
@@ -21,7 +21,7 @@ Los roles son **por tenant**. Ana es Admin de Tenant A, no de todo el sistema. U
 
 ---
 
-## Modelo de roles — flat vs jerárquico
+## Modelo de roles - flat vs jerárquico
 
 ### Flat (roles independientes, sin herencia)
 
@@ -103,7 +103,7 @@ public sealed class TenantSettingsController : BaseApiController
 
 ---
 
-## Roles en el dominio — enum o string
+## Roles en el dominio - enum o string
 
 ### String (recomendado para empezar)
 
@@ -213,7 +213,7 @@ public async Task<UpdateOrderResponse> Handle(UpdateOrderRequest request, Cancel
 
 ---
 
-## Gestión de roles — cambiar el rol de un usuario
+## Gestión de roles - cambiar el rol de un usuario
 
 Solo un Admin puede cambiar el rol de otro usuario dentro del mismo tenant:
 
@@ -249,7 +249,7 @@ private static bool IsValidRole(string role) =>
 
 ---
 
-## SuperAdmin — rol del operador del SaaS
+## SuperAdmin - rol del operador del SaaS
 
 El SuperAdmin es el rol del equipo que opera el SaaS. NO es un rol del tenant. Es un rol del sistema:
 
@@ -292,7 +292,7 @@ Mantener esta tabla actualizada es tan importante como el código. Es el contrat
 
 ---
 
-## Policies — alternativa a Roles en [Authorize]
+## Policies - alternativa a Roles en [Authorize]
 
 Para lógica más compleja (múltiples condiciones), usar policies:
 
@@ -385,18 +385,18 @@ Ver `04-backend/28-user-invitation.md` para cómo se asigna el rol al invitar us
 
 | Término | Definición |
 |---------|-----------|
-| RBAC | Role-Based Access Control — modelo de autorización donde los permisos se asignan a roles, no a usuarios |
-| ClaimTypes.Role | Claim estándar de .NET que almacena el rol del usuario en el JWT — usado por [Authorize(Roles = "...")] |
+| RBAC | Role-Based Access Control - modelo de autorización donde los permisos se asignan a roles, no a usuarios |
+| ClaimTypes.Role | Claim estándar de .NET que almacena el rol del usuario en el JWT - usado por [Authorize(Roles = "...")] |
 | Authorize | Atributo de ASP.NET Core que protege endpoints requiriendo autenticación y/o roles específicos |
-| Resource-Based Authorization | Verificación de autorización que considera el recurso específico además del rol — necesaria para datos de tenant |
+| Resource-Based Authorization | Verificación de autorización que considera el recurso específico además del rol - necesaria para datos de tenant |
 | SystemRoles | Constantes que definen los roles disponibles en el sistema: SuperAdmin, Admin, Manager, Member |
-| SuperAdmin | Rol especial del equipo del SaaS con acceso cross-tenant — nunca asignado a usuarios de un tenant |
-| Flat Roles | Modelo de roles sin jerarquía donde cada rol es independiente — Admin no hereda permisos de Member |
+| SuperAdmin | Rol especial del equipo del SaaS con acceso cross-tenant - nunca asignado a usuarios de un tenant |
+| Flat Roles | Modelo de roles sin jerarquía donde cada rol es independiente - Admin no hereda permisos de Member |
 | Hierarchical Roles | Modelo de roles con herencia donde un rol superior incluye los permisos de los roles inferiores |
 | ChangeUserRole | Caso de uso que cambia el rol de un usuario dentro del mismo tenant |
 | Policy | Configuración de autorización en ASP.NET Core que puede combinar roles, claims y requisitos personalizados |
-| IAuthorizationService | Servicio de ASP.NET Core para verificar autorización de forma programática — usado en resource-based auth |
-| Tenant-scoped role | Rol que aplica solo dentro del contexto de un tenant — un usuario puede ser Admin en un tenant y Member en otro |
+| IAuthorizationService | Servicio de ASP.NET Core para verificar autorización de forma programática - usado en resource-based auth |
+| Tenant-scoped role | Rol que aplica solo dentro del contexto de un tenant - un usuario puede ser Admin en un tenant y Member en otro |
 
 ---
 

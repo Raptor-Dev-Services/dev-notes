@@ -1,4 +1,4 @@
-﻿# 11 — Flyweight
+﻿# 11 - Flyweight
 
 **Categoría:** Estructural
 
@@ -38,8 +38,8 @@ Tipografía de imprenta. En lugar de tener una pieza de metal por cada carácter
 
 | Concepto | Definición | Ejemplo |
 |----------|-----------|---------|
-| **Estado intrínseco** | Compartido entre instancias — inmutable | Color, sprite, tipo de bala |
-| **Estado extrínseco** | Único por instancia — pasa como parámetro | Posición X,Y, dirección, velocidad |
+| **Estado intrínseco** | Compartido entre instancias - inmutable | Color, sprite, tipo de bala |
+| **Estado extrínseco** | Único por instancia - pasa como parámetro | Posición X,Y, dirección, velocidad |
 | **Flyweight** | Almacena estado intrínseco | El objeto compartido |
 | **FlyweightFactory** | Gestiona el pool de flyweights | Retorna existente o crea nuevo |
 

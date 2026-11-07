@@ -1,4 +1,4 @@
-# 30 — Configuración por Tenant
+# 30 - Configuración por Tenant
 
 En un SaaS multi-tenant, cada empresa puede tener configuraciones propias: zona horaria, idioma, logo, features habilitadas, límites personalizados, integraciones activas. Esta configuración es diferente para cada tenant (y puede variar por branch) y se carga al inicio del request.
 
@@ -416,17 +416,17 @@ public sealed class TenantSettingsController : BaseApiController
 
 | Término | Definición |
 |---------|-----------|
-| TenantSetting | Entidad que almacena configuración clave-valor por tenant — permite personalización sin código |
+| TenantSetting | Entidad que almacena configuración clave-valor por tenant - permite personalización sin código |
 | TenantSettingKeys | Clase de constantes que define los nombres de todas las claves de configuración disponibles |
 | ITenantConfigAccessor | Interfaz que provee acceso tipado a la configuración del tenant actual con soporte de caché |
-| TenantConfig | Diccionario en memoria de los settings del tenant actual — cargado una vez por request o con caché |
+| TenantConfig | Diccionario en memoria de los settings del tenant actual - cargado una vez por request o con caché |
 | Feature Flags | Settings booleanos que habilitan o deshabilitan funcionalidades para tenants específicos |
-| Key-Value Store | Patrón de almacenamiento de configuración como pares clave-valor — flexible y extensible sin migrations |
+| Key-Value Store | Patrón de almacenamiento de configuración como pares clave-valor - flexible y extensible sin migrations |
 | Jerarquía branch > tenant | Regla donde el setting de una branch sobreescribe al setting del tenant si ambos existen |
 | Caché de configuración | Almacenamiento temporal de los settings del tenant para evitar queries repetidas en cada request |
-| Plan Defaults | Valores por defecto de configuración determinados por el plan del tenant — base de la jerarquía |
-| Settings sensibles | Settings que contienen secretos (API keys, tokens) — no se retornan en el GET, solo se actualizan |
-| UpdateTenantSetting | Caso de uso para actualizar un setting del tenant — solo ejecutable por el rol Admin |
+| Plan Defaults | Valores por defecto de configuración determinados por el plan del tenant - base de la jerarquía |
+| Settings sensibles | Settings que contienen secretos (API keys, tokens) - no se retornan en el GET, solo se actualizan |
+| UpdateTenantSetting | Caso de uso para actualizar un setting del tenant - solo ejecutable por el rol Admin |
 
 ---
 

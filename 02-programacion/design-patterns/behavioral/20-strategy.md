@@ -1,4 +1,4 @@
-﻿# 20 — Strategy
+﻿# 20 - Strategy
 
 **Categoría:** Conductual
 
@@ -127,7 +127,7 @@ context.DoSomeBusinessLogic();  // e,d,c,b,a
 
 ---
 
-## Strategy con lambdas — la forma moderna en C#
+## Strategy con lambdas - la forma moderna en C#
 
 En C# moderno, las estrategias simples se expresan con `Func<T>`:
 
@@ -229,7 +229,7 @@ await processor.ProcessAsync(99.99m, new PaymentDetails { PayPalEmail = "user@ex
 
 ---
 
-## Strategy con DI — registro de múltiples estrategias
+## Strategy con DI - registro de múltiples estrategias
 
 ```csharp
 // Registrar todas las estrategias en DI
@@ -323,7 +323,7 @@ public sealed class InsertExampleUserPresenter : INotificationHandler<InsertExam
 | `Func<T, TResult>` | Alternativa en C# para estrategias simples: se pasa una función/lambda en lugar de una clase completa |
 | Presenters como Strategies | En el proyecto, cada Presenter es una estrategia de presentación; misma interfaz (`INotificationHandler<T>`), comportamiento diferente |
 | Estrategia de pago | Ejemplo clásico: `CreditCardStrategy`, `PayPalStrategy`, `CryptoStrategy` implementan `IPaymentStrategy` |
-| Open/Closed Principle | El Strategy lo satisface: agregar un algoritmo nuevo no modifica el Context — solo se crea una nueva ConcreteStrategy |
+| Open/Closed Principle | El Strategy lo satisface: agregar un algoritmo nuevo no modifica el Context - solo se crea una nueva ConcreteStrategy |
 | Factory de estrategias | Patrón de registrar estrategias en DI y resolverlas por clave (nombre, tipo de pago) para selección dinámica |
 
 ---

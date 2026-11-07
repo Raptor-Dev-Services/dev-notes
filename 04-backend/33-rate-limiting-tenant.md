@@ -1,4 +1,4 @@
-# 33 — Rate Limiting por Tenant
+# 33 - Rate Limiting por Tenant
 
 El rate limiting por tenant evita que una empresa abuse de la API y degrade el servicio para los demás. A diferencia del rate limiting global (por IP), el rate limiting por tenant usa el `tenant_id` del JWT como clave. Múltiples usuarios del mismo tenant comparten la misma cuota.
 
@@ -315,16 +315,16 @@ options.OnRejected = async (context, ct) =>
 
 | Término | Definición |
 |---------|-----------|
-| Rate Limiting por Tenant | Límite de requests configurado por tenant_id en lugar de por IP — justa distribución en SaaS |
-| Tenant Partition Key | Uso del tenant_id como clave de partición en RateLimitPartition — cada tenant tiene su propio límite |
-| Fixed Window por Tenant | Ventana fija de tiempo donde se cuentan los requests del tenant — límite se resetea al inicio de la ventana |
+| Rate Limiting por Tenant | Límite de requests configurado por tenant_id en lugar de por IP - justa distribución en SaaS |
+| Tenant Partition Key | Uso del tenant_id como clave de partición en RateLimitPartition - cada tenant tiene su propio límite |
+| Fixed Window por Tenant | Ventana fija de tiempo donde se cuentan los requests del tenant - límite se resetea al inicio de la ventana |
 | Plan-based Limits | Límites de rate diferenciados por plan de suscripción: Enterprise tiene mayor límite que Free |
 | OnRejected | Callback de rate limiting que construye la respuesta HTTP 429 con Retry-After y mensaje de upgrade |
 | EnableRateLimiting | Atributo para aplicar una política de rate limiting específica a un endpoint o controller |
 | DisableRateLimiting | Atributo para excluir endpoints como health checks o webhooks entrantes del rate limiting |
 | UseRateLimiter | Middleware de ASP.NET Core que debe registrarse después de UseAuthentication para tener el claim tenant_id |
 | Redis Distributed Rate Limiting | Rate limiting coordinado entre múltiples instancias del servidor usando Redis como store compartido |
-| 429 Too Many Requests | Código HTTP devuelto cuando el tenant supera su límite — incluye headers Retry-After |
+| 429 Too Many Requests | Código HTTP devuelto cuando el tenant supera su límite - incluye headers Retry-After |
 | Strict Policy | Política de rate limiting más restrictiva aplicada a endpoints de alto costo (reportes, exportaciones) |
 
 ---

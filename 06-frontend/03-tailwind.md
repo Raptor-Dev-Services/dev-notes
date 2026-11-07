@@ -1,4 +1,4 @@
-# 03 · Tailwind CSS v4 con Vite
+# 03 - Tailwind CSS v4 con Vite
 
 Tailwind CSS v4 cambia radicalmente la forma de instalación y configuración respecto a v3. Ya no usa `tailwind.config.js` ni `postcss.config.js`. Se integra directamente como plugin de Vite y toda la configuración va en el CSS mediante `@theme` y CSS custom properties.
 
@@ -37,7 +37,7 @@ Una sola línea en el CSS reemplaza las tres directivas de v3 (`@tailwind base/c
 
 ---
 
-## Helper cx() — clases condicionales
+## Helper cx() - clases condicionales
 
 Función utilitaria para componer clases de forma condicional sin dependencias externas:
 
@@ -355,7 +355,7 @@ El front-template usa `@tailwindcss/vite` v4.1.x. No tiene `tailwind.config.js`.
 | mobile-first | diseñar para móvil por defecto y añadir breakpoints para pantallas más grandes |
 | CSS custom property | variable CSS nativa (`--nombre: valor`) accesible con `var(--nombre)` |
 | `@theme` | bloque de configuración de Tailwind v4 en el CSS para definir tokens de diseño |
-| JIT (Just-in-Time) | modo de compilación de Tailwind que genera solo las clases usadas — estándar en v4 |
+| JIT (Just-in-Time) | modo de compilación de Tailwind que genera solo las clases usadas - estándar en v4 |
 | dark mode | modo de visualización de alto contraste oscuro activado por clase `dark` o media query |
 | `@keyframes` | declaración CSS para definir las etapas de una animación |
 | plugin | extensión de Tailwind para agregar utilidades, componentes o variantes personalizadas |

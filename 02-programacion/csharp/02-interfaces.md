@@ -292,7 +292,7 @@ public sealed class UserId : IEquatable<UserId>
 
 ---
 
-## Default interface methods — C# 8+
+## Default interface methods - C# 8+
 
 Las interfaces pueden tener implementaciones por defecto. Se usan para agregar métodos sin romper implementaciones existentes.
 

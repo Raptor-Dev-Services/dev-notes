@@ -1,4 +1,4 @@
-﻿# 03 · Configuración de Git
+﻿# 03 - Configuración de Git
 
 ## Problema que resuelve
 

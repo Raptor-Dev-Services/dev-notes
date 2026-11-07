@@ -372,7 +372,7 @@ public sealed class GetExampleUsersHandler
 
 | Capa | Tipo de clase | Por qué |
 |------|--------------|---------|
-| `Domain/Entities` | `class` (normal) | Entidades mutables — estado cambia |
+| `Domain/Entities` | `class` (normal) | Entidades mutables - estado cambia |
 | `Application/UseCases/.../Request` | `sealed record` | Inmutable, se compara por valor |
 | `Application/UseCases/.../Responses` | `abstract record` + `sealed record` | Jerarquía de tipos de resultado |
 | `Application/UseCases/.../Handler` | `sealed class` | Implementación final, sin herencia |
@@ -470,7 +470,7 @@ public sealed class JwtTokenService : IJwtTokenService { /* Solo JWT */ }
 | `static` | Modificador que impide instanciar la clase; todos sus miembros pertenecen al tipo y no a objetos individuales |
 | `partial` | Modificador que permite dividir la definición de una clase en múltiples archivos del mismo proyecto |
 | Modificador de acceso | Palabra clave que controla la visibilidad de un miembro: `public`, `private`, `protected`, `internal` |
-| `sealed class` | Tipo concreto final del proyecto — handlers, repositorios, presenters no están diseñados para ser heredados |
+| `sealed class` | Tipo concreto final del proyecto - handlers, repositorios, presenters no están diseñados para ser heredados |
 | `abstract record` | Tipo base de respuestas en el proyecto (ej: `GetExampleUserResponse`) que no se puede instanciar directamente |
 | `static class` | Usado en el proyecto para los métodos de extensión de registro de DI (`ServiceCollectionExtensions`) |
 | Object initializer | Sintaxis `new Clase { Prop1 = val1 }` para asignar propiedades después de la creación sin un constructor explícito |

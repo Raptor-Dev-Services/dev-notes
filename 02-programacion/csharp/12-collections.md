@@ -306,7 +306,7 @@ foreach (var u in lista) Console.WriteLine(u.Email);     // lectura de memoria
 
 ---
 
-## IAsyncEnumerable — streaming asíncrono
+## IAsyncEnumerable - streaming asíncrono
 
 Para secuencias que se obtienen elemento a elemento de forma asíncrona:
 

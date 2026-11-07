@@ -1,4 +1,4 @@
-# 17 · Tracing distribuido — OpenTelemetry, Tempo y correlación
+# 17 - Tracing distribuido - OpenTelemetry, Tempo y correlación
 
 > Fuente: *Building Microservices* (Sam Newman): Ch.10 Distributed Tracing; *Web API Development with ASP.NET Core 8* (Quan Nguyen): Ch.12 Observability
 
@@ -44,7 +44,7 @@ TraceId: 4bf92f3577b34da6a3ce929d0e0e4736
 
 ---
 
-## W3C TraceContext — el estándar de propagación
+## W3C TraceContext - el estándar de propagación
 
 W3C TraceContext es el estándar para propagar trace context entre servicios vía HTTP headers. OpenTelemetry lo implementa por defecto.
 
@@ -120,7 +120,7 @@ builder.Services.AddOpenTelemetry()
 app.MapPrometheusScrapingEndpoint();        // /metrics
 ```
 
-### ActivitySource — traces personalizados
+### ActivitySource - traces personalizados
 
 ```csharp
 // Definir el ActivitySource de la app (singleton, en una clase estática)
@@ -188,7 +188,7 @@ public class OrderService
 }
 ```
 
-### Baggage — datos que viajan en el trace
+### Baggage - datos que viajan en el trace
 
 ```csharp
 // Escribir baggage (en middleware de tenant, por ejemplo)
@@ -201,7 +201,7 @@ var tenantId = Activity.Current?.GetBaggageItem("tenant_id");
 
 ---
 
-## IMeterFactory — métricas custom con OTel
+## IMeterFactory - métricas custom con OTel
 
 ```csharp
 // Definir métricas de negocio (singleton)
@@ -355,7 +355,7 @@ builder.Services
 
 ---
 
-## OpenTelemetry Collector — pipeline centralizado
+## OpenTelemetry Collector - pipeline centralizado
 
 El OTel Collector es un proceso intermediario que recibe telemetría de múltiples apps, la procesa (filtra, enriquece, agrega) y la reenvía a múltiples backends. Desacopla las apps de los backends de observabilidad.
 
@@ -446,7 +446,7 @@ service:
 
 ---
 
-## Grafana Tempo — distributed tracing
+## Grafana Tempo - distributed tracing
 
 Tempo es el backend de traces de Grafana. Compatible con OTLP, Zipkin y Jaeger.
 
@@ -492,7 +492,7 @@ compactor:
     block_retention: 336h   # 14 días
 ```
 
-### TraceQL — lenguaje de consulta de Tempo
+### TraceQL - lenguaje de consulta de Tempo
 
 ```traceql
 # Buscar traces con error
@@ -532,11 +532,11 @@ cfg.Enrich.WithOpenTelemetryTraceId()
 
 ---
 
-## Sampling — no guardar todo
+## Sampling - no guardar todo
 
 En producción con alto tráfico, guardar el 100% de los traces es costoso. El sampling controla qué fracción se guarda.
 
-### Head-based sampling — decidir al inicio
+### Head-based sampling - decidir al inicio
 
 ```csharp
 // Sampling en la app — 10% de todos los requests
@@ -547,7 +547,7 @@ tracing.SetSampler(new ParentBasedSampler(
     new TraceIdRatioBasedSampler(0.01)));
 ```
 
-### Tail-based sampling — decidir después de ver el trace
+### Tail-based sampling - decidir después de ver el trace
 
 El tail-based sampling requiere el OTel Collector. Permite guardar el 100% de los traces con error y solo el 1% de los exitosos:
 
@@ -648,7 +648,7 @@ public async Task ConsumeAsync(BasicDeliverEventArgs args, CancellationToken ct)
 
 ---
 
-## Debugging con tracing — localizar cuellos de botella
+## Debugging con tracing - localizar cuellos de botella
 
 ### Workflow de diagnóstico
 

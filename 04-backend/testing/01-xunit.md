@@ -1,4 +1,4 @@
-﻿# 01 — xUnit: Fundamentos y Convenciones
+﻿# 01 - xUnit: Fundamentos y Convenciones
 
 El framework de testing estándar en .NET moderno. Todo test es un método público en una clase pública.
 
@@ -46,7 +46,7 @@ El patrón **Arrange / Act / Assert** es la estructura universal de un test.
 
 ## [Fact] vs [Theory]
 
-### [Fact] — un caso concreto
+### [Fact] - un caso concreto
 
 ```csharp
 [Fact]
@@ -66,7 +66,7 @@ public async Task Handle_UserNotFound_ReturnsNotFoundFailure()
 }
 ```
 
-### [Theory] — múltiples casos con los mismos pasos
+### [Theory] - múltiples casos con los mismos pasos
 
 ```csharp
 [Theory]
@@ -154,9 +154,9 @@ result.Should().BeOfType<GetExampleUserSuccess>()
 
 ---
 
-## Fixtures — setup compartido
+## Fixtures - setup compartido
 
-### IClassFixture — compartido entre todos los tests de una clase
+### IClassFixture - compartido entre todos los tests de una clase
 
 ```csharp
 // Tests/Fixtures/DatabaseFixture.cs  (ver 04-testcontainers.md)
@@ -195,7 +195,7 @@ public sealed class ExampleUserRepositoryTests
 
 La fixture se crea una vez para toda la clase, ideal para recursos costosos (contenedores Docker).
 
-### IAsyncLifetime — setup/teardown async
+### IAsyncLifetime - setup/teardown async
 
 ```csharp
 public sealed class GetExampleUserHandlerTests : IAsyncLifetime
@@ -243,7 +243,7 @@ Tests/
     └── WebAppFixture.cs
 ```
 
-### Nombres de tests — convención
+### Nombres de tests - convención
 
 ```
 {Metodo}_{Escenario}_{ResultadoEsperado}

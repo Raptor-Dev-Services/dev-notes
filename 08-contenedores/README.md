@@ -1,4 +1,4 @@
-# Docker — Índice
+# Docker - Índice
 
 Guía completa de Docker para este proyecto, desde conceptos hasta workflows de producción.
 
@@ -16,7 +16,7 @@ Guía completa de Docker para este proyecto, desde conceptos hasta workflows de 
 
 ---
 
-## Flujo rápido — desarrollo diario
+## Flujo rápido - desarrollo diario
 
 ```bash
 # 1. Levantar infraestructura (PostgreSQL + Seq + Jaeger)
@@ -38,7 +38,7 @@ docker compose -f compose-db.yaml down
 
 ---
 
-## Flujo rápido — probar imagen completa
+## Flujo rápido - probar imagen completa
 
 ```bash
 # Construir y levantar todo en Docker

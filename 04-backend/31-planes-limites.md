@@ -1,4 +1,4 @@
-# 31 — Planes, Tiers y Límites de Uso
+# 31 - Planes, Tiers y Límites de Uso
 
 Los planes (Free, Pro, Enterprise) definen qué features tiene disponibles cada tenant y cuánto puede usar. Los límites se validan en tiempo de ejecución. Antes de permitir una operación, el sistema verifica si el tenant tiene cuota disponible.
 
@@ -383,14 +383,14 @@ public async Task CheckLimitsAsync(CancellationToken ct)
 | Término | Definición |
 |---------|-----------|
 | PlanLimits | Clase que define los límites de uso para un plan: MaxUsers, MaxProjects, MaxStorageMb, etc. |
-| Plans.GetLimits | Método centralizado que retorna los PlanLimits de un plan dado — única fuente de verdad |
+| Plans.GetLimits | Método centralizado que retorna los PlanLimits de un plan dado - única fuente de verdad |
 | IPlanService | Interfaz de servicio que verifica si el tenant puede realizar una acción dada su suscripción actual |
 | PlanCheckResult | Resultado de la verificación de límite: Allowed u OnLimitReached con mensaje de contexto |
 | UsageMetric | Métrica de uso actual del tenant: usuarios activos, proyectos creados, almacenamiento usado |
 | CanAddUserAsync | Método representativo de IPlanService que verifica si el tenant puede agregar un usuario más |
-| HTTP 402 | Payment Required — código de respuesta estándar cuando el tenant ha alcanzado el límite de su plan |
+| HTTP 402 | Payment Required - código de respuesta estándar cuando el tenant ha alcanzado el límite de su plan |
 | Downgrade Validation | Verificación que impide bajar de plan si el uso actual supera los límites del plan inferior |
-| MaxUsers | Límite de usuarios activos por tenant — varía por plan (Free: 5, Pro: 50, Enterprise: ilimitado) |
+| MaxUsers | Límite de usuarios activos por tenant - varía por plan (Free: 5, Pro: 50, Enterprise: ilimitado) |
 | Tenant-global Count | Conteo que suma usuarios o recursos de todos los branches del tenant para comparar con el límite |
 | Alerta de uso | Notificación automática al Admin cuando el tenant alcanza el 80% o 100% de un límite de plan |
 

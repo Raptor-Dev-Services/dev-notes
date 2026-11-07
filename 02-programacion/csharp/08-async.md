@@ -271,7 +271,7 @@ await repo.GetByPublicIdAsync(id, CancellationToken.None);   // también
 
 Úsalos en tests y en código que no tiene contexto de request HTTP.
 
-### `CancellationTokenSource` — crear tu propio token
+### `CancellationTokenSource`crear tu propio token
 
 ```csharp
 // Crear un token que se cancela después de 5 segundos
@@ -324,7 +324,7 @@ public async Task ProcessBulkAsync(IEnumerable<Guid> ids, CancellationToken ct)
 
 ## Errores comunes con async
 
-### Error 1 — `async void` (nunca usar excepto en event handlers)
+### Error 1 - `async void` (nunca usar excepto en event handlers)
 
 ```csharp
 // Mal: async void — las excepciones no se pueden capturar externamente
@@ -341,7 +341,7 @@ public async Task CargarDatosAsync()
 }
 ```
 
-### Error 2 — Bloquear async con `.Result` o `.Wait()`
+### Error 2 - Bloquear async con `.Result` o `.Wait()`
 
 ```csharp
 // Mal: Bloquear el hilo — puede causar deadlock en ASP.NET
@@ -354,7 +354,7 @@ var user = await repo.GetByPublicIdAsync(id, ct);
 
 **Deadlock:** el hilo espera que el Task termine; el Task espera que el hilo esté disponible. Resultado: deadlock.
 
-### Error 3 — Olvidar `await`
+### Error 3 - Olvidar `await`
 
 ```csharp
 // Mal: Sin await — el handler retorna inmediatamente sin esperar la BD
@@ -382,7 +382,7 @@ public async Task<GetExampleUserResponse> Handle(GetExampleUserRequest request, 
 }
 ```
 
-### Error 4 — No propagar CancellationToken
+### Error 4 - No propagar CancellationToken
 
 ```csharp
 // Mal: Recibe ct pero no lo pasa — la BD no puede cancelar
@@ -402,7 +402,7 @@ public Task<ExampleUser?> GetByPublicIdAsync(Guid publicId, CancellationToken ct
         cancellationToken: ct);  // ← propagado
 ```
 
-### Error 5 — `async` sin `await` (warning del compilador)
+### Error 5 - `async` sin `await` (warning del compilador)
 
 ```csharp
 // Mal: El compilador avisa: "This async method lacks 'await' operators"
@@ -421,7 +421,7 @@ public Task<string> GetNameAsync() => Task.FromResult("Ana");
 
 ---
 
-## `ValueTask<T>` — optimización avanzada
+## `ValueTask<T>`optimización avanzada
 
 `ValueTask<T>` es como `Task<T>` pero evita allocations cuando el resultado está disponible inmediatamente (ej. desde cache).
 
@@ -454,7 +454,7 @@ public ValueTask<ExampleUser?> GetFromCache(Guid id)
 | Método que llama a otros async | `async Task<T> MetodoAsync()` |
 | Método que solo delega (no usa el resultado) | `Task<T> MetodoAsync() => otro.MetodoAsync()` |
 | Método sin valor de retorno | `async Task MetodoAsync()` |
-| Método síncrono sin I/O | Sin async — método síncrono normal |
+| Método síncrono sin I/O | Sin async - método síncrono normal |
 | Retornar un valor inmediato como Task | `Task.FromResult(valor)` |
 | Retornar un Task completado | `Task.CompletedTask` |
 | Operaciones paralelas independientes | `await Task.WhenAll(t1, t2, t3)` |

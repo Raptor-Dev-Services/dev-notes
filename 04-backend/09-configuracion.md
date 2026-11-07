@@ -1,4 +1,4 @@
-# 09 — Configuración en .NET
+# 09 - Configuración en .NET
 
 .NET tiene un sistema de configuración por capas que combina múltiples fuentes. La configuración se lee como un árbol jerárquico. Cualquier fuente puede sobreescribir a la anterior.
 
@@ -19,7 +19,7 @@ Argumentos de línea de comandos    ← la última palabra
 
 ---
 
-## Leer configuración — acceso directo vs. Options
+## Leer configuración - acceso directo vs. Options
 
 ### Acceso directo con `IConfiguration` (no recomendado para producción)
 
@@ -30,7 +30,7 @@ var jwtKey = builder.Configuration["Jwt:SigningKey"];
 var timeout = builder.Configuration.GetValue<int>("Jwt:AccessTokenLifetimeMinutes");
 ```
 
-### Options Pattern — el enfoque correcto
+### Options Pattern - el enfoque correcto
 
 El Options Pattern mapea secciones del JSON a clases POCO fuertemente tipadas. Los errores de key se detectan en compilación y en startup con validación.
 
@@ -77,9 +77,9 @@ public class TokenService(IOptions<JwtOptions> options)
 
 | Interfaz | Lifetime | Se recarga | Cuándo usar |
 |----------|----------|-----------|------------|
-| `IOptions<T>` | Singleton | No — solo al arrancar | Config fija (JWT, Stripe keys) |
-| `IOptionsSnapshot<T>` | Scoped (por request) | Sí — en cada request | Config que puede cambiar sin reiniciar |
-| `IOptionsMonitor<T>` | Singleton | Sí — reacciona a cambios en tiempo real | Jobs en background, servicios long-running |
+| `IOptions<T>` | Singleton | No - solo al arrancar | Config fija (JWT, Stripe keys) |
+| `IOptionsSnapshot<T>` | Scoped (por request) | Sí - en cada request | Config que puede cambiar sin reiniciar |
+| `IOptionsMonitor<T>` | Singleton | Sí - reacciona a cambios en tiempo real | Jobs en background, servicios long-running |
 
 ```csharp
 // IOptionsMonitor — para servicios singleton que necesitan leer config actualizada
@@ -95,7 +95,7 @@ public class FeatureFlagService(IOptionsMonitor<FeatureFlags> monitor)
 
 ---
 
-## Variables de entorno — sobreescribir configuración en Docker
+## Variables de entorno - sobreescribir configuración en Docker
 
 En .NET, una variable de entorno con doble underscore (`__`) navega secciones del JSON. Es la forma estándar en Linux/Docker (`:` no es válido en nombres de variables en Linux).
 
@@ -344,7 +344,7 @@ La ventaja sobre `ValidateDataAnnotations()`: las reglas de validación viven en
 
 ---
 
-## `[OptionsValidator]` — source generator (.NET 8)
+## `[OptionsValidator]`source generator (.NET 8)
 > Fuente: *Architecting ASP.NET Core Applications* (Marcotte): Ch.9 Using the Options Validation Source Generator
 
 Para proyectos con AOT (Ahead-of-Time compilation) o trimming, el generador de código crea el validador en tiempo de compilación, sin reflection:
@@ -389,22 +389,22 @@ Diferencia clave vs `ValidateDataAnnotations()`: el código de validación se ge
 | Término | Definición |
 |---------|-----------|
 | Options Pattern | Patrón de .NET que mapea secciones de configuración a clases POCO fuertemente tipadas con validación en startup |
-| IOptions\<T\> | Singleton de configuración que se lee una sola vez al iniciar la aplicación — no se recarga |
+| IOptions\<T\> | Singleton de configuración que se lee una sola vez al iniciar la aplicación - no se recarga |
 | IOptionsSnapshot\<T\> | Configuración Scoped que se recarga en cada request HTTP cuando el archivo de config cambia |
-| IOptionsMonitor\<T\> | Singleton de configuración que notifica cambios en tiempo real — para servicios long-running |
+| IOptionsMonitor\<T\> | Singleton de configuración que notifica cambios en tiempo real - para servicios long-running |
 | ValidateDataAnnotations | Método que activa la validación de atributos ([Required], [Range]) en las clases Options al iniciar |
 | ValidateOnStart | Método que fuerza la validación de configuración en startup en lugar de esperar al primer uso |
 | IValidateOptions\<T\> | Interfaz para validaciones personalizadas de configuración más complejas que Data Annotations |
-| appsettings.json | Archivo base de configuración de .NET — va al repositorio con valores neutros o de ejemplo |
+| appsettings.json | Archivo base de configuración de .NET - va al repositorio con valores neutros o de ejemplo |
 | User Secrets | Mecanismo de desarrollo local para almacenar secretos fuera del repositorio en %APPDATA% |
-| IConfiguration | Interfaz de bajo nivel para acceder a valores de configuración por clave string — propenso a typos |
+| IConfiguration | Interfaz de bajo nivel para acceder a valores de configuración por clave string - propenso a typos |
 | Double Underscore | Separador de secciones en variables de entorno Linux/Docker (`Jwt__SigningKey`) equivalente a `:` |
-| Named Options | Instancias múltiples de la misma clase Options identificadas por nombre — para múltiples proveedores |
-| IConfigureOptions\<T\> | Interfaz para encapsular lógica de configuración en una clase separada — se ejecuta en la fase de configuración |
-| IPostConfigureOptions\<T\> | Como IConfigureOptions pero se ejecuta después — útil para sobreescribir valores en tests de integración |
-| FluentValidateOptions\<T\> | Adaptador genérico que conecta FluentValidation con IValidateOptions — bridge entre los dos sistemas |
-| [OptionsValidator] | Atributo de .NET 8 para generar código de validación en tiempo de compilación — compatible con AOT |
-| AOT | Ahead-of-Time compilation — compila .NET a código nativo antes de ejecutar; requiere evitar reflection |
+| Named Options | Instancias múltiples de la misma clase Options identificadas por nombre - para múltiples proveedores |
+| IConfigureOptions\<T\> | Interfaz para encapsular lógica de configuración en una clase separada - se ejecuta en la fase de configuración |
+| IPostConfigureOptions\<T\> | Como IConfigureOptions pero se ejecuta después - útil para sobreescribir valores en tests de integración |
+| FluentValidateOptions\<T\> | Adaptador genérico que conecta FluentValidation con IValidateOptions - bridge entre los dos sistemas |
+| [OptionsValidator] | Atributo de .NET 8 para generar código de validación en tiempo de compilación - compatible con AOT |
+| AOT | Ahead-of-Time compilation - compila .NET a código nativo antes de ejecutar; requiere evitar reflection |
 
 ---
 

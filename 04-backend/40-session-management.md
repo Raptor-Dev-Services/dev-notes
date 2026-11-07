@@ -1,4 +1,4 @@
-# 40 — Gestión de Sesiones
+# 40 - Gestión de Sesiones
 
 La gestión de sesiones permite controlar las sesiones activas de los usuarios: ver desde qué dispositivos están conectados, revocar sesiones individuales o todas a la vez, forzar logout al cambiar el password o detectar actividad sospechosa.
 
@@ -358,13 +358,13 @@ public async Task CleanupExpiredSessionsAsync(CancellationToken ct)
 |---------|-----------|
 | UserSession | Entidad que registra cada sesión activa con DeviceName, IpAddress, RefreshToken y LastActivityAt |
 | Refresh Token Rotation | Estrategia donde cada uso del refresh token genera uno nuevo e invalida el anterior para detectar robo |
-| Token Rotation | Sinónimo de Refresh Token Rotation — previene el uso de tokens robados que ya fueron utilizados |
-| RevokeAllSessions | Operación que invalida todos los refresh tokens del usuario — equivale a logout global |
-| session_id | Claim en el JWT que identifica la sesión actual — permite revocar tokens individuales sin invalidar el usuario |
+| Token Rotation | Sinónimo de Refresh Token Rotation - previene el uso de tokens robados que ya fueron utilizados |
+| RevokeAllSessions | Operación que invalida todos los refresh tokens del usuario - equivale a logout global |
+| session_id | Claim en el JWT que identifica la sesión actual - permite revocar tokens individuales sin invalidar el usuario |
 | Redis Denylist | Lista negra de access tokens revocados almacenada en Redis para invalidación urgente antes de su expiración |
-| DeviceName | Descripción del dispositivo desde el que se inició la sesión — extraída del User-Agent |
-| IpAddress | Dirección IP registrada al crear la sesión — útil para detección de acceso sospechoso |
-| LastActivityAt | Timestamp del último uso de la sesión — permite limpiar sesiones inactivas automáticamente |
+| DeviceName | Descripción del dispositivo desde el que se inició la sesión - extraída del User-Agent |
+| IpAddress | Dirección IP registrada al crear la sesión - útil para detección de acceso sospechoso |
+| LastActivityAt | Timestamp del último uso de la sesión - permite limpiar sesiones inactivas automáticamente |
 | Logout Global | Revocación de todas las sesiones del usuario excepto opcionalmente la actual |
 | Cleanup Job | Job periódico que elimina sesiones con RefreshToken expirado de la base de datos |
 

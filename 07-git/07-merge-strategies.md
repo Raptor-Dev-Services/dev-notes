@@ -1,4 +1,4 @@
-# 07 · Estrategias de merge
+# 07 - Estrategias de merge
 
 ## Problema que resuelve
 
@@ -10,7 +10,7 @@ Git ofrece varias formas de integrar ramas. La elección afecta la legibilidad d
 |-----------|---------|-----------|---------|
 | Merge con commit | `git merge --no-ff` | preserva ramas con merge commit | revertir el merge commit |
 | Squash merge | `git merge --squash` | un commit limpio por feature | revertir ese único commit |
-| Rebase | `git rebase` | historia lineal, sin merge commits | reescribe SHAs — difícil en compartido |
+| Rebase | `git rebase` | historia lineal, sin merge commits | reescribe SHAs - difícil en compartido |
 
 ## Merge --no-ff (recomendado en Git Flow)
 
@@ -112,12 +112,12 @@ Comandos disponibles en el editor:
 
 | Merge | Estrategia |
 |-------|-----------|
-| `feature/*` → `develop` | `--no-ff` |
-| `bugfix/*` → `develop` | `--no-ff` |
-| `release/*` → `main` | `--no-ff` |
-| `release/*` → `develop` | `--no-ff` |
-| `hotfix/*` → `main` | `--no-ff` |
-| `hotfix/*` → `develop` | `--no-ff` |
+| `feature/*` -> `develop` | `--no-ff` |
+| `bugfix/*` -> `develop` | `--no-ff` |
+| `release/*` -> `main` | `--no-ff` |
+| `release/*` -> `develop` | `--no-ff` |
+| `hotfix/*` -> `main` | `--no-ff` |
+| `hotfix/*` -> `develop` | `--no-ff` |
 | actualizar feature con develop | `rebase` (local, antes de publicar) |
 
 ## Revertir un merge
@@ -140,7 +140,7 @@ Esto crea un nuevo commit que deshace los cambios del merge, sin reescribir hist
 
 ---
 
-## Cherry-pick — aplicar un commit específico
+## Cherry-pick - aplicar un commit específico
 > Fuente: *Pro Git* (Chacon, Straub): Ch.7 Git Tools
 
 `cherry-pick` copia un commit de una rama a otra sin hacer merge de toda la rama.
@@ -181,7 +181,7 @@ main:    ─────────────────── C' ───�
 
 ---
 
-## git bisect — encontrar el commit que introdujo un bug
+## git bisect - encontrar el commit que introdujo un bug
 
 ```bash
 # Iniciar la búsqueda binaria

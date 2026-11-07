@@ -1,4 +1,4 @@
-﻿# 02 — Factory Method
+﻿# 02 - Factory Method
 
 **Categoría:** Creacional
 
@@ -212,7 +212,7 @@ public sealed class MainDapperDbConnection
 |---------|--------------|----------------|
 | Acoplamiento | Acoplado a la clase concreta | Acoplado a la interfaz |
 | Extensibilidad | Requiere modificar el código existente | Solo agregar subclase |
-| Testing | Difícil de mockear | Fácil — reemplazar factory |
+| Testing | Difícil de mockear | Fácil - reemplazar factory |
 | Complejidad | Mínima | Agrega una clase |
 
 ---

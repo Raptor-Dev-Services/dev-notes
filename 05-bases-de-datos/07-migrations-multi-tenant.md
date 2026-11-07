@@ -1,4 +1,4 @@
-# 07 — Migrations en Multi-Tenant
+# 07 - Migrations en Multi-Tenant
 
 Aplicar cambios de esquema en un SaaS con tenants reales en producción es diferente a un sistema de un solo tenant. Las migraciones deben ser aditivas, ejecutarse sin downtime y no romper la aplicación mientras se aplican.
 
@@ -72,7 +72,7 @@ migrationBuilder.AddColumn<string>(
 
 ---
 
-## Agregar columna NOT NULL — patrón seguro
+## Agregar columna NOT NULL - patrón seguro
 
 Agregar una columna `NOT NULL` directamente en producción bloquea la tabla para el backfill. El patrón seguro es en dos fases:
 
@@ -108,9 +108,9 @@ migrationBuilder.AlterColumn<string>(
 
 ---
 
-## Renombrar columna — patrón seguro en 3 fases
+## Renombrar columna - patrón seguro en 3 fases
 
-### Fase 1 — agregar columna nueva, mantener la vieja
+### Fase 1 - agregar columna nueva, mantener la vieja
 
 ```sql
 ALTER TABLE dbo.user_profiles ADD COLUMN display_name VARCHAR(200);
@@ -119,11 +119,11 @@ UPDATE dbo.user_profiles SET display_name = full_name;
 
 Código en esta fase: escribe en AMBAS columnas, lee de `full_name` (la vieja).
 
-### Fase 2 — código lee de la nueva columna
+### Fase 2 - código lee de la nueva columna
 
 Deployer actualiza código para leer `display_name`. Todavía escribe en ambas durante el deploy rolling.
 
-### Fase 3 — eliminar columna vieja
+### Fase 3 - eliminar columna vieja
 
 ```sql
 ALTER TABLE dbo.user_profiles DROP COLUMN full_name;
@@ -133,7 +133,7 @@ Solo cuando ya no hay ninguna instancia del código viejo corriendo.
 
 ---
 
-## PostgreSQL CONCURRENTLY — índices sin bloqueo
+## PostgreSQL CONCURRENTLY - índices sin bloqueo
 
 EF Core genera `CREATE INDEX` sin `CONCURRENTLY`. En tablas grandes, esto bloquea lecturas y escrituras. Siempre usar `CONCURRENTLY` para índices en producción:
 
@@ -186,9 +186,9 @@ Database.Migrate() → ejecuta todas las migraciones pendientes
 
 | Entorno | Método |
 |---------|--------|
-| Development | `EnsureCreated()` — recrear rápido sin historial |
-| Test | `EnsureCreated()` — DB limpia por test |
-| Staging/Production | `Database.Migrate()` — incremental, con rollback |
+| Development | `EnsureCreated()`recrear rápido sin historial |
+| Test | `EnsureCreated()`DB limpia por test |
+| Staging/Production | `Database.Migrate()`incremental, con rollback |
 
 ### Cambiar DatabaseInitializationService para producción
 
@@ -247,7 +247,7 @@ cat pending_migrations.sql
 
 ---
 
-## Lock timeout — evitar bloqueos largos
+## Lock timeout - evitar bloqueos largos
 
 Si una migración necesita un lock exclusivo, configurar un timeout para que falle rápido en lugar de bloquear:
 
@@ -339,7 +339,7 @@ protected override void Up(MigrationBuilder migrationBuilder)
 | Término | Definición |
 |---------|-----------|
 | Migración | cambio versionado de esquema de base de datos que EF Core puede aplicar y revertir de forma controlada |
-| Migración aditiva | migración que solo agrega columnas, tablas o índices sin modificar los existentes — compatible con el código anterior |
+| Migración aditiva | migración que solo agrega columnas, tablas o índices sin modificar los existentes - compatible con el código anterior |
 | Breaking migration | migración que elimina o renombra columnas usadas por el código anterior, requiriendo coordinación con el deploy |
 | Backfill | migración de datos que rellena columnas nuevas con valores derivados de datos existentes |
 | __EFMigrationsHistory | tabla que EF Core mantiene en la base de datos con el registro de las migraciones aplicadas |

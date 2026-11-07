@@ -79,7 +79,7 @@ catch (SqlException ex) when (ex.Number == 2627)
 
 ---
 
-## `finally` — siempre se ejecuta
+## `finally`siempre se ejecuta
 
 El bloque `finally` se ejecuta sin importar si hubo excepción o no. Ideal para liberar recursos.
 

@@ -1,4 +1,4 @@
-﻿# 19 — State
+﻿# 19 - State
 
 **Categoría:** Conductual
 
@@ -325,9 +325,9 @@ return _viewModel.IsSuccess        // consulta el estado
 | State (clase abstracta) | Clase base para todos los estados concretos; define las operaciones posibles y mantiene referencia al Context |
 | Transición | Cambio de un estado a otro; los estados concretos la disparan llamando `_context.TransitionTo(new OtroState())` |
 | Máquina de estados (FSM) | Modelo formal donde un objeto puede estar en uno de N estados y transita según eventos definidos |
-| `ResultViewModel<T>` | Máquina de estados del proyecto con tres estados: undefined → Success / undefined → Failure |
+| `ResultViewModel<T>` | Máquina de estados del proyecto con tres estados: undefined -> Success / undefined -> Failure |
 | `IsSuccess` | Propiedad del `ResultViewModel` que representa el estado actual para que el controller tome decisiones |
-| Ciclo de vida de entidad | Escenario natural para el State: órdenes (Pending → Paid → Shipped → Cancelled), documentos (Draft → Review → Published) |
+| Ciclo de vida de entidad | Escenario natural para el State: órdenes (Pending -> Paid -> Shipped -> Cancelled), documentos (Draft -> Review -> Published) |
 | State vs Strategy | En State el objeto cambia de comportamiento automáticamente; en Strategy el cliente elige el algoritmo explícitamente |
 | Guard condition | Validación en una transición de estado que solo permite el cambio si se cumple una condición (ej: solo admin puede publicar) |
 

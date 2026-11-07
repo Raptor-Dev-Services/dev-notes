@@ -1,4 +1,4 @@
-# 05 — SDLC: Ciclo de Vida del Software
+# 05 - SDLC: Ciclo de Vida del Software
 
 El SDLC (Software Development Life Cycle) es el proceso estructurado que guía cómo se planifica, construye, prueba, despliega y mantiene un sistema de software. No es un modelo único: es un conjunto de fases cuya ejecución varía según el modelo adoptado (Waterfall, Ágil, DevOps).
 
@@ -150,7 +150,7 @@ Iteración 2: [Análisis] → [Diseño] → [Impl] → [Test] → demo
 
 **Ventaja:** retroalimentación temprana. El cliente puede corregir el rumbo antes de que sea tarde.
 
-### 3.3 Ágil — Scrum
+### 3.3 Ágil - Scrum
 
 Iterativo con sprints de 1-4 semanas, roles definidos y ceremonias.
 
@@ -170,7 +170,7 @@ Product Backlog → Sprint Planning → Sprint (1-2 semanas) → Review → Retr
 |-----------|--------|---------|
 | Sprint Planning | Inicio del sprint | Qué items del backlog entran al sprint |
 | Daily Stand-up | Cada día (15 min) | ¿Qué hice ayer? ¿Qué haré hoy? ¿Hay bloqueos? |
-| Sprint Review | Fin del sprint | Demo al cliente — ¿cumple la expectativa? |
+| Sprint Review | Fin del sprint | Demo al cliente - ¿cumple la expectativa? |
 | Retrospectiva | Fin del sprint | ¿Qué salió bien? ¿Qué mejorar? |
 
 ### 3.4 DevOps continuo
@@ -202,7 +202,7 @@ Prácticas clave:
 | Despliegue | Runbook | `docs/runbooks/deploy.md` |
 | Mantenimiento | Postmortem | `docs/postmortems/YYYY-MM-DD.md` |
 
-### ADR — el artefacto más valioso
+### ADR - el artefacto más valioso
 
 Un ADR documenta una decisión de arquitectura: qué se decidió, por qué, y qué alternativas se descartaron.
 
@@ -224,7 +224,7 @@ Fácil de migrar a microservicios cuando la carga lo justifique.
 
 ---
 
-## 5. SDLC en equipos pequeños — qué simplificar
+## 5. SDLC en equipos pequeños - qué simplificar
 
 Un equipo de 4-6 personas no puede aplicar un SDLC enterprise completo. La clave es **mantener la intención de cada fase sin su overhead burocrático**.
 
@@ -254,7 +254,7 @@ Las métricas del framework DORA (DevOps Research and Assessment) son el estánd
 | Métrica | Qué mide | Elite | Alta | Media | Baja |
 |---------|---------|-------|------|-------|------|
 | **Deployment Frequency** | Qué tan seguido se despliega a producción | Múltiples veces/día | 1/semana | 1/mes | < 1/mes |
-| **Lead Time for Changes** | Tiempo desde commit hasta producción | < 1 hora | < 1 día | 1 semana–1 mes | > 6 meses |
+| **Lead Time for Changes** | Tiempo desde commit hasta producción | < 1 hora | < 1 día | 1 semana-1 mes | > 6 meses |
 | **Change Failure Rate** | % de despliegues que causan incidentes | < 5% | < 10% | < 15% | > 15% |
 | **MTTR** (Mean Time to Restore) | Tiempo promedio en restaurar producción | < 1 hora | < 1 día | < 1 semana | > 1 semana |
 
@@ -279,11 +279,11 @@ La deuda técnica es el costo futuro de atajos tomados hoy. No es inherentemente
 
 | Tipo de deuda | Fase donde se origina | Ejemplo |
 |--------------|-----------------------|---------|
-| Deuda de diseño | Diseño / Implementación | No separar dominios → módulos acoplados |
+| Deuda de diseño | Diseño / Implementación | No separar dominios -> módulos acoplados |
 | Deuda de código | Implementación | Métodos de 300 líneas, sin extraer |
-| Deuda de testing | Testing omitido | Sin tests → cada cambio es un riesgo |
-| Deuda de documentación | Todas | Sin ADRs → nadie sabe por qué se tomó una decisión |
-| Deuda de infraestructura | Despliegue | Deploy manual → proceso irreproducible |
+| Deuda de testing | Testing omitido | Sin tests -> cada cambio es un riesgo |
+| Deuda de documentación | Todas | Sin ADRs -> nadie sabe por qué se tomó una decisión |
+| Deuda de infraestructura | Despliegue | Deploy manual -> proceso irreproducible |
 
 ### El modelo de cuadrantes (Ward Cunningham + Martin Fowler)
 
@@ -332,15 +332,15 @@ No es refactoring masivo: es agregar un test faltante, extraer un método largo,
 
 | Término | Definición |
 |---------|-----------|
-| SDLC | Software Development Life Cycle — proceso estructurado que guía la planificación, construcción, prueba, despliegue y mantenimiento de un sistema |
+| SDLC | Software Development Life Cycle - proceso estructurado que guía la planificación, construcción, prueba, despliegue y mantenimiento de un sistema |
 | Waterfall | modelo de SDLC donde las fases se ejecutan en secuencia estricta, sin iteración |
 | Iterativo | modelo de SDLC que construye el sistema en ciclos, produciendo un incremento funcional al final de cada uno |
-| ADR | Architecture Decision Record — documento que registra una decisión de arquitectura, sus alternativas y consecuencias |
-| PRD | Product Requirements Document — artefacto que traduce los objetivos de negocio en requerimientos concretos del sistema |
-| CI/CD | Continuous Integration / Continuous Delivery — práctica de integrar y desplegar cambios de forma automática y frecuente |
+| ADR | Architecture Decision Record - documento que registra una decisión de arquitectura, sus alternativas y consecuencias |
+| PRD | Product Requirements Document - artefacto que traduce los objetivos de negocio en requerimientos concretos del sistema |
+| CI/CD | Continuous Integration / Continuous Delivery - práctica de integrar y desplegar cambios de forma automática y frecuente |
 | Deployment Frequency | métrica DORA que mide la frecuencia con la que el equipo despliega a producción |
 | Lead Time for Changes | métrica DORA que mide el tiempo entre un commit y su llegada a producción |
-| MTTR | Mean Time to Restore — tiempo promedio que tarda el equipo en restaurar el servicio tras un incidente |
+| MTTR | Mean Time to Restore - tiempo promedio que tarda el equipo en restaurar el servicio tras un incidente |
 | Deuda técnica | costo futuro de atajos tomados en el presente; se acumula como intereses sobre cada nueva funcionalidad |
 | Feature flag | mecanismo para desplegar código sin activarlo, permitiendo activar o desactivar funcionalidades sin redespliegue |
 | Postmortem | documento que analiza un incidente de producción: causas, línea de tiempo e impacto para evitar su recurrencia |

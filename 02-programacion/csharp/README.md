@@ -1,4 +1,4 @@
-# CSharpPrimer — Índice
+# CSharpPrimer - Índice
 
 Guía completa de C# y .NET orientada a este proyecto. Cada documento cubre un tema en profundidad máxima, con ejemplos del código real.
 
@@ -26,13 +26,13 @@ Guía completa de C# y .NET orientada a este proyecto. Cada documento cubre un t
 | 16 | [Namespaces y using](16-namespaces.md) | `namespace`, file-scoped namespace C# 10, convención del proyecto, `using`, `global using`, `using static`, aliases, `using` para `IDisposable` |
 | 17 | [Enums](17-enums.md) | Declaración, tipo subyacente, valores explícitos, `[Flags]` con bitwise, enums en DB (int vs string), extensiones sobre enum, `Enum.GetValues<T>()`, `Enum.TryParse<T>()`, serialización JSON |
 | 18 | [Atributos](18-attributes.md) | Routing (`[HttpGet]`, constraints), binding (`[FromBody]`, `[FromQuery]`), autorización (`[Authorize]`, `[AllowAnonymous]`), DataAnnotations, xUnit (`[Fact]`, `[Theory]`), JSON (`[JsonPropertyName]`, `[JsonIgnore]`), atributos personalizados, reflexión |
-| 19 | [Configuración](19-configuration.md) | Capas de config (appsettings → env vars → CLI), `IConfiguration`, `IOptions<T>`, `IOptionsSnapshot`, `IOptionsMonitor`, `ValidateOnStart`, separador `__` en env vars, User Secrets, prioridades |
+| 19 | [Configuración](19-configuration.md) | Capas de config (appsettings -> env vars -> CLI), `IConfiguration`, `IOptions<T>`, `IOptionsSnapshot`, `IOptionsMonitor`, `ValidateOnStart`, separador `__` en env vars, User Secrets, prioridades |
 
 ---
 
 ## Mapa por nivel de experiencia
 
-### Sub-junior — empezar aquí
+### Sub-junior - empezar aquí
 
 1. [Clases](01-classes.md): qué es una clase, modificadores de acceso, tipos
 2. [Propiedades y Campos](06-properties-fields.md): cómo almacena datos un objeto
@@ -42,7 +42,7 @@ Guía completa de C# y .NET orientada a este proyecto. Cada documento cubre un t
 6. [Namespaces y using](16-namespaces.md): organización del código
 7. [Strings](15-strings.md): manipulación de texto
 
-### Junior — continuar aquí
+### Junior - continuar aquí
 
 8. [Records](04-records.md): tipos inmutables, base de DTOs y Responses
 9. [Herencia y Polimorfismo](05-inheritance.md): reutilizar y extender
@@ -51,7 +51,7 @@ Guía completa de C# y .NET orientada a este proyecto. Cada documento cubre un t
 12. [Excepciones](14-exceptions.md): manejo de errores robusto
 13. [async / await / Task](08-async.md): operaciones asíncronas
 
-### Semi-senior / Senior — completar con
+### Semi-senior / Senior - completar con
 
 14. [DI Lifetimes](09-lifetimes.md): cuánto vive cada objeto
 15. [Genéricos](10-generics.md): código reutilizable entre tipos
@@ -74,7 +74,7 @@ Guía completa de C# y .NET orientada a este proyecto. Cada documento cubre un t
 | Propiedades | Entidades en `Domain/Entities/`, DTOs |
 | Métodos | Sql classes, repositorios, handlers |
 | async/await | Todo el acceso a datos y handlers |
-| Lifetimes | `ServiceCollectionEx.cs` — Singleton/Scoped decisions |
+| Lifetimes | `ServiceCollectionEx.cs`Singleton/Scoped decisions |
 | Genéricos | `ResultViewModel<T>`, `IRequestHandler<,>`, `ISuccess<T>` |
 | Pattern matching | Todos los Presenters |
 | Colecciones | Responses de colecciones, LINQ en handlers |

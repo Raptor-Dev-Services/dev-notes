@@ -1,4 +1,4 @@
-# 08 — Deuda Técnica como Proceso
+# 08 - Deuda Técnica como Proceso
 
 La deuda técnica es el costo implícito del trabajo adicional causado por elegir una solución rápida ahora en lugar de una mejor solución que tomaría más tiempo. Como la deuda financiera, acumula intereses: cada nueva funcionalidad construida sobre código de baja calidad cuesta más de lo que debería.
 
@@ -90,7 +90,7 @@ Hotspot:                  archivos con alta complejidad Y alta frecuencia de cam
 
 ## Proceso de gestión
 
-### 1. Inventario — hacer visible la deuda
+### 1. Inventario - hacer visible la deuda
 
 Convertir deuda técnica en items concretos del backlog:
 
@@ -116,7 +116,7 @@ Media prioridad:  módulos que cambian mensualmente Y hacen onboarding lento
 Baja prioridad:   módulos estables que no se tocan en meses
 ```
 
-### 3. Pagar la deuda — opciones
+### 3. Pagar la deuda - opciones
 
 ```
 Boy Scout Rule:       "Deja mejor de lo que encontraste" — refactor pequeño 
@@ -153,7 +153,7 @@ Velocidad del equipo sin gestionar deuda:
 
 ---
 
-## Prevención — construir sin acumular deuda
+## Prevención - construir sin acumular deuda
 
 ### Definition of Done (DoD) con criterios de calidad
 
@@ -231,7 +231,7 @@ Cuando un módulo supere 500 requests/segundo de forma sostenida durante
 | Hotspot | módulo del código que cambia frecuentemente, tiene alta complejidad y acumula la mayor parte de los bugs |
 | Boy Scout Rule | principio de dejar el código levemente mejor de como se encontró en cada cambio, sin necesidad de refactoring masivo |
 | Strangler Fig | patrón que reemplaza un módulo legado de forma incremental, sin reescribir todo de una vez |
-| ADR | Architecture Decision Record — documento que registra la justificación de una decisión de deuda técnica deliberada |
+| ADR | Architecture Decision Record - documento que registra la justificación de una decisión de deuda técnica deliberada |
 | Definition of Done | criterios acordados por el equipo que debe cumplir toda historia para considerarse terminada, incluyendo calidad |
 | Complejidad ciclomática | métrica que mide el número de caminos independientes en el código; valores altos indican alta complejidad de prueba |
 | Continuous Refactoring | práctica de mejorar el código de forma incremental en cada PR, sin esperar sprints dedicados |

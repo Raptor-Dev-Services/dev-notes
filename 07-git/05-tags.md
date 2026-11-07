@@ -1,4 +1,4 @@
-﻿# 05 · Tags de Git
+﻿# 05 - Tags de Git
 
 ## Problema que resuelve
 

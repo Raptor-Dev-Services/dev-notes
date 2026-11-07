@@ -1,10 +1,10 @@
-# 07 — Microservicios con .NET
+# 07 - Microservicios con .NET
 
 Los microservicios dividen una aplicación en servicios pequeños e independientes, cada uno con su propia base de datos y desplegable por separado. Este documento cubre los patrones tácticos para implementarlos con .NET.
 
 ---
 
-## Monolito vs Microservicios — cuándo migrar
+## Monolito vs Microservicios - cuándo migrar
 > Fuente: *.NET Microservices Architecture* (Cesarini et al.): Ch.1 Introduction
 
 ```
@@ -32,7 +32,7 @@ No: Es una app nueva (empezar con monolito, migrar cuando sea necesario)
 
 ## Comunicación entre servicios
 
-### 1. Comunicación sincrónica — HTTP/gRPC
+### 1. Comunicación sincrónica - HTTP/gRPC
 
 ```csharp
 // Servicio de Pedidos llama al Servicio de Inventario por HTTP
@@ -72,7 +72,7 @@ builder.Services.AddHttpClient<IInventoryServiceClient, InventoryServiceClient>(
     .AddStandardResilienceHandler();
 ```
 
-### 2. Comunicación asincrónica — Mensajería
+### 2. Comunicación asincrónica - Mensajería
 
 ```csharp
 // Evento de integración publicado cuando se confirma un pedido
@@ -180,7 +180,7 @@ app.Run();
 
 ---
 
-## Saga pattern — transacciones distribuidas
+## Saga pattern - transacciones distribuidas
 
 En microservicios no hay transacciones ACID entre servicios. El patrón Saga coordina una operación de larga duración mediante una secuencia de transacciones locales y mensajes de compensación.
 
@@ -250,7 +250,7 @@ app.MapHealthChecks("/health/live", new HealthCheckOptions
 
 ---
 
-## Event Sourcing — historial inmutable de eventos
+## Event Sourcing - historial inmutable de eventos
 > Fuente: *Microservices Design Patterns in .NET*: Ch.6 Applying Event Sourcing Patterns
 
 En lugar de guardar el **estado actual** de una entidad, Event Sourcing guarda la **secuencia de eventos** que llevaron a ese estado. El estado se reconstruye reproduciendo los eventos.
@@ -347,16 +347,16 @@ Evento 1 → Evento 50 → Snapshot v50 → Evento 51 → Evento 100 → Snapsho
 
 ---
 
-## Event-Driven Architecture — tipos de eventos
+## Event-Driven Architecture - tipos de eventos
 > Fuente: *Architecting ASP.NET Core Applications* (Marcotte, 3rd Ed): Ch.19 Introduction to Microservices Architecture
 
 EDA es un paradigma donde los componentes se comunican emitiendo y consumiendo eventos en lugar de llamarse directamente. Los tres términos clave:
 
 | Concepto | Definición |
 |----------|-----------|
-| **Mensaje** | pieza de datos con payload, headers e identificador — base de todo |
-| **Evento** | mensaje que representa algo que ya ocurrió (en pasado) — `OrderConfirmed`, `UserRegistered` |
-| **Comando** | mensaje enviado para que uno o más destinatarios ejecuten una acción — `SendWelcomeEmail` |
+| **Mensaje** | pieza de datos con payload, headers e identificador - base de todo |
+| **Evento** | mensaje que representa algo que ya ocurrió (en pasado) - `OrderConfirmed`, `UserRegistered` |
+| **Comando** | mensaje enviado para que uno o más destinatarios ejecuten una acción - `SendWelcomeEmail` |
 
 ### Los cuatro tipos de eventos
 
@@ -497,7 +497,7 @@ processor.ProcessMessageAsync += async args =>
 | Módulos con equipos independientes y ciclos de release distintos | Apps nuevas donde el dominio no está claro |
 | Módulos que escalan de forma muy diferente | Equipos pequeños (<8 personas) |
 | Módulos con requisitos de disponibilidad distintos | Cuando la latencia de red impacta la UX |
-| Cumplimiento normativo requiere aislamiento de datos | Sin CI/CD maduro — los microservicios requieren automatización |
+| Cumplimiento normativo requiere aislamiento de datos | Sin CI/CD maduro - los microservicios requieren automatización |
 
 ---
 
@@ -506,11 +506,11 @@ processor.ProcessMessageAsync += async args =>
 | Término | Definición |
 |---------|-----------|
 | Microservicio | servicio pequeño e independiente con su propia BD y ciclo de deploy |
-| Monolito Modular | monolito con módulos bien separados — alternativa antes de microservicios |
+| Monolito Modular | monolito con módulos bien separados - alternativa antes de microservicios |
 | EDA (Event-Driven Architecture) | paradigma donde los componentes se comunican mediante eventos, no llamadas directas |
 | Mensaje | pieza de datos (payload + headers + ID) que fluye entre sistemas |
-| Evento | mensaje que representa un hecho ocurrido en el pasado — `OrderConfirmed`, `UserRegistered` |
-| Comando | mensaje enviado para que un destinatario ejecute una acción — `SendEmail` |
+| Evento | mensaje que representa un hecho ocurrido en el pasado - `OrderConfirmed`, `UserRegistered` |
+| Comando | mensaje enviado para que un destinatario ejecute una acción - `SendEmail` |
 | Domain Event | evento interno de la aplicación; publicado con MediatR; no cruza límites de proceso |
 | Integration Event | evento que cruza límites de proceso; publicado en un message broker |
 | Application Event | evento interno a una aplicación o grupo de microservicios del mismo equipo |
@@ -521,12 +521,12 @@ processor.ProcessMessageAsync += async args =>
 | Dead Letter Queue (DLQ) | queue donde el broker mueve mensajes que fallaron repetidamente, para diagnóstico |
 | FIFO Queue | cola que garantiza procesamiento en orden de llegada (First In, First Out) |
 | Event Sourcing | patrón que almacena el historial de eventos como fuente de verdad en lugar del estado actual |
-| Eventual Consistency | consistencia de datos que se logra con un pequeño retardo — aceptable en sistemas distribuidos |
+| Eventual Consistency | consistencia de datos que se logra con un pequeño retardo - aceptable en sistemas distribuidos |
 | Materialized View | modelo pre-computado que un microservicio mantiene en su propia BD a partir de eventos consumidos |
-| API Gateway | punto de entrada único para los clientes externos — autentica, enruta y limita tráfico |
-| Saga | patrón para transacciones distribuidas — coordina pasos locales con mensajes de compensación |
+| API Gateway | punto de entrada único para los clientes externos - autentica, enruta y limita tráfico |
+| Saga | patrón para transacciones distribuidas - coordina pasos locales con mensajes de compensación |
 | gRPC | protocolo binario de llamada remota, más eficiente que REST para comunicación entre microservicios |
-| YARP | Yet Another Reverse Proxy — librería .NET para implementar API Gateway con configuración YAML |
+| YARP | Yet Another Reverse Proxy - librería .NET para implementar API Gateway con configuración YAML |
 
 ---
 

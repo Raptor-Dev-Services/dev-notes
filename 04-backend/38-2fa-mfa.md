@@ -1,4 +1,4 @@
-# 38 — 2FA / MFA: Autenticación de Dos Factores
+# 38 - 2FA / MFA: Autenticación de Dos Factores
 
 La autenticación de dos factores (2FA) agrega una segunda capa de verificación después del password. Incluso si un atacante obtiene la contraseña de un usuario, necesita también el segundo factor para acceder. Es el estándar mínimo de seguridad en cualquier SaaS con datos sensibles.
 
@@ -471,7 +471,7 @@ Ver `04-backend/40-session-management.md` para revocar sesiones cuando se activa
 
 | Término | Definición |
 |---------|-----------|
-| TOTP | Time-based One-Time Password — código de 6 dígitos que cambia cada 30 segundos según RFC 6238 |
+| TOTP | Time-based One-Time Password - código de 6 dígitos que cambia cada 30 segundos según RFC 6238 |
 | Otp.NET | Librería de .NET para generar y verificar códigos TOTP y HOTP compatibles con Google Authenticator |
 | MfaMethod | Enumeración de métodos de segundo factor disponibles: TOTP, RecoveryCode |
 | MfaRecoveryCode | Código de respaldo de un solo uso que permite acceder si el dispositivo TOTP no está disponible |
@@ -480,7 +480,7 @@ Ver `04-backend/40-session-management.md` para revocar sesiones cuando se activa
 | VerifyTotp | Método que valida el código de 6 dígitos del usuario contra el secreto TOTP del usuario |
 | Base32Encoding | Codificación del secreto TOTP compatible con apps de autenticación como Google Authenticator |
 | QR Code URI | URI en formato otpauth:// que se convierte a QR para escanearlo con la app de autenticación |
-| Recovery Codes | Conjunto de códigos de un solo uso generados al activar 2FA — alternativa si se pierde el dispositivo |
+| Recovery Codes | Conjunto de códigos de un solo uso generados al activar 2FA - alternativa si se pierde el dispositivo |
 | Ventana de validación | Tolerancia temporal en la verificación TOTP que acepta el código del intervalo anterior y siguiente |
 | IEncryptionService | Interfaz del Common que abstrae el cifrado AES-256 del secreto TOTP para almacenamiento seguro |
 

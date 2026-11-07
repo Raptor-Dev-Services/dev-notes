@@ -1,4 +1,4 @@
-# 10 · Fronteras de import — que la arquitectura falle sola
+# 10 - Fronteras de import - que la arquitectura falle sola
 
 ## Problema que resuelve
 

@@ -43,7 +43,7 @@ app.MapGet("/products", async (
 
 ---
 
-## Diseño base — interfaz IMapper\<TSource, TDestination\>
+## Diseño base - interfaz IMapper\<TSource, TDestination\>
 
 ```csharp
 // En Core (la capa de dominio) — independiente de cualquier librería
@@ -418,7 +418,7 @@ catch (NotEnoughStockException ex)
 |---------|--------|------------------|-----------|---------|
 | Velocidad runtime | Sí | Sí | Regular (reflexión) | (código generado) |
 | Magia implícita | Ninguna | Ninguna | Alta (convenciones) | Baja (contratos explícitos) |
-| Error en compilación | Si el tipo no coincide | Si el tipo no coincide | No — error en runtime | — errores en compilación (RMG013) |
+| Error en compilación | Si el tipo no coincide | Si el tipo no coincide | No - error en runtime | - errores en compilación (RMG013) |
 | Boilerplate | Alto | Medio | Bajo | Muy bajo |
 | Depuración | Trivial | Trivial | Difícil | Fácil (ver código generado) |
 | Configuración avanzada | Código C# directo | Código C# directo | Profiles, TypeConverters | Attributes de Mapperly |
@@ -488,22 +488,22 @@ public async Task<GetExampleUserResponse> Handle(
 | Término | Definición |
 |---------|-----------|
 | Object Mapper | Clase responsable de copiar las propiedades de un objeto de un tipo a otro, encapsulando esa transformación lejos de los consumers |
-| IMapper\<TSource, TDestination\> | Interfaz genérica con un método `Map(TSource)` que retorna `TDestination` — contrato mínimo para inyectar mappers por DI |
-| DTO (Data Transfer Object) | Objeto plano que transporta solo los datos que el consumer necesita — no tiene lógica de negocio |
-| Profile (AutoMapper) | Clase donde se configuran las reglas de mapping de AutoMapper — organiza las reglas por módulo o capa |
+| IMapper\<TSource, TDestination\> | Interfaz genérica con un método `Map(TSource)` que retorna `TDestination`contrato mínimo para inyectar mappers por DI |
+| DTO (Data Transfer Object) | Objeto plano que transporta solo los datos que el consumer necesita - no tiene lógica de negocio |
+| Profile (AutoMapper) | Clase donde se configuran las reglas de mapping de AutoMapper - organiza las reglas por módulo o capa |
 | `CreateMap<T, U>()` | Método de AutoMapper en un Profile que registra una conversión automática entre dos tipos |
-| `IMapper.ProjectTo<T>()` | Método de AutoMapper para EF Core que genera una SELECT con solo los campos del DTO — mejora el rendimiento |
-| Mapperly | Librería de source generation que genera código de mapping en tiempo de compilación — sin reflexión, sin overhead en runtime |
-| Source Generator | Componente del compilador de C# que genera código adicional durante la compilación — base técnica de Mapperly |
+| `IMapper.ProjectTo<T>()` | Método de AutoMapper para EF Core que genera una SELECT con solo los campos del DTO - mejora el rendimiento |
+| Mapperly | Librería de source generation que genera código de mapping en tiempo de compilación - sin reflexión, sin overhead en runtime |
+| Source Generator | Componente del compilador de C# que genera código adicional durante la compilación - base técnica de Mapperly |
 | `[Mapper]` | Atributo de Mapperly que decora la clase parcial para que el source generator genere las implementaciones |
-| `partial class` | Modificador de C# que permite dividir una clase en múltiples archivos — necesario para que los source generators extiendan la clase |
-| `partial method` | Método definido en una parte de una clase parcial pero implementado en otra — el source generator escribe la implementación |
+| `partial class` | Modificador de C# que permite dividir una clase en múltiples archivos - necesario para que los source generators extiendan la clase |
+| `partial method` | Método definido en una parte de una clase parcial pero implementado en otra - el source generator escribe la implementación |
 | Aggregate Services | Patrón que agrupa múltiples dependencias relacionadas en un único servicio para reducir el número de inyecciones en los consumers |
-| Mapping Facade | Interfaz genérica `Map<TSource, TDestination>` que delega internamente al mapper específico — el consumer no necesita saber qué mapper existe |
+| Mapping Facade | Interfaz genérica `Map<TSource, TDestination>` que delega internamente al mapper específico - el consumer no necesita saber qué mapper existe |
 | IMappingService | Implementación del Mapping Facade usando Service Locator para despachar al mapper correcto |
-| Code smell: Too Many Dependencies | Señal de diseño cuando una clase recibe más de 3-4 dependencias — indica posible violación de SRP |
-| `AssertConfigurationIsValid()` | Método de AutoMapper que lanza una excepción si algún mapa está mal configurado — útil en tests de startup |
-| RMG013 | Error del analizador de Mapperly cuando el tipo destino no tiene constructor mappeable — detectado en compilación |
+| Code smell: Too Many Dependencies | Señal de diseño cuando una clase recibe más de 3-4 dependencias - indica posible violación de SRP |
+| `AssertConfigurationIsValid()` | Método de AutoMapper que lanza una excepción si algún mapa está mal configurado - útil en tests de startup |
+| RMG013 | Error del analizador de Mapperly cuando el tipo destino no tiene constructor mappeable - detectado en compilación |
 
 ---
 

@@ -1,4 +1,4 @@
-﻿# 13 — Chain of Responsibility
+﻿# 13 - Chain of Responsibility
 
 **Categoría:** Conductual
 
@@ -467,17 +467,17 @@ app.MapControllers();        // handler final: ejecuta el controller
 | `SetNext()` | Método que retorna el siguiente handler para permitir construcción fluent de la cadena: `a.SetNext(b).SetNext(c)` |
 | Middleware pipeline | Implementación del patrón en ASP.NET Core: cada middleware es un handler que puede pasar al siguiente con `await next()` |
 | `await next()` | Llamada en un middleware de ASP.NET Core que pasa la petición al siguiente handler de la cadena |
-| InteractorPipeline | Cadena de behaviors del mediador del proyecto que orquesta el flujo Handler → Publish → Presenter |
+| InteractorPipeline | Cadena de behaviors del mediador del proyecto que orquesta el flujo Handler -> Publish -> Presenter |
 | Petición no manejada | Resultado cuando ningún handler procesa la petición y llega al final de la cadena sin ser atendida |
 | Configuración en runtime | Capacidad de ensamblar y reordenar la cadena dinámicamente sin modificar los handlers existentes |
-| `MessageHandlerBase` | Clase base de Marcotte que usa Template Method para encapsular el plumbing de la cadena — los handlers concretos solo implementan `CanHandle` y `Process` |
-| `SingleMessageHandlerBase` | Subclase de `MessageHandlerBase` para handlers que procesan un solo tipo de mensaje — implementa `CanHandle` comparando `message.Name == HandledMessageName` |
-| `MultipleMessageHandlerBase` | Subclase de `MessageHandlerBase` para handlers que procesan varios tipos de mensaje — `CanHandle` verifica si el nombre está en un array |
-| Handler terminal | Handler al final de la cadena que no delega al siguiente — notifica cuando ningún handler pudo procesar el mensaje (ej. lanza `NotSupportedException`) |
-| Scrutor | Librería de DI para .NET que permite registrar decoradores con `.Decorate<TInterface, TDecorator>()` — simplifica el ensamble de cadenas de responsabilidad |
-| `.Decorate<T, D>()` | Método de Scrutor que registra `D` como decorador de `T` — usado para construir la cadena en orden inverso al de ejecución |
-| Pipeline vs cadena | Variante donde todos los handlers procesan el mismo mensaje (cada uno llama al siguiente después de procesar) — útil para transformaciones y logging |
-| `[MemberNotNullWhen]` | Atributo de C# que le indica al compilador que un campo no es null cuando el método retorna `true` — evita warnings de nullable en la delegación al `_next` |
+| `MessageHandlerBase` | Clase base de Marcotte que usa Template Method para encapsular el plumbing de la cadena - los handlers concretos solo implementan `CanHandle` y `Process` |
+| `SingleMessageHandlerBase` | Subclase de `MessageHandlerBase` para handlers que procesan un solo tipo de mensaje - implementa `CanHandle` comparando `message.Name == HandledMessageName` |
+| `MultipleMessageHandlerBase` | Subclase de `MessageHandlerBase` para handlers que procesan varios tipos de mensaje - `CanHandle` verifica si el nombre está en un array |
+| Handler terminal | Handler al final de la cadena que no delega al siguiente - notifica cuando ningún handler pudo procesar el mensaje (ej. lanza `NotSupportedException`) |
+| Scrutor | Librería de DI para .NET que permite registrar decoradores con `.Decorate<TInterface, TDecorator>()`simplifica el ensamble de cadenas de responsabilidad |
+| `.Decorate<T, D>()` | Método de Scrutor que registra `D` como decorador de `T`usado para construir la cadena en orden inverso al de ejecución |
+| Pipeline vs cadena | Variante donde todos los handlers procesan el mismo mensaje (cada uno llama al siguiente después de procesar) - útil para transformaciones y logging |
+| `[MemberNotNullWhen]` | Atributo de C# que le indica al compilador que un campo no es null cuando el método retorna `true`evita warnings de nullable en la delegación al `_next` |
 
 ---
 

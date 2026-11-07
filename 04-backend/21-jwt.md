@@ -1,4 +1,4 @@
-# 21 — JWT: JSON Web Tokens
+# 21 - JWT: JSON Web Tokens
 
 JWT es el estándar para transmitir información de forma segura entre partes como un objeto JSON firmado. En APIs REST es la forma más común de implementar autenticación stateless.
 
@@ -73,7 +73,7 @@ public sealed class JwtTokenService : IJwtTokenService
 
 ---
 
-## Refresh Tokens — renovar sin pedir credenciales
+## Refresh Tokens - renovar sin pedir credenciales
 
 Un JWT de acceso tiene vida corta (15-60 min). El Refresh Token tiene vida larga y se usa para obtener un nuevo Access Token.
 
@@ -291,12 +291,12 @@ var ecCreds      = new SigningCredentials(ecPrivateKey, SecurityAlgorithms.Ecdsa
 | Algoritmo | Tipo de clave | Velocidad | Caso de uso |
 |-----------|--------------|-----------|-------------|
 | HS256 | Secreto compartido (simétrico) | Muy rápido | Monolito o servicios que comparten el secreto |
-| RS256 | Par RSA 2048 bits (asimétrico) | Lento en firma | Microservicios — la clave pública se distribuye |
+| RS256 | Par RSA 2048 bits (asimétrico) | Lento en firma | Microservicios - la clave pública se distribuye |
 | ES256 | Par ECDSA P-256 (asimétrico) | Rápido | Preferido sobre RS256 por claves más pequeñas |
 
 ---
 
-## JWE — JSON Web Encryption (tokens cifrados)
+## JWE - JSON Web Encryption (tokens cifrados)
 > Fuente: *JWT Handbook*: Ch.5 JSON Web Encryption
 
 Por defecto el payload de un JWT está codificado en base64url, **no cifrado**. Cualquiera que intercepte el token puede leer su contenido. JWE cifra el payload para que sea ilegible sin la clave de descifrado.
@@ -389,7 +389,7 @@ options.Cookie = new CookieBuilder
 
 ---
 
-## JWK — JSON Web Keys y JWKS endpoint
+## JWK - JSON Web Keys y JWKS endpoint
 > Fuente: *JWT Handbook* (Sebastian Peyrott, Auth0): Ch.6 JSON Web Keys
 
 Un JSON Web Key (JWK) es un formato estandarizado (RFC 7517) para representar claves criptográficas. Permite distribuir claves públicas de forma interoperable para que múltiples servicios puedan verificar tokens emitidos por un servidor de autenticación central.
@@ -412,8 +412,8 @@ Un JSON Web Key (JWK) es un formato estandarizado (RFC 7517) para representar cl
 | `kty` | Tipo de clave: `RSA`, `EC` (curva elíptica), `oct` (simétrica) |
 | `use` | Uso: `sig` (firma) o `enc` (cifrado) |
 | `alg` | Algoritmo: `RS256`, `ES256`, `HS256`, etc. |
-| `kid` | Key ID — permite identificar qué clave usó el token (claim `kid` en el header) |
-| `n`, `e` | Parámetros RSA (módulo y exponente) — solo la parte pública |
+| `kid` | Key ID - permite identificar qué clave usó el token (claim `kid` en el header) |
+| `n`, `e` | Parámetros RSA (módulo y exponente) - solo la parte pública |
 
 ### JWK Set (JWKS)
 
@@ -521,9 +521,9 @@ Sí: Con JWKS (RS256 / ES256):
 | Usar JWT | No usar JWT |
 |----------|------------|
 | APIs stateless con múltiples clientes | Sesiones de usuario que necesitan revocación inmediata |
-| Microservicios — el token viaja entre servicios | Aplicaciones donde el server puede mantener sesión en DB |
+| Microservicios - el token viaja entre servicios | Aplicaciones donde el server puede mantener sesión en DB |
 | Transferir claims entre sistemas de confianza | Cuando el payload crece mucho (tokens en cada request) |
-| Mobile apps — el token persiste sin servidor | Long-lived sessions sin refresh token rotation |
+| Mobile apps - el token persiste sin servidor | Long-lived sessions sin refresh token rotation |
 
 
 ---
@@ -532,18 +532,18 @@ Sí: Con JWKS (RS256 / ES256):
 
 | Término | Definición |
 |---------|-----------|
-| JWT | JSON Web Token — token firmado digitalmente con header, payload y signature en Base64URL |
+| JWT | JSON Web Token - token firmado digitalmente con header, payload y signature en Base64URL |
 | Claims | Pares clave-valor dentro del payload del JWT que describen al usuario y su contexto |
-| HMAC-SHA256 | Algoritmo de firma simétrica para JWT — usa la misma clave para firmar y verificar |
-| RS256 | Algoritmo de firma asimétrica RSA para JWT — clave privada firma, clave pública verifica |
-| ES256 | Algoritmo de firma asimétrica ECDSA para JWT — más corto y rápido que RS256 |
+| HMAC-SHA256 | Algoritmo de firma simétrica para JWT - usa la misma clave para firmar y verificar |
+| RS256 | Algoritmo de firma asimétrica RSA para JWT - clave privada firma, clave pública verifica |
+| ES256 | Algoritmo de firma asimétrica ECDSA para JWT - más corto y rápido que RS256 |
 | Refresh Token | Token de larga duración almacenado en DB que permite obtener nuevos access tokens sin re-autenticación |
 | Token Rotation | Estrategia donde cada uso del refresh token genera uno nuevo e invalida el anterior |
-| JWE | JSON Web Encryption — JWT con payload cifrado, no solo firmado |
-| JWKS | JSON Web Key Set — endpoint público que expone las claves públicas para verificar tokens RS256/ES256 |
+| JWE | JSON Web Encryption - JWT con payload cifrado, no solo firmado |
+| JWKS | JSON Web Key Set - endpoint público que expone las claves públicas para verificar tokens RS256/ES256 |
 | TokenValidationParameters | Clase de .NET que configura las reglas de validación de JWT (issuer, audience, firma, expiración) |
 | Signature Stripping | Ataque donde se cambia el algoritmo del JWT a "none" para eludir la verificación de firma |
-| JWK | JSON Web Key — representación estándar de una clave criptográfica en formato JSON |
+| JWK | JSON Web Key - representación estándar de una clave criptográfica en formato JSON |
 | iss / sub / aud / exp | Claims estándar de JWT: emisor, sujeto, audiencia y tiempo de expiración |
 
 ---

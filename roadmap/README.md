@@ -1,4 +1,4 @@
-# Roadmaps de Aprendizaje — dev-notes
+# Roadmaps de Aprendizaje - dev-notes
 
 Rutas de estudio estructuradas usando los documentos de este repositorio como guía.
 Cada roadmap indica el orden de lectura, los prerequisitos y qué puedes construir al terminar.

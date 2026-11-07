@@ -1,4 +1,4 @@
-﻿# 17 — Memento
+﻿# 17 - Memento
 
 **Categoría:** Conductual
 
@@ -270,7 +270,7 @@ Console.WriteLine(editor.GetContent());  // "Hello "
 
 ---
 
-## Memento con Records en C# — la forma moderna
+## Memento con Records en C# - la forma moderna
 
 Los records de C# son inmutables y se copian con `with`: la forma más limpia de Memento.
 
@@ -344,7 +344,7 @@ Conceptualmente, las migraciones de schema SQL son Mementos:
 | `IMemento` | Interfaz del Memento que expone metadatos para el Caretaker (`GetName`, `GetDate`) pero no el estado interno |
 | Encapsulamiento | Principio que el Memento preserva: el Caretaker no puede leer ni modificar el estado interno del Memento |
 | Undo/Redo | Funcionalidad clásica implementada con Memento: pila de estados anteriores para deshacer y rehacer |
-| `EditorState` | Ejemplo del Memento como record inmutable — captura el estado del `TextEditor` en un instante |
+| `EditorState` | Ejemplo del Memento como record inmutable - captura el estado del `TextEditor` en un instante |
 | Expresión `with` | En C# moderno, la forma idiomática de Prototype/Memento para records: genera una copia con campos modificados |
 | Migración SQL | Analogía del Memento en el proyecto: cada archivo de migración es un snapshot del estado del esquema de base de datos |
 | `Stack<T>` | Estructura de datos usada en el Caretaker para implementar Undo/Redo con acceso LIFO al historial |

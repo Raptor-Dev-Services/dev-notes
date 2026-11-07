@@ -1,4 +1,4 @@
-# 04 — Docker en un Proyecto Real (back-template + front-template)
+# 04 - Docker en un Proyecto Real (back-template + front-template)
 
 El problema con "funciona en mi máquina" desaparece cuando toda la pila (API, base de datos, servidor de logs) corre en contenedores definidos como código. Este documento cubre el setup completo de Docker para el stack del proyecto.
 
@@ -113,7 +113,7 @@ server {
 
 ---
 
-## docker-compose.yml — entorno de desarrollo
+## docker-compose.yml - entorno de desarrollo
 
 ```yaml
 # docker-compose.yml — para desarrollo local
@@ -200,7 +200,7 @@ networks:
 
 ---
 
-## docker-compose.override.yml — overrides de desarrollo
+## docker-compose.override.yml - overrides de desarrollo
 
 ```yaml
 # docker-compose.override.yml — se aplica automáticamente sobre docker-compose.yml en local
@@ -216,7 +216,7 @@ services:
 
 ---
 
-## .env — variables de entorno
+## .env - variables de entorno
 
 ```env
 # .env — en .gitignore, nunca al repo
@@ -233,7 +233,7 @@ docker compose config  # muestra la config con variables interpoladas
 
 ---
 
-## docker-compose.prod.yml — producción
+## docker-compose.prod.yml - producción
 
 ```yaml
 # docker-compose.prod.yml — para producción (no incluir en git; generar en CI)
@@ -339,7 +339,7 @@ En el back-template real hay 4 archivos compose para distintos propósitos:
 
 | Archivo | Entorno | API en Docker | Cuándo usar |
 |---------|---------|--------------|------------|
-| `compose-db.yaml` | Desarrollo local | No — API con `dotnet run` | Dev diario con hot-reload |
+| `compose-db.yaml` | Desarrollo local | No - API con `dotnet run` | Dev diario con hot-reload |
 | `compose-dev.yaml` | Development | Sí | Probar la imagen completa |
 | `compose-staging.yaml` | Staging | Sí | Pipeline CI/CD |
 | `compose.yaml` | Production | Sí | Prod / QA final |
@@ -415,7 +415,7 @@ Las migrations se aplican automáticamente al iniciar si `ASPNETCORE_ENVIRONMENT
 | Usar Docker Compose | No usar / alternativas |
 |--------------------|-----------------------|
 | Entorno de desarrollo local idéntico para todo el equipo | App de una sola persona sin dependencias externas |
-| CI/CD — levantar la BD para tests de integración | Producción a gran escala → Kubernetes / ECS |
+| CI/CD - levantar la BD para tests de integración | Producción a gran escala -> Kubernetes / ECS |
 | Demo / staging en una sola VM | Cuando las dependencias cambian muy seguido y el rebuild es lento |
 | Testing de configuraciones multi-servicio | |
 
@@ -425,20 +425,20 @@ Las migrations se aplican automáticamente al iniciar si `ASPNETCORE_ENVIRONMENT
 
 | Término | Definición |
 |---------|-----------|
-| Multi-stage build | Dockerfile con múltiples FROM — la imagen final solo incluye los artefactos del stage final, sin SDK |
+| Multi-stage build | Dockerfile con múltiples FROM - la imagen final solo incluye los artefactos del stage final, sin SDK |
 | docker-compose.yml | Archivo que define múltiples servicios, redes y volúmenes como código versionable |
-| depends_on | Directiva de Compose para especificar orden de arranque — con `condition: service_healthy` espera al health check |
+| depends_on | Directiva de Compose para especificar orden de arranque - con `condition: service_healthy` espera al health check |
 | Health check | Comando que Docker ejecuta periódicamente para saber si un contenedor está listo para recibir tráfico |
-| Volume | Directorio persistente fuera del contenedor — los datos sobreviven a reinicios y recreaciones |
-| Named volume | `pgdata:` — gestionado por Docker, persiste entre `docker compose down` (se elimina con `-v`) |
-| Bind mount | `./codigo:/src` — monta un directorio del host dentro del contenedor — útil para hot reload |
-| Network bridge | Red virtual privada entre contenedores — se comunican por nombre de servicio (`postgres`, `seq`) |
-| `docker compose override` | Archivo que se fusiona automáticamente — permite diferencias entre dev y CI sin duplicar YAML |
-| `.env` | Archivo de variables de entorno que Docker Compose carga automáticamente — va en `.gitignore` |
+| Volume | Directorio persistente fuera del contenedor - los datos sobreviven a reinicios y recreaciones |
+| Named volume | `pgdata:`gestionado por Docker, persiste entre `docker compose down` (se elimina con `-v`) |
+| Bind mount | `./codigo:/src`monta un directorio del host dentro del contenedor - útil para hot reload |
+| Network bridge | Red virtual privada entre contenedores - se comunican por nombre de servicio (`postgres`, `seq`) |
+| `docker compose override` | Archivo que se fusiona automáticamente - permite diferencias entre dev y CI sin duplicar YAML |
+| `.env` | Archivo de variables de entorno que Docker Compose carga automáticamente - va en `.gitignore` |
 | ASPNETCORE_URLS | Variable de entorno que determina el puerto y protocolo que escucha Kestrel dentro del contenedor |
-| Seq | Servidor de logs estructurados con UI web — sustituto de ELK para proyectos pequeños/medianos |
-| `pg_isready` | Comando de PostgreSQL usado en el health check — retorna 0 cuando la BD acepta conexiones |
-| Kestrel | Servidor web embebido de ASP.NET Core — el proceso que corre dentro del contenedor de la API |
+| Seq | Servidor de logs estructurados con UI web - sustituto de ELK para proyectos pequeños/medianos |
+| `pg_isready` | Comando de PostgreSQL usado en el health check - retorna 0 cuando la BD acepta conexiones |
+| Kestrel | Servidor web embebido de ASP.NET Core - el proceso que corre dentro del contenedor de la API |
 
 ---
 

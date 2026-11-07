@@ -1,4 +1,4 @@
-# 03 — Integration Tests: WebApplicationFactory y TestServer
+# 03 - Integration Tests: WebApplicationFactory y TestServer
 
 Tests que levantan toda la API en memoria y hacen requests HTTP reales contra ella, sin necesidad de un servidor externo.
 
@@ -181,7 +181,7 @@ var response = await _client.GetAsync($"/api/example/users/{userId}");
 
 Cada test debe empezar desde un estado conocido. Opciones:
 
-### Opción A — transacciones que se revierten
+### Opción A - transacciones que se revierten
 
 ```csharp
 // Cada test corre en una transacción que se revierte al finalizar
@@ -213,11 +213,11 @@ public sealed class ExampleUsersApiTests
 }
 ```
 
-### Opción B — DB limpia por test (TestContainers)
+### Opción B - DB limpia por test (TestContainers)
 
 TestContainers levanta un contenedor PostgreSQL limpio para cada clase de test (ver `04-testcontainers.md`). Más aislado, más lento.
 
-### Opción C — datos de semilla idempotentes
+### Opción C - datos de semilla idempotentes
 
 ```csharp
 // Tests/Helpers/SeedData.cs
@@ -287,7 +287,7 @@ Los integration tests son más lentos que los unit tests. La convención habitua
 | Verificar que el DI está configurado correctamente | Integration test |
 | Verificar routing y serialización JSON | Integration test |
 | Verificar auth/authorize | Integration test |
-| Verificar flujo completo Controller → DB | Integration test con TestContainers |
+| Verificar flujo completo Controller -> DB | Integration test con TestContainers |
 | Lógica de negocio del Handler | Unit test (más rápido) |
 | Reglas de validación | Unit test del Validator |
 | Cada combinación de input/output | Unit test (barato de multiplicar) |

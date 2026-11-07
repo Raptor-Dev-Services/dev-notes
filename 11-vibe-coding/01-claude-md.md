@@ -1,4 +1,4 @@
-# 01 — CLAUDE.md y AGENTS.md — Instrucciones para LLMs como Código
+# 01 - CLAUDE.md y AGENTS.md - Instrucciones para LLMs como Código
 
 `CLAUDE.md` es el mecanismo de Claude Code para incluir instrucciones persistentes en el repositorio. Es equivalente a un README para el LLM: describe el proyecto, las convenciones, las restricciones y el contexto que el agente necesita para trabajar bien sin que el desarrollador tenga que repetirlo en cada sesión.
 
@@ -83,7 +83,7 @@ Los nombres siguen PascalCase y deben tener un story en Storybook.
 
 ---
 
-## AGENTS.md — instrucciones para agentes paralelos
+## AGENTS.md - instrucciones para agentes paralelos
 
 `AGENTS.md` es el equivalente de `CLAUDE.md` para herramientas de agentes que corren en paralelo (Devin, SWE-agent, agentes custom con el Claude API). Claude Code también lo respeta.
 
@@ -329,18 +329,18 @@ El `back-template` tendría su propio `CLAUDE.md` describiendo la arquitectura d
 
 | Término | Definición |
 |---------|-----------|
-| CLAUDE.md | Archivo de instrucciones persistentes para Claude Code — se carga automáticamente al iniciar una sesión |
-| AGENTS.md | Instrucciones para agentes paralelos y herramientas de automatización — Claude Code también lo respeta |
-| Contexto | La "memoria" de trabajo de Claude Code — conversación, archivos leídos, historial de herramientas |
-| Compactación de contexto | Proceso automático que resume el historial cuando la sesión crece — preserva las instrucciones de CLAUDE.md |
-| Prompt persistente | Instrucciones que se re-inyectan en cada sesión sin que el usuario las repita — función de CLAUDE.md |
-| Vibe coding | Estilo de desarrollo donde el LLM genera código a partir de intención en lenguaje natural — requiere buenas instrucciones |
+| CLAUDE.md | Archivo de instrucciones persistentes para Claude Code - se carga automáticamente al iniciar una sesión |
+| AGENTS.md | Instrucciones para agentes paralelos y herramientas de automatización - Claude Code también lo respeta |
+| Contexto | La "memoria" de trabajo de Claude Code - conversación, archivos leídos, historial de herramientas |
+| Compactación de contexto | Proceso automático que resume el historial cuando la sesión crece - preserva las instrucciones de CLAUDE.md |
+| Prompt persistente | Instrucciones que se re-inyectan en cada sesión sin que el usuario las repita - función de CLAUDE.md |
+| Vibe coding | Estilo de desarrollo donde el LLM genera código a partir de intención en lenguaje natural - requiere buenas instrucciones |
 | Memory system | Sistema de archivos en `~/.claude/projects/*/memory/` donde Claude Code guarda contexto entre sesiones |
-| CONTEXT.md | Archivo opcional que complementa a CLAUDE.md — resumen del estado actual del proyecto, más volátil |
-| Subdirectory instructions | CLAUDE.md en un subdirectorio — aplica solo cuando Claude trabaja en ese scope |
-| Co-Authored-By | Línea de atribución en commits de Git — en proyectos comerciales se omite para claridad de autoría |
-| LLM-as-agent | Uso de un LLM con acceso a herramientas (leer archivos, ejecutar código) — Claude Code es este modelo |
-| Tool use | Capacidad del LLM para llamar herramientas externas (Read, Edit, Bash) — base del funcionamiento de Claude Code |
+| CONTEXT.md | Archivo opcional que complementa a CLAUDE.md - resumen del estado actual del proyecto, más volátil |
+| Subdirectory instructions | CLAUDE.md en un subdirectorio - aplica solo cuando Claude trabaja en ese scope |
+| Co-Authored-By | Línea de atribución en commits de Git - en proyectos comerciales se omite para claridad de autoría |
+| LLM-as-agent | Uso de un LLM con acceso a herramientas (leer archivos, ejecutar código) - Claude Code es este modelo |
+| Tool use | Capacidad del LLM para llamar herramientas externas (Read, Edit, Bash) - base del funcionamiento de Claude Code |
 
 ---
 

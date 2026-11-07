@@ -1,4 +1,4 @@
-# 12 · AWS Compute — EC2, Auto Scaling y ALB
+# 12 - AWS Compute - EC2, Auto Scaling y ALB
 
 ## Problema que resuelve
 
@@ -44,13 +44,13 @@ t3 solo para entornos donde la CPU es baja la mayor parte del tiempo.
 
 | Tipo | Descuento | Compromiso | Interrupción | Caso de uso |
 |------|-----------|-----------|--------------|-------------|
-| **On-Demand** | — | Ninguno | No | Desarrollo, cargas impredecibles |
+| **On-Demand** | - | Ninguno | No | Desarrollo, cargas impredecibles |
 | **Reserved Instances** (1 año) | ~40% | 1 año | No | Producción con carga estable |
 | **Reserved Instances** (3 años) | ~60-72% | 3 años | No | Producción muy estable |
 | **Savings Plans** | ~66% | 1-3 años, $ comprometidos | No | Flexibilidad entre familias |
 | **Spot Instances** | ~70-90% | Ninguno | Si (2 min de aviso) | Jobs de batch, ML, renderizado |
 
-### Reserved Instances — dos tipos
+### Reserved Instances - dos tipos
 
 ```
 Standard RI:
@@ -65,7 +65,7 @@ Convertible RI:
   - No vendible en el Marketplace
 ```
 
-### Spot Instances — advertencias importantes
+### Spot Instances - advertencias importantes
 
 ```bash
 # Las Spot pueden ser terminadas con 2 minutos de aviso
@@ -84,7 +84,7 @@ curl -s -H "X-aws-ec2-metadata-token: $TOKEN" \
 
 ---
 
-## AMIs — Amazon Machine Images
+## AMIs - Amazon Machine Images
 
 Una AMI es una imagen del sistema con el SO, software preinstalado y configuración base. Es el punto de partida para lanzar instancias.
 
@@ -113,7 +113,7 @@ aws ec2 create-image \
 
 ---
 
-## User Data — bootstrap de instancias
+## User Data - bootstrap de instancias
 
 User Data es un script que se ejecuta una sola vez al primer arranque de la instancia (via `cloud-init`). Se usa para instalar dependencias, configurar el agente de CloudWatch, y preparar el ambiente.
 
@@ -468,7 +468,7 @@ El back-template expone `/health` para el health check del ALB. El ASG reemplaza
 | Cooldown | Período de espera después de un evento de escalado antes de evaluar nuevamente. |
 | IMDS | Instance Metadata Service. Servidor en 169.254.169.254 con info de la instancia. |
 
-> Fuente: *AWS Certified Solutions Architect – Associate Guide* (Gabriel Ramirez, Packt): Ch.3 Elasticity, Scalability and EC2, Ch.8 Elastic Load Balancing y Auto Scaling
+> Fuente: *AWS Certified Solutions Architect - Associate Guide* (Gabriel Ramirez, Packt): Ch.3 Elasticity, Scalability and EC2, Ch.8 Elastic Load Balancing y Auto Scaling
 
 ---
 

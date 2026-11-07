@@ -1,4 +1,4 @@
-# 05 — LLMOps: Operar sistemas basados en LLMs en producción
+# 05 - LLMOps: Operar sistemas basados en LLMs en producción
 
 LLMOps es el conjunto de prácticas para diseñar, deployar, monitorear y mejorar aplicaciones que usan Modelos de Lenguaje Grande (LLMs) en producción.
 
@@ -148,7 +148,7 @@ public sealed class UserSummaryService
 
 ---
 
-## Evaluación de respuestas — cómo testear LLMs
+## Evaluación de respuestas - cómo testear LLMs
 
 A diferencia del código determinista, los LLMs requieren evaluación semántica.
 
@@ -194,7 +194,7 @@ public sealed class UserSummaryEvaluationTests
 
 ---
 
-## Observabilidad de LLMs — qué monitorear
+## Observabilidad de LLMs - qué monitorear
 
 ```csharp
 // Logging estructurado de llamadas a LLMs
@@ -243,7 +243,7 @@ builder.Services.AddScoped<IAICompletionService>(sp =>
 
 ---
 
-## Guardrails — controlar las salidas del LLM
+## Guardrails - controlar las salidas del LLM
 
 ```csharp
 // Validar que la respuesta cumple restricciones antes de devolverla al usuario
@@ -321,7 +321,7 @@ public sealed class CostControlMiddleware
 | Construir propio | Usar servicio gestionado |
 |-----------------|-------------------------|
 | Datos muy sensibles que no pueden salir de la infraestructura propia | Apps que no tienen restricciones de privacidad |
-| Control total sobre el modelo y el fine-tuning | Prototipo o MVP — velocidad sobre control |
+| Control total sobre el modelo y el fine-tuning | Prototipo o MVP - velocidad sobre control |
 | Volumen muy alto donde el costo de API es prohibitivo | Equipo sin expertise en infraestructura de LLMs |
 | Requisitos de latencia que solo se cumpren con modelo local | Modelo necesita actualizarse frecuentemente |
 
@@ -332,8 +332,8 @@ public sealed class CostControlMiddleware
 | Término | Definición |
 |---------|-----------|
 | LLMOps | prácticas de ingeniería para desplegar, monitorear y mantener sistemas con modelos de lenguaje en producción |
-| LLM | Large Language Model — modelo de lenguaje de gran escala entrenado con texto masivo para generar y comprender lenguaje natural |
-| RAG | Retrieval-Augmented Generation — técnica que recupera documentos relevantes antes de generar la respuesta, reduciendo hallucinations |
+| LLM | Large Language Model - modelo de lenguaje de gran escala entrenado con texto masivo para generar y comprender lenguaje natural |
+| RAG | Retrieval-Augmented Generation - técnica que recupera documentos relevantes antes de generar la respuesta, reduciendo hallucinations |
 | Fine-tuning | proceso de ajustar los pesos de un LLM preentrenado con datos específicos del dominio para mejorar su rendimiento |
 | Temperatura | parámetro que controla la aleatoriedad de las respuestas del LLM; valores altos son más creativos, bajos más deterministas |
 | Guardrail | validación o filtro aplicado a las entradas o salidas del LLM para evitar respuestas inseguras o incorrectas |

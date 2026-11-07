@@ -1,4 +1,4 @@
-﻿# 04 · Manejo de contexto en sesiones largas
+﻿# 04 - Manejo de contexto en sesiones largas
 
 ## Problema que resuelve
 

@@ -1,4 +1,4 @@
-# 16 · AWS CloudWatch — Observabilidad
+# 16 - AWS CloudWatch - Observabilidad
 
 ## Problema que resuelve
 
@@ -87,7 +87,7 @@ Sí: Con CloudWatch Agent:
 
 ---
 
-## CloudWatch Agent — instalación y configuración
+## CloudWatch Agent - instalación y configuración
 
 ### Instalación en Amazon Linux 2023
 
@@ -188,7 +188,7 @@ aws logs put-retention-policy \
 # Otros valores válidos: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, ...
 ```
 
-### CloudWatch Logs Insights — queries
+### CloudWatch Logs Insights - queries
 
 ```bash
 # Buscar errores en los últimos 15 minutos
@@ -434,7 +434,7 @@ aws cloudwatch put-metric-alarm \
 
 ---
 
-## SNS — notificaciones desde alarmas
+## SNS - notificaciones desde alarmas
 
 Las alarmas disparan acciones. La acción más común es publicar en un topic de SNS que envía emails o llama a un webhook.
 
@@ -521,7 +521,7 @@ Panel 8: Conteo de instancias del ASG (healthy vs unhealthy)
 
 ---
 
-## Metric Math — alarmas compuestas
+## Metric Math - alarmas compuestas
 
 CloudWatch Metric Math permite crear alarmas basadas en expresiones que combinan múltiples métricas.
 
@@ -577,7 +577,7 @@ aws cloudwatch put-metric-alarm \
 
 | Alarma | Métrica | Umbral | Período |
 |--------|---------|--------|---------|
-| CPU alto — servidor | EC2/CPUUtilization | > 80% | 5 min × 2 |
+| CPU alto - servidor | EC2/CPUUtilization | > 80% | 5 min × 2 |
 | Memoria alta | CWAgent/mem_used_percent | > 85% | 5 min × 2 |
 | Disco lleno | CWAgent/disk_used_percent | > 85% | 5 min × 1 |
 | Errores 5xx | ALB/HTTPCode_Target_5XX_Count | > 5 / min | 1 min × 2 |
@@ -640,7 +640,7 @@ Integración en el back-template:
 | DBLoad | Métrica de Performance Insights. Sesiones activas / vCPUs. > 1 indica saturación. |
 | High-Resolution | Métricas con granularidad de 1 segundo (vs 1 minuto estándar). Más caro. |
 
-> Fuente: *AWS Certified Solutions Architect – Associate Guide* (Gabriel Ramirez, Packt): Ch.21 CloudWatch Logs y Automatizacion; *AWS Certified SysOps Administrator – Associate Guide*: Ch.4 Monitoring y Reporting
+> Fuente: *AWS Certified Solutions Architect - Associate Guide* (Gabriel Ramirez, Packt): Ch.21 CloudWatch Logs y Automatizacion; *AWS Certified SysOps Administrator - Associate Guide*: Ch.4 Monitoring y Reporting
 
 ---
 

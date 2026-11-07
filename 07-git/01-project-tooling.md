@@ -1,4 +1,4 @@
-# 01 — Archivos de Proyecto y Tooling de Equipo
+# 01 - Archivos de Proyecto y Tooling de Equipo
 
 Archivos de configuración que todo proyecto debe incluir en el repositorio para garantizar consistencia entre desarrolladores, IDEs y entornos de CI.
 

@@ -1,4 +1,4 @@
-﻿# 05 — TDD: Test-Driven Development
+﻿# 05 - TDD: Test-Driven Development
 
 Escribir el test antes que el código de producción. El ciclo Red/Green/Refactor guía el desarrollo de fuera hacia adentro.
 
@@ -36,7 +36,7 @@ TDD invierte el orden: primero se define el comportamiento esperado (el test), d
 
 ## Ejemplo completo: Handler de login
 
-### Paso 1 — RED: escribir el test primero
+### Paso 1 - RED: escribir el test primero
 
 ```csharp
 // Tests/Unit/Auth/LoginHandlerTests.cs
@@ -79,7 +79,7 @@ public sealed class LoginHandlerTests
 
 El test no compila. `LoginHandler`, `LoginRequest`, `LoginSuccess` no existen. Eso es correcto en este punto.
 
-### Paso 2 — GREEN: implementar lo mínimo para compilar y pasar
+### Paso 2 - GREEN: implementar lo mínimo para compilar y pasar
 
 ```csharp
 // Application/UseCases/Auth/Login/LoginRequest.cs
@@ -121,7 +121,7 @@ public sealed class LoginHandler : IRequestHandler<LoginRequest, LoginResponse>
 
 Test verde. El Handler existe con lo mínimo para hacer pasar el test.
 
-### Paso 3 — Agregar más tests antes de más código
+### Paso 3 - Agregar más tests antes de más código
 
 ```csharp
 [Fact]
@@ -162,7 +162,7 @@ public async Task Handle_InactiveUser_ReturnsForbiddenFailure()
 
 El último test falla (RED). No existe `LoginForbiddenFailure` ni el Handler maneja el caso `IsActive = false`.
 
-### Paso 4 — GREEN: agregar el nuevo caso
+### Paso 4 - GREEN: agregar el nuevo caso
 
 ```csharp
 // Agregar al responses
@@ -189,7 +189,7 @@ public async Task<LoginResponse> Handle(LoginRequest request, CancellationToken 
 
 Todos los tests vuelven a verde.
 
-### Paso 5 — REFACTOR
+### Paso 5 - REFACTOR
 
 Con todos los tests en verde, refactorizar sin miedo:
 
@@ -207,12 +207,12 @@ private const string InvalidCredentialsMessage = "Credenciales incorrectas.";
 
 | Escenario | Valor de TDD |
 |-----------|-------------|
-| Lógica de negocio (handlers, validators) | Alto — fuerza pensar en los casos antes de implementar |
-| Bugs reproducibles | Alto — escribir el test que reproduce el bug, luego arreglarlo |
-| Refactoring | Alto — los tests existentes protegen el comportamiento |
-| Código de infraestructura (SQL, HTTP) | Bajo — difícil sin un contenedor real |
-| Código exploratorio ("¿cómo funciona X?") | Bajo — primero explorar, luego testear |
-| Código UI / presentación | Bajo — difícil de automatizar |
+| Lógica de negocio (handlers, validators) | Alto - fuerza pensar en los casos antes de implementar |
+| Bugs reproducibles | Alto - escribir el test que reproduce el bug, luego arreglarlo |
+| Refactoring | Alto - los tests existentes protegen el comportamiento |
+| Código de infraestructura (SQL, HTTP) | Bajo - difícil sin un contenedor real |
+| Código exploratorio ("¿cómo funciona X?") | Bajo - primero explorar, luego testear |
+| Código UI / presentación | Bajo - difícil de automatizar |
 
 ---
 
@@ -268,7 +268,7 @@ El flujo de desarrollo recomendado para nuevos casos de uso:
 | Término | Definición |
 |---------|-----------|
 | TDD (Test-Driven Development) | Metodología en la que el test se escribe antes que el código de producción, guiando el diseño |
-| Ciclo Red / Green / Refactor | Los tres pasos del TDD: test que falla → código mínimo para pasar → mejora del código |
+| Ciclo Red / Green / Refactor | Los tres pasos del TDD: test que falla -> código mínimo para pasar -> mejora del código |
 | RED | Primera fase del ciclo TDD: el test existe pero falla porque no hay código de producción que lo haga pasar |
 | GREEN | Segunda fase del ciclo TDD: se escribe el mínimo código necesario para que el test pase, sin buscar elegancia |
 | REFACTOR | Tercera fase del ciclo TDD: se mejora la estructura del código existente manteniendo todos los tests en verde |

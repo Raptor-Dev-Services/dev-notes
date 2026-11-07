@@ -1,4 +1,4 @@
-﻿# 22 — Visitor
+﻿# 22 - Visitor
 
 **Categoría:** Conductual
 
@@ -149,7 +149,7 @@ foreach (var component in components)
 
 ---
 
-## Double Dispatch — el truco clave
+## Double Dispatch - el truco clave
 
 El problema de despacho simple: cuando llamas `component.DoSomething()` donde `component` es `IComponent`, en runtime se resuelve al método de la clase concreta. Pero si `DoSomething` es el mismo para todos, no puedes ejecutar código diferente según el tipo del componente.
 
@@ -174,7 +174,7 @@ void ProcessComponent(IComponent component, IVisitor visitor)
 
 ---
 
-## Visitor en C# moderno — Pattern Matching como Visitor implícito
+## Visitor en C# moderno - Pattern Matching como Visitor implícito
 
 En C# moderno, el pattern matching en switch expressions es un Visitor implícito:
 
@@ -334,7 +334,7 @@ Si **las operaciones** cambian frecuentemente: usar Visitor (agregar una operaci
 | Pattern matching como Visitor | En C# moderno, el `switch` sobre tipos concretos es un Visitor implícito sin las clases adicionales |
 | `IExpressionVisitor<T>` | Visitor genérico que permite aplicar diferentes operaciones (evaluar, imprimir) sobre el mismo árbol de expresiones |
 | Estabilidad de tipos vs operaciones | Usar Visitor cuando las operaciones cambian frecuentemente (nuevas operaciones = nuevo Visitor); evitarlo si los tipos cambian frecuentemente |
-| Presenters como Visitors | En el proyecto, el Presenter visita cada tipo concreto de respuesta con `is INotFoundFailure`, `is ISuccess<T>` — Visitor implícito |
+| Presenters como Visitors | En el proyecto, el Presenter visita cada tipo concreto de respuesta con `is INotFoundFailure`, `is ISuccess<T>`Visitor implícito |
 
 ---
 

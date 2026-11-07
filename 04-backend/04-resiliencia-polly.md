@@ -1,4 +1,4 @@
-﻿# 04 — Resiliencia: Circuit Breaker y Retry (Polly)
+﻿# 04 - Resiliencia: Circuit Breaker y Retry (Polly)
 
 Polly es la librería estándar de .NET para políticas de resiliencia. Resuelve el problema de qué hacer cuando una operación falla: reintentar, esperar, o cortar el circuito para proteger el sistema.
 
@@ -33,7 +33,7 @@ var conn = await _factory.OpenConnectionAsync();
 
 ---
 
-## Retry — reintentar en fallos transitorios
+## Retry - reintentar en fallos transitorios
 
 ```csharp
 // Retry básico — 3 intentos con espera exponencial
@@ -74,7 +74,7 @@ var retryPolicy = Policy
 
 ---
 
-## Circuit Breaker — cortar el circuito
+## Circuit Breaker - cortar el circuito
 
 El Circuit Breaker tiene 3 estados:
 
@@ -195,7 +195,7 @@ public static IServiceCollection AddPaymentHttpClient(
 
 ---
 
-## Polly v8 — Resilience Pipelines (API moderna)
+## Polly v8 - Resilience Pipelines (API moderna)
 
 Polly v8 introduce `ResiliencePipeline` como API unificada:
 
@@ -262,7 +262,7 @@ await dbRetryPolicy.ExecuteAsync(async () =>
 
 ---
 
-## Fallback — respuesta de respaldo
+## Fallback - respuesta de respaldo
 
 ```csharp
 // Fallback — retornar valor por defecto cuando el circuito está abierto
@@ -325,12 +325,12 @@ await retryPolicy.ExecuteAsync(() => _repo.InsertAsync(user, ct));  // ← pelig
 | Retry | Política que reintenta automáticamente una operación fallida con espera configurable |
 | Exponential Backoff | Estrategia de espera entre reintentos donde el tiempo se duplica progresivamente para reducir carga |
 | Jitter | Variación aleatoria añadida al backoff para evitar que múltiples instancias reintenten al mismo tiempo |
-| PolicyWrap | Composición de múltiples políticas Polly en una sola — el orden importa (de afuera hacia adentro) |
+| PolicyWrap | Composición de múltiples políticas Polly en una sola - el orden importa (de afuera hacia adentro) |
 | ResiliencePipeline | API de Polly v8 que reemplaza a PolicyWrap con una interfaz fluida y tipada |
 | Fallback | Política que retorna un valor alternativo cuando todas las otras políticas fallan |
 | BrokenCircuitException | Excepción lanzada por Polly cuando el circuito está abierto y rechaza la solicitud |
 | Timeout | Política que cancela la operación si no responde dentro de un tiempo límite |
-| Idempotencia | Propiedad de una operación que puede ejecutarse múltiples veces con el mismo resultado — necesaria para reintentos seguros |
+| Idempotencia | Propiedad de una operación que puede ejecutarse múltiples veces con el mismo resultado - necesaria para reintentos seguros |
 | AddStandardResilienceHandler | Método de .NET 8 que aplica un pipeline de resiliencia predeterminado a IHttpClientFactory |
 
 ---

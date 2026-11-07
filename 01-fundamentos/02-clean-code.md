@@ -1,4 +1,4 @@
-# 02 — Clean Code: Código limpio y legible
+# 02 - Clean Code: Código limpio y legible
 
 El código se escribe una vez y se lee decenas de veces. Clean Code (Robert C. Martin) establece que el código debe ser tan claro que el lector no necesite comentarios para entenderlo.
 
@@ -249,7 +249,7 @@ public sealed class GetExampleUserHandler
 }
 ```
 
-### Ley de Demeter — no hablar con extraños
+### Ley de Demeter - no hablar con extraños
 
 ```csharp
 // Mal: La ley de Demeter: no encadenar más de un nivel de acceso
@@ -369,7 +369,7 @@ public async Task<Result<ExampleUser>> RegisterAsync(string name, string email)
 | Nombre significativo | identificador que revela la intención del elemento que nombra sin abreviaciones ni vaguedad |
 | Función limpia | función que hace una sola cosa, en un solo nivel de abstracción, con argumentos mínimos |
 | Ley de Demeter | principio que establece que un objeto solo debe comunicarse con sus colaboradores directos |
-| Comentario redundante | comentario que repite lo que el código ya expresa claramente — debe eliminarse |
+| Comentario redundante | comentario que repite lo que el código ya expresa claramente - debe eliminarse |
 | Nivel de abstracción | capa conceptual de un sistema; una función no debe mezclar niveles alto y bajo en el mismo cuerpo |
 | Alta cohesión | propiedad de una clase cuyos métodos son todos relevantes a una única responsabilidad |
 | Bajo acoplamiento | dependencia exclusiva a través de abstracciones (interfaces), no de implementaciones concretas |

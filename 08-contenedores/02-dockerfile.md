@@ -1,4 +1,4 @@
-# 02 — Dockerfile
+# 02 - Dockerfile
 
 El Dockerfile es el script que define cómo construir una imagen Docker. Cada instrucción crea una capa.
 
@@ -54,7 +54,7 @@ HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
 
 ---
 
-## Multi-stage builds — la clave para imágenes de producción
+## Multi-stage builds - la clave para imágenes de producción
 
 Los multi-stage builds permiten usar una imagen pesada para compilar y una ligera para correr:
 
@@ -138,7 +138,7 @@ ENTRYPOINT ["dotnet", "Host.dll"]
 
 ---
 
-## .dockerignore — excluir del contexto de build
+## .dockerignore - excluir del contexto de build
 
 El contexto de build es todo lo que Docker envía al daemon. `.dockerignore` es como `.gitignore` para Docker:
 
@@ -192,7 +192,7 @@ docs/
 
 ---
 
-## Build context — entender qué se envía
+## Build context - entender qué se envía
 
 ```bash
 # El contexto es el directorio pasado al final del build command
@@ -276,7 +276,7 @@ RUN dotnet build
 
 ---
 
-## Imágenes base de .NET — cuándo usar cuál
+## Imágenes base de .NET - cuándo usar cuál
 
 | Imagen | Comprimida | Desempaquetada | Contiene | Usar para |
 |--------|------------|----------------|----------|-----------|
@@ -381,7 +381,7 @@ trivy image back-template:latest
 
 ---
 
-## BuildKit — características avanzadas
+## BuildKit - características avanzadas
 
 BuildKit es el motor de build moderno de Docker (habilitado por defecto desde Docker 23.x).
 

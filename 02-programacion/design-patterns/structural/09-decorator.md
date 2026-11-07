@@ -1,4 +1,4 @@
-﻿# 09 — Decorator
+﻿# 09 - Decorator
 
 **Categoría:** Estructural
 
@@ -299,7 +299,7 @@ public sealed class ExampleUsersController : BaseApiController { }
 | Encadenamiento de decoradores | Técnica de anidar múltiples decoradores donde cada uno envuelve al anterior, acumulando comportamiento |
 | Cross-cutting concern | Aspecto transversal del sistema (logging, caché, autorización, retry) que aplica a múltiples partes sin pertenecer a ninguna en particular |
 | `[Authorize]` | Atributo de ASP.NET Core que actúa como Decorator declarativo sobre acciones del controller |
-| Pipeline behavior | Componente que envuelve al Handler en el mediador — Decorator que aplica lógica antes y después de la ejecución |
+| Pipeline behavior | Componente que envuelve al Handler en el mediador - Decorator que aplica lógica antes y después de la ejecución |
 | `IPipelineBehavior<TRequest, TResponse>` | Interfaz del Decorator del pipeline del mediador en el proyecto |
 | Composición dinámica | Capacidad del Decorator de combinar comportamientos en runtime, a diferencia de la herencia que es estática |
 | Decorador vs Herencia | El Decorator combina comportamientos con N+M clases; la herencia requiere N×M para las mismas combinaciones |

@@ -1,4 +1,4 @@
-﻿# 06 — API Versioning: Versionar sin Romper Clientes
+﻿# 06 - API Versioning: Versionar sin Romper Clientes
 
 Estrategia para evolucionar una API pública sin romper los clientes existentes.
 
@@ -111,7 +111,7 @@ builder.Services.AddApiVersioning();
 
 ## Controllers versionados
 
-### Estrategia A — controllers separados por versión (recomendada)
+### Estrategia A - controllers separados por versión (recomendada)
 
 ```csharp
 // WebApi/EndPoints/ExampleUsers/V1/ExampleUsersController.cs
@@ -153,7 +153,7 @@ public sealed class ExampleUsersV2Controller : BaseApiController
 }
 ```
 
-### Estrategia B — un controller con múltiples versiones
+### Estrategia B - un controller con múltiples versiones
 
 ```csharp
 [ApiVersion("1.0")]
@@ -243,7 +243,7 @@ app.UseSwaggerUI(options =>
 
 ## Estrategia de requests/handlers por versión
 
-### Opción A — requests separados por versión
+### Opción A - requests separados por versión
 
 ```csharp
 // Application/UseCases/ExampleUsers/Get/V1/GetExampleUserV1Request.cs
@@ -256,7 +256,7 @@ public sealed record GetExampleUserV2Request(Guid PublicId)
 // V2 puede retornar campos adicionales o con distinta estructura
 ```
 
-### Opción B — mismo handler, DTO diferente
+### Opción B - mismo handler, DTO diferente
 
 ```csharp
 // Mismo handler, misma entidad, distinto DTO de salida
@@ -267,7 +267,7 @@ public sealed record GetExampleUserV2Dto(string FullName, string Email, DateTime
 
 ---
 
-## Versionado sin librería — simple y sin dependencias
+## Versionado sin librería - simple y sin dependencias
 
 Para proyectos pequeños o APIs internas donde el contrato es estable:
 
@@ -301,7 +301,7 @@ La plantilla actual usa `[Route("api/example/users")]` sin versionado explícito
 | Escenario | Decisión |
 |-----------|----------|
 | API pública con clientes externos | Versionar desde v1 |
-| API interna con un solo equipo | Considerar versionado tardío — complicar cuando haya necesidad |
+| API interna con un solo equipo | Considerar versionado tardío - complicar cuando haya necesidad |
 | Breaking change inevitable | Nueva versión major |
 | Agregar campo opcional | No requiere nueva versión (backwards compatible) |
 | Renombrar campo | Nueva versión |

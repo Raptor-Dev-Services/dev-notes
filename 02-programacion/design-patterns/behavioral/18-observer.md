@@ -1,4 +1,4 @@
-﻿# 18 — Observer
+﻿# 18 - Observer
 
 **Categoría:** Conductual
 
@@ -150,7 +150,7 @@ subject.SomeBusinessLogic();  // solo A notificado
 
 ---
 
-## Observer en C# — Eventos y Delegates
+## Observer en C# - Eventos y Delegates
 
 C# tiene Observer integrado en el lenguaje con `event` y `delegate`:
 
@@ -203,7 +203,7 @@ market.StockChanged -= MyHandler;
 
 ---
 
-## Observer con `IObservable<T>` / `IObserver<T>` — Reactive Extensions (Rx)
+## Observer con `IObservable<T>` / `IObserver<T>`Reactive Extensions (Rx)
 
 ```csharp
 // La interfaz estándar de .NET para Observer:
@@ -233,7 +233,7 @@ numbers
 
 ---
 
-## En este proyecto — Observer en el sistema Mediator/Presenter
+## En este proyecto - Observer en el sistema Mediator/Presenter
 
 El sistema de Presenter es exactamente el patrón Observer:
 
@@ -279,7 +279,7 @@ public sealed class GetExampleUserPresenter
 
 | Aspecto | Observer | Mediator |
 |---------|---------|---------|
-| Dirección | Publisher → Subscribers | Bidireccional entre componentes |
+| Dirección | Publisher -> Subscribers | Bidireccional entre componentes |
 | Conocimiento | Publisher conoce la interfaz Observer | Componentes solo conocen al Mediador |
 | Uso típico | Notificaciones de eventos | Coordinación compleja entre múltiples objetos |
 | En .NET | `event`, `IObservable<T>` | `IMediator`, MediatR |

@@ -1,4 +1,4 @@
-# 03 — Docker Compose
+# 03 - Docker Compose
 
 Docker Compose permite definir y correr aplicaciones multi-contenedor con un archivo YAML. Con un solo comando levantas toda la infraestructura.
 
@@ -31,7 +31,7 @@ networks:            # redes personalizadas (opcional — Docker crea una por de
 
 ---
 
-## `services` — la sección principal
+## `services`la sección principal
 
 ### `image` vs `build`
 
@@ -57,7 +57,7 @@ services:
     build: .
 ```
 
-### `ports` — exponer puertos
+### `ports`exponer puertos
 
 ```yaml
 services:
@@ -77,7 +77,7 @@ services:
       - "5342:5341"        # Ingestion port
 ```
 
-### `environment` — variables de entorno
+### `environment`variables de entorno
 
 ```yaml
 services:
@@ -98,7 +98,7 @@ services:
       - .env.production     # sobreescribe .env si hay colisiones
 ```
 
-### `volumes` — montar volúmenes
+### `volumes`montar volúmenes
 
 ```yaml
 services:
@@ -123,7 +123,7 @@ volumes:
     name: shared_db_data  # nombre exacto del volumen externo
 ```
 
-### `depends_on` — orden de inicio
+### `depends_on`orden de inicio
 
 ```yaml
 services:
@@ -172,7 +172,7 @@ services:
       disable: true
 ```
 
-### `restart` — política de reinicio
+### `restart`política de reinicio
 
 ```yaml
 services:
@@ -186,7 +186,7 @@ services:
 
 ---
 
-## `networks` — redes personalizadas
+## `networks`redes personalizadas
 
 ```yaml
 services:
@@ -237,7 +237,7 @@ services:
 
 ---
 
-## Override files — sobrescribir la configuración
+## Override files - sobrescribir la configuración
 
 ```bash
 # Docker Compose aplica compose.yaml + compose.override.yaml automáticamente
@@ -251,7 +251,7 @@ docker compose -f compose.yaml -f compose-dev.yaml up  # compose.yaml + compose-
 
 ---
 
-## Profiles — servicios opcionales
+## Profiles - servicios opcionales
 
 ```yaml
 services:
@@ -278,7 +278,7 @@ docker compose --profile tools --profile logging up  # ambos
 
 ---
 
-## `deploy` — recursos y réplicas (Swarm / producción)
+## `deploy`recursos y réplicas (Swarm / producción)
 
 ```yaml
 services:
@@ -321,7 +321,7 @@ PORT: ${APP_PORT-8080}
 
 ---
 
-## `configs` y `secrets` — Swarm mode
+## `configs` y `secrets`Swarm mode
 
 ```yaml
 # Para datos sensibles en producción con Docker Swarm:
@@ -340,7 +340,7 @@ secrets:
 
 ---
 
-## Init containers — ejecutar algo antes que el servicio
+## Init containers - ejecutar algo antes que el servicio
 
 ```yaml
 # Usando depends_on para ejecutar migraciones antes de la API:
@@ -369,7 +369,7 @@ services:
 Compose es muy útil para levantar servicios de apoyo (DB, caché, message broker) en el pipeline de CI.
 
 ```yaml
-# compose.test.yaml — solo lo necesario para los tests de integración
+# compose.test.yaml - solo lo necesario para los tests de integración
 name: back-template-test
 
 services:
@@ -384,9 +384,9 @@ services:
       interval: 5s
       timeout: 3s
       retries: 10
-    # Sin exposición de puertos al host — solo accesible desde otros contenedores
+    # Sin exposición de puertos al host - solo accesible desde otros contenedores
     # ports:
-    #   - "5432:5432"  # ← comentado para CI
+    #   - "5432:5432"  # <- comentado para CI
 
   seq:
     image: datalust/seq:latest
@@ -396,7 +396,7 @@ services:
 ```
 
 ```yaml
-# compose.yaml — base común
+# compose.yaml - base común
 services:
   api:
     build:
@@ -409,7 +409,7 @@ services:
       postgres:
         condition: service_healthy
 
-# compose.override.yaml — sobreescribe para desarrollo local
+# compose.override.yaml - sobreescribe para desarrollo local
 services:
   api:
     ports:
@@ -436,7 +436,7 @@ docker compose -f compose.test.yaml down -v  # -v elimina también los volúmene
 ```
 
 ```yaml
-# .github/workflows/ci.yaml — fragmento relevante
+# .github/workflows/ci.yaml - fragmento relevante
 jobs:
   integration-tests:
     runs-on: ubuntu-latest

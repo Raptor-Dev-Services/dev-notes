@@ -1,4 +1,4 @@
-# 01 — SQL Fundamentos
+# 01 - SQL Fundamentos
 
 SQL (Structured Query Language) es el lenguaje estándar para consultar y manipular bases de datos relacionales. Dominar SQL es prerequisito para usar correctamente Dapper, EF Core y para diagnosticar problemas de rendimiento en producción.
 
@@ -234,8 +234,8 @@ ROLLBACK;  -- deshace todo desde el BEGIN
 
 | Propiedad ACID | Significado |
 |----------------|-------------|
-| **Atomicity** | Todo o nada — si falla cualquier operación, se deshace todo |
-| **Consistency** | La DB pasa de un estado válido a otro — constraints no se violan |
+| **Atomicity** | Todo o nada - si falla cualquier operación, se deshace todo |
+| **Consistency** | La DB pasa de un estado válido a otro - constraints no se violan |
 | **Isolation** | Transacciones concurrentes no se ven entre sí hasta el COMMIT |
 | **Durability** | Una vez commiteado, el cambio sobrevive a reinicios |
 
@@ -333,23 +333,23 @@ public static class ExampleUsersSql
 
 | Término | Definición |
 |---------|-----------|
-| DDL | Data Definition Language — CREATE, ALTER, DROP (estructura de tablas) |
-| DML | Data Manipulation Language — SELECT, INSERT, UPDATE, DELETE (datos) |
-| DCL | Data Control Language — GRANT, REVOKE (permisos) |
+| DDL | Data Definition Language - CREATE, ALTER, DROP (estructura de tablas) |
+| DML | Data Manipulation Language - SELECT, INSERT, UPDATE, DELETE (datos) |
+| DCL | Data Control Language - GRANT, REVOKE (permisos) |
 | JOIN | Combina filas de dos tablas basándose en una condición relacionada |
 | INNER JOIN | Solo retorna filas con match en ambas tablas |
 | LEFT JOIN | Retorna todas las filas de la tabla izquierda, NULLs donde no hay match |
-| CTE | Common Table Expression — subconsulta nombrada con `WITH nombre AS (...)` |
-| Window Function | Función que opera sobre un conjunto de filas sin colapsarlas — ROW_NUMBER, SUM OVER |
-| Partition BY | Divide las filas en grupos para una window function — como GROUP BY pero sin colapsar |
-| B-Tree | Tipo de índice default — eficiente para comparaciones de igualdad y rango |
-| Índice parcial | Índice que solo cubre un subconjunto de filas — más pequeño y eficiente |
+| CTE | Common Table Expression - subconsulta nombrada con `WITH nombre AS (...)` |
+| Window Function | Función que opera sobre un conjunto de filas sin colapsarlas - ROW_NUMBER, SUM OVER |
+| Partition BY | Divide las filas en grupos para una window function - como GROUP BY pero sin colapsar |
+| B-Tree | Tipo de índice default - eficiente para comparaciones de igualdad y rango |
+| Índice parcial | Índice que solo cubre un subconjunto de filas - más pequeño y eficiente |
 | EXPLAIN ANALYZE | Comando PostgreSQL que muestra el plan de ejecución real con tiempos medidos |
-| Seq Scan | Escaneo secuencial de toda la tabla — puede indicar índice faltante |
-| Index Scan | Uso del índice para encontrar filas — generalmente más eficiente que Seq Scan |
-| ACID | Atomicity, Consistency, Isolation, Durability — propiedades de una transacción segura |
+| Seq Scan | Escaneo secuencial de toda la tabla - puede indicar índice faltante |
+| Index Scan | Uso del índice para encontrar filas - generalmente más eficiente que Seq Scan |
+| ACID | Atomicity, Consistency, Isolation, Durability - propiedades de una transacción segura |
 | COALESCE | Función que retorna el primer valor no NULL de una lista de argumentos |
-| NULLIF | Retorna NULL si los dos argumentos son iguales — útil para evitar división por cero |
+| NULLIF | Retorna NULL si los dos argumentos son iguales - útil para evitar división por cero |
 
 ---
 

@@ -1,4 +1,4 @@
-# 04 · Design System — tokens, tipografía y accesibilidad
+# 04 - Design System - tokens, tipografía y accesibilidad
 
 Cuando los strings de clases Tailwind están dispersos en cada componente, cambiar el color de los botones primarios requiere buscar y reemplazar en todo el proyecto. Centralizar las clases en un objeto de tokens (`ui`) asegura que todos los componentes consuman el mismo lenguaje visual y que los cambios de estilo sean un cambio en un solo lugar.
 
@@ -92,7 +92,7 @@ Los tokens de **color** (surface, border, text) los consume el design system; lo
 
 ## Categorías y tokens principales
 
-### layout — estructura de página
+### layout - estructura de página
 
 ```js
 appSection:   'flex min-h-[calc(100vh-6.5rem)] flex-col gap-4 ...',
@@ -100,7 +100,7 @@ moduleShell:  'flex min-h-[calc(100vh-6.5rem)] ... rounded-xl border bg-slate-50
 stickyTopBar: 'sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur',
 ```
 
-### surface — contenedores visuales
+### surface - contenedores visuales
 
 ```js
 panel:      'rounded-xl border border-slate-200 bg-white shadow-sm',
@@ -110,7 +110,7 @@ tablePanel: 'overflow-hidden rounded-lg border border-slate-200 bg-white',
 modal:      'w-full max-w-md rounded-xl bg-white shadow-xl',
 ```
 
-### typography — sistema de tipografía
+### typography - sistema de tipografía
 
 La escala tipográfica usa `font-size` relativo con `leading` ajustado para legibilidad óptima en cada nivel:
 
@@ -142,7 +142,7 @@ code:         'font-mono text-sm rounded bg-slate-100 px-1.5 py-0.5 text-slate-8
 <span className={ui.typography.caption}>Actualizado hace 3 minutos</span>
 ```
 
-### controls — botones e inputs
+### controls - botones e inputs
 
 ```js
 primaryButton:    'inline-flex min-h-11 items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white ' +
@@ -174,7 +174,7 @@ navItemActive:    'bg-slate-900 text-white',
 navItemIdle:      'text-slate-700 hover:bg-slate-100',
 ```
 
-### badge — etiquetas de estado
+### badge - etiquetas de estado
 
 ```js
 success: 'inline-flex rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-semibold text-emerald-700',
@@ -219,7 +219,7 @@ import { cx, ui } from '../../styles/designSystem'
 
 ---
 
-## Accesibilidad — componentes con ARIA
+## Accesibilidad - componentes con ARIA
 
 WCAG 2.1 define cuatro principios (POUR): **Perceptible**, **Operable**, **Comprensible**, **Robusto**. Los roles y atributos ARIA comunican la semántica a lectores de pantalla cuando el HTML nativo no es suficiente.
 
@@ -405,7 +405,7 @@ export function SkipLink() {
 
 ---
 
-## Contraste de color — WCAG AA
+## Contraste de color - WCAG AA
 
 WCAG AA exige una relación de contraste mínima de **4.5:1** para texto normal y **3:1** para texto grande (≥18pt o ≥14pt bold). El design system cumple estos requisitos:
 
@@ -468,14 +468,14 @@ El front-template usa `@tailwindcss/vite` v4.1.x. El archivo `src/styles/designS
 |---------|-----------|
 | Design token | valor de diseño (color, espacio, tipografía) almacenado como variable reutilizable |
 | CSS custom property | variable CSS nativa (`--nombre`) accesible con `var(--nombre)` en cualquier regla |
-| ARIA | Accessible Rich Internet Applications — especificación W3C de atributos para accesibilidad |
-| WCAG | Web Content Accessibility Guidelines — estándar de accesibilidad web del W3C |
+| ARIA | Accessible Rich Internet Applications - especificación W3C de atributos para accesibilidad |
+| WCAG | Web Content Accessibility Guidelines - estándar de accesibilidad web del W3C |
 | Contraste | relación entre la luminancia del texto y su fondo (WCAG AA exige 4.5:1 para texto normal) |
 | `sr-only` | clase de Tailwind que oculta visualmente pero mantiene accesible para lectores de pantalla |
 | `aria-label` | etiqueta de texto alternativa para controles sin texto visible |
 | `aria-describedby` | asocia un elemento describiendo al control (útil para mensajes de error) |
 | `aria-live` | región que anuncia cambios dinámicos al lector de pantalla sin que el usuario la enfoque |
-| `role="dialog"` | semántica de modal — el lector anuncia que se abrió un diálogo al entrar |
+| `role="dialog"` | semántica de modal - el lector anuncia que se abrió un diálogo al entrar |
 | skip link | enlace oculto al inicio del DOM que permite saltar la navegación al contenido principal |
 | theming | aplicar un conjunto de tokens de color/estilo diferente en función del contexto (tenant, dark mode) |
 

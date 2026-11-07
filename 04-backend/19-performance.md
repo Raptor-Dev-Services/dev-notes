@@ -1,4 +1,4 @@
-# 19 — Performance en .NET: Identificar y resolver cuellos de botella
+# 19 - Performance en .NET: Identificar y resolver cuellos de botella
 
 La optimización prematura es el origen de todos los males (Knuth). El proceso correcto es: medir, identificar el cuello de botella, optimizar ese punto específico y medir de nuevo.
 
@@ -87,7 +87,7 @@ public async Task WriteCsvAsync(IEnumerable<ExampleUser> users, Stream output)
 }
 ```
 
-### Span<T> — trabajar sin allocations
+### Span<T> - trabajar sin allocations
 
 ```csharp
 // Procesar un substring sin allocar una nueva string
@@ -149,7 +149,7 @@ foreach (var user in users)
 
 ---
 
-## Async/await — evitar problemas comunes
+## Async/await - evitar problemas comunes
 
 ```csharp
 // Mal: .Result / .Wait() — deadlock en contextos síncronos (ASP.NET, UI)
@@ -201,7 +201,7 @@ var roles   = await rolesTask;
 
 ---
 
-## Response compression — comprimir respuestas HTTP
+## Response compression - comprimir respuestas HTTP
 
 ```csharp
 // Program.cs — compresión automática de respuestas
@@ -222,7 +222,7 @@ app.UseResponseCompression();
 
 ---
 
-## Object pooling — reutilizar objetos costosos
+## Object pooling - reutilizar objetos costosos
 
 ```csharp
 // Reutilizar StringBuilder en lugar de crear uno nuevo por request
@@ -251,7 +251,7 @@ public sealed class ExampleUserCsvExporter
 
 ---
 
-## LINQ — patrones de rendimiento
+## LINQ - patrones de rendimiento
 > Fuente: *High-Performance Programming in C# and .NET*: Ch.7 LINQ Performance
 
 ### Acceso al último elemento
@@ -348,14 +348,14 @@ var admins = await _context.ExampleUsers
 | Span\<T\> | Tipo de .NET que referencia una región contigua de memoria sin allocations adicionales |
 | StringBuilder | Clase para construir strings de forma eficiente evitando la inmutabilidad y allocations de string |
 | ObjectPool\<T\> | Pool de objetos reutilizables para evitar allocations repetidas de objetos costosos de crear |
-| ArrayPool\<T\> | Pool de arrays reutilizables — evita allocations de arrays grandes y reduce presión sobre el GC |
-| IQueryable | Interfaz de LINQ para queries diferidas que se traducen a SQL — evita cargar datos innecesarios |
-| ConfigureAwait(false) | Llamada que evita la captura del contexto de sincronización en await — mejora rendimiento en librerías |
-| Response Compression | Middleware que comprime respuestas HTTP con gzip/brotli — reduce el tamaño de transferencia |
+| ArrayPool\<T\> | Pool de arrays reutilizables - evita allocations de arrays grandes y reduce presión sobre el GC |
+| IQueryable | Interfaz de LINQ para queries diferidas que se traducen a SQL - evita cargar datos innecesarios |
+| ConfigureAwait(false) | Llamada que evita la captura del contexto de sincronización en await - mejora rendimiento en librerías |
+| Response Compression | Middleware que comprime respuestas HTTP con gzip/brotli - reduce el tamaño de transferencia |
 | PerformanceBehavior | Pipeline behavior que mide el tiempo de cada request y alerta ante latencias elevadas |
 | Hot Path | Ruta de código ejecutada con alta frecuencia donde las optimizaciones tienen mayor impacto |
 | N+1 Query | Problema de rendimiento donde se ejecuta una query por cada elemento de una colección en lugar de un JOIN |
-| Allocation | Reserva de memoria en el heap administrado — reduce allocations para disminuir la presión sobre el GC |
+| Allocation | Reserva de memoria en el heap administrado - reduce allocations para disminuir la presión sobre el GC |
 
 ---
 

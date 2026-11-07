@@ -1,17 +1,17 @@
-# INDICE — dev-notes
+# INDICE - dev-notes
 
 Índice completo de todos los documentos organizados por dominio.
 Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 01 — Fundamentos de Software (8 docs)
+## 01 - Fundamentos de Software (8 docs)
 
 | # | Doc | Tema |
 |---|-----|------|
 | 01 | [SOLID](01-fundamentos/01-solid.md) | SRP, OCP, LSP, ISP, DIP con ejemplos C# |
-| 02 | [Clean Code](01-fundamentos/02-clean-code.md) | Nombres, funciones, comentarios, formato — Martin |
-| 03 | [Refactoring](01-fundamentos/03-refactoring.md) | Code smells y técnicas de refactor — Fowler |
+| 02 | [Clean Code](01-fundamentos/02-clean-code.md) | Nombres, funciones, comentarios, formato - Martin |
+| 03 | [Refactoring](01-fundamentos/03-refactoring.md) | Code smells y técnicas de refactor - Fowler |
 | 04 | [Agile / Scrum](01-fundamentos/04-agile-scrum.md) | Sprints, roles, eventos, artefactos |
 | 05 | [SDLC](01-fundamentos/05-sdlc.md) | Ciclo de vida del desarrollo de software |
 | 06 | [Estimación](01-fundamentos/06-estimacion.md) | Story points, Planning Poker, Cone of Uncertainty |
@@ -20,7 +20,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 02 — Programación: C# (19 docs)
+## 02 - Programación: C# (19 docs)
 
 | # | Doc | Tema |
 |---|-----|------|
@@ -32,7 +32,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 | 06 | [Properties & Fields](02-programacion/csharp/06-properties-fields.md) | Auto-props, init, required, readonly |
 | 07 | [Methods](02-programacion/csharp/07-methods.md) | Parámetros, ref/out, extension methods, local functions |
 | 08 | [Async/Await](02-programacion/csharp/08-async.md) | Task, ValueTask, ConfigureAwait, CancellationToken |
-| 09 | [Lifetimes & DI](02-programacion/csharp/09-lifetimes.md) | Singleton, Scoped, Transient — cuándo usar cada uno |
+| 09 | [Lifetimes & DI](02-programacion/csharp/09-lifetimes.md) | Singleton, Scoped, Transient - cuándo usar cada uno |
 | 10 | [Generics](02-programacion/csharp/10-generics.md) | Tipos genéricos, constraints, varianza |
 | 11 | [Pattern Matching](02-programacion/csharp/11-pattern-matching.md) | switch expressions, is, when, list patterns |
 | 12 | [Collections](02-programacion/csharp/12-collections.md) | List, Dictionary, IEnumerable, LINQ, Span<T> |
@@ -46,7 +46,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 02 — Programación: Patrones de Diseño GoF (22 + 2 docs)
+## 02 - Programación: Patrones de Diseño GoF (22 + 2 docs)
 
 ### Creacionales (5)
 
@@ -74,7 +74,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 | # | Doc | Patrón |
 |---|-----|--------|
-| 13 | [Chain of Responsibility](02-programacion/design-patterns/behavioral/13-chain-of-responsibility.md) | Cadena de manejadores — pipeline |
+| 13 | [Chain of Responsibility](02-programacion/design-patterns/behavioral/13-chain-of-responsibility.md) | Cadena de manejadores - pipeline |
 | 14 | [Command](02-programacion/design-patterns/behavioral/14-command.md) | Encapsular operaciones como objetos |
 | 15 | [Iterator](02-programacion/design-patterns/behavioral/15-iterator.md) | Recorrer colecciones sin exponer estructura |
 | 16 | [Mediator](02-programacion/design-patterns/behavioral/16-mediator.md) | Comunicación centralizada entre objetos |
@@ -89,12 +89,12 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 | Doc | Tema |
 |-----|------|
-| [Structural ASP.NET](02-programacion/design-patterns/structural-aspnet.md) | Decorator, Composite, Adapter, Façade — Marcotte Ch.11 |
-| [Object Mappers](02-programacion/design-patterns/object-mappers.md) | Manual mapping, AutoMapper, Mapperly — Marcotte Ch.15 |
+| [Structural ASP.NET](02-programacion/design-patterns/structural-aspnet.md) | Decorator, Composite, Adapter, Façade - Marcotte Ch.11 |
+| [Object Mappers](02-programacion/design-patterns/object-mappers.md) | Manual mapping, AutoMapper, Mapperly - Marcotte Ch.15 |
 
 ---
 
-## 03 — Arquitectura (15 + 5 docs)
+## 03 - Arquitectura (15 + 5 docs)
 
 | # | Doc | Tema |
 |---|-----|------|
@@ -126,20 +126,20 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 04 — Backend ASP.NET Core (46 docs)
+## 04 - Backend ASP.NET Core (46 docs)
 
 ### Core patterns (8)
 
 | # | Doc | Tema |
 |---|-----|------|
-| 01 | [Result Pattern](04-backend/01-result-pattern.md) | ISuccess/IFailure, Operation Result — Marcotte Ch.13 |
+| 01 | [Result Pattern](04-backend/01-result-pattern.md) | ISuccess/IFailure, Operation Result - Marcotte Ch.13 |
 | 02 | [Repository + UoW](04-backend/02-repository-uow.md) | Repositorio e interfaz, Unit of Work |
 | 03 | [Pipeline Behaviors](04-backend/03-pipeline-behaviors.md) | MediatR behaviors: logging, validation, timing |
 | 06 | [Validation](04-backend/06-validation.md) | FluentValidation, reglas, extensiones |
 | 08 | [Problem Details](04-backend/08-problem-details.md) | RFC 9457, middleware de errores, ProblemDetailsFactory |
 | 18 | [Common Library](04-backend/18-common-library.md) | Submódulo NuGet compartido: IMediator, IRequest, IResponse |
 | 46 | [DI Patterns](04-backend/46-di-patterns.md) | Decorator/Scrutor, Keyed Services, captive dependency |
-| — | [REPR / Minimal APIs](03-arquitectura/13-repr.md) | Ver sección Arquitectura |
+| - | [REPR / Minimal APIs](03-arquitectura/13-repr.md) | Ver sección Arquitectura |
 
 ### Infraestructura y cross-cutting (12)
 
@@ -212,7 +212,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 05 — Bases de Datos (8 docs)
+## 05 - Bases de Datos (8 docs)
 
 | Doc | Tema |
 |-----|------|
@@ -227,7 +227,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 06 — Frontend React (11 docs)
+## 06 - Frontend React (11 docs)
 
 | # | Doc | Tema |
 |---|-----|------|
@@ -235,7 +235,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 | 02 | [React en Producción](06-frontend/02-react-produccion.md) | Router, Axios interceptors, RHF+Zod, TanStack Query |
 | 03 | [Tailwind v4](06-frontend/03-tailwind.md) | Dark mode CSS variables, tenant theming, plugins |
 | 04 | [Design System](06-frontend/04-design-system.md) | Semantic tokens, tipografía, ARIA, Modal, FormField |
-| 05 | [Componentes Primitivos](06-frontend/05-componentes-primitivos.md) | Button, Input, Table — base del design system |
+| 05 | [Componentes Primitivos](06-frontend/05-componentes-primitivos.md) | Button, Input, Table - base del design system |
 | 06 | [Feature Hook](06-frontend/06-feature-hook.md) | Patrón de hook por feature (useExampleUser) |
 | 07 | [Capa de Dominio y ACL](06-frontend/07-capa-dominio-acl.md) | Anti-Corruption Layer, modelo de dominio, Strategy, capas |
 | 08 | [Estado: dónde vive](06-frontend/08-estado-donde-vive.md) | Local, URL, Context, store con selectores, persistencia |
@@ -245,7 +245,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 07 — Git (9 docs)
+## 07 - Git (9 docs)
 
 | # | Doc | Tema |
 |---|-----|------|
@@ -255,13 +255,13 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 | 04 | [Git Flow](07-git/04-git-flow.md) | Branching strategy, feature/release/hotfix |
 | 05 | [Tags](07-git/05-tags.md) | Anotados vs ligeros, signed tags, push |
 | 06 | [Commit Conventions](07-git/06-commit-conventions.md) | Conventional Commits, commitlint, Husky hooks |
-| 07 | [Merge Strategies](07-git/07-merge-strategies.md) | Merge, squash, rebase — cuándo usar cada uno |
+| 07 | [Merge Strategies](07-git/07-merge-strategies.md) | Merge, squash, rebase - cuándo usar cada uno |
 | 08 | [Rollback](07-git/08-rollback.md) | revert, reset, reflog, recuperación de commits |
 | 09 | [Stash](07-git/09-stash.md) | git stash, pop, apply, drop, branches desde stash |
 
 ---
 
-## 08 — Contenedores Docker (5 docs)
+## 08 - Contenedores Docker (5 docs)
 
 | # | Doc | Tema |
 |---|-----|------|
@@ -273,7 +273,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 09 — CI/CD e Infraestructura (4 docs)
+## 09 - CI/CD e Infraestructura (4 docs)
 
 | # | Doc | Tema |
 |---|-----|------|
@@ -284,7 +284,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 10 — Cloud (16 docs)
+## 10 - Cloud (16 docs)
 
 ### Fundamentos Cloud
 
@@ -315,12 +315,12 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 | [File Storage Tenant](10-cloud/09-file-storage-tenant.md) | S3 por tenant, presigned URLs, lifecycle |
 | [Tracing Distribuido](10-cloud/17-tracing-distribuido.md) | Jaeger, Zipkin, W3C TraceContext |
 | [Seguridad Web](10-cloud/07-seguridad-web.md) | OWASP Top 10, WAF, headers de seguridad |
-| [Zero Trust](10-cloud/08-zero-trust.md) | Nunca confiar, siempre verificar — modelo de seguridad |
+| [Zero Trust](10-cloud/08-zero-trust.md) | Nunca confiar, siempre verificar - modelo de seguridad |
 | [Costos](10-cloud/06-costos.md) | Optimización de costos AWS/Azure, Reserved Instances |
 
 ---
 
-## 11 — Vibe Coding / AI-Assisted Development (6 docs)
+## 11 - Vibe Coding / AI-Assisted Development (6 docs)
 
 | # | Doc | Tema |
 |---|-----|------|
@@ -359,4 +359,4 @@ Ver [`roadmap/`](roadmap/) para rutas estructuradas por objetivo:
 
 ---
 
-*Rogelio Arriaga Gonzalez · actualizado 2026-09-12*
+*Rogelio Arriaga Gonzalez - actualizado 2026-09-12*

@@ -1,4 +1,4 @@
-﻿# 12 — Proxy
+﻿# 12 - Proxy
 
 **Categoría:** Estructural
 
@@ -111,7 +111,7 @@ ClientCode(proxy);
 
 ## Tipos de Proxy
 
-### 1. Virtual Proxy — Lazy Initialization
+### 1. Virtual Proxy - Lazy Initialization
 
 ```csharp
 // El objeto pesado se crea solo cuando se necesita
@@ -128,7 +128,7 @@ public class HeavyServiceProxy : IDataService
 }
 ```
 
-### 2. Protection Proxy — Control de acceso
+### 2. Protection Proxy - Control de acceso
 
 ```csharp
 public class SecuredFileProxy : IFileAccess

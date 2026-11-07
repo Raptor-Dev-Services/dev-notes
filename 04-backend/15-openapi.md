@@ -1,4 +1,4 @@
-# 15 — API Versioning, OpenAPI y Documentación
+# 15 - API Versioning, OpenAPI y Documentación
 
 > Fuente: *Web API Development with ASP.NET Core 8* (Xiaodi Yan): Ch.3 Working with OpenAPI and Swagger
 
@@ -8,7 +8,7 @@
 
 | Estrategia | Pros | Contras |
 |------------|------|---------|
-| **URL** `/api/v1/customers` | Visible, cacheable, fácil de testear | Cambia las URLs — breaking change para clientes |
+| **URL** `/api/v1/customers` | Visible, cacheable, fácil de testear | Cambia las URLs - breaking change para clientes |
 | **Header** `api-version: 1.0` | URLs limpias | Menos visible, complica testing con curl/browser |
 | **Query string** `?api-version=1.0` | Fácil de testear desde browser | "Mancha" las URLs |
 | **Media type** `Accept: application/vnd.v1+json` | RESTful puro | Complejo en práctica, poco usado |
@@ -72,7 +72,7 @@ app.MapScalarApiReference();   // UI en /scalar/v1
 
 ---
 
-## Swashbuckle — para proyectos en .NET 8 y anteriores
+## Swashbuckle - para proyectos en .NET 8 y anteriores
 
 ```csharp
 builder.Services.AddSwaggerGen(options =>
@@ -159,7 +159,7 @@ Ver `04-backend/08-problem-details.md` para la implementación completa con mane
 |---------|-----------|
 | OpenAPI | Especificación estándar para describir APIs REST de forma legible por máquinas y humanos |
 | Swagger | Conjunto de herramientas (Swashbuckle) para generar y visualizar documentación OpenAPI en .NET |
-| Scalar | Alternativa moderna a Swagger UI para visualizar documentación OpenAPI — integrada en .NET 9 |
+| Scalar | Alternativa moderna a Swagger UI para visualizar documentación OpenAPI - integrada en .NET 9 |
 | MapOpenApi | Método de .NET 9 que expone el documento OpenAPI JSON en la ruta /openapi/v1.json |
 | API Versioning | Estrategia para mantener múltiples versiones de la API sin romper clientes existentes |
 | UrlSegmentApiVersionReader | Lector de versión de API que extrae la versión del segmento de URL (v1, v2) |
@@ -167,7 +167,7 @@ Ver `04-backend/08-problem-details.md` para la implementación completa con mane
 | Bearer Token | Esquema de autenticación HTTP donde el token JWT se envía en el header Authorization |
 | MapToApiVersion | Atributo que asocia un método de controller con una versión específica de la API |
 | ApiVersionReader.Combine | Método que configura múltiples estrategias de lectura de versión simultáneamente |
-| Problem Details | Formato RFC 9457 para errores — documentado en OpenAPI para que los clientes conozcan la estructura |
+| Problem Details | Formato RFC 9457 para errores - documentado en OpenAPI para que los clientes conozcan la estructura |
 | ReportApiVersions | Configuración que añade headers con las versiones soportadas en cada respuesta HTTP |
 
 ---

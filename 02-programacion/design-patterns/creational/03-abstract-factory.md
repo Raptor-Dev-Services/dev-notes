@@ -1,4 +1,4 @@
-﻿# 03 — Abstract Factory
+﻿# 03 - Abstract Factory
 
 **Categoría:** Creacional
 
@@ -232,7 +232,7 @@ No hay una clase IAbstractFactory explícita, pero el concepto aplica:
 | IAbstractFactory | Interfaz que declara los métodos de creación para cada tipo de producto de la familia |
 | ConcreteFactory | Implementación concreta que crea los productos de una familia específica |
 | IAbstractProduct | Interfaz común para un tipo de producto; cada variante de la familia la implementa |
-| Cliente | Código que usa la fábrica abstracta trabajando únicamente con interfaces — no con clases concretas |
+| Cliente | Código que usa la fábrica abstracta trabajando únicamente con interfaces - no con clases concretas |
 | Compatibilidad entre productos | Garantía de que los productos creados por la misma fábrica funcionan correctamente juntos |
 | IConfiguration | Interfaz de .NET que actúa conceptualmente como una Abstract Factory al proveer distintas "familias" de valores según el ambiente |
 | Ambiente de ejecución | Contexto (Development, Staging, Production) que determina qué variante de configuración o comportamiento se activa |

@@ -131,7 +131,7 @@ var count = await db.ExecuteScalarAsync<int>("SELECT COUNT(*) FROM ...");
 
 ---
 
-## Constraints — restricciones de tipo
+## Constraints - restricciones de tipo
 
 Los constraints limitan qué tipos se pueden usar con el genérico.
 

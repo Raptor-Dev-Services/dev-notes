@@ -1,4 +1,4 @@
-# 08 — Keycloak — IAM, OIDC y SSO
+# 08 - Keycloak - IAM, OIDC y SSO
 
 Keycloak es un servidor de identidad y acceso (IAM) open-source. Centraliza autenticación, autorización, SSO y gestión de usuarios fuera de la aplicación. El back-template valida tokens JWT emitidos por Keycloak. No gestiona contraseñas ni sesiones directamente.
 
@@ -44,10 +44,10 @@ builder.Services
 
 | Concepto | Descripción |
 |---------|------------|
-| **Realm** | Espacio de configuración aislado — usuarios, clientes, roles. Un realm por entorno o por tenant |
+| **Realm** | Espacio de configuración aislado - usuarios, clientes, roles. Un realm por entorno o por tenant |
 | **Client** | Aplicación registrada en Keycloak (`{{PROJECT_SLUG}}-api`, `{{PROJECT_SLUG}}-frontend`) |
-| **User** | Identidad en Keycloak — puede federarse desde LDAP, AD o Google |
-| **Role** | Permiso asignable a usuarios — realm roles (globales) y client roles (por aplicación) |
+| **User** | Identidad en Keycloak - puede federarse desde LDAP, AD o Google |
+| **Role** | Permiso asignable a usuarios - realm roles (globales) y client roles (por aplicación) |
 | **Scope** | Claim opcional que el cliente puede solicitar (`openid`, `email`, `profile`, `roles`) |
 | **Access Token** | JWT de corta vida (5-15 min) para acceder a la API |
 | **Refresh Token** | Token de larga vida para obtener nuevos access tokens sin re-login |
@@ -185,7 +185,7 @@ public class GetExampleUserHandler
 
 Hay dos estrategias:
 
-### Opción A — Un realm por tenant (aislamiento máximo)
+### Opción A - Un realm por tenant (aislamiento máximo)
 
 ```
 Realm: alfacorp  → usuarios de Alfa Corp
@@ -205,7 +205,7 @@ var tenantSlug = issuer?.Split('/').LastOrDefault();
 **Ventaja:** aislamiento total. Los usuarios de un tenant nunca ven a otros.
 **Desventaja:** gestionar N realms implica complejidad operativa alta.
 
-### Opción B — Un realm + claim tenant_id (recomendado para empezar)
+### Opción B - Un realm + claim tenant_id (recomendado para empezar)
 
 ```
 Realm: {{PROJECT_SLUG}}  → todos los tenants
@@ -312,7 +312,7 @@ public sealed class KeycloakRealmAccess
 
 ---
 
-## ClaimsPrincipalExtensions — leer claims del token
+## ClaimsPrincipalExtensions - leer claims del token
 
 ```csharp
 public static class ClaimsPrincipalExtensions
@@ -340,7 +340,7 @@ public sealed class CurrentUserService(IHttpContextAccessor http) : ICurrentUser
 
 ---
 
-## Client Credentials — M2M con token cacheado
+## Client Credentials - M2M con token cacheado
 
 ```csharp
 public sealed class KeycloakTokenService(HttpClient http, IConfiguration config)
@@ -386,21 +386,21 @@ public sealed class KeycloakTokenService(HttpClient http, IConfiguration config)
 
 | Término | Definición |
 |---------|-----------|
-| IAM | Identity and Access Management — gestión centralizada de identidades y permisos |
-| Keycloak | Servidor de identidad open-source de Red Hat — gestiona usuarios, SSO y tokens OAuth2/OIDC |
-| Realm | Unidad de configuración aislada en Keycloak — agrupa usuarios, clientes y roles |
+| IAM | Identity and Access Management - gestión centralizada de identidades y permisos |
+| Keycloak | Servidor de identidad open-source de Red Hat - gestiona usuarios, SSO y tokens OAuth2/OIDC |
+| Realm | Unidad de configuración aislada en Keycloak - agrupa usuarios, clientes y roles |
 | Client | Aplicación registrada en Keycloak que solicita tokens (`{{PROJECT_SLUG}}-api`, `{{PROJECT_SLUG}}-frontend`) |
-| OIDC | OpenID Connect — capa de identidad sobre OAuth2 que añade el ID Token con datos del usuario |
-| OAuth2 | Protocolo de autorización — define cómo obtener tokens de acceso a recursos protegidos |
-| Authorization Code + PKCE | Flujo seguro para SPAs/móvil — usa code_verifier para evitar interceptación del código |
-| Client Credentials | Flujo OAuth2 para machine-to-machine — no hay usuario, el servicio usa client_id + secret |
+| OIDC | OpenID Connect - capa de identidad sobre OAuth2 que añade el ID Token con datos del usuario |
+| OAuth2 | Protocolo de autorización - define cómo obtener tokens de acceso a recursos protegidos |
+| Authorization Code + PKCE | Flujo seguro para SPAs/móvil - usa code_verifier para evitar interceptación del código |
+| Client Credentials | Flujo OAuth2 para machine-to-machine - no hay usuario, el servicio usa client_id + secret |
 | Access Token | JWT de corta vida (~5-15 min) que la API valida en cada request |
 | Refresh Token | Token de larga vida para obtener nuevos access tokens sin re-login del usuario |
-| JWKS | JSON Web Key Set — endpoint de Keycloak con las claves públicas para verificar JWT |
-| SSO | Single Sign-On — un login en Keycloak da acceso a todas las apps del realm sin re-autenticación |
-| `sub` | Subject claim en JWT — identificador único del usuario en Keycloak |
-| Realm Roles | Roles globales del realm — disponibles en todos los clientes |
-| Client Roles | Roles específicos de un client — solo aplican a ese recurso |
+| JWKS | JSON Web Key Set - endpoint de Keycloak con las claves públicas para verificar JWT |
+| SSO | Single Sign-On - un login en Keycloak da acceso a todas las apps del realm sin re-autenticación |
+| `sub` | Subject claim en JWT - identificador único del usuario en Keycloak |
+| Realm Roles | Roles globales del realm - disponibles en todos los clientes |
+| Client Roles | Roles específicos de un client - solo aplican a ese recurso |
 | `tenant_id` claim | Claim personalizado que el back-template usa para resolver el tenant del request |
 
 ---

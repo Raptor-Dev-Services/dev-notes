@@ -1,4 +1,4 @@
-# API Design — Índice
+# API Design - Índice
 
 Diseño de APIs REST: semántica HTTP, recursos, paginación, errores y evolución del contrato.
 

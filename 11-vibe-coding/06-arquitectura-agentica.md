@@ -1,4 +1,4 @@
-# 06 · Arquitectura agéntica — catálogo de agentes, skills y reglas
+# 06 - Arquitectura agéntica - catálogo de agentes, skills y reglas
 
 ## Problema que resuelve
 

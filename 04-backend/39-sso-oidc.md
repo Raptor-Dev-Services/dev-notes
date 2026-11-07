@@ -1,4 +1,4 @@
-# 39 — SSO por Tenant: OAuth2 / OIDC
+# 39 - SSO por Tenant: OAuth2 / OIDC
 
 SSO (Single Sign-On) permite que los usuarios de un tenant inicien sesión con las credenciales de su empresa (Google Workspace, Microsoft Entra ID, Okta) en lugar de tener un password separado en el SaaS. Es una feature Enterprise que elimina la fricción de gestionar otra contraseña y centraliza el control de acceso en el IDP de la empresa.
 
@@ -337,7 +337,7 @@ public async Task<LoginResponse> Handle(LoginRequest request, CancellationToken 
 |------|-------------|-------------|
 | JIT Provisioning | El usuario se crea automáticamente al primer login SSO | Empresas que confían en el IDP para gestionar usuarios |
 | Pre-provisioning | El Admin del SaaS debe invitar al usuario antes de que pueda hacer login | Empresas que quieren control explícito sobre quién accede |
-| SCIM | El IDP sincroniza usuarios automáticamente (crear, modificar, desactivar) | Enterprise con muchos usuarios — fuera del scope inicial |
+| SCIM | El IDP sincroniza usuarios automáticamente (crear, modificar, desactivar) | Enterprise con muchos usuarios - fuera del scope inicial |
 
 El back-template implementa JIT Provisioning como default. Es más simple y la mayoría de empresas lo prefiere.
 
@@ -361,14 +361,14 @@ El back-template implementa JIT Provisioning como default. Es más simple y la m
 
 | Término | Definición |
 |---------|-----------|
-| SSO | Single Sign-On — permite que los usuarios inicien sesión con las credenciales de su proveedor de identidad corporativo |
-| OIDC | OpenID Connect — capa de identidad sobre OAuth2 que añade el ID Token con claims del usuario |
-| OAuth2 | Protocolo de autorización delegada — base de OIDC para el flujo de autorización |
+| SSO | Single Sign-On - permite que los usuarios inicien sesión con las credenciales de su proveedor de identidad corporativo |
+| OIDC | OpenID Connect - capa de identidad sobre OAuth2 que añade el ID Token con claims del usuario |
+| OAuth2 | Protocolo de autorización delegada - base de OIDC para el flujo de autorización |
 | SsoConfiguration | Entidad que almacena por tenant la configuración del IdP: ClientId, ClientSecret, Authority, AllowedDomain |
-| JIT Provisioning | Just-in-Time — creación automática del usuario en el primer login SSO si no existe previamente |
+| JIT Provisioning | Just-in-Time - creación automática del usuario en el primer login SSO si no existe previamente |
 | State Anti-CSRF | Parámetro aleatorio generado en el inicio del flujo OAuth que se valida al recibir el callback para prevenir CSRF |
-| Authorization Code Flow | Flujo OAuth2 donde el frontend recibe un code y el backend lo intercambia por tokens — más seguro que Implicit |
-| ID Token | JWT emitido por el IdP que contiene claims del usuario: email, name, sub — diferente del Access Token |
+| Authorization Code Flow | Flujo OAuth2 donde el frontend recibe un code y el backend lo intercambia por tokens - más seguro que Implicit |
+| ID Token | JWT emitido por el IdP que contiene claims del usuario: email, name, sub - diferente del Access Token |
 | AllowedDomain | Dominio de email corporativo permitido para SSO en el tenant (ej. alfacorp.com) |
 | EnforceForDomain | Configuración del tenant que obliga a usuarios de ese dominio a usar SSO en lugar de password |
 | JWKS Endpoint | URL del IdP que expone las claves públicas para verificar la firma del ID Token |

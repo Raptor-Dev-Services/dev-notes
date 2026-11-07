@@ -1,4 +1,4 @@
-﻿# 05 — Prototype
+﻿# 05 - Prototype
 
 **Categoría:** Creacional
 
@@ -95,12 +95,12 @@ Console.WriteLine(p3.IdInfo.IdNumber); // 666  → Bien: IdInfo independiente
 
 ---
 
-## Shallow vs Deep — tabla comparativa
+## Shallow vs Deep - tabla comparativa
 
 | | Shallow Copy | Deep Copy |
 |--|-------------|-----------|
 | `int`, `double`, `bool`, `struct` | Copia el valor | Copia el valor |
-| `string` | Comparte referencia (pero string es inmutable → seguro) | Nueva instancia |
+| `string` | Comparte referencia (pero string es inmutable -> seguro) | Nueva instancia |
 | Objetos de referencia (clases) | **Comparte referencia** | **Nuevo objeto** |
 | Arrays | Comparte el array | Nuevo array con nuevos elementos |
 | Velocidad | Más rápido | Más lento (recursivo) |
@@ -108,9 +108,9 @@ Console.WriteLine(p3.IdInfo.IdNumber); // 666  → Bien: IdInfo independiente
 
 ---
 
-## Prototype en C# moderno — `ICloneable` y records
+## Prototype en C# moderno - `ICloneable` y records
 
-### `ICloneable` — interfaz estándar
+### `ICloneable`interfaz estándar
 
 ```csharp
 public class Config : ICloneable
@@ -131,7 +131,7 @@ public class Config : ICloneable
 }
 ```
 
-### Records — Prototype con `with`
+### Records - Prototype con `with`
 
 En C# moderno con records, el Prototype se expresa naturalmente con la expresión `with`:
 
@@ -160,7 +160,7 @@ var updated = original with { FullName = "Ana García-López" };
 
 ---
 
-## Prototype Registry — catálogo de prototipos
+## Prototype Registry - catálogo de prototipos
 
 ```csharp
 // Registry: almacena prototipos nombrados para clonar bajo demanda
@@ -234,7 +234,7 @@ var nextPage  = original with { Page = 2 };  // copia del Prototype con Page dif
 | Expresión `with` | Sintaxis de C# para records que crea una nueva instancia copiando los campos del original y aplicando las modificaciones indicadas |
 | Prototype Registry | Almacén de prototipos nombrados que permite clonar instancias pre-configuradas bajo demanda |
 | Estado intrínseco | Parte del estado de un objeto que no cambia entre instancias y puede compartirse |
-| Inmutabilidad | Propiedad de un objeto cuyos campos no pueden modificarse después de su creación — característica central de los records |
+| Inmutabilidad | Propiedad de un objeto cuyos campos no pueden modificarse después de su creación - característica central de los records |
 | Tipo de valor | Tipo que se copia directamente cuando se asigna (`int`, `struct`, `DateTime`); opuesto a tipo de referencia |
 | Tipo de referencia | Tipo que almacena una dirección de memoria; asignarlo copia la referencia, no el objeto en sí |
 

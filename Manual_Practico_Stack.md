@@ -1,21 +1,21 @@
 # Manual Práctico del Stack
 
-**v2.0 · Edición ampliada**  
+**v2.0 - Edición ampliada**  
 Configuraciones, archivos y rutas del día a día  
 \+ Implementación práctica con la librería Common (Raptor-Dev-Services)
 
 > Complemento operativo al Glosario Maestro de SaaS Multi-Tenant
 
-*Variables de entorno · Secretos · Connection strings · Migrations  
-CORS · Rate limiting · HTTP Client · Polly  
-Background jobs · API versioning · OpenAPI  
-JWT · Validación · Pipeline Behaviors · Repository  
-Performance · Testing · CI/CD  
-React Router · React Hook Form · Axios interceptors · i18n  
-Librería Common: Logging · OpenTelemetry · Mediator · MultiTenancy*
+*Variables de entorno - Secretos - Connection strings - Migrations  
+CORS - Rate limiting - HTTP Client - Polly  
+Background jobs - API versioning - OpenAPI  
+JWT - Validación - Pipeline Behaviors - Repository  
+Performance - Testing - CI/CD  
+React Router - React Hook Form - Axios interceptors - i18n  
+Librería Common: Logging - OpenTelemetry - Mediator - MultiTenancy*
 
 **Instructor: Ing. Rogelio Arriaga González**  
-M.I. en Gestión de Sistemas de TI · UVM  
+M.I. en Gestión de Sistemas de TI - UVM  
 Mayo 2026
 
 ---
@@ -42,7 +42,7 @@ El manual está pensado como una referencia consultable. No se lee de corrido: s
 | 8 | API versioning + OpenAPI |
 | 9 | Output caching |
 | 10 | EF Core en producción (migrations, soft delete, auditing) |
-| 11 | JWT — generación, validación y refresh |
+| 11 | JWT - generación, validación y refresh |
 | 12 | Validación con FluentValidation |
 | 13 | Pipeline Behaviors |
 | 14 | Repository + Unit of Work |
@@ -52,11 +52,11 @@ El manual está pensado como una referencia consultable. No se lee de corrido: s
 | 18 | Testing (xUnit, integration, TestContainers) |
 | 19 | CI/CD con GitHub Actions |
 | 20 | Checklists de verificación |
-| 21 | Librería Common — bootstrap completo |
+| 21 | Librería Common - bootstrap completo |
 
 ---
 
-## 1 · Variables de entorno y configuración
+## 1 - Variables de entorno y configuración
 
 Las variables de entorno son la forma estándar de inyectar configuración sin meterla en el código. Permiten que la misma imagen Docker corra en desarrollo, staging y producción cambiando solo variables. El principio Twelve-Factor App lo dice claro: configuración separada del código.
 
@@ -221,7 +221,7 @@ volumes:
 
 ---
 
-## 2 · Secretos en producción
+## 2 - Secretos en producción
 
 En desarrollo local, User Secrets resuelve. En producción, los secretos viven en gestores especializados, **nunca** en archivos de configuración, repositorios, ni variables de entorno expuestas.
 
@@ -282,7 +282,7 @@ RUN --mount=type=secret,id=nuget_token \
 
 ---
 
-## 3 · Connection strings y manejo por ambiente
+## 3 - Connection strings y manejo por ambiente
 
 La cadena de conexión es uno de los secretos más sensibles del sistema. Su manejo merece la misma disciplina que cualquier secreto.
 
@@ -361,7 +361,7 @@ public abstract class DapperRepository
 
 ---
 
-## 4 · CORS
+## 4 - CORS
 
 CORS (Cross-Origin Resource Sharing) es el mecanismo del navegador que permite o bloquea peticiones de un origen distinto al del documento HTML. En SaaS típico, frontend y backend viven en dominios diferentes, así que CORS es obligatorio.
 
@@ -410,7 +410,7 @@ options.AddPolicy("TenantPolicy", policy =>
 
 ---
 
-## 5 · Rate limiting
+## 5 - Rate limiting
 
 Limitar peticiones por segundo protege contra abuso, ataques DDoS y tenants que saturan tu API. Desde .NET 7 hay middleware nativo.
 
@@ -468,11 +468,11 @@ app.MapControllers().RequireRateLimiting("per-tenant");
 
 ---
 
-## 6 · HTTP Client Factory y resiliencia con Polly
+## 6 - HTTP Client Factory y resiliencia con Polly
 
 Crear instancias de `HttpClient` con `new HttpClient()` es uno de los bugs más clásicos de .NET. Agota sockets y causa fallos intermitentes. La solución es `IHttpClientFactory`.
 
-### 6.1 Patrón correcto — cliente tipado
+### 6.1 Patrón correcto - cliente tipado
 
 ```csharp
 // Registro
@@ -498,7 +498,7 @@ public class StripeClient
 }
 ```
 
-### 6.2 Polly — retry, circuit breaker y timeout
+### 6.2 Polly - retry, circuit breaker y timeout
 
 ```csharp
 builder.Services
@@ -549,11 +549,11 @@ builder.Services
 
 ---
 
-## 7 · Background jobs y trabajos programados
+## 7 - Background jobs y trabajos programados
 
 Tareas que corren fuera del request HTTP: envío de emails, generación de reportes, sincronizaciones, procesamiento asíncrono.
 
-### 7.1 IHostedService — el más simple
+### 7.1 IHostedService - el más simple
 
 ```csharp
 public class EmailSenderService : BackgroundService
@@ -591,7 +591,7 @@ public class EmailSenderService : BackgroundService
 builder.Services.AddHostedService<EmailSenderService>();
 ```
 
-### 7.2 Channel<T> — desacoplamiento productor/consumidor
+### 7.2 Channel<T> - desacoplamiento productor/consumidor
 
 ```csharp
 // Registro del canal
@@ -631,7 +631,7 @@ public class EmailWorker : BackgroundService
 }
 ```
 
-### 7.3 Hangfire — jobs persistentes con UI
+### 7.3 Hangfire - jobs persistentes con UI
 
 ```csharp
 // Registro
@@ -655,7 +655,7 @@ RecurringJob.AddOrUpdate<IBillingService>(
     Cron.Daily(2));
 ```
 
-### 7.4 Regla crítica — TenantId en jobs de SaaS multi-tenant
+### 7.4 Regla crítica - TenantId en jobs de SaaS multi-tenant
 
 ```csharp
 // MAL — el job no sabe a qué tenant pertenece
@@ -674,7 +674,7 @@ public async Task SendWelcomeEmail(Guid tenantId, Guid userId)
 
 ---
 
-## 8 · API versioning, OpenAPI y documentación
+## 8 - API versioning, OpenAPI y documentación
 
 ### 8.1 API Versioning
 
@@ -764,7 +764,7 @@ app.UseStatusCodePages();
 
 ---
 
-## 9 · Output caching y response caching
+## 9 - Output caching y response caching
 
 .NET 7+ trae output caching nativo con políticas finas, incluyendo invalidación por tags.
 
@@ -800,7 +800,7 @@ public class PlanService(IOutputCacheStore cache)
 
 ---
 
-## 10 · Entity Framework Core en producción
+## 10 - Entity Framework Core en producción
 
 ### 10.1 Workflow de migrations
 
@@ -864,7 +864,7 @@ public override int SaveChanges()
 }
 ```
 
-### 10.4 Auditoría — created/updated
+### 10.4 Auditoría - created/updated
 
 ```csharp
 public interface IAuditable
@@ -924,7 +924,7 @@ foreach (var entityType in modelBuilder.Model.GetEntityTypes())
 
 ---
 
-## 11 · JWT — Generación, validación y refresh
+## 11 - JWT - Generación, validación y refresh
 
 ### 11.1 Configuración de autenticación JWT en .NET
 
@@ -1030,7 +1030,7 @@ var claims = new List<Claim>
 
 ---
 
-## 12 · Validación con FluentValidation
+## 12 - Validación con FluentValidation
 
 ### 12.1 Registro automático
 
@@ -1103,7 +1103,7 @@ public class CreateCustomerValidator : AbstractValidator<CreateCustomerRequest>
 
 ---
 
-## 13 · Pipeline Behaviors
+## 13 - Pipeline Behaviors
 
 Los Pipeline Behaviors de MediatR / Common.Messaging se ejecutan en la cadena de procesamiento de cada request. Son el lugar correcto para cross-cutting concerns: logging, validación, autorización, caching.
 
@@ -1166,7 +1166,7 @@ public class IdempotencyBehavior<TRequest, TResponse>
 
 ---
 
-## 14 · Repository + Unit of Work
+## 14 - Repository + Unit of Work
 
 ### 14.1 Contratos base
 
@@ -1246,9 +1246,9 @@ public class CreateOrderHandler : IRequestHandler<CreateOrderRequest, Result<Ord
 
 ---
 
-## 15 · Performance y memoria
+## 15 - Performance y memoria
 
-### 15.1 Span\<T\> y Memory\<T\> — cero allocations
+### 15.1 Span\<T\> y Memory\<T\> - cero allocations
 
 ```csharp
 // Sin Span — crea subcadena en el heap
@@ -1267,7 +1267,7 @@ public static bool TryParseGuid(ReadOnlySpan<char> input, out Guid result)
     => Guid.TryParse(input, out result);
 ```
 
-### 15.2 ObjectPool — reutilizar objetos costosos
+### 15.2 ObjectPool - reutilizar objetos costosos
 
 ```csharp
 builder.Services.AddSingleton<ObjectPool<StringBuilder>>(sp =>
@@ -1291,7 +1291,7 @@ public class ReportGenerator
 }
 ```
 
-### 15.3 BenchmarkDotNet — medir antes de optimizar
+### 15.3 BenchmarkDotNet - medir antes de optimizar
 
 ```csharp
 [MemoryDiagnoser]
@@ -1335,7 +1335,7 @@ var results = new List<CustomerDto>(customers.Count);
 foreach (ref readonly var item in span) { /* item no se copia */ }
 ```
 
-### 15.5 PeriodicTimer — el temporizador moderno
+### 15.5 PeriodicTimer - el temporizador moderno
 
 ```csharp
 // BackgroundService con PeriodicTimer — se cancela limpiamente
@@ -1354,7 +1354,7 @@ public class MetricsFlusher : BackgroundService
 
 ---
 
-## 16 · React de producción
+## 16 - React de producción
 
 ### 16.1 React Router con lazy loading
 
@@ -1550,7 +1550,7 @@ function useToggleTask() {
 }
 ```
 
-### 16.7 Feature hook — patrón de encapsulamiento
+### 16.7 Feature hook - patrón de encapsulamiento
 
 ```typescript
 // Encapsula toda la lógica de una feature en un hook
@@ -1575,7 +1575,7 @@ export function useTaskManager() {
 
 ---
 
-## 17 · Tooling de equipo
+## 17 - Tooling de equipo
 
 ### 17.1 .gitignore
 
@@ -1717,9 +1717,9 @@ updates:
 
 ---
 
-## 18 · Testing
+## 18 - Testing
 
-### 18.1 xUnit — estructura básica
+### 18.1 xUnit - estructura básica
 
 ```csharp
 public class CustomerServiceTests
@@ -1840,7 +1840,7 @@ public class CreateCustomerValidatorTests
 }
 ```
 
-### 18.4 TDD — ciclo Red-Green-Refactor
+### 18.4 TDD - ciclo Red-Green-Refactor
 
 ```
 1. Red   — escribir el test que falla (la feature no existe aún)
@@ -1871,7 +1871,7 @@ public class Order
 
 ---
 
-## 19 · CI/CD con GitHub Actions
+## 19 - CI/CD con GitHub Actions
 
 ### 19.1 Pipeline básico .NET
 
@@ -1989,7 +1989,7 @@ jobs:
 
 ---
 
-## 20 · Checklists de verificación
+## 20 - Checklists de verificación
 
 ### 20.1 Antes de hacer commit
 
@@ -2031,7 +2031,7 @@ jobs:
 
 ---
 
-## 21 · La librería Common — bootstrap completo de un SaaS
+## 21 - La librería Common - bootstrap completo de un SaaS
 
 Toda la teoría del manual converge en una librería real. Common es la base de código que cada SaaS arranca con los problemas transversales ya resueltos. Está construida en .NET 10, es open-source bajo Raptor-Dev-Services, y resuelve de un golpe los temas más dolorosos del bootstrap: logging estructurado con Seq, observabilidad con OpenTelemetry, mediator propio, multi-tenancy con resolución por header y subdominio, factories de conexión a Postgres, propagación automática de tenant en HTTP clients y health checks listos.
 
@@ -2186,11 +2186,11 @@ app.Run();
 | `RejectUnknownTenants` | Si `true`, los tenants no registrados son rechazados. Defensa contra subdominios inventados. |
 | `TenantHeaderName` | Nombre del header HTTP usado para resolver tenant. Convención: `X-Tenant-Id`. |
 | `ResolveFromHeader` | Activa la resolución por header HTTP. |
-| `ResolveFromSubdomain` | Activa la resolución por subdominio (`acme.miapp.com` → tenant `acme`). |
+| `ResolveFromSubdomain` | Activa la resolución por subdominio (`acme.miapp.com` -> tenant `acme`). |
 | `DefaultTenantId` | Fallback para casos sin tenant explícito (típicamente endpoints como `/health`). |
 | `Tenants` | Catálogo de tenants conocidos. Cada uno define `IsEnabled`, `ConnectionStrings` y `Settings`. |
 
-### 21.6 Conexión a base de datos por tenant — patrón con clases marcadoras
+### 21.6 Conexión a base de datos por tenant - patrón con clases marcadoras
 
 ```csharp
 using Common.PostgreSql;
@@ -2303,7 +2303,7 @@ _logger.LogInformation("Customer {CustomerId} created", customer.Id);
 // TenantId = 'acme' and @Level = 'Error' and @t > Now() - 1h
 ```
 
-### 21.10 Observabilidad — traces y métricas listos
+### 21.10 Observabilidad - traces y métricas listos
 
 Después de `AddObservability`, la API expone automáticamente:
 

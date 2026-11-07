@@ -1,4 +1,4 @@
-﻿# 03 · Azure DevOps Pipelines — CI/CD
+﻿# 03 - Azure DevOps Pipelines - CI/CD
 
 ## Problema que resuelve
 
@@ -17,7 +17,7 @@ Azure DevOps Pipelines automatiza el ciclo completo de integración y entrega co
 | Variable group | conjunto de variables/secretos reutilizables entre pipelines |
 | Service connection | credencial almacenada para conectarse a Azure, Docker Hub, etc. |
 
-## Pipeline CI — validación en PR
+## Pipeline CI - validación en PR
 
 ```yaml
 # azure-pipelines-ci.yml
@@ -62,7 +62,7 @@ steps:
       summaryFileLocation: '$(Agent.TempDirectory)/**/coverage.cobertura.xml'
 ```
 
-## Pipeline CD — build, push a ACR y deploy a App Service
+## Pipeline CD - build, push a ACR y deploy a App Service
 
 ```yaml
 # azure-pipelines-cd.yml

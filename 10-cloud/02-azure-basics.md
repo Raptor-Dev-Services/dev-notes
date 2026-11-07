@@ -1,4 +1,4 @@
-﻿# 02 · Azure — Servicios esenciales
+﻿# 02 - Azure - Servicios esenciales
 
 > Nota: no hay libro de Azure en la biblioteca actual. Este documento cubre los servicios equivalentes a los de AWS para el stack .NET.
 
@@ -15,7 +15,7 @@ Para equipos que despliegan en Azure en lugar de AWS, los servicios equivalentes
 | Resource Group | contenedor lógico para agrupar recursos | (no tiene equivalente directo) |
 | Subscription | unidad de facturación y acceso | AWS Account |
 
-## App Service — cómputo para contenedores y código
+## App Service - cómputo para contenedores y código
 
 Equivalente a EC2 + ECS para aplicaciones web.
 
@@ -102,7 +102,7 @@ az storage blob upload \
   --file ./logo.png
 ```
 
-## Managed Identity — sin credenciales en código
+## Managed Identity - sin credenciales en código
 
 Equivalente a IAM Roles. Permite que App Service, AKS o Azure Functions accedan a otros servicios Azure sin almacenar credenciales.
 

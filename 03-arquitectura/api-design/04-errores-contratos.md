@@ -1,4 +1,4 @@
-﻿# 04 — Errores y Contratos: Diseñar Respuestas de Error Útiles
+﻿# 04 - Errores y Contratos: Diseñar Respuestas de Error Útiles
 
 Una API bien diseñada comunica los errores de forma que el cliente pueda entenderlos y reaccionar correctamente.
 
@@ -27,7 +27,7 @@ Una API bien diseñada comunica los errores de forma que el cliente pueda entend
 
 ## Errores del cliente (4xx) vs del servidor (5xx)
 
-### 4xx — el cliente debe cambiar algo
+### 4xx - el cliente debe cambiar algo
 
 El cliente envió algo incorrecto. Reintentar la misma request no ayuda: debe corregir primero.
 
@@ -64,7 +64,7 @@ El cliente envió algo incorrecto. Reintentar la misma request no ayuda: debe co
    → Cliente: esperar Retry-After segundos y reintentar
 ```
 
-### 5xx — el servidor falló
+### 5xx - el servidor falló
 
 El cliente no puede hacer nada. Reintentar puede funcionar (si es un error transitorio).
 
@@ -76,7 +76,7 @@ El cliente no puede hacer nada. Reintentar puede funcionar (si es un error trans
 
 ---
 
-## Errores de validación — detalle por campo
+## Errores de validación - detalle por campo
 
 El error de validación más útil incluye exactamente qué campo falló y por qué:
 
@@ -105,7 +105,7 @@ El error de validación más útil incluye exactamente qué campo falló y por q
 
 ---
 
-## Error codes — máquina-legibles
+## Error codes - máquina-legibles
 
 Además del status HTTP, un `code` string permite al cliente distinguir entre errores del mismo status:
 
@@ -135,7 +135,7 @@ public sealed record InsertExampleUserConflictFailure(string Message)
 
 ---
 
-## Contratos claros — qué puede esperar el cliente
+## Contratos claros - qué puede esperar el cliente
 
 ### Documentar qué puede fallar
 
@@ -166,7 +166,7 @@ public async Task<IActionResult> Insert([FromBody] InsertExampleUserBody body, C
 
 ---
 
-## Mensajes de error — qué incluir y qué no
+## Mensajes de error - qué incluir y qué no
 
 ### Incluir
 

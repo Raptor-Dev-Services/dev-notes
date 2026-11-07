@@ -1,10 +1,10 @@
-# 20 — Memoria y Garbage Collector en .NET
+# 20 - Memoria y Garbage Collector en .NET
 
 Entender cómo .NET gestiona la memoria permite escribir código que no presiona innecesariamente al GC y evitar memory leaks en aplicaciones de larga duración.
 
 ---
 
-## Stack vs Heap — dónde viven los datos
+## Stack vs Heap - dónde viven los datos
 > Fuente: *Effective .NET Memory Management*: Ch.1 The Basics of .NET Memory
 
 ```
@@ -49,7 +49,7 @@ Console.WriteLine($"Total memory: {GC.GetTotalMemory(forceFullCollection: false)
 
 ---
 
-## Memory Leaks — causas comunes en .NET
+## Memory Leaks - causas comunes en .NET
 
 A diferencia de C/C++, en .NET los leaks ocurren cuando el GC no puede recolectar objetos que ya no se necesitan.
 
@@ -157,7 +157,7 @@ public sealed class MyBackgroundService : BackgroundService
 
 ---
 
-## IDisposable — liberar recursos no gestionados
+## IDisposable - liberar recursos no gestionados
 
 Los recursos no gestionados (conexiones de BD, streams, sockets) deben liberarse explícitamente.
 
@@ -225,7 +225,7 @@ var user = await repo.GetByPublicIdAsync(id, ct);
 
 ---
 
-## Value Types vs Reference Types — elegir bien
+## Value Types vs Reference Types - elegir bien
 
 ```csharp
 // Bien: Usar struct para Value Objects pequeños e inmutables
@@ -266,7 +266,7 @@ public readonly record struct UserId(Guid Value)
 
 ---
 
-## ObjectPool — reutilizar objetos costosos
+## ObjectPool - reutilizar objetos costosos
 > Fuente: *Effective .NET Memory Management*: Ch.2 Object Allocation and Deallocation
 
 Crear y destruir objetos repetidamente presiona al GC. Un pool mantiene instancias listas para reutilizar, eliminando el costo de allocación y recolección en hot paths.
@@ -309,7 +309,7 @@ Usar `ObjectPool<T>` para objetos costosos de crear (regex compilados, conexione
 
 ---
 
-## ArrayPool — reutilizar arrays grandes
+## ArrayPool - reutilizar arrays grandes
 > Fuente: *Effective .NET Memory Management*: Ch.2 Object Allocation and Deallocation
 
 Arrays de más de 85 KB van al LOH (Large Object Heap), que el GC no compacta. `ArrayPool<T>` permite reutilizarlos sin generar presión al LOH.
@@ -336,7 +336,7 @@ Regla práctica: cualquier array temporal mayor a ~80 KB debe venir de `ArrayPoo
 
 ---
 
-## WeakReference — referenciar sin prevenir la recolección
+## WeakReference - referenciar sin prevenir la recolección
 > Fuente: *Effective .NET Memory Management*: Ch.2 Object Allocation and Deallocation
 
 Una referencia débil permite mantener un puntero a un objeto sin impedir que el GC lo recolecte cuando no hay otras referencias fuertes.
@@ -446,16 +446,16 @@ builder.Services.AddOpenTelemetry()
 |---------|-----------|
 | Garbage Collector | Componente del runtime de .NET que gestiona la memoria automáticamente liberando objetos sin referencias |
 | Generaciones | División del heap en Gen 0, Gen 1 y Gen 2 según la edad y supervivencia de los objetos |
-| Gen 0 | Generación donde se alocan los objetos nuevos — la GC collection más frecuente y barata |
-| Large Object Heap | Segmento del heap para objetos mayores a 85 KB — raramente compactado, propenso a fragmentación |
+| Gen 0 | Generación donde se alocan los objetos nuevos - la GC collection más frecuente y barata |
+| Large Object Heap | Segmento del heap para objetos mayores a 85 KB - raramente compactado, propenso a fragmentación |
 | IDisposable | Interfaz que implementan los objetos con recursos no administrados para liberarlos en Dispose() |
 | IAsyncDisposable | Variante asíncrona de IDisposable para recursos que requieren liberación asíncrona (streams, conexiones) |
-| WeakReference\<T\> | Referencia que no impide al GC recolectar el objeto — útil para cachés que ceden memoria bajo presión |
+| WeakReference\<T\> | Referencia que no impide al GC recolectar el objeto - útil para cachés que ceden memoria bajo presión |
 | ObjectPool\<T\> | Pool de objetos para reutilizar instancias costosas de crear y evitar presión en el GC |
 | ArrayPool\<T\> | Pool de arrays para reutilizar buffers y evitar allocations en el LOH |
 | Memory Leak | Situación donde la memoria crece indefinidamente porque objetos no se liberan correctamente |
 | Captive Dependency | Singleton que retiene una dependencia Scoped, causando que el Scoped nunca sea recolectado |
-| Finalizador | Método llamado por el GC antes de recolectar un objeto — usar solo como salvaguarda, preferir Dispose() |
+| Finalizador | Método llamado por el GC antes de recolectar un objeto - usar solo como salvaguarda, preferir Dispose() |
 
 ---
 

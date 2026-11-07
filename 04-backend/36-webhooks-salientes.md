@@ -1,4 +1,4 @@
-# 36 — Webhooks Salientes
+# 36 - Webhooks Salientes
 
 Los webhooks salientes permiten que el SaaS notifique a los sistemas de los tenants cuando ocurren eventos relevantes: "una orden fue creada", "un pago fue procesado", "un usuario fue agregado". El tenant registra una URL en el SaaS y el SaaS hace un POST a esa URL cuando ocurre el evento.
 
@@ -439,10 +439,10 @@ public async Task<List<WebhookEndpoint>> GetByTenantAndEventAsync(
 | Backoff Exponencial | Estrategia de reintento donde el tiempo entre intentos crece exponencialmente: 1min, 2min, 4min |
 | WebhookDeliveryWorker | BackgroundService que procesa la cola de deliveries pendientes y ejecuta los reintentos |
 | WebhookPublisher | Servicio que encola un WebhookDelivery cuando ocurre un evento relevante en el SaaS |
-| X-Webhook-Signature | Header HTTP que contiene la firma HMAC-SHA256 del payload — el receptor la verifica |
+| X-Webhook-Signature | Header HTTP que contiene la firma HMAC-SHA256 del payload - el receptor la verifica |
 | FixedTimeEquals | Comparación en tiempo constante de strings para prevenir timing attacks al verificar firmas |
-| MaxAttempts | Límite de reintentos antes de marcar la entrega como Exhausted — típicamente 5 intentos |
-| Webhook Secret | Secreto único por tenant usado para firmar y verificar los payloads — nunca compartido entre tenants |
+| MaxAttempts | Límite de reintentos antes de marcar la entrega como Exhausted - típicamente 5 intentos |
+| Webhook Secret | Secreto único por tenant usado para firmar y verificar los payloads - nunca compartido entre tenants |
 | Event Type | Tipo de evento que disparó el webhook: tenant.user.created, payment.succeeded, etc. |
 
 ---

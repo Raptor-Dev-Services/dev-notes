@@ -1,4 +1,4 @@
-# 32 — Stripe: Suscripciones y Facturación
+# 32 - Stripe: Suscripciones y Facturación
 
 Stripe es el estándar de facto para cobros en SaaS. Maneja suscripciones recurrentes, cambios de plan, periodos de prueba, métodos de pago y webhooks de estado de cobro. La integración correcta conecta el ciclo de vida del tenant con el ciclo de vida de la suscripción en Stripe.
 
@@ -453,10 +453,10 @@ Ver `04-backend/26-tenant-onboarding.md` para cuándo se crea el Customer de Str
 
 | Término | Definición |
 |---------|-----------|
-| Stripe Customer | Objeto de Stripe que representa a un tenant — almacena métodos de pago y historial de facturación |
+| Stripe Customer | Objeto de Stripe que representa a un tenant - almacena métodos de pago y historial de facturación |
 | Subscription | Objeto de Stripe que modela la suscripción activa de un tenant a un plan con precio recurrente |
 | Price | Objeto de Stripe que define el costo de un plan: monto, moneda, intervalo de facturación |
-| Invoice | Factura generada por Stripe para cada ciclo de facturación — puede ser paid, open o void |
+| Invoice | Factura generada por Stripe para cada ciclo de facturación - puede ser paid, open o void |
 | SetupIntent | Objeto de Stripe para registrar un método de pago sin cobrar inmediatamente |
 | CheckoutSession | Sesión de Stripe que redirige al usuario a la página de pago alojada en Stripe |
 | BillingPortal | Portal de Stripe donde el cliente puede gestionar su suscripción, tarjeta e historial de pagos |

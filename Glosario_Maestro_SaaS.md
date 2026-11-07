@@ -1,11 +1,11 @@
 # Glosario Maestro de Capacitación Técnica
 ## Construcción de SaaS Multi-Tenant en Cloud
 
-> ERPs · CRMs · Plataformas Digitales · Productos SaaS  
-> Stack completo: .NET · React · SQL/PostgreSQL · Docker · DevOps · AWS/Azure · Multi-Tenancy · Patrones de diseño
+> ERPs - CRMs - Plataformas Digitales - Productos SaaS  
+> Stack completo: .NET - React - SQL/PostgreSQL - Docker - DevOps - AWS/Azure - Multi-Tenancy - Patrones de diseño
 
 **Instructor:** Ing. Rogelio Arriaga Gonzalez  
-M.I. en Gestión de Sistemas de TI · Especialista en .NET, arquitectura backend y sistemas empresariales
+M.I. en Gestión de Sistemas de TI - Especialista en .NET, arquitectura backend y sistemas empresariales
 
 ---
 
@@ -42,7 +42,7 @@ El alcance no es académico: cada concepto incluido aquí es uno que el desarrol
 
 ---
 
-## Dominio 1 · Fundamentos de Ingeniería de Software
+## Dominio 1 - Fundamentos de Ingeniería de Software
 
 ### 1.1 Paradigmas de programación
 
@@ -92,11 +92,11 @@ El sistema reacciona a flujos de eventos. Modelo natural de interfaces modernas 
 
 | Principio | Significado |
 |---|---|
-| S — Single Responsibility | Cada clase tiene una sola razón para cambiar. |
-| O — Open/Closed | Abierto a extensión, cerrado a modificación. |
-| L — Liskov Substitution | Una subclase debe poder usarse donde se espera la clase padre sin romper el comportamiento. |
-| I — Interface Segregation | Mejor varias interfaces específicas que una grande. |
-| D — Dependency Inversion | Depender de abstracciones, no de implementaciones concretas. |
+| S - Single Responsibility | Cada clase tiene una sola razón para cambiar. |
+| O - Open/Closed | Abierto a extensión, cerrado a modificación. |
+| L - Liskov Substitution | Una subclase debe poder usarse donde se espera la clase padre sin romper el comportamiento. |
+| I - Interface Segregation | Mejor varias interfaces específicas que una grande. |
+| D - Dependency Inversion | Depender de abstracciones, no de implementaciones concretas. |
 
 ### 1.5 Otros principios fundamentales
 
@@ -114,7 +114,7 @@ El sistema reacciona a flujos de eventos. Modelo natural de interfaces modernas 
 
 ---
 
-## Dominio 2 · Programación orientada a objetos y patrones de diseño
+## Dominio 2 - Programación orientada a objetos y patrones de diseño
 
 ### 2.1 Conceptos centrales de POO
 
@@ -212,7 +212,7 @@ El sistema reacciona a flujos de eventos. Modelo natural de interfaces modernas 
 
 ---
 
-## Dominio 3 · Arquitectura SaaS Multi-Tenant
+## Dominio 3 - Arquitectura SaaS Multi-Tenant
 
 ### 3.1 Conceptos fundamentales
 
@@ -341,7 +341,7 @@ El sistema reacciona a flujos de eventos. Modelo natural de interfaces modernas 
 
 ---
 
-## Dominio 4 · Backend con .NET y C#
+## Dominio 4 - Backend con .NET y C#
 
 ### 4.1 Conceptos del runtime
 
@@ -443,7 +443,7 @@ public sealed class QueryCachingBehavior<TRequest, TResponse>
 
 **Keycloak**: Servidor de identidad open-source. Implementa OAuth 2.0 y OIDC. Soporta multi-tenancy por realms. Útil para M2M (machine-to-machine) con client credentials flow.
 
-### 4.6 SignalR — comunicación en tiempo real
+### 4.6 SignalR - comunicación en tiempo real
 
 **SignalR**: Empuja datos del servidor al cliente sin polling. Base de notificaciones, dashboards en vivo, chat.
 
@@ -535,7 +535,7 @@ public sealed class QueryCachingBehavior<TRequest, TResponse>
 
 ---
 
-## Dominio 5 · Bases de datos relacionales
+## Dominio 5 - Bases de datos relacionales
 
 ### 5.1 Conceptos fundamentales
 
@@ -639,7 +639,7 @@ Patrones de alerta en un plan:
 
 ---
 
-## Dominio 6 · Frontend con React, Vite y Tailwind
+## Dominio 6 - Frontend con React, Vite y Tailwind
 
 ### 6.1 React: conceptos centrales
 
@@ -724,7 +724,7 @@ Patrones de alerta en un plan:
 
 ---
 
-## Dominio 7 · Control de versiones con Git
+## Dominio 7 - Control de versiones con Git
 
 ### 7.1 Conceptos centrales
 
@@ -816,7 +816,7 @@ Versiones pre-release: `1.2.0-alpha.1`, `1.2.0-rc.2`.
 
 ---
 
-## Dominio 8 · Contenedores con Docker
+## Dominio 8 - Contenedores con Docker
 
 ### 8.1 Conceptos centrales
 
@@ -922,7 +922,7 @@ Para muchos SaaS, Docker Compose en uno o dos servidores es suficiente durante a
 
 ---
 
-## Dominio 9 · CI/CD y automatización
+## Dominio 9 - CI/CD y automatización
 
 ### 9.1 Conceptos
 
@@ -1009,7 +1009,7 @@ Los agentes self-hosted acceden a la red interna, tienen herramientas precargada
 
 ---
 
-## Dominio 10 · Cloud, Linux y operación SaaS
+## Dominio 10 - Cloud, Linux y operación SaaS
 
 ### 10.1 Linux esencial
 
@@ -1192,7 +1192,7 @@ Los agentes self-hosted acceden a la red interna, tienen herramientas precargada
 
 ---
 
-## Dominio 11 · Vibe Coding y agentes de IA
+## Dominio 11 - Vibe Coding y agentes de IA
 
 ### 11.1 Conceptos
 
@@ -1280,7 +1280,7 @@ LLMOps:  LLM no determinista → evaluación semántica → fine-tuning / prompt
 
 ---
 
-## Cierre · Mentalidad de ingeniero, no de programador
+## Cierre - Mentalidad de ingeniero, no de programador
 
 La diferencia entre escribir código y construir productos no está en saber sintaxis. Está en cómo se toman decisiones bajo incertidumbre, cómo se comunica con el equipo, y cómo se piensa el sistema más allá del módulo en el que se está trabajando.
 

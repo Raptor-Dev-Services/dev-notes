@@ -1,4 +1,4 @@
-﻿# 07 — Bridge
+﻿# 07 - Bridge
 
 **Categoría:** Estructural
 
@@ -282,7 +282,7 @@ Este es exactamente el Bridge: `IExampleUserRepository` (abstracción) ↔ `Exam
 | `IExampleUserRepository` | En el proyecto, la interfaz del repositorio actúa como la abstracción puenteada a `ExampleUserRepository` (implementación) |
 | Jerarquía independiente | Cada lado del bridge (abstracción e implementación) tiene su propia jerarquía que puede extenderse sin afectar al otro |
 | Canal de notificación | Ejemplo práctico del bridge: las notificaciones (abstracción) se desacoplan del medio de envío (implementación: email, SMS, Slack) |
-| Inyección de dependencias | Mecanismo por el cual se conectan abstracción e implementación en tiempo de ejecución — equivalente al "puente" |
+| Inyección de dependencias | Mecanismo por el cual se conectan abstracción e implementación en tiempo de ejecución - equivalente al "puente" |
 
 ---
 

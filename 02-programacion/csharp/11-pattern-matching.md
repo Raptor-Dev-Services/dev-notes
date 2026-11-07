@@ -316,7 +316,7 @@ string seqUri = environment switch
 
 ---
 
-## Exhaustiveness — el compilador detecta casos faltantes
+## Exhaustiveness - el compilador detecta casos faltantes
 
 ```csharp
 // Si todos los posibles valores son conocidos (enum, sealed hierarchy),

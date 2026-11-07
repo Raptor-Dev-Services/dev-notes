@@ -1,4 +1,4 @@
-# 12 — Rate Limiting en ASP.NET Core
+# 12 - Rate Limiting en ASP.NET Core
 
 Rate limiting protege la API contra abuso, ataques DDoS y tenants que saturan recursos. Desde .NET 7 hay middleware nativo en `Microsoft.AspNetCore.RateLimiting`.
 
@@ -12,7 +12,7 @@ Rate limiting protege la API contra abuso, ataques DDoS y tenants que saturan re
 | Estrategia | Cómo funciona | Cuándo usar |
 |------------|--------------|-------------|
 | **Fixed Window** | X requests por ventana fija (ej: 100/min). Al cambiar de ventana, el contador se reinicia. | Rate limiting general simple |
-| **Sliding Window** | Ventana móvil dividida en segmentos. Más justo — evita picos al inicio de la ventana. | Rate limiting justo por cliente |
+| **Sliding Window** | Ventana móvil dividida en segmentos. Más justo - evita picos al inicio de la ventana. | Rate limiting justo por cliente |
 | **Token Bucket** | Tokens se regeneran a tasa fija. Permite ráfagas controladas. | APIs que permiten picos cortos |
 | **Concurrency** | Limita requests simultáneos activos (no por tiempo). | Endpoints costosos (reportes, exports) |
 
@@ -147,17 +147,17 @@ El doc `33-rate-limiting-tenant.md` cubre la implementación específica para mu
 | Término | Definición |
 |---------|-----------|
 | Rate Limiting | Mecanismo que limita la cantidad de requests que un cliente puede hacer en un período de tiempo |
-| Fixed Window | Algoritmo que cuenta requests en ventanas de tiempo fijas — reinicia el contador al inicio de cada ventana |
-| Sliding Window | Algoritmo que evalúa los requests en una ventana deslizante — evita el burst al inicio de ventana |
-| Token Bucket | Algoritmo que otorga tokens a tasa fija — los bursts se permiten hasta agotar el bucket |
+| Fixed Window | Algoritmo que cuenta requests en ventanas de tiempo fijas - reinicia el contador al inicio de cada ventana |
+| Sliding Window | Algoritmo que evalúa los requests en una ventana deslizante - evita el burst al inicio de ventana |
+| Token Bucket | Algoritmo que otorga tokens a tasa fija - los bursts se permiten hasta agotar el bucket |
 | Concurrency Limiter | Limita el número de requests procesados simultáneamente, no la tasa de llegada |
-| RateLimitPartition | Segmento de rate limiting — permite límites distintos por IP, usuario o tenant |
+| RateLimitPartition | Segmento de rate limiting - permite límites distintos por IP, usuario o tenant |
 | OnRejected | Callback invocado cuando un request es rechazado por superar el límite configurado |
 | 429 Too Many Requests | Código HTTP estándar devuelto cuando un cliente supera el rate limit |
 | Retry-After | Header HTTP incluido en respuestas 429 que indica cuándo el cliente puede reintentar |
 | EnableRateLimiting | Atributo para aplicar una política de rate limiting a un endpoint o controller específico |
 | DisableRateLimiting | Atributo para excluir un endpoint de todas las políticas de rate limiting globales |
-| Partition Key | Clave que identifica el segmento de rate limiting — puede ser IP, user_id o tenant_id |
+| Partition Key | Clave que identifica el segmento de rate limiting - puede ser IP, user_id o tenant_id |
 
 ---
 

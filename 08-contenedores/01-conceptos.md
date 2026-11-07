@@ -1,4 +1,4 @@
-﻿# 01 — Conceptos de Docker
+﻿# 01 - Conceptos de Docker
 
 > Fuente: *Docker: Up and Running 3rd Ed* (Sean Kane, Karl Matthias): Ch.1 Introduction to Docker
 
@@ -36,8 +36,8 @@ Tu máquina Windows/Mac/Linux
 
 | Concepto | Analogía | Descripción |
 |---------|---------|------------|
-| **Imagen** | Clase | Plantilla inmutable — define qué hay en el contenedor |
-| **Contenedor** | Instancia de la clase | Imagen en ejecución — tiene estado, puede modificarse |
+| **Imagen** | Clase | Plantilla inmutable - define qué hay en el contenedor |
+| **Contenedor** | Instancia de la clase | Imagen en ejecución - tiene estado, puede modificarse |
 | **Registry** | npm / NuGet | Repositorio de imágenes: Docker Hub, GHCR, ECR |
 | **Tag** | Versión | `postgres:17`, `mcr.microsoft.com/dotnet/aspnet:10.0` |
 
@@ -181,7 +181,7 @@ docker login ghcr.io -u USERNAME --password-stdin
 
 ---
 
-## Ambiente del contenedor — variables de entorno
+## Ambiente del contenedor - variables de entorno
 
 La forma principal de configurar una aplicación en un contenedor:
 
@@ -209,7 +209,7 @@ env_file:
 
 ---
 
-## `host.docker.internal` — conectar contenedor al host
+## `host.docker.internal`conectar contenedor al host
 
 ```
 Tu máquina (host)

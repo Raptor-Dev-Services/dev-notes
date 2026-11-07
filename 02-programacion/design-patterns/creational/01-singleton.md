@@ -1,4 +1,4 @@
-﻿# 01 — Singleton
+﻿# 01 - Singleton
 
 **Categoría:** Creacional
 
@@ -39,7 +39,7 @@ Singleton
 
 ---
 
-## Implementación — Non-Thread-Safe (simple, solo un hilo)
+## Implementación - Non-Thread-Safe (simple, solo un hilo)
 
 ```csharp
 public sealed class Singleton
@@ -70,7 +70,7 @@ Singleton s2 = Singleton.GetInstance();
 
 ---
 
-## Implementación — Thread-Safe (doble verificación con lock)
+## Implementación - Thread-Safe (doble verificación con lock)
 
 Del archivo fuente `ThreadSafe/Program.cs`:
 
@@ -113,7 +113,7 @@ class Singleton
 
 ---
 
-## La forma moderna en C# — `Lazy<T>`
+## La forma moderna en C# - `Lazy<T>`
 
 ```csharp
 public sealed class Singleton
@@ -136,7 +136,7 @@ var instance = Singleton.Instance;
 
 ---
 
-## Singleton en ASP.NET Core — via DI
+## Singleton en ASP.NET Core - via DI
 
 En .NET moderno, el patrón Singleton se implementa generalmente a través del contenedor de DI, **no manualmente**:
 
@@ -184,7 +184,7 @@ services.AddSingleton<MainDbConnectionFactory>();
 
 ## Problemas comunes
 
-### Captive Dependency — el error más peligroso
+### Captive Dependency - el error más peligroso
 
 ```csharp
 // Mal: Singleton consume un Scoped — el Scoped queda "capturado" en el Singleton
@@ -201,7 +201,7 @@ public class MyService  // registrado como Singleton
 // Resultado: un repositorio compartido por TODAS las requests. Comportamiento indefinido.
 ```
 
-**Solución:** Ver documento [09 · DI Lifetimes](../../csharp/09-lifetimes.md).
+**Solución:** Ver documento [09 - DI Lifetimes](../../csharp/09-lifetimes.md).
 
 ---
 
@@ -213,7 +213,7 @@ public class MyService  // registrado como Singleton
 | Thread-safety | Debes implementarla | El container lo maneja |
 | Lazy init | Manual con `Lazy<T>` | Automático |
 | Ciclo de vida | Para siempre | Para siempre (mismo resultado) |
-| Recomendado | Raro, casos muy específicos | Sí — uso normal en .NET |
+| Recomendado | Raro, casos muy específicos | Sí - uso normal en .NET |
 
 
 ---

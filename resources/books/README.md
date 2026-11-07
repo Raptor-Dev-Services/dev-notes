@@ -5,7 +5,7 @@
 
 ---
 
-## 01 — Fundamentos e Ingeniería de Software
+## 01 - Fundamentos e Ingeniería de Software
 > Carpeta: `01_Fundamentos_Ingenieria_Software`
 
 | Libro | Autor |
@@ -18,7 +18,7 @@
 
 ---
 
-## 02 — Programación, Patrones y Diseño
+## 02 - Programación, Patrones y Diseño
 > Carpeta: `02_Programacion_Patrones_Diseno`
 
 | Libro | Autor |
@@ -27,13 +27,13 @@
 | Clean Code with C# (2ª ed.) | Jason Alls |
 | Refactoring with C# | Matt Eland |
 | 50 Algorithms Every Programmer Should Know | Imran Ahmad |
-| Patrones de Diseño (GoF — ed. en español) | Gamma, Helm, Johnson, Vlissides |
+| Patrones de Diseño (GoF - ed. en español) | Gamma, Helm, Johnson, Vlissides |
 | Programación Orientada a Objetos | Diego Ruiz |
 | Fundamentos de Programación (4ª ed.) | Luis Joyanes Aguilar |
 
 ---
 
-## 03 — Arquitectura SaaS / Multi-Tenant
+## 03 - Arquitectura SaaS / Multi-Tenant
 > Carpeta: `03_Arquitectura_SaaS_MultiTenant`
 
 | Libro | Autor |
@@ -49,7 +49,7 @@
 
 ---
 
-## 04 — Backend .NET / C#
+## 04 - Backend .NET / C#
 > Carpeta: `04_Backend_NET_CSharp`
 
 | Libro | Autor |
@@ -69,21 +69,21 @@
 
 ---
 
-## 05 — Bases de Datos
+## 05 - Bases de Datos
 > Carpeta: `05_Bases_de_Datos`
 
 | Libro | Autor |
 |-------|-------|
-| Empezando con PostgreSQL | — |
-| Empezando con SQL | — |
-| Fundamentos de SQL | — |
+| Empezando con PostgreSQL | - |
+| Empezando con SQL | - |
+| Fundamentos de SQL | - |
 | Procesamiento de Bases de Datos (8ª ed.) | David M. Kroenke |
-| Empezando con Microsoft SQL Server | — |
-| Empezando con MongoDB | — |
+| Empezando con Microsoft SQL Server | - |
+| Empezando con MongoDB | - |
 
 ---
 
-## 06 — Frontend (React / Vite / Tailwind / TypeScript)
+## 06 - Frontend (React / Vite / Tailwind / TypeScript)
 > Carpeta: `06_Frontend_React_Vite_Tailwind`
 
 | Libro | Autor |
@@ -102,21 +102,21 @@
 | React Anti-Patterns | Juntao Qiu | [07](../../06-frontend/07-capa-dominio-acl.md), [09](../../06-frontend/09-componentes-headless.md) |
 | React Design Patterns and Best Practices (5ª ed., React 19) | Carlos Santana Roldán | [08](../../06-frontend/08-estado-donde-vive.md) |
 | React Application Architecture for Production (2ª ed.) | Alan Alickovic, Anthony Alicea | [10](../../06-frontend/10-fronteras-import.md) |
-| React Key Concepts (2ª ed.) | Maximilian Schwarzmüller | — |
-| Learn React with TypeScript (3ª ed.) | Carl Rippon | — |
-| Learn React Hooks (2ª ed.) | Daniel Bugl | — |
-| Modern Full-Stack React Projects | Daniel Bugl | — |
-| React and React Native (6ª ed.) | Mikhail Sakhniuk, Rodrigo Lobenwein, Adam Boduch | — |
-| Simplifying State Management in React Native | Aleksandra Desmurs-Linczewska | — |
-| React Interview Guide | Sudheer Jonna, Andrew Baisden | — |
-| TypeScript 5 Design Patterns and Best Practices (2ª ed.) | Theofanis Despoudis | — |
-| Clean Code with TypeScript | Rukevwe Ojigbo, Sanjay Krishna Anbalagan | — |
-| Full Stack Development with Spring Boot 3 and React (4ª ed.) | Juha Hinkula | — |
-| Full-Stack Flask and React | Olatunde Adedeji | — |
+| React Key Concepts (2ª ed.) | Maximilian Schwarzmüller | - |
+| Learn React with TypeScript (3ª ed.) | Carl Rippon | - |
+| Learn React Hooks (2ª ed.) | Daniel Bugl | - |
+| Modern Full-Stack React Projects | Daniel Bugl | - |
+| React and React Native (6ª ed.) | Mikhail Sakhniuk, Rodrigo Lobenwein, Adam Boduch | - |
+| Simplifying State Management in React Native | Aleksandra Desmurs-Linczewska | - |
+| React Interview Guide | Sudheer Jonna, Andrew Baisden | - |
+| TypeScript 5 Design Patterns and Best Practices (2ª ed.) | Theofanis Despoudis | - |
+| Clean Code with TypeScript | Rukevwe Ojigbo, Sanjay Krishna Anbalagan | - |
+| Full Stack Development with Spring Boot 3 and React (4ª ed.) | Juha Hinkula | - |
+| Full-Stack Flask and React | Olatunde Adedeji | - |
 
 ---
 
-## 07 — Control de Versiones / Git
+## 07 - Control de Versiones / Git
 > Carpeta: `07_Control_Versiones_Git`
 
 | Libro | Autor |
@@ -127,7 +127,7 @@
 
 ---
 
-## 08 — Contenedores / Docker / Kubernetes
+## 08 - Contenedores / Docker / Kubernetes
 > Carpeta: `08_Contenedores_Docker`
 
 | Libro | Autor |
@@ -140,7 +140,7 @@
 
 ---
 
-## 09 — CI/CD y Pipelines
+## 09 - CI/CD y Pipelines
 > Carpeta: `09_CICD_Pipelines`
 
 | Libro | Autor |
@@ -153,7 +153,7 @@
 
 ---
 
-## 10 — Cloud, Linux y Operaciones
+## 10 - Cloud, Linux y Operaciones
 > Carpeta: `10_Cloud_Linux_Operacion`, con subcarpetas `01_Linux` y `02_AWS_Azure`
 
 ### Linux
@@ -169,13 +169,13 @@
 ### AWS / Azure
 | Libro | Autor |
 |-------|-------|
-| AWS Certified Solutions Architect — Associate | Gabriel Ramuglia |
-| AWS Certified Solutions Architect — Professional SAP-C02 | Cybellium |
-| AWS Certified Developer — Associate (2ª ed.) | Vipul Tankariya |
-| AWS Certified SysOps Administrator — Associate | Stuart Scott |
+| AWS Certified Solutions Architect - Associate | Gabriel Ramuglia |
+| AWS Certified Solutions Architect - Professional SAP-C02 | Cybellium |
+| AWS Certified Developer - Associate (2ª ed.) | Vipul Tankariya |
+| AWS Certified SysOps Administrator - Associate | Stuart Scott |
 | AWS Certified Cloud Practitioner | Gabriel Ramuglia |
-| AWS Certified Advanced Networking — Specialty | Marko Sluga |
-| AWS Certified Security — Specialty SCS-C02 | Adam Book |
+| AWS Certified Advanced Networking - Specialty | Marko Sluga |
+| AWS Certified Security - Specialty SCS-C02 | Adam Book |
 | Security and Microservice Architecture on AWS | Gaurav Raje |
 
 ### Seguridad
@@ -197,7 +197,7 @@
 
 ---
 
-## 11 — IA y Vibe Coding
+## 11 - IA y Vibe Coding
 > Carpeta: `11_IA_Vibe_Coding`
 
 | Libro | Autor |

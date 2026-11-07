@@ -1,4 +1,4 @@
-# 04 — Terraform: Infraestructura como código
+# 04 - Terraform: Infraestructura como código
 
 Terraform permite definir infraestructura cloud (AWS, Azure, GCP) en archivos de configuración versionables y reproducibles.
 
@@ -235,7 +235,7 @@ terraform validate
 
 ---
 
-## Outputs — exponer valores para otros módulos
+## Outputs - exponer valores para otros módulos
 
 ```hcl
 # outputs.tf
@@ -440,7 +440,7 @@ git push --follow-tags
 
 El bucket S3 y la tabla DynamoDB para state/locking se crean con Terraform usando un proceso en dos pasos (porque el bucket aún no existe cuando se crea):
 
-### Paso 1 — crear los recursos con backend local
+### Paso 1 - crear los recursos con backend local
 
 ```hcl
 # infra/global/state-backend/main.tf
@@ -494,7 +494,7 @@ terraform init
 terraform apply
 ```
 
-### Paso 2 — migrar al backend remoto
+### Paso 2 - migrar al backend remoto
 
 ```hcl
 # infra/global/state-backend/main.tf — agregar backend al mismo archivo
@@ -518,7 +518,7 @@ A partir de este punto, todos los demás módulos de Terraform pueden usar direc
 
 ---
 
-## `terraform_remote_state` — leer outputs de otro módulo
+## `terraform_remote_state`leer outputs de otro módulo
 > Fuente: *Terraform: Up and Running* (Brikman): Ch.3 The terraform_remote_state Data Source
 
 Cuando la infraestructura está dividida en módulos separados (VPC, RDS, ECS), un módulo puede leer los outputs de otro a través del state remoto sin acoplar los archivos `.tf`.
@@ -567,7 +567,7 @@ El data source `terraform_remote_state` es **solo lectura**. No puede modificar 
 
 ---
 
-## Partial backend configuration — reducir copy-paste
+## Partial backend configuration - reducir copy-paste
 > Fuente: *Terraform: Up and Running* (Brikman): Ch.3 Limitations with Backends
 
 El bloque `backend "s3"` no acepta variables de Terraform (`var.bucket_name` no funciona). Para evitar copiar el bucket name y region en cada módulo, se usa partial configuration:
@@ -597,7 +597,7 @@ terraform init -backend-config=../../../backend.hcl
 
 ---
 
-## Aislamiento de ambientes — file layout vs workspaces
+## Aislamiento de ambientes - file layout vs workspaces
 > Fuente: *Terraform: Up and Running* (Brikman): Ch.3 How to Manage Terraform State
 
 ### Por qué NO usar workspaces para aislar ambientes
@@ -677,32 +677,32 @@ terraform {
 
 | Término | Definición |
 |---------|-----------|
-| Provider | plugin de Terraform que conecta con un cloud (aws, azurerm, google) — gestiona autenticación y API calls |
+| Provider | plugin de Terraform que conecta con un cloud (aws, azurerm, google) - gestiona autenticación y API calls |
 | Resource | bloque que define un componente de infraestructura real (`aws_ecs_service`, `aws_db_instance`) |
-| Data Source | bloque que lee recursos existentes sin crearlos — útil para referenciar VPCs o AMIs existentes |
-| Variable | parámetro de entrada del módulo o del root module — permite reutilizar configuración |
+| Data Source | bloque que lee recursos existentes sin crearlos - útil para referenciar VPCs o AMIs existentes |
+| Variable | parámetro de entrada del módulo o del root module - permite reutilizar configuración |
 | Output | valor que expone un módulo para que otros módulos o el usuario lo consuman |
 | State | archivo que mapea los recursos de Terraform con los recursos reales del cloud (`terraform.tfstate`) |
-| Remote State | estado guardado en un backend externo (S3) en lugar de localmente — necesario para equipos |
+| Remote State | estado guardado en un backend externo (S3) en lugar de localmente - necesario para equipos |
 | Backend | sistema que almacena el state remotamente (S3, Azure Blob, Terraform Cloud) |
 | State Locking | mecanismo para evitar ejecuciones simultáneas que corrompan el state (DynamoDB en AWS) |
 | Módulo | carpeta con archivos `.tf` que encapsula un conjunto de recursos reutilizables |
-| Root Module | el directorio donde se ejecuta `terraform apply` — punto de entrada de la ejecución |
+| Root Module | el directorio donde se ejecuta `terraform apply`punto de entrada de la ejecución |
 | Plan | operación de solo lectura que calcula qué recursos se crearán, modificarán o destruirán |
 | Apply | operación que ejecuta el plan y materializa los cambios en el cloud |
-| `terraform.tfvars` | archivo que provee valores para las variables — nunca commitear si contiene secretos |
-| `terraform init` | descarga providers, configura el backend y los módulos — siempre el primer paso |
+| `terraform.tfvars` | archivo que provee valores para las variables - nunca commitear si contiene secretos |
+| `terraform init` | descarga providers, configura el backend y los módulos - siempre el primer paso |
 | `terraform fmt` | formatea los archivos `.tf` con el estilo estándar de HCL |
 | `terraform validate` | valida la sintaxis y coherencia de la configuración sin contactar el cloud |
-| HCL | HashiCorp Configuration Language — el lenguaje declarativo de Terraform |
+| HCL | HashiCorp Configuration Language - el lenguaje declarativo de Terraform |
 | Workspace | contexto de ejecución alternativo (no recomendado para aislar ambientes) |
-| Sensitive | marca una variable u output como secreto — no se muestra en logs ni en plan output |
+| Sensitive | marca una variable u output como secreto - no se muestra en logs ni en plan output |
 | `depends_on` | declaración explícita de dependencia entre recursos cuando Terraform no la infiere |
 | Lifecycle | bloque de control que define `create_before_destroy`, `prevent_destroy` o `ignore_changes` |
 | `prevent_destroy` | lifecycle rule que impide que `terraform destroy` elimine un recurso crítico |
 | `terraform import` | importa un recurso existente (creado fuera de Terraform) al state actual |
 | `terraform taint` | (pre-v1.0) marca un recurso para ser recreado en el próximo apply; ahora `terraform apply -replace` |
-| `for_each` | meta-argumento para crear múltiples recursos desde un mapa — alternativa a `count` |
+| `for_each` | meta-argumento para crear múltiples recursos desde un mapa - alternativa a `count` |
 | `count` | meta-argumento para crear N copias de un recurso usando un número entero |
 | `locals` | bloque para definir valores intermedios reutilizables dentro de un módulo |
 | `terraform_remote_state` | data source para leer outputs del state de otro módulo remoto |

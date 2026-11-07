@@ -1,4 +1,4 @@
-﻿# 05 · Componentes primitivos
+﻿# 05 - Componentes primitivos
 
 ## Problema que resuelve
 
@@ -117,7 +117,7 @@ export default function Modal({ open, onClose, title, children, size = 'md' }) {
 npm install @headlessui/react @heroicons/react
 ```
 
-## AppNavbar — navegación principal
+## AppNavbar - navegación principal
 
 ```jsx
 // src/components/layout/AppNavbar.jsx
@@ -155,7 +155,7 @@ export default function AppNavbar() {
 
 `ui.layout.stickyTopBar` aplica `sticky top-0 backdrop-blur` para que la barra quede fija con efecto glassmorphism al hacer scroll.
 
-## AppShell — layout de página
+## AppShell - layout de página
 
 ```jsx
 // src/routes/AppRoutes.jsx
