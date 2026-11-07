@@ -169,7 +169,7 @@ Seq permite crear alertas que disparan un webhook cuando una condición se cumpl
 
 ## Prometheus — métricas
 
-Prometheus recoge métricas haciendo scraping (pull) a endpoints HTTP `/metrics` expuestos por las apps. Almacena series de tiempo y permite consultas con PromQL.
+Prometheus recoge métricas haciendo scraping (pull) a endpoints HTTP `/metrics` expuestos por las apps; también puede recibirlas empujadas por OTLP, como se ve al final de esta sección. Almacena series de tiempo y permite consultas con PromQL.
 
 ### Tipos de métricas
 
@@ -295,6 +295,46 @@ scrape_configs:
     static_configs:
       - targets: ["postgres-exporter:9187"]
 ```
+
+### Alternativa: empujar las métricas por OTLP
+
+El raspado no es la única entrada. Prometheus 3 trae un receptor OTLP: la app empuja sus métricas y no expone `/metrics`. Es el camino natural cuando la app ya usa OpenTelemetry, o cuando corre donde Prometheus no alcanza a rasparla. El receptor viene apagado: sin la bandera, `/api/v1/otlp/v1/metrics` responde 404.
+
+```yaml
+# docker-compose.yml, en el servicio prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.retention.time=30d'
+      - '--web.enable-otlp-receiver'
+```
+
+```csharp
+// dotnet add package OpenTelemetry.Extensions.Hosting
+// dotnet add package OpenTelemetry.Exporter.OpenTelemetryProtocol
+// dotnet add package OpenTelemetry.Instrumentation.AspNetCore
+builder.Services.AddOpenTelemetry()
+    .ConfigureResource(r => r.AddService("taskflow-api"))
+    .WithMetrics(m => m
+        .AddAspNetCoreInstrumentation()
+        .AddMeter("TaskFlow.Orders")
+        .AddOtlpExporter(o =>
+        {
+            o.Endpoint = new Uri("http://prometheus:9090/api/v1/otlp/v1/metrics");
+            o.Protocol = OtlpExportProtocol.HttpProtobuf;
+        }));
+
+// Métrica de negocio con la API estándar de .NET
+var meter   = new Meter("TaskFlow.Orders");
+var created = meter.CreateCounter<long>("taskflow.orders.created");
+created.Add(1);
+```
+
+Qué cambia respecto al raspado, medido con Prometheus 3.16 y OpenTelemetry 1.20:
+
+- El contador `taskflow.orders.created` llega como `taskflow_orders_created_total`: los puntos pasan a guiones bajos y se agrega el sufijo.
+- El nombre del servicio llega como etiqueta `job`.
+- La app exporta cada minuto por omisión, así que una métrica nueva no aparece de inmediato.
+- `/metrics` responde 404 y no hay objetivo de raspado. Sin raspado no existe la serie `up` de esa app: para saber si está viva hace falta otra señal, como su health check.
 
 ---
 
