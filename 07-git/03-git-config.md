@@ -21,7 +21,7 @@ El nivel local siempre gana sobre el global.
 
 ```bash
 git config --global user.name  "Rogelio Arriaga"
-git config --global user.email "rogelio@raptordev.io"
+git config --global user.email "tu-nombre@example.com"
 git config --global core.editor "code --wait"
 git config --global init.defaultBranch main
 git config --global pull.rebase false
@@ -39,7 +39,7 @@ Dentro del directorio del repositorio, sin `--global`:
 
 ```bash
 git config user.name  "Rogelio Arriaga"
-git config user.email "rogelio@cliente.com"
+git config user.email "tu-nombre@cliente.example"
 ```
 
 Esto escribe en `.git/config` y sobreescribe el valor global solo para ese repo.
@@ -52,7 +52,7 @@ Para cambiar de identidad automáticamente según la ruta del proyecto, usar `in
 # ~/.gitconfig
 [user]
     name  = Rogelio Arriaga
-    email = rogelio@personal.com
+    email = tu-nombre@personal.example
 
 [includeIf "gitdir:~/dev/trabajo/"]
     path = ~/.gitconfig-trabajo
@@ -65,14 +65,14 @@ Para cambiar de identidad automáticamente según la ruta del proyecto, usar `in
 # ~/.gitconfig-trabajo
 [user]
     name  = Rogelio Arriaga
-    email = rogelio@empresa.com
+    email = tu-nombre@empresa.example
 ```
 
 ```ini
 # ~/.gitconfig-cliente-a
 [user]
     name  = R. Arriaga
-    email = rarriaga@clientea.mx
+    email = tu-nombre@cliente-a.example
 ```
 
 La ruta en `gitdir:` debe terminar con `/`. Git usa la ruta del archivo `.git/` para decidir qué incluir.

@@ -147,7 +147,7 @@ builder.Services.AddAuthorization();
   "aud": ["{{PROJECT_SLUG}}-api", "account"],
   "exp": 1735000000,
   "iat": 1734999100,
-  "email": "rogelio@alfacorp.com",
+  "email": "ana@alfacorp.com",
   "email_verified": true,
   "preferred_username": "rogelio.arriaga",
   "realm_access": {
@@ -209,7 +209,7 @@ var tenantSlug = issuer?.Split('/').LastOrDefault();
 
 ```
 Realm: {{PROJECT_SLUG}}  → todos los tenants
-  Usuario: rogelio@alfacorp.com
+  Usuario: ana@alfacorp.com
     Custom claim: tenant_id = "alfacorp"
     Custom claim: branch_id = "sucursal-norte"
 ```

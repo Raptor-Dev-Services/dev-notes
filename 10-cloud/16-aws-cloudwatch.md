@@ -446,7 +446,7 @@ aws sns create-topic --name alertas-produccion
 aws sns subscribe \
   --topic-arn arn:aws:sns:us-east-1:123456789:alertas-produccion \
   --protocol email \
-  --notification-endpoint rogelioarriaga@outlook.es
+  --notification-endpoint alertas@example.com
 
 # Suscribir webhook (para Slack o Teams)
 aws sns subscribe \

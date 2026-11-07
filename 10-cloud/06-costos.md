@@ -79,7 +79,7 @@ aws budgets create-budget \
       "ComparisonOperator": "GREATER_THAN",
       "Threshold": 80
     },
-    "Subscribers": [{"SubscriptionType": "EMAIL", "Address": "rogelio@raptordev.io"}]
+    "Subscribers": [{"SubscriptionType": "EMAIL", "Address": "alertas@example.com"}]
   }]'
 ```
 
@@ -157,7 +157,7 @@ Separar producción y desarrollo en cuentas AWS distintas da:
 ```bash
 # crear cuenta hija para staging
 aws organizations create-account \
-  --email staging@raptordev.io \
+  --email staging@example.com \
   --account-name "{{PROJECT_NAME}} Staging"
 ```
 
