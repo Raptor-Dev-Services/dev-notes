@@ -123,7 +123,7 @@ Una historia está "Done" cuando:
 - [ ] Tests unitarios y de integración pasan
 - [ ] Cobertura de tests no baja del 70% en el módulo afectado
 - [ ] SonarQube no introduce nuevos code smells críticos
-- [ ] Code review aprobado por al menos 1 par (Jairo o peer)
+- [ ] Code review aprobado por al menos 1 par (otro integrante del equipo)
 - [ ] PR mergeado a `develop` (no a `main` directamente)
 - [ ] ADR escrito si se tomó una decisión arquitectural
 - [ ] El feature fue probado en ambiente local contra datos reales
