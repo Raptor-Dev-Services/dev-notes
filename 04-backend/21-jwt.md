@@ -338,17 +338,29 @@ Usar JWE cuando el payload contiene datos sensibles (PII, datos médicos o finan
 
 ### Signature Stripping
 
-Un atacante puede tomar un JWT firmado, cambiar el header a `"alg": "none"` y eliminar la firma. Si el servidor no valida el algoritmo explícitamente, el token manipulado pasa.
+Un atacante puede tomar un JWT firmado, cambiar el header a `"alg": "none"` y eliminar la firma. En ASP.NET Core ese token no pasa por omisión: `RequireSignedTokens` vale `true` y rechaza cualquier token sin firma con un 401, esté o no declarado `ValidAlgorithms`. Lo que abre el ataque es apagar esa bandera:
 
 ```csharp
-// ✓ Definir lista blanca de algoritmos aceptados
+// ✗ Esto acepta tokens sin firma, y ValidAlgorithms no lo impide
 options.TokenValidationParameters = new TokenValidationParameters
 {
-    ValidAlgorithms = [SecurityAlgorithms.HmacSha256],
+    RequireSignedTokens = false,
+    ValidAlgorithms     = [SecurityAlgorithms.HmacSha256],
     // ...
 };
-// ✗ Omitir ValidAlgorithms — el default acepta cualquier algoritmo, incluido "none"
 ```
+
+`ValidAlgorithms` sigue valiendo la pena, pero protege otra cosa: limita con qué algoritmos puede estar firmado un token que sí trae firma. Sin esa lista, un token HS512 firmado con la misma clave pasa aunque la app solo emita HS256.
+
+| Token | Configuración de esta nota | Sin `ValidAlgorithms` | `RequireSignedTokens = false` | `RequireSignedTokens = false` con `ValidAlgorithms` |
+|---|---|---|---|---|
+| HS256 válido | 200 | 200 | 200 | 200 |
+| HS512, misma clave | 401 | 200 | 200 | 401 |
+| `alg: none` sin firma | 401 | 401 | **200** | **200** |
+| HS256 con la firma quitada | 401 | 401 | **200** | **200** |
+| HS256 con la firma alterada | 401 | 401 | 401 | 401 |
+
+Medido con .NET 10 y `Microsoft.AspNetCore.Authentication.JwtBearer` 10.0.14.
 
 ### Almacenamiento del token y XSS / CSRF
 

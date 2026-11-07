@@ -100,7 +100,7 @@ app.UseTenantResolution();
 // Asigna o propaga un correlation id para trazas y logs
 app.UseCorrelationId();
 
-// Manejo estandarizado de errores con Problem Details (RFC 7807)
+// Manejo estandarizado de errores con Problem Details (RFC 9457)
 app.UseCoreProblemDetails();
 
 app.MapControllers();

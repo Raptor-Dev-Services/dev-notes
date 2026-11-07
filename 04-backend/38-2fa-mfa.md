@@ -31,12 +31,14 @@ Tiempo actual (epoch / 30): 1234567
 HOTP(secreto, contador) → 6 dígitos
 ```
 
-### Librería: OtpNet
+### Librería: Otp.NET
 
 ```xml
 <!-- Authentication.Infrastructure.csproj -->
-<PackageReference Include="OtpNet" Version="1.4.0" />
+<PackageReference Include="Otp.NET" Version="1.4.1" />
 ```
+
+El paquete de NuGet se llama `Otp.NET`; `OtpNet` es solo su namespace, y como nombre de paquete no restaura (`NU1101`).
 
 ---
 
@@ -470,7 +472,7 @@ Ver `04-backend/40-session-management.md` para revocar sesiones cuando se activa
 | Término | Definición |
 |---------|-----------|
 | TOTP | Time-based One-Time Password — código de 6 dígitos que cambia cada 30 segundos según RFC 6238 |
-| OtpNet | Librería de .NET para generar y verificar códigos TOTP y HOTP compatibles con Google Authenticator |
+| Otp.NET | Librería de .NET para generar y verificar códigos TOTP y HOTP compatibles con Google Authenticator |
 | MfaMethod | Enumeración de métodos de segundo factor disponibles: TOTP, RecoveryCode |
 | MfaRecoveryCode | Código de respaldo de un solo uso que permite acceder si el dispositivo TOTP no está disponible |
 | MfaPendingToken | Token temporal emitido tras el login exitoso con password que permite completar el segundo factor |

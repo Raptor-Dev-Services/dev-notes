@@ -119,7 +119,7 @@ if (app.Environment.IsDevelopment())
 
 ---
 
-## Problem Details (RFC 7807)
+## Problem Details (RFC 9457)
 
 Formato estándar para respuestas de error. Todos los clientes pueden parsearlo de forma uniforme:
 
@@ -140,7 +140,7 @@ app.UseStatusCodePages();
 ```json
 // Respuesta de error estándar
 {
-  "type": "https://tools.ietf.org/html/rfc7807",
+  "type": "https://tools.ietf.org/html/rfc9110#section-15.5.5",
   "title": "Not Found",
   "status": 404,
   "detail": "El usuario con ID abc123 no existe.",
@@ -167,7 +167,7 @@ Ver `04-backend/08-problem-details.md` para la implementación completa con mane
 | Bearer Token | Esquema de autenticación HTTP donde el token JWT se envía en el header Authorization |
 | MapToApiVersion | Atributo que asocia un método de controller con una versión específica de la API |
 | ApiVersionReader.Combine | Método que configura múltiples estrategias de lectura de versión simultáneamente |
-| Problem Details | Formato RFC 7807 para errores — documentado en OpenAPI para que los clientes conozcan la estructura |
+| Problem Details | Formato RFC 9457 para errores — documentado en OpenAPI para que los clientes conozcan la estructura |
 | ReportApiVersions | Configuración que añade headers con las versiones soportadas en cada respuesta HTTP |
 
 ---

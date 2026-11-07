@@ -248,7 +248,7 @@ El proyecto usa `ResultViewModel<T>` para todas las respuestas:
 }
 ```
 
-Para errores técnicos (excepciones), `GlobalExceptionHandler` retorna `ProblemDetails` RFC 7807. El equipo puede expandir esto con `code` strings y error codes para tipos de conflicto específicos.
+Para errores técnicos (excepciones), `GlobalExceptionHandler` retorna `ProblemDetails` RFC 9457. El equipo puede expandir esto con `code` strings y error codes para tipos de conflicto específicos.
 
 
 ---

@@ -67,12 +67,7 @@ public sealed class WebAppFixture
 }
 ```
 
-**Nota:** `Program.cs` necesita ser accesible como punto de entrada. En .NET 10 top-level statements, agregar al final:
-
-```csharp
-// Host/Program.cs — al final del archivo
-public partial class Program { }  // expone Program para WebApplicationFactory
-```
+**Nota:** `WebApplicationFactory<Program>` necesita que `Program` sea público. En .NET 10 ya no hay que hacer nada: con top-level statements, un generador de código de ASP.NET Core emite `public partial class Program { }` por su cuenta. Hasta .NET 9 sí había que agregar esa línea al final de `Program.cs`, porque la clase generada era `internal`. En .NET 10 declararla no rompe nada, solo sobra.
 
 ---
 
@@ -279,7 +274,7 @@ public async Task Insert_ValidBody_Returns200AndCreatesUser()
 
 ## Relación con back-template
 
-`back-template/docs/Testing.md` documenta la configuración específica del proyecto. `WebApplicationFactory<Program>` requiere que `Program` sea `public partial class`. La plantilla ya lo tiene configurado.
+`back-template/docs/Testing.md` documenta la configuración específica del proyecto. La plantilla declara `public partial class Program` de forma explícita; en .NET 10 esa línea ya no es necesaria.
 
 Los integration tests son más lentos que los unit tests. La convención habitual es separar los suites con categorías y correr solo los unit tests en el loop de desarrollo, los integration tests en CI.
 

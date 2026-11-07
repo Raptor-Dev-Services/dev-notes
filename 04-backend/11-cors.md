@@ -2,7 +2,7 @@
 
 CORS es el mecanismo del navegador que restringe peticiones JavaScript a un origen distinto al del documento HTML. En SaaS con frontend y backend en dominios diferentes, CORS es obligatorio.
 
-> Fuente: *Web Application Security 2nd Ed* (Andrew Hoffman): Ch.15 Same-Origin Policy and CORS  
+> Fuente: *Web Application Security 2nd Ed* (Andrew Hoffman): Ch.22 Secure Application Configuration  
 > Fuente: *ASP.NET Core 9 Essentials* (Packt): Ch.6 Enhancing Security and Quality
 
 ---
