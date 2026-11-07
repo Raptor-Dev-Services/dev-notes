@@ -1137,20 +1137,20 @@ Los agentes self-hosted acceden a la red interna, tienen herramientas precargada
 
 **GitHub Secret Scanning**: Escaneo automático de secretos en repositorios de GitHub.
 
-### 10.8 Seguridad web (OWASP Top 10)
+### 10.8 Seguridad web (OWASP Top 10:2025)
 
 | # | Vulnerabilidad | Prevención principal |
 |---|---|---|
-| A01 | Broken Access Control | Verificar ownership en cada handler, policies granulares |
-| A02 | Cryptographic Failures | BCrypt para passwords, HTTPS obligatorio, no loguear passwords |
-| A03 | Injection | Parámetros en SQL, `ArgumentList` en process start |
-| A04 | Insecure Design | Rate limiting en login, validación en todas las capas |
-| A05 | Security Misconfiguration | Security headers, `AddServerHeader = false`, no exponer stack trace |
-| A06 | Vulnerable Components | Dependabot, `dotnet outdated`, audit de paquetes |
-| A07 | Auth Failures | HttpOnly cookies, rotación de refresh tokens, token blacklist |
-| A08 | Software Integrity | Validación de dependencias, supply chain |
-| A09 | Logging Failures | Loguear todos los accesos, incluyendo los exitosos |
-| A10 | SSRF | Validar y allowlist URLs en requests del servidor |
+| A01 | Broken Access Control | Verificar ownership en cada handler, policies granulares, allowlist de URLs contra SSRF |
+| A02 | Security Misconfiguration | Security headers, `AddServerHeader = false`, no exponer stack trace |
+| A03 | Software Supply Chain Failures | Lockfile, audit de paquetes, SBOM, Dependabot, acciones fijadas por SHA |
+| A04 | Cryptographic Failures | Argon2id o BCrypt para passwords, HTTPS obligatorio, no loguear passwords |
+| A05 | Injection | Parámetros en SQL, `ArgumentList` en process start |
+| A06 | Insecure Design | Rate limiting en login, validación en todas las capas |
+| A07 | Authentication Failures | HttpOnly cookies, rotación de refresh tokens, token blacklist |
+| A08 | Software or Data Integrity Failures | Deserializar solo a tipos concretos, verificar la integridad de lo que se acepta |
+| A09 | Security Logging and Alerting Failures | Loguear todos los accesos, incluyendo los exitosos, y alertar sobre lo anómalo |
+| A10 | Mishandling of Exceptional Conditions | Fallar cerrado, revertir transacciones completas, no filtrar detalles internos |
 
 **Security headers obligatorios:**
 - `X-Frame-Options: DENY`: Previene clickjacking.
