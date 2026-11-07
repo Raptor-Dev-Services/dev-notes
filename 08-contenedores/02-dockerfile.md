@@ -258,13 +258,13 @@ docker run --entrypoint /bin/bash back-template:latest
 ## Optimizaciones de caché
 
 ```dockerfile
-# ❌ Sin optimización — cualquier cambio de código re-ejecuta restore (lento)
+# Mal: Sin optimización — cualquier cambio de código re-ejecuta restore (lento)
 FROM sdk:10.0
 COPY . .
 RUN dotnet restore
 RUN dotnet build
 
-# ✓ Con optimización — restore cacheado mientras .csproj no cambie
+# Bien: Con optimización — restore cacheado mientras .csproj no cambie
 FROM sdk:10.0
 # Primero: copiar .csproj (cambia rara vez)
 COPY ["Host/Host.csproj", "Host/"]
@@ -325,7 +325,7 @@ docker run --rm -it --entrypoint /bin/sh aspnet:10.0
 > Fuente: *Docker Up and Running* (Kane, Matthias): Ch.11 Docker Security
 
 ```dockerfile
-# ❌ Prácticas inseguras comunes
+# Mal: Prácticas inseguras comunes
 
 # 1. Correr como root (default si no se especifica USER)
 FROM mcr.microsoft.com/dotnet/aspnet:10.0
@@ -341,7 +341,7 @@ FROM mcr.microsoft.com/dotnet/sdk:10.0  # ← SDK en producción = superficie de
 ```
 
 ```dockerfile
-# ✓ Prácticas seguras
+# Bien: Prácticas seguras
 
 # 1. Usuario no-root
 FROM mcr.microsoft.com/dotnet/aspnet:10.0-noble-chiseled AS final
@@ -362,9 +362,9 @@ ENTRYPOINT ["dotnet", "Host.dll"]
 # - Solo lo necesario para .NET → superficie de ataque mínima
 
 # 4. Imagen sin capas con secretos
-# ❌ Aunque se sobreescriba, la capa anterior sigue en la imagen
+# Mal: Aunque se sobreescriba, la capa anterior sigue en la imagen
 RUN echo "$SECRET" > /tmp/secret && do-something && rm /tmp/secret
-# ✓ Los secretos nunca deben llegar a una capa de la imagen
+# Bien: Los secretos nunca deben llegar a una capa de la imagen
 # Usar --secret en BuildKit para secretos durante el build:
 RUN --mount=type=secret,id=nuget_token \
     NUGET_TOKEN=$(cat /run/secrets/nuget_token) dotnet restore

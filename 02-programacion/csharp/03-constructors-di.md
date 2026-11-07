@@ -270,11 +270,11 @@ public sealed class JwtTokenService(IConfiguration configuration) : IJwtTokenSer
 
 | Situación | Primary Constructor | Tradicional |
 |-----------|--------------------|----|
-| Asignar parámetros directamente | ✓ Ideal | Verboso |
-| Necesitas nombres distintos para los campos | Más verboso | ✓ Natural |
-| Necesitas validación en el constructor | Posible con campo inicializador | ✓ Más claro |
-| Herencia con `base()` | ✓ Funciona | ✓ Funciona |
-| Múltiples constructores (sobrecarga) | ✗ Solo uno | ✓ Posible |
+| Asignar parámetros directamente | Ideal | Verboso |
+| Necesitas nombres distintos para los campos | Más verboso | Natural |
+| Necesitas validación en el constructor | Posible con campo inicializador | Más claro |
+| Herencia con `base()` | Funciona | Funciona |
+| Múltiples constructores (sobrecarga) | Solo uno | Posible |
 
 ---
 
@@ -285,7 +285,7 @@ public sealed class JwtTokenService(IConfiguration configuration) : IJwtTokenSer
 Imagina que escribes un handler sin DI:
 
 ```csharp
-// ❌ Handler que crea sus propias dependencias
+// Mal: Handler que crea sus propias dependencias
 public sealed class GetExampleUserHandler
 {
     public async Task<GetExampleUserResponse> Handle(GetExampleUserRequest request, CancellationToken ct)
@@ -317,7 +317,7 @@ public sealed class GetExampleUserHandler
 ### Con DI: código desacoplado
 
 ```csharp
-// ✓ Handler que pide lo que necesita
+// Bien: Handler que pide lo que necesita
 public sealed class GetExampleUserHandler(IExampleUserRepository repo)
     : IRequestHandler<GetExampleUserRequest, GetExampleUserResponse>
 {
@@ -373,7 +373,7 @@ ASP.NET necesita ExampleUsersController
     ↓ resuelve ILogger<ExampleUsersController> → Serilog logger
     ↓ resuelve ResultViewModel<ExampleUsersController>
         ↓ ResultViewModel no tiene dependencias → crea directamente
-    ↓ ExampleUsersController creado ✓
+    ↓ ExampleUsersController creado Sí
 
 Al llamar Mediator.Send(new GetExampleUserRequest(id)):
     ↓ InteractorPipeline busca GetExampleUserHandler
@@ -383,7 +383,7 @@ Al llamar Mediator.Send(new GetExampleUserRequest(id)):
     ↓ ExampleUsersSql necesita MainDapperDbConnection
     ↓ MainDapperDbConnection necesita MainDbConnectionFactory + ILogger + IConfiguration
     ↓ resuelve todo en cascada
-    ↓ GetExampleUserHandler creado y llamado ✓
+    ↓ GetExampleUserHandler creado y llamado Sí
 ```
 
 Tú nunca escribes ningún `new`. El container lo hace todo.
@@ -461,7 +461,7 @@ Todo se registra una vez al arrancar. El container gestiona la vida de cada obje
 ### Error 1: Constructor sin parámetro obligatorio
 
 ```csharp
-// ❌ El container no puede resolver GetExampleUserHandler
+// Mal: El container no puede resolver GetExampleUserHandler
 // porque no sabe qué IExampleUserRepository darle
 public sealed class GetExampleUserHandler
 {
@@ -469,14 +469,14 @@ public sealed class GetExampleUserHandler
     // Sin constructor → el container intenta el constructor vacío → no puede resolver
 }
 
-// ✓ Con constructor que declara la dependencia
+// Bien: Con constructor que declara la dependencia
 public sealed class GetExampleUserHandler(IExampleUserRepository repo) { }
 ```
 
 ### Error 2: Guardar un Scoped en un campo Singleton
 
 ```csharp
-// ❌ El Singleton vive toda la app — el Scoped (MainDapperDbConnection) fue creado
+// Mal: El Singleton vive toda la app — el Scoped (MainDapperDbConnection) fue creado
 // para una request específica y ya no existe
 public sealed class CacheSingleton
 {
@@ -492,11 +492,11 @@ Ver [DI Lifetimes](09-lifetimes.md) para la explicación completa.
 ### Error 3: Circular dependency
 
 ```csharp
-// ❌ A necesita B, B necesita A → el container lanza StackOverflowException
+// Mal: A necesita B, B necesita A → el container lanza StackOverflowException
 public sealed class ServiceA(ServiceB b) { }
 public sealed class ServiceB(ServiceA a) { }
 
-// ✓ Solución: redesignar para romper el ciclo, o usar Lazy<T>
+// Bien: Solución: redesignar para romper el ciclo, o usar Lazy<T>
 public sealed class ServiceA(Lazy<ServiceB> b) { }
 public sealed class ServiceB(ServiceA a) { }
 // Registrar: services.AddScoped<ServiceA>(); services.AddScoped<ServiceB>();
@@ -508,7 +508,7 @@ public sealed class ServiceB(ServiceA a) { }
 ```csharp
 // Infrastructure/ServiceCollectionEx.cs
 services.AddScoped<ExampleUsersSql>();
-// ❌ Falta el repositorio:
+// Mal: Falta el repositorio:
 // services.AddScoped<IExampleUserRepository, ExampleUserRepository>();
 
 // Resultado al arrancar:

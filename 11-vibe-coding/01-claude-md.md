@@ -9,13 +9,13 @@
 ## El problema que resuelve
 
 ```text
-❌ Sin CLAUDE.md — instrucciones repetidas en cada sesión
+No: Sin CLAUDE.md — instrucciones repetidas en cada sesión
 Dev: "Usa siempre nombres ExampleUser, ExampleUserRepository,
       escribe en español, sin Co-Authored-By en commits,
       la arquitectura es Clean Architecture con Dapper..."
 Claude: [5 minutos después del resumen de contexto] lo repite mal
 
-❌ Sin CLAUDE.md — el LLM no conoce el estilo del proyecto
+No: Sin CLAUDE.md — el LLM no conoce el estilo del proyecto
 Claude: genera código con nombres genéricos (User, UserRepo)
         usa emojis en los docs
         incluye comentarios de "lo que hace el código"
@@ -23,7 +23,7 @@ Claude: genera código con nombres genéricos (User, UserRepo)
 ```
 
 ```text
-✓ Con CLAUDE.md — el contexto está en el repo, no en la sesión
+Sí: Con CLAUDE.md — el contexto está en el repo, no en la sesión
 Claude: lee el archivo al iniciar → trabaja con todas las convenciones
         ya aplicadas desde el primer mensaje
 ```
@@ -104,11 +104,11 @@ Los nombres siguen PascalCase y deben tener un story en Storybook.
 ### Convenciones de código
 - Idioma: español en toda la documentación
 - Nombres estándar: ExampleUser, IExampleUserRepository, ExampleUsersSql
-- Sin emojis en docs (solo ✓/✗ en tablas y código)
+- Sin emojis en docs (solo Sí: /No: en tablas y código)
 
 ### Estructura de cada documento
 1. Párrafo de qué problema resuelve
-2. Bloque ❌ → bloque ✓
+2. Bloque No: → bloque Sí
 3. Código con nombres estándar
 4. Relación con el back-template
 5. Cuándo usar / no usar
@@ -194,7 +194,7 @@ Naming estándar:
 
 ## Buenas prácticas para CLAUDE.md efectivo
 
-### ✓ Qué incluir
+### Bien: Qué incluir
 
 ```markdown
 # Efectivo — concreto y accionable
@@ -223,7 +223,7 @@ Escribe código limpio y siguiendo las convenciones del proyecto.
 Sé consistente con el estilo existente.
 ```
 
-### ✓ Mantenerlo actualizado
+### Bien: Mantenerlo actualizado
 
 ```markdown
 ## Estado del repo (2026-06-02)
@@ -237,7 +237,7 @@ Lib/ y Scripts/ son un venv de Python creado accidentalmente.
 No commitear. Agregar a .gitignore si no están.
 ```
 
-### ✗ Qué no incluir
+### Mal: Qué no incluir
 
 - Código de producción o lógica de negocio: va en el código, no en CLAUDE.md
 - Información que cambia a diario: Claude.md debe mantenerse, no desactualizarse
@@ -306,7 +306,7 @@ API REST en .NET 10 con Clean Architecture, PostgreSQL y Dapper.
 
 El `CLAUDE.md` de este repositorio (`dev-notes`) define:
 - Los nombres estándar de ejemplo que aparecen en todo el código de todos los docs
-- La estructura fija de cada documento (problema, ❌, ✓, código, relación, cuándo usar, glosario)
+- La estructura fija de cada documento (problema, No: , Sí: , código, relación, cuándo usar, glosario)
 - Las restricciones de commits (sin Co-Authored-By, no commitear CLAUDE.md/TODO.md/Lib/Scripts)
 - El estado del repo con archivos pendientes de commit
 

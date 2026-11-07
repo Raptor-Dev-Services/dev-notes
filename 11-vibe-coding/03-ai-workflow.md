@@ -186,18 +186,18 @@ Answer:   "La implementación está en Infrastructure/Repositories/... y hace...
 ### Instrucciones efectivas para agentes
 
 ```
-❌ Vago: "mejora el código"
-✓ Específico: "refactoriza GetExampleUsersHandler para usar el patrón de
+No: Vago: "mejora el código"
+Sí: Específico: "refactoriza GetExampleUsersHandler para usar el patrón de
    paginación de GetProductsHandler (Infrastructure/Repositories/Products/),
    sin cambiar el contrato público del método"
 
-❌ Sin contexto: "agrega tests"
-✓ Con contexto: "agrega tests unitarios al InsertExampleUserHandler siguiendo
+No: Sin contexto: "agrega tests"
+Sí: Con contexto: "agrega tests unitarios al InsertExampleUserHandler siguiendo
    el estilo de InsertProductHandler.Tests.cs. Cubrir: éxito, email duplicado,
    nombre vacío"
 
-❌ Sin restricciones: "optimiza los queries"
-✓ Con restricciones: "optimiza solo el GetPagedAsync en ExampleUsersSql.cs.
+No: Sin restricciones: "optimiza los queries"
+Sí: Con restricciones: "optimiza solo el GetPagedAsync en ExampleUsersSql.cs.
    No cambies la interfaz del repositorio. Usa EXPLAIN ANALYZE para verificar."
 ```
 

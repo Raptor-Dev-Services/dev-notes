@@ -104,13 +104,13 @@ BackgroundJob.ContinueJobWith<IEmailService>(firstJobId, svc => svc.SendReportAs
 Cada job **debe** recibir el `TenantId` como parámetro explícito. Los jobs corren en otro thread/proceso: el contexto HTTP del tenant original ya no existe.
 
 ```csharp
-// ❌ El job no sabe a qué tenant pertenece
+// Mal: El job no sabe a qué tenant pertenece
 public async Task SendWelcomeEmail(Guid userId)
 {
     var user = await _db.Users.FindAsync(userId);  // ← ¿qué tenant filtra?
 }
 
-// ✓ El TenantId es explícito — el job recrea el contexto
+// Bien: El TenantId es explícito — el job recrea el contexto
 public async Task SendWelcomeEmail(Guid tenantId, Guid userId)
 {
     _tenantContext.SetTenant(tenantId);             // establece el filtro de tenant

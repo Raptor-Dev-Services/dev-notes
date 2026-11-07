@@ -13,7 +13,7 @@
 Tienes un sistema de logística que inicialmente solo usa camiones. Toda la lógica de planificación está en una clase `Logistics`. Más tarde necesitas soporte para barcos. El código está acoplado a `Truck`. Agregar `Ship` requiere cambiar toda la clase.
 
 ```csharp
-// ❌ Sin Factory Method — acoplado a la clase concreta
+// Mal: Sin Factory Method — acoplado a la clase concreta
 public class Logistics
 {
     public void PlanDelivery()

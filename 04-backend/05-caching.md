@@ -9,7 +9,7 @@ Guardar temporalmente resultados costosos para no recalcularlos en cada request.
 Cada request que lee datos repite el mismo trabajo: viaje de red a PostgreSQL, parse de filas, hidratación de objetos.
 
 ```csharp
-// ❌ Sin caché — cada GET /api/example/users/{id} golpea la DB
+// Mal: Sin caché — cada GET /api/example/users/{id} golpea la DB
 public async Task<GetExampleUserResponse> Handle(
     GetExampleUserRequest request, CancellationToken ct)
 {
@@ -253,14 +253,14 @@ El proyecto no tiene caché configurado por defecto. Para agregarlo:
 
 | Escenario | Decisión |
 |-----------|----------|
-| Datos de catálogo (países, categorías, configuración) | ✓ Caché largo (horas) |
-| Perfil de usuario — se lee mucho, cambia poco | ✓ Caché corto (5-10 min) |
-| Resultado de cómputo costoso (reportes) | ✓ Caché con invalidación explícita |
-| Múltiples instancias de la API | ✓ Redis (IDistributedCache) |
-| Una sola instancia | ✓ IMemoryCache (más simple) |
-| Datos que cambian en cada request | ✗ No cachear |
-| Datos de inventario en tiempo real | ✗ No cachear |
-| Listado que incluye datos del usuario actual | ✗ No cachear sin key por usuario |
+| Datos de catálogo (países, categorías, configuración) | Caché largo (horas) |
+| Perfil de usuario — se lee mucho, cambia poco | Caché corto (5-10 min) |
+| Resultado de cómputo costoso (reportes) | Caché con invalidación explícita |
+| Múltiples instancias de la API | Redis (IDistributedCache) |
+| Una sola instancia | IMemoryCache (más simple) |
+| Datos que cambian en cada request | No cachear |
+| Datos de inventario en tiempo real | No cachear |
+| Listado que incluye datos del usuario actual | No cachear sin key por usuario |
 
 **Regla de oro:** la clave del caché debe incluir todos los parámetros que hacen única la respuesta. Para datos por usuario: `$"user:{userId}:{resourceId}"`.
 

@@ -10,12 +10,12 @@ En desarrollo local, `dotnet user-secrets` resuelve. En producción, los secreto
 ## Reglas absolutas
 
 ```
-✗ Cero secretos en el repositorio. Nunca, bajo ninguna circunstancia.
-✗ Cero secretos en el Dockerfile. Cada capa es inspeccionable con docker history.
-✗ Cero secretos en logs. Enmascarar strings sensibles antes de loggear.
-✓ Rotación periódica. Cada secreto tiene fecha de caducidad (mínimo cada 90 días).
-✓ Acceso mínimo. Cada servicio usa un secreto distinto con permisos mínimos.
-✓ Auditoría. Cada acceso a un secreto queda registrado y es auditable.
+No: Cero secretos en el repositorio. Nunca, bajo ninguna circunstancia.
+No: Cero secretos en el Dockerfile. Cada capa es inspeccionable con docker history.
+No: Cero secretos en logs. Enmascarar strings sensibles antes de loggear.
+Sí: Rotación periódica. Cada secreto tiene fecha de caducidad (mínimo cada 90 días).
+Sí: Acceso mínimo. Cada servicio usa un secreto distinto con permisos mínimos.
+Sí: Auditoría. Cada acceso a un secreto queda registrado y es auditable.
 ```
 
 ---

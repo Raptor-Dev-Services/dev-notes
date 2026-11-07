@@ -76,11 +76,11 @@ aws rds describe-db-instances \
 Un DB Subnet Group es un conjunto de subredes donde RDS puede colocar la instancia (y su réplica Multi-AZ). Debe abarcar al menos 2 AZs.
 
 ```
-❌ Mal diseño:
+Mal diseño:
   DB Subnet Group con una sola subnet en us-east-1a
   → Si la AZ falla, RDS no puede hacer failover a otra AZ
 
-✓ Diseño correcto:
+Sí: Diseño correcto:
   DB Subnet Group con:
     - subnet-data-1a (10.0.21.0/24 en us-east-1a)
     - subnet-data-1b (10.0.22.0/24 en us-east-1b)
@@ -140,7 +140,7 @@ aws rds modify-db-instance \
 Multi-AZ crea una réplica síncrona en una AZ diferente. Es transparente para la aplicación.
 
 ```
-✓ Cómo funciona Multi-AZ:
+Sí: Cómo funciona Multi-AZ:
   
   AZ us-east-1a                    AZ us-east-1b
   ┌─────────────────┐              ┌─────────────────┐

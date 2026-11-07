@@ -11,7 +11,7 @@ Cuando una clase crea sus propias dependencias con `new`, queda acoplada a la im
 IoC (Inversion of Control) es el principio. DI es una forma de aplicarlo.
 
 ```
-❌ Control Freak — la clase controla la creación de su dependencia
+No: Control Freak — la clase controla la creación de su dependencia
 public class OrderService
 {
     public void Process(Order order)
@@ -21,7 +21,7 @@ public class OrderService
     }
 }
 
-✓ Dependency Injection — el contenedor inyecta la dependencia
+Sí: Dependency Injection — el contenedor inyecta la dependencia
 public class OrderService(IOrderRepository repo)
 {
     public void Process(Order order) => repo.Save(order);
@@ -40,7 +40,7 @@ public class OrderService(IOrderRepository repo)
 Toda la configuración de DI debe concentrarse en un único lugar: la composition root.
 
 ```csharp
-// ✓ Program.cs — composition root de la aplicación
+// Bien: Program.cs — composition root de la aplicación
 var builder = WebApplication.CreateBuilder(args);
 
 // Registrar dependencias aquí
@@ -53,7 +53,7 @@ app.Run();
 ```
 
 ```csharp
-// ✓ Mejor: delegar el registro a extensiones por módulo (back-template)
+// Mejor: delegar el registro a extensiones por módulo (back-template)
 builder.Services.AddOrdersModule(builder.Configuration);
 builder.Services.AddInventoryModule(builder.Configuration);
 ```
@@ -80,12 +80,12 @@ builder.Services.AddTransient<IEmailRenderer, HandlebarsEmailRenderer>();
 Un Scoped inyectado en un Singleton queda "capturado" por el Singleton y nunca se libera, lo que puede causar datos de otro usuario filtrándose:
 
 ```csharp
-// ❌ Singleton consume un Scoped → captive dependency
+// Mal: Singleton consume un Scoped → captive dependency
 builder.Services.AddSingleton<IOrderService, OrderService>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 // OrderService recibirá el primer OrderRepository creado y lo retendrá para siempre
 
-// ✓ Si el Singleton necesita un Scoped, usar IServiceScopeFactory
+// Si el Singleton necesita un Scoped, usar IServiceScopeFactory
 public class OrderSyncJob(IServiceScopeFactory scopeFactory)
 {
     public async Task RunAsync(CancellationToken ct)
@@ -104,7 +104,7 @@ public class OrderSyncJob(IServiceScopeFactory scopeFactory)
 El Service Locator es resolver dependencias manualmente desde `IServiceProvider` dentro de la clase. Oculta las dependencias, dificulta el testing y viola IoC.
 
 ```csharp
-// ❌ Service Locator — anti-pattern
+// Mal: Service Locator — anti-pattern
 public class OrderService
 {
     private readonly IServiceProvider _sp;
@@ -118,7 +118,7 @@ public class OrderService
     }
 }
 
-// ✓ Constructor injection — la dependencia es explícita y testeable
+// Bien: Constructor injection — la dependencia es explícita y testeable
 public class OrderService(IOrderRepository repo)
 {
     public void Process(Order order) => repo.Save(order);
@@ -175,7 +175,7 @@ dotnet add package Scrutor
 ```
 
 ```csharp
-// ✓ Con Scrutor — limpio y sin new manual
+// Bien: Con Scrutor — limpio y sin new manual
 builder.Services.AddScoped<IExampleUserRepository, ExampleUserRepository>();
 builder.Services.Decorate<IExampleUserRepository, CachedExampleUserRepository>();
 
@@ -236,7 +236,7 @@ public class DynamicStorageSelector(IServiceProvider sp, IConfiguration config)
 Un guard clause es un chequeo temprano que lanza excepción si el argumento es inválido. Evita que el error aparezca tarde con un mensaje confuso.
 
 ```csharp
-// ❌ Sin guard clauses — falla con NullReferenceException lejos del origen
+// Mal: Sin guard clauses — falla con NullReferenceException lejos del origen
 public class OrderService
 {
     private readonly IOrderRepository _repo;
@@ -244,7 +244,7 @@ public class OrderService
     // ... si repo es null, el error aparece al llamar un método, no en el constructor
 }
 
-// ✓ Con ArgumentNullException.ThrowIfNull (C# 10+)
+// Bien: Con ArgumentNullException.ThrowIfNull (C# 10+)
 public class OrderService
 {
     private readonly IOrderRepository _repo;
@@ -256,7 +256,7 @@ public class OrderService
     }
 }
 
-// ✓ Con primary constructor (C# 12 + .NET 8) — el contenedor garantiza no-null
+// Bien: Con primary constructor (C# 12 + .NET 8) — el contenedor garantiza no-null
 public class OrderService(IOrderRepository repo)
 {
     // El contenedor lanza InvalidOperationException si repo no está registrado

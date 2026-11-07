@@ -9,7 +9,7 @@ El problema con "funciona en mi máquina" desaparece cuando toda la pila (API, b
 ## El problema que resuelve
 
 ```bash
-# ❌ Sin Docker — cada dev configura manualmente
+# Mal: Sin Docker — cada dev configura manualmente
 # Dev A: PostgreSQL 15 instalado globalmente con puerto 5433
 # Dev B: PostgreSQL 17 en WSL2 con puerto 5432
 # Dev C: sin PostgreSQL — usa SQLite para tests
@@ -17,7 +17,7 @@ El problema con "funciona en mi máquina" desaparece cuando toda la pila (API, b
 ```
 
 ```bash
-# ✓ Con Docker — entorno idéntico en todas las máquinas
+# Bien: Con Docker — entorno idéntico en todas las máquinas
 docker compose up -d
 # → PostgreSQL 17, Seq, Redis — misma versión, mismo puerto, en todos los devs y en CI
 ```

@@ -191,12 +191,12 @@ aws ssm start-session \
 ## Elastic IP vs IP pública dinámica
 
 ```
-❌ IP pública dinámica:
+No: IP pública dinámica:
   - Se asigna al lanzar la instancia
   - Cambia cada vez que se detiene y reinicia la instancia
   - No se puede referenciar con un registro DNS estático
 
-✓ Elastic IP:
+Sí: Elastic IP:
   - IP fija asignada a tu cuenta AWS
   - Permanece la misma aunque la instancia se detenga
   - Puede reasociarse a otra instancia en caso de failover manual

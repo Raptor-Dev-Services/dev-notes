@@ -13,7 +13,7 @@
 Tienes una clase `Document` que puede estar en estados: Borrador, Moderación, Publicado. El comportamiento de `publish()` varía: desde Borrador puede pasar a Moderación; desde Moderación puede publicarse o rechazarse; desde Publicado no puede publicarse de nuevo. Sin el patrón, el código está lleno de `if/switch` que crecen con cada estado nuevo.
 
 ```csharp
-// ❌ Sin State — if/switch monolítico que crece con cada estado nuevo
+// Mal: Sin State — if/switch monolítico que crece con cada estado nuevo
 public void Publish()
 {
     if (_state == "Draft")

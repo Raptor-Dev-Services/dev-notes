@@ -112,7 +112,7 @@ En un `pull_request`, la acción de TruffleHog toma sola la base y la cabeza del
 ### Permisos mínimos para GITHUB_TOKEN
 
 ```yaml
-# ✓ declarar permisos explícitos — nunca confiar en el default read-write
+# Bien: declarar permisos explícitos — nunca confiar en el default read-write
 permissions:
   contents: read         # leer el código
   security-events: write # publicar resultados de CodeQL
@@ -121,7 +121,7 @@ permissions:
 ```
 
 ```yaml
-# ✗ default con permisos amplios — todo el repositorio queda expuesto si el workflow es vulnerable
+# Mal: default con permisos amplios — todo el repositorio queda expuesto si el workflow es vulnerable
 # (no declarar permissions en repos con configuración legacy)
 ```
 
@@ -130,10 +130,10 @@ permissions:
 Un atacante que controla un repositorio de action puede cambiar la etiqueta `@v3` para apuntar a código malicioso. El SHA es inmutable.
 
 ```yaml
-# ✗ etiqueta mutable
+# Mal: etiqueta mutable
 - uses: actions/checkout@v7
 
-# ✓ SHA inmutable (auditado y congelado)
+# Bien: SHA inmutable (auditado y congelado)
 - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
 ```
 
@@ -149,11 +149,11 @@ Fijar el SHA congela la acción, no siempre lo que corre dentro. La acción de T
 ### Secretos en workflows
 
 ```yaml
-# ✓ referencia desde secrets
+# Bien: referencia desde secrets
 env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
 
-# ✗ nunca hardcodear en el YAML
+# nunca hardcodear en el YAML
 env:
   API_KEY: "sk-live-1234567890abcdef"   # se indexa en el historial de git
 ```

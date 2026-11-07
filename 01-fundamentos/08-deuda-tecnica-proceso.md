@@ -33,33 +33,33 @@ IMPRUDENTE  │ "No hay tiempo para │ "¿Qué es capas de   │
 
 ### Deuda de código
 ```
-✗ Duplicación masiva (DRY violation no resuelto)
-✗ Métodos de 200 líneas (Long Method)
-✗ God Classes (una clase que hace todo)
-✗ Magic strings y números mágicos
-✗ Código comentado ("por si acaso")
+No: Duplicación masiva (DRY violation no resuelto)
+No: Métodos de 200 líneas (Long Method)
+No: God Classes (una clase que hace todo)
+No: Magic strings y números mágicos
+No: Código comentado ("por si acaso")
 ```
 
 ### Deuda arquitectural
 ```
-✗ Capas mezcladas (EF Core en Domain)
-✗ Handlers que llaman a otros Handlers directamente
-✗ Lógica de negocio en controllers
-✗ Repositorios que exponen IQueryable<T>
+No: Capas mezcladas (EF Core en Domain)
+No: Handlers que llaman a otros Handlers directamente
+No: Lógica de negocio en controllers
+No: Repositorios que exponen IQueryable<T>
 ```
 
 ### Deuda de testing
 ```
-✗ Cobertura < 60% en lógica de negocio crítica
-✗ Tests que solo prueban el happy path
-✗ Tests frágiles (dependen de orden o estado global)
+No: Cobertura < 60% en lógica de negocio crítica
+No: Tests que solo prueban el happy path
+No: Tests frágiles (dependen de orden o estado global)
 ```
 
 ### Deuda de dependencias
 ```
-✗ Librerías con vulnerabilidades conocidas sin parchear
-✗ Versiones de .NET fuera de LTS
-✗ NuGet packages abandonados o sin mantenimiento
+No: Librerías con vulnerabilidades conocidas sin parchear
+No: Versiones de .NET fuera de LTS
+No: NuGet packages abandonados o sin mantenimiento
 ```
 
 ---
@@ -133,9 +133,9 @@ Strangler Fig:        reemplazar incrementalmente un módulo legado sin reescrib
 El PO no entiende "complejidad ciclomática 45". Traducir a impacto de negocio:
 
 ```
-❌ "Necesitamos refactorizar ConversationService porque tiene alta complejidad ciclomática."
+No: "Necesitamos refactorizar ConversationService porque tiene alta complejidad ciclomática."
 
-✅ "Agregar filtros de conversación tarda 3 días cuando debería tardar 4 horas,
+Sí: "Agregar filtros de conversación tarda 3 días cuando debería tardar 4 horas,
     porque toda la lógica está mezclada en un archivo de 800 líneas.
     Con 5 puntos de tech debt este sprint, las próximas 10 features de
     conversaciones serán 60% más rápidas."
@@ -173,12 +173,12 @@ Una historia está "Done" cuando:
 ### Continuous Refactoring
 
 ```
-✓ Renombrar variables en cada PR que se toca el archivo
-✓ Extraer constantes cuando aparece un string repetido
-✓ Agregar tests al código que se modifica, aunque no estaba cubierto
-✓ Actualizar dependencias en sprints dedicados (trimestral)
-✗ Acumular "TODO:" comments sin crear items en el backlog
-✗ Aprobar PRs con code smells "porque hay prisa"
+Sí: Renombrar variables en cada PR que se toca el archivo
+Sí: Extraer constantes cuando aparece un string repetido
+Sí: Agregar tests al código que se modifica, aunque no estaba cubierto
+Sí: Actualizar dependencias en sprints dedicados (trimestral)
+No: Acumular "TODO:" comments sin crear items en el backlog
+No: Aprobar PRs con code smells "porque hay prisa"
 ```
 
 ---

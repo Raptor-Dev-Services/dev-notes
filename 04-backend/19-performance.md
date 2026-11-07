@@ -60,7 +60,7 @@ public class ExampleUserSerializationBenchmarks
 Las strings en .NET son inmutables: cada concatenación crea un nuevo objeto en el heap.
 
 ```csharp
-// ❌ Concatenación en loop — O(n²) allocations
+// Mal: Concatenación en loop — O(n²) allocations
 public string BuildCsv(IEnumerable<ExampleUser> users)
 {
     string result = "";
@@ -69,7 +69,7 @@ public string BuildCsv(IEnumerable<ExampleUser> users)
     return result;
 }
 
-// ✓ StringBuilder — O(n) allocations
+// Bien: StringBuilder — O(n) allocations
 public string BuildCsv(IEnumerable<ExampleUser> users)
 {
     var sb = new StringBuilder();
@@ -78,7 +78,7 @@ public string BuildCsv(IEnumerable<ExampleUser> users)
     return sb.ToString();  // una sola allocation final
 }
 
-// ✓ Para CSV grande — escribir directo a stream (0 allocations de string)
+// Bien: Para CSV grande — escribir directo a stream (0 allocations de string)
 public async Task WriteCsvAsync(IEnumerable<ExampleUser> users, Stream output)
 {
     await using var writer = new StreamWriter(output, leaveOpen: true);
@@ -125,23 +125,23 @@ public async Task ProcessBatchAsync(IDbConnection db, CancellationToken ct)
 ## Colecciones eficientes
 
 ```csharp
-// ❌ List<T> cuando se sabe el tamaño — causa resizes internos
+// Mal: List<T> cuando se sabe el tamaño — causa resizes internos
 var results = new List<ExampleUserDto>();
 while (reader.Read())
     results.Add(MapRow(reader));
 
-// ✓ Con capacidad inicial — evita resizes
+// Bien: Con capacidad inicial — evita resizes
 var results = new List<ExampleUserDto>(expectedCount);
 
-// ✓ Array si el tamaño es fijo — más eficiente en memoria
+// Bien: Array si el tamaño es fijo — más eficiente en memoria
 var results = new ExampleUserDto[rows.Length];
 for (int i = 0; i < rows.Length; i++)
     results[i] = MapRow(rows[i]);
 
-// ✓ ImmutableArray para datos que no cambian
+// Bien: ImmutableArray para datos que no cambian
 var roles = ImmutableArray.Create("admin", "user", "viewer");
 
-// ✓ Dictionary con capacidad inicial para lookups
+// Bien: Dictionary con capacidad inicial para lookups
 var userIndex = new Dictionary<Guid, ExampleUser>(users.Count);
 foreach (var user in users)
     userIndex[user.PublicId] = user;
@@ -152,10 +152,10 @@ foreach (var user in users)
 ## Async/await — evitar problemas comunes
 
 ```csharp
-// ❌ .Result / .Wait() — deadlock en contextos síncronos (ASP.NET, UI)
+// Mal: .Result / .Wait() — deadlock en contextos síncronos (ASP.NET, UI)
 var user = _repo.GetByPublicIdAsync(id).Result;   // puede causar deadlock
 
-// ✓ async/await de punta a punta
+// Bien: async/await de punta a punta
 public async Task<GetExampleUserResponse> Handle(GetExampleUserRequest req, CancellationToken ct)
 {
     var user = await _repo.GetByPublicIdAsync(req.PublicId, ct);
@@ -164,26 +164,26 @@ public async Task<GetExampleUserResponse> Handle(GetExampleUserRequest req, Canc
         : new GetExampleUserSuccess(new ExampleUserDto(user));
 }
 
-// ❌ async void — excepciones no capturadas
+// Mal: async void — excepciones no capturadas
 public async void OnUserCreated(object sender, EventArgs e)   // ← async void = peligroso
 
-// ✓ async Task siempre
+// Bien: async Task siempre
 public async Task OnUserCreatedAsync(object sender, EventArgs e)
 
-// ✓ ConfigureAwait(false) en librerías (no en ASP.NET Core — no tiene SynchronizationContext)
+// Bien: ConfigureAwait(false) en librerías (no en ASP.NET Core — no tiene SynchronizationContext)
 // En ASP.NET Core apps: ConfigureAwait(false) es irrelevante pero tampoco hace daño
 ```
 
 ### Paralelismo con async
 
 ```csharp
-// ❌ Esperar operaciones una por una cuando son independientes
+// Mal: Esperar operaciones una por una cuando son independientes
 var user    = await _userRepo.GetByPublicIdAsync(userId, ct);
 var profile = await _profileRepo.GetByUserIdAsync(userId, ct);
 var roles   = await _roleRepo.GetByUserIdAsync(userId, ct);
 // Tiempo total = tiempo(user) + tiempo(profile) + tiempo(roles)
 
-// ✓ Ejecutar en paralelo — tiempo total ≈ max(user, profile, roles)
+// Bien: Ejecutar en paralelo — tiempo total ≈ max(user, profile, roles)
 var (user, profile, roles) = await (
     _userRepo.GetByPublicIdAsync(userId, ct),
     _profileRepo.GetByUserIdAsync(userId, ct),
@@ -257,31 +257,31 @@ public sealed class ExampleUserCsvExporter
 ### Acceso al último elemento
 
 ```csharp
-// ❌ Last() itera toda la colección internamente
+// Mal: Last() itera toda la colección internamente
 var lastUser = users.Last();
 
-// ✓ Índice directo — O(1) sin iteración
+// Bien: Índice directo — O(1) sin iteración
 var lastUser = users[users.Count - 1];
 
-// ✓ C# 8+ Index syntax
+// Bien: C# 8+ Index syntax
 var lastUser = users[^1];
 ```
 
 ### Evitar el keyword `let` en queries LINQ
 
 ```csharp
-// ❌ let genera IL extra — más lento y más allocations
+// Mal: let genera IL extra — más lento y más allocations
 var result = from u in users
              let name = u.FullName.ToLower()
              where name.Contains("garcía")
              select u;
 
-// ✓ Sin let — el compilador genera menos IL
+// Bien: Sin let — el compilador genera menos IL
 var result = from u in users
              where u.FullName.ToLower().Contains("garcía")
              select u;
 
-// ✓ O mejor aún — método con lambda (el compilador optimiza más)
+// Bien: O mejor aún — método con lambda (el compilador optimiza más)
 var result = users.Where(u => u.FullName.Contains("garcía", StringComparison.OrdinalIgnoreCase));
 ```
 
@@ -291,17 +291,17 @@ var result = users.Where(u => u.FullName.Contains("garcía", StringComparison.Or
 // Si hay varios filtros con distintos tamaños de conjuntos, poner el más selectivo primero
 // — el short-circuit de && evita evaluar la segunda condición cuando la primera ya falla
 
-// ❌ Verificar primero el conjunto más grande
+// Mal: Verificar primero el conjunto más grande
 var result = users.Where(u => largeRoleSet.Contains(u.Role) && smallTenantSet.Contains(u.TenantId));
 
-// ✓ Verificar primero el conjunto más pequeño — elimina más candidatos rápido
+// Bien: Verificar primero el conjunto más pequeño — elimina más candidatos rápido
 var result = users.Where(u => smallTenantSet.Contains(u.TenantId) && largeRoleSet.Contains(u.Role));
 ```
 
 ### GroupBy con conversión a array
 
 ```csharp
-// ✓ Convertir a array antes de GroupBy puede ser más rápido que operar sobre List<T>
+// Bien: Convertir a array antes de GroupBy puede ser más rápido que operar sobre List<T>
 // porque array tiene menor overhead de iteración interna
 var grouped = users
     .ToArray()                                     // ← array tiene iteración más rápida
@@ -314,12 +314,12 @@ var grouped = users
 ### IQueryable vs materialización prematura
 
 ```csharp
-// ❌ ToList() trae todos los registros a memoria antes de filtrar
+// Mal: ToList() trae todos los registros a memoria antes de filtrar
 var admins = _context.ExampleUsers
     .ToList()                                      // ← materializa TODOS los usuarios
     .Where(u => u.Role == "Admin");
 
-// ✓ Filtrar en la DB antes de materializar
+// Bien: Filtrar en la DB antes de materializar
 var admins = await _context.ExampleUsers
     .Where(u => u.Role == "Admin")
     .ToListAsync(ct);                              // ← solo los admins viajan por la red

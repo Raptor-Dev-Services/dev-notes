@@ -18,7 +18,7 @@ Tienes una clase `EmailNotifier`. Quieres agregarle capacidades de envío por SM
 La jerarquía explota. Además, la herencia es estática: no puedes cambiar el comportamiento en runtime.
 
 ```csharp
-// ❌ Con herencia — explosión combinatoria, estático en compile-time
+// Mal: Con herencia — explosión combinatoria, estático en compile-time
 class SMSSlackEmailNotifier : EmailNotifier { /* combina 3 comportamientos */ }
 // No puedes activar/desactivar canales en runtime
 ```

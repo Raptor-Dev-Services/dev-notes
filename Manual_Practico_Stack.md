@@ -12,7 +12,7 @@ Background jobs · API versioning · OpenAPI
 JWT · Validación · Pipeline Behaviors · Repository  
 Performance · Testing · CI/CD  
 React Router · React Hook Form · Axios interceptors · i18n  
-★ Librería Common: Logging · OpenTelemetry · Mediator · MultiTenancy*
+Librería Common: Logging · OpenTelemetry · Mediator · MultiTenancy*
 
 **Instructor: Ing. Rogelio Arriaga González**  
 M.I. en Gestión de Sistemas de TI · UVM  

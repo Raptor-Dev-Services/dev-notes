@@ -11,12 +11,12 @@ Estrategia para evolucionar una API pública sin romper los clientes existentes.
 Una API en producción tiene clientes (apps móviles, frontends, servicios terceros). Cambiar el contrato rompe esos clientes:
 
 ```
-❌ Sin versionado:
+No: Sin versionado:
    v1: GET /api/users → { "name": "John" }
    Cambio: renombrar "name" a "fullName"
    Resultado: todos los clientes que esperan "name" se rompen
 
-✓ Con versionado:
+Sí: Con versionado:
    /api/v1/users → { "name": "John" }         ← clientes existentes siguen funcionando
    /api/v2/users → { "fullName": "John" }      ← nuevos clientes usan el nuevo contrato
 ```
@@ -300,13 +300,13 @@ La plantilla actual usa `[Route("api/example/users")]` sin versionado explícito
 
 | Escenario | Decisión |
 |-----------|----------|
-| API pública con clientes externos | ✓ Versionar desde v1 |
-| API interna con un solo equipo | ✓ Considerar versionado tardío — complicar cuando haya necesidad |
-| Breaking change inevitable | ✓ Nueva versión major |
-| Agregar campo opcional | ✗ No requiere nueva versión (backwards compatible) |
-| Renombrar campo | ✓ Nueva versión |
-| Cambiar tipo de dato | ✓ Nueva versión |
-| Eliminar campo | ✓ Deprecar en versión actual, eliminar en la siguiente |
+| API pública con clientes externos | Versionar desde v1 |
+| API interna con un solo equipo | Considerar versionado tardío — complicar cuando haya necesidad |
+| Breaking change inevitable | Nueva versión major |
+| Agregar campo opcional | No requiere nueva versión (backwards compatible) |
+| Renombrar campo | Nueva versión |
+| Cambiar tipo de dato | Nueva versión |
+| Eliminar campo | Deprecar en versión actual, eliminar en la siguiente |
 
 **Regla de compatibilidad:** agregar campos opcionales es backwards compatible. Renombrar, eliminar o cambiar la semántica de un campo requiere nueva versión.
 

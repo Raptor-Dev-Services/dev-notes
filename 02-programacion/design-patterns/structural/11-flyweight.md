@@ -13,7 +13,7 @@
 Tienes un juego de disparos con miles de partículas (balas, misiles, metralla). Cada partícula almacena: color, sprite, coordenadas X/Y, dirección, velocidad. El color y sprite (datos grandes) son iguales para todas las balas del mismo tipo. Almacenarlos en cada instancia desperdicia cientos de MB.
 
 ```csharp
-// ❌ Sin Flyweight — cada bala almacena TODO
+// Mal: Sin Flyweight — cada bala almacena TODO
 class Particle
 {
     public string Color { get; set; }    // "red" — igual para todas las balas

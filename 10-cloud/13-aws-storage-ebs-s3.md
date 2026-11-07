@@ -51,7 +51,7 @@ gp3: 3.000 IOPS base SIEMPRE, independiente del tamaño.
      IOPS y throughput se pueden provisionar por separado.
      Costo: $0.08/GB-mes + IOPS extras opcionales
      
-✓ gp3 es más barato Y más eficiente que gp2.
+Sí: gp3 es más barato Y más eficiente que gp2.
 ```
 
 ---
@@ -160,12 +160,12 @@ Reglas obligatorias:
   - Entre 3 y 63 caracteres
   - No puede ser una IP
 
-✓ Nombres correctos:
+Sí: Nombres correctos:
   {{PROJECT_SLUG}}-prod-files
   raptor-backups-2026
   misaas-tenant-assets
 
-❌ Nombres incorrectos:
+No: Nombres incorrectos:
   MiProyecto-Prod    (mayúsculas)
   my.bucket.name    (puntos — evitar para SSL)
   192.168.1.1       (formato IP)

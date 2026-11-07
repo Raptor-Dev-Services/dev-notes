@@ -75,11 +75,11 @@ EC2 envía estas métricas automáticamente (sin agente):
 **Lo que EC2 NO envía por defecto (requiere CloudWatch Agent):**
 
 ```
-❌ Memoria RAM utilizada (MemoryUtilization)
-❌ Espacio en disco utilizado (DiskSpaceUtilization)
-❌ Logs de la aplicación
+No: Memoria RAM utilizada (MemoryUtilization)
+No: Espacio en disco utilizado (DiskSpaceUtilization)
+No: Logs de la aplicación
 
-✓ Con CloudWatch Agent:
+Sí: Con CloudWatch Agent:
   MemoryUtilization, MemoryUsed, MemoryAvailable
   DiskSpaceUtilization, DiskSpaceUsed, DiskSpaceAvailable
   Cualquier archivo de log (/var/log/app/*.log, /var/log/syslog)

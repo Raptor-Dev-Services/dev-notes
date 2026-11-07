@@ -11,7 +11,7 @@ Pattern matching es una forma expresiva y segura de examinar el tipo y valor de 
 Sin pattern matching, para distinguir tipos en tiempo de ejecución necesitabas casteos manuales:
 
 ```csharp
-// ❌ Forma antigua — verbose y frágil
+// Mal: Forma antigua — verbose y frágil
 GetExampleUserResponse response = GetResponse();
 
 if (response is GetExampleUserSuccess)
@@ -25,7 +25,7 @@ else if (response is GetExampleUserNotFoundFailure)
     _viewModel.Fail(failure.Message);
 }
 
-// ✓ Con pattern matching — más limpio, el cast es implícito
+// Bien: Con pattern matching — más limpio, el cast es implícito
 if (response is ISuccess<ExampleUserDto> success)
     _viewModel.Set(success);
 else if (response is INotFoundFailure notFound)
@@ -329,7 +329,7 @@ string flecha = direccion switch
     Direccion.Norte => "↑",
     Direccion.Sur   => "↓",
     Direccion.Este  => "→",
-    // ❌ El compilador avisa: "Oeste" no está cubierto
+    // Mal: El compilador avisa: "Oeste" no está cubierto
     _               => "?"  // o agrega el _ para silenciar
 };
 ```
@@ -341,14 +341,14 @@ string flecha = direccion switch
 ### Error 1: orden incorrecto de casos (más específico primero)
 
 ```csharp
-// ❌ IFailure es más general que INotFoundFailure
+// Mal: IFailure es más general que INotFoundFailure
 // El primer match "gana" — nunca llega a INotFoundFailure
 if (notification is IFailure)
     _viewModel.Fail("Error");  // captura TODO, incluyendo NotFound
 else if (notification is INotFoundFailure notFound)  // nunca llega aquí
     _viewModel.Fail(notFound.Message);
 
-// ✓ Más específico primero
+// Bien: Más específico primero
 if (notification is INotFoundFailure notFound)
     _viewModel.Fail(notFound.Message);
 else if (notification is IFailure failure)
@@ -358,16 +358,16 @@ else if (notification is IFailure failure)
 ### Error 2: olvidar el caso `null`
 
 ```csharp
-// ❌ Si "notification" puede ser null, ningún patrón de tipo lo captura
+// Si "notification" puede ser null, ningún patrón de tipo lo captura
 // El switch no tiene rama para null → puede lanzar excepción implícita
 string mensaje = notification switch
 {
     ISuccess s => "Éxito",
     IFailure f => f.Message,
-    // ❌ Si notification es null, lanza SwitchExpressionException
+    // Si notification es null, lanza SwitchExpressionException
 };
 
-// ✓ Manejar null explícitamente
+// Bien: Manejar null explícitamente
 string mensaje = notification switch
 {
     null     => "Sin respuesta",

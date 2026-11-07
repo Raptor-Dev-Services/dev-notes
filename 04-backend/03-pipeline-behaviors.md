@@ -9,7 +9,7 @@ Los Pipeline Behaviors son middlewares del mediador. Interceptan cada Request an
 ## El problema que resuelven
 
 ```csharp
-// ❌ Sin pipeline — cada Handler repite el mismo código
+// Mal: Sin pipeline — cada Handler repite el mismo código
 public class GetExampleUserHandler : IRequestHandler<...>
 {
     public async Task<GetExampleUserResponse> Handle(GetExampleUserRequest req, CancellationToken ct)

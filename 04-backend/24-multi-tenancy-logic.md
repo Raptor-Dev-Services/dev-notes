@@ -302,11 +302,11 @@ long.TryParse(User.FindFirstValue("tenant_id"), out var id) ? id : 0
 
 | Tabla | Lleva tenant_id | Por qué |
 |-------|----------------|---------|
-| `dbo.user_profiles` | ✓ | Perfil de usuario es privado por tenant |
-| `dbo.credentials` | ✓ | Las credenciales pertenecen al tenant |
-| `dbo.refresh_tokens` | ✗ | FK a credentials — hereda el tenant implícitamente |
-| `dbo.tenants` | ✗ | Los tenants son el nivel raíz — no pertenecen a otro tenant |
-| Catálogos compartidos | ✗ | Son globales — no varían por tenant |
+| `dbo.user_profiles` | Sí | Perfil de usuario es privado por tenant |
+| `dbo.credentials` | Sí | Las credenciales pertenecen al tenant |
+| `dbo.refresh_tokens` | No | FK a credentials — hereda el tenant implícitamente |
+| `dbo.tenants` | No | Los tenants son el nivel raíz — no pertenecen a otro tenant |
+| Catálogos compartidos | No | Son globales — no varían por tenant |
 
 ---
 

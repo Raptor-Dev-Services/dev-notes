@@ -13,7 +13,7 @@
 Tienes una app de UI que soporta múltiples temas visuales: Windows y macOS. Cada tema tiene sus propios botones, checkboxes y menús. Si el código crea los widgets directamente (`new WindowsButton()`), cambiar de tema significa cambiar cientos de lugares.
 
 ```csharp
-// ❌ Sin Abstract Factory — acoplado a un estilo concreto
+// Mal: Sin Abstract Factory — acoplado a un estilo concreto
 var button   = new WindowsButton();    // ← ¿y si es macOS?
 var checkbox = new WindowsCheckbox();  // ← cambiar tema = modificar todo
 ```

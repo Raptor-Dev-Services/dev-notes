@@ -52,7 +52,7 @@ Este es el concepto más importante para entender la arquitectura del proyecto.
 ### Sin interfaz: acoplamiento directo
 
 ```csharp
-// ❌ El handler depende de la clase concreta
+// Mal: El handler depende de la clase concreta
 public sealed class GetExampleUserHandler
 {
     private readonly ExampleUserRepository _repo;
@@ -70,7 +70,7 @@ public sealed class GetExampleUserHandler
 ### Con interfaz: desacoplamiento
 
 ```csharp
-// ✓ El handler depende del contrato
+// Bien: El handler depende del contrato
 public sealed class GetExampleUserHandler
 {
     private readonly IExampleUserRepository _repo;
@@ -408,7 +408,7 @@ else if (response is INotFoundFailure notFound)
 ### Error 1: Interfaz demasiado grande (Interface Segregation)
 
 ```csharp
-// ❌ Una interfaz que hace todo — viola el principio de segregación
+// Mal: Una interfaz que hace todo — viola el principio de segregación
 public interface IUserService
 {
     Task<User> GetByIdAsync(Guid id, CancellationToken ct);
@@ -417,7 +417,7 @@ public interface IUserService
     Task LogActionAsync(string action, CancellationToken ct);
 }
 
-// ✓ Interfaces pequeñas y focalizadas
+// Bien: Interfaces pequeñas y focalizadas
 public interface IUserRepository  { Task<User?> GetByIdAsync(Guid id, CancellationToken ct); }
 public interface IEmailService    { Task SendAsync(string to, string subject, CancellationToken ct); }
 public interface IJwtTokenService { string Generate(Guid userId, string email); }
@@ -433,7 +433,7 @@ public sealed class ProductRepository : IProductRepository { /* ... */ }
 // ...pero olvidas registrarla en DI — el container no sabe que existe
 // Infrastructure/ServiceCollectionEx.cs:
 services.AddScoped<ProductsSql>();
-// ❌ Falta: services.AddScoped<IProductRepository, ProductRepository>();
+// Mal: Falta: services.AddScoped<IProductRepository, ProductRepository>();
 
 // Resultado: InvalidOperationException al arrancar la app
 ```
@@ -441,14 +441,14 @@ services.AddScoped<ProductsSql>();
 ### Error 3: Inyectar la implementación concreta, no la interfaz
 
 ```csharp
-// ❌ Inyecta la clase concreta — acoplamiento directo
+// Mal: Inyecta la clase concreta — acoplamiento directo
 public sealed class GetProductHandler
 {
     private readonly ProductRepository _repo;  // concreto
     public GetProductHandler(ProductRepository repo) => _repo = repo;
 }
 
-// ✓ Inyecta la interfaz — desacoplado, testeable
+// Bien: Inyecta la interfaz — desacoplado, testeable
 public sealed class GetProductHandler
 {
     private readonly IProductRepository _repo;  // contrato

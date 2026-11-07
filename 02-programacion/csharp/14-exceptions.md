@@ -139,8 +139,8 @@ try
 catch (Exception ex)
 {
     _logger.LogError(ex, "Error insertando usuario");
-    throw;       // ✓ re-lanza preservando el stack trace original
-    // throw ex; // ❌ re-lanza pero PIERDE el stack trace — no uses esto
+    throw;       // Bien: re-lanza preservando el stack trace original
+    // throw ex; // Mal: re-lanza pero PIERDE el stack trace — no uses esto
 }
 ```
 
@@ -319,7 +319,7 @@ El middleware de `Common.Web` captura:
 ### Error 1: catch vacío (silenciar errores)
 
 ```csharp
-// ❌ Captura la excepción y la ignora — el error desaparece silenciosamente
+// Mal: Captura la excepción y la ignora — el error desaparece silenciosamente
 try
 {
     await _repo.InsertAsync(user, ct);
@@ -329,7 +329,7 @@ catch (Exception)
     // Sin log, sin rethrow — el error se pierde
 }
 
-// ✓ Siempre al menos loguea
+// Bien: Siempre al menos loguea
 try
 {
     await _repo.InsertAsync(user, ct);
@@ -344,13 +344,13 @@ catch (Exception ex)
 ### Error 2: throw ex (pierde stack trace)
 
 ```csharp
-// ❌ throw ex — resetea el stack trace, pierdes dónde ocurrió el error
+// Mal: throw ex — resetea el stack trace, pierdes dónde ocurrió el error
 catch (Exception ex)
 {
     throw ex;  // el stack trace ahora empieza aquí, no en el origen real
 }
 
-// ✓ throw solo — preserva el stack trace original
+// Bien: throw solo — preserva el stack trace original
 catch (Exception ex)
 {
     _logger.LogError(ex, "...");
@@ -361,13 +361,13 @@ catch (Exception ex)
 ### Error 3: catch demasiado amplio sin re-throw
 
 ```csharp
-// ❌ Capturar todo y retornar error genérico — esconde problemas de configuración
+// Mal: Capturar todo y retornar error genérico — esconde problemas de configuración
 catch (Exception)
 {
     return StatusCode(500, "Error");
 }
 
-// ✓ Loguear el detalle y retornar mensaje controlado al cliente
+// Bien: Loguear el detalle y retornar mensaje controlado al cliente
 catch (Exception ex)
 {
     _logger.LogError(ex, "Error en {Operacion}", nameof(GetById));

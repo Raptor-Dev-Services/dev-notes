@@ -9,7 +9,7 @@ Keycloak es un servidor de identidad y acceso (IAM) open-source. Centraliza aute
 ## El problema que resuelve
 
 ```csharp
-// ❌ Sin Keycloak — la API gestiona identidad internamente
+// Mal: Sin Keycloak — la API gestiona identidad internamente
 public class AuthController : ControllerBase
 {
     public async Task<IActionResult> Login(LoginRequest req)
@@ -25,7 +25,7 @@ public class AuthController : ControllerBase
 ```
 
 ```csharp
-// ✓ Con Keycloak — la API solo valida el token
+// Bien: Con Keycloak — la API solo valida el token
 // Program.cs
 builder.Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -62,18 +62,18 @@ builder.Services
 ```
 Frontend (React)                     Keycloak                   Back-template API
      │                                    │                            │
-     │── GET /auth?response_type=code ───►│                            │
+     │── GET /auth?response_type=code ───>│                            │
      │   &client_id={{PROJECT_SLUG}}-frontend          │                            │
      │   &code_challenge=S256             │                            │
      │                                    │ [Login form]               │
-     │◄── redirect + code ───────────────│                            │
+     │<── redirect + code ───────────────│                            │
      │                                    │                            │
-     │── POST /token (code + verifier) ──►│                            │
-     │◄── { access_token, refresh_token }─│                            │
+     │── POST /token (code + verifier) ──>│                            │
+     │<── { access_token, refresh_token }─│                            │
      │                                    │                            │
-     │── GET /api/users Authorization: Bearer {access_token} ─────────►│
-     │                                    │        [valida JWT firma] ◄─│
-     │◄──────────────────────────── 200 OK ──────────────────────────── │
+     │── GET /api/users Authorization: Bearer {access_token} ─────────>│
+     │                                    │        [valida JWT firma] <─│
+     │<──────────────────────────── 200 OK ──────────────────────────── │
 ```
 
 ### Client Credentials (machine-to-machine)

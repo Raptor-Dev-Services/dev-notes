@@ -59,12 +59,12 @@ var count = await connection.ExecuteScalarAsync<int>(
 ## Parámetros — siempre con `new { }`, nunca interpolación
 
 ```csharp
-// ✓ Parámetros — Dapper genera SQL parametrizado, seguro contra inyección
+// Bien: Parámetros — Dapper genera SQL parametrizado, seguro contra inyección
 var user = await conn.QuerySingleOrDefaultAsync<ExampleUser>(
     "SELECT * FROM dbo.example_users WHERE email = @email",
     new { email });
 
-// ❌ NUNCA interpolación — SQL injection
+// NUNCA interpolación — SQL injection
 var user = await conn.QuerySingleOrDefaultAsync<ExampleUser>(
     $"SELECT * FROM dbo.example_users WHERE email = '{email}'");
 ```

@@ -13,7 +13,7 @@
 Quieres implementar Undo en un editor de texto. El editor tiene estado complejo (texto, cursor, selección, historial de formato). Para guardar el estado, necesitas acceder a los campos privados del editor, lo que viola el encapsulamiento. Si expones esos campos, cualquier otro objeto puede modificarlos inesperadamente.
 
 ```csharp
-// ❌ Sin Memento — rompe el encapsulamiento para guardar estado
+// Mal: Sin Memento — rompe el encapsulamiento para guardar estado
 class TextEditor
 {
     public string Text { get; set; }       // debe ser público para guardar estado

@@ -9,7 +9,7 @@ Herramientas de SQL que van más allá de SELECT/INSERT/UPDATE básicos.
 Una CTE (WITH clause) nombra un resultado intermedio y permite reusarlo en la misma query. Mejora la legibilidad de queries complejas.
 
 ```sql
--- ❌ Sin CTE — subquery anidado difícil de leer
+-- Mal: Sin CTE — subquery anidado difícil de leer
 SELECT u.FullName, orders.OrderCount
 FROM dbo.ExampleUsers u
 INNER JOIN (
@@ -20,7 +20,7 @@ INNER JOIN (
 ) AS orders ON orders.UserId = u.Id
 WHERE u.IsActive = true;
 
--- ✓ Con CTE — legible y componible
+-- Bien: Con CTE — legible y componible
 WITH recent_orders AS (
     SELECT UserId, COUNT(*) AS OrderCount
     FROM   dbo.ExampleOrders

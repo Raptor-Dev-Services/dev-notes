@@ -13,7 +13,7 @@
 Tienes una clase `House` con decenas de parámetros opcionales: garage, piscina, jardín, sistema de calefacción, etc. El constructor se vuelve monstruoso:
 
 ```csharp
-// ❌ El constructor telescópico — imposible de leer
+// Mal: El constructor telescópico — imposible de leer
 var house = new House(4, 2, true, false, true, null, "marble", 200, true, false, 3, "oak");
 // ¿Qué es el cuarto parámetro? ¿El séptimo?
 ```

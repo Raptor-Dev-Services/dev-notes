@@ -262,11 +262,11 @@ builder.Services.AddControllers()
 ### Error 1: olvidar que los enums no se validan automáticamente
 
 ```csharp
-// ❌ Un int puede castearse a cualquier valor aunque no esté definido
+// Mal: Un int puede castearse a cualquier valor aunque no esté definido
 OrderStatus status = (OrderStatus)999;  // no lanza excepción
 Console.WriteLine(status);  // "999" — no es un valor definido
 
-// ✓ Validar al recibir de fuentes externas (API, base de datos)
+// Bien: Validar al recibir de fuentes externas (API, base de datos)
 if (!Enum.IsDefined(typeof(OrderStatus), valueFromDb))
     throw new ArgumentOutOfRangeException($"Status inválido: {valueFromDb}");
 ```
@@ -274,7 +274,7 @@ if (!Enum.IsDefined(typeof(OrderStatus), valueFromDb))
 ### Error 2: [Flags] sin potencias de 2
 
 ```csharp
-// ❌ Los valores no son potencias de 2 — los OR de bits no funcionan correctamente
+// Mal: Los valores no son potencias de 2 — los OR de bits no funcionan correctamente
 [Flags]
 public enum BadFlags
 {
@@ -283,7 +283,7 @@ public enum BadFlags
     C = 3,   // ← mal: 3 = A | B — colisión de bits
 }
 
-// ✓ Cada valor debe ser una potencia de 2 independiente
+// Bien: Cada valor debe ser una potencia de 2 independiente
 [Flags]
 public enum GoodFlags
 {
@@ -297,11 +297,11 @@ public enum GoodFlags
 ### Error 3: comparar con el número en lugar del nombre
 
 ```csharp
-// ❌ Número mágico — no es claro qué significa
+// Mal: Número mágico — no es claro qué significa
 if (order.Status == (OrderStatus)2)  // ¿qué es 2?
     Ship(order);
 
-// ✓ Usar el nombre siempre
+// Bien: Usar el nombre siempre
 if (order.Status == OrderStatus.Paid)
     Ship(order);
 ```

@@ -9,7 +9,7 @@ Tests de unidad aislados: se prueba una sola clase, con todos sus colaboradores 
 Los Handlers dependen de repositorios, servicios de token, servicios de correo. Para testear el Handler en aislamiento, esas dependencias deben ser reemplazadas por objetos que podemos controlar:
 
 ```csharp
-// ❌ Sin mock — el Handler golpea la DB real en el test
+// Mal: Sin mock — el Handler golpea la DB real en el test
 public sealed class GetExampleUserHandlerTests
 {
     [Fact]
@@ -20,7 +20,7 @@ public sealed class GetExampleUserHandlerTests
     }
 }
 
-// ✓ Con mock — el Handler recibe un repositorio falso que devuelve lo que el test necesita
+// Bien: Con mock — el Handler recibe un repositorio falso que devuelve lo que el test necesita
 var repo    = Substitute.For<IExampleUserRepository>();
 var handler = new GetExampleUserHandler(repo);
 repo.GetByPublicIdAsync(userId, Arg.Any<CancellationToken>()).Returns(fakeUser);
@@ -378,12 +378,12 @@ public sealed class InsertExampleUserValidatorTests
 
 | Escenario | Decisión |
 |-----------|----------|
-| Lógica de Handler (flujos, condiciones) | ✓ Unit test con NSubstitute |
-| Validadores | ✓ Unit test — rápidos, sin dependencias |
-| Presenters | ✓ Unit test — deterministas |
-| SQL / persistencia real | ✗ No unit test — ver 04-testcontainers.md |
-| Controllers | ✗ Unit test mínimo — cubiertos por integration tests |
-| Código puramente de mappeo/transformación | ✓ Unit test con datos concretos |
+| Lógica de Handler (flujos, condiciones) | Unit test con NSubstitute |
+| Validadores | Unit test — rápidos, sin dependencias |
+| Presenters | Unit test — deterministas |
+| SQL / persistencia real | No unit test — ver 04-testcontainers.md |
+| Controllers | Unit test mínimo — cubiertos por integration tests |
+| Código puramente de mappeo/transformación | Unit test con datos concretos |
 
 ---
 

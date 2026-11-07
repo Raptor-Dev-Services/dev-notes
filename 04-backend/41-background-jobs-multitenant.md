@@ -7,7 +7,7 @@ Los background jobs procesan tareas fuera del ciclo request-response: envío de 
 ## El problema sin contexto de tenant
 
 ```csharp
-// ❌ Job sin contexto de tenant
+// Mal: Job sin contexto de tenant
 public class ReportGenerationJob
 {
     private readonly AppDbContext _db;
@@ -27,7 +27,7 @@ public class ReportGenerationJob
 ## Solución: establecer el TenantContext manualmente
 
 ```csharp
-// ✓ Job con contexto de tenant explícito
+// Bien: Job con contexto de tenant explícito
 public class ReportGenerationJob
 {
     private readonly IServiceScopeFactory      _scopeFactory;

@@ -207,9 +207,9 @@ private const string InvalidCredentialsMessage = "Credenciales incorrectas.";
 
 | Escenario | Valor de TDD |
 |-----------|-------------|
-| Lógica de negocio (handlers, validators) | ✓ Alto — fuerza pensar en los casos antes de implementar |
-| Bugs reproducibles | ✓ Alto — escribir el test que reproduce el bug, luego arreglarlo |
-| Refactoring | ✓ Alto — los tests existentes protegen el comportamiento |
+| Lógica de negocio (handlers, validators) | Alto — fuerza pensar en los casos antes de implementar |
+| Bugs reproducibles | Alto — escribir el test que reproduce el bug, luego arreglarlo |
+| Refactoring | Alto — los tests existentes protegen el comportamiento |
 | Código de infraestructura (SQL, HTTP) | Bajo — difícil sin un contenedor real |
 | Código exploratorio ("¿cómo funciona X?") | Bajo — primero explorar, luego testear |
 | Código UI / presentación | Bajo — difícil de automatizar |
@@ -235,16 +235,16 @@ Este orden asegura que cada capa es necesaria. No se implementa lo que ningún t
 ## Lo que TDD no es
 
 ```
-✗ TDD no es escribir todos los tests primero y luego todo el código
+No: TDD no es escribir todos los tests primero y luego todo el código
    → es un ciclo corto: 1 test → código mínimo → refactor → siguiente test
 
-✗ TDD no garantiza buen diseño
+No: TDD no garantiza buen diseño
    → facilita buen diseño al hacer visible cuándo el código es difícil de testear
 
-✗ TDD no es obligatorio para todo
+No: TDD no es obligatorio para todo
    → elegir qué partes se benefician: lógica de negocio sí, infraestructura menos
 
-✗ TDD no reemplaza el pensamiento
+No: TDD no reemplaza el pensamiento
    → si no se entiende el dominio, los tests serán incorrectos aunque pasen
 ```
 

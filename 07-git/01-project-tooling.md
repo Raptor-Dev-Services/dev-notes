@@ -202,12 +202,12 @@ Normaliza line endings. Previene diffs de archivos completos por cambios de CRLF
 ## Checklist de archivos en cada nuevo repositorio
 
 ```
-✓ .gitignore        — sin bin/, obj/, node_modules/, .env
-✓ .dockerignore     — contexto Docker mínimo
-✓ .editorconfig     — consistencia entre IDEs del equipo
-✓ .gitattributes    — LF consistente en todos los sistemas
-✓ README.md         — cómo arrancar el proyecto localmente
-✓ dependabot.yml    — dependencias actualizadas automáticamente
+Sí: .gitignore        — sin bin/, obj/, node_modules/, .env
+Sí: .dockerignore     — contexto Docker mínimo
+Sí: .editorconfig     — consistencia entre IDEs del equipo
+Sí: .gitattributes    — LF consistente en todos los sistemas
+Sí: README.md         — cómo arrancar el proyecto localmente
+Sí: dependabot.yml    — dependencias actualizadas automáticamente
 ```
 
 ---

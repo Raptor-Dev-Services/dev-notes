@@ -149,14 +149,14 @@ string c = a + " " + b;  // crea UN nuevo string — está bien para pocos
 Cuando concatenas en un loop, cada `+` crea un nuevo string. `StringBuilder` es un buffer mutable:
 
 ```csharp
-// ❌ Ineficiente — crea miles de strings temporales
+// Mal: Ineficiente — crea miles de strings temporales
 string resultado = "";
 for (int i = 0; i < 10000; i++)
 {
     resultado += $"Línea {i}\n";  // 10,000 strings temporales
 }
 
-// ✓ Eficiente — un solo buffer
+// Bien: Eficiente — un solo buffer
 var sb = new StringBuilder();
 for (int i = 0; i < 10000; i++)
 {
@@ -276,7 +276,7 @@ private const string GetByPublicIdSql = """
 
 // Interpolación para logging (parámetros nombrados para Serilog)
 _logger.LogInformation("Usuario {UserId} autenticado desde {Ip}", userId, clientIp);
-// ❌ NO usar: _logger.LogInformation($"Usuario {userId} autenticado");
+// NO usar: _logger.LogInformation($"Usuario {userId} autenticado");
 // La interpolación pierde la estructura — Serilog no puede indexar los valores
 
 // ?? throw para configuración

@@ -130,12 +130,12 @@ protected internal void MetodoCompartido() { }
 
 | Modificador | Misma clase | Subclases (mismo proyecto) | Subclases (otro proyecto) | Mismo proyecto | Otro proyecto |
 |-------------|-------------|---------------------------|--------------------------|---------------|--------------|
-| `private` | ✓ | ✗ | ✗ | ✗ | ✗ |
-| `private protected` | ✓ | ✓ | ✗ | ✗ | ✗ |
-| `protected` | ✓ | ✓ | ✓ | ✗ | ✗ |
-| `internal` | ✓ | ✓ | ✗ | ✓ | ✗ |
-| `protected internal` | ✓ | ✓ | ✓ | ✓ | ✗ |
-| `public` | ✓ | ✓ | ✓ | ✓ | ✓ |
+| `private` | Sí | No | No | No | No |
+| `private protected` | Sí | Sí | No | No | No |
+| `protected` | Sí | Sí | Sí | No | No |
+| `internal` | Sí | Sí | No | Sí | No |
+| `protected internal` | Sí | Sí | Sí | Sí | No |
+| `public` | Sí | Sí | Sí | Sí | Sí |
 
 **Regla práctica:** usa el modificador más restrictivo que permita que el código funcione. Si algo puede ser `private`, hazlo `private`.
 
@@ -391,23 +391,23 @@ public sealed class GetExampleUsersHandler
 ### Error 1: Olvidar `sealed` en implementaciones
 
 ```csharp
-// ❌ sin sealed — deja la puerta abierta a herencia no deseada
+// Mal: sin sealed — deja la puerta abierta a herencia no deseada
 public class GetExampleUserHandler { }
 
-// ✓ con sealed — comunica la intención, mejor rendimiento
+// Bien: con sealed — comunica la intención, mejor rendimiento
 public sealed class GetExampleUserHandler { }
 ```
 
 ### Error 2: Hacer público lo que debería ser privado
 
 ```csharp
-// ❌ _db es un detalle de implementación — no debería ser público
+// Mal: _db es un detalle de implementación — no debería ser público
 public sealed class ExampleUsersSql
 {
     public MainDapperDbConnection _db;  // cualquiera puede acceder y modificar
 }
 
-// ✓ privado — encapsulado correctamente
+// Bien: privado — encapsulado correctamente
 public sealed class ExampleUsersSql
 {
     private readonly MainDapperDbConnection _db;
@@ -417,7 +417,7 @@ public sealed class ExampleUsersSql
 ### Error 3: Usar `static` cuando se necesita DI
 
 ```csharp
-// ❌ sin DI — no puedes testear, no puedes cambiar la implementación
+// Mal: sin DI — no puedes testear, no puedes cambiar la implementación
 public static class UserService
 {
     public static async Task<User> GetUserAsync(Guid id)
@@ -427,7 +427,7 @@ public static class UserService
     }
 }
 
-// ✓ con DI — testeable, desacoplado
+// Bien: con DI — testeable, desacoplado
 public sealed class UserService : IUserService
 {
     private readonly IUserRepository _repo;
@@ -441,7 +441,7 @@ public sealed class UserService : IUserService
 ### Error 4: Clase con demasiadas responsabilidades
 
 ```csharp
-// ❌ una clase que hace todo — difícil de mantener y testear
+// Mal: una clase que hace todo — difícil de mantener y testear
 public class UserManager
 {
     public User GetUser(Guid id) { /* SQL */ }
@@ -450,7 +450,7 @@ public class UserManager
     public void LogAction(string action) { /* Serilog */ }
 }
 
-// ✓ separación de responsabilidades — cada clase hace una cosa
+// Bien: separación de responsabilidades — cada clase hace una cosa
 public sealed class UserRepository : IUserRepository { /* Solo SQL */ }
 public sealed class EmailService : IEmailService { /* Solo emails */ }
 public sealed class JwtTokenService : IJwtTokenService { /* Solo JWT */ }

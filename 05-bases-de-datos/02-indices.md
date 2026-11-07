@@ -31,10 +31,10 @@ CREATE INDEX IF NOT EXISTS ix_example_users_email
     ON dbo.ExampleUsers (Email);
 
 -- PostgreSQL lo usa para:
-WHERE Email = 'john@test.com'         ✓
-WHERE Email LIKE 'john%'              ✓ (solo prefix, no sufijo)
-WHERE Email LIKE '%john%'             ✗ (no usa el índice)
-WHERE CreatedAtUtc > '2025-01-01'     ✓ (si el índice es en CreatedAtUtc)
+WHERE Email = 'john@test.com'         Sí
+WHERE Email LIKE 'john%'              Sí: (solo prefix, no sufijo)
+WHERE Email LIKE '%john%'             No: (no usa el índice)
+WHERE CreatedAtUtc > '2025-01-01'     Sí: (si el índice es en CreatedAtUtc)
 ```
 
 ---
@@ -175,14 +175,14 @@ Execution Time: 45.2 ms
 ## Cuándo crear un índice
 
 ```
-✓ Columnas que aparecen frecuentemente en WHERE
-✓ Columnas usadas en JOIN (FK siempre deben tener índice)
-✓ Columnas usadas en ORDER BY de queries paginados
-✓ Columnas con restricción UNIQUE
+Sí: Columnas que aparecen frecuentemente en WHERE
+Sí: Columnas usadas en JOIN (FK siempre deben tener índice)
+Sí: Columnas usadas en ORDER BY de queries paginados
+Sí: Columnas con restricción UNIQUE
 
-✗ Tablas con muy pocas filas (< 1000) — seq scan es igual o más rápido
-✗ Columnas con muy baja cardinalidad (ej: una columna booleana en tabla de 10M filas)
-✗ Demasiados índices en tablas con muchos INSERT/UPDATE — cada índice ralentiza escrituras
+No: Tablas con muy pocas filas (< 1000) — seq scan es igual o más rápido
+No: Columnas con muy baja cardinalidad (ej: una columna booleana en tabla de 10M filas)
+No: Demasiados índices en tablas con muchos INSERT/UPDATE — cada índice ralentiza escrituras
 ```
 
 ---

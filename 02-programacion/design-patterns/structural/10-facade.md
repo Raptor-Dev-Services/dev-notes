@@ -13,7 +13,7 @@
 Tu código necesita trabajar con un subsistema complejo: un framework de video con decenas de clases (`VideoFile`, `OggCompressionCodec`, `MPEG4CompressionCodec`, `CodecFactory`, `BitrateReader`, `AudioMixer`). Para convertir un video necesitas orquestar 8 clases de forma específica. Tu código queda acoplado a todos esos detalles.
 
 ```csharp
-// ❌ Sin Facade — el cliente conoce todos los subsistemas
+// Mal: Sin Facade — el cliente conoce todos los subsistemas
 var file    = new VideoFile("funny-cats.ogg");
 var codec   = CodecFactory.extract(file);
 var buffer1 = BitrateReader.read(file, codec);

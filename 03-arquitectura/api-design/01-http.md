@@ -10,23 +10,23 @@ El protocolo que subyace a todas las APIs REST. Entender HTTP semántico es la b
 
 | Verbo | Semántica | Idempotente | Body |
 |-------|-----------|-------------|------|
-| `GET` | Leer un recurso | ✓ | No |
-| `POST` | Crear un recurso / acción no idempotente | ✗ | Sí |
-| `PUT` | Reemplazar un recurso completo | ✓ | Sí |
-| `PATCH` | Actualizar parcialmente un recurso | ✗ | Sí |
-| `DELETE` | Eliminar un recurso | ✓ | Opcional |
-| `HEAD` | Como GET pero sin body — verificar existencia | ✓ | No |
-| `OPTIONS` | Descubrir métodos permitidos (CORS preflight) | ✓ | No |
+| `GET` | Leer un recurso | Sí | No |
+| `POST` | Crear un recurso / acción no idempotente | No | Sí |
+| `PUT` | Reemplazar un recurso completo | Sí | Sí |
+| `PATCH` | Actualizar parcialmente un recurso | No | Sí |
+| `DELETE` | Eliminar un recurso | Sí | Opcional |
+| `HEAD` | Como GET pero sin body — verificar existencia | Sí | No |
+| `OPTIONS` | Descubrir métodos permitidos (CORS preflight) | Sí | No |
 
 ### Idempotencia — la propiedad más importante
 
 Una operación es **idempotente** si ejecutarla N veces produce el mismo resultado que ejecutarla 1 vez:
 
 ```
-GET  /api/users/123    → mismo resultado siempre  ✓ idempotente
-DELETE /api/users/123  → 1ra vez: elimina; 2da vez: 404 (mismo estado final) ✓ idempotente
-PUT  /api/users/123    → siempre deja el recurso en el estado enviado ✓ idempotente
-POST /api/users        → cada llamada crea un usuario nuevo ✗ no idempotente
+GET  /api/users/123    → mismo resultado siempre  Sí: idempotente
+DELETE /api/users/123  → 1ra vez: elimina; 2da vez: 404 (mismo estado final) Sí: idempotente
+PUT  /api/users/123    → siempre deja el recurso en el estado enviado Sí: idempotente
+POST /api/users        → cada llamada crea un usuario nuevo no idempotente
 ```
 
 La idempotencia importa porque los clientes reintentan requests ante fallos de red. Un GET o PUT reintentado es seguro. Un POST reintentado puede crear duplicados.

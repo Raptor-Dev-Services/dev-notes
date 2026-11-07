@@ -56,7 +56,7 @@ A diferencia de C/C++, en .NET los leaks ocurren cuando el GC no puede recolecta
 ### 1. Event handlers no desuscriptos
 
 ```csharp
-// ❌ Memory leak — el publicador mantiene referencia al suscriptor
+// Mal: Memory leak — el publicador mantiene referencia al suscriptor
 public sealed class ExampleUserService
 {
     public event EventHandler<ExampleUser>? UserCreated;
@@ -74,7 +74,7 @@ public sealed class NotificationHandler
     private void OnUserCreated(object? sender, ExampleUser user) { ... }
 }
 
-// ✓ Desuscribirse cuando el objeto ya no se necesita
+// Bien: Desuscribirse cuando el objeto ya no se necesita
 public sealed class NotificationHandler : IDisposable
 {
     private readonly ExampleUserService _service;
@@ -95,7 +95,7 @@ public sealed class NotificationHandler : IDisposable
 ### 2. Captura de variables en closures
 
 ```csharp
-// ❌ El closure captura toda la instancia del Handler
+// Mal: El closure captura toda la instancia del Handler
 public sealed class ProcessBatchHandler
 {
     private readonly IExampleUserRepository _repo;
@@ -111,7 +111,7 @@ public sealed class ProcessBatchHandler
         }
     }
 
-    // ✓ Capturar solo lo necesario
+    // Bien: Capturar solo lo necesario
     public void QueueProcessing_Safe(IEnumerable<Guid> ids)
     {
         var repo = _repo;   // captura local — no captura 'this'
@@ -127,7 +127,7 @@ public sealed class ProcessBatchHandler
 ### 3. Servicios Scoped capturados por Singleton
 
 ```csharp
-// ❌ Captive dependency — el Singleton captura un Scoped
+// Mal: Captive dependency — el Singleton captura un Scoped
 // El Scoped debería vivir por request, pero el Singleton lo mantiene vivo siempre
 public sealed class MyBackgroundService : BackgroundService
 {
@@ -136,7 +136,7 @@ public sealed class MyBackgroundService : BackgroundService
     public MyBackgroundService(IExampleUserRepository repo) => _repo = repo;
 }
 
-// ✓ Crear scope por operación
+// Bien: Crear scope por operación
 public sealed class MyBackgroundService : BackgroundService
 {
     private readonly IServiceScopeFactory _scopeFactory;
@@ -162,7 +162,7 @@ public sealed class MyBackgroundService : BackgroundService
 Los recursos no gestionados (conexiones de BD, streams, sockets) deben liberarse explícitamente.
 
 ```csharp
-// ✓ Implementar IDisposable correctamente
+// Bien: Implementar IDisposable correctamente
 public sealed class ExampleUserFileExporter : IDisposable
 {
     private readonly StreamWriter _writer;
@@ -193,7 +193,7 @@ foreach (var user in users)
 ```
 
 ```csharp
-// ✓ IAsyncDisposable para recursos async (conexiones, streams async)
+// Bien: IAsyncDisposable para recursos async (conexiones, streams async)
 public sealed class ExampleUserRepository : IAsyncDisposable
 {
     private readonly NpgsqlConnection _connection;
@@ -228,7 +228,7 @@ var user = await repo.GetByPublicIdAsync(id, ct);
 ## Value Types vs Reference Types — elegir bien
 
 ```csharp
-// ✓ Usar struct para Value Objects pequeños e inmutables
+// Bien: Usar struct para Value Objects pequeños e inmutables
 // — no heap allocation cuando se usa como campo o variable local
 public readonly struct Money
 {
@@ -252,10 +252,10 @@ public readonly struct Money
     public override string ToString() => $"{Amount:F2} {Currency}";
 }
 
-// ❌ struct para objetos grandes — se copia en cada asignación
+// Mal: struct para objetos grandes — se copia en cada asignación
 // struct con 10+ campos puede ser más lento que una class por el costo de copia
 
-// ✓ record struct para Value Objects (C# 10+)
+// Bien: record struct para Value Objects (C# 10+)
 public readonly record struct UserId(Guid Value)
 {
     public static UserId New()      => new(Guid.NewGuid());
@@ -379,22 +379,22 @@ Usar `WeakReference<T>` para cachés opcionales donde perder la entrada es acept
 Los strings son inmutables: cada concatenación crea un objeto nuevo en el heap.
 
 ```csharp
-// ❌ Concatenación en loop — crea N strings intermedios en el heap
+// Mal: Concatenación en loop — crea N strings intermedios en el heap
 var result = string.Empty;
 foreach (var user in users)
     result += $"{user.FullName}, ";
 
-// ✓ StringBuilder — un solo buffer mutable, evita N allocations
+// Bien: StringBuilder — un solo buffer mutable, evita N allocations
 var sb = new StringBuilder(capacity: users.Count * 30);  // pre-sizing evita resize interno
 foreach (var user in users)
     sb.Append(user.FullName).Append(", ");
 var result = sb.ToString();
 
-// ✓ string.Create — crear sin StringBuilder cuando se conoce el tamaño exacto
+// Bien: string.Create — crear sin StringBuilder cuando se conoce el tamaño exacto
 var formatted = string.Create(36, userId, static (span, id) =>
     id.TryFormat(span, out _, "D"));
 
-// ✓ Interpolated string handlers (C# 10+) — el compilador optimiza automáticamente
+// Bien: Interpolated string handlers (C# 10+) — el compilador optimiza automáticamente
 // $"..." en métodos como logger.LogInformation ya usa DefaultInterpolatedStringHandler
 // que evita el string intermedio cuando el log level no está habilitado
 ```

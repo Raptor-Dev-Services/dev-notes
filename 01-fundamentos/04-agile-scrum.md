@@ -201,22 +201,22 @@ Miércoles (mid-sprint):
 ## Errores comunes en equipos Scrum
 
 ```
-❌ Daily como reporte de estado para el manager
+No: Daily como reporte de estado para el manager
    → Fix: El SM recuerda que el Daily es para el Dev Team, no para informar
 
-❌ Sprint sin DoD — "listo" significa cosas diferentes para cada dev
+No: Sprint sin DoD — "listo" significa cosas diferentes para cada dev
    → Fix: Acordar la DoD en la primera Retrospectiva y hacerla visible
 
-❌ PO ausente — toma decisiones 3 días después de la pregunta
+No: PO ausente — toma decisiones 3 días después de la pregunta
    → Fix: PO disponible diariamente para clarificar, no solo en Planning/Review
 
-❌ Sprint Backlog cambia constantemente mid-sprint
+No: Sprint Backlog cambia constantemente mid-sprint
    → Fix: Todo lo nuevo va al Product Backlog; el sprint actual no se interrumpe
 
-❌ Retrospectiva omitida "porque no hay tiempo"
+No: Retrospectiva omitida "porque no hay tiempo"
    → Fix: Sin retro, los mismos problemas se repiten indefinidamente
 
-❌ "Somos ágiles" = sin documentación, sin tests, sin arquitectura
+No: "Somos ágiles" = sin documentación, sin tests, sin arquitectura
    → Fix: Agile no significa ad-hoc; significa iterativo con calidad sostenida
 ```
 

@@ -13,7 +13,7 @@
 Tienes una colección con una estructura interna compleja (árbol, grafo, lista circular). El código cliente necesita recorrerla, pero no debería saber cómo está organizada internamente. Además, quieres recorrerla de diferentes formas: en orden, reversa, solo los pares, etc. sin duplicar el código de recorrido en el cliente.
 
 ```csharp
-// ❌ Sin Iterator — el cliente conoce la estructura interna
+// Mal: Sin Iterator — el cliente conoce la estructura interna
 class WordsCollection
 {
     public List<string> Items = new();  // expone la estructura interna

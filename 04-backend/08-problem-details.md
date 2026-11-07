@@ -13,13 +13,13 @@ Estándar para respuestas de error HTTP. En lugar de formatos ad-hoc, todas las 
 Sin un estándar, cada API inventa su propio formato de error:
 
 ```json
-// ❌ Formato A — información mínima
+// Mal: Formato A — información mínima
 { "error": "Not found" }
 
-// ❌ Formato B — estructura inconsistente
+// Mal: Formato B — estructura inconsistente
 { "success": false, "message": "Usuario no encontrado", "code": 404 }
 
-// ❌ Formato C — detalle técnico expuesto al cliente
+// Mal: Formato C — detalle técnico expuesto al cliente
 {
   "exception": "System.NullReferenceException",
   "stackTrace": "at App.Controllers...",
@@ -212,7 +212,7 @@ Dos trampas de este manejador, medidas en .NET 10:
 ### 404 — Not Found
 
 ```csharp
-// ✓ Respuesta del Handler usando Result Pattern
+// Bien: Respuesta del Handler usando Result Pattern
 return new GetExampleUserNotFoundFailure("Usuario con ID {id} no encontrado.");
 
 // El Presenter llama a _viewModel.Fail(message) → Status 404 en el controller
@@ -298,12 +298,12 @@ El proyecto tiene `app.UseCoreProblemDetails()` de `Common.Web` que ya configura
 
 | Decisión | Cuándo |
 |----------|--------|
-| ✓ RFC 9457 `application/problem+json` | Siempre en APIs REST públicas |
-| ✓ `ValidationProblemDetails` | Errores de validación (incluye `errors` por campo) |
-| ✓ Custom `type` URI | Cuando el cliente necesita distinguir tipos de error programáticamente |
-| ✗ Exponer stack trace | Nunca en producción |
-| ✗ Exponer mensajes de excepción internos | Solo en desarrollo |
-| ✗ Inventar formato de error propio | Siempre usar RFC 9457 |
+| RFC 9457 `application/problem+json` | Siempre en APIs REST públicas |
+| `ValidationProblemDetails` | Errores de validación (incluye `errors` por campo) |
+| Custom `type` URI | Cuando el cliente necesita distinguir tipos de error programáticamente |
+| Exponer stack trace | Nunca en producción |
+| Exponer mensajes de excepción internos | Solo en desarrollo |
+| Inventar formato de error propio | Siempre usar RFC 9457 |
 
 **Regla:** `title` es constante para un tipo de error (igual para todos los 404). `detail` es específico de la instancia ("Usuario con ID X no encontrado").
 

@@ -327,14 +327,14 @@ public async Task ProcessBulkAsync(IEnumerable<Guid> ids, CancellationToken ct)
 ### Error 1 — `async void` (nunca usar excepto en event handlers)
 
 ```csharp
-// ❌ async void — las excepciones no se pueden capturar externamente
+// Mal: async void — las excepciones no se pueden capturar externamente
 public async void CargarDatos()
 {
     var user = await _repo.GetByPublicIdAsync(id, ct);
     // Si lanza excepción, la app puede crashear silenciosamente
 }
 
-// ✓ async Task — las excepciones se propagan correctamente
+// Bien: async Task — las excepciones se propagan correctamente
 public async Task CargarDatosAsync()
 {
     var user = await _repo.GetByPublicIdAsync(id, ct);
@@ -344,11 +344,11 @@ public async Task CargarDatosAsync()
 ### Error 2 — Bloquear async con `.Result` o `.Wait()`
 
 ```csharp
-// ❌ Bloquear el hilo — puede causar deadlock en ASP.NET
+// Mal: Bloquear el hilo — puede causar deadlock en ASP.NET
 var user = repo.GetByPublicIdAsync(id, ct).Result;  // BLOQUEA el hilo
 var user = repo.GetByPublicIdAsync(id, ct).GetAwaiter().GetResult();  // ídem
 
-// ✓ Siempre await
+// Bien: Siempre await
 var user = await repo.GetByPublicIdAsync(id, ct);
 ```
 
@@ -357,7 +357,7 @@ var user = await repo.GetByPublicIdAsync(id, ct);
 ### Error 3 — Olvidar `await`
 
 ```csharp
-// ❌ Sin await — el handler retorna inmediatamente sin esperar la BD
+// Mal: Sin await — el handler retorna inmediatamente sin esperar la BD
 public async Task<GetExampleUserResponse> Handle(GetExampleUserRequest request, CancellationToken ct)
 {
     var task = _repo.GetByPublicIdAsync(request.PublicId, ct);
@@ -369,7 +369,7 @@ public async Task<GetExampleUserResponse> Handle(GetExampleUserRequest request, 
     // ... el usuario nunca fue esperado
 }
 
-// ✓ Con await
+// Bien: Con await
 public async Task<GetExampleUserResponse> Handle(GetExampleUserRequest request, CancellationToken ct)
 {
     var user = await _repo.GetByPublicIdAsync(request.PublicId, ct);
@@ -385,7 +385,7 @@ public async Task<GetExampleUserResponse> Handle(GetExampleUserRequest request, 
 ### Error 4 — No propagar CancellationToken
 
 ```csharp
-// ❌ Recibe ct pero no lo pasa — la BD no puede cancelar
+// Mal: Recibe ct pero no lo pasa — la BD no puede cancelar
 public async Task<ExampleUser?> GetByPublicIdAsync(Guid publicId, CancellationToken ct)
 {
     return await _db.QuerySingleAsync<ExampleUser>(
@@ -394,7 +394,7 @@ public async Task<ExampleUser?> GetByPublicIdAsync(Guid publicId, CancellationTo
         // ↑ falta: cancellationToken: ct
 }
 
-// ✓ Propaga el token
+// Bien: Propaga el token
 public Task<ExampleUser?> GetByPublicIdAsync(Guid publicId, CancellationToken ct = default)
     => _db.QuerySingleAsync<ExampleUser>(
         "SELECT * FROM ...",
@@ -405,17 +405,17 @@ public Task<ExampleUser?> GetByPublicIdAsync(Guid publicId, CancellationToken ct
 ### Error 5 — `async` sin `await` (warning del compilador)
 
 ```csharp
-// ❌ El compilador avisa: "This async method lacks 'await' operators"
+// Mal: El compilador avisa: "This async method lacks 'await' operators"
 // El método se ejecuta síncrono aunque diga async
 public async Task<string> GetNameAsync()
 {
     return "Ana";  // sin await — el async no sirve de nada aquí
 }
 
-// ✓ Si el método es síncrono, no pongas async
+// Si el método es síncrono, no pongas async
 public string GetName() => "Ana";
 
-// ✓ Si quieres retornar un Task sin async, usa Task.FromResult
+// Si quieres retornar un Task sin async, usa Task.FromResult
 public Task<string> GetNameAsync() => Task.FromResult("Ana");
 ```
 

@@ -260,8 +260,8 @@ public sealed class TokenRevocationMiddleware
 ```csharp
 // HS256 — HMAC-SHA256 con secreto compartido
 // Usa la misma clave para firmar y verificar
-// ✓ Simple, rápido
-// ✗ El secreto debe estar en todos los servicios que validan el token
+// Bien: Simple, rápido
+// Mal: El secreto debe estar en todos los servicios que validan el token
 
 var key   = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
 var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -269,8 +269,8 @@ var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 // RS256 — RSA-SHA256 con par de claves pública/privada
 // Firma con clave privada (solo el servidor de auth)
 // Verifica con clave pública (cualquier servicio puede verificar sin conocer la clave privada)
-// ✓ Más seguro para microservicios — los servicios solo necesitan la clave pública
-// ✗ Más lento que HS256
+// Bien: Más seguro para microservicios — los servicios solo necesitan la clave pública
+// Mal: Más lento que HS256
 
 using var rsa     = RSA.Create(2048);
 var privateKey    = new RsaSecurityKey(rsa);  // para firmar — solo el auth server
@@ -279,8 +279,8 @@ var rsaCreds      = new SigningCredentials(privateKey, SecurityAlgorithms.RsaSha
 
 // ES256 — ECDSA-SHA256 con par de claves de curva elíptica (P-256)
 // Firma con clave privada, verifica con clave pública — igual que RS256
-// ✓ Claves más pequeñas que RSA con seguridad equivalente
-// ✓ Más rápido que RS256 en generación y verificación
+// Bien: Claves más pequeñas que RSA con seguridad equivalente
+// Bien: Más rápido que RS256 en generación y verificación
 // Fuente: *JWT Handbook* — Ch.4 JSON Web Signatures
 
 using var ecdsa  = ECDsa.Create(ECCurve.NamedCurves.nistP256);
@@ -341,7 +341,7 @@ Usar JWE cuando el payload contiene datos sensibles (PII, datos médicos o finan
 Un atacante puede tomar un JWT firmado, cambiar el header a `"alg": "none"` y eliminar la firma. En ASP.NET Core ese token no pasa por omisión: `RequireSignedTokens` vale `true` y rechaza cualquier token sin firma con un 401, esté o no declarado `ValidAlgorithms`. Lo que abre el ataque es apagar esa bandera:
 
 ```csharp
-// ✗ Esto acepta tokens sin firma, y ValidAlgorithms no lo impide
+// Mal: Esto acepta tokens sin firma, y ValidAlgorithms no lo impide
 options.TokenValidationParameters = new TokenValidationParameters
 {
     RequireSignedTokens = false,
@@ -366,19 +366,19 @@ Medido con .NET 10 y `Microsoft.AspNetCore.Authentication.JwtBearer` 10.0.14.
 
 ```
 localStorage / sessionStorage
-  ✗ Vulnerable a XSS — cualquier script en la página puede leerlo
+  No: Vulnerable a XSS — cualquier script en la página puede leerlo
 
 Cookie HttpOnly + SameSite=Strict   ← opción preferida para web apps
-  ✓ Inaccesible desde JavaScript
-  ✓ SameSite=Strict mitiga CSRF sin token adicional
+  Sí: Inaccesible desde JavaScript
+  Sí: SameSite=Strict mitiga CSRF sin token adicional
 
 Memoria (variable JavaScript)
-  ✓ XSS no puede extraerlo del storage
-  ✗ Se pierde al refrescar la página — requiere refresh token en cookie para renovar
+  Sí: XSS no puede extraerlo del storage
+  No: Se pierde al refrescar la página — requiere refresh token en cookie para renovar
 ```
 
 ```csharp
-// ✓ Si se usa cookie, configurar las propiedades de seguridad
+// Si se usa cookie, configurar las propiedades de seguridad
 options.Cookie = new CookieBuilder
 {
     HttpOnly     = true,
@@ -504,11 +504,11 @@ Con JWKS, la rotación de claves es transparente:
 ```
 
 ```
-❌ Con secreto compartido (HS256):
+No: Con secreto compartido (HS256):
    - Cambiar el secreto invalida todos los tokens activos inmediatamente
    - Todos los servicios deben recibir el nuevo secreto de forma sincronizada
 
-✓ Con JWKS (RS256 / ES256):
+Sí: Con JWKS (RS256 / ES256):
    - Múltiples claves coexisten durante el período de transición
    - Los servicios descargan el JWKS automáticamente → sin coordinación manual
    - Rotación gradual y sin downtime

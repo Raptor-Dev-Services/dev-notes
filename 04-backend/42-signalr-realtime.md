@@ -7,12 +7,12 @@ SignalR provee comunicación bidireccional en tiempo real entre el servidor y el
 ## Casos de uso en un SaaS
 
 ```
-✓ Notificación cuando un job largo termina (reporte listo)
-✓ Actualización en tiempo real de un dashboard operativo
-✓ Alertas de sistema (pago fallido, límite alcanzado)
-✓ Colaboración: otro usuario está editando el mismo registro
-✓ Chat interno del tenant
-✓ Notificaciones push dentro del SaaS (campana de notificaciones)
+Sí: Notificación cuando un job largo termina (reporte listo)
+Sí: Actualización en tiempo real de un dashboard operativo
+Sí: Alertas de sistema (pago fallido, límite alcanzado)
+Sí: Colaboración: otro usuario está editando el mismo registro
+Sí: Chat interno del tenant
+Sí: Notificaciones push dentro del SaaS (campana de notificaciones)
 ```
 
 ---
