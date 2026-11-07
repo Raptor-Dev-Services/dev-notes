@@ -18,7 +18,7 @@ AWS/RDS             → métricas de RDS
 AWS/ApplicationELB  → métricas del ALB
 AWS/ECS             → métricas de ECS
 CWAgent             → métricas del CloudWatch Agent (memoria, disco)
-GTMSuite/Backend    → métricas personalizadas de la aplicación .NET
+Startup/Backend    → métricas personalizadas de la aplicación .NET
 ```
 
 ### Dimensiones
@@ -255,7 +255,7 @@ public class MetricsService
     {
         await _cloudWatch.PutMetricDataAsync(new PutMetricDataRequest
         {
-            Namespace = "GTMSuite/Backend",
+            Namespace = "Startup/Backend",
             MetricData = new List<MetricDatum>
             {
                 new MetricDatum
@@ -462,7 +462,7 @@ aws sns subscribe \
 ```bash
 # Crear dashboard operativo
 aws cloudwatch put-dashboard \
-  --dashboard-name "GTMSuite-Produccion" \
+  --dashboard-name "Startup-Produccion" \
   --dashboard-body '{
     "widgets": [
       {
@@ -624,7 +624,7 @@ Integración en el back-template:
 | Término | Definición |
 |---------|-----------|
 | CloudWatch | Servicio de observabilidad de AWS: métricas, logs, alarmas y dashboards. |
-| Namespace | Agrupación lógica de métricas. Ej: `AWS/EC2`, `GTMSuite/Backend`. |
+| Namespace | Agrupación lógica de métricas. Ej: `AWS/EC2`, `Startup/Backend`. |
 | Dimensión | Atributo que identifica la fuente de una métrica. Ej: `InstanceId`, `TenantId`. |
 | Log Group | Contenedor de streams de logs con la misma política de retención. |
 | Log Stream | Fuente individual dentro de un Log Group (una instancia, un contenedor). |

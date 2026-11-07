@@ -43,7 +43,7 @@ aws rds create-db-instance \
   --db-instance-class db.t3.large \
   --engine postgres \
   --engine-version 16.3 \
-  --master-username gtmadmin \
+  --master-username appadmin \
   --master-user-password "$(openssl rand -base64 32)" \
   --allocated-storage 100 \
   --max-allocated-storage 500 \
@@ -52,7 +52,7 @@ aws rds create-db-instance \
   --kms-key-id arn:aws:kms:us-east-1:123456789:key/prod-rds-key \
   --db-subnet-group-name {{PROJECT_SLUG}}-db-subnet-group \
   --vpc-security-group-ids sg-db \
-  --db-name gtmdb \
+  --db-name appdb \
   --multi-az \
   --no-publicly-accessible \
   --backup-retention-period 7 \
@@ -339,8 +339,8 @@ aws rds modify-db-parameter-group \
 ```
 Host={{PROJECT_SLUG}}-prod.xyz.us-east-1.rds.amazonaws.com;
 Port=5432;
-Database=gtmdb;
-Username=gtmadmin;
+Database=appdb;
+Username=appadmin;
 Password=...;
 SSL Mode=Require;
 Trust Server Certificate=false;

@@ -158,7 +158,7 @@ Velocidad del equipo sin gestionar deuda:
 ### Definition of Done (DoD) con criterios de calidad
 
 ```markdown
-# Definition of Done — CRM Messenger
+# Definition of Done — sistema de mensajería
 
 Una historia está "Done" cuando:
 - [ ] El código compila sin warnings
