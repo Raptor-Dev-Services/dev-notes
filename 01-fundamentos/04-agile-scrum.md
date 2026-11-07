@@ -113,10 +113,10 @@ Responder al cambio          SOBRE   seguir un plan
 
 La DoD es el acuerdo del equipo sobre qué significa "terminado". Sin DoD, cada dev define "listo" de forma diferente.
 
-### Ejemplo de DoD para CRM Messenger
+### Ejemplo de DoD para un sistema de mensajería
 
 ```markdown
-# Definición de Done — CRM Messenger
+# Definición de Done — un sistema de mensajería
 
 Una historia está "Done" cuando:
 - [ ] El código compila sin warnings

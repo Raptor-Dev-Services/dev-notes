@@ -175,7 +175,7 @@ resource "aws_db_instance" "postgres" {
   max_allocated_storage = 100   # auto-scaling de storage
 
   db_name  = "sistema"
-  username = "gtmadmin"
+  username = "appadmin"
   password = var.db_password
 
   vpc_security_group_ids = [aws_security_group.rds.id]

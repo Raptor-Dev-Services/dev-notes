@@ -84,7 +84,7 @@ Equivalente a S3.
 ```bash
 # crear cuenta de storage
 az storage account create \
-  --name gtmstorage \
+  --name startupstorage \
   --resource-group {{PROJECT_SLUG}}-rg \
   --sku Standard_LRS \
   --kind StorageV2
@@ -92,11 +92,11 @@ az storage account create \
 # crear contenedor
 az storage container create \
   --name assets \
-  --account-name gtmstorage
+  --account-name startupstorage
 
 # subir archivo
 az storage blob upload \
-  --account-name gtmstorage \
+  --account-name startupstorage \
   --container-name assets \
   --name logo.png \
   --file ./logo.png

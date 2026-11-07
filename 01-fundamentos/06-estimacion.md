@@ -70,7 +70,7 @@ Estimación en story points (relativa):
 
 Fibonacci (1, 2, 3, 5, 8, 13, 21) es la escala más común porque refleja la incertidumbre creciente:
 
-| Puntos | Qué significa | Ejemplo (CRM Messenger) |
+| Puntos | Qué significa | Ejemplo (sistema de mensajería) |
 |--------|--------------|------------------------|
 | 1 | Trivial — pocas líneas, sin decisiones | Cambiar un texto de un label |
 | 2 | Simple — un componente, bien entendido | Agregar campo `apellido` a perfil de agente |
