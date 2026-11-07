@@ -184,7 +184,7 @@
 | Libro | Autor |
 |-------|-------|
 | Web Application Security (2ª ed.) | Andrew Hoffman |
-| Zero Trust Networks (2ª ed.) | Evan Gilman, Doug Barth |
+| Zero Trust Networks (2ª ed.) | Razi Rais, Christina Morillo, Evan Gilman, Doug Barth |
 | Threat Modeling: Designing for Security | Adam Shostack |
 | Building Secure and Reliable Systems | Heather Adkins et al. |
 | Practical Cloud Security (2ª ed.) | Chris Dotson |
