@@ -59,6 +59,8 @@
 > Cómo crecer más allá de una sola API monolítica.
 
 - [ ] [Monolito Modular](../03-arquitectura/09-modular-monolith.md): módulos con Contracts, reglas de referencia
+- [ ] [Monolito modular desacoplado por dominio](../03-arquitectura/15-monolito-modular-por-dominio.md): contratos, dueño único por tabla y esquema por módulo
+- [ ] [Monolito modular con hosts por rol](../03-arquitectura/14-monolito-modular-hosts-por-rol.md): el mismo código en varios procesos según cómo se opera
 - [ ] [Microservicios](../03-arquitectura/07-microservicios.md): EDA, Pub-Sub, message brokers, DLQ
 - [ ] [API Versioning](../03-arquitectura/06-api-versioning.md): URL, header, query string, y cuándo usar cada uno
 
