@@ -184,7 +184,7 @@ foreach (var even in GetEvens(nums))
     Console.WriteLine(even);  // 2, 4, 6
 ```
 
-### `yield`cómo funciona
+### `yield` - cómo funciona
 
 `yield return` pausa la función en ese punto y retorna el valor al consumidor. En la próxima iteración (`MoveNext()`), la función continúa desde donde pausó. El compilador genera una máquina de estados por ti.
 
@@ -230,7 +230,7 @@ foreach (var n in result)
 
 ---
 
-## `IAsyncEnumerable<T>`Iterator asíncrono (C# 8+)
+## `IAsyncEnumerable<T>` - Iterator asíncrono (C# 8+)
 
 ```csharp
 // Para streams de datos asincrónicos:

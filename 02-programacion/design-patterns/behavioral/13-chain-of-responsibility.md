@@ -474,10 +474,10 @@ app.MapControllers();        // handler final: ejecuta el controller
 | `SingleMessageHandlerBase` | Subclase de `MessageHandlerBase` para handlers que procesan un solo tipo de mensaje - implementa `CanHandle` comparando `message.Name == HandledMessageName` |
 | `MultipleMessageHandlerBase` | Subclase de `MessageHandlerBase` para handlers que procesan varios tipos de mensaje - `CanHandle` verifica si el nombre está en un array |
 | Handler terminal | Handler al final de la cadena que no delega al siguiente - notifica cuando ningún handler pudo procesar el mensaje (ej. lanza `NotSupportedException`) |
-| Scrutor | Librería de DI para .NET que permite registrar decoradores con `.Decorate<TInterface, TDecorator>()`simplifica el ensamble de cadenas de responsabilidad |
-| `.Decorate<T, D>()` | Método de Scrutor que registra `D` como decorador de `T`usado para construir la cadena en orden inverso al de ejecución |
+| Scrutor | Librería de DI para .NET que permite registrar decoradores con `.Decorate<TInterface, TDecorator>()` - simplifica el ensamble de cadenas de responsabilidad |
+| `.Decorate<T, D>()` | Método de Scrutor que registra `D` como decorador de `T` - usado para construir la cadena en orden inverso al de ejecución |
 | Pipeline vs cadena | Variante donde todos los handlers procesan el mismo mensaje (cada uno llama al siguiente después de procesar) - útil para transformaciones y logging |
-| `[MemberNotNullWhen]` | Atributo de C# que le indica al compilador que un campo no es null cuando el método retorna `true`evita warnings de nullable en la delegación al `_next` |
+| `[MemberNotNullWhen]` | Atributo de C# que le indica al compilador que un campo no es null cuando el método retorna `true` - evita warnings de nullable en la delegación al `_next` |
 
 ---
 

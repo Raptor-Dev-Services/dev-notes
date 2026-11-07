@@ -518,7 +518,7 @@ A partir de este punto, todos los demás módulos de Terraform pueden usar direc
 
 ---
 
-## `terraform_remote_state`leer outputs de otro módulo
+## `terraform_remote_state` - leer outputs de otro módulo
 > Fuente: *Terraform: Up and Running* (Brikman): Ch.3 The terraform_remote_state Data Source
 
 Cuando la infraestructura está dividida en módulos separados (VPC, RDS, ECS), un módulo puede leer los outputs de otro a través del state remoto sin acoplar los archivos `.tf`.
@@ -687,7 +687,7 @@ terraform {
 | Backend | sistema que almacena el state remotamente (S3, Azure Blob, Terraform Cloud) |
 | State Locking | mecanismo para evitar ejecuciones simultáneas que corrompan el state (DynamoDB en AWS) |
 | Módulo | carpeta con archivos `.tf` que encapsula un conjunto de recursos reutilizables |
-| Root Module | el directorio donde se ejecuta `terraform apply`punto de entrada de la ejecución |
+| Root Module | el directorio donde se ejecuta `terraform apply` - punto de entrada de la ejecución |
 | Plan | operación de solo lectura que calcula qué recursos se crearán, modificarán o destruirán |
 | Apply | operación que ejecuta el plan y materializa los cambios en el cloud |
 | `terraform.tfvars` | archivo que provee valores para las variables - nunca commitear si contiene secretos |

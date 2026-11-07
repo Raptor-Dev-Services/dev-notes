@@ -488,7 +488,7 @@ public async Task<GetExampleUserResponse> Handle(
 | Término | Definición |
 |---------|-----------|
 | Object Mapper | Clase responsable de copiar las propiedades de un objeto de un tipo a otro, encapsulando esa transformación lejos de los consumers |
-| IMapper\<TSource, TDestination\> | Interfaz genérica con un método `Map(TSource)` que retorna `TDestination`contrato mínimo para inyectar mappers por DI |
+| IMapper\<TSource, TDestination\> | Interfaz genérica con un método `Map(TSource)` que retorna `TDestination` - contrato mínimo para inyectar mappers por DI |
 | DTO (Data Transfer Object) | Objeto plano que transporta solo los datos que el consumer necesita - no tiene lógica de negocio |
 | Profile (AutoMapper) | Clase donde se configuran las reglas de mapping de AutoMapper - organiza las reglas por módulo o capa |
 | `CreateMap<T, U>()` | Método de AutoMapper en un Profile que registra una conversión automática entre dos tipos |

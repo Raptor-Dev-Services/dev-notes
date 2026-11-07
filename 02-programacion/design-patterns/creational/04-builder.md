@@ -277,7 +277,7 @@ app.UseAuthentication()
 | Constructor telescópico | Anti-patrón donde un constructor acumula decenas de parámetros opcionales, haciéndose ilegible |
 | `WebApplicationBuilder` | Implementación del patrón Builder en ASP.NET Core usada en `Program.cs` para configurar la aplicación |
 | `NpgsqlDataSourceBuilder` | Builder de Npgsql que permite configurar la fuente de datos de PostgreSQL paso a paso |
-| `builder.Build()` | Llamada equivalente al método `GetProduct()`materializa el objeto completamente configurado |
+| `builder.Build()` | Llamada equivalente al método `GetProduct()` - materializa el objeto completamente configurado |
 | Object initializer | Alternativa de C# a un Builder simple: `new Clase { Prop1 = val1, Prop2 = val2 }` |
 | Pipeline de middleware | Secuencia de componentes de ASP.NET Core configurada mediante llamadas encadenadas - Builder implícito |
 | Producto | El objeto complejo que resulta del proceso de construcción dirigido por el Builder |

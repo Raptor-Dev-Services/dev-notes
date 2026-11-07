@@ -66,12 +66,12 @@ Son compatibles. Clean Architecture es una forma concreta de implementar hexagon
 
 | Hexagonal | Clean Architecture (back-template) |
 |-----------|-------------------------------------|
-| Dominio | `Domain/`entidades e interfaces |
-| Puertos primarios | `Application/`handlers, requests, responses |
-| Puertos secundarios | `Domain/Repositories/`interfaces de repositorio |
-| Adaptadores primarios | `WebApi/`controllers, presenters |
-| Adaptadores secundarios | `Infrastructure/`repos concretos, SQL classes |
-| Composition Root | `Host/Program.cs`conecta puertos con adaptadores |
+| Dominio | `Domain/` - entidades e interfaces |
+| Puertos primarios | `Application/` - handlers, requests, responses |
+| Puertos secundarios | `Domain/Repositories/` - interfaces de repositorio |
+| Adaptadores primarios | `WebApi/` - controllers, presenters |
+| Adaptadores secundarios | `Infrastructure/` - repos concretos, SQL classes |
+| Composition Root | `Host/Program.cs` - conecta puertos con adaptadores |
 
 ---
 

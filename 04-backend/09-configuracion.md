@@ -344,7 +344,7 @@ La ventaja sobre `ValidateDataAnnotations()`: las reglas de validación viven en
 
 ---
 
-## `[OptionsValidator]`source generator (.NET 8)
+## `[OptionsValidator]` - source generator (.NET 8)
 > Fuente: *Architecting ASP.NET Core Applications* (Marcotte): Ch.9 Using the Options Validation Source Generator
 
 Para proyectos con AOT (Ahead-of-Time compilation) o trimming, el generador de código crea el validador en tiempo de compilación, sin reflection:

@@ -209,7 +209,7 @@ env_file:
 
 ---
 
-## `host.docker.internal`conectar contenedor al host
+## `host.docker.internal` - conectar contenedor al host
 
 ```
 Tu máquina (host)

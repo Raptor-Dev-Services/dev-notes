@@ -110,7 +110,7 @@ Console.WriteLine(p3.IdInfo.IdNumber); // 666  → Bien: IdInfo independiente
 
 ## Prototype en C# moderno - `ICloneable` y records
 
-### `ICloneable`interfaz estándar
+### `ICloneable` - interfaz estándar
 
 ```csharp
 public class Config : ICloneable

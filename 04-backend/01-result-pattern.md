@@ -500,7 +500,7 @@ public async Task<IActionResult> DoSomething(Guid id, CancellationToken ct)
 
 ---
 
-## `ResultViewModel<T>`el puente al HTTP
+## `ResultViewModel<T>` - el puente al HTTP
 
 ```csharp
 // Common — estructura que serializa como JSON
@@ -555,13 +555,13 @@ return _viewModel.IsSuccess ? Ok(_viewModel) : StatusCode(500, _viewModel);
 | Pattern Matching | Técnica de C# usada en el Presenter para discriminar entre tipos de IResponse |
 | DTO | Data Transfer Object - objeto plano con solo los campos que necesita el cliente |
 | INotFoundFailure | Respuesta semántica de negocio que el Presenter traduce a HTTP 404 sin lanzar excepción |
-| OperationResultSeverity | Enumeración con tres niveles: `Information`, `Warning`, `Error`permite diferenciar tipos de mensajes en el resultado |
+| OperationResultSeverity | Enumeración con tres niveles: `Information`, `Warning`, `Error` - permite diferenciar tipos de mensajes en el resultado |
 | Static Factory Method | Método estático que crea instancias del resultado (`Success(...)`, `Failure(...)`) - encapsula la lógica de construcción y fuerza el uso del contrato correcto |
 | `MemberNotNullWhen` | Atributo de C# que le indica al compilador qué propiedad es non-null según el valor de un booleano - elimina warnings de nullable en el consumer |
 | Constructor privado | Técnica para forzar el uso de static factory methods - nadie puede instanciar la clase directamente |
-| OperationStatus | Enumeración con tres estados: `Success`, `PartialSuccess`, `Failure`útil cuando una operación puede tener resultados mixtos (algunos errores son tolerables) |
+| OperationStatus | Enumeración con tres estados: `Success`, `PartialSuccess`, `Failure` - útil cuando una operación puede tener resultados mixtos (algunos errores son tolerables) |
 | ImmutableList\<T\> | Colección inmutable de .NET usada en la lista de errores/mensajes - previene que actores externos muten los resultados |
-| Subclase privada anidada | Clase definida dentro de otra con visibilidad `private`la única forma de heredar de un padre con constructor privado; inaccesible desde fuera |
+| Subclase privada anidada | Clase definida dentro de otra con visibilidad `private` - la única forma de heredar de un padre con constructor privado; inaccesible desde fuera |
 
 ---
 

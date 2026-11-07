@@ -186,9 +186,9 @@ Database.Migrate() → ejecuta todas las migraciones pendientes
 
 | Entorno | Método |
 |---------|--------|
-| Development | `EnsureCreated()`recrear rápido sin historial |
-| Test | `EnsureCreated()`DB limpia por test |
-| Staging/Production | `Database.Migrate()`incremental, con rollback |
+| Development | `EnsureCreated()` - recrear rápido sin historial |
+| Test | `EnsureCreated()` - DB limpia por test |
+| Staging/Production | `Database.Migrate()` - incremental, con rollback |
 
 ### Cambiar DatabaseInitializationService para producción
 

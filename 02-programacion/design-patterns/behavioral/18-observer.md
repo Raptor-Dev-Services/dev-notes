@@ -203,7 +203,7 @@ market.StockChanged -= MyHandler;
 
 ---
 
-## Observer con `IObservable<T>` / `IObserver<T>`Reactive Extensions (Rx)
+## Observer con `IObservable<T>` / `IObserver<T>` - Reactive Extensions (Rx)
 
 ```csharp
 // La interfaz estándar de .NET para Observer:
