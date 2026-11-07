@@ -321,7 +321,7 @@ public async Task<IActionResult> RegisterTenant(
     catch (Exception ex)
     {
         _logger.LogError(ex, "Error en RegisterTenant");
-        return StatusCode(500, _viewModel.Fail(ex.Message));
+        return StatusCode(500, _viewModel.Fail("No se pudo completar el registro."));
     }
 }
 ```

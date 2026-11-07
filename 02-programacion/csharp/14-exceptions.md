@@ -287,20 +287,21 @@ catch (Exception ex)
 
 ## Global exception handling: `ProblemDetailsMiddleware`
 
-En el proyecto, `Common.Web` registra un middleware que captura excepciones no manejadas y las convierte en respuestas estándar (RFC 7807 ProblemDetails):
+En el proyecto, `Common.Web` registra un middleware que captura excepciones no manejadas y las convierte en respuestas estándar (RFC 9457 ProblemDetails):
 
 ```csharp
 // Program.cs — registrar el middleware
-app.UseProblemDetailsMiddleware();  // de Common.Web
+app.UseCoreProblemDetails();  // de Common.Web
 
 // Si un handler lanza excepción no capturada:
 // → ProblemDetailsMiddleware la captura
 // → Retorna JSON estándar:
 // {
-//   "type": "https://tools.ietf.org/html/rfc7807",
-//   "title": "An error occurred while processing your request.",
+//   "title": "Unhandled error",
 //   "status": 500,
-//   "traceId": "00-abc123..."
+//   "detail": "An unexpected error occurred",
+//   "instance": "/api/example/users",
+//   "traceId": "abc123..."
 // }
 ```
 

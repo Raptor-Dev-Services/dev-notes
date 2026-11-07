@@ -1,8 +1,10 @@
-﻿# 08 — Problem Details: RFC 7807 y Manejo de Errores HTTP
+﻿# 08 — Problem Details: RFC 9457 y Manejo de Errores HTTP
 
 Estándar para respuestas de error HTTP. En lugar de formatos ad-hoc, todas las APIs devuelven la misma estructura de error.
 
 > Fuente: *Web API Development with ASP.NET Core 8* (Xiaodi Yan): Ch.9 Error Handling and Problem Details (RFC 7807)
+>
+> Norma vigente: [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457.html), de julio de 2023, que deja obsoleta a RFC 7807 y conserva los mismos miembros.
 
 ---
 
@@ -25,15 +27,15 @@ Sin un estándar, cada API inventa su propio formato de error:
 }
 ```
 
-RFC 7807 define una estructura estándar que los clientes pueden procesar de forma uniforme.
+RFC 9457 define una estructura estándar que los clientes pueden procesar de forma uniforme.
 
 ---
 
-## Estructura RFC 7807
+## Estructura RFC 9457
 
 ```json
 {
-  "type":     "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+  "type":     "https://tools.ietf.org/html/rfc9110#section-15.5.5",
   "title":    "Not Found",
   "status":   404,
   "detail":   "Usuario con ID abc-123 no encontrado.",
@@ -42,14 +44,16 @@ RFC 7807 define una estructura estándar que los clientes pueden procesar de for
 }
 ```
 
-| Campo | Obligatorio | Qué contiene |
-|-------|------------|--------------|
-| `type` | Sí | URI que identifica el tipo de problema. `about:blank` si no hay URI específica |
-| `title` | Sí | Descripción corta del problema — constante por tipo de error |
-| `status` | Sí | HTTP status code |
-| `detail` | No | Explicación legible del problema en esta instancia específica |
-| `instance` | No | URI de la request que causó el error |
+| Campo | Origen | Qué contiene |
+|-------|--------|--------------|
+| `type` | Estándar | URI que identifica el tipo de problema. Si falta, se asume `about:blank` |
+| `title` | Estándar | Descripción corta del problema — constante por tipo de error |
+| `status` | Estándar | HTTP status code, solo informativo: manda el de la respuesta |
+| `detail` | Estándar | Explicación legible del problema en esta instancia específica |
+| `instance` | Estándar | URI que identifica esta ocurrencia del problema |
 | `traceId` | Extensión | ID de traza para correlación en logs |
+
+La norma no marca ningún miembro como obligatorio.
 
 ---
 
@@ -122,16 +126,18 @@ public sealed class GlobalExceptionHandler : IExceptionHandler
         {
             Status   = statusCode,
             Title    = GetTitle(statusCode),
-            Detail   = exception.Message,
+            // Nunca exception.Message: puede traer cadenas de conexión, SQL o nombres internos.
+            // El mensaje real ya quedó en el log, y el traceId lo conecta con esta respuesta.
+            Detail   = "No se pudo completar la solicitud. Si el problema continúa, comparte el traceId con soporte.",
             Instance = httpContext.Request.Path,
             Type     = $"https://httpstatuses.io/{statusCode}"
         };
         problem.Extensions["traceId"] =
             Activity.Current?.Id ?? httpContext.TraceIdentifier;
 
-        httpContext.Response.StatusCode  = statusCode;
-        httpContext.Response.ContentType = "application/problem+json";
-        await httpContext.Response.WriteAsJsonAsync(problem, ct);
+        httpContext.Response.StatusCode = statusCode;
+        await httpContext.Response.WriteAsJsonAsync(
+            problem, options: null, contentType: "application/problem+json", ct);
         return true;
     }
 
@@ -157,9 +163,9 @@ public sealed class GlobalExceptionHandler : IExceptionHandler
         problem.Extensions["traceId"] =
             Activity.Current?.Id ?? context.TraceIdentifier;
 
-        context.Response.StatusCode  = 400;
-        context.Response.ContentType = "application/problem+json";
-        await context.Response.WriteAsJsonAsync(problem, ct);
+        context.Response.StatusCode = 400;
+        await context.Response.WriteAsJsonAsync(
+            problem, options: null, contentType: "application/problem+json", ct);
         return true;
     }
 
@@ -193,6 +199,11 @@ public sealed class GlobalExceptionHandler : IExceptionHandler
 services.AddExceptionHandler<GlobalExceptionHandler>();
 services.AddProblemDetails();
 ```
+
+Dos trampas de este manejador, medidas en .NET 10:
+
+- **`CustomizeProblemDetails` no lo cubre.** Esa personalización solo corre para lo que pasa por `IProblemDetailsService`, y este manejador escribe directo. Con `Detail = exception.Message`, el `ctx.ProblemDetails.Detail = null` de la sección anterior no hizo nada: en Production, una cadena de conexión con su contraseña salió completa en `detail`. Por eso el texto genérico va aquí. Lo mismo vale para las excepciones que se mapean a 4xx, porque una `InvalidOperationException` también puede venir del ORM y nombrar tablas.
+- **`WriteAsJsonAsync` pisa el `Content-Type`.** Sin el argumento `contentType`, la respuesta sale como `application/json; charset=utf-8` aunque antes se haya asignado `application/problem+json`.
 
 ---
 
@@ -277,7 +288,7 @@ private int MapFailureToStatusCode(IResponse response) => response switch
 
 ## Relación con back-template
 
-`back-template/docs/Errors.md` documenta `GlobalExceptionHandler` y la estrategia de errores del proyecto. Este documento explica el estándar RFC 7807 en profundidad.
+`back-template/docs/Errors.md` documenta `GlobalExceptionHandler` y la estrategia de errores del proyecto. Este documento explica el estándar RFC 9457 en profundidad.
 
 El proyecto tiene `app.UseCoreProblemDetails()` de `Common.Web` que ya configura el middleware. El `GlobalExceptionHandler` en `WebApi/Exceptions/` complementa esto para excepciones específicas.
 
@@ -287,12 +298,12 @@ El proyecto tiene `app.UseCoreProblemDetails()` de `Common.Web` que ya configura
 
 | Decisión | Cuándo |
 |----------|--------|
-| ✓ RFC 7807 `application/problem+json` | Siempre en APIs REST públicas |
+| ✓ RFC 9457 `application/problem+json` | Siempre en APIs REST públicas |
 | ✓ `ValidationProblemDetails` | Errores de validación (incluye `errors` por campo) |
 | ✓ Custom `type` URI | Cuando el cliente necesita distinguir tipos de error programáticamente |
 | ✗ Exponer stack trace | Nunca en producción |
 | ✗ Exponer mensajes de excepción internos | Solo en desarrollo |
-| ✗ Inventar formato de error propio | Siempre usar RFC 7807 |
+| ✗ Inventar formato de error propio | Siempre usar RFC 9457 |
 
 **Regla:** `title` es constante para un tipo de error (igual para todos los 404). `detail` es específico de la instancia ("Usuario con ID X no encontrado").
 
@@ -303,8 +314,8 @@ El proyecto tiene `app.UseCoreProblemDetails()` de `Common.Web` que ya configura
 
 | Término | Definición |
 |---------|-----------|
-| Problem Details | Formato estándar RFC 7807 para respuestas de error HTTP con campos type, title, status, detail e instance |
-| RFC 7807 | Estándar IETF que define el formato Problem Details para APIs HTTP |
+| Problem Details | Formato estándar RFC 9457 para respuestas de error HTTP con campos type, title, status, detail e instance |
+| RFC 9457 | Estándar IETF vigente para Problem Details en APIs HTTP; deja obsoleta a RFC 7807 |
 | IExceptionHandler | Interfaz de ASP.NET Core 8 para manejar excepciones globales de forma tipada |
 | ValidationProblemDetails | Extensión de ProblemDetails que incluye un diccionario de errores de validación por campo |
 | traceId | Identificador único de una solicitud HTTP, incluido en ProblemDetails para correlacionar logs |

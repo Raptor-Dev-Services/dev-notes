@@ -193,14 +193,15 @@ public async ValueTask<bool> TryHandleAsync(
             Status   = StatusCodes.Status400BadRequest,
             Title    = "Validation Error",
             Detail   = "Uno o más campos no son válidos.",
-            Instance = httpContext.Request.Path
+            Instance = httpContext.Request.Path,
+            Type     = "https://tools.ietf.org/html/rfc9110#section-15.5.1"
         };
         problemDetails.Extensions["traceId"] =
             Activity.Current?.Id ?? httpContext.TraceIdentifier;
 
-        httpContext.Response.StatusCode  = 400;
-        httpContext.Response.ContentType = "application/problem+json";
-        await httpContext.Response.WriteAsJsonAsync(problemDetails, ct);
+        httpContext.Response.StatusCode = 400;
+        await httpContext.Response.WriteAsJsonAsync(
+            problemDetails, options: null, contentType: "application/problem+json", ct);
         return true;
     }
 
@@ -213,7 +214,7 @@ public async ValueTask<bool> TryHandleAsync(
 
 ```json
 {
-  "type":   "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+  "type":   "https://tools.ietf.org/html/rfc9110#section-15.5.1",
   "title":  "Validation Error",
   "status": 400,
   "detail": "Uno o más campos no son válidos.",
@@ -293,7 +294,7 @@ Para implementarlo en el proyecto:
 | ValidationBehavior | Pipeline behavior que ejecuta todos los IValidator registrados antes de pasar al handler |
 | IValidator\<T\> | Interfaz de FluentValidation inyectada en el behavior para validar el request de tipo T |
 | ValidationException | Excepción lanzada por FluentValidation cuando una o más reglas fallan |
-| ValidationProblemDetails | Respuesta HTTP estándar con lista de errores de validación, compatible con RFC 7807 |
+| ValidationProblemDetails | Respuesta HTTP estándar con lista de errores de validación, compatible con RFC 9457 |
 | GlobalExceptionHandler | Middleware que captura ValidationException y la convierte en HTTP 400 con detalles |
 | MustAsync | Método de FluentValidation para reglas de validación asíncronas que consultan base de datos |
 | IValidationFailure | Tipo de resultado del Result Pattern que representa errores de validación de negocio |

@@ -295,12 +295,13 @@ public class ProcessPaymentHandler : IRequestHandler<ProcessPaymentRequest, IRes
         }
         catch (Exception ex)
         {
+            _logger.LogError(ex, "Fallo al procesar el pago");
             await _metrics.PublicarMetricaTenantAsync(
                 _tenantContext.TenantId.ToString(),
                 "PaymentFailed",
                 1
             );
-            return new ProcessPaymentFailure(ex.Message);
+            return new ProcessPaymentFailure("No se pudo procesar el pago.");
         }
         finally
         {
