@@ -1,4 +1,4 @@
-# 16 — Output Caching y Response Caching
+# 16 - Output Caching y Response Caching
 
 ASP.NET Core ofrece dos tipos de caching a nivel de respuesta HTTP. Output caching (nativo desde .NET 7) es el más flexible: soporta invalidación por tags, variación por headers/query, y políticas personalizadas.
 
@@ -14,13 +14,13 @@ ASP.NET Core ofrece dos tipos de caching a nivel de respuesta HTTP. Output cachi
 | Almacenamiento | Servidor (en memoria) | Controlado por headers HTTP |
 | Invalidación por tags | Sí (`EvictByTagAsync`) | No |
 | Variación por tenant/header | Sí (`SetVaryByHeader`) | Limitado |
-| Configurable desde código | Sí — políticas tipadas | No — solo headers |
+| Configurable desde código | Sí - políticas tipadas | No - solo headers |
 | Disponible desde | .NET 7 | .NET Core 1.0 |
 | Recomendado para | APIs con invalidación activa | Recursos estáticos/públicos |
 
 ---
 
-## Output Caching — configuración
+## Output Caching - configuración
 
 ```csharp
 // Program.cs
@@ -70,7 +70,7 @@ public class PlanService(IOutputCacheStore cache)
 
 ---
 
-## Response Caching — para recursos públicos
+## Response Caching - para recursos públicos
 
 ```csharp
 // Program.cs
@@ -123,16 +123,16 @@ Para más detalles sobre `IMemoryCache` y Redis distribuido ver `04-backend/05-c
 
 | Término | Definición |
 |---------|-----------|
-| Output Caching | Caché de respuesta HTTP completa gestionada por middleware de ASP.NET Core — independiente del código del endpoint |
+| Output Caching | Caché de respuesta HTTP completa gestionada por middleware de ASP.NET Core - independiente del código del endpoint |
 | Response Caching | Mecanismo basado en headers HTTP Cache-Control que delega la caché al cliente o proxy |
-| IOutputCacheStore | Interfaz del store de output cache — reemplazable por implementaciones custom (Redis, etc.) |
+| IOutputCacheStore | Interfaz del store de output cache - reemplazable por implementaciones custom (Redis, etc.) |
 | EvictByTagAsync | Método para invalidar todas las entradas de output cache que tengan un tag específico |
 | SetVaryByHeader | Configura que la caché genere entradas distintas según el valor de un header HTTP |
 | CacheOutput | Atributo para aplicar una política de output cache a un endpoint o controller |
 | Tag | Etiqueta asociada a entradas de caché que permite invalidación agrupada por evento |
 | AddOutputCache | Método de DI que registra el middleware y permite definir políticas con nombre |
 | VaryByQuery | Configuración de output cache que genera entradas distintas según parámetros de query string |
-| SetVaryByRouteValue | Configura variación de caché por parámetro de ruta — útil para cachear por tenant o recurso |
+| SetVaryByRouteValue | Configura variación de caché por parámetro de ruta - útil para cachear por tenant o recurso |
 | Política de caché | Configuración nombrada de output cache con duración, tags y criterios de variación |
 
 ---

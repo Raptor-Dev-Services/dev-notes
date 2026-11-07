@@ -420,7 +420,7 @@ public sealed class ExampleUserRepository : IExampleUserRepository
 | Método local | Función definida dentro de otro método; solo accesible en ese scope; puede ser `static` para evitar capturas |
 | Lambda | Función anónima expresada con `=>`: `(parámetros) => cuerpo`; usada en LINQ y como parámetros de alto orden |
 | `params` | Modificador que permite pasar un número variable de argumentos del mismo tipo a un método |
-| `ref` | Modificador que pasa un argumento por referencia mutable — el método puede cambiar el valor del original |
+| `ref` | Modificador que pasa un argumento por referencia mutable - el método puede cambiar el valor del original |
 | `out` | Modificador de parámetro de salida que el método debe asignar antes de retornar |
 | `CancellationToken` | Parámetro estándar en métodos asíncronos del proyecto; permite cancelar la operación desde el llamador |
 | `Task<T>` | Tipo de retorno de métodos asíncronos que devuelven un valor; se consume con `await` |

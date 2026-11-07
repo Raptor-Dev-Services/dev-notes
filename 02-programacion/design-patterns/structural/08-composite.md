@@ -1,4 +1,4 @@
-﻿# 08 — Composite
+﻿# 08 - Composite
 
 **Categoría:** Estructural
 
@@ -249,7 +249,7 @@ builder.Services.AddWebApiServices();         // agrega hojas de WebApi
 | Tratamiento uniforme | Propiedad clave del Composite: el cliente usa la misma interfaz para hojas y composites sin distinguir tipos |
 | `IDiscount` | Ejemplo del proyecto donde `CompositeDiscount` agrupa múltiples descuentos tratándolos uniformemente |
 | Pipeline de middleware | Estructura Composite implícita de ASP.NET Core donde cada middleware es una hoja y el pipeline los contiene |
-| `IServiceProvider` | Contenedor de DI que resuelve recursivamente la jerarquía de dependencias — Composite implícito |
+| `IServiceProvider` | Contenedor de DI que resuelve recursivamente la jerarquía de dependencias - Composite implícito |
 
 ---
 

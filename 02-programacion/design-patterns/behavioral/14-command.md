@@ -1,4 +1,4 @@
-﻿# 14 — Command
+﻿# 14 - Command
 
 **Categoría:** Conductual
 
@@ -188,7 +188,7 @@ public class CommandHistory
 
 ---
 
-## Command en ASP.NET Core — MVC Actions como Commands
+## Command en ASP.NET Core - MVC Actions como Commands
 
 Cada acción HTTP es implícitamente un comando:
 
@@ -215,7 +215,7 @@ public async Task<IActionResult> Insert(
 
 ---
 
-## En este proyecto — CQRS como Command Pattern
+## En este proyecto - CQRS como Command Pattern
 
 CQRS (Command Query Responsibility Segregation) es directamente el Command Pattern aplicado a la arquitectura:
 
@@ -286,7 +286,7 @@ _ = await Mediator.Send(request, ct);  // Invoker → envía Command → Handler
 | Undo/Redo | Funcionalidad que el Command pattern facilita: cada comando puede guardar el estado anterior para revertir la operación |
 | `CommandHistory` | Pila (Stack) que almacena los comandos ejecutados para soportar deshacer operaciones |
 | CQRS | Command Query Responsibility Segregation: patrón arquitectónico que separa las operaciones de escritura (Commands) de las de lectura (Queries) |
-| `IRequest<TResponse>` | Interfaz del proyecto que representa un Command (o Query) — un objeto que encapsula una petición para el mediador |
+| `IRequest<TResponse>` | Interfaz del proyecto que representa un Command (o Query) - un objeto que encapsula una petición para el mediador |
 | Controller como Invoker | En el proyecto, el controller envía el Request (Command) al mediador sin saber qué Handler lo ejecuta |
 | Handler como Receiver | En el proyecto, el Handler contiene la lógica real y es el Receiver del patrón Command |
 | Serialización de comandos | Ventaja del Command pattern: al ser objetos, los requests se pueden loguear, auditar y poner en cola |

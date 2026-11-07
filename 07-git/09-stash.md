@@ -1,4 +1,4 @@
-﻿# 09 · git stash
+﻿# 09 - git stash
 
 ## Problema que resuelve
 
@@ -115,7 +115,7 @@ git stash push -a -m "todo incluyendo ignorados"
 | cambiar de contexto sin perder trabajo no terminado | guardar trabajo por más de un día o dos (crear una rama WIP es mejor) |
 | mover cambios de una rama equivocada a la correcta | como sustituto de commits frecuentes |
 | pausar trabajo para atender un hotfix urgente | cuando se necesita compartir el trabajo con otro desarrollador |
-| aplicar el mismo cambio exploratorio en varias ramas | — |
+| aplicar el mismo cambio exploratorio en varias ramas | - |
 
 
 > Fuente: *Learning Git* (Anna Skoulikari): Ch.8 Stashing and Cleaning

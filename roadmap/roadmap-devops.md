@@ -1,4 +1,4 @@
-# Roadmap — DevOps: Git, Docker, CI/CD, Cloud
+# Roadmap - DevOps: Git, Docker, CI/CD, Cloud
 
 **Prerequisito:** saber programar; no se necesita experiencia previa en DevOps.
 **Objetivo:** dominar Git, contenedores Docker, pipelines CI/CD y despliegue en cloud.
@@ -6,7 +6,7 @@
 
 ---
 
-## Fase 1 — Git profesional (semana 1)
+## Fase 1 - Git profesional (semana 1)
 
 > Control de versiones es la base de todo trabajo en equipo. No hay CI/CD sin Git bien usado.
 
@@ -24,7 +24,7 @@
 
 ---
 
-## Fase 2 — Contenedores Docker (semana 2)
+## Fase 2 - Contenedores Docker (semana 2)
 
 > Docker es el estándar para empaquetar y ejecutar aplicaciones de manera reproducible.
 
@@ -38,7 +38,7 @@
 
 ---
 
-## Fase 3 — CI/CD con GitHub Actions (semana 2-3)
+## Fase 3 - CI/CD con GitHub Actions (semana 2-3)
 
 > Automatizar build, tests y deploy: el cambio más importante en productividad del equipo.
 
@@ -50,7 +50,7 @@
 
 ---
 
-## Fase 4 — Cloud: fundamentos AWS (semana 3-4)
+## Fase 4 - Cloud: fundamentos AWS (semana 3-4)
 
 > Los servicios mínimos para desplegar un SaaS en producción.
 
@@ -66,7 +66,7 @@
 
 ---
 
-## Fase 5 — Infraestructura como código con Terraform (semana 4)
+## Fase 5 - Infraestructura como código con Terraform (semana 4)
 
 > Definir toda la infraestructura en archivos HCL versionados en Git.
 
@@ -76,7 +76,7 @@
 
 ---
 
-## Fase 6 — Operaciones y observabilidad (semana 5)
+## Fase 6 - Operaciones y observabilidad (semana 5)
 
 > Ver qué pasa dentro del sistema en producción.
 
@@ -89,7 +89,7 @@
 
 ---
 
-## Fase 7 — Seguridad (semana 5-6)
+## Fase 7 - Seguridad (semana 5-6)
 
 - [ ] [Seguridad Web](../10-cloud/07-seguridad-web.md): OWASP Top 10, WAF, headers de seguridad, CSP
 - [ ] [Zero Trust](../10-cloud/08-zero-trust.md): nunca confiar, siempre verificar; arquitectura de seguridad moderna
@@ -125,4 +125,4 @@ Si el stack es Azure en lugar de AWS:
 
 ---
 
-*Duración total estimada: 4-6 semanas · Nivel objetivo: DevOps engineer junior/mid*
+*Duración total estimada: 4-6 semanas - Nivel objetivo: DevOps engineer junior/mid*

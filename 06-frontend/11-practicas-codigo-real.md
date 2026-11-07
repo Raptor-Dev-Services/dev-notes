@@ -1,4 +1,4 @@
-# 11 · Prácticas del código real — lo que los libros no traen
+# 11 - Prácticas del código real - lo que los libros no traen
 
 ## Problema que resuelve
 
@@ -208,7 +208,7 @@ Es la diferencia entre `// convierte centavos a unidades` y "existían seis copi
 | Consolidar a la segunda copia | Esperar a que "duela" | Las copias divergen en silencio |
 | Comentario que explica el incidente | Comentario que describe el código | Nadie deshace la decisión por creerla innecesaria |
 
-> Fuente: código de producción de `{{REPO_NAME}}` (React 19 · Vite · React Router 7 · Axios). Los puntos 4 y 5 contrastan con el ejemplo de `06-feature-hook.md`, que muestra filtrado en cliente: sigue siendo válido para conjuntos completos sin paginar.
+> Fuente: código de producción de `{{REPO_NAME}}` (React 19 - Vite - React Router 7 - Axios). Los puntos 4 y 5 contrastan con el ejemplo de `06-feature-hook.md`, que muestra filtrado en cliente: sigue siendo válido para conjuntos completos sin paginar.
 
 ---
 

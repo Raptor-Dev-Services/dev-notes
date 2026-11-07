@@ -347,8 +347,8 @@ public class QcInspection
 | Número mágico | Anti-patrón de usar valores numéricos sin nombre en el código; los enums lo resuelven nombrando cada valor |
 | `Enum.Parse<T>()` | Método para convertir un string al valor de enum correspondiente; lanza excepción si el valor no existe |
 | `Enum.TryParse<T>()` | Versión segura de `Parse`: retorna `false` sin lanzar excepción si el valor no es válido |
-| `ToString()` en enum | Retorna el nombre del valor: `OrderStatus.Paid.ToString()` → `"Paid"` |
-| Casting de enum | Conversión entre el enum y su tipo subyacente: `(int)OrderStatus.Paid` → `1`; `(OrderStatus)1` → `Paid` |
+| `ToString()` en enum | Retorna el nombre del valor: `OrderStatus.Paid.ToString()` -> `"Paid"` |
+| Casting de enum | Conversión entre el enum y su tipo subyacente: `(int)OrderStatus.Paid` -> `1`; `(OrderStatus)1` -> `Paid` |
 | `switch` exhaustivo | El compilador avisa si no se cubren todos los valores posibles del enum en una switch expression |
 | Serialización de enums | En APIs REST, los enums se serializan como strings con `[JsonConverter(typeof(JsonStringEnumConverter))]` |
 | Discriminated union | Alternativa a los enums para jerarquías de tipos complejas; en C# se implementa con `abstract record` + subtipos |

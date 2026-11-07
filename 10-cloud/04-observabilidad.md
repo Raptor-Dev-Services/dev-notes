@@ -1,6 +1,6 @@
-# 04 · Observabilidad — logs, métricas y alertas
+# 04 - Observabilidad - logs, métricas y alertas
 
-> Fuente: *Learning Modern Linux* Ch.8 (Logging, Monitoring, Advanced Observability); *AWS Certified Solutions Architect – Associate Guide* Ch.15 (CloudTrail, CloudWatch); *Building Secure and Reliable Systems* (Google SRE Book): Ch.3 Reliability
+> Fuente: *Learning Modern Linux* Ch.8 (Logging, Monitoring, Advanced Observability); *AWS Certified Solutions Architect - Associate Guide* Ch.15 (CloudTrail, CloudWatch); *Building Secure and Reliable Systems* (Google SRE Book): Ch.3 Reliability
 
 ---
 
@@ -104,7 +104,7 @@ _logger.LogInformation("Processing {@Request}", request);
 
 ---
 
-## Seq — servidor de logs self-hosted
+## Seq - servidor de logs self-hosted
 
 Seq es un servidor de logs estructurados con UI poderosa para buscar, filtrar y crear dashboards. Ideal para staging y desarrollo. Con autenticación habilitada también sirve para producción small/medium.
 
@@ -167,7 +167,7 @@ Seq permite crear alertas que disparan un webhook cuando una condición se cumpl
 
 ---
 
-## Prometheus — métricas
+## Prometheus - métricas
 
 Prometheus recoge métricas haciendo scraping (pull) a endpoints HTTP `/metrics` expuestos por las apps; también puede recibirlas empujadas por OTLP, como se ve al final de esta sección. Almacena series de tiempo y permite consultas con PromQL.
 
@@ -234,7 +234,7 @@ public class OrderService
 }
 ```
 
-### PromQL — consultas básicas
+### PromQL - consultas básicas
 
 ```promql
 # Tasa de requests por segundo (últimos 5 min)
@@ -338,7 +338,7 @@ Qué cambia respecto al raspado, medido con Prometheus 3.16 y OpenTelemetry 1.20
 
 ---
 
-## Grafana — dashboards y alertas
+## Grafana - dashboards y alertas
 
 Grafana es la UI central de observabilidad. Conecta múltiples data sources (Prometheus, Loki, Tempo, CloudWatch) y permite crear dashboards y alertas unificadas.
 
@@ -425,7 +425,7 @@ datasources:
 
 ---
 
-## Grafana Loki — agregación de logs
+## Grafana Loki - agregación de logs
 
 Loki es el sistema de agregación de logs de Grafana. A diferencia de Elasticsearch, solo indexa las etiquetas (labels), no el contenido completo del log. Es mucho más barato de operar y se integra nativamente con Grafana.
 
@@ -465,7 +465,7 @@ dotnet add package Serilog.Sinks.Grafana.Loki
 )
 ```
 
-### LogQL — lenguaje de consulta de Loki
+### LogQL - lenguaje de consulta de Loki
 
 ```logql
 # Todos los logs de la app
@@ -566,7 +566,7 @@ volumes:
 
 ---
 
-## Uptime Kuma — status page y monitoreo sintético
+## Uptime Kuma - status page y monitoreo sintético
 
 Uptime Kuma es un monitor de disponibilidad self-hosted con UI moderna. Reemplaza a servicios como StatusCake o Pingdom para equipos que prefieren control total.
 
@@ -616,7 +616,7 @@ Uptime Kuma puede servir una **página de estado pública** (tipo `status.taskfl
 
 ---
 
-## CloudWatch — AWS
+## CloudWatch - AWS
 
 ### Logs
 
@@ -661,7 +661,7 @@ aws cloudwatch put-metric-alarm \
   --alarm-actions arn:aws:sns:us-east-1:123456789:taskflow-alerts
 ```
 
-### CloudTrail — auditoría de API calls
+### CloudTrail - auditoría de API calls
 
 CloudTrail registra todas las llamadas a la API de AWS (quién hizo qué y cuándo):
 
@@ -689,7 +689,7 @@ aws cloudtrail lookup-events \
 
 ---
 
-## Alertmanager — routing de alertas
+## Alertmanager - routing de alertas
 
 Alertmanager recibe alertas de Prometheus y las enruta a los canales correctos con lógica de agrupación, deduplicación e inhibición.
 

@@ -1,4 +1,4 @@
-# 09 — Monolito Modular con Clean Architecture
+# 09 - Monolito Modular con Clean Architecture
 
 Un Monolito Modular combina la simplicidad operacional de un monolito (un solo proceso, un solo deploy) con la separación estructural de un sistema de microservicios (módulos independientes con fronteras explícitas). Clean Architecture define la dirección de las dependencias dentro de cada módulo.
 
@@ -29,7 +29,7 @@ No: equipo grande needed  Sí: equipo pequeño          Sí: equipo pequeño
 |---------|-------------|
 | **Gestión simplificada** | Un solo proceso, sin coordinación de múltiples servicios distribuidos |
 | **Testing en aislamiento** | Cada módulo se prueba de forma independiente sin afectar a los otros |
-| **Deploy único** | Un solo artefacto que desplegar — sin orquestar múltiples servicios |
+| **Deploy único** | Un solo artefacto que desplegar - sin orquestar múltiples servicios |
 | **Costo reducido** | Sin infraestructura de microservicios (service mesh, distributed tracing cross-service, múltiples clusters) |
 | **Fronteras explícitas** | La modularidad previene el Big Ball of Mud sin el overhead operacional de microservicios |
 
@@ -102,7 +102,7 @@ Presentation   → Common + Application + Shared.Web
 
 ---
 
-## El test de fuego — ¿tu modularidad es real?
+## El test de fuego - ¿tu modularidad es real?
 
 Si borras el folder de implementación de un módulo (dejando solo su `.Contracts` como stub), ¿el resto del sistema compila?
 
@@ -205,7 +205,7 @@ public static IEndpointRouteBuilder MapBasketModule(this IEndpointRouteBuilder e
 }
 ```
 
-### Configuración — clave por módulo
+### Configuración - clave por módulo
 
 ```json
 // appsettings.json
@@ -281,7 +281,7 @@ Las `EntityTypeConfiguration<T>` viven en `Shared/Database/EntityTypeConfigurati
 
 ---
 
-## El Composition Root — Host.Api
+## El Composition Root - Host.Api
 
 `Host.Api` es el único lugar donde todos los módulos se conocen entre sí. Registra los servicios de cada módulo y los conecta:
 
@@ -391,7 +391,7 @@ Ver `CLAUDE.md` del back-template para las reglas de implementación específica
 |---------|-----------|
 | Monolito Modular | arquitectura donde el sistema se despliega como una sola unidad pero el código está organizado en módulos con fronteras bien definidas |
 | Bounded Context | límite dentro del cual un modelo de dominio es válido; cada módulo del monolito representa un Bounded Context |
-| Integration Event | mensaje que cruza la frontera entre módulos o servicios; no es un Domain Event — es un contrato de integración |
+| Integration Event | mensaje que cruza la frontera entre módulos o servicios; no es un Domain Event - es un contrato de integración |
 | Contracts project | proyecto `.Contracts` que expone los DTOs e interfaces públicas de un módulo; es el único punto de entrada para otros módulos |
 | Composition Root | punto único donde se registran todas las dependencias del sistema; en el monolito modular es `Host.Api` |
 | AppDbContext compartido | único DbContext que agrupa las entidades de todos los módulos, con schemas SQL separados por módulo |

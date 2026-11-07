@@ -1,15 +1,15 @@
-# 03 — Transacciones: ACID, Isolation Levels y Deadlocks
+# 03 - Transacciones: ACID, Isolation Levels y Deadlocks
 
 Una transacción agrupa múltiples operaciones en una unidad atómica: todo se aplica o nada se aplica.
 
 ---
 
-## ACID — las 4 propiedades
+## ACID - las 4 propiedades
 
 | Propiedad | Qué garantiza |
 |-----------|--------------|
-| **Atomicidad** | Las operaciones son una unidad — si una falla, todas se revierten |
-| **Consistencia** | La DB pasa de un estado válido a otro estado válido — nunca a un estado inválido |
+| **Atomicidad** | Las operaciones son una unidad - si una falla, todas se revierten |
+| **Consistencia** | La DB pasa de un estado válido a otro estado válido - nunca a un estado inválido |
 | **Aislamiento** | Transacciones concurrentes no se ven entre sí (hasta que hacen COMMIT) |
 | **Durabilidad** | Los datos commiteados sobreviven a reinicios del servidor |
 
@@ -101,7 +101,7 @@ public async Task TransferAsync(
 
 ---
 
-## SAVEPOINT — puntos de retorno parcial
+## SAVEPOINT - puntos de retorno parcial
 
 ```sql
 BEGIN;
@@ -339,7 +339,7 @@ public async Task<UpdateExampleUserResponse> Handle(
 | Término | Definición |
 |---------|-----------|
 | Transacción | unidad de trabajo que cumple las propiedades ACID: se ejecuta toda o no se ejecuta nada |
-| ACID | Atomicidad, Consistencia, Aislamiento y Durabilidad — propiedades que garantizan la integridad de una transacción |
+| ACID | Atomicidad, Consistencia, Aislamiento y Durabilidad - propiedades que garantizan la integridad de una transacción |
 | Aislamiento | propiedad que determina en qué medida una transacción es visible para otras transacciones concurrentes |
 | Nivel de aislamiento | configuración que establece cuánta inconsistencia temporal permite una transacción a cambio de mayor concurrencia |
 | Dirty read | lectura de datos modificados por una transacción no confirmada aún; ocurre en el nivel Read Uncommitted |

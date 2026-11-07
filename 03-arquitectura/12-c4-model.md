@@ -1,4 +1,4 @@
-# 12 · C4 Model — Diagramas de arquitectura por niveles
+# 12 - C4 Model - Diagramas de arquitectura por niveles
 
 Comunicar la arquitectura de un sistema es difícil: un diagrama de clases es demasiado detallado para un manager de producto, y un diagrama de alto nivel deja a los ingenieros sin suficiente contexto. El C4 model resuelve esto con cuatro niveles de granularidad, cada uno diseñado para una audiencia distinta, que permiten describir un sistema desde su contexto de negocio hasta el código, usando solo texto como fuente de verdad.
 
@@ -19,7 +19,7 @@ Cada nivel detalla el interior de una caja del nivel anterior. Las dependencias 
 
 ---
 
-## Nivel 1 — Context
+## Nivel 1 - Context
 
 Muestra el sistema como una caja negra: solo sus actores externos (usuarios, sistemas externos) y cómo interactúan con él. No se muestran tecnologías ni detalles internos.
 
@@ -36,7 +36,7 @@ Muestra el sistema como una caja negra: solo sus actores externos (usuarios, sis
 
 ---
 
-## Nivel 2 — Container
+## Nivel 2 - Container
 
 Abre la caja del sistema y muestra sus unidades de despliegue independientes: aplicaciones web, APIs, bases de datos, colas, jobs.
 
@@ -60,7 +60,7 @@ Abre la caja del sistema y muestra sus unidades de despliegue independientes: ap
 
 ---
 
-## Nivel 3 — Component
+## Nivel 3 - Component
 
 Abre uno de los containers y muestra sus módulos internos (en .NET: proyectos, assemblies, capas de Clean Architecture).
 
@@ -84,7 +84,7 @@ Abre uno de los containers y muestra sus módulos internos (en .NET: proyectos, 
 
 ---
 
-## Nivel 4 — Code
+## Nivel 4 - Code
 
 Diagrama de clases o de secuencia para documentar algo complejo o no obvio. **Solo usarlo cuando el texto no es suficiente.**
 
@@ -113,7 +113,7 @@ ExampleUsersController
 
 ## Herramientas para generar diagramas C4
 
-### Structurizr DSL — fuente de verdad en texto
+### Structurizr DSL - fuente de verdad en texto
 
 ```dsl
 workspace "{{PROJECT_NAME}}" "SaaS Multi-Tenant .NET" {
@@ -163,7 +163,7 @@ workspace "{{PROJECT_NAME}}" "SaaS Multi-Tenant .NET" {
 }
 ```
 
-### Mermaid — en markdown o GitHub
+### Mermaid - en markdown o GitHub
 
 ```mermaid
 graph TB
@@ -207,7 +207,7 @@ El C4 model documenta **por qué** las capas están organizadas así, no solo **
 | Onboarding de nuevos desarrolladores | Documentar código que ya es auto-explicativo |
 | Presentar arquitectura a stakeholders no técnicos | Como reemplazo de CLAUDE.md o README técnico |
 | Antes de refactorizar o rediseñar un subsistema | Si el sistema es pequeño (<3 personas, <5k LOC) |
-| Para detectar acoplamientos entre módulos | Diagramar por diagramar — solo si agrega valor |
+| Para detectar acoplamientos entre módulos | Diagramar por diagramar - solo si agrega valor |
 
 ---
 
@@ -215,17 +215,17 @@ El C4 model documenta **por qué** las capas están organizadas así, no solo **
 
 | Término | Definición |
 |---------|-----------|
-| C4 Model | Framework de diagramación con 4 niveles (Context, Container, Component, Code) — Simon Brown |
-| Context (L1) | Vista externa del sistema: actores y sistemas externos — sin tecnología |
-| Container (L2) | Unidad de despliegue independiente: API, SPA, BD, queue, worker — muestra tecnología |
+| C4 Model | Framework de diagramación con 4 niveles (Context, Container, Component, Code) - Simon Brown |
+| Context (L1) | Vista externa del sistema: actores y sistemas externos - sin tecnología |
+| Container (L2) | Unidad de despliegue independiente: API, SPA, BD, queue, worker - muestra tecnología |
 | Component (L3) | Módulo o librería dentro de un container: capa de Application, repositorio, etc. |
-| Code (L4) | Diagrama de clases o secuencia — solo para casos no obvios |
+| Code (L4) | Diagrama de clases o secuencia - solo para casos no obvios |
 | Structurizr | Herramienta de Simon Brown para definir arquitectura C4 en DSL de texto |
-| DSL | Domain-Specific Language — lenguaje declarativo para describir arquitectura como código |
+| DSL | Domain-Specific Language - lenguaje declarativo para describir arquitectura como código |
 | Onion Architecture | Variante de Clean Architecture con capas concéntricas; dominio en el centro |
-| Hexagonal Architecture | Arquitectura de puertos y adaptadores — equivalente a Clean Architecture |
+| Hexagonal Architecture | Arquitectura de puertos y adaptadores - equivalente a Clean Architecture |
 | Dependency Rule | Regla de C4/Clean Arch: las dependencias solo apuntan hacia adentro (hacia el dominio) |
-| Container (Docker) | En C4, "container" es un proceso desplegable — distinto a Docker container pero se suelen coincidir |
+| Container (Docker) | En C4, "container" es un proceso desplegable - distinto a Docker container pero se suelen coincidir |
 | Structurizr DSL | Lenguaje de texto para definir workspace, modelos y vistas C4 como código versionable |
 
 ---

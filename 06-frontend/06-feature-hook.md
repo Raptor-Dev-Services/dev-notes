@@ -1,4 +1,4 @@
-﻿# 06 · Patrón feature hook — CRUD + filtros + paginación
+﻿# 06 - Patrón feature hook - CRUD + filtros + paginación
 
 ## Problema que resuelve
 
@@ -177,7 +177,7 @@ export default function ExampleUsers() {
 }
 ```
 
-## useMediaQuery — vista desktop / mobile
+## useMediaQuery - vista desktop / mobile
 
 ```js
 // src/hooks/useMediaQuery.js

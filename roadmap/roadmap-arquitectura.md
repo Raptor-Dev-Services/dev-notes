@@ -1,4 +1,4 @@
-# Roadmap — Arquitectura de Software
+# Roadmap - Arquitectura de Software
 
 **Prerequisito:** [Roadmap Backend .NET](roadmap-backend-dotnet.md) completado o backend .NET intermedio.
 **Objetivo:** diseñar sistemas mantenibles y escalables con Clean Architecture, CQRS, DDD y patrones avanzados.
@@ -6,7 +6,7 @@
 
 ---
 
-## Fase 1 — Fundamentos de ingeniería de software (semana 1)
+## Fase 1 - Fundamentos de ingeniería de software (semana 1)
 
 > La base conceptual que da sentido a todas las decisiones arquitectónicas.
 
@@ -19,7 +19,7 @@
 
 ---
 
-## Fase 2 — Estilos arquitectónicos (semana 1-2)
+## Fase 2 - Estilos arquitectónicos (semana 1-2)
 
 > Los tres estilos que dan forma al back-template.
 
@@ -31,7 +31,7 @@
 
 ---
 
-## Fase 3 — Domain-Driven Design (semana 2)
+## Fase 3 - Domain-Driven Design (semana 2)
 
 > Modelar el dominio de negocio de manera que el código lo refleje fielmente.
 
@@ -42,7 +42,7 @@
 
 ---
 
-## Fase 4 — CQRS y flujo de datos (semana 2-3)
+## Fase 4 - CQRS y flujo de datos (semana 2-3)
 
 > El patrón que estructura cada caso de uso en el back-template.
 
@@ -54,7 +54,7 @@
 
 ---
 
-## Fase 5 — Arquitecturas de escala (semana 3-4)
+## Fase 5 - Arquitecturas de escala (semana 3-4)
 
 > Cómo crecer más allá de una sola API monolítica.
 
@@ -68,7 +68,7 @@
 
 ---
 
-## Fase 6 — Diseño de APIs (semana 4)
+## Fase 6 - Diseño de APIs (semana 4)
 
 > La superficie pública de cualquier sistema.
 
@@ -82,7 +82,7 @@
 
 ---
 
-## Fase 7 — Comunicación y documentación de arquitectura (semana 4-5)
+## Fase 7 - Comunicación y documentación de arquitectura (semana 4-5)
 
 - [ ] [C4 Model](../03-arquitectura/12-c4-model.md): diagramas de arquitectura como código con Structurizr DSL
 - [ ] [Keycloak](../03-arquitectura/08-keycloak.md): IAM, OIDC, SSO y autenticación delegada
@@ -91,7 +91,7 @@
 
 ---
 
-## Fase 8 — Proceso y estimación (semana 5)
+## Fase 8 - Proceso y estimación (semana 5)
 
 > Arquitectura no es solo código: también es proceso de toma de decisiones.
 
@@ -119,4 +119,4 @@
 
 ---
 
-*Duración total estimada: 4-6 semanas · Nivel objetivo: arquitecto de software junior/semi-senior*
+*Duración total estimada: 4-6 semanas - Nivel objetivo: arquitecto de software junior/semi-senior*

@@ -1,4 +1,4 @@
-# 13 — HttpClient Factory y Resiliencia
+# 13 - HttpClient Factory y Resiliencia
 
 Crear `HttpClient` con `new HttpClient()` es uno de los bugs más comunes en .NET: agota puertos TCP del sistema (socket exhaustion) porque `HttpClient` no libera conexiones correctamente cuando se descarta. La solución es `IHttpClientFactory`.
 
@@ -28,7 +28,7 @@ public class PaymentService
 
 ---
 
-## Patrón correcto — Typed HTTP Client
+## Patrón correcto - Typed HTTP Client
 
 ```csharp
 // Registro en Program.cs
@@ -57,7 +57,7 @@ public sealed class StripeClient
 
 ---
 
-## Resiliencia con Polly — `AddStandardResilienceHandler`
+## Resiliencia con Polly - `AddStandardResilienceHandler`
 
 .NET 8+ integra Polly v8 con `Microsoft.Extensions.Http.Resilience`. Un solo método configura retry + circuit breaker + timeouts:
 
@@ -132,11 +132,11 @@ Ver `04-backend/04-resiliencia-polly.md` para patrones avanzados de resiliencia 
 | Typed HTTP Client | Clase que encapsula la lógica de comunicación con un servicio externo e inyecta HttpClient vía DI |
 | Named Client | HttpClient registrado con nombre en DI para ser recuperado por ese nombre desde IHttpClientFactory |
 | AddStandardResilienceHandler | Método de .NET 8 que aplica retry, circuit breaker y timeout predeterminados a un HttpClient |
-| HttpMessageHandler | Handler de bajo nivel que procesa requests HTTP — IHttpClientFactory reutiliza su pool de handlers |
-| DelegatingHandler | Handler encadenable que envuelve otro handler — usado para agregar headers, logging o retry |
+| HttpMessageHandler | Handler de bajo nivel que procesa requests HTTP - IHttpClientFactory reutiliza su pool de handlers |
+| DelegatingHandler | Handler encadenable que envuelve otro handler - usado para agregar headers, logging o retry |
 | BackoffType | Enum de Polly que define la estrategia de backoff: Linear, Exponential o Constant |
 | CircuitBreakerStrategy | Estrategia de resiliencia que abre el circuito tras un porcentaje de fallos en una ventana de tiempo |
-| BaseAddress | Dirección base del HttpClient configurada en registro — los requests pueden usar paths relativos |
+| BaseAddress | Dirección base del HttpClient configurada en registro - los requests pueden usar paths relativos |
 | AddHttpClient\<T\> | Método de DI que registra un Typed Client con su HttpClient asociado y configuración |
 
 ---

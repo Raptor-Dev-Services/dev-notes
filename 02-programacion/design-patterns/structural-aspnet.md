@@ -1,4 +1,4 @@
-# Patrones Estructurales — ASP.NET Core (Marcotte Ch.11)
+# Patrones Estructurales - ASP.NET Core (Marcotte Ch.11)
 
 Los patrones estructurales del GoF resuelven cómo organizar jerarquías de objetos de forma mantenible: cómo añadir comportamientos dinámicamente, cómo gestionar estructuras complejas de objetos, y cómo conectar interfaces incompatibles. En un stack ASP.NET Core con Clean Architecture, estos patrones aparecen en capas clave: registro de dependencias en el composition root, pipelines de mediator, organización de módulos y simplificación del acceso a subsistemas de infraestructura.
 
@@ -118,10 +118,10 @@ builder.Services
 
 | Principio | Relación |
 |-----------|----------|
-| S — Single Responsibility | Cada decorator encapsula un único cross-cutting concern (caché, timing, retry...) |
-| O — Open/Closed | Se añaden comportamientos sin modificar la clase base |
-| I — Interface Segregation | Interfaces pequeñas son fáciles de decorar; si cuesta decorar, la interfaz es demasiado grande |
-| D — Dependency Inversion | El poder del Decorator reside en depender de la abstracción, no de la implementación |
+| S - Single Responsibility | Cada decorator encapsula un único cross-cutting concern (caché, timing, retry...) |
+| O - Open/Closed | Se añaden comportamientos sin modificar la clase base |
+| I - Interface Segregation | Interfaces pequeñas son fáciles de decorar; si cuesta decorar, la interfaz es demasiado grande |
+| D - Dependency Inversion | El poder del Decorator reside en depender de la abstracción, no de la implementación |
 
 ---
 
@@ -219,9 +219,9 @@ Console.WriteLine(acme.Count); // 3 (Alice + Bob + Manager)
 
 | Principio | Relación |
 |-----------|----------|
-| S — Single Responsibility | Cada nodo gestiona su propia lógica; el consumidor no coordina la jerarquía |
-| O — Open/Closed | Se añaden nuevos tipos de nodo implementando `IComponent` sin tocar los existentes |
-| D — Dependency Inversion | Todos los actores dependen de `IComponent`, no de implementaciones concretas |
+| S - Single Responsibility | Cada nodo gestiona su propia lógica; el consumidor no coordina la jerarquía |
+| O - Open/Closed | Se añaden nuevos tipos de nodo implementando `IComponent` sin tocar los existentes |
+| D - Dependency Inversion | Todos los actores dependen de `IComponent`, no de implementaciones concretas |
 
 ---
 
@@ -304,16 +304,16 @@ builder.Services.AddScoped<IExampleUserRepository, ExternalUserSdkAdapter>();
 
 | Variante | Cuándo usarla |
 |----------|---------------|
-| Composición (recomendado) | Siempre que sea posible — bajo acoplamiento, fácil de testear |
+| Composición (recomendado) | Siempre que sea posible - bajo acoplamiento, fácil de testear |
 | Herencia | Solo si necesitas acceder a miembros `protected` del Adaptee |
 
 ### Principios SOLID que refuerza
 
 | Principio | Relación |
 |-----------|----------|
-| S — Single Responsibility | El Adapter tiene una sola responsabilidad: traducir una interfaz a otra |
-| O — Open/Closed | El Adaptee no se modifica; el Adapter añade compatibilidad desde afuera |
-| D — Dependency Inversion | El consumidor depende de la interfaz de dominio, no del Adaptee concreto |
+| S - Single Responsibility | El Adapter tiene una sola responsabilidad: traducir una interfaz a otra |
+| O - Open/Closed | El Adaptee no se modifica; el Adapter añade compatibilidad desde afuera |
+| D - Dependency Inversion | El consumidor depende de la interfaz de dominio, no del Adaptee concreto |
 
 ---
 
@@ -462,9 +462,9 @@ builder.Services
 
 | Principio | Opaque | Transparent |
 |-----------|--------|-------------|
-| S — Single Responsibility | Facade cohesiva | Facade cohesiva |
-| O — Open/Closed | Limitado (oculta subsistema) | Subsistema extendible sin modificar |
-| D — Dependency Inversion | Facade sí; subsistemas no | Todo depende de abstracciones |
+| S - Single Responsibility | Facade cohesiva | Facade cohesiva |
+| O - Open/Closed | Limitado (oculta subsistema) | Subsistema extendible sin modificar |
+| D - Dependency Inversion | Facade sí; subsistemas no | Todo depende de abstracciones |
 
 ---
 
@@ -472,9 +472,9 @@ builder.Services
 
 | Patrón | Dónde aparece en el stack |
 |--------|---------------------------|
-| Decorator | Pipeline behaviors del mediator (`LoggingBehavior`, `ValidationBehavior`) envuelven el `Handler` — Decorator puro. `[Authorize]` en controllers es un Decorator declarativo. |
-| Decorator + Scrutor | `builder.Services.Decorate<IExampleUserRepository, CachedExampleUserRepository>()` en `InfrastructureServiceCollectionEx` — añade caché sin tocar la implementación base. |
-| Composite | Estructuras de jerarquía multi-tenant: Tenant → Branch → Department → User. Cada nodo gestiona su `Count` y serialización. |
+| Decorator | Pipeline behaviors del mediator (`LoggingBehavior`, `ValidationBehavior`) envuelven el `Handler`Decorator puro. `[Authorize]` en controllers es un Decorator declarativo. |
+| Decorator + Scrutor | `builder.Services.Decorate<IExampleUserRepository, CachedExampleUserRepository>()` en `InfrastructureServiceCollectionEx`añade caché sin tocar la implementación base. |
+| Composite | Estructuras de jerarquía multi-tenant: Tenant -> Branch -> Department -> User. Cada nodo gestiona su `Count` y serialización. |
 | Adapter | `ExternalUserSdkAdapter : IExampleUserRepository` cuando se integra con un SDK externo (Keycloak, AWS Cognito, proveedores de identidad). El Handler solo ve `IExampleUserRepository`. |
 | Facade (Opaque) | Class libraries de módulos en Monolito Modular: `AddQualityModule()` registra todos los servicios internos sin exponerlos. El composition root queda limpio. |
 | Facade (Transparent) | `AddTransparentOrderSubsystem()` con `TryAddSingleton` cuando se necesita que el proyecto consumidor pueda reemplazar un subsistema en pruebas de integración. |
@@ -485,14 +485,14 @@ builder.Services
 
 | Patrón | Usar | No usar |
 |--------|------|---------|
-| Decorator | Cross-cutting concerns (caché, logging, retry, validación) sobre una interfaz ya existente | Cuando el comportamiento adicional aplica siempre a todas las instancias — mejor incluirlo en la clase base |
-| Decorator | Quieres habilitar/deshabilitar comportamientos en runtime según configuración | Cuando la interfaz es demasiado grande — indicador de que hay que segregarla primero (ISP) |
-| Composite | Jerarquías de datos donde leaf y colección deben ser indistinguibles para el consumidor | Cuando la estructura es plana y no recursiva — Composite añade complejidad innecesaria |
-| Composite | Menús multi-nivel, árbol de permisos, estructura de archivos, org-chart de tenants | Cuando solo hay dos niveles (1 padre, N hijos) — una lista simple es suficiente |
-| Adapter | Integrar SDKs externos o librerías de terceros sin acoplar el dominio a ellas | Cuando puedes modificar directamente la interfaz del Adaptee — refactoriza en lugar de adaptar |
-| Adapter | Migrar APIs legacy a una nueva interfaz mientras coexisten ambas versiones | Cuando Adapter y Target son casi idénticos — posible over-engineering |
+| Decorator | Cross-cutting concerns (caché, logging, retry, validación) sobre una interfaz ya existente | Cuando el comportamiento adicional aplica siempre a todas las instancias - mejor incluirlo en la clase base |
+| Decorator | Quieres habilitar/deshabilitar comportamientos en runtime según configuración | Cuando la interfaz es demasiado grande - indicador de que hay que segregarla primero (ISP) |
+| Composite | Jerarquías de datos donde leaf y colección deben ser indistinguibles para el consumidor | Cuando la estructura es plana y no recursiva - Composite añade complejidad innecesaria |
+| Composite | Menús multi-nivel, árbol de permisos, estructura de archivos, org-chart de tenants | Cuando solo hay dos niveles (1 padre, N hijos) - una lista simple es suficiente |
+| Adapter | Integrar SDKs externos o librerías de terceros sin acoplar el dominio a ellas | Cuando puedes modificar directamente la interfaz del Adaptee - refactoriza en lugar de adaptar |
+| Adapter | Migrar APIs legacy a una nueva interfaz mientras coexisten ambas versiones | Cuando Adapter y Target son casi idénticos - posible over-engineering |
 | Facade (Opaque) | Class library donde quieres controlar completamente la superficie pública | En el application layer donde necesitas testear los subsistemas por separado |
-| Facade (Transparent) | Módulos extendibles en monolito modular con DI flexible | Cuando el subsistema es simple y tiene una sola clase — Facade no aporta valor |
+| Facade (Transparent) | Módulos extendibles en monolito modular con DI flexible | Cuando el subsistema es simple y tiene una sola clase - Facade no aporta valor |
 
 ---
 
@@ -504,14 +504,14 @@ builder.Services
 | Scrutor | Librería open-source de NuGet que extiende el contenedor DI de ASP.NET Core con el método `Decorate<TInterface, TDecorator>()` |
 | `Decorate<TInterface, TDecorator>()` | Método de Scrutor que re-registra el binding existente de `TInterface` como decorado por `TDecorator`, permitiendo cadenas de decoradores declarativas |
 | Composite | Patrón estructural que permite tratar objetos individuales y colecciones de objetos de forma uniforme a través de una interfaz común; ideal para jerarquías árbol |
-| Leaf | Nodo hoja en el Composite — objeto individual sin hijos; su `Count` siempre es 1 |
+| Leaf | Nodo hoja en el Composite - objeto individual sin hijos; su `Count` siempre es 1 |
 | Adapter | Patrón estructural que envuelve un Adaptee para que su interfaz sea compatible con la interfaz Target que el consumidor espera; también llamado Wrapper |
 | Adaptee | Clase existente (frecuentemente externa o legacy) cuya interfaz es incompatible con la interfaz Target deseada |
 | Facade | Patrón estructural que proporciona una interfaz simplificada frente a uno o más subsistemas complejos, reduciendo el acoplamiento del consumidor |
 | Opaque Facade | Variante de Facade donde todos los componentes del subsistema son `internal`; solo la interfaz de la Facade es pública. Máximo control, mínima extensibilidad |
 | Transparent Facade | Variante de Facade donde el subsistema expone interfaces públicas. El consumidor puede reemplazar cualquier subsistema registrando su propio binding antes del `TryAddSingleton` |
-| `TryAddSingleton` | Método de `IServiceCollection` que solo registra el binding si no existe ya uno para el tipo — permite al consumidor hacer override registrando antes de la llamada al extension method |
-| Composition Root | Punto único de la aplicación (normalmente `Program.cs` o `ServiceCollectionExtensions`) donde se ensamblan todas las dependencias — lugar correcto para configurar Decorators y Facades |
+| `TryAddSingleton` | Método de `IServiceCollection` que solo registra el binding si no existe ya uno para el tipo - permite al consumidor hacer override registrando antes de la llamada al extension method |
+| Composition Root | Punto único de la aplicación (normalmente `Program.cs` o `ServiceCollectionExtensions`) donde se ensamblan todas las dependencias - lugar correcto para configurar Decorators y Facades |
 
 ---
 

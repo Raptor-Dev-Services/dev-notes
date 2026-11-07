@@ -1,4 +1,4 @@
-# 03 — Arquitectura Hexagonal (Ports & Adapters)
+# 03 - Arquitectura Hexagonal (Ports & Adapters)
 
 La arquitectura hexagonal aísla el dominio de negocio de todo lo que lo rodea: bases de datos, HTTP, mensajería, CLIs. El dominio no sabe nada del mundo exterior; el mundo exterior se adapta al dominio a través de interfaces bien definidas llamadas **puertos**.
 
@@ -55,8 +55,8 @@ public class ExampleUserService
 |---------|-----|--------------------------|
 | **Puerto primario** (driving) | Interfaz que el mundo exterior llama hacia adentro | Mediator `IRequest<T>` |
 | **Puerto secundario** (driven) | Interfaz que el dominio llama hacia afuera | `IExampleUserRepository` |
-| **Adaptador primario** | Implementa el puerto primario — traduce HTTP/CLI al dominio | `ExampleUsersController` |
-| **Adaptador secundario** | Implementa el puerto secundario — traduce el dominio a infra | `ExampleUserRepository` (Dapper) |
+| **Adaptador primario** | Implementa el puerto primario - traduce HTTP/CLI al dominio | `ExampleUsersController` |
+| **Adaptador secundario** | Implementa el puerto secundario - traduce el dominio a infra | `ExampleUserRepository` (Dapper) |
 
 ---
 
@@ -66,12 +66,12 @@ Son compatibles. Clean Architecture es una forma concreta de implementar hexagon
 
 | Hexagonal | Clean Architecture (back-template) |
 |-----------|-------------------------------------|
-| Dominio | `Domain/` — entidades e interfaces |
-| Puertos primarios | `Application/` — handlers, requests, responses |
-| Puertos secundarios | `Domain/Repositories/` — interfaces de repositorio |
-| Adaptadores primarios | `WebApi/` — controllers, presenters |
-| Adaptadores secundarios | `Infrastructure/` — repos concretos, SQL classes |
-| Composition Root | `Host/Program.cs` — conecta puertos con adaptadores |
+| Dominio | `Domain/`entidades e interfaces |
+| Puertos primarios | `Application/`handlers, requests, responses |
+| Puertos secundarios | `Domain/Repositories/`interfaces de repositorio |
+| Adaptadores primarios | `WebApi/`controllers, presenters |
+| Adaptadores secundarios | `Infrastructure/`repos concretos, SQL classes |
+| Composition Root | `Host/Program.cs`conecta puertos con adaptadores |
 
 ---
 
@@ -125,7 +125,7 @@ builder.Services.AddScoped<IExampleUserRepository, ExampleUserRepository>();
 
 ---
 
-## Puerto primario: el flujo HTTP → Dominio
+## Puerto primario: el flujo HTTP -> Dominio
 
 ```csharp
 // Adaptador primario (WebApi) — traduce HTTP a IRequest<T>
@@ -182,8 +182,8 @@ Los tres resuelven el mismo problema con la misma idea. Se confunden porque son 
 | Aspecto | Hexagonal | Clean Architecture | Onion |
 |---------|-----------|-------------------|-------|
 | **Autor / año** | Cockburn, 2005 | Martin, 2012 | Palermo, 2008 |
-| **Metáfora** | Hexágono con puertos | Capas concéntricas | Cebolla — capas anidadas |
-| **Foco** | Separar driving/driven adapters | Regla de dependencia (→ adentro) | Domain Services explícitos |
+| **Metáfora** | Hexágono con puertos | Capas concéntricas | Cebolla - capas anidadas |
+| **Foco** | Separar driving/driven adapters | Regla de dependencia (-> adentro) | Domain Services explícitos |
 | **Capas internas** | No define capas internas | Domain + Application + Infrastructure | Domain Model + Domain Services + Application |
 | **Puertos** | Concepto explícito (in/out) | Interfaces en capas internas | Interfaces en capas internas |
 | **Adapters** | Concepto explícito | Controllers/Repos son implícitamente adapters | Igual que Clean |
@@ -234,17 +234,17 @@ Se implementa con DI: la capa externa implementa la interface definida en la cap
 
 | Término | Definición |
 |---------|-----------|
-| Puerto | Interfaz que define cómo el dominio se comunica con el exterior — no contiene implementación |
-| Adaptador | Clase concreta que implementa un puerto — traduce entre el dominio y la tecnología específica |
-| Puerto primario (driving) | Puerto que el mundo exterior llama hacia el dominio — HTTP request, CLI command, test |
-| Puerto secundario (driven) | Puerto que el dominio llama hacia afuera — repositorio, servicio de email, cache |
-| Hexágono | Metáfora visual del dominio rodeado de puertos — el número de lados no tiene significado especial |
+| Puerto | Interfaz que define cómo el dominio se comunica con el exterior - no contiene implementación |
+| Adaptador | Clase concreta que implementa un puerto - traduce entre el dominio y la tecnología específica |
+| Puerto primario (driving) | Puerto que el mundo exterior llama hacia el dominio - HTTP request, CLI command, test |
+| Puerto secundario (driven) | Puerto que el dominio llama hacia afuera - repositorio, servicio de email, cache |
+| Hexágono | Metáfora visual del dominio rodeado de puertos - el número de lados no tiene significado especial |
 | Composition Root | Punto único (Program.cs) donde se conectan puertos con adaptadores mediante DI |
 | Inversión de dependencias | El dominio define la interfaz (puerto); la infraestructura depende del dominio, no al revés |
-| Adaptador primario | Implementa el puerto primario — controller, consumer de mensajes, CLI parser |
-| Adaptador secundario | Implementa el puerto secundario — repositorio Dapper, cliente HTTP, mock en memoria |
+| Adaptador primario | Implementa el puerto primario - controller, consumer de mensajes, CLI parser |
+| Adaptador secundario | Implementa el puerto secundario - repositorio Dapper, cliente HTTP, mock en memoria |
 | Clean Architecture | Implementación concreta de hexagonal con capas nombradas: Domain, Application, Infrastructure, WebApi |
-| Dominio puro | Código sin dependencias de frameworks o infraestructura — solo lógica de negocio y entidades |
+| Dominio puro | Código sin dependencias de frameworks o infraestructura - solo lógica de negocio y entidades |
 | Testabilidad | Propiedad que hexagonal garantiza: reemplazar adaptadores secundarios por mocks sin tocar el dominio |
 
 ---

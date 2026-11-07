@@ -1,4 +1,4 @@
-# 13 — REPR Pattern (Request-EndPoint-Response)
+# 13 - REPR Pattern (Request-EndPoint-Response)
 
 El patrón REPR (se pronuncia "reaper") organiza cada endpoint de una API como una unidad autónoma de tres piezas: el objeto de entrada, la lógica del endpoint, y el objeto de salida. Es una alternativa al modelo MVC que alinea el diseño del backend directamente con la semántica HTTP de request-response.
 
@@ -71,7 +71,7 @@ REPR es especialmente adecuado para **Minimal APIs** de ASP.NET Core porque el m
 
 ## Variantes de organización (Marcotte)
 
-### Variante 1 — Handler separado del registro
+### Variante 1 - Handler separado del registro
 
 ```csharp
 // Feature/ShuffleText.cs — solo la lógica
@@ -100,7 +100,7 @@ app.MapGet(
 );
 ```
 
-### Variante 2 — Delegate del endpoint dentro de la feature
+### Variante 2 - Delegate del endpoint dentro de la feature
 
 ```csharp
 public class RandomNumber
@@ -129,7 +129,7 @@ builder.Services.AddSingleton<RandomNumber.Handler>();
 app.MapGet("/random-number/{Amount}/{Min}/{Max}", RandomNumber.Endpoint);
 ```
 
-### Variante 3 — Feature completamente autocontenida con extension methods (recomendada)
+### Variante 3 - Feature completamente autocontenida con extension methods (recomendada)
 
 ```csharp
 public static class UpperCase
@@ -369,7 +369,7 @@ El back-template usa MVC (Controllers + Presenters + Mediator). REPR es una alte
 |---------|-------------------------------|---------------------|
 | Organización | Por capa (Controllers, Handlers, Repos) | Por feature (todo junto) |
 | Entrada | Request record en el Handler | Command/Query record en el endpoint |
-| Salida | IResponse → Presenter → ViewModel → Controller | Response record retornado directamente |
+| Salida | IResponse -> Presenter -> ViewModel -> Controller | Response record retornado directamente |
 | Error handling | Result Pattern (IFailure) | Excepciones tipadas + ExceptionMapper |
 | Testing | Unit tests del Handler aislado | Gray-box integration tests con WebApplicationFactory |
 | Extensibilidad | Pipeline behaviors (MediatR) | FluentValidationEndpointFilter + middleware |
@@ -397,22 +397,22 @@ El back-template usa MVC (Controllers + Presenters + Mediator). REPR es una alte
 
 | Término | Definición |
 |---------|-----------|
-| REPR | Request-EndPoint-Response — patrón que organiza cada operación de una API como una unidad de tres piezas autocontenida |
+| REPR | Request-EndPoint-Response - patrón que organiza cada operación de una API como una unidad de tres piezas autocontenida |
 | Request | DTO de entrada que contiene los datos que el endpoint necesita para ejecutar; equivale a un Command o Query en CQS |
 | EndPoint | La clase o método que contiene la lógica de negocio de la operación; el centro del patrón |
 | Response | DTO de salida que el endpoint retorna al cliente; puede ser `null` en operaciones sin datos de vuelta |
-| Command | Request que modifica estado (escritura) — convención de CQS |
-| Query | Request que lee estado sin modificarlo — convención de CQS |
+| Command | Request que modifica estado (escritura) - convención de CQS |
+| Query | Request que lee estado sin modificarlo - convención de CQS |
 | Handler | Clase que contiene la lógica de negocio; separada del delegate del endpoint para permitir unit testing |
 | FluentValidation | Librería de validación que integra con Minimal APIs vía `FluentValidationEndpointFilter` |
 | ExceptionMapper | Middleware que mapea excepciones a HTTP status codes con cuerpo ProblemDetails (RFC 9457) |
-| Mapperly | Librería de source generation que genera código de object mapping en tiempo de compilación — muy rápida |
-| Vertical Slice | Organización por feature completa (UI → lógica → datos) en lugar de por capa técnica |
+| Mapperly | Librería de source generation que genera código de object mapping en tiempo de compilación - muy rápida |
+| Vertical Slice | Organización por feature completa (UI -> lógica -> datos) en lugar de por capa técnica |
 | `TypedResults` | API de Minimal APIs que retorna resultados tipados en compilación (`TypedResults.Ok<T>`, `TypedResults.Created<T>`) |
 | `[AsParameters]` | Atributo que permite a ASP.NET Core bindear parámetros de ruta/query a una clase record como si fuera un objeto |
 | Gray-box testing | Estrategia de testing que combina conocimiento interno (DbContext, IoC) con pruebas HTTP end-to-end usando `WebApplicationFactory` |
 | `WebApplicationFactory<TProgram>` | Clase de xUnit que levanta la aplicación real en memoria para integration tests |
-| `partial class` | Modificador de C# que permite dividir una clase en múltiples archivos — usado en REPR para separar features del contexto compartido |
+| `partial class` | Modificador de C# que permite dividir una clase en múltiples archivos - usado en REPR para separar features del contexto compartido |
 
 ---
 

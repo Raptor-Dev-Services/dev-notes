@@ -1,4 +1,4 @@
-﻿# 01 — Result Pattern
+﻿# 01 - Result Pattern
 
 El Result Pattern modela el resultado de una operación como un objeto con dos estados posibles: éxito o fallo. Es la alternativa a usar excepciones para controlar el flujo de negocio.
 
@@ -192,7 +192,7 @@ else if (notification is GetUsersSuccess success)
 
 Marcotte (*Architecting ASP.NET Core Applications*, Ch.13) documenta una progresión de implementaciones desde la más simple hasta la más robusta. Cada forma es válida; la elección depende de cuánta información necesita el caller.
 
-### Forma 1 — Indicador booleano simple
+### Forma 1 - Indicador booleano simple
 
 La más básica: solo comunica éxito o falla. Útil como base extensible (puede agregar propiedades después sin romper consumers).
 
@@ -201,7 +201,7 @@ La más básica: solo comunica éxito o falla. Útil como base extensible (puede
 public record class OperationResult(bool Succeeded);
 ```
 
-### Forma 2 — Un solo mensaje de error
+### Forma 2 - Un solo mensaje de error
 
 El éxito se infiere de la ausencia de error:
 
@@ -218,7 +218,7 @@ return success
     : new() { ErrorMessage = "Algo salió mal." };
 ```
 
-### Forma 3 — Agregar un valor de retorno
+### Forma 3 - Agregar un valor de retorno
 
 Para operaciones que producen datos en el camino exitoso:
 
@@ -231,7 +231,7 @@ public record class OperationResult
 }
 ```
 
-### Forma 4 — Múltiples errores (validación)
+### Forma 4 - Múltiples errores (validación)
 
 Cuando se necesitan reportar varios errores a la vez (ej. validación de formularios):
 
@@ -260,7 +260,7 @@ return success
     : new("Error A.", "Error B.");
 ```
 
-### Forma 5 — Mensajes con nivel de severidad
+### Forma 5 - Mensajes con nivel de severidad
 
 Cuando la respuesta no es solo "error/no error" sino también advertencias e información:
 
@@ -299,7 +299,7 @@ public record class OperationResult
 // }
 ```
 
-### Forma 6 — Subclases con static factory methods
+### Forma 6 - Subclases con static factory methods
 
 La más robusta: el tipo mismo distingue éxito de fallo. El contrato de la API de la clase base es mínimo (solo `Succeeded`) y cada subclase expone solo lo que necesita:
 
@@ -342,7 +342,7 @@ return OperationResult.Failure(new OperationResultMessage("Error.", OperationRes
 
 ---
 
-## Ejemplo de dominio real — registro a concierto (Marcotte)
+## Ejemplo de dominio real - registro a concierto (Marcotte)
 
 Ilustra cómo el pattern se aplica a un caso de negocio real con factory methods y `MemberNotNullWhen`:
 
@@ -453,9 +453,9 @@ switch (result.Status)
 
 | Aspecto | Result Pattern | Excepciones |
 |---------|---------------|-------------|
-| Flujo de negocio esperado | Ideal — fallo es un valor | Costoso, semántica incorrecta |
-| Error inesperado (bug, null ref) | No aplica — deja que burbujee | Correcto — capturar en el handler global |
-| Visibilidad en la firma | La firma documenta los resultados | Invisible — hay que leer la implementación |
+| Flujo de negocio esperado | Ideal - fallo es un valor | Costoso, semántica incorrecta |
+| Error inesperado (bug, null ref) | No aplica - deja que burbujee | Correcto - capturar en el handler global |
+| Visibilidad en la firma | La firma documenta los resultados | Invisible - hay que leer la implementación |
 | Rendimiento | Sin overhead de stack trace | Crear un stack trace es costoso |
 | Composabilidad | Se encadena bien con pattern matching | El anidado de try/catch es verboso |
 
@@ -500,7 +500,7 @@ public async Task<IActionResult> DoSomething(Guid id, CancellationToken ct)
 
 ---
 
-## `ResultViewModel<T>` — el puente al HTTP
+## `ResultViewModel<T>`el puente al HTTP
 
 ```csharp
 // Common — estructura que serializa como JSON
@@ -546,22 +546,22 @@ return _viewModel.IsSuccess ? Ok(_viewModel) : StatusCode(500, _viewModel);
 | IResponse | Interfaz base de todos los resultados posibles de un caso de uso |
 | ISuccess\<T\> | Interfaz que representa un resultado exitoso con datos de tipo T |
 | IFailure | Interfaz que representa un resultado fallido con un mensaje de error |
-| INotFoundFailure | Tipo de fallo que mapea a HTTP 404 — recurso no encontrado |
-| IConflictFailure | Tipo de fallo que mapea a HTTP 409 — conflicto de unicidad o estado |
-| IValidationFailure | Tipo de fallo que mapea a HTTP 400 — datos de entrada inválidos |
+| INotFoundFailure | Tipo de fallo que mapea a HTTP 404 - recurso no encontrado |
+| IConflictFailure | Tipo de fallo que mapea a HTTP 409 - conflicto de unicidad o estado |
+| IValidationFailure | Tipo de fallo que mapea a HTTP 400 - datos de entrada inválidos |
 | Presenter | Clase que recibe la respuesta del Handler vía Publish y construye el ViewModel |
 | ResultViewModel\<T\> | Clase que serializa como JSON el resultado final enviado al cliente HTTP |
 | Railway-Oriented Programming | Concepto funcional de dos rieles (éxito/fallo) que inspira el Result Pattern |
 | Pattern Matching | Técnica de C# usada en el Presenter para discriminar entre tipos de IResponse |
-| DTO | Data Transfer Object — objeto plano con solo los campos que necesita el cliente |
+| DTO | Data Transfer Object - objeto plano con solo los campos que necesita el cliente |
 | INotFoundFailure | Respuesta semántica de negocio que el Presenter traduce a HTTP 404 sin lanzar excepción |
-| OperationResultSeverity | Enumeración con tres niveles: `Information`, `Warning`, `Error` — permite diferenciar tipos de mensajes en el resultado |
-| Static Factory Method | Método estático que crea instancias del resultado (`Success(...)`, `Failure(...)`) — encapsula la lógica de construcción y fuerza el uso del contrato correcto |
-| `MemberNotNullWhen` | Atributo de C# que le indica al compilador qué propiedad es non-null según el valor de un booleano — elimina warnings de nullable en el consumer |
-| Constructor privado | Técnica para forzar el uso de static factory methods — nadie puede instanciar la clase directamente |
-| OperationStatus | Enumeración con tres estados: `Success`, `PartialSuccess`, `Failure` — útil cuando una operación puede tener resultados mixtos (algunos errores son tolerables) |
-| ImmutableList\<T\> | Colección inmutable de .NET usada en la lista de errores/mensajes — previene que actores externos muten los resultados |
-| Subclase privada anidada | Clase definida dentro de otra con visibilidad `private` — la única forma de heredar de un padre con constructor privado; inaccesible desde fuera |
+| OperationResultSeverity | Enumeración con tres niveles: `Information`, `Warning`, `Error`permite diferenciar tipos de mensajes en el resultado |
+| Static Factory Method | Método estático que crea instancias del resultado (`Success(...)`, `Failure(...)`) - encapsula la lógica de construcción y fuerza el uso del contrato correcto |
+| `MemberNotNullWhen` | Atributo de C# que le indica al compilador qué propiedad es non-null según el valor de un booleano - elimina warnings de nullable en el consumer |
+| Constructor privado | Técnica para forzar el uso de static factory methods - nadie puede instanciar la clase directamente |
+| OperationStatus | Enumeración con tres estados: `Success`, `PartialSuccess`, `Failure`útil cuando una operación puede tener resultados mixtos (algunos errores son tolerables) |
+| ImmutableList\<T\> | Colección inmutable de .NET usada en la lista de errores/mensajes - previene que actores externos muten los resultados |
+| Subclase privada anidada | Clase definida dentro de otra con visibilidad `private`la única forma de heredar de un padre con constructor privado; inaccesible desde fuera |
 
 ---
 

@@ -1,4 +1,4 @@
-# 02 — CQRS (Command Query Responsibility Segregation)
+# 02 - CQRS (Command Query Responsibility Segregation)
 
 CQRS separa las operaciones de lectura (Queries) de las de escritura (Commands) en modelos distintos. Es el principio arquitectónico que da estructura a los casos de uso de este proyecto.
 
@@ -248,10 +248,10 @@ public async Task Handle_UserExists_ReturnsSuccess()
 
 | CRUD | CQRS |
 |------|------|
-| Controller → Service → Repository | Controller → Handler → Repository |
+| Controller -> Service -> Repository | Controller -> Handler -> Repository |
 | Un Service con todos los métodos | Un Handler por caso de uso |
 | Mezcla lógica de lectura y escritura | Lectura y escritura separadas |
-| Escala poco cuando hay mucha lógica | Escala bien — cada caso de uso es independiente |
+| Escala poco cuando hay mucha lógica | Escala bien - cada caso de uso es independiente |
 | Apropiado para CRUD puro | Apropiado cuando hay lógica de negocio |
 
 ---
@@ -357,15 +357,15 @@ public sealed class UserRegisteredEventHandler
 
 ---
 
-## MediatR — tipos de mensajes
+## MediatR - tipos de mensajes
 > Fuente: *Architecting ASP.NET Core Applications* (Marcotte): Ch.16 Mediator and CQS Patterns
 
 MediatR soporta tres tipos de mensajes:
 
 | Tipo | Handlers | Uso típico |
 |------|----------|------------|
-| **Request/Response** (`IRequest<T>`) | Exactamente 1 | Commands y Queries — relación 1:1 |
-| **Notifications** (`INotification`) | 0 o N | Domain Events, Integration Events — Publish/Subscribe |
+| **Request/Response** (`IRequest<T>`) | Exactamente 1 | Commands y Queries - relación 1:1 |
+| **Notifications** (`INotification`) | 0 o N | Domain Events, Integration Events - Publish/Subscribe |
 | **Streams** (`IStreamRequest<T>`) | Exactamente 1 | Respuesta paginada como `IAsyncEnumerable<T>` |
 
 ```csharp
@@ -423,7 +423,7 @@ public class NotFoundExceptionHandler<TRequest, TResponse, TException>
 
 ---
 
-## CQRS con MediatR — pipeline de behaviors
+## CQRS con MediatR - pipeline de behaviors
 > Fuente: *.NET Microservices Architecture*: Ch.6 CQRS Patterns
 
 MediatR permite agregar comportamientos transversales (cross-cutting concerns) como validación, logging y caché en el pipeline sin tocar los Handlers.
@@ -515,7 +515,7 @@ builder.Services.AddMediatR(cfg =>
 
 | Término | Definición |
 |---------|-----------|
-| CQRS | Command Query Responsibility Segregation — patrón que separa las operaciones de lectura (queries) y escritura (commands) en flujos independientes |
+| CQRS | Command Query Responsibility Segregation - patrón que separa las operaciones de lectura (queries) y escritura (commands) en flujos independientes |
 | Command | mensaje que produce un cambio de estado en el sistema; no retorna datos, solo éxito o falla |
 | Query | mensaje que lee el estado del sistema sin modificarlo; retorna un DTO o lista de DTOs |
 | Handler | clase con una sola responsabilidad que procesa un Command o Query específico |

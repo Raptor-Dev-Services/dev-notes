@@ -1,4 +1,4 @@
-# 03 — Refactoring: Mejorar código existente sin cambiar comportamiento
+# 03 - Refactoring: Mejorar código existente sin cambiar comportamiento
 
 Refactoring es el proceso de reestructurar código existente sin cambiar su comportamiento externo observable. El objetivo es mejorar la legibilidad, la extensibilidad y reducir la deuda técnica.
 
@@ -45,7 +45,7 @@ Señales de deuda acumulada:
 - Es difícil escribir tests para el código existente
 - Leer el código no revela claramente su intención
 
-### Deuda técnica como riesgo — registro de riesgos
+### Deuda técnica como riesgo - registro de riesgos
 > Fuente: *Refactoring with C#*: Ch.15 Managing Technical Debt
 
 La deuda técnica no pagada es riesgo de proyecto. Para priorizarla de forma objetiva, tratarla como riesgos con probabilidad e impacto medibles.
@@ -78,7 +78,7 @@ Refactorizar primero los riesgos con prioridad más alta.
 
 ---
 
-## Code Smells — señales de que el código necesita refactoring
+## Code Smells - señales de que el código necesita refactoring
 
 Los "code smells" son patrones en el código que indican un problema subyacente.
 
@@ -227,7 +227,7 @@ public sealed class ExpressShipping : ShippingStrategy
 
 ## Técnicas de refactoring
 
-### Extract Method — extraer método
+### Extract Method - extraer método
 
 ```csharp
 // Antes
@@ -279,7 +279,7 @@ private static string HashPassword(string password)
     => BCrypt.Net.BCrypt.HashPassword(password, workFactor: 12);
 ```
 
-### Introduce Parameter Object — introducir objeto parámetro
+### Introduce Parameter Object - introducir objeto parámetro
 
 ```csharp
 // Antes
@@ -329,7 +329,7 @@ public sealed class MexicanAddress : Address
 }
 ```
 
-### Introduce Local Variable — eliminar expresiones repetidas
+### Introduce Local Variable - eliminar expresiones repetidas
 > Fuente: *Refactoring with C#*: Ch.2 Simplifying Methods
 
 ```csharp
@@ -349,7 +349,7 @@ public decimal CalculateFinalPrice(Order order)
 }
 ```
 
-### Introduce Constant — eliminar números mágicos
+### Introduce Constant - eliminar números mágicos
 > Fuente: *Refactoring with C#*: Ch.2 Simplifying Methods
 
 ```csharp
@@ -376,7 +376,7 @@ public string GetExampleUserTier(ExampleUser user) => user.TotalPurchases switch
 };
 ```
 
-### Invert If — retorno temprano para eliminar anidamiento
+### Invert If - retorno temprano para eliminar anidamiento
 > Fuente: *Refactoring with C#*: Ch.3 Conditional Logic
 
 ```csharp
@@ -416,7 +416,7 @@ public async Task<ProcessResult> ProcessOrderAsync(Guid userId, Guid orderId, Ca
 }
 ```
 
-### Drop Else After Return — eliminar else redundante
+### Drop Else After Return - eliminar else redundante
 > Fuente: *Refactoring with C#*: Ch.3 Conditional Logic
 
 ```csharp
@@ -451,7 +451,7 @@ public string GetExampleUserStatus(ExampleUser user)
 
 ---
 
-## Refactoring seguro — el proceso
+## Refactoring seguro - el proceso
 
 ```
 1. Asegurarse de tener tests que cubran el código a refactorizar
@@ -480,7 +480,7 @@ git add -A && git commit -m "refactor(users): use Email value object in InsertHa
 
 ---
 
-## Refactoring a gran escala — Strangler Fig pattern
+## Refactoring a gran escala - Strangler Fig pattern
 > Fuente: *Refactoring with C#*: Ch.17 Refactoring Large Applications
 
 Cuando el sistema legado es demasiado grande para refactorizar in-situ, el patrón Strangler Fig permite reemplazarlo incrementalmente sin detener el desarrollo ni hacer una reescritura total.
@@ -650,8 +650,8 @@ refactorings significativos que requieren coordinación de equipo.
 | Refactoring | reestructuración del código existente sin cambiar su comportamiento externo observable |
 | Code smell | patrón en el código que indica un problema subyacente de diseño o calidad |
 | Deuda técnica | costo adicional del trabajo futuro causado por tomar atajos en el presente |
-| Código legado | código sin tests — sin importar su antigüedad, es difícil cambiar con confianza |
-| Long Method | método demasiado largo que hace más de una cosa — señal de necesidad de extracción |
+| Código legado | código sin tests - sin importar su antigüedad, es difícil cambiar con confianza |
+| Long Method | método demasiado largo que hace más de una cosa - señal de necesidad de extracción |
 | Feature Envy | método que usa más datos de otra clase que de la suya propia |
 | Strangler Fig | patrón para reemplazar un sistema legado incrementalmente sin detener el desarrollo |
 | Boy Scout Rule | práctica de dejar el código más limpio de como se encontró en cada modificación |

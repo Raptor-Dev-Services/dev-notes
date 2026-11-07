@@ -1,4 +1,4 @@
-# 02 · GitHub Actions — CI/CD con AWS
+# 02 - GitHub Actions - CI/CD con AWS
 
 ## Problema que resuelve
 
@@ -28,7 +28,7 @@ Configurar en: Settings > Secrets and variables > Actions
 | `ECS_TASK_DEFINITION` | nombre de la task definition |
 | `CONTAINER_NAME` | nombre del contenedor en la task definition |
 
-## Workflow CI — validación en PR
+## Workflow CI - validación en PR
 
 ```yaml
 # .github/workflows/ci.yml
@@ -59,7 +59,7 @@ jobs:
         run: dotnet test --no-build --configuration Release --verbosity normal
 ```
 
-## Workflow CD — deploy a AWS ECS
+## Workflow CD - deploy a AWS ECS
 
 ```yaml
 # .github/workflows/cd.yml
@@ -223,7 +223,7 @@ El `Dockerfile` del back-template usa multi-stage build. El step de `docker buil
 
 ---
 
-## OIDC — autenticación sin credenciales de larga duración
+## OIDC - autenticación sin credenciales de larga duración
 > Fuente: *Learning GitHub Actions* (Weimer): Ch.8 Security Best Practices
 
 En lugar de guardar `AWS_ACCESS_KEY_ID` y `AWS_SECRET_ACCESS_KEY` como Secrets (credenciales de larga duración), se puede usar OIDC para que GitHub Actions pida tokens temporales directamente a AWS.
@@ -349,7 +349,7 @@ jobs:
 
 ---
 
-## Matrix builds — probar en múltiples versiones/OS
+## Matrix builds - probar en múltiples versiones/OS
 
 Una matrix build ejecuta el mismo job en múltiples combinaciones de variables (versión de .NET, sistema operativo, región, etc.) en paralelo:
 
@@ -435,15 +435,15 @@ jobs:
 | Step | comando o action dentro de un job |
 | Action | step reutilizable publicado en el Marketplace o en el propio repo |
 | Runner | máquina virtual donde corre el job (ubuntu-latest, windows-latest, etc.) |
-| OIDC | OpenID Connect — permite que GitHub Actions obtenga credenciales temporales de AWS/Azure sin secrets de larga duración |
+| OIDC | OpenID Connect - permite que GitHub Actions obtenga credenciales temporales de AWS/Azure sin secrets de larga duración |
 | Reusable workflow | workflow con `workflow_call` que puede ser invocado por otros workflows |
 | Matrix build | estrategia que ejecuta el mismo job con múltiples combinaciones de variables en paralelo |
-| `needs` | declara dependencia entre jobs — un job no empieza hasta que su dependencia termine |
+| `needs` | declara dependencia entre jobs - un job no empieza hasta que su dependencia termine |
 | `fail-fast` | en matrix builds: si es `true` (default), cancela todas las combinaciones si una falla |
 | Artifact | archivo generado por el workflow (binarios, reportes) que se puede pasar entre jobs o descargar |
 | GITHUB_TOKEN | token temporal generado automáticamente por GitHub Actions para acceder al repositorio |
-| ECR | Amazon Elastic Container Registry — registro de imágenes Docker en AWS |
-| ECS | Amazon Elastic Container Service — orquestador de contenedores de AWS |
+| ECR | Amazon Elastic Container Registry - registro de imágenes Docker en AWS |
+| ECS | Amazon Elastic Container Service - orquestador de contenedores de AWS |
 
 ---
 

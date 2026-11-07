@@ -1,4 +1,4 @@
-# 15 · AWS IAM — Identidad y Acceso
+# 15 - AWS IAM - Identidad y Acceso
 
 ## Problema que resuelve
 
@@ -183,7 +183,7 @@ Las políticas son documentos JSON que definen qué acciones están permitidas o
 
 ---
 
-## Evaluación de políticas — quién gana
+## Evaluación de políticas - quién gana
 
 El motor de evaluación de IAM sigue este orden:
 
@@ -246,7 +246,7 @@ Empezar con cero permisos y agregar solo lo estrictamente necesario.
 
 ---
 
-## IAM Instance Profiles — EC2 sin access keys
+## IAM Instance Profiles - EC2 sin access keys
 
 ```
 Problema:
@@ -313,7 +313,7 @@ var secretsClient = new AmazonSecretsManagerClient();
 
 ---
 
-## OIDC y Federación — GitHub Actions sin access keys
+## OIDC y Federación - GitHub Actions sin access keys
 
 OIDC (OpenID Connect) permite que GitHub Actions asuma un rol IAM usando un token JWT, sin necesidad de guardar access keys como secrets en GitHub.
 
@@ -423,7 +423,7 @@ aws iam put-role-permissions-boundary \
 
 ---
 
-## Service Control Policies (SCPs) — Organizations
+## Service Control Policies (SCPs) - Organizations
 
 Los SCPs aplican límites a nivel de cuenta completa dentro de AWS Organizations.
 
@@ -623,7 +623,7 @@ El back-template NUNCA debe tener access keys en:
 | MFA | Multi-Factor Authentication. Segundo factor de autenticación (TOTP). |
 | Least Privilege | Principio de mínimo privilegio: dar solo los permisos necesarios, nada más. |
 
-> Fuente: *AWS Certified Solutions Architect – Associate Guide* (Gabriel Ramirez, Packt): Ch.1 IAM, Ch.13 Security Best Practices; *AWS Certified Security Specialty SCS-C02 Exam Guide*: Ch.1 Identity and Access Management
+> Fuente: *AWS Certified Solutions Architect - Associate Guide* (Gabriel Ramirez, Packt): Ch.1 IAM, Ch.13 Security Best Practices; *AWS Certified Security Specialty SCS-C02 Exam Guide*: Ch.1 Identity and Access Management
 
 ---
 

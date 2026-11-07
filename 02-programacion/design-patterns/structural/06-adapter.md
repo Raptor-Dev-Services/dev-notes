@@ -1,4 +1,4 @@
-﻿# 06 — Adapter
+﻿# 06 - Adapter
 
 **Categoría:** Estructural
 
@@ -96,7 +96,7 @@ Console.WriteLine(target.GetRequest());
 
 ## Dos variantes: Object Adapter vs Class Adapter
 
-### Object Adapter (composición — recomendado)
+### Object Adapter (composición - recomendado)
 
 ```csharp
 // Usa composición — contiene una instancia del Adaptee
@@ -112,7 +112,7 @@ class ObjectAdapter : ITarget
 // Desventaja: no puede sobreescribir métodos del Adaptee
 ```
 
-### Class Adapter (herencia — solo cuando tiene sentido)
+### Class Adapter (herencia - solo cuando tiene sentido)
 
 ```csharp
 // Usa herencia múltiple (solo disponible en lenguajes que la soportan)
@@ -238,7 +238,7 @@ public sealed class MainDapperDbConnection
 | Adapter | Patrón estructural que permite que objetos con interfaces incompatibles colaboren mediante un objeto intermedio que traduce las llamadas |
 | Adaptee | La clase existente con una interfaz incompatible que el Adapter envuelve y a la que delega |
 | ITarget | La interfaz que el cliente espera; el Adapter la implementa y traduce al Adaptee |
-| Object Adapter | Variante que usa composición para contener una instancia del Adaptee — recomendada en C# |
+| Object Adapter | Variante que usa composición para contener una instancia del Adaptee - recomendada en C# |
 | Class Adapter | Variante que usa herencia múltiple para heredar del Adaptee; limitada en C# porque no hay herencia múltiple de clases |
 | Composición | Principio de incluir una instancia de otra clase como campo en lugar de heredar de ella |
 | Librería de terceros | Código externo que no puede modificarse y cuya interfaz puede necesitar adaptarse |

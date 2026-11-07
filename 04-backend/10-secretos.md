@@ -1,4 +1,4 @@
-# 10 — Gestión de Secretos en Producción
+# 10 - Gestión de Secretos en Producción
 
 En desarrollo local, `dotnet user-secrets` resuelve. En producción, los secretos viven en gestores especializados. Nunca en archivos de configuración, repositorios, ni variables de entorno expuestas en logs.
 
@@ -24,8 +24,8 @@ Sí: Auditoría. Cada acceso a un secreto queda registrado y es auditable.
 
 | Plataforma | Servicio | Cuándo usarlo |
 |------------|----------|--------------|
-| **Azure** | Azure Key Vault | Stack Microsoft — integración nativa con .NET (`DefaultAzureCredential`) |
-| **AWS** | Secrets Manager | Stack AWS — soporta rotación automática para RDS |
+| **Azure** | Azure Key Vault | Stack Microsoft - integración nativa con .NET (`DefaultAzureCredential`) |
+| **AWS** | Secrets Manager | Stack AWS - soporta rotación automática para RDS |
 | **AWS** | SSM Parameter Store | Alternativa más económica para configuración menos sensible |
 | **GCP** | Secret Manager | Stack Google Cloud |
 | **Multi-cloud** | HashiCorp Vault | Independiente del cloud provider |
@@ -33,7 +33,7 @@ Sí: Auditoría. Cada acceso a un secreto queda registrado y es auditable.
 
 ---
 
-## Desarrollo local — User Secrets
+## Desarrollo local - User Secrets
 
 ```bash
 # Inicializar User Secrets en el proyecto
@@ -50,7 +50,7 @@ User Secrets se almacena en `%APPDATA%\Microsoft\UserSecrets\{guid}\secrets.json
 
 ---
 
-## Producción — Azure Key Vault con Managed Identity
+## Producción - Azure Key Vault con Managed Identity
 
 ```csharp
 // Program.cs — integrar Key Vault como fuente de configuración
@@ -80,7 +80,7 @@ var connectionString = builder.Configuration["ConnectionStrings:MainDb"];
 
 ---
 
-## Secretos en Docker build — BuildKit mount
+## Secretos en Docker build - BuildKit mount
 
 ```dockerfile
 # Pasar secreto durante el build SIN dejarlo en ninguna capa de la imagen
@@ -125,7 +125,7 @@ Si aparecen en logs, hay un bug de seguridad que debe corregirse antes de desple
 | Rotación de secretos | Proceso de reemplazar periódicamente las credenciales para reducir el impacto de una exposición |
 | AWS Secrets Manager | Servicio de AWS para gestionar secretos con rotación automática y auditoría |
 | Secret Scanning | Proceso de detectar secretos (tokens, contraseñas) accidentalmente incluidos en el código fuente |
-| .gitignore | Archivo que lista los patrones de archivos que Git no debe rastrear — esencial para excluir .env |
+| .gitignore | Archivo que lista los patrones de archivos que Git no debe rastrear - esencial para excluir .env |
 | Principio de mínimo privilegio | Práctica de otorgar solo los permisos estrictamente necesarios a cada identidad o servicio |
 
 ---

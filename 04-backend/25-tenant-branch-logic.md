@@ -1,4 +1,4 @@
-# 25 — Tenant + Branch: Jerarquía de Dos Niveles
+# 25 - Tenant + Branch: Jerarquía de Dos Niveles
 
 Algunos sistemas SaaS necesitan un segundo nivel de segmentación dentro de cada empresa. Una empresa (tenant) puede tener múltiples sucursales, plantas, departamentos o unidades de negocio (branches). Los datos de cada branch son privados dentro del tenant. Un usuario de la Sucursal Norte no debe ver los datos de la Sucursal Sur, aunque ambas pertenezcan al mismo tenant.
 
@@ -249,7 +249,7 @@ dbo.branches
 
 ---
 
-## El branch_id en el JWT — quién lo pone
+## El branch_id en el JWT - quién lo pone
 
 El `branch_id` se incluye en el JWT al momento del login. El usuario pertenece a un branch específico:
 
@@ -269,7 +269,7 @@ Para usuarios admin corporativo que necesitan ver todos los branches, el `branch
 
 ---
 
-## Operaciones cross-branch — admin corporativo
+## Operaciones cross-branch - admin corporativo
 
 Un admin corporativo puede necesitar ver registros de todos los branches del tenant (reportes consolidados, dashboards):
 
@@ -357,16 +357,16 @@ Ver `04-backend/22-ef-core-multi-tenancy.md` para el Global Query Filter de EF C
 
 | Término | Definición |
 |---------|-----------|
-| Branch | Subdivisión de un tenant — representa una sucursal, sede u organización interna dentro de la empresa |
+| Branch | Subdivisión de un tenant - representa una sucursal, sede u organización interna dentro de la empresa |
 | BranchId | Identificador de la sucursal almacenado en JWT y en las filas de la base de datos junto a TenantId |
 | TenantContext | Objeto que contiene TenantId y BranchId del request actual, gestionado con AsyncLocal |
-| Admin Corporativo | Rol con acceso a todas las branches del tenant — usa IgnoreQueryFilters para el BranchId |
+| Admin Corporativo | Rol con acceso a todas las branches del tenant - usa IgnoreQueryFilters para el BranchId |
 | Índice Compuesto | Índice de base de datos sobre (tenant_id, branch_id) para optimizar queries con los dos filtros |
 | IgnoreQueryFilters Cross-Branch | Uso intencional de IgnoreQueryFilters para que el admin corporativo vea datos de múltiples branches |
 | CurrentBranchId | Propiedad del TenantContext que expone el BranchId del request actual |
 | Doble Global Query Filter | Aplicación simultánea de filtros por TenantId y BranchId en una sola HasQueryFilter |
 | Transferencia entre branches | Operación que requiere IgnoreQueryFilters y validación explícita de pertenencia al mismo tenant |
-| Jerarquía dos niveles | Estructura Tenant → Branch que modela empresa → sucursal en el SaaS |
+| Jerarquía dos niveles | Estructura Tenant -> Branch que modela empresa -> sucursal en el SaaS |
 | branch_id en JWT | Claim en el token del usuario que indica a qué branch pertenece su sesión actual |
 
 ---

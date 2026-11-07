@@ -1,6 +1,6 @@
-# 01 · AWS — Servicios esenciales
+# 01 - AWS - Servicios esenciales
 
-> Fuente: *AWS Certified Solutions Architect – Associate Guide* (Gabriel Ramirez, Packt): Ch.1 IAM, Ch.2 Infraestructura global y S3, Ch.3 EC2, Ch.9 Storage y RDS, Ch.13 Access Control
+> Fuente: *AWS Certified Solutions Architect - Associate Guide* (Gabriel Ramirez, Packt): Ch.1 IAM, Ch.2 Infraestructura global y S3, Ch.3 EC2, Ch.9 Storage y RDS, Ch.13 Access Control
 
 ## Problema que resuelve
 
@@ -16,7 +16,7 @@ Un equipo que empieza a operar en AWS necesita entender la infraestructura globa
 
 Regla: los recursos de alta disponibilidad se distribuyen en al menos 2 AZs de la misma región.
 
-## EC2 — Elastic Compute Cloud
+## EC2 - Elastic Compute Cloud
 
 Máquinas virtuales bajo demanda. Conceptos clave:
 
@@ -55,7 +55,7 @@ Política: Scale Out cuando CPU > 70% por 5 min
           Scale In  cuando CPU < 30% por 10 min
 ```
 
-## S3 — Simple Storage Service
+## S3 - Simple Storage Service
 
 Almacenamiento de objetos. Un bucket contiene objetos (archivos) referenciados por clave.
 
@@ -93,7 +93,7 @@ Transición automática entre clases por tiempo:
 > 365 días  → eliminar
 ```
 
-## RDS — Relational Database Service
+## RDS - Relational Database Service
 
 Base de datos relacional gestionada. AWS gestiona backups, patches, failover.
 
@@ -127,7 +127,7 @@ aws rds create-db-instance \
 }
 ```
 
-## IAM — Identity and Access Management
+## IAM - Identity and Access Management
 
 Controla quién puede hacer qué sobre qué recursos.
 
@@ -140,7 +140,7 @@ Controla quién puede hacer qué sobre qué recursos.
 | Role | identidad asumible temporalmente (por servicios, pipelines, etc.) |
 | Policy | documento JSON que define permisos (Allow/Deny + Action + Resource) |
 
-### Política de ejemplo — acceso S3 a un bucket específico
+### Política de ejemplo - acceso S3 a un bucket específico
 
 ```json
 {

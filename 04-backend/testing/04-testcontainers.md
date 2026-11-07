@@ -1,4 +1,4 @@
-﻿# 04 — TestContainers: PostgreSQL Real en Tests
+﻿# 04 - TestContainers: PostgreSQL Real en Tests
 
 Levanta contenedores Docker reales en los tests (PostgreSQL, Redis, RabbitMQ) de forma programática y sin configuración manual.
 
@@ -29,7 +29,7 @@ Sí: TestContainers — levanta un PostgreSQL limpio, idéntico al de producció
 
 ---
 
-## DatabaseFixture — el contenedor de PostgreSQL
+## DatabaseFixture - el contenedor de PostgreSQL
 
 ```csharp
 // Tests/Fixtures/DatabaseFixture.cs
@@ -144,7 +144,7 @@ public sealed class ExampleUserRepositoryTests
 
 ---
 
-## TestDbConnectionFactory — fábrica de conexiones para test
+## TestDbConnectionFactory - fábrica de conexiones para test
 
 ```csharp
 // Tests/Helpers/TestDbConnectionFactory.cs
@@ -170,7 +170,7 @@ public sealed class TestDbConnectionFactory : IDbConnectionFactory
 
 Para que los tests no se contaminen entre sí, limpiar las tablas antes de cada test o usar transacciones:
 
-### Opción A — truncate antes de cada test
+### Opción A - truncate antes de cada test
 
 ```csharp
 public sealed class ExampleUserRepositoryTests : IAsyncLifetime
@@ -191,7 +191,7 @@ public sealed class ExampleUserRepositoryTests : IAsyncLifetime
 }
 ```
 
-### Opción B — transacción por test (más rápida)
+### Opción B - transacción por test (más rápida)
 
 ```csharp
 public sealed class ExampleUserRepositoryTests : IAsyncLifetime
@@ -310,13 +310,13 @@ El proyecto ya tiene `Tests/Tests.csproj`. Para agregar TestContainers:
 
 | Escenario | Decisión |
 |-----------|----------|
-| Tests de repositorios (`...Sql` classes, queries) | TestContainers — única forma real |
-| Tests de migraciones SQL | TestContainers — verificar idempotencia |
+| Tests de repositorios (`...Sql` classes, queries) | TestContainers - única forma real |
+| Tests de migraciones SQL | TestContainers - verificar idempotencia |
 | Tests de índices y rendimiento de queries | TestContainers |
 | Integration tests de la API completa con DB | TestContainers + WebApplicationFactory |
-| Tests de Handlers (lógica) | No necesario — unit test con mock del repo |
-| CI/CD pipeline | TestContainers — Docker disponible en GitHub Actions |
-| Máquina sin Docker | No funciona — requiere Docker |
+| Tests de Handlers (lógica) | No necesario - unit test con mock del repo |
+| CI/CD pipeline | TestContainers - Docker disponible en GitHub Actions |
+| Máquina sin Docker | No funciona - requiere Docker |
 
 
 ---

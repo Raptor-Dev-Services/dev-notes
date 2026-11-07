@@ -1,4 +1,4 @@
-﻿# 05 — Buenas Prácticas: Diseño, Documentación y Evolución de APIs
+﻿# 05 - Buenas Prácticas: Diseño, Documentación y Evolución de APIs
 
 Principios y decisiones de diseño que hacen una API predecible, robusta y fácil de consumir.
 
@@ -27,7 +27,7 @@ POST /api/orders           → { "isSuccess": true, "data": { "publicId": "...",
 
 ---
 
-## IDs — nunca exponer IDs internos
+## IDs - nunca exponer IDs internos
 
 ```json
 // Mal: Expone IDs secuenciales — enumeration attack
@@ -44,7 +44,7 @@ El proyecto usa `Id` (serial interno) para joins en DB y `PublicId` (UUID) para 
 
 ---
 
-## Nulls — ser explícito
+## Nulls - ser explícito
 
 ```json
 // Mal: Ausencia de campo — el cliente no sabe si no existe o no aplica
@@ -60,7 +60,7 @@ La excepción: campos opcionales que nunca aplican para un tipo de recurso puede
 
 ---
 
-## Idempotency Keys — POST seguros para reintentar
+## Idempotency Keys - POST seguros para reintentar
 
 Para operaciones costosas o con side-effects (pagos, envío de emails), permitir al cliente reintentar con seguridad:
 
@@ -104,7 +104,7 @@ Cuando se necesita un breaking change:
 
 ---
 
-## Backwards compatibility — qué es breaking y qué no
+## Backwards compatibility - qué es breaking y qué no
 
 ```
 NO es breaking change (backwards compatible):
@@ -125,7 +125,7 @@ No: SÍ es breaking change:
 
 ---
 
-## Documentación — OpenAPI / Swagger
+## Documentación - OpenAPI / Swagger
 
 Una API sin documentación no existe para quienes no la escribieron.
 
@@ -161,7 +161,7 @@ public async Task<IActionResult> GetById(Guid id, CancellationToken ct) { ... }
 
 ---
 
-## Rate Limiting — comunicarlo claramente
+## Rate Limiting - comunicarlo claramente
 
 ```http
 HTTP/1.1 429 Too Many Requests

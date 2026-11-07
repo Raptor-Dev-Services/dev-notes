@@ -1,4 +1,4 @@
-# 01 · Checklists de verificación y DevSecOps
+# 01 - Checklists de verificación y DevSecOps
 
 Los checklists mecanizan las decisiones repetibles en el ciclo de vida de un cambio: antes del commit, antes del merge, antes del deploy y durante un incidente. El concepto de **shift-left** integra la seguridad en cada etapa temprana del pipeline en lugar de revisarla al final.
 
@@ -6,7 +6,7 @@ Los checklists mecanizan las decisiones repetibles en el ciclo de vida de un cam
 
 ---
 
-## Shift-left security — el principio
+## Shift-left security - el principio
 
 El término "shift-left" se refiere a mover las comprobaciones de seguridad y calidad hacia la izquierda del pipeline. Es decir, más temprano en el ciclo de desarrollo. Detectar una vulnerabilidad durante el commit del desarrollador cuesta minutos. Detectarla en producción puede costar días de remediación, reputación y datos.
 
@@ -228,7 +228,7 @@ jobs:
 
 ---
 
-## Checklist 1 — Antes de hacer commit
+## Checklist 1 - Antes de hacer commit
 
 - [ ] ¿Hay secretos, contraseñas, API keys reales en el diff?
 - [ ] ¿Hay console.log, Console.WriteLine, debugger o código de prueba?
@@ -238,7 +238,7 @@ jobs:
 - [ ] ¿El mensaje de commit sigue Conventional Commits?
 - [ ] ¿Las migraciones de BD tienen su script de rollback?
 
-## Checklist 2 — Antes de hacer merge a main
+## Checklist 2 - Antes de hacer merge a main
 
 - [ ] ¿El PR fue revisado por al menos una persona?
 - [ ] ¿Pasaron todos los checks de CI (build, tests, SAST, dependency scan)?
@@ -249,7 +249,7 @@ jobs:
 - [ ] ¿Las migraciones de BD son reversibles?
 - [ ] ¿Hay cambios breaking? Si sí, ¿se documentaron y se incrementó MAJOR?
 
-## Checklist 3 — Antes de desplegar a producción
+## Checklist 3 - Antes de desplegar a producción
 
 - [ ] ¿Se probó en staging con datos reales (no producción) primero?
 - [ ] ¿Las migraciones se probaron en staging?
@@ -260,7 +260,7 @@ jobs:
 - [ ] ¿Está alguien on-call por si algo falla?
 - [ ] ¿El SBOM fue generado y archivado para auditoría?
 
-## Checklist 4 — Diagnóstico rápido cuando algo falla en producción
+## Checklist 4 - Diagnóstico rápido cuando algo falla en producción
 
 - [ ] Health checks: `/health` responde 200 en cada servicio?
 - [ ] Logs: en Seq / CloudWatch / Loki buscar errores en los últimos 15 minutos
@@ -272,7 +272,7 @@ jobs:
 
 ---
 
-## SBOM — Software Bill of Materials
+## SBOM - Software Bill of Materials
 
 Un SBOM es un inventario de todos los componentes de software (dependencias, versiones, licencias) de una aplicación. Es requerido por algunos marcos de cumplimiento (NIST, Executive Order 14028 de EE.UU.) y permite responder rápidamente a vulnerabilidades nuevas.
 
@@ -310,10 +310,10 @@ El pipeline del back-template (ver `09-cicd/02-github-actions.md`) incluye los j
 
 | Usar | No usar |
 |------|---------|
-| SAST en PRs como gate bloqueante | DAST en el pipeline de PR (muy lento — usar en nightly) |
+| SAST en PRs como gate bloqueante | DAST en el pipeline de PR (muy lento - usar en nightly) |
 | Pinear actions con SHA en repos públicos | SHA pinning en repos privados de empresa (mayor overhead sin el mismo riesgo) |
-| Workflows reutilizables para lógica CI compartida entre repos | Reusable workflows para pasos de 2 líneas — YAML inline es más simple |
-| SBOM en cada release para auditoría | Generar SBOM en cada commit — costoso y sin valor adicional |
+| Workflows reutilizables para lógica CI compartida entre repos | Reusable workflows para pasos de 2 líneas - YAML inline es más simple |
+| SBOM en cada release para auditoría | Generar SBOM en cada commit - costoso y sin valor adicional |
 
 ---
 
@@ -321,14 +321,14 @@ El pipeline del back-template (ver `09-cicd/02-github-actions.md`) incluye los j
 
 | Término | Definición |
 |---------|-----------|
-| SAST | Static Application Security Testing — análisis del código fuente en busca de vulnerabilidades |
-| DAST | Dynamic Application Security Testing — análisis de la app en ejecución vía HTTP |
+| SAST | Static Application Security Testing - análisis del código fuente en busca de vulnerabilidades |
+| DAST | Dynamic Application Security Testing - análisis de la app en ejecución vía HTTP |
 | Dependency scanning | revisión de librerías de terceros contra bases de datos de CVEs conocidos |
-| CVE | Common Vulnerabilities and Exposures — identificador estandarizado de vulnerabilidades |
-| CVSS | Common Vulnerability Scoring System — puntuación numérica de severidad (0-10) |
+| CVE | Common Vulnerabilities and Exposures - identificador estandarizado de vulnerabilidades |
+| CVSS | Common Vulnerability Scoring System - puntuación numérica de severidad (0-10) |
 | Secret scanning | detección de credentials y tokens en el código fuente o historial git |
 | Shift-left | práctica de mover las comprobaciones de calidad y seguridad hacia las etapas tempranas del SDLC |
-| SBOM | Software Bill of Materials — inventario de todos los componentes de software de una aplicación |
+| SBOM | Software Bill of Materials - inventario de todos los componentes de software de una aplicación |
 | Reusable workflow | workflow de GitHub Actions con `workflow_call` que puede ser invocado por otros workflows |
 | GITHUB_TOKEN | token temporal de acceso al repositorio generado automáticamente para cada ejecución de workflow |
 | CodeQL | motor de análisis estático de GitHub para detectar vulnerabilidades en código |

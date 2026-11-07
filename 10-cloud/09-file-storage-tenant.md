@@ -1,4 +1,4 @@
-# 09 — File Storage por Tenant (S3 / Azure Blob)
+# 09 - File Storage por Tenant (S3 / Azure Blob)
 
 En un SaaS multi-tenant, los archivos de cada empresa deben estar aislados. El patrón estándar es organizar los archivos en rutas que incluyen el `tenant_id` (y `branch_id` si aplica), y generar URLs de acceso temporal (presigned URLs) en lugar de exponer el bucket públicamente.
 
@@ -57,7 +57,7 @@ public static class StoragePaths
 
 ---
 
-## IStorageService — abstracción del proveedor
+## IStorageService - abstracción del proveedor
 
 ```csharp
 // Common/Storage/IStorageService.cs
@@ -359,7 +359,7 @@ public async Task<GetFileDownloadUrlResponse> Handle(
 
 ---
 
-## Política de bucket S3 — denegar acceso público
+## Política de bucket S3 - denegar acceso público
 
 ```json
 {

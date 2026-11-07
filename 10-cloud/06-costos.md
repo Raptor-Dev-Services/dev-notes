@@ -1,6 +1,6 @@
-# 06 · Optimización de costos cloud
+# 06 - Optimización de costos cloud
 
-> Fuente: *AWS Certified Solutions Architect – Associate Guide* Ch.18 (Reserved Instances, Billing and cost management, AWS Organizations)
+> Fuente: *AWS Certified Solutions Architect - Associate Guide* Ch.18 (Reserved Instances, Billing and cost management, AWS Organizations)
 
 ## Problema que resuelve
 
@@ -27,7 +27,7 @@ Recomendación para startup:
 - Nunca Reserved Instances en development
 ```
 
-## Rightsizing — dimensionamiento correcto
+## Rightsizing - dimensionamiento correcto
 
 El error más común es elegir instancias grandes "por si acaso". AWS Cost Explorer tiene recomendaciones de rightsizing basadas en uso real:
 
@@ -147,7 +147,7 @@ Año 2+:
   - Reserved Instances para RDS (db.t3.medium+)
 ```
 
-## AWS Organizations — cuentas separadas por ambiente
+## AWS Organizations - cuentas separadas por ambiente
 
 Separar producción y desarrollo en cuentas AWS distintas da:
 - billing separado por ambiente

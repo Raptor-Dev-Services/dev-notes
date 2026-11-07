@@ -1,4 +1,4 @@
-﻿# 02 — Índices: B-tree, Parciales, Compuestos y EXPLAIN ANALYZE
+﻿# 02 - Índices: B-tree, Parciales, Compuestos y EXPLAIN ANALYZE
 
 Un índice es una estructura auxiliar que permite a PostgreSQL encontrar filas sin leer toda la tabla.
 
@@ -21,7 +21,7 @@ SELECT * FROM dbo.ExampleUsers WHERE Email = 'john@test.com';
 
 ---
 
-## B-tree — el índice estándar
+## B-tree - el índice estándar
 
 PostgreSQL crea índices B-tree por defecto. Funciona para igualdad (`=`) y rangos (`>`, `<`, `BETWEEN`, `LIKE 'prefix%'`).
 
@@ -39,7 +39,7 @@ WHERE CreatedAtUtc > '2025-01-01'     Sí: (si el índice es en CreatedAtUtc)
 
 ---
 
-## Índice UNIQUE — restricción + rendimiento
+## Índice UNIQUE - restricción + rendimiento
 
 ```sql
 -- El índice UNIQUE impide duplicados Y acelera las búsquedas
@@ -53,7 +53,7 @@ ALTER TABLE dbo.ExampleUsers ADD CONSTRAINT uq_example_users_email UNIQUE (Email
 
 ---
 
-## Índice parcial — solo indexa las filas relevantes
+## Índice parcial - solo indexa las filas relevantes
 
 Más pequeño y más rápido que un índice completo cuando la mayoría de queries filtran el mismo subconjunto:
 
@@ -83,7 +83,7 @@ CREATE INDEX IF NOT EXISTS ix_example_users_publicid_active
 
 ---
 
-## Índice compuesto — múltiples columnas
+## Índice compuesto - múltiples columnas
 
 Útil cuando los queries filtran frecuentemente por más de una columna:
 
@@ -126,7 +126,7 @@ CREATE INDEX IF NOT EXISTS ix_example_users_fullname_fts
 
 ---
 
-## EXPLAIN ANALYZE — ver el plan de ejecución
+## EXPLAIN ANALYZE - ver el plan de ejecución
 
 `EXPLAIN` muestra qué hará PostgreSQL. `EXPLAIN ANALYZE` lo ejecuta y muestra el tiempo real.
 
@@ -161,12 +161,12 @@ Execution Time: 45.2 ms
 
 | Nodo | Qué significa |
 |------|---------------|
-| `Index Scan` | Usa el índice — generalmente bueno |
-| `Index Only Scan` | Solo lee el índice, no la tabla — muy eficiente |
-| `Seq Scan` | Lee toda la tabla — problema si la tabla es grande |
-| `Hash Join` | Join con hash table en memoria — bueno para tablas medianas |
-| `Nested Loop` | Join fila por fila — eficiente con pocos datos, caro con muchos |
-| `Sort` | Ordenamiento en memoria o disco — posible candidato para índice |
+| `Index Scan` | Usa el índice - generalmente bueno |
+| `Index Only Scan` | Solo lee el índice, no la tabla - muy eficiente |
+| `Seq Scan` | Lee toda la tabla - problema si la tabla es grande |
+| `Hash Join` | Join con hash table en memoria - bueno para tablas medianas |
+| `Nested Loop` | Join fila por fila - eficiente con pocos datos, caro con muchos |
+| `Sort` | Ordenamiento en memoria o disco - posible candidato para índice |
 
 **cost=inicio..total:** tiempo relativo estimado. No son ms ni segundos. Son unidades internas. Lo importante es la magnitud relativa (10 vs 10000).
 

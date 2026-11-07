@@ -1,4 +1,4 @@
-﻿# 10 — Facade
+﻿# 10 - Facade
 
 **Categoría:** Estructural
 
@@ -237,7 +237,7 @@ builder.Services.AddApplicationServices();  // ← Facade: una línea
 | Punto de entrada único | Característica clave del Facade: el cliente habla con una sola clase en lugar de coordinarse con múltiples subsistemas |
 | `BaseApiController` | Facade del proyecto sobre el mediador; expone `Mediator.Send()` ocultando toda la arquitectura CQRS interna |
 | `ServiceCollectionEx` | Facade de registro de DI: una llamada (`AddApplicationServices()`) oculta N registros internos |
-| God Object | Anti-patrón donde una clase hace demasiado — riesgo si el Facade absorbe demasiada lógica de negocio |
+| God Object | Anti-patrón donde una clase hace demasiado - riesgo si el Facade absorbe demasiada lógica de negocio |
 | Acoplamiento de subsistema | Problema que el Facade resuelve: sin él, el cliente queda acoplado a todos los detalles de implementación del subsistema |
 | Acceso directo al subsistema | El Facade no impide que clientes avanzados accedan directamente a las clases del subsistema si necesitan más control |
 | Capas con Facade | Patrón arquitectónico donde cada capa expone un Facade para que la capa superior no acceda directamente a sus internos |

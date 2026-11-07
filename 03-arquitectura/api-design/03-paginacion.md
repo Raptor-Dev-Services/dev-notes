@@ -1,4 +1,4 @@
-﻿# 03 — Paginación: Offset, Cursor y Keyset
+﻿# 03 - Paginación: Offset, Cursor y Keyset
 
 Devolver grandes colecciones de datos en partes manejables.
 
@@ -15,7 +15,7 @@ Sin paginación, un GET que devuelve 1,000,000 de registros:
 
 ---
 
-## Offset pagination — la más común
+## Offset pagination - la más común
 
 Basada en `LIMIT` y `OFFSET` en SQL.
 
@@ -126,7 +126,7 @@ Problema 2: Rendimiento en OFFSET grande
 
 ---
 
-## Cursor pagination — basada en un punto de anclaje
+## Cursor pagination - basada en un punto de anclaje
 
 Usa un valor de la última fila vista como cursor en lugar de un número de página.
 
@@ -138,7 +138,7 @@ GET /api/example/users?pageSize=10&cursor=2025-05-11T10:00:00Z_abc123
 → Response: siguiente página + nuevo cursor
 ```
 
-### SQL — keyset pagination
+### SQL - keyset pagination
 
 ```sql
 -- Primera página (sin cursor)
@@ -200,7 +200,7 @@ public static (DateTime CreatedAt, Guid PublicId) DecodeCursor(string cursor)
 
 ---
 
-## Parámetros de query adicionales — filtros y ordenamiento
+## Parámetros de query adicionales - filtros y ordenamiento
 
 ```
 GET /api/example/users?page=1&pageSize=10&search=john&sortBy=createdAt&sortDir=desc

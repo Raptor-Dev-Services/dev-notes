@@ -1,4 +1,4 @@
-# 07 — Background Services: IHostedService y BackgroundService
+# 07 - Background Services: IHostedService y BackgroundService
 
 Ejecutar trabajo en segundo plano dentro del proceso de la API: limpieza periódica, procesamiento de colas, tareas de mantenimiento.
 
@@ -21,7 +21,7 @@ No: Problemas que no resuelve una request HTTP:
 
 ---
 
-## IHostedService — interfaz base
+## IHostedService - interfaz base
 
 ```csharp
 public interface IHostedService
@@ -37,7 +37,7 @@ public interface IHostedService
 
 ---
 
-## BackgroundService — clase base para trabajo continuo
+## BackgroundService - clase base para trabajo continuo
 
 `BackgroundService` implementa `IHostedService` y abstrae el loop de trabajo:
 
@@ -273,12 +273,12 @@ Para agregar un background service al proyecto:
 | Cola de mensajes simple (outbox pattern) | BackgroundService con polling |
 | Cron jobs complejos | Considerar Quartz.NET o Hangfire |
 | Tareas de larga duración distribuidas | Considerar workers separados o Azure Functions |
-| Lógica que depende de un usuario autenticado | No tiene contexto de request — usar ICurrentUserService solo para audit trail en handlers regulares |
-| Trabajo que puede perderse si la app se cae | No — usar una cola externa persistente (RabbitMQ, Azure Service Bus) |
+| Lógica que depende de un usuario autenticado | No tiene contexto de request - usar ICurrentUserService solo para audit trail en handlers regulares |
+| Trabajo que puede perderse si la app se cae | No - usar una cola externa persistente (RabbitMQ, Azure Service Bus) |
 
 ---
 
-## PeriodicTimer — alternativa moderna a Task.Delay
+## PeriodicTimer - alternativa moderna a Task.Delay
 > Fuente: *Apps and Services with .NET 8* (Price): Ch.12 Background Services
 
 `PeriodicTimer` (introducido en .NET 6) es más preciso que `Task.Delay` en loops de polling porque no acumula drift de tiempo.
@@ -433,8 +433,8 @@ builder.Services.AddHostedService<EmailSenderService>();
 | Término | Definición |
 |---------|-----------|
 | BackgroundService | Clase base de .NET para servicios en segundo plano con método ExecuteAsync y soporte de cancellation |
-| IHostedService | Interfaz de .NET para servicios del host con StartAsync y StopAsync — BackgroundService la implementa |
-| IServiceScopeFactory | Factory que crea scopes DI dentro de un Singleton — necesaria para resolver servicios Scoped en background |
+| IHostedService | Interfaz de .NET para servicios del host con StartAsync y StopAsync - BackgroundService la implementa |
+| IServiceScopeFactory | Factory que crea scopes DI dentro de un Singleton - necesaria para resolver servicios Scoped en background |
 | PeriodicTimer | Timer de .NET 6+ para ejecutar tareas en intervalos fijos sin drift acumulado |
 | Channel\<T\> | Cola en memoria de alta performance para producer/consumer patterns dentro del mismo proceso |
 | Captive Dependency | Error de DI donde un Singleton retiene una dependencia Scoped causando comportamiento incorrecto |

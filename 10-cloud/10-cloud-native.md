@@ -1,4 +1,4 @@
-# 10 — Cloud-Native: 12 Factores y Principios de Arquitectura
+# 10 - Cloud-Native: 12 Factores y Principios de Arquitectura
 
 Una aplicación cloud-native está diseñada desde el principio para aprovechar las características del cloud: elasticidad, resiliencia automática, despliegue independiente y observabilidad integrada.
 
@@ -10,7 +10,7 @@ Una aplicación cloud-native está diseñada desde el principio para aprovechar 
 
 Metodología creada por desarrolladores de Heroku para construir aplicaciones modernas, escalables y mantenibles en el cloud. Cada factor aborda una dimensión específica del ciclo de vida de la aplicación.
 
-### Factor 1 — Codebase: un repositorio, múltiples deploys
+### Factor 1 - Codebase: un repositorio, múltiples deploys
 
 ```
 Sí: Un repositorio por contexto de aplicación (un repo para la API, otro para infra)
@@ -20,7 +20,7 @@ No: Un repo para staging y otro para producción = divergencia garantizada
 
 Buenas prácticas: gestión de ramas (Git Flow o trunk-based), revisiones de código, documentación en el mismo repo.
 
-### Factor 2 — Dependencies: declarar y aislar dependencias
+### Factor 2 - Dependencies: declarar y aislar dependencias
 
 ```
 Sí: Todas las dependencias en el archivo de proyecto (.csproj)
@@ -36,7 +36,7 @@ dotnet restore
 dotnet build --no-restore
 ```
 
-### Factor 3 — Config: configuración en el entorno, no en el código
+### Factor 3 - Config: configuración en el entorno, no en el código
 
 ```
 Sí: Connection strings, API keys, feature flags → variables de entorno o Azure App Configuration
@@ -50,7 +50,7 @@ ConnectionStrings__MainDb=<valor por ambiente>
 
 Ver: `10-cloud/05-secretos-produccion.md` para implementación con Azure Key Vault y Doppler.
 
-### Factor 4 — Backing Services: tratar servicios externos como recursos adjuntos
+### Factor 4 - Backing Services: tratar servicios externos como recursos adjuntos
 
 ```
 Sí: La base de datos, Redis, el servicio de email → referenciados por URL/credencial
@@ -66,7 +66,7 @@ Ejemplos de backing services:
 
 La arquitectura hexagonal (ports-and-adapters) implementa este factor a nivel de código: la app no conoce la implementación concreta, solo la interfaz.
 
-### Factor 5 — Build, Release, Run: separar etapas de forma estricta
+### Factor 5 - Build, Release, Run: separar etapas de forma estricta
 
 ```
 Build   → compilar el código, descargar dependencias, generar artefacto
@@ -79,7 +79,7 @@ Sí: Rollback = regresar a la release anterior sin recompilar
 No: Modificar código directamente en el servidor de producción
 ```
 
-### Factor 6 — Processes: procesos stateless
+### Factor 6 - Processes: procesos stateless
 
 ```
 Sí: Cada request es independiente — no hay estado en memoria entre requests
@@ -98,7 +98,7 @@ builder.Services.AddSession(options =>
     options.IdleTimeout = TimeSpan.FromMinutes(30));
 ```
 
-### Factor 7 — Port Binding: exportar servicios por binding de puerto
+### Factor 7 - Port Binding: exportar servicios por binding de puerto
 
 ```
 # La app escucha en un puerto configurado desde fuera
@@ -112,7 +112,7 @@ docker run -p 80:8080 mi-api
 # Service B: http://worker:8081
 ```
 
-### Factor 8 — Concurrency: escalar horizontalmente, no verticalmente
+### Factor 8 - Concurrency: escalar horizontalmente, no verticalmente
 
 ```
 Vertical   = agregar más CPU/RAM a un servidor (límite físico)
@@ -125,7 +125,7 @@ Sí: Azure App Service scale-out → más instancias del mismo contenedor
 
 Para trabajo de larga duración, usar procesos worker separados de los HTTP handlers.
 
-### Factor 9 — Disposability: startup rápido y shutdown limpio
+### Factor 9 - Disposability: startup rápido y shutdown limpio
 
 ```csharp
 // ASP.NET Core 9 — shutdown graceful con CancellationToken
@@ -150,7 +150,7 @@ protected override async Task ExecuteAsync(CancellationToken ct)
 }
 ```
 
-### Factor 10 — Dev/Prod Parity: ambientes lo más similares posible
+### Factor 10 - Dev/Prod Parity: ambientes lo más similares posible
 
 ```
 Sí: Usar Docker en desarrollo → mismo runtime que producción
@@ -159,7 +159,7 @@ No: SQL Server en producción y SQLite en desarrollo
 No: Windows en desarrollo y Linux en producción (diferencias de paths, encodings)
 ```
 
-### Factor 11 — Logs: tratar logs como streams de eventos
+### Factor 11 - Logs: tratar logs como streams de eventos
 
 ```
 Sí: Escribir logs a stdout/stderr — el entorno los captura y enruta
@@ -175,7 +175,7 @@ Log.Logger = new LoggerConfiguration()
 // La app no sabe ni le importa dónde van los logs
 ```
 
-### Factor 12 — Admin Processes: tareas administrativas como procesos one-off
+### Factor 12 - Admin Processes: tareas administrativas como procesos one-off
 
 ```
 Sí: Migraciones de DB → comando separado en el pipeline de CI/CD, no en startup
@@ -189,7 +189,7 @@ No: Correr migraciones en el constructor del DbContext (corre en cada instancia)
 
 ---
 
-## The Reactive Manifesto — sistemas resilientes por diseño
+## The Reactive Manifesto - sistemas resilientes por diseño
 > Fuente: *Docker: Up and Running* (Kane, Matthias): Ch.13 Container Platform Design
 
 Complementario a los 12 factores, el Reactive Manifesto (Jonas Bonér, 2013) define cómo los sistemas deben comportarse ante fallas, carga variable y eventos inesperados.

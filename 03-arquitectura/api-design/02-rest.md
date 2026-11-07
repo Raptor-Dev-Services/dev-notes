@@ -1,4 +1,4 @@
-﻿# 02 — REST: Recursos, URLs y Constraints
+﻿# 02 - REST: Recursos, URLs y Constraints
 
 REST no es un protocolo ni un estándar: es un estilo arquitectónico. Las APIs "RESTful" siguen sus constraints para ser predecibles e interoperables.
 
@@ -10,18 +10,18 @@ REST no es un protocolo ni un estándar: es un estilo arquitectónico. Las APIs 
 
 | Constraint | Qué significa |
 |------------|--------------|
-| **Client-Server** | Frontend y backend son independientes — se comunican por interfaz uniforme |
-| **Stateless** | Cada request contiene toda la información necesaria — el servidor no guarda estado de sesión |
-| **Cacheable** | Las responses indican si pueden cachearse — mejora el rendimiento |
+| **Client-Server** | Frontend y backend son independientes - se comunican por interfaz uniforme |
+| **Stateless** | Cada request contiene toda la información necesaria - el servidor no guarda estado de sesión |
+| **Cacheable** | Las responses indican si pueden cachearse - mejora el rendimiento |
 | **Uniform Interface** | URL identifica el recurso; verbos HTTP definen la acción; representación estándar (JSON) |
 | **Layered System** | El cliente no sabe si habla directamente con el servidor o con un intermediario (proxy, LB) |
-| **Code on Demand** (opcional) | El servidor puede enviar código ejecutable (JavaScript) — raramente usado |
+| **Code on Demand** (opcional) | El servidor puede enviar código ejecutable (JavaScript) - raramente usado |
 
 **Stateless es el más importante:** cada request es independiente. JWT en el header de cada request, no sesiones en el servidor.
 
 ---
 
-## Recursos — la unidad de diseño REST
+## Recursos - la unidad de diseño REST
 
 En REST, todo se modela como un **recurso**. Un recurso es una entidad que se puede identificar, manipular y representar:
 
@@ -161,7 +161,7 @@ El proyecto usa PUT para simplificar: el frontend siempre envía el objeto compl
 
 ---
 
-## Dates — formato ISO 8601
+## Dates - formato ISO 8601
 
 ```json
 // Bien: ISO 8601 con UTC explícito — el estándar
@@ -176,7 +176,7 @@ El proyecto usa PUT para simplificar: el frontend siempre envía el objeto compl
 
 ---
 
-## HATEOAS — nivel máximo de REST
+## HATEOAS - nivel máximo de REST
 
 Hypermedia As The Engine Of Application State: la response incluye links a las acciones disponibles.
 

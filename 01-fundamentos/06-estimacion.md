@@ -1,4 +1,4 @@
-# 06 — Estimación de Software
+# 06 - Estimación de Software
 
 La estimación de software es el proceso de predecir cuánto esfuerzo, tiempo o recursos requiere completar un trabajo. Es una de las habilidades más difíciles en ingeniería de software, y también una de las más malentendidas.
 
@@ -36,7 +36,7 @@ La estimación debe asumir que mitigaremos la complejidad accidental, pero no pu
 
 ---
 
-## Story Points — Qué son y qué miden
+## Story Points - Qué son y qué miden
 
 ### Definición
 
@@ -72,19 +72,19 @@ Fibonacci (1, 2, 3, 5, 8, 13, 21) es la escala más común porque refleja la inc
 
 | Puntos | Qué significa | Ejemplo (sistema de mensajería) |
 |--------|--------------|------------------------|
-| 1 | Trivial — pocas líneas, sin decisiones | Cambiar un texto de un label |
-| 2 | Simple — un componente, bien entendido | Agregar campo `apellido` a perfil de agente |
-| 3 | Pequeño — un par de componentes, alguna lógica | Filtro de conversaciones por estado |
-| 5 | Medio — múltiples componentes, integración | Asignación automática de conversación a agente |
-| 8 | Complejo — varias capas, incertidumbre media | Integración con API de WhatsApp Cloud |
-| 13 | Muy complejo — investigación necesaria | Flujo completo de billing con Stripe |
-| 21 | Demasiado grande — debe dividirse en historias más pequeñas | — |
+| 1 | Trivial - pocas líneas, sin decisiones | Cambiar un texto de un label |
+| 2 | Simple - un componente, bien entendido | Agregar campo `apellido` a perfil de agente |
+| 3 | Pequeño - un par de componentes, alguna lógica | Filtro de conversaciones por estado |
+| 5 | Medio - múltiples componentes, integración | Asignación automática de conversación a agente |
+| 8 | Complejo - varias capas, incertidumbre media | Integración con API de WhatsApp Cloud |
+| 13 | Muy complejo - investigación necesaria | Flujo completo de billing con Stripe |
+| 21 | Demasiado grande - debe dividirse en historias más pequeñas | - |
 
 **Regla:** si el equipo no puede converger en la estimación de una historia, es señal de que la historia no está suficientemente definida.
 
 ---
 
-## Planning Poker — Mecánica
+## Planning Poker - Mecánica
 
 Planning Poker es una técnica para estimar historias en equipo con votos simultáneos:
 
@@ -120,7 +120,7 @@ Sin Planning Poker, el riesgo habría aparecido en producción.
 
 ---
 
-## T-Shirt Sizing — Para epics y backlog inicial
+## T-Shirt Sizing - Para epics y backlog inicial
 
 Cuando las historias son aún muy grandes para Planning Poker, usar T-Shirt sizing:
 
@@ -130,7 +130,7 @@ Cuando las historias son aún muy grandes para Planning Poker, usar T-Shirt sizi
 | S | 3-5 | Un par de días, bien entendido |
 | M | 8-13 | Una semana, alguna investigación |
 | L | 21-34 | Dos semanas, muchos componentes |
-| XL | > 34 | Demasiado grande — dividir antes de estimar |
+| XL | > 34 | Demasiado grande - dividir antes de estimar |
 
 **Cuándo usar T-Shirt sizing:** en el backlog grooming inicial (Quarter Planning), cuando las historias aún no están refinadas.
 
@@ -212,7 +212,7 @@ Sí: Primero completar 3-5 historias pequeñas, luego calibrar la escala.
 
 ---
 
-## Estimación técnica — Tareas no-feature
+## Estimación técnica - Tareas no-feature
 
 Deuda técnica, refactors y migraciones también se estiman:
 
@@ -221,12 +221,12 @@ Deuda técnica, refactors y migraciones también se estiman:
 | Refactoring claro (extract method) | Story points como cualquier historia |
 | Migración de DB | Spike primero (investigación timeboxed 1-2 días), luego estimar |
 | Actualización de dependencias | Estimar por separado por librería (riesgo varía) |
-| Setup de CI/CD | Spike + estimación — las primeras veces toman el doble de lo esperado |
+| Setup de CI/CD | Spike + estimación - las primeras veces toman el doble de lo esperado |
 | Investigación / PoC | Timeboxed spike (no en story points, sino en días fijos) |
 
 ---
 
-## Triangulación — Calibrar estimaciones nuevas
+## Triangulación - Calibrar estimaciones nuevas
 
 Antes de estimar una historia nueva, buscar historias ya completadas similares:
 

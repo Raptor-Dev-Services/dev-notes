@@ -1,4 +1,4 @@
-# 06 · Conventional Commits y semantic-release
+# 06 - Conventional Commits y semantic-release
 
 Los mensajes de commit libres ("fix", "changes", "wip") no permiten automatizar changelogs, generar releases semánticos ni entender el historial sin leer el diff. Conventional Commits define un formato estándar que herramientas como `semantic-release`, `conventional-changelog` y los pipelines de CI pueden procesar automáticamente para determinar versiones y generar notas de release.
 
@@ -26,19 +26,19 @@ La primera línea (header) no debe superar 72 caracteres.
 |------|---------|-------------|
 | `feat` | MINOR | nueva funcionalidad |
 | `fix` | PATCH | corrección de bug |
-| `docs` | — | cambios de documentación |
-| `style` | — | formato, espacios, sin cambio de lógica |
-| `refactor` | — | restructuración de código sin agregar ni corregir |
-| `test` | — | agregar o modificar pruebas |
-| `chore` | — | tareas de mantenimiento, dependencias, config |
+| `docs` | - | cambios de documentación |
+| `style` | - | formato, espacios, sin cambio de lógica |
+| `refactor` | - | restructuración de código sin agregar ni corregir |
+| `test` | - | agregar o modificar pruebas |
+| `chore` | - | tareas de mantenimiento, dependencias, config |
 | `perf` | PATCH | mejora de rendimiento |
-| `ci` | — | cambios en pipelines de CI/CD |
-| `build` | — | cambios en sistema de build o dependencias externas |
-| `revert` | — | revertir un commit anterior |
+| `ci` | - | cambios en pipelines de CI/CD |
+| `build` | - | cambios en sistema de build o dependencias externas |
+| `revert` | - | revertir un commit anterior |
 
 ---
 
-## Breaking changes → MAJOR
+## Breaking changes -> MAJOR
 
 Se indica con `!` en el header o con el pie `BREAKING CHANGE:`:
 
@@ -109,7 +109,7 @@ Usar nombres consistentes en el equipo. En back-template el alcance suele ser el
 
 ---
 
-## Herramientas — commitlint + Husky
+## Herramientas - commitlint + Husky
 
 `commitlint` valida el mensaje en el hook `commit-msg` antes de que el commit se registre.
 
@@ -140,7 +140,7 @@ Si el mensaje no cumple el formato, el commit es rechazado antes de registrarse.
 
 ---
 
-## Validación en CI — bloquear PRs con mensajes inválidos
+## Validación en CI - bloquear PRs con mensajes inválidos
 
 Además del hook local, el pipeline valida los commits del PR para que nadie pueda hacer bypass con `--no-verify`.
 
@@ -177,7 +177,7 @@ jobs:
 
 ---
 
-## semantic-release — versión y changelog automáticos
+## semantic-release - versión y changelog automáticos
 
 `semantic-release` analiza el historial de commits desde el último tag, determina el bump de versión y genera el CHANGELOG automáticamente. El pipeline hace el release sin intervención manual.
 
@@ -228,9 +228,9 @@ npm install --save-dev semantic-release \
 
 | Commits desde el último release | Bump |
 |--------------------------------|------|
-| Solo `fix`, `perf`, `refactor` | PATCH (1.0.0 → 1.0.1) |
-| Al menos un `feat` | MINOR (1.0.0 → 1.1.0) |
-| Al menos un `BREAKING CHANGE` | MAJOR (1.0.0 → 2.0.0) |
+| Solo `fix`, `perf`, `refactor` | PATCH (1.0.0 -> 1.0.1) |
+| Al menos un `feat` | MINOR (1.0.0 -> 1.1.0) |
+| Al menos un `BREAKING CHANGE` | MAJOR (1.0.0 -> 2.0.0) |
 | Solo `chore`, `docs`, `style`, `test`, `ci` | sin release |
 
 ### Workflow de CI/CD con semantic-release
@@ -295,7 +295,7 @@ Ejemplo de `CHANGELOG.md` generado tras un release:
 
 ---
 
-## Commitizen — asistente interactivo
+## Commitizen - asistente interactivo
 
 Para equipos que prefieren un prompt guiado en lugar de escribir el mensaje manualmente:
 
@@ -349,7 +349,7 @@ El back-template incluye Husky configurado con `commit-msg` hook. `commitlint` v
 | Husky | herramienta que registra git hooks en el repositorio (commit-msg, pre-commit, pre-push) |
 | semantic-release | herramienta que automatiza versión y changelog basándose en los commits desde el último tag |
 | CHANGELOG.md | archivo que documenta todos los cambios relevantes de cada versión del proyecto |
-| breaking change | cambio que rompe la compatibilidad con la versión anterior — incrementa MAJOR en SemVer |
+| breaking change | cambio que rompe la compatibilidad con la versión anterior - incrementa MAJOR en SemVer |
 | `[skip ci]` | texto en el mensaje de commit que indica al pipeline que no ejecute el workflow |
 | commit-msg hook | script de git que se ejecuta justo antes de registrar un commit, con acceso al mensaje |
 | Commitizen | asistente interactivo para construir mensajes de commit que cumplen la especificación |

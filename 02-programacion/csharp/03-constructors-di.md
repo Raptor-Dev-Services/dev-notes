@@ -392,7 +392,7 @@ Tú nunca escribes ningún `new`. El container lo hace todo.
 
 ## Registro en DI: patrones del proyecto
 
-### Registrar interfaz → implementación
+### Registrar interfaz -> implementación
 
 ```csharp
 // El container: cuando alguien pida IExampleUserRepository, dale ExampleUserRepository

@@ -1,4 +1,4 @@
-# 08 · Estado — dónde vive cada cosa
+# 08 - Estado - dónde vive cada cosa
 
 ## Problema que resuelve
 

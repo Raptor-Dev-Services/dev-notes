@@ -1,4 +1,4 @@
-# 01 — Variables de Entorno en Vite
+# 01 - Variables de Entorno en Vite
 
 Vite tiene un sistema simple pero estricto. Solo expone al cliente las variables con prefijo `VITE_`. Todas las demás están disponibles únicamente en build-time (Node), nunca llegan al navegador.
 
@@ -10,8 +10,8 @@ Vite tiene un sistema simple pero estricto. Solo expone al cliente las variables
 
 | Archivo | Cuándo se carga |
 |---------|----------------|
-| `.env` | Siempre — variables compartidas por todos los modos |
-| `.env.local` | Siempre salvo en CI — overrides personales, **NUNCA al repo** |
+| `.env` | Siempre - variables compartidas por todos los modos |
+| `.env.local` | Siempre salvo en CI - overrides personales, **NUNCA al repo** |
 | `.env.development` | Solo en modo dev (`npm run dev`) |
 | `.env.production` | Solo en build (`npm run build`) |
 | `.env.development.local` | Override local de development |
@@ -24,7 +24,7 @@ Los archivos `.local` **nunca** se comitean. Deben estar en `.gitignore`.
 
 ---
 
-## Ejemplo real — SaaS multi-tenant
+## Ejemplo real - SaaS multi-tenant
 
 ```env
 # .env (compartido, va al repo)
@@ -48,7 +48,7 @@ VITE_API_BASE_URL=http://192.168.1.50:5000/api
 
 ---
 
-## Leer variables en código — centralizar en `config.js`
+## Leer variables en código - centralizar en `config.js`
 
 No dispersar `import.meta.env.VITE_*` por todo el código. Centralizar en un archivo de configuración:
 
@@ -94,7 +94,7 @@ Estas las provee Vite automáticamente. No requieren definición manual:
 
 ---
 
-## TypeScript — tipos para variables de entorno
+## TypeScript - tipos para variables de entorno
 
 Para evitar `any` al acceder a `import.meta.env`:
 
@@ -118,7 +118,7 @@ interface ImportMeta {
 
 ---
 
-## Seguridad — qué NO poner con prefijo `VITE_`
+## Seguridad - qué NO poner con prefijo `VITE_`
 
 > Las variables `VITE_*` se incrustan en el bundle final que el navegador descarga. Cualquier usuario puede leerlas inspeccionando el código fuente.
 

@@ -1,4 +1,4 @@
-# 03 · AI workflow — Claude Code en el ciclo de desarrollo
+# 03 - AI workflow - Claude Code en el ciclo de desarrollo
 
 ## Problema que resuelve
 
@@ -147,7 +147,7 @@ Respuesta: corregir explícitamente y, si se repite, agregar la restricción a `
 
 ---
 
-## Agentes autónomos — delegar tareas completas
+## Agentes autónomos - delegar tareas completas
 > Fuente: *Building LLM Powered Applications*: Ch.6 AI Agents and Tooling; Ch.8 Multi-Step Reasoning
 
 Los agentes van más allá del chat: tienen acceso a herramientas (leer archivos, ejecutar comandos, hacer búsquedas) y pueden completar tareas de múltiples pasos sin intervención humana en cada paso.
@@ -201,7 +201,7 @@ Sí: Con restricciones: "optimiza solo el GetPagedAsync en ExampleUsersSql.cs.
    No cambies la interfaz del repositorio. Usa EXPLAIN ANALYZE para verificar."
 ```
 
-### Checkpoints — controlar el agente en tareas largas
+### Checkpoints - controlar el agente en tareas largas
 
 ```bash
 # Establecer checkpoints explícitos al inicio
@@ -230,7 +230,7 @@ InsertExampleUserHandler. ¿Qué diferencias hay? Corrige antes de continuar."
 |---------|-----------|
 | Vibe coding | estilo de desarrollo donde el programador describe la intención en lenguaje natural y el AI genera el código |
 | Agente de AI | sistema que usa un modelo de lenguaje con acceso a herramientas para completar tareas de múltiples pasos de forma autónoma |
-| ReAct pattern | patrón de razonamiento de agentes: Thought → Action → Observation → Thought... hasta llegar a la respuesta |
+| ReAct pattern | patrón de razonamiento de agentes: Thought -> Action -> Observation -> Thought... hasta llegar a la respuesta |
 | Tool use | capacidad de un agente de invocar funciones externas (leer archivos, ejecutar comandos, hacer búsquedas) |
 | Checkpoint | instrucción explícita de hacer commit o pedir aprobación después de cada etapa de una tarea larga del agente |
 | Drift | desviación gradual del agente respecto al patrón o convenciones del proyecto, acumulada en tareas largas |

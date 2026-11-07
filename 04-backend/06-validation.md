@@ -1,4 +1,4 @@
-﻿# 06 — Validación: FluentValidation + Pipeline Behavior
+﻿# 06 - Validación: FluentValidation + Pipeline Behavior
 
 Validar los datos de entrada antes de que lleguen al Handler, de forma centralizada y componible.
 
@@ -34,7 +34,7 @@ FluentValidation + un Pipeline Behavior extrae esa validación del Handler y la 
 
 ---
 
-## FluentValidation — validator del Request
+## FluentValidation - validator del Request
 
 ```xml
 <!-- Application/Application.csproj -->
@@ -98,7 +98,7 @@ RuleFor(x => x.Email)
 
 ---
 
-## Pipeline Behavior — ejecución automática antes del Handler
+## Pipeline Behavior - ejecución automática antes del Handler
 
 El Pipeline Behavior intercepta el `IMediator.Send()` y corre los validators antes de llamar al Handler.
 
@@ -275,9 +275,9 @@ Para implementarlo en el proyecto:
 |-----------|----------|
 | Validar campos de entrada de usuario (HTTP body) | FluentValidation |
 | Verificar que una entidad existe en DB | Validator async o dentro del Handler |
-| Reglas de negocio complejas con múltiples entidades | No en validator — en el Handler |
-| Invariantes de la entidad de dominio | No en validator — en el constructor/método de la entidad |
-| Requests internos entre servicios conocidos | Depende — si el origen es confiable, validación mínima |
+| Reglas de negocio complejas con múltiples entidades | No en validator - en el Handler |
+| Invariantes de la entidad de dominio | No en validator - en el constructor/método de la entidad |
+| Requests internos entre servicios conocidos | Depende - si el origen es confiable, validación mínima |
 
 **Separación clave:** FluentValidation valida el *formato* de la entrada (campos requeridos, longitudes, regex). La *lógica de negocio* ("el email ya existe", "el usuario puede editar este recurso") va en el Handler.
 

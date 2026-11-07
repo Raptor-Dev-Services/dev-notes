@@ -1,4 +1,4 @@
-# 01 — Domain-Driven Design (DDD)
+# 01 - Domain-Driven Design (DDD)
 
 DDD es una forma de diseñar software centrada en el dominio del negocio. No es un framework ni una librería. Es un conjunto de patrones y principios para modelar la lógica de negocio de forma que refleje el mundo real.
 
@@ -6,7 +6,7 @@ Este documento cubre los conceptos tácticos de DDD: los bloques de construcció
 
 ---
 
-## Ubiquitous Language — el lenguaje compartido
+## Ubiquitous Language - el lenguaje compartido
 
 El primer principio de DDD: **usar las mismas palabras que el negocio**. El código, los tests, las conversaciones con el cliente y los documentos deben usar el mismo vocabulario.
 
@@ -300,7 +300,7 @@ El mismo "Cliente" tiene propiedades distintas en cada contexto. Intentar tener 
 
 ---
 
-## DDD táctico — resumen de bloques
+## DDD táctico - resumen de bloques
 
 | Bloque | Identidad | Mutable | Ejemplo en el proyecto |
 |--------|-----------|---------|----------------------|
@@ -308,9 +308,9 @@ El mismo "Cliente" tiene propiedades distintas en cada contexto. Intentar tener 
 | **Value Object** | No | No | `Email`, `Money`, `Address` |
 | **Aggregate Root** | Sí | Sí | `ExampleUser` (es el root del agregado) |
 | **Domain Event** | Sí (EventId) | No | `UserRegisteredEvent` |
-| **Repository** | — | — | `IExampleUserRepository` |
-| **Factory** | — | — | `ExampleUser.Create(...)` |
-| **Service de Dominio** | — | — | Lógica que no pertenece a ninguna entidad |
+| **Repository** | - | - | `IExampleUserRepository` |
+| **Factory** | - | - | `ExampleUser.Create(...)` |
+| **Service de Dominio** | - | - | Lógica que no pertenece a ninguna entidad |
 
 ---
 
@@ -411,7 +411,7 @@ public sealed class UserMergeService : IUserMergeService
 
 Cuando dos Bounded Contexts necesitan comunicarse, el patrón que uses determina el nivel de acoplamiento.
 
-### 1. Anti-Corruption Layer (ACL) — capa anticorrupción
+### 1. Anti-Corruption Layer (ACL) - capa anticorrupción
 
 Traduce el modelo externo al modelo propio. Úsalo cuando integras con un sistema legado o un contexto externo con un modelo diferente.
 
@@ -455,7 +455,7 @@ public sealed class SyncErpCustomerHandler
 }
 ```
 
-### 2. Shared Kernel — núcleo compartido
+### 2. Shared Kernel - núcleo compartido
 
 Dos contextos comparten un subconjunto pequeño y estable del modelo. Ambos equipos deben acordar cualquier cambio en él.
 
@@ -516,7 +516,7 @@ public sealed class UserCreatedIntegrationEventHandler : INotificationHandler<Us
 
 ---
 
-## Outbox Pattern — publicación confiable de eventos
+## Outbox Pattern - publicación confiable de eventos
 > Fuente: *.NET Microservices Architecture*: Ch.6 Implementing DDD with .NET; Ch.8 Resilience
 
 El problema con publicar Domain Events directamente después de `SaveChangesAsync` es que si el bus falla, el evento se pierde pero la transacción ya se confirmó. El **Outbox Pattern** resuelve esto garantizando que el evento y el cambio de estado se guardan en la misma transacción.
@@ -650,7 +650,7 @@ builder.Services.AddHostedService<OutboxProcessorService>();
 
 | Término | Definición |
 |---------|-----------|
-| DDD | Domain-Driven Design — enfoque de diseño que modela el software alrededor del lenguaje y las reglas del negocio |
+| DDD | Domain-Driven Design - enfoque de diseño que modela el software alrededor del lenguaje y las reglas del negocio |
 | Lenguaje Ubiquitario | vocabulario compartido entre desarrolladores y expertos del dominio que se refleja directamente en el código |
 | Entidad | objeto del dominio con identidad única persistente a lo largo del tiempo (identificado por un ID) |
 | Value Object | objeto del dominio sin identidad propia, definido solo por sus atributos; es inmutable |

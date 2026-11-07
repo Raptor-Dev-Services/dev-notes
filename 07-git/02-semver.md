@@ -1,4 +1,4 @@
-﻿# 02 · Versionado Semántico (SemVer 2.0.0)
+﻿# 02 - Versionado Semántico (SemVer 2.0.0)
 
 ## Problema que resuelve
 
@@ -18,7 +18,7 @@ MAJOR.MINOR.PATCH
 
 Regla: al incrementar MAJOR se resetean MINOR y PATCH a 0. Al incrementar MINOR se resetea PATCH a 0.
 
-## Versión 0.x.y — API inestable
+## Versión 0.x.y - API inestable
 
 Durante el desarrollo inicial se usa `0.MINOR.PATCH`. La API pública se considera inestable y cualquier versión puede introducir breaking changes sin incrementar MAJOR.
 

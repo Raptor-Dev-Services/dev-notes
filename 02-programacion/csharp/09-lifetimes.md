@@ -342,7 +342,7 @@ public class MiWorker : BackgroundService
 | Captive Dependency | Error donde un Singleton retiene un servicio Scoped, haciendo que este viva más tiempo del previsto y comparta estado entre peticiones |
 | `IServiceScope` | Ámbito de DI creado manualmente; necesario para consumir servicios Scoped desde un Singleton o un job en segundo plano |
 | `MainDbConnectionFactory` | Singleton del proyecto: sin estado propio, compartir entre peticiones es seguro y eficiente |
-| `MainDapperDbConnection` | Scoped del proyecto: una instancia por petición — gestiona la conexión durante el ciclo de vida de la request |
+| `MainDapperDbConnection` | Scoped del proyecto: una instancia por petición - gestiona la conexión durante el ciclo de vida de la request |
 | `ResultViewModel<T>` | Scoped del proyecto: almacena el resultado de la operación para que el controller lo lea al final |
 | Thread-safety | Propiedad requerida para cualquier Singleton: su código debe funcionar correctamente cuando múltiples hilos lo usan simultáneamente |
 | `AddSingleton<>()` / `AddScoped<>()` / `AddTransient<>()` | Métodos de registro de DI en ASP.NET Core que definen el lifetime de cada servicio |

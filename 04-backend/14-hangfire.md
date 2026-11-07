@@ -1,4 +1,4 @@
-# 14 — Background Jobs y Trabajos Programados
+# 14 - Background Jobs y Trabajos Programados
 
 Tareas que corren fuera del request HTTP: envío de emails, generación de reportes, sincronizaciones, procesamiento batch. Elegir la herramienta correcta depende de si los jobs necesitan persistencia y visibilidad.
 
@@ -17,7 +17,7 @@ Tareas que corren fuera del request HTTP: envío de emails, generación de repor
 
 ---
 
-## BackgroundService — el más simple (nativo)
+## BackgroundService - el más simple (nativo)
 
 ```csharp
 public class EmailSenderService : BackgroundService
@@ -59,7 +59,7 @@ builder.Services.AddHostedService<EmailSenderService>();
 
 ---
 
-## Hangfire — jobs persistentes con dashboard
+## Hangfire - jobs persistentes con dashboard
 
 ```csharp
 // dotnet add package Hangfire.AspNetCore
@@ -134,15 +134,15 @@ Ver `04-backend/41-background-jobs-multitenant.md` para la implementación compl
 | Hangfire | Librería de .NET para jobs en segundo plano con persistencia en base de datos y dashboard web |
 | Fire-and-forget | Tipo de job de Hangfire que se ejecuta una sola vez lo antes posible tras ser encolado |
 | Delayed Job | Tipo de job de Hangfire que se ejecuta después de un tiempo de espera configurado |
-| Recurring Job | Job periódico de Hangfire definido con expresión cron — equivalente a un cron job del sistema |
-| Continuation | Job de Hangfire que se ejecuta al completarse otro job previo — permite encadenar tareas |
+| Recurring Job | Job periódico de Hangfire definido con expresión cron - equivalente a un cron job del sistema |
+| Continuation | Job de Hangfire que se ejecuta al completarse otro job previo - permite encadenar tareas |
 | BackgroundJob.Enqueue | Método estático de Hangfire para encolar un fire-and-forget job |
 | RecurringJob.AddOrUpdate | Método para registrar o actualizar un job recurrente identificado por nombre |
 | Cron | Formato de expresión temporal para definir la frecuencia de los recurring jobs |
 | Dashboard | Interfaz web de Hangfire para monitorear, reintentar y cancelar jobs en tiempo real |
 | TenantId en jobs | Parámetro explícito requerido en cada job de SaaS para recrear el contexto del tenant |
 | AutomaticRetry | Atributo de Hangfire que configura el número máximo de reintentos ante fallos del job |
-| Job Storage | Backend donde Hangfire persiste el estado de los jobs — PostgreSQL, SQL Server, Redis |
+| Job Storage | Backend donde Hangfire persiste el estado de los jobs - PostgreSQL, SQL Server, Redis |
 
 ---
 

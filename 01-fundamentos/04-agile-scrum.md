@@ -1,4 +1,4 @@
-# 04 — Agile y Scrum: Metodología de Desarrollo Iterativo
+# 04 - Agile y Scrum: Metodología de Desarrollo Iterativo
 
 Agile es un conjunto de valores y principios para el desarrollo de software que prioriza la colaboración, la entrega incremental y la adaptación al cambio. Scrum es el framework ágil más utilizado. Es una implementación concreta de los principios Agile con roles, eventos y artefactos definidos.
 
@@ -6,7 +6,7 @@ Agile es un conjunto de valores y principios para el desarrollo de software que 
 
 ---
 
-## El Manifiesto Ágil — 4 valores
+## El Manifiesto Ágil - 4 valores
 
 ```
 Individuos e interacciones   SOBRE   procesos y herramientas
@@ -19,7 +19,7 @@ Responder al cambio          SOBRE   seguir un plan
 
 ---
 
-## 12 Principios Ágiles — Resumen práctico
+## 12 Principios Ágiles - Resumen práctico
 
 | Principio | Aplicación real |
 |-----------|----------------|
@@ -29,12 +29,12 @@ Responder al cambio          SOBRE   seguir un plan
 | Colaboración diaria entre negocio y devs | Daily standup con el PO visible |
 | Proyectos se construyen con personas motivadas | Autonomía + propósito + maestría |
 | La conversación cara a cara es la más eficiente | Async para updates, sync para decisiones |
-| Simplicidad — maximizar el trabajo no hecho | YAGNI como principio de diseño |
+| Simplicidad - maximizar el trabajo no hecho | YAGNI como principio de diseño |
 | Reflexión y ajuste continuo | Retrospectiva al final de cada sprint |
 
 ---
 
-## Scrum — Los 3 Roles
+## Scrum - Los 3 Roles
 
 ### Product Owner (PO)
 - Dueño del Product Backlog: decide qué se construye y en qué orden
@@ -56,7 +56,7 @@ Responder al cambio          SOBRE   seguir un plan
 
 ---
 
-## Scrum — Los 5 Eventos
+## Scrum - Los 5 Eventos
 
 ### 1. Sprint
 - Iteración de duración fija: 1-4 semanas (típicamente 2)
@@ -89,7 +89,7 @@ Responder al cambio          SOBRE   seguir un plan
 
 ---
 
-## Scrum — Los 3 Artefactos
+## Scrum - Los 3 Artefactos
 
 ### Product Backlog
 - Lista ordenada de todo lo que podría necesitar el producto
@@ -131,7 +131,7 @@ Una historia está "Done" cuando:
 
 ---
 
-## User Stories — Formato y criterios
+## User Stories - Formato y criterios
 
 ### Formato estándar
 

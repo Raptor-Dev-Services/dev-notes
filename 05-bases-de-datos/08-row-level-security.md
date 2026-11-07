@@ -1,4 +1,4 @@
-# 08 — Row-Level Security en PostgreSQL
+# 08 - Row-Level Security en PostgreSQL
 
 Row-Level Security (RLS) es una característica nativa de PostgreSQL que restringe las filas que devuelven o modifican los queries, directamente en el motor de base de datos, sin depender del código de la aplicación. Es una segunda línea de defensa para el aislamiento multi-tenant.
 
@@ -45,7 +45,7 @@ CREATE POLICY tenant_isolation_policy ON dbo.user_profiles
 
 `current_setting` lee una variable de PostgreSQL. Hay que fijarla antes de consultar, y la forma de hacerlo con un valor que viene de la aplicación es `set_config`:
 
-### Opción A — En cada query (Dapper)
+### Opción A - En cada query (Dapper)
 
 ```csharp
 await using var tx = await connection.BeginTransactionAsync(ct);
@@ -70,7 +70,7 @@ Tres detalles que conviene conocer antes de que fallen:
 - **El valor va como texto.** Con un `long`, PostgreSQL responde `function set_config(unknown, bigint, boolean) does not exist`.
 - **Con `false` dura toda la sesión,** igual que `SET`. La opción B usa ese alcance, con las condiciones que explica.
 
-### Opción B — Interceptor EF Core (automático)
+### Opción B - Interceptor EF Core (automático)
 
 ```csharp
 // Shared/Database/Interceptors/TenantRlsInterceptor.cs
@@ -325,8 +325,8 @@ La app se actualiza primero porque `ENABLE` sin `FORCE` solo deja fuera al dueñ
 | set_config | función de PostgreSQL que fija una variable con parámetros; con `true` como tercer argumento equivale a `SET LOCAL` |
 | current_setting | función de PostgreSQL que lee una variable de sesión (`app.current_tenant_id`) usada por las políticas RLS |
 | app.current_tenant_id | variable de sesión personalizada que establece el contexto del tenant activo en cada conexión |
-| BYPASSRLS | privilegio de PostgreSQL que permite a un rol ignorar todas las políticas RLS — nunca conceder al usuario de la app |
-| SECURITY DEFINER | función que se ejecuta con los privilegios del dueño de la función, no del llamador — puede bypassar RLS |
+| BYPASSRLS | privilegio de PostgreSQL que permite a un rol ignorar todas las políticas RLS - nunca conceder al usuario de la app |
+| SECURITY DEFINER | función que se ejecuta con los privilegios del dueño de la función, no del llamador - puede bypassar RLS |
 | EF Core Interceptor | clase que intercepta eventos del ciclo de vida de EF Core (apertura de conexión, guardado) para ejecutar código transversal |
 | Fuga de datos entre tenants | acceso a datos de otro tenant debido a ausencia o mala configuración de aislamiento en multi-tenancy |
 

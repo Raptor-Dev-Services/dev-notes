@@ -1,10 +1,10 @@
-# 07 — Seguridad Web: OWASP Top 10:2025 en .NET
+# 07 - Seguridad Web: OWASP Top 10:2025 en .NET
 
 Las vulnerabilidades más comunes en aplicaciones web y cómo prevenirlas en ASP.NET Core.
 
 ---
 
-## OWASP Top 10:2025 — resumen rápido
+## OWASP Top 10:2025 - resumen rápido
 > Fuente: [OWASP Top 10:2025](https://owasp.org/Top10/2025/). Ataques y defensas: *Web Application Security* 2nd Ed. (Andrew Hoffman): Part II Offense y Part III Defense
 
 | # | Categoría | En la lista de 2021 | Ejemplo |
@@ -28,7 +28,7 @@ Tres cambios de fondo respecto a 2021:
 
 ---
 
-## A01 — Broken Access Control (Control de acceso roto)
+## A01 - Broken Access Control (Control de acceso roto)
 
 ```csharp
 // Mal: Confiar en el ID del recurso sin verificar ownership
@@ -120,7 +120,7 @@ La última línea importa porque `HttpClient` sigue redirecciones por omisión: 
 
 ---
 
-## A02 — Security Misconfiguration (Headers de seguridad)
+## A02 - Security Misconfiguration (Headers de seguridad)
 
 ```csharp
 // En producción — deshabilitar el header de la versión del servidor
@@ -171,7 +171,7 @@ Los headers van dentro de `OnStarting` por una razón medida: si se agregan ante
 
 ---
 
-## A03 — Software Supply Chain Failures (Cadena de suministro)
+## A03 - Software Supply Chain Failures (Cadena de suministro)
 
 Cubre cualquier compromiso al construir, distribuir o actualizar el software: dependencias directas y transitivas, herramientas de CI/CD, imágenes y registros. OWASP cita casos como SolarWinds (2019), el robo a Bybit (2025) y el gusano de npm Shai-Hulud (2025). Es la categoría que más votos recibió en su encuesta a la comunidad.
 
@@ -211,7 +211,7 @@ La cadena no termina en NuGet: las acciones de GitHub se fijan por SHA, como exp
 
 ---
 
-## A04 — Fallos criptográficos
+## A04 - Fallos criptográficos
 
 ```csharp
 // Mal: MD5 o SHA1 para passwords — crackeables con rainbow tables
@@ -254,7 +254,7 @@ Dos precisiones de OWASP. Para contraseñas recomienda Argon2id, luego scrypt, y
 
 ---
 
-## A05 — Injection (SQL y Command Injection)
+## A05 - Injection (SQL y Command Injection)
 
 ```csharp
 // Mal: SQL Injection — concatenar input del usuario en SQL
@@ -314,7 +314,7 @@ El shell es lo que convierte `&&` o `;` en un segundo comando. `ProcessStartInfo
 
 ---
 
-## A06 — Insecure Design: Rate Limiting
+## A06 - Insecure Design: Rate Limiting
 
 ```csharp
 // Rate limiting en el endpoint de login — proteger contra brute force
@@ -347,7 +347,7 @@ La partición por IP es parte del diseño. Con `AddFixedWindowLimiter("login", .
 
 ---
 
-## A07 — Fallos de autenticación: manejo seguro de tokens
+## A07 - Fallos de autenticación: manejo seguro de tokens
 
 ```csharp
 // Bien: Guardar tokens de forma segura en el cliente
@@ -387,7 +387,7 @@ public IActionResult Logout()
 
 ---
 
-## A08 — Software or Data Integrity Failures
+## A08 - Software or Data Integrity Failures
 
 Código o datos que se aceptan como confiables sin verificarlo. Según OWASP, mira la integridad a un nivel más bajo que A03: cada artefacto, actualización o dato crítico. La deserialización insegura vive aquí.
 
@@ -404,7 +404,7 @@ var pedido = JsonSerializer.Deserialize<PedidoDto>(json);
 
 ---
 
-## A09 — Security Logging and Alerting Failures
+## A09 - Security Logging and Alerting Failures
 
 OWASP cambió el nombre para subrayar la alerta: un registro que nadie mira no provoca ninguna reacción. Hay que registrar los fallos de login, de acceso y de validación, y además avisar cuando se disparan.
 
@@ -433,7 +433,7 @@ Cómo llegan esas métricas a Prometheus está en [Observabilidad](04-observabil
 
 ---
 
-## A10 — Mishandling of Exceptional Conditions
+## A10 - Mishandling of Exceptional Conditions
 
 Categoría nueva. Trata de la app que no previene una condición anormal, no la detecta o reacciona mal. OWASP lo resume en una frase: cada vez que la aplicación no está segura de su siguiente instrucción, una condición excepcional se manejó mal.
 
@@ -496,7 +496,7 @@ Prevenir también cuenta. Los límites de tasa, las cuotas y los topes de tamañ
 
 ---
 
-## CORS — configuración segura
+## CORS - configuración segura
 
 OWASP cuenta una mala configuración de CORS dentro de A01.
 

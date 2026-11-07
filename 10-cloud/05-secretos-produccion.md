@@ -1,6 +1,6 @@
-# 05 · Secretos en producción
+# 05 - Secretos en producción
 
-> Fuente: *AWS Certified Solutions Architect – Associate Guide* Ch.14 (KMS, encryption) + Ch.15 (Systems Manager Parameter Store); *Architecting ASP.NET Core Applications* (Packt) Ch.9 (Azure Key Vault, Managed Identities)
+> Fuente: *AWS Certified Solutions Architect - Associate Guide* Ch.14 (KMS, encryption) + Ch.15 (Systems Manager Parameter Store); *Architecting ASP.NET Core Applications* (Packt) Ch.9 (Azure Key Vault, Managed Identities)
 
 ## Problema que resuelve
 
@@ -231,7 +231,7 @@ repos:
         args: ['--baseline', '.secrets.baseline']
 ```
 
-### AWS Macie — detectar secretos en S3
+### AWS Macie - detectar secretos en S3
 
 ```bash
 # Habilitar Macie para escanear buckets S3 en busca de datos sensibles

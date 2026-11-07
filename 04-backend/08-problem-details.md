@@ -1,4 +1,4 @@
-﻿# 08 — Problem Details: RFC 9457 y Manejo de Errores HTTP
+﻿# 08 - Problem Details: RFC 9457 y Manejo de Errores HTTP
 
 Estándar para respuestas de error HTTP. En lugar de formatos ad-hoc, todas las APIs devuelven la misma estructura de error.
 
@@ -47,7 +47,7 @@ RFC 9457 define una estructura estándar que los clientes pueden procesar de for
 | Campo | Origen | Qué contiene |
 |-------|--------|--------------|
 | `type` | Estándar | URI que identifica el tipo de problema. Si falta, se asume `about:blank` |
-| `title` | Estándar | Descripción corta del problema — constante por tipo de error |
+| `title` | Estándar | Descripción corta del problema - constante por tipo de error |
 | `status` | Estándar | HTTP status code, solo informativo: manda el de la respuesta |
 | `detail` | Estándar | Explicación legible del problema en esta instancia específica |
 | `instance` | Estándar | URI que identifica esta ocurrencia del problema |
@@ -209,7 +209,7 @@ Dos trampas de este manejador, medidas en .NET 10:
 
 ## Tipos de ProblemDetails por escenario
 
-### 404 — Not Found
+### 404 - Not Found
 
 ```csharp
 // Bien: Respuesta del Handler usando Result Pattern
@@ -219,7 +219,7 @@ return new GetExampleUserNotFoundFailure("Usuario con ID {id} no encontrado.");
 // O configurar en el GlobalHandler si se prefiere excepción → 404
 ```
 
-### 409 — Conflict
+### 409 - Conflict
 
 ```json
 {
@@ -231,7 +231,7 @@ return new GetExampleUserNotFoundFailure("Usuario con ID {id} no encontrado.");
 }
 ```
 
-### 400 — Validation Error
+### 400 - Validation Error
 
 ```json
 {
@@ -245,7 +245,7 @@ return new GetExampleUserNotFoundFailure("Usuario con ID {id} no encontrado.");
 }
 ```
 
-### 500 — Internal Server Error (producción)
+### 500 - Internal Server Error (producción)
 
 ```json
 {
@@ -321,9 +321,9 @@ El proyecto tiene `app.UseCoreProblemDetails()` de `Common.Web` que ya configura
 | traceId | Identificador único de una solicitud HTTP, incluido en ProblemDetails para correlacionar logs |
 | UseExceptionHandler | Middleware de ASP.NET que captura excepciones y las procesa con IExceptionHandler registrados |
 | UseStatusCodePages | Middleware que intercepta respuestas sin cuerpo (404, 405) y las formatea como ProblemDetails |
-| type | Campo de ProblemDetails que es una URI que identifica el tipo de problema — constante para cada tipo de error |
-| detail | Campo de ProblemDetails específico a la instancia del error — describe el contexto particular del fallo |
-| title | Campo de ProblemDetails con la descripción corta del tipo de error — constante para todos los errores del mismo tipo |
+| type | Campo de ProblemDetails que es una URI que identifica el tipo de problema - constante para cada tipo de error |
+| detail | Campo de ProblemDetails específico a la instancia del error - describe el contexto particular del fallo |
+| title | Campo de ProblemDetails con la descripción corta del tipo de error - constante para todos los errores del mismo tipo |
 | AddProblemDetails | Método de DI que registra el servicio ProblemDetails y permite personalizar campos extra |
 | GlobalExceptionHandler | Implementación de IExceptionHandler que centraliza el manejo de todas las excepciones no controladas |
 

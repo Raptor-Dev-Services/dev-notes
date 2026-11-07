@@ -1,4 +1,4 @@
-# 09 · Componentes headless — separar comportamiento de apariencia
+# 09 - Componentes headless - separar comportamiento de apariencia
 
 ## Problema que resuelve
 

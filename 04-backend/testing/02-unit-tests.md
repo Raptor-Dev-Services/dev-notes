@@ -1,4 +1,4 @@
-# 02 — Unit Tests: Handlers y Presenters con NSubstitute
+# 02 - Unit Tests: Handlers y Presenters con NSubstitute
 
 Tests de unidad aislados: se prueba una sola clase, con todos sus colaboradores sustituidos por fakes.
 
@@ -28,7 +28,7 @@ repo.GetByPublicIdAsync(userId, Arg.Any<CancellationToken>()).Returns(fakeUser);
 
 ---
 
-## NSubstitute — sintaxis esencial
+## NSubstitute - sintaxis esencial
 
 ```xml
 <!-- Tests/Tests.csproj -->
@@ -379,10 +379,10 @@ public sealed class InsertExampleUserValidatorTests
 | Escenario | Decisión |
 |-----------|----------|
 | Lógica de Handler (flujos, condiciones) | Unit test con NSubstitute |
-| Validadores | Unit test — rápidos, sin dependencias |
-| Presenters | Unit test — deterministas |
-| SQL / persistencia real | No unit test — ver 04-testcontainers.md |
-| Controllers | Unit test mínimo — cubiertos por integration tests |
+| Validadores | Unit test - rápidos, sin dependencias |
+| Presenters | Unit test - deterministas |
+| SQL / persistencia real | No unit test - ver 04-testcontainers.md |
+| Controllers | Unit test mínimo - cubiertos por integration tests |
 | Código puramente de mappeo/transformación | Unit test con datos concretos |
 
 ---

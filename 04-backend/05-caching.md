@@ -1,4 +1,4 @@
-# 05 — Caching: IMemoryCache, IDistributedCache y Redis
+# 05 - Caching: IMemoryCache, IDistributedCache y Redis
 
 Guardar temporalmente resultados costosos para no recalcularlos en cada request. El problema central es cuándo invalidar esa copia.
 
@@ -24,7 +24,7 @@ El caché resuelve esto cuando los datos cambian con poca frecuencia (perfil de 
 
 ---
 
-## IMemoryCache — caché en proceso
+## IMemoryCache - caché en proceso
 
 Vive en la memoria del proceso. Rápido (nanosegundos), pero no se comparte entre instancias.
 
@@ -124,7 +124,7 @@ public async Task<UpdateExampleUserResponse> Handle(
 
 ---
 
-## IDistributedCache — caché compartido entre instancias
+## IDistributedCache - caché compartido entre instancias
 
 Redis es la implementación estándar. Necesario en entornos con múltiples instancias de la API.
 
@@ -185,7 +185,7 @@ public sealed class DistributedCacheService : ICacheService
 
 ---
 
-## OutputCache — caché en la capa HTTP
+## OutputCache - caché en la capa HTTP
 
 Caché a nivel de respuesta HTTP completa. No requiere lógica en los handlers.
 
@@ -254,7 +254,7 @@ El proyecto no tiene caché configurado por defecto. Para agregarlo:
 | Escenario | Decisión |
 |-----------|----------|
 | Datos de catálogo (países, categorías, configuración) | Caché largo (horas) |
-| Perfil de usuario — se lee mucho, cambia poco | Caché corto (5-10 min) |
+| Perfil de usuario - se lee mucho, cambia poco | Caché corto (5-10 min) |
 | Resultado de cómputo costoso (reportes) | Caché con invalidación explícita |
 | Múltiples instancias de la API | Redis (IDistributedCache) |
 | Una sola instancia | IMemoryCache (más simple) |
@@ -455,18 +455,18 @@ public async Task<GetExampleUserResponse> Handle(
 
 | Término | Definición |
 |---------|-----------|
-| IMemoryCache | Interfaz de .NET para caché en memoria del proceso — no se comparte entre instancias |
-| IDistributedCache | Interfaz de .NET para caché distribuida (Redis, SQL Server) — compartida entre instancias |
+| IMemoryCache | Interfaz de .NET para caché en memoria del proceso - no se comparte entre instancias |
+| IDistributedCache | Interfaz de .NET para caché distribuida (Redis, SQL Server) - compartida entre instancias |
 | Cache-Aside | Patrón donde la aplicación gestiona la caché: leer caché primero, si miss consultar DB y guardar |
-| TTL | Time To Live — tiempo de expiración de una entrada de caché |
+| TTL | Time To Live - tiempo de expiración de una entrada de caché |
 | Cache Stampede | Fenómeno donde múltiples requests simultáneos llegan a una caché vacía y saturan la base de datos |
 | SemaphoreSlim | Mecanismo de sincronización usado para proteger el recálculo de caché ante stampede |
 | ICacheService | Interfaz del back-template que abstrae IMemoryCache e IDistributedCache con GetOrCreateAsync |
 | QueryCachingBehavior | Pipeline behavior que cachea respuestas de queries antes de llegar al handler |
-| AbsoluteExpiration | Expiración absoluta de caché — la entrada expira en una fecha/hora fija |
-| SlidingExpiration | Expiración deslizante — la entrada expira si no se accede en X tiempo |
+| AbsoluteExpiration | Expiración absoluta de caché - la entrada expira en una fecha/hora fija |
+| SlidingExpiration | Expiración deslizante - la entrada expira si no se accede en X tiempo |
 | Redis | Base de datos en memoria de alto rendimiento usada como caché distribuida en producción |
-| Output Cache | Caché a nivel de middleware que almacena la respuesta HTTP completa — independiente de la lógica |
+| Output Cache | Caché a nivel de middleware que almacena la respuesta HTTP completa - independiente de la lógica |
 
 ---
 

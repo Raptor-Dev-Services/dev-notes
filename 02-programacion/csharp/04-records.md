@@ -23,7 +23,7 @@ Console.WriteLine(a.Equals(b)); // false — misma historia
 
 Esto es problemático para DTOs y mensajes: dos respuestas con los mismos datos deberían ser iguales.
 
-### Records — comparación por valor
+### Records - comparación por valor
 
 ```csharp
 public record PuntoRecord(int X, int Y);
@@ -402,7 +402,7 @@ public sealed record ExampleUserDto(
 | `abstract record` | Record que no se puede instanciar directamente; usado como tipo base para jerarquías de respuestas en el proyecto |
 | `sealed record` | Record que no puede ser heredado; todas las variantes concretas de respuesta en el proyecto son `sealed record` |
 | `record struct` | Variante de record que vive en el stack como tipo de valor; útil para datos pequeños y colecciones grandes |
-| Referencia circular | Error al implementar `ISuccess<TSelf>` con `Data => this` en un record — `Data.Data.Data...` infinito en la serialización JSON |
+| Referencia circular | Error al implementar `ISuccess<TSelf>` con `Data => this` en un record - `Data.Data.Data...` infinito en la serialización JSON |
 | DTO (Data Transfer Object) | Objeto cuyo único propósito es transportar datos entre capas; en el proyecto se implementan como `sealed record` |
 
 ---

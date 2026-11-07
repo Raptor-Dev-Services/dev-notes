@@ -1,4 +1,4 @@
-﻿# 05 — Comandos Docker y Docker Compose
+﻿# 05 - Comandos Docker y Docker Compose
 
 Referencia rápida de los comandos más usados. `docker compose` (v2) sin guión es el comando actual.
 
@@ -73,7 +73,7 @@ docker run -d --memory="512m" --cpus="0.5" nombre:tag
 
 ---
 
-## docker ps — listar contenedores
+## docker ps - listar contenedores
 
 ```bash
 # Contenedores en ejecución
@@ -112,7 +112,7 @@ docker logs --tail 50 -f <nombre>
 
 ---
 
-## docker exec — ejecutar en contenedor activo
+## docker exec - ejecutar en contenedor activo
 
 ```bash
 # Abrir shell interactivo (solo si tiene shell)
@@ -222,7 +222,7 @@ docker stats --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}"
 
 ---
 
-## docker cp — copiar archivos
+## docker cp - copiar archivos
 
 ```bash
 # Del contenedor al host
@@ -277,7 +277,7 @@ docker system df -v
 
 ---
 
-## docker compose — comandos principales
+## docker compose - comandos principales
 
 Todos estos comandos se corren desde el directorio donde está el archivo compose (o con `-f`).
 
@@ -456,7 +456,7 @@ docker inspect back-template-api-1 --format='{{range .Config.Env}}{{.}}{{"\n"}}{
 
 ---
 
-## Flujo completo: build → test → run (CI)
+## Flujo completo: build -> test -> run (CI)
 
 ```bash
 # 1. Build

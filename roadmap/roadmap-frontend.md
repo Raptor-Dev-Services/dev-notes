@@ -1,4 +1,4 @@
-# Roadmap — Frontend: React 19 + Vite + Tailwind v4
+# Roadmap - Frontend: React 19 + Vite + Tailwind v4
 
 **Prerequisito:** HTML/CSS/JavaScript básico. TypeScript básico recomendado.
 **Objetivo:** construir el front-template, una SPA production-ready con React 19, Vite, Tailwind v4 y diseño accesible.
@@ -6,7 +6,7 @@
 
 ---
 
-## Fase 1 — Configuración del entorno (semana 1)
+## Fase 1 - Configuración del entorno (semana 1)
 
 > Antes del primer componente, el entorno debe estar correcto.
 
@@ -16,7 +16,7 @@
 
 ---
 
-## Fase 2 — React 19 en producción (semana 1-2)
+## Fase 2 - React 19 en producción (semana 1-2)
 
 > Los patrones que hacen que una app React escale bien en producción.
 
@@ -32,7 +32,7 @@
 
 ---
 
-## Fase 3 — Estilos: Tailwind v4 (semana 2)
+## Fase 3 - Estilos: Tailwind v4 (semana 2)
 
 > El sistema de estilos del front-template: utility-first con soporte multi-tenant.
 
@@ -47,7 +47,7 @@
 
 ---
 
-## Fase 4 — Design System (semana 2-3)
+## Fase 4 - Design System (semana 2-3)
 
 > La capa que da coherencia visual a toda la app.
 
@@ -64,7 +64,7 @@
 
 ---
 
-## Fase 5 — Patrones de feature (semana 3)
+## Fase 5 - Patrones de feature (semana 3)
 
 > Cómo organizar una feature completa en el frontend.
 
@@ -83,7 +83,7 @@ feature/
 
 ---
 
-## Fase 6 — Docker del frontend (semana 3-4)
+## Fase 6 - Docker del frontend (semana 3-4)
 
 > Empaquetar la SPA para producción.
 
@@ -128,4 +128,4 @@ Una SPA completa con:
 
 ---
 
-*Duración total estimada: 3-4 semanas · Nivel objetivo: frontend developer mid*
+*Duración total estimada: 3-4 semanas - Nivel objetivo: frontend developer mid*

@@ -1,4 +1,4 @@
-# 06 — Connection Strings y Manejo por Ambiente
+# 06 - Connection Strings y Manejo por Ambiente
 
 La cadena de conexión es uno de los secretos más sensibles del sistema. Un leak permite acceso completo a la base de datos. Merece la misma disciplina que cualquier secreto.
 
@@ -11,7 +11,7 @@ La cadena de conexión es uno de los secretos más sensibles del sistema. Un lea
 | Componente | Descripción |
 |------------|-------------|
 | `Host` / `Server` | Hostname o IP del servidor de BD |
-| `Port` | 5432 PostgreSQL · 1433 SQL Server · 3306 MySQL |
+| `Port` | 5432 PostgreSQL - 1433 SQL Server - 3306 MySQL |
 | `Database` | Nombre de la base de datos |
 | `Username` / `User Id` | Usuario de la conexión |
 | `Password` | Contraseña del usuario |
@@ -19,7 +19,7 @@ La cadena de conexión es uno de los secretos más sensibles del sistema. Un lea
 | `Connection Idle Lifetime` | Segundos antes de cerrar conexiones inactivas |
 | `Connect Timeout` | Segundos antes de fallar al conectar (default 15) |
 | `Ssl Mode` / `Encrypt` | Cifrado TLS en tránsito |
-| `Application Name` | Identifica la app en logs del servidor de BD — ponlo siempre |
+| `Application Name` | Identifica la app en logs del servidor de BD - ponlo siempre |
 
 ---
 
@@ -63,22 +63,22 @@ EF Core y Npgsql/SqlClient mantienen un pool de conexiones TCP reutilizables. El
 | Variable | Recomendación |
 |----------|---------------|
 | `Maximum Pool Size` | 100 por instancia de API. Con 4 instancias = 400 conexiones a la BD |
-| Límite del servidor | PostgreSQL default acepta 100 conexiones totales — ajustar `max_connections` si se escala |
-| Síntoma de pool agotado | Errores `timeout obtaining connection` — subir pool size o investigar conexiones no liberadas |
-| Conexiones zombi | Si no se usa `using`/`await using` al abrir `NpgsqlConnection`, las conexiones quedan tomadas — bug clásico con Dapper manual |
+| Límite del servidor | PostgreSQL default acepta 100 conexiones totales - ajustar `max_connections` si se escala |
+| Síntoma de pool agotado | Errores `timeout obtaining connection`subir pool size o investigar conexiones no liberadas |
+| Conexiones zombi | Si no se usa `using`/`await using` al abrir `NpgsqlConnection`, las conexiones quedan tomadas - bug clásico con Dapper manual |
 
 ---
 
 ## Manejo por ambiente
 
-### Desarrollo local — User Secrets
+### Desarrollo local - User Secrets
 
 ```bash
 dotnet user-secrets set "ConnectionStrings:Default" \
   "Host=localhost;Port=5432;Database=miapp_dev;Username=dev_user;Password=dev_pass;Application Name=MiApp.Api.Dev"
 ```
 
-### Docker Compose — variable de entorno
+### Docker Compose - variable de entorno
 
 ```yaml
 services:
@@ -92,7 +92,7 @@ services:
 DB_CONNECTION=Host=postgres;Port=5432;Database=miapp;Username=app;Password=secret;Application Name=MiApp.Api
 ```
 
-### Producción — Azure Key Vault o Secrets Manager
+### Producción - Azure Key Vault o Secrets Manager
 
 La connection string vive en el gestor de secretos. La app la lee a través de `IConfiguration` con el Key Vault como provider:
 

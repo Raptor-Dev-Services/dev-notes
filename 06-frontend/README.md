@@ -1,4 +1,4 @@
-# 06 — Frontend con React
+# 06 - Frontend con React
 
 Documentación sobre el stack frontend: Vite, React, Tailwind CSS v4, Headless UI, Axios, patrones de componentes y arquitectura de la aplicación.
 

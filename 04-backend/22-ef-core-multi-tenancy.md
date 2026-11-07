@@ -1,4 +1,4 @@
-# 22 — EF Core Global Query Filters para Multi-Tenancy
+# 22 - EF Core Global Query Filters para Multi-Tenancy
 
 Los Global Query Filters de EF Core son condiciones `WHERE` que se aplican automáticamente a todas las queries de una entidad, sin que el repositorio tenga que recordar filtrar manualmente. En un sistema multi-tenant son la primera línea de defensa contra la fuga de datos entre tenants.
 
@@ -267,17 +267,17 @@ Ver `docs/DB.md` y `docs/MultiTenancy.md` del back-template para la implementaci
 
 | Término | Definición |
 |---------|-----------|
-| Global Query Filter | Filtro automático de EF Core aplicado a todas las queries de una entidad — configurado con HasQueryFilter |
-| ITenantContextAccessor | Interfaz que expone el TenantId del request actual — implementada con AsyncLocal para seguridad por thread |
+| Global Query Filter | Filtro automático de EF Core aplicado a todas las queries de una entidad - configurado con HasQueryFilter |
+| ITenantContextAccessor | Interfaz que expone el TenantId del request actual - implementada con AsyncLocal para seguridad por thread |
 | TenantContext | Clase que almacena el TenantId del request actual usando AsyncLocal\<Guid?\> |
 | TenantClaimsMiddleware | Middleware que extrae el tenant_id del JWT y lo establece en el ITenantContextAccessor |
-| AsyncLocal\<T\> | Tipo de .NET que almacena valores por contexto de ejecución asíncrona — base del TenantContext |
+| AsyncLocal\<T\> | Tipo de .NET que almacena valores por contexto de ejecución asíncrona - base del TenantContext |
 | IgnoreQueryFilters | Método de EF Core para deshabilitar todos los Global Query Filters en una query específica |
 | HasQueryFilter | Método de ModelBuilder para registrar un filtro automático en una entidad |
 | DatabaseInitializationService | Servicio que inicializa la base de datos con un TenantId dummy para evitar errores en startup |
 | AppDbContext | DbContext principal del back-template que implementa los Global Query Filters de tenant |
 | Tenant Isolation | Principio de que los datos de un tenant nunca son accesibles desde el contexto de otro tenant |
-| Row-Level Security | Aislamiento de datos a nivel de fila — los Global Query Filters implementan RLS en la capa de aplicación |
+| Row-Level Security | Aislamiento de datos a nivel de fila - los Global Query Filters implementan RLS en la capa de aplicación |
 
 ---
 

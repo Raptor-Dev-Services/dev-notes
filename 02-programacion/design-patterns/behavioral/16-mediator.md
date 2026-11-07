@@ -1,4 +1,4 @@
-﻿# 16 — Mediator
+﻿# 16 - Mediator
 
 **Categoría:** Conductual
 
@@ -149,7 +149,7 @@ c1.DoA();
 
 ---
 
-## Mediator en .NET — `MediatR` y el `IMediator` del proyecto
+## Mediator en .NET - `MediatR` y el `IMediator` del proyecto
 
 ```csharp
 // El patrón Mediator está en el núcleo del proyecto via Common.Messaging.IMediator
@@ -275,10 +275,10 @@ public sealed class InsertExampleUserPresenter
 | Término | Definición |
 |---------|-----------|
 | Mediator | Patrón conductual que centraliza la comunicación entre objetos en un objeto intermediario, eliminando las dependencias directas entre ellos |
-| `IMediator` | Interfaz del proyecto en `Common.Messaging` que define `Send()` y `Publish()` — punto central de comunicación |
+| `IMediator` | Interfaz del proyecto en `Common.Messaging` que define `Send()` y `Publish()`punto central de comunicación |
 | `Mediator.Send()` | Método que envía un Request al Handler correspondiente y devuelve la respuesta |
 | `Mediator.Publish()` | Método que notifica a todos los `INotificationHandler<T>` suscritos a un tipo de respuesta |
-| InteractorPipeline | Componente del proyecto que orquesta el flujo: Handler → Publish → Presenter usando el mediador |
+| InteractorPipeline | Componente del proyecto que orquesta el flujo: Handler -> Publish -> Presenter usando el mediador |
 | `INotificationHandler<T>` | Interfaz implementada por los Presenters para suscribirse a un tipo específico de respuesta |
 | Acoplamiento O(N²) | Problema que el Mediator resuelve: sin él, N componentes tendrían N×(N-1) dependencias entre sí |
 | `ConcreteMediator` | Implementación del mediador que conoce a todos los componentes y orquesta su interacción |

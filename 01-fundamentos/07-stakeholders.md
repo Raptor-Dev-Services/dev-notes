@@ -1,4 +1,4 @@
-# 07 — Gestión de Stakeholders en Proyectos de Software
+# 07 - Gestión de Stakeholders en Proyectos de Software
 
 Los stakeholders son todas las personas o grupos que tienen interés en el resultado de un proyecto de software, desde los usuarios finales hasta el equipo de operaciones. Gestionarlos bien determina si un proyecto técnicamente exitoso se percibe como un fracaso, o viceversa.
 
@@ -59,11 +59,11 @@ El error más común: hablar de soluciones cuando el stakeholder pregunta por im
 
 | Concepto técnico | Analogía para no-técnicos |
 |-----------------|--------------------------|
-| Deuda técnica | "El código está en préstamo — pagamos intereses en forma de bugs y lentitud" |
+| Deuda técnica | "El código está en préstamo - pagamos intereses en forma de bugs y lentitud" |
 | Refactoring | "Reorganizar el taller para que ensamblar el siguiente producto sea 3× más rápido" |
-| Tests automatizados | "Control de calidad automatizado — detecta defectos antes de que lleguen al cliente" |
-| Microservicios | "Dividir una tienda grande en puestos independientes — más flexible pero más caro de coordinar" |
-| Migration de DB | "Reorganizar el archivo físico — mientras se hace, algunos cajones no están disponibles" |
+| Tests automatizados | "Control de calidad automatizado - detecta defectos antes de que lleguen al cliente" |
+| Microservicios | "Dividir una tienda grande en puestos independientes - más flexible pero más caro de coordinar" |
+| Migration de DB | "Reorganizar el archivo físico - mientras se hace, algunos cajones no están disponibles" |
 
 ### Estructura del "elevator pitch" técnico
 
@@ -154,7 +154,7 @@ Identificar stakeholders tarde es caro. La regla: incluirlos en el kickoff, no c
 4. Preguntar a tech leads de proyectos similares anteriores
 ```
 
-### Comunicación con stakeholders — formatos
+### Comunicación con stakeholders - formatos
 
 ```
 Reunión:          cuando necesitas input significativo o hay cambios de scope
@@ -220,11 +220,11 @@ Por eso: invertir en DX y autonomía técnica tiene ROI positivo.
 
 | Decisión | Involucrar al PO | Razón |
 |----------|-----------------|-------|
-| Cambiar base de datos (PostgreSQL → MySQL) | Sí — ADR formal | Impacta costos, skills, soporte |
+| Cambiar base de datos (PostgreSQL -> MySQL) | Sí - ADR formal | Impacta costos, skills, soporte |
 | Refactoring interno sin cambio de API | No | Decisión técnica pura |
-| Agregar Redis para caching | Sí — informar | Nueva infraestructura = nuevo costo |
+| Agregar Redis para caching | Sí - informar | Nueva infraestructura = nuevo costo |
 | Renombrar variables | No | Detalles de implementación |
-| Introducir dependency injection framework | Sí — ADR | Cambio de arquitectura |
+| Introducir dependency injection framework | Sí - ADR | Cambio de arquitectura |
 | Extraer un método largo | No | Boy scout rule |
 
 ### RFC Process (Request for Comments)
@@ -298,7 +298,7 @@ Sí: Duración máxima definida (defaultear a 30 min, no 60)
 | Conflicto | Señal de alerta | Cómo manejarlo |
 |-----------|----------------|---------------|
 | "¿Cuándo estará listo?" | Presión para dar fechas sin scope claro | "Dame el scope definido y te doy la fecha. Sin scope fijo, la fecha es una suposición." |
-| Feature creep | El scope crece sin ajustar la fecha | "Eso es una historia nueva — va al backlog. La fecha original es para el scope original." |
+| Feature creep | El scope crece sin ajustar la fecha | "Eso es una historia nueva - va al backlog. La fecha original es para el scope original." |
 | Prioridades cambiantes | Sprint interrumpido cada semana | "Cada cambio mid-sprint nos cuesta [X] días de contexto. ¿Quieres ese trade-off?" |
 | "Los devs siempre dicen que va a tardar más" | Falta de confianza en estimaciones | Mostrar velocity histórica + triangular con historias similares completadas |
 | Scope vs calidad | "¿Para qué sirven los tests?" | Mostrar costo de bugs en producción vs costo de tests: típicamente 5-15× más caro sin tests |
@@ -313,10 +313,10 @@ Sí: Duración máxima definida (defaultear a 30 min, no 60)
 | Cuadrante Poder/Interés | herramienta para clasificar stakeholders según su capacidad de influencia y su nivel de interés en el proyecto |
 | Upstream dependency | equipo o sistema del que depende el equipo para poder avanzar en su propio trabajo |
 | Downstream dependency | equipo o sistema que depende del trabajo del equipo para construir el suyo |
-| RFC | Request for Comments — documento previo al ADR para proponer y debatir cambios técnicos significativos con el equipo |
-| ADR | Architecture Decision Record — documento que formaliza una decisión arquitectural con su contexto y alternativas |
+| RFC | Request for Comments - documento previo al ADR para proponer y debatir cambios técnicos significativos con el equipo |
+| ADR | Architecture Decision Record - documento que formaliza una decisión arquitectural con su contexto y alternativas |
 | Feature creep | acumulación de funcionalidades no planificadas que expande el scope sin ajustar la fecha de entrega |
-| Elevator pitch técnico | presentación concisa (problema → causa → solución → impacto → inversión → riesgo) para comunicar propuestas técnicas a no-técnicos |
+| Elevator pitch técnico | presentación concisa (problema -> causa -> solución -> impacto -> inversión -> riesgo) para comunicar propuestas técnicas a no-técnicos |
 | DevEx (Developer Experience) | calidad de la experiencia de trabajo del desarrollador: tiempos de build, feedback loops, herramientas y autonomía |
 | Managing expectations | práctica de alinear proactivamente las expectativas de los stakeholders con la realidad del proyecto |
 

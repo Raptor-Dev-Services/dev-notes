@@ -1,10 +1,10 @@
-# 04 — PostgreSQL Avanzado: CTEs, Window Functions, JSONB y ON CONFLICT
+# 04 - PostgreSQL Avanzado: CTEs, Window Functions, JSONB y ON CONFLICT
 
 Herramientas de SQL que van más allá de SELECT/INSERT/UPDATE básicos.
 
 ---
 
-## CTEs — Common Table Expressions
+## CTEs - Common Table Expressions
 
 Una CTE (WITH clause) nombra un resultado intermedio y permite reusarlo en la misma query. Mejora la legibilidad de queries complejas.
 
@@ -58,7 +58,7 @@ ORDER BY OrderCount DESC
 LIMIT 10;
 ```
 
-### CTE recursiva — jerarquías
+### CTE recursiva - jerarquías
 
 ```sql
 -- Tabla de categorías con self-reference
@@ -84,7 +84,7 @@ ORDER BY Path;
 
 ---
 
-## Window Functions — cálculos por grupos sin colapsar filas
+## Window Functions - cálculos por grupos sin colapsar filas
 
 A diferencia de `GROUP BY`, las window functions calculan sobre un grupo pero mantienen todas las filas:
 
@@ -129,7 +129,7 @@ FROM   dbo.ExampleOrders;
 
 ---
 
-## ON CONFLICT — upsert
+## ON CONFLICT - upsert
 
 Insertar si no existe, actualizar si existe (sin try/catch ni check previo):
 
@@ -174,7 +174,7 @@ public Task UpsertAsync(ExampleUser user, CancellationToken ct) =>
 
 ---
 
-## JSONB — datos semi-estructurados
+## JSONB - datos semi-estructurados
 
 PostgreSQL tiene soporte nativo para JSON con indexación y operadores:
 
@@ -208,7 +208,7 @@ WHERE PublicId = @publicId;
 
 ---
 
-## Funciones de fecha — las más usadas
+## Funciones de fecha - las más usadas
 
 ```sql
 -- Fecha/hora actual
@@ -292,7 +292,7 @@ public Task<IEnumerable<UserSummaryDto>> GetSummaryAsync(CancellationToken ct) =
 
 ---
 
-## EXPLAIN ANALYZE — entender el plan de ejecución
+## EXPLAIN ANALYZE - entender el plan de ejecución
 > Fuente: *Empezando con PostgreSQL*: Ch.9 Optimización de consultas
 
 `EXPLAIN ANALYZE` muestra el plan de ejecución real de una query: qué índices usa, cuántas filas lee, cuánto tarda.
@@ -404,10 +404,10 @@ CREATE TABLE ExampleUsers_Default
 
 | Término | Definición |
 |---------|-----------|
-| CTE | Common Table Expression — subconsulta nombrada con `WITH` que mejora la legibilidad de queries complejas |
+| CTE | Common Table Expression - subconsulta nombrada con `WITH` que mejora la legibilidad de queries complejas |
 | Window function | función SQL que opera sobre un conjunto de filas relacionadas con la fila actual sin colapsarlas (ROW_NUMBER, RANK, LAG) |
 | JSONB | tipo de dato de PostgreSQL que almacena JSON en formato binario comprimido con soporte de índices GIN |
-| GIN index | Generalized Inverted Index — tipo de índice de PostgreSQL optimizado para columnas JSONB, arrays y texto completo |
+| GIN index | Generalized Inverted Index - tipo de índice de PostgreSQL optimizado para columnas JSONB, arrays y texto completo |
 | Full-text search | búsqueda sobre texto usando vectores de palabras normalizadas (tsvector) y consultas de texto (tsquery) |
 | tsvector | representación indexable de un texto en PostgreSQL: lista de lexemas con sus posiciones |
 | VACUUM | operación de mantenimiento que elimina las versiones de filas obsoletas (dead tuples) del almacenamiento físico |

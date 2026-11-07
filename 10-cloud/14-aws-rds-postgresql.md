@@ -1,4 +1,4 @@
-# 14 · AWS RDS con PostgreSQL
+# 14 - AWS RDS con PostgreSQL
 
 ## Problema que resuelve
 
@@ -71,7 +71,7 @@ aws rds describe-db-instances \
 
 ---
 
-## Subnet Groups — qué son y por qué importan
+## Subnet Groups - qué son y por qué importan
 
 Un DB Subnet Group es un conjunto de subredes donde RDS puede colocar la instancia (y su réplica Multi-AZ). Debe abarcar al menos 2 AZs.
 
@@ -92,7 +92,7 @@ Sí: Diseño correcto:
 
 ---
 
-## Parameter Groups — configurar PostgreSQL en RDS
+## Parameter Groups - configurar PostgreSQL en RDS
 
 Los Parameter Groups son la forma de modificar los parámetros de PostgreSQL en RDS. No puedes editar `postgresql.conf` directamente porque no tienes acceso al SO.
 
@@ -135,7 +135,7 @@ aws rds modify-db-instance \
 
 ---
 
-## Multi-AZ — alta disponibilidad
+## Multi-AZ - alta disponibilidad
 
 Multi-AZ crea una réplica síncrona en una AZ diferente. Es transparente para la aplicación.
 
@@ -176,7 +176,7 @@ aws rds reboot-db-instance \
 
 ---
 
-## Read Replicas — escalado de lecturas
+## Read Replicas - escalado de lecturas
 
 Las Read Replicas son réplicas asíncronas que aceptan conexiones de solo lectura.
 
@@ -391,7 +391,7 @@ aws rds modify-db-instance \
 | DBLoad | Número de sesiones activas / vCPUs | > 1 (saturado) |
 | db.sql.tps | Transacciones por segundo | Contexto dependiente |
 | db.wait_event | Qué espera están causando latencia | Lock, IO, CPU |
-| db.sql.rows_examined | Filas escaneadas por query | > 1M → index faltante |
+| db.sql.rows_examined | Filas escaneadas por query | > 1M -> index faltante |
 
 ---
 
@@ -455,7 +455,7 @@ Flujo de conexion en produccion:
 | Publicly Accessible | Flag que determina si RDS tiene endpoint público. Siempre `false` en producción. |
 | SSL Certificate | Certificado de RDS para cifrado en tránsito. Descargar desde AWS. |
 
-> Fuente: *AWS Certified Solutions Architect – Associate Guide* (Gabriel Ramirez, Packt): Ch.9 Storage y Relational Databases, Ch.4 Scaling Databases
+> Fuente: *AWS Certified Solutions Architect - Associate Guide* (Gabriel Ramirez, Packt): Ch.9 Storage y Relational Databases, Ch.4 Scaling Databases
 
 ---
 

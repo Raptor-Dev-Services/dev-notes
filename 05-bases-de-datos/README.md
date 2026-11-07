@@ -1,4 +1,4 @@
-# Bases de datos — Índice
+# Bases de datos - Índice
 
 SQL y PostgreSQL para desarrollo backend: desde consultas básicas hasta aislamiento de datos por tenant.
 

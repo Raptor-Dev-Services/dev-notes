@@ -1,4 +1,4 @@
-# Roadmap — Backend con ASP.NET Core
+# Roadmap - Backend con ASP.NET Core
 
 **Prerequisito:** [Roadmap C#](roadmap-csharp.md) completado o C# intermedio equivalente.
 **Objetivo:** construir APIs REST production-ready con ASP.NET Core 10, Dapper, PostgreSQL.
@@ -6,7 +6,7 @@
 
 ---
 
-## Fase 1 — Base de datos primero (semana 1)
+## Fase 1 - Base de datos primero (semana 1)
 
 > Antes de escribir la API, dominar la capa de datos. Todos los errores de rendimiento nacen aquí.
 
@@ -21,7 +21,7 @@
 
 ---
 
-## Fase 2 — Patrones core del back-template (semana 2)
+## Fase 2 - Patrones core del back-template (semana 2)
 
 > Los bloques fundamentales que estructuran cada caso de uso en el proyecto.
 
@@ -34,7 +34,7 @@
 
 ---
 
-## Fase 3 — Validación, errores y configuración (semana 2-3)
+## Fase 3 - Validación, errores y configuración (semana 2-3)
 
 > La "fontanería" que hace robusta a la API.
 
@@ -48,7 +48,7 @@
 
 ---
 
-## Fase 4 — Seguridad y autenticación (semana 3)
+## Fase 4 - Seguridad y autenticación (semana 3)
 
 > JWT, rate limiting y control de acceso: imprescindibles antes de hacer públicas las APIs.
 
@@ -60,7 +60,7 @@
 
 ---
 
-## Fase 5 — Rendimiento e infraestructura (semana 4)
+## Fase 5 - Rendimiento e infraestructura (semana 4)
 
 > Hacer que la API escale y sea resiliente.
 
@@ -75,7 +75,7 @@
 
 ---
 
-## Fase 6 — ORM, documentación y EF Core (semana 5)
+## Fase 6 - ORM, documentación y EF Core (semana 5)
 
 - [ ] [EF Core](../04-backend/17-ef-core.md): DbContext, fluent config, migrations, tracking vs no-tracking
 - [ ] [OpenAPI](../04-backend/15-openapi.md): .NET 9 native, Scalar UI, Swashbuckle, Problem Details
@@ -86,7 +86,7 @@
 
 ---
 
-## Fase 7 — Testing (semana 5-6)
+## Fase 7 - Testing (semana 5-6)
 
 > Sin tests no hay refactoring seguro ni evolución del sistema.
 
@@ -100,7 +100,7 @@
 
 ---
 
-## Fase 8 — API Design profesional (semana 6-7)
+## Fase 8 - API Design profesional (semana 6-7)
 
 - [ ] [HTTP](../03-arquitectura/api-design/01-http.md): verbos, status codes, headers semánticos
 - [ ] [REST](../03-arquitectura/api-design/02-rest.md): constraints REST, naming de recursos
@@ -132,4 +132,4 @@ Una API REST completa con:
 
 ---
 
-*Duración total estimada: 6-8 semanas · Nivel objetivo: backend .NET senior*
+*Duración total estimada: 6-8 semanas - Nivel objetivo: backend .NET senior*

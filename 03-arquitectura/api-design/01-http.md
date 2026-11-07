@@ -1,4 +1,4 @@
-﻿# 01 — HTTP: Verbos, Status Codes e Idempotencia
+﻿# 01 - HTTP: Verbos, Status Codes e Idempotencia
 
 El protocolo que subyace a todas las APIs REST. Entender HTTP semántico es la base de un buen diseño de API.
 
@@ -6,7 +6,7 @@ El protocolo que subyace a todas las APIs REST. Entender HTTP semántico es la b
 
 ---
 
-## Verbos HTTP — cuándo usar cada uno
+## Verbos HTTP - cuándo usar cada uno
 
 | Verbo | Semántica | Idempotente | Body |
 |-------|-----------|-------------|------|
@@ -15,10 +15,10 @@ El protocolo que subyace a todas las APIs REST. Entender HTTP semántico es la b
 | `PUT` | Reemplazar un recurso completo | Sí | Sí |
 | `PATCH` | Actualizar parcialmente un recurso | No | Sí |
 | `DELETE` | Eliminar un recurso | Sí | Opcional |
-| `HEAD` | Como GET pero sin body — verificar existencia | Sí | No |
+| `HEAD` | Como GET pero sin body - verificar existencia | Sí | No |
 | `OPTIONS` | Descubrir métodos permitidos (CORS preflight) | Sí | No |
 
-### Idempotencia — la propiedad más importante
+### Idempotencia - la propiedad más importante
 
 Una operación es **idempotente** si ejecutarla N veces produce el mismo resultado que ejecutarla 1 vez:
 
@@ -33,7 +33,7 @@ La idempotencia importa porque los clientes reintentan requests ante fallos de r
 
 ---
 
-## Status Codes — las categorías
+## Status Codes - las categorías
 
 | Rango | Categoría | Qué significa |
 |-------|-----------|--------------|
@@ -63,7 +63,7 @@ La idempotencia importa porque los clientes reintentan requests ante fallos de r
 504 Gateway Timeout     — el servidor upstream tardó demasiado
 ```
 
-### 401 vs 403 — la distinción crítica
+### 401 vs 403 - la distinción crítica
 
 ```
 401 Unauthorized: "No sé quién eres" — falta o es inválido el token de autenticación
@@ -73,7 +73,7 @@ Request sin token → 401
 Request con token válido pero rol insuficiente → 403
 ```
 
-### 404 vs 403 — privacy through ambiguity
+### 404 vs 403 - privacy through ambiguity
 
 A veces es mejor retornar 404 que 403, para no revelar que el recurso existe:
 
@@ -88,7 +88,7 @@ Para APIs públicas con datos privados: 404 protege más la privacidad
 
 ---
 
-## Headers HTTP — los más relevantes para APIs
+## Headers HTTP - los más relevantes para APIs
 
 ### Request headers
 

@@ -1,4 +1,4 @@
-# 08 — Zero Trust Networks
+# 08 - Zero Trust Networks
 
 Zero Trust es el principio de seguridad: "nunca confiar, siempre verificar". Ningún usuario, dispositivo o servicio recibe confianza implícita, incluso dentro de la red interna.
 
@@ -93,7 +93,7 @@ builder.Services.AddHttpClient("orders-service-mtls")
 
 ---
 
-## Least Privilege — acceso mínimo necesario
+## Least Privilege - acceso mínimo necesario
 
 ```csharp
 // Policies granulares en lugar de roles amplios
@@ -244,7 +244,7 @@ builder.Services.AddHealthChecks()
 
 ---
 
-## Principio "Asumir Breach" — diseño defensivo en código
+## Principio "Asumir Breach" - diseño defensivo en código
 
 ```csharp
 // Bien: Validar los datos en cada capa, no solo en la entrada

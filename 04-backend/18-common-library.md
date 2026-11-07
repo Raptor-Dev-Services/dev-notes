@@ -1,4 +1,4 @@
-# 18 — La Librería Common: Bootstrap Completo de un SaaS
+# 18 - La Librería Common: Bootstrap Completo de un SaaS
 
 Toda la teoría del manual converge en una librería real. `Common` es la base de código que cada SaaS arranca con los problemas transversales ya resueltos. Construida en .NET 10, resuelve de un golpe los temas más dolorosos del bootstrap: logging estructurado con Seq, observabilidad con OpenTelemetry, mediator propio, multi-tenancy con resolución por header y subdominio, factories de conexión a Postgres, propagación automática de tenant en HTTP clients, y health checks listos.
 
@@ -28,8 +28,8 @@ Common centraliza esa infraestructura:
 |--------|-----------|----------------|
 | **Logging** | `Common.Logging` | Serilog con sinks Console/Seq y enriquecimiento automático con TenantId |
 | **Observability** | `Common.Observability` | OpenTelemetry: traces y metrics por OTLP, exporter Prometheus |
-| **Results** | `Common.Results` | `Result<T>` tipado — éxito/falla sin excepciones de control |
-| **Errors** | `Common.Errors` | `ErrorList` — acumula errores de validación o dominio |
+| **Results** | `Common.Results` | `Result<T>` tipado - éxito/falla sin excepciones de control |
+| **Errors** | `Common.Errors` | `ErrorList`acumula errores de validación o dominio |
 | **Exceptions** | `Common.Exceptions` | Excepciones de dominio reutilizables |
 | **Messaging** | `Common.Messaging` | Contratos `IRequest`, `IMediator` y pipeline behaviors |
 | **Abstractions** | `Common.Abstractions` | Interfaces base de interactores y presenters |
@@ -156,11 +156,11 @@ app.Run();
 
 | Flag | Comportamiento |
 |------|---------------|
-| `RequireTenant` | Si `true`, requests sin tenant → 400 |
-| `RejectUnknownTenants` | Si `true`, tenants no registrados en el catálogo → 400 |
+| `RequireTenant` | Si `true`, requests sin tenant -> 400 |
+| `RejectUnknownTenants` | Si `true`, tenants no registrados en el catálogo -> 400 |
 | `TenantHeaderName` | Nombre del header HTTP. Convención: `X-Tenant-Id` |
 | `ResolveFromHeader` | Activa resolución por header HTTP |
-| `ResolveFromSubdomain` | Activa resolución por subdominio (`acme.miapp.com` → `acme`) |
+| `ResolveFromSubdomain` | Activa resolución por subdominio (`acme.miapp.com` -> `acme`) |
 | `DefaultTenantId` | Fallback para requests sin tenant (ej. `/health`) |
 | `Tenants` | Catálogo de tenants con connection strings y settings propios |
 
@@ -391,7 +391,7 @@ else { /* result.Error tiene tipo y mensaje */ }
 
 ---
 
-## Bootstrap completo — Program.cs de un nuevo SaaS
+## Bootstrap completo - Program.cs de un nuevo SaaS
 
 ```csharp
 using Common.Logging;
@@ -467,8 +467,8 @@ Common sirve a equipos que construyen SaaS multi-tenant con .NET, Postgres, Seq 
 | AddTenantPropagation | Método del Common que propaga el TenantId a través de HttpClient en requests salientes |
 | NuGet package | Artefacto binario publicado en NuGet para reutilizar la librería Common entre proyectos |
 | Git Submodule | Forma alternativa de compartir el Common como referencia de código fuente en lugar de NuGet |
-| OpenTelemetry | Estándar de observabilidad para trazas, métricas y logs — integrado en el Common del stack |
-| Serilog | Librería de logging estructurado para .NET — enriquece logs con tenant_id, request_id y más |
+| OpenTelemetry | Estándar de observabilidad para trazas, métricas y logs - integrado en el Common del stack |
+| Serilog | Librería de logging estructurado para .NET - enriquece logs con tenant_id, request_id y más |
 | ServiceCollectionExtensions | Patrón de extensión de IServiceCollection para agrupar registros DI por capa o módulo |
 
 ---

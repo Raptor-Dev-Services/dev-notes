@@ -1,4 +1,4 @@
-# 07 · Capa de dominio y ACL — sacar el negocio de la vista
+# 07 - Capa de dominio y ACL - sacar el negocio de la vista
 
 ## Problema que resuelve
 

@@ -1,4 +1,4 @@
-# Roadmap — SaaS Multi-Tenant
+# Roadmap - SaaS Multi-Tenant
 
 **Prerequisito:** [Roadmap Arquitectura](roadmap-arquitectura.md) completado.
 **Objetivo:** construir un producto SaaS multi-tenant completo con el back-template como base.
@@ -6,7 +6,7 @@
 
 ---
 
-## Fase 1 — Fundamentos de multi-tenancy (semana 1)
+## Fase 1 - Fundamentos de multi-tenancy (semana 1)
 
 > Entender el modelo antes de implementar nada. Una decisión equivocada aquí es muy costosa.
 
@@ -18,7 +18,7 @@
 
 ---
 
-## Fase 2 — Capa de datos multi-tenant (semana 1-2)
+## Fase 2 - Capa de datos multi-tenant (semana 1-2)
 
 > El corazón técnico: que las queries nunca filtren datos de otro tenant.
 
@@ -31,7 +31,7 @@
 
 ---
 
-## Fase 3 — Identidad y acceso (semana 2-3)
+## Fase 3 - Identidad y acceso (semana 2-3)
 
 > Quién puede hacer qué, dentro de cada tenant.
 
@@ -46,7 +46,7 @@
 
 ---
 
-## Fase 4 — Ciclo de vida del tenant (semana 3-4)
+## Fase 4 - Ciclo de vida del tenant (semana 3-4)
 
 > Cómo entra un nuevo cliente, cómo invita a su equipo.
 
@@ -59,7 +59,7 @@
 
 ---
 
-## Fase 5 — Monetización y planes (semana 4-5)
+## Fase 5 - Monetización y planes (semana 4-5)
 
 > El modelo de negocio implementado como código.
 
@@ -71,7 +71,7 @@
 
 ---
 
-## Fase 6 — Integraciones externas (semana 5-6)
+## Fase 6 - Integraciones externas (semana 5-6)
 
 > El tenant conecta el SaaS con sus propias herramientas.
 
@@ -83,7 +83,7 @@
 
 ---
 
-## Fase 7 — Tiempo real y background (semana 6-7)
+## Fase 7 - Tiempo real y background (semana 6-7)
 
 > Notificaciones en vivo y procesamiento asíncrono aislado por tenant.
 
@@ -95,7 +95,7 @@
 
 ---
 
-## Fase 8 — Seguridad, privacidad y confiabilidad (semana 7-8)
+## Fase 8 - Seguridad, privacidad y confiabilidad (semana 7-8)
 
 > Lo que convierte un MVP en un producto enterprise-ready.
 
@@ -130,4 +130,4 @@ Trust               → Idempotency → Leakage Tests → GDPR → File Storage
 
 ---
 
-*Duración total estimada: 8-12 semanas · Nivel objetivo: senior / tech lead SaaS*
+*Duración total estimada: 8-12 semanas - Nivel objetivo: senior / tech lead SaaS*
