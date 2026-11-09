@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Asistente.Cli/Asistente.Cli.csproj" />
+    <Project Path="src/Asistente.Core/Asistente.Core.csproj" />
+    <Project Path="src/Asistente.Mcp/Asistente.Mcp.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Asistente.Pruebas/Asistente.Pruebas.csproj" />
+  </Folder>
+</Solution>

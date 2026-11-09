@@ -1,0 +1,28 @@
+{
+  "cursos": [
+    {
+      "id": "llm-applications",
+      "titulo": "Aplicaciones con LLM: de la API al agente",
+      "subtitulo": "Prompts, RAG, herramientas, MCP y seguridad en C#",
+      "estado": "disponible",
+      "unidades": [
+        { "id": "s01-llm-fundamentals", "numero": 1, "titulo": "Qué es un LLM y cómo elegirlo", "minutos": 300 },
+        { "id": "s02-prompts-structured-output", "numero": 2, "titulo": "Prompts como código y salida estructurada", "minutos": 300 },
+        { "id": "s03-rag", "numero": 3, "titulo": "RAG: que responda con sus documentos", "minutos": 300 },
+        { "id": "s04-tools-agents", "numero": 4, "titulo": "Herramientas y agentes", "minutos": 300 },
+        { "id": "s05-mcp", "numero": 5, "titulo": "Model Context Protocol", "minutos": 300 },
+        { "id": "s06-security-operations", "numero": 6, "titulo": "Seguridad y operación", "minutos": 300 }
+      ]
+    },
+    {
+      "id": "linux-for-developers",
+      "titulo": "Linux para desarrolladores",
+      "subtitulo": "La terminal, permisos, procesos y servicios",
+      "estado": "proximamente",
+      "unidades": [
+        { "id": "s01-terminal", "numero": 1, "titulo": "La terminal sin miedo", "minutos": 300 },
+        { "id": "s02-permisos", "numero": 2, "titulo": "Usuarios, grupos y permisos", "minutos": 300 }
+      ]
+    }
+  ]
+}

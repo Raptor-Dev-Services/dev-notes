@@ -27,6 +27,7 @@ Guía completa de C# y .NET orientada a este proyecto. Cada documento cubre un t
 | 17 | [Enums](17-enums.md) | Declaración, tipo subyacente, valores explícitos, `[Flags]` con bitwise, enums en DB (int vs string), extensiones sobre enum, `Enum.GetValues<T>()`, `Enum.TryParse<T>()`, serialización JSON |
 | 18 | [Atributos](18-attributes.md) | Routing (`[HttpGet]`, constraints), binding (`[FromBody]`, `[FromQuery]`), autorización (`[Authorize]`, `[AllowAnonymous]`), DataAnnotations, xUnit (`[Fact]`, `[Theory]`), JSON (`[JsonPropertyName]`, `[JsonIgnore]`), atributos personalizados, reflexión |
 | 19 | [Configuración](19-configuration.md) | Capas de config (appsettings -> env vars -> CLI), `IConfiguration`, `IOptions<T>`, `IOptionsSnapshot`, `IOptionsMonitor`, `ValidateOnStart`, separador `__` en env vars, User Secrets, prioridades |
+| 20 | [Estructuras de datos y complejidad](20-estructuras-de-datos.md) | Big O (reglas, clases, cómo leerla en el código), peor caso y amortizado, costo de cada operación de las colecciones de .NET, pilas y colas, tablas hash, `SortedSet`, `PriorityQueue`, ordenar y búsqueda binaria, árboles y BST, grafos (BFS, DFS, orden topológico, Dijkstra), qué estructura para qué |
 
 ---
 
@@ -59,6 +60,7 @@ Guía completa de C# y .NET orientada a este proyecto. Cada documento cubre un t
 17. [Enums](17-enums.md): tipos enumerados, Flags, serialización
 18. [Atributos](18-attributes.md): metadata, ASP.NET Core, xUnit, personalización
 19. [Configuración](19-configuration.md): IOptions, capas, User Secrets
+20. [Estructuras de datos y complejidad](20-estructuras-de-datos.md): Big O, costo de cada colección, árboles y grafos
 
 ---
 
@@ -85,6 +87,7 @@ Guía completa de C# y .NET orientada a este proyecto. Cada documento cubre un t
 | Enums | Estados en entidades de dominio, roles, tipos de error |
 | Atributos | Controllers (`[Route]`, `[Authorize]`, `[HttpGet]`), DTOs (`[Required]`), tests (`[Fact]`) |
 | Configuración | `JwtAuthExtensions.cs`, `Infrastructure/ServiceCollectionEx.cs`, `appsettings*.json` |
+| Estructuras de datos | Elegir la colección de un handler o repositorio por su costo; preguntas de entrevista técnica |
 
 
 ---

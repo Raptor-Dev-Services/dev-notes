@@ -1,0 +1,21 @@
+# Infraestructura local del curso. Las contraseñas salen de .env, que no se versiona.
+services:
+  db:
+    image: pgvector/pgvector:0.8.7-pg17
+    environment:
+      POSTGRES_DB: asistente
+      POSTGRES_USER: asistente
+      POSTGRES_PASSWORD: ${ASISTENTE_DB_PASSWORD:?Define ASISTENTE_DB_PASSWORD en .env}
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - datos-db:/var/lib/postgresql/data
+  ollama:
+    image: ollama/ollama:0.40.15
+    ports:
+      - "127.0.0.1:11434:11434"
+    volumes:
+      - modelos-ollama:/root/.ollama
+volumes:
+  datos-db:
+  modelos-ollama:

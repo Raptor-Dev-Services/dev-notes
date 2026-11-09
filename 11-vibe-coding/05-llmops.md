@@ -33,9 +33,9 @@ public interface IAICompletionService
 }
 
 public sealed record AICompletionOptions(
-    string  Model         = "claude-sonnet-4-6",
+    string  Model         = "claude-sonnet-5-5",
     int     MaxTokens     = 1024,
-    float   Temperature   = 0.7f,
+    // Sin Temperature: la version vigente de la API ya no acepta temperature, top_p ni top_k (ver 07-llm-en-produccion.md).
     string? SystemPrompt  = null);
 ```
 
@@ -335,7 +335,7 @@ public sealed class CostControlMiddleware
 | LLM | Large Language Model - modelo de lenguaje de gran escala entrenado con texto masivo para generar y comprender lenguaje natural |
 | RAG | Retrieval-Augmented Generation - técnica que recupera documentos relevantes antes de generar la respuesta, reduciendo hallucinations |
 | Fine-tuning | proceso de ajustar los pesos de un LLM preentrenado con datos específicos del dominio para mejorar su rendimiento |
-| Temperatura | parámetro que controla la aleatoriedad de las respuestas del LLM; valores altos son más creativos, bajos más deterministas |
+| Temperatura | concepto del muestreo que regula la aleatoriedad de las respuestas; en la API vigente de Claude ya no es un parámetro aceptado (ver `07-llm-en-produccion.md`) |
 | Guardrail | validación o filtro aplicado a las entradas o salidas del LLM para evitar respuestas inseguras o incorrectas |
 | Prompt injection | ataque donde un usuario inserta instrucciones en su input para sobreescribir el system prompt del modelo |
 | Semantic cache | caché que almacena respuestas a prompts similares semánticamente, no solo idénticos textualmente |

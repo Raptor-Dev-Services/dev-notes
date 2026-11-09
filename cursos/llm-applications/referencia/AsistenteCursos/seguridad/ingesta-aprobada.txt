@@ -1,0 +1,3 @@
+# Documentos que cayeron en cuarentena y una persona aprobó.
+# Formato: <sha256 del contenido> <ruta>. Se agrega por pull request, con revisión.
+# Si el documento cambia, su huella cambia y vuelve a cuarentena.

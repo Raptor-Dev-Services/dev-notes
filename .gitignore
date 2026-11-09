@@ -34,3 +34,8 @@ pyvenv.cfg
 *.kfx
 *.docx
 *.doc
+
+# Codigo de referencia de los cursos: lo que genera compilar en su lugar
+cursos/**/bin/
+cursos/**/obj/
+cursos/**/TestResults/
