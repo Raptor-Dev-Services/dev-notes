@@ -22,7 +22,7 @@ El listado completo de documentos está en [INDICE.md](INDICE.md) y las rutas de
 | [10-cloud](10-cloud/) | AWS y Azure, Linux + Nginx, terminal, Bash, systemd y diagnóstico, observabilidad, secretos, costos, seguridad web, Zero Trust, AWS en profundidad, tracing distribuido | 21 |
 | [11-vibe-coding](11-vibe-coding/) | CLAUDE.md, prompts efectivos, AI workflow, manejo de contexto, LLMOps, arquitectura agéntica, LLM en producción, RAG, MCP, seguridad de LLM | 10 |
 | [roadmap](roadmap/) | Rutas de aprendizaje por objetivo | 7 |
-| [cursos](cursos/) | Los cursos de [academy.raptorcloud.dev](https://academy.raptorcloud.dev) en Markdown: clase, práctica, tarea y glosario de cada unidad | 3 |
+| [cursos](cursos/) | Los cursos de [academy.raptorcloud.dev](https://academy.raptorcloud.dev) en Markdown: clase, práctica, tarea y glosario de cada unidad | 5 |
 | [resources](resources/books/README.md) | Bibliografía indexada | - |
 
 Además, en la raíz: [Glosario Maestro SaaS](Glosario_Maestro_SaaS.md) y [Manual Práctico del Stack](Manual_Practico_Stack.md).
@@ -48,7 +48,7 @@ dev-notes/
 ├── 10-cloud/                21 docs (01-21)
 ├── 11-vibe-coding/          10 docs
 ├── roadmap/                 7 rutas
-├── cursos/                  3 cursos de academy, en Markdown
+├── cursos/                  5 cursos de academy, en Markdown
 ├── resources/books/         índice de biblioteca
 ├── INDICE.md
 ├── Glosario_Maestro_SaaS.md

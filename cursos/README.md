@@ -7,6 +7,8 @@ Los cursos de [Raptor Dev Services Academy](https://academy.raptorcloud.dev) en 
 | [Linux para desarrolladores](linux-for-developers/README.md) | 6 sesiones de 5 h | Quien despliega en una VM y quiere entender cada comando |
 | [Aplicaciones con LLM: de la API al agente](llm-applications/README.md) | 6 sesiones de 5 h | Quien tiene que llevar un LLM a un producto, en C# y .NET |
 | [Preparación para entrevistas técnicas](technical-interviews/README.md) | 6 módulos de 2 h | Egresados que buscan su primer trabajo o el siguiente |
+| [Dev Notes: curso completo](dev-notes/README.md) | 6 sesiones y 18 módulos | Quien quiere fundamentos, patrones y arquitectura en .NET, sobre las notas de este repo |
+| [Ciberseguridad](cybersecurity/README.md) | 6 módulos | Quien empieza en pruebas de seguridad, con autorización y ética |
 
 ## Cómo está organizado cada curso
 
