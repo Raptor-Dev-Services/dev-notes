@@ -368,6 +368,8 @@ Cada curso de [academy.raptorcloud.dev](https://academy.raptorcloud.dev) está t
 | [Linux para desarrolladores](cursos/linux-for-developers/README.md) | 6 sesiones de 5 h |
 | [Aplicaciones con LLM](cursos/llm-applications/README.md) | 6 sesiones de 5 h |
 | [Preparación para entrevistas técnicas](cursos/technical-interviews/README.md) | 6 módulos de 2 h |
+| [Dev Notes: curso completo](cursos/dev-notes/README.md) | 6 sesiones y 18 módulos |
+| [Ciberseguridad](cursos/cybersecurity/README.md) | 6 módulos |
 
 ---
 
