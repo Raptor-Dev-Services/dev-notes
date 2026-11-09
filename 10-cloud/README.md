@@ -23,6 +23,10 @@ Documentación sobre infraestructura cloud, administración de Linux y operació
 | [15-aws-iam-seguridad.md](15-aws-iam-seguridad.md) | Users, roles, policies, OIDC, mínimo privilegio |
 | [16-aws-cloudwatch.md](16-aws-cloudwatch.md) | Métricas, logs, dashboards, alarmas, X-Ray |
 | [17-tracing-distribuido.md](17-tracing-distribuido.md) | Jaeger, Zipkin, W3C TraceContext |
+| [18-terminal-eficiente.md](18-terminal-eficiente.md) | Expansión del shell, redirecciones, tuberías, preguntas a un log de Nginx en una línea, historial |
+| [19-bash-scripting.md](19-bash-scripting.md) | Códigos de salida, set -Eeuo pipefail y sus huecos, comillas, trap, verificar el resultado, ShellCheck |
+| [20-systemd.md](20-systemd.md) | Arranque, units y drop-ins, unit endurecida para una API, cgroups, timers en lugar de cron, journal |
+| [21-diagnostico-linux.md](21-diagnostico-linux.md) | Método USE, lista de cinco minutos, disco lleno, fstab y nofail, puerto ocupado, servicio que no arranca, runbook |
 
 
 ---

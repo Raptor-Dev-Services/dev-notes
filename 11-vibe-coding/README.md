@@ -12,6 +12,10 @@ Documentación sobre el uso profesional de herramientas AI en el ciclo de desarr
 | [04-context-management.md](04-context-management.md) | Sesiones largas, CLAUDE.md vs chat, /clear, commits como checkpoints, memoria persistente |
 | [05-llmops.md](05-llmops.md) | Operar sistemas con LLMs en producción: versionado de prompts, evaluación, guardrails, costos |
 | [06-arquitectura-agentica.md](06-arquitectura-agentica.md) | Catálogo de agentes, skills y reglas: taxonomía de las tres capas, placeholders, matriz de selección |
+| [07-llm-en-produccion.md](07-llm-en-produccion.md) | Costo por token, elegir modelo con números, prompts versionados, salida estructurada, validación, reintentos y caché de prompts |
+| [08-rag.md](08-rag.md) | RAG con PostgreSQL y pgvector: fragmentar, embeddings detrás de una interfaz, recuperar, citar, decir "no lo sé" y medir |
+| [09-mcp.md](09-mcp.md) | Model Context Protocol: clientes, servidores y transportes, herramientas y recursos, autorización, elicitation y la revisión 2026-07-28 |
+| [10-seguridad-llm.md](10-seguridad-llm.md) | OWASP Top 10 para LLM, prompt injection directa e indirecta, defensas en capas, topes de gasto, evaluación continua y monitoreo |
 
 
 ---

@@ -10,18 +10,19 @@ El listado completo de documentos está en [INDICE.md](INDICE.md) y las rutas de
 
 | Dominio | Descripción | Docs |
 |---------|-------------|------|
-| [01-fundamentos](01-fundamentos/) | SOLID, Clean Code, Refactoring, Agile/Scrum, SDLC, estimación, stakeholders, deuda técnica | 8 |
-| [02-programacion](02-programacion/) | C# (19 docs) + Patrones GoF (22 docs) + patrones en ASP.NET Core (2 docs) | 43 |
-| [03-arquitectura](03-arquitectura/) | DDD, CQRS, hexagonal, vertical slice, specification, versionado, microservicios, Keycloak, monolito modular, Clean Architecture, C4, REPR + API design (5 docs) | 18 |
+| [01-fundamentos](01-fundamentos/) | SOLID, Clean Code, Refactoring, Agile/Scrum, SDLC, estimación, stakeholders, deuda técnica, entrevistas técnicas | 9 |
+| [02-programacion](02-programacion/) | C# (20 docs) + Patrones GoF (22 docs) + patrones en ASP.NET Core (2 docs) | 44 |
+| [03-arquitectura](03-arquitectura/) | DDD, CQRS, hexagonal, vertical slice, specification, versionado, microservicios, Keycloak, monolito modular, Clean Architecture, C4, REPR, diseño de sistemas + API design (5 docs) | 21 |
 | [04-backend](04-backend/) | ASP.NET Core: result pattern, repository, pipeline behaviors, validación, caching, EF Core, Dapper, JWT, performance, multi-tenancy SaaS + testing (5 docs) | 51 |
 | [05-bases-de-datos](05-bases-de-datos/) | SQL, índices, transacciones, PostgreSQL avanzado, Dapper, connection strings, migraciones multi-tenant, RLS | 8 |
 | [06-frontend](06-frontend/) | React 19, Vite, Tailwind v4, design system, componentes primitivos, feature hook, capa de dominio, estado, headless, fronteras de import | 11 |
 | [07-git](07-git/) | Tooling, SemVer, config, Git Flow, tags, conventional commits, merge strategies, rollback, stash | 9 |
 | [08-contenedores](08-contenedores/) | Docker: conceptos, Dockerfile multi-stage, Compose, proyecto real, comandos | 5 |
 | [09-cicd](09-cicd/) | Checklists DevSecOps, GitHub Actions (OIDC + AWS), Azure DevOps, Terraform | 4 |
-| [10-cloud](10-cloud/) | AWS y Azure, Linux + Nginx, observabilidad, secretos, costos, seguridad web, Zero Trust, AWS en profundidad, tracing distribuido | 17 |
-| [11-vibe-coding](11-vibe-coding/) | CLAUDE.md, prompts efectivos, AI workflow, manejo de contexto, LLMOps, arquitectura agéntica | 6 |
+| [10-cloud](10-cloud/) | AWS y Azure, Linux + Nginx, terminal, Bash, systemd y diagnóstico, observabilidad, secretos, costos, seguridad web, Zero Trust, AWS en profundidad, tracing distribuido | 21 |
+| [11-vibe-coding](11-vibe-coding/) | CLAUDE.md, prompts efectivos, AI workflow, manejo de contexto, LLMOps, arquitectura agéntica, LLM en producción, RAG, MCP, seguridad de LLM | 10 |
 | [roadmap](roadmap/) | Rutas de aprendizaje por objetivo | 7 |
+| [cursos](cursos/) | Los cursos de [academy.raptorcloud.dev](https://academy.raptorcloud.dev) en Markdown: clase, práctica, tarea y glosario de cada unidad | 3 |
 | [resources](resources/books/README.md) | Bibliografía indexada | - |
 
 Además, en la raíz: [Glosario Maestro SaaS](Glosario_Maestro_SaaS.md) y [Manual Práctico del Stack](Manual_Practico_Stack.md).
@@ -32,21 +33,22 @@ Además, en la raíz: [Glosario Maestro SaaS](Glosario_Maestro_SaaS.md) y [Manua
 
 ```
 dev-notes/
-├── 01-fundamentos/          8 docs
+├── 01-fundamentos/          9 docs
 ├── 02-programacion/
-│   ├── csharp/              19 docs (01-19)
+│   ├── csharp/              20 docs (01-20)
 │   └── design-patterns/     22 GoF (creational 01-05, structural 06-12, behavioral 13-22)
 │                            + 2 de ASP.NET Core + referencias-csharp/ (ejemplos compilables)
-├── 03-arquitectura/         13 docs (01-13) + api-design/ (5 docs)
+├── 03-arquitectura/         16 docs (01-16) + api-design/ (5 docs)
 ├── 04-backend/              46 docs (01-46) + testing/ (5 docs)
 ├── 05-bases-de-datos/       8 docs
 ├── 06-frontend/             11 docs
 ├── 07-git/                  9 docs
 ├── 08-contenedores/         5 docs
 ├── 09-cicd/                 4 docs
-├── 10-cloud/                17 docs (01-17)
-├── 11-vibe-coding/          6 docs
+├── 10-cloud/                21 docs (01-21)
+├── 11-vibe-coding/          10 docs
 ├── roadmap/                 7 rutas
+├── cursos/                  3 cursos de academy, en Markdown
 ├── resources/books/         índice de biblioteca
 ├── INDICE.md
 ├── Glosario_Maestro_SaaS.md

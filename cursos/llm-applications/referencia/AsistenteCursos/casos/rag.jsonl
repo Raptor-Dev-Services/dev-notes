@@ -1,0 +1,5 @@
+{"id":"rag-01","pregunta":"¿Por qué hay que versionar los prompts?","sabe":true,"fuente":"05-llmops.md"}
+{"id":"rag-02","pregunta":"¿Qué es un guardrail en una aplicación con LLM?","sabe":true,"fuente":"05-llmops.md"}
+{"id":"rag-03","pregunta":"¿Qué diferencia hay entre una regla y una skill en el catálogo de agentes?","sabe":true,"fuente":"06-arquitectura-agentica.md"}
+{"id":"rag-04","pregunta":"¿Cuál es la capital de Australia?","sabe":false}
+{"id":"rag-05","pregunta":"¿Cuántos alumnos se inscribieron al curso el año pasado?","sabe":false}

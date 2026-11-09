@@ -5,7 +5,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 01 - Fundamentos de Software (8 docs)
+## 01 - Fundamentos de Software (9 docs)
 
 | # | Doc | Tema |
 |---|-----|------|
@@ -17,10 +17,11 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 | 06 | [Estimación](01-fundamentos/06-estimacion.md) | Story points, Planning Poker, Cone of Uncertainty |
 | 07 | [Stakeholders](01-fundamentos/07-stakeholders.md) | Gestión de expectativas y comunicación |
 | 08 | [Deuda Técnica](01-fundamentos/08-deuda-tecnica-proceso.md) | Tipos, impacto, gestión como proceso continuo |
+| 09 | [Entrevistas técnicas](01-fundamentos/09-entrevistas-tecnicas.md) | CV, entrevista conductual, pensar en voz alta y evaluar una oferta |
 
 ---
 
-## 02 - Programación: C# (19 docs)
+## 02 - Programación: C# (20 docs)
 
 | # | Doc | Tema |
 |---|-----|------|
@@ -43,6 +44,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 | 17 | [Enums](02-programacion/csharp/17-enums.md) | Enums, [Flags], extensión de enums |
 | 18 | [Attributes](02-programacion/csharp/18-attributes.md) | Atributos custom, source generators, reflection |
 | 19 | [Configuration C#](02-programacion/csharp/19-configuration.md) | IConfiguration, Options Pattern dentro del lenguaje |
+| 20 | [Estructuras de datos](02-programacion/csharp/20-estructuras-de-datos.md) | Big O, colecciones de .NET, árboles, grafos y búsqueda |
 
 ---
 
@@ -94,7 +96,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 03 - Arquitectura (15 + 5 docs)
+## 03 - Arquitectura (16 + 5 docs)
 
 | # | Doc | Tema |
 |---|-----|------|
@@ -113,6 +115,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 | 13 | [REPR Pattern](03-arquitectura/13-repr.md) | Request-EndPoint-Response para Minimal APIs |
 | 14 | [Monolito modular con hosts por rol](03-arquitectura/14-monolito-modular-hosts-por-rol.md) | Un código, varios procesos por rol de operación |
 | 15 | [Monolito modular desacoplado por dominio](03-arquitectura/15-monolito-modular-por-dominio.md) | Contratos, dueño único por tabla y esquema por módulo |
+| 16 | [Diseño de sistemas](03-arquitectura/16-diseno-de-sistemas.md) | API, base de datos, caché y colas, como se diseña en una entrevista |
 
 ### API Design (5 docs)
 
@@ -284,7 +287,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 10 - Cloud (16 docs)
+## 10 - Cloud (21 docs)
 
 ### Fundamentos Cloud
 
@@ -294,6 +297,15 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 | [Azure Basics](10-cloud/02-azure-basics.md) | Resource Groups, ARM, servicios equivalentes a AWS |
 | [Linux + Nginx](10-cloud/03-linux-nginx.md) | Servidor web, reverse proxy, SSL/TLS, systemd |
 | [Cloud Native](10-cloud/10-cloud-native.md) | 12-Factor App, contenedores, escalado horizontal |
+
+### Linux en el servidor (4 docs)
+
+| Doc | Tema |
+|-----|------|
+| [La terminal eficiente](10-cloud/18-terminal-eficiente.md) | Expansión del shell, tuberías, preguntas a un log en una línea |
+| [Bash que falla en voz alta](10-cloud/19-bash-scripting.md) | Códigos de salida, set -Eeuo pipefail, trap, verificar el resultado |
+| [Servicios con systemd](10-cloud/20-systemd.md) | Units endurecidas, cgroups, timers en lugar de cron, journal |
+| [Diagnóstico en Linux](10-cloud/21-diagnostico-linux.md) | Método USE, disco lleno, fstab y nofail, puerto ocupado, runbook |
 
 ### AWS en profundidad (6 docs)
 
@@ -320,7 +332,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 11 - Vibe Coding / AI-Assisted Development (6 docs)
+## 11 - Vibe Coding / AI-Assisted Development (10 docs)
 
 | # | Doc | Tema |
 |---|-----|------|
@@ -330,6 +342,10 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 | 04 | [Context Management](11-vibe-coding/04-context-management.md) | Gestión de contexto en sesiones largas |
 | 05 | [LLMOps](11-vibe-coding/05-llmops.md) | Operaciones para sistemas basados en LLMs |
 | 06 | [Arquitectura Agéntica](11-vibe-coding/06-arquitectura-agentica.md) | Catálogo de agentes, skills y reglas; placeholders y matriz de selección |
+| 07 | [LLM en producción](11-vibe-coding/07-llm-en-produccion.md) | Costo, prompts como código, salida estructurada y caché de prompts |
+| 08 | [RAG](11-vibe-coding/08-rag.md) | Ingestión, embeddings, pgvector, recuperación con citas y "no lo sé" |
+| 09 | [MCP](11-vibe-coding/09-mcp.md) | Model Context Protocol: servidores, clientes, recursos, herramientas y autorización |
+| 10 | [Seguridad en aplicaciones con LLM](11-vibe-coding/10-seguridad-llm.md) | OWASP Top 10 para LLM, prompt injection, evaluación y monitoreo |
 
 ---
 
@@ -340,6 +356,18 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 | [Glosario Maestro SaaS](Glosario_Maestro_SaaS.md) | 200+ términos del dominio SaaS Multi-Tenant |
 | [Manual Práctico del Stack](Manual_Practico_Stack.md) | Referencia rápida del stack completo |
 | [resources/books/](resources/books/README.md) | Índice de biblioteca técnica |
+
+---
+
+## Cursos de academy
+
+Cada curso de [academy.raptorcloud.dev](https://academy.raptorcloud.dev) está también aquí en Markdown, en [`cursos/`](cursos/): clase, práctica, tarea y glosario de cada unidad, con las notas de este índice como lectura.
+
+| Curso | Unidades |
+|-------|----------|
+| [Linux para desarrolladores](cursos/linux-for-developers/README.md) | 6 sesiones de 5 h |
+| [Aplicaciones con LLM](cursos/llm-applications/README.md) | 6 sesiones de 5 h |
+| [Preparación para entrevistas técnicas](cursos/technical-interviews/README.md) | 6 módulos de 2 h |
 
 ---
 
@@ -359,4 +387,4 @@ Ver [`roadmap/`](roadmap/) para rutas estructuradas por objetivo:
 
 ---
 
-*Rogelio Arriaga Gonzalez - actualizado 2026-09-12*
+*Rogelio Arriaga Gonzalez - actualizado 2026-11-08*

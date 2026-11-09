@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <ItemGroup>
+    <PackageReference Include="ModelContextProtocol.AspNetCore" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="datos/catalogo.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

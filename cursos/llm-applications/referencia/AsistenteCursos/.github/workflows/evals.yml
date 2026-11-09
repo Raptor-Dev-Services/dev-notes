@@ -1,0 +1,46 @@
+name: evals
+
+on:
+  pull_request:
+    paths: ["prompts/**", "casos/**", "src/**", "tests/**", "docs/**"]
+  schedule:
+    - cron: "0 12 * * 1"   # cada lunes: la calidad puede bajar sin que nadie toque el repositorio
+
+jobs:
+  evals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    services:
+      db:
+        image: pgvector/pgvector:0.8.7-pg17
+        env:
+          POSTGRES_DB: asistente
+          POSTGRES_USER: asistente
+          POSTGRES_PASSWORD: ${{ secrets.EVAL_DB_PASSWORD }}
+        ports: ["5433:5432"]
+        options: >-
+          --health-cmd "pg_isready -U asistente -d asistente"
+          --health-interval 5s --health-retries 20
+      ollama:
+        image: ollama/ollama:0.40.15
+        ports: ["11434:11434"]
+    env:
+      ASISTENTE_DB: Host=localhost;Port=5433;Database=asistente;Username=asistente;Password=${{ secrets.EVAL_DB_PASSWORD }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      ASISTENTE_MODELO: claude-haiku-5-5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-dotnet@v5
+        with:
+          global-json-file: global.json
+      - name: Bajar el modelo de embeddings
+        run: |
+          for i in $(seq 1 30); do curl -sf http://localhost:11434/api/version && break; sleep 2; done
+          curl -sf http://localhost:11434/api/pull -d '{"model":"bge-m3","stream":false}'
+      - run: dotnet build AsistenteCursos.slnx -c Release
+      - name: Pruebas sin costo (unitarias e integración)
+        run: dotnet test --solution AsistenteCursos.slnx -c Release --no-build -- --filter-not-trait "Categoria=Eval"
+      - name: Indexar los documentos del curso
+        run: dotnet run --project src/Asistente.Cli -c Release --no-build -- ingestar docs
+      - name: Evaluaciones (gastan dinero; en rojo si baja la calidad)
+        run: dotnet test --solution AsistenteCursos.slnx -c Release --no-build -- --filter-trait "Categoria=Eval"
