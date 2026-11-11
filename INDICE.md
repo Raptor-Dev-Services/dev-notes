@@ -363,9 +363,9 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 12 - Seguridad (76 docs)
+## 12 - Seguridad (81 docs)
 
-La ruta de ciberseguridad en cinco materias. Índice por materia en [`12-seguridad/`](12-seguridad/README.md).
+La ruta de ciberseguridad en cinco materias y las notas de defensa y respuesta a incidentes. Índice por materia en [`12-seguridad/`](12-seguridad/README.md).
 
 ### Introducción a la ciberseguridad (15 docs)
 
@@ -468,6 +468,16 @@ La ruta de ciberseguridad en cinco materias. Índice por materia en [`12-segurid
 | 14 | [Regulación de la ciberseguridad en Estados Unidos](12-seguridad/05-legislacion/14-estados-unidos.md) |
 | 15 | [Regulación de la ciberseguridad en Latinoamérica](12-seguridad/05-legislacion/15-latinoamerica.md) |
 
+### Defensa y respuesta a incidentes (5 docs)
+
+| # | Doc |
+|---|-----|
+| 01 | [Un programa de seguridad que se pueda sostener](12-seguridad/06-blue-team/01-programa-de-seguridad.md) |
+| 02 | [Bitácoras y detección](12-seguridad/06-blue-team/02-bitacoras-y-deteccion.md) |
+| 03 | [Respuesta a incidentes](12-seguridad/06-blue-team/03-respuesta-a-incidentes.md) |
+| 04 | [Forense básico de un servidor Linux](12-seguridad/06-blue-team/04-forense-basico.md) |
+| 05 | [Inteligencia de amenazas, MITRE ATT&CK y cacería](12-seguridad/06-blue-team/05-threat-hunting-attack.md) |
+
 ---
 
 ## Cursos de academy
@@ -493,6 +503,7 @@ Cada curso de [academy.raptorcloud.dev](https://academy.raptorcloud.dev) está t
 | [Informática forense](cursos/digital-forensics/README.md) | 5 unidades |
 | [Seguridad de la información](cursos/information-security/README.md) | 5 unidades |
 | [Legislación nacional e internacional en ciberseguridad](cursos/cyber-law/README.md) | 5 unidades |
+| [Defensa y respuesta a incidentes](cursos/blue-team/README.md) | 6 sesiones de 5 h |
 
 ---
 
