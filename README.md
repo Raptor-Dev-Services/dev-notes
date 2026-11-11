@@ -45,7 +45,7 @@ dev-notes/
 ├── 06-frontend/             11 docs
 ├── 07-git/                  9 docs
 ├── 08-contenedores/         5 docs
-├── 09-cicd/                 4 docs
+├── 09-cicd/                 7 docs
 ├── 10-cloud/                21 docs (01-21)
 ├── 11-vibe-coding/          10 docs
 ├── 12-seguridad/            76 docs en 5 materias (01-introduccion a 05-legislacion)

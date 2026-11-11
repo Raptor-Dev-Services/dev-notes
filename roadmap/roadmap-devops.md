@@ -71,6 +71,9 @@
 > Definir toda la infraestructura en archivos HCL versionados en Git.
 
 - [ ] [Terraform](../09-cicd/04-terraform.md): HCL, módulos, estado S3+DynamoDB, remote_state, partial config
+- [ ] [Terraform y OpenTofu: módulos y estado](../09-cicd/05-terraform-modulos-y-estado.md): módulos, for_each, entornos, bloqueo del estado, moved
+- [ ] [Ansible](../09-cicd/06-ansible.md): inventario, playbooks, idempotencia, roles
+- [ ] [Políticas como código](../09-cicd/07-policy-as-code.md): Rego y Conftest sobre el plan de OpenTofu
 
 **Al terminar esta fase puedes:** crear y destruir infraestructura AWS completa con `terraform apply`, con estado compartido en S3.
 
