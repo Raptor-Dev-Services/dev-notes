@@ -280,7 +280,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 09 - CI/CD e Infraestructura (4 docs)
+## 09 - CI/CD e Infraestructura (7 docs)
 
 | # | Doc | Tema |
 |---|-----|------|
@@ -288,6 +288,9 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 | 02 | [GitHub Actions](09-cicd/02-github-actions.md) | OIDC+AWS+ECS, reusable workflows, matrix builds |
 | 03 | [Azure DevOps](09-cicd/03-azure-devops.md) | Pipelines YAML, service connections, environments |
 | 04 | [Terraform](09-cicd/04-terraform.md) | HCL, módulos, estado S3+DynamoDB, remote state |
+| 05 | [Terraform y OpenTofu: módulos y estado](09-cicd/05-terraform-modulos-y-estado.md) | Módulos, for_each, entornos, bloqueo del estado, moved |
+| 06 | [Ansible](09-cicd/06-ansible.md) | Inventario, playbooks, idempotencia, handlers, roles |
+| 07 | [Políticas como código](09-cicd/07-policy-as-code.md) | Rego, Conftest, políticas sobre el plan de OpenTofu |
 
 ---
 
