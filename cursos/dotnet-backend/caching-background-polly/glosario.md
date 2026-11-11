@@ -467,7 +467,7 @@
 ### WebhookChannel (Channel\<IncomingWebhook\>)
 **Categoría:** Background Services / Concurrencia
 **Definición:** Instancia Singleton de `Channel<IncomingWebhook>` que actúa como buffer entre el endpoint HTTP de webhooks (productor) y el `WebhookProcessorService` (consumidor). Registrada en el contenedor DI como `AddSingleton<WebhookChannel>` para ser inyectada en ambos lados.
-**En el proyecto:** Permite que `WebhookController` responda a Meta API en < 500ms (escribir en el canal es casi instantáneo) mientras `WebhookProcessorService` procesa los payloads de WhatsApp/Instagram a su propio ritmo en background.
+**En el proyecto:** Permite que `WebhookController` responda `200 OK` a Meta de inmediato (escribir en el canal es casi instantáneo) mientras `WebhookProcessorService` procesa los payloads de WhatsApp/Instagram a su propio ritmo en background.
 
 ### WebhookProcessorService
 **Categoría:** Background Services

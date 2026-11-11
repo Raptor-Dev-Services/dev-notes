@@ -16,7 +16,7 @@ Los modelos se entrenan con grandes cantidades de imágenes o audio real de una 
 
 ### De dónde salió
 
-El origen del término se remonta a un foro de Reddit a finales de 2017, que la prensa tecnológica empezó a documentar en diciembre de ese año; Reddit cerró esas comunidades el 7 de febrero de 2018. Un usuario que se hacía llamar "deepfakes" abrió un hilo sobre cómo cambiar el rostro de celebridades en videos con un programa llamado FakeApp, y explicó el proceso. El material falso se difundió muy rápido, y el foro enfrentó problemas legales por la explotación no consentida de la imagen de esas personas y por la proliferación de contenido alterado que parecía real. En poco tiempo, la comunidad en línea ya usaba el software para sus propias creaciones.
+El origen del término se remonta a un foro de Reddit a finales de 2017, que la prensa tecnológica empezó a documentar en diciembre de ese año; Reddit cerró esas comunidades el 7 de febrero de 2018. Un usuario que se hacía llamar "deepfakes" publicó videos con rostros de celebridades cambiados mediante aprendizaje profundo y explicó el proceso. FakeApp, una aplicación para facilitar ese procedimiento, apareció hasta enero de 2018, creada por otras personas de esas comunidades, no por ese usuario (Cole, 2018). El material falso se difundió muy rápido, y el foro enfrentó problemas legales por la explotación no consentida de la imagen de esas personas y por la proliferación de contenido alterado que parecía real. En poco tiempo, la comunidad en línea ya usaba el software para sus propias creaciones.
 
 La industria del entretenimiento para adultos quedó envuelta en conflictos legales por videos con rostros de celebridades, y algunas comunidades de ese medio empezaron a ofrecer contenido explícito a la medida, con rostros elegidos de una base de datos. Es un ejemplo claro de cómo los usos dañinos de una tecnología aparecen en cuanto queda al alcance de cualquiera.
 
@@ -104,6 +104,7 @@ La modificación de rostros existe desde hace mucho, pero su evolución técnica
 - BBC Click. (2018, 26 de febrero). *Deepfakes and the technology behind it* [Video]. YouTube. https://youtu.be/8LhI-e2B8Lg
 - Cámara de Diputados del H. Congreso de la Unión. (2026). *Ley General de Acceso de las Mujeres a una Vida Libre de Violencias* (art. 20 Quáter). https://www.diputados.gob.mx/LeyesBiblio/pdf/LGAMVLV.pdf
 - Chesney, B. y Citron, D. (2019). Deep fakes: A looming challenge for privacy, democracy, and national security. *California Law Review*, *107*, 1753-1820. https://doi.org/10.15779/Z38RV0D15J
+- Cole, S. (2018, 19 de junio). *Deepfakes were created as a way to own women's bodies—we can't forget that*. VICE. https://www.vice.com/en/article/deepfakes-were-created-as-a-way-to-own-womens-bodieswe-cant-forget-that-v25n2/
 - Coalition for Content Provenance and Authenticity. (s. f.). *C2PA specifications*. https://c2pa.org/
 - Good Morning America. (2018, 18 de abril). *Jordan Peele uses AI, President Obama in fake news PSA* [Video]. YouTube. https://www.youtube.com/watch?v=bE1KWpoX9Hk
 - Magramo, K. (2024, 16 de mayo). *Arup revealed as victim of $25 million deepfake scam involving Hong Kong employee*. CNN. https://edition.cnn.com/2024/05/16/tech/arup-deepfake-scam-loss-hong-kong-intl-hnk/index.html

@@ -43,7 +43,7 @@ dev-notes/02-programacion/design-patterns/structural/06-12
 - `11-flyweight.md`
 - `12-proxy.md`
 
-> Pon especial atencion en Decorator y Proxy  -  son los mas usados en el back-template.
+> Pon especial atencion en Decorator y Facade  -  son los mas usados en el back-template.
 
 ---
 

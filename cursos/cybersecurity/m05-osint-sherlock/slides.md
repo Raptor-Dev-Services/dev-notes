@@ -27,20 +27,17 @@ Es una técnica **pasiva**: no interactúas directamente con el objetivo, solo c
 
 Sherlock es una herramienta de código abierto que busca un nombre de usuario específico en más de 300 redes sociales y plataformas, para ver dónde está registrado.
 
-Fuente: proyecto Sherlock, github.com/sherlock-project/sherlock.
+Fuente: proyecto Sherlock, github.com/sherlock-project/sherlock (README y `sherlock --help`, versión 0.16.0, consultado en noviembre de 2026).
 
 ---
 
 ## Instalación
 
 ```bash
-cd ~/HackingTools
-git clone https://github.com/sherlock-project/sherlock.git
-cd sherlock
-pip install -r requirements.txt
+pipx install sherlock-project
 ```
 
-Se ejecuta siempre desde la carpeta donde se clonó.
+Queda disponible el comando `sherlock` (también sirven `pip` o `uv` en lugar de `pipx`).
 
 ---
 
@@ -54,7 +51,7 @@ Se ejecuta siempre desde la carpeta donde se clonó.
 ## Búsqueda básica
 
 ```bash
-python3 sherlock mi_usuario_de_practica
+sherlock mi_usuario_de_practica
 ```
 
 El resultado es una lista de URLs: un hallazgo (link encontrado) indica que ese nombre de usuario existe en esa plataforma.
@@ -69,21 +66,19 @@ El resultado es una lista de URLs: un hallazgo (link encontrado) indica que ese 
 |---|---|---|
 | `-o` / `--output` | `-o resultado.txt` | Guarda la salida en un archivo |
 | `--site` | `--site GitHub` | Filtra la búsqueda a un sitio específico |
-| `-L` / `--list` | `-L usuarios.txt` | Busca varios usuarios desde un archivo |
-| `--print-all` | `--pa` | Muestra también los sitios donde no se encontró nada |
+| varios nombres | `sherlock usuario1 usuario2` | Busca varios usuarios: se pasan como argumentos (no existe una opción `-L`) |
+| `--folderoutput` / `-fo` | `-fo resultados` | Con varios usuarios, guarda los resultados en esa carpeta |
+| `--print-all` | `--print-all` | Muestra también los sitios donde no se encontró nada |
 
 ---
 
 ## Búsqueda masiva organizada
 
 ```bash
-echo "cuenta_practica_1" > usuarios.txt
-echo "cuenta_practica_2" >> usuarios.txt
-
-python3 sherlock -L usuarios.txt --site GitHub --site Reddit --fo resultados_practica
+sherlock cuenta_practica_1 cuenta_practica_2 --site GitHub --site Reddit -fo resultados_practica
 ```
 
-Esto es mucho más rápido y específico que buscar en los 300+ sitios a la vez.
+Esto es más rápido y específico que buscar en todos los sitios de la lista a la vez.
 
 ---
 

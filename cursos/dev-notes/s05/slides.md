@@ -50,7 +50,7 @@ Stack: .NET 10 - back-template - EF Core 10 - Dapper
 | **Mediator** | `IMediator.Send()` / `IMediator.Publish()`  -  coordina Handler y Presenters |
 | **Observer** | `INotificationHandler<TResponse>`  -  los Presenters observan el Response |
 | **Chain of Responsibility** | `IPipelineBehavior` + `InteractorPipeline`  -  cadena antes del Handler real |
-| **Template Method** | `BaseApiController`  -  define el flujo; subclases añaden endpoints |
+| **Template Method** | (sin ejemplo estricto en el back-template; `BaseApiController` es herencia para reutilizar) |
 | **Strategy** | `IConversationAssignmentStrategy`  -  intercambiable por DI |
 | **State** | `ConversationStatus` + métodos de transición en la entidad |
 | **Iterator** | `IAsyncEnumerable<T>` en EF Core  -  streaming de resultados |
@@ -735,10 +735,10 @@ abstract class Report {
 
 ---
 
-## Template Method  -  BaseApiController
+## BaseApiController  -  herencia para reutilizar (no es Template Method)
 
 ```csharp
-//  Shared/Web/BaseApiController.cs  -  esqueleto: cómo acceder al Mediator
+//  Shared/Web/BaseApiController.cs  -  clase base: cómo acceder al Mediator
 using Common.Messaging;
 using Microsoft.AspNetCore.Mvc;
 
@@ -752,16 +752,16 @@ public abstract class BaseApiController : ControllerBase
 }
 ```
 
-La clase base provee `Mediator` a todos los Controllers  -  el paso invariante.
-Cada Controller concreto define sus endpoints (el paso variable).
+La clase base provee `Mediator` a todos los Controllers (reutilización por herencia).
+No es Template Method: no define un algoritmo con pasos abstractos que las subclases rellenen; solo expone una dependencia.
 
 ---
 
-## Template Method  -  Controller concreto (CRM)
+## BaseApiController  -  Controller concreto (CRM)
 
 ```csharp
 //  Conversations.Presentation/ConversationsController.cs
-// Subclase  -  añade los endpoints (pasos variables)
+// Subclase  -  añade sus endpoints
 [Route("api/conversations")]
 public sealed class ConversationsController : BaseApiController
 {
@@ -784,7 +784,7 @@ public sealed class ConversationsController : BaseApiController
 
 ---
 
-## Template Method  -  Alternativa externa
+## BaseApiController  -  alternativa externa
 
 ```csharp
 //  Back-template  -  BaseApiController con IMediator inyectado vía constructor
@@ -830,8 +830,8 @@ class ContactsController : ControllerBase
     // 3 líneas idénticas en cada Controller del proyecto
 }
 
-// Con Template Method (BaseApiController): el setup vive una sola vez en la clase base
-// Cada Controller solo define sus endpoints (los pasos variables)
+// Con una clase base (BaseApiController): el setup vive una sola vez
+// Cada Controller solo define sus endpoints (herencia para reutilizar; no es Template Method)
 [ApiController]
 public abstract class BaseApiController : ControllerBase
 {
@@ -1312,7 +1312,7 @@ En el back-template actual, Memento y Visitor aparecerán más adelante (BotFlow
 | Mediator | `IMediator.Send()` + `Publish()` | Common.Messaging |
 | Observer | `INotificationHandler<TResponse>`  -  Presenters | Common.Messaging |
 | Chain of Responsibility | `IPipelineBehavior` + `InteractorPipeline` | Common.Messaging |
-| Template Method | `BaseApiController` (Shared.Web) | ASP.NET Core |
+| Template Method | (sin ejemplo estricto; `BaseApiController` solo reutiliza por herencia) | - |
 | Strategy | `IConversationAssignmentStrategy` | DI intercambiable |
 | State | `ConversationStatus` enum + métodos en la entidad | Domain |
 | Iterator | `IAsyncEnumerable<Contact>` en repos | EF Core / Dapper |

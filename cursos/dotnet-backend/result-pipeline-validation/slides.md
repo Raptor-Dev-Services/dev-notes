@@ -896,7 +896,9 @@ public sealed class RegisterAgentHandler
 # Parte 8
 
 ## Problem Details
-### RFC 7807  -  ProblemDetails en ASP.NET Core  -  Errores consistentes
+### RFC 9457 (antes RFC 7807)  -  ProblemDetails en ASP.NET Core  -  Errores consistentes
+
+Nota: RFC 9457 (julio de 2023, rfc-editor.org/rfc/rfc9457) obsoleta al RFC 7807; el formato `application/problem+json` y sus campos se mantienen.
 
 ---
 
@@ -921,7 +923,7 @@ public sealed class RegisterAgentHandler
 }
 ```
 
-Los clientes no pueden procesar errores de forma uniforme. RFC 7807 resuelve esto.
+Los clientes no pueden procesar errores de forma uniforme. RFC 9457 (que reemplazó al 7807) resuelve esto.
 
 ---
 

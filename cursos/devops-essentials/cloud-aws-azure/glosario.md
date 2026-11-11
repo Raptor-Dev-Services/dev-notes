@@ -189,8 +189,8 @@
 
 ### Free Tier (AWS)
 **Categoría:** AWS
-**Definición:** Capa gratuita de AWS disponible durante 12 meses desde la creación de la cuenta, que incluye cuotas de uso sin costo para servicios como EC2 (`t2.micro`/`t3.micro` 750h/mes), RDS (750h/mes), S3 (5 GB) y otros. No cubre todas las configuraciones: Multi-AZ en RDS, por ejemplo, no está incluido.
-**En el proyecto:** El ambiente de desarrollo del sistema de mensajería puede mantenerse dentro del Free Tier usando instancias `t3.micro` para EC2 y RDS con single-AZ. Para el ambiente de producción con Multi-AZ se estiman $80-150/mes adicionales.
+**Definición:** Capa gratuita de AWS. El esquema anterior duraba 12 meses desde la creación de la cuenta; a noviembre de 2026 las cuentas nuevas reciben hasta $200 en créditos y un plan que cierra a los 6 meses o al agotarse los créditos (aws.amazon.com/free). El esquema anterior incluía cuotas de uso sin costo para servicios como EC2 (`t2.micro`/`t3.micro` 750h/mes), RDS (750h/mes), S3 (5 GB) y otros. No cubre todas las configuraciones: Multi-AZ en RDS, por ejemplo, no está incluido.
+**En el proyecto:** El ambiente de desarrollo del sistema de mensajería puede mantenerse dentro del Free Tier usando instancias `t3.micro` para EC2 y RDS con single-AZ. Para producción con Multi-AZ el costo se estima con la calculadora de precios de AWS.
 
 ---
 

@@ -548,7 +548,7 @@ Mismo resultado? True
 | Adapter | 4 | `LegacyPagoAdapter`  -  integracion con APIs externas |
 | Decorator | 5 | `LoggingProductoRepository`, `InteractorPipeline` |
 | Facade | 6 | `CheckoutFacade`, `BaseApiController` |
-| Proxy | 7 | Lazy loading, `ResultViewModel<T>` |
+| Proxy | 7 | Lazy loading de EF Core, `ReportePesadoProxy` (kata) |
 
 ---
 

@@ -47,9 +47,9 @@ La estructura no mata la agilidad  -  **la falta de estructura mata el producto*
 
 | Criterio | SA de CV | SAPI de CV |
 |----------|----------|------------|
-| **Flexibilidad accionaria** | Limitada  -  acciones iguales | Alta  -  series A/B, preferentes, antidilución |
-| **Inversión extranjera** | Requiere permisos RNIE | Permitida directamente |
-| **Costo de constitución** | Menor (~$15k-$25k MXN notario) | Mayor (~$40k-$80k MXN notario) |
+| **Flexibilidad accionaria** | Menor  -  estructura más rígida | Alta  -  series A/B, preferentes, antidilución |
+| **Inversión extranjera** | Verificar con el notario las reglas de inversión extranjera | Verificar con el notario las reglas de inversión extranjera |
+| **Costo de constitución** | Cotizar con un notario | Cotizar con un notario |
 | **Cuándo usarla** | Bootstrapped, equipo fundador estable | Vas a levantar capital de ángeles o VC |
 | **Órgano de gobierno** | Asamblea de accionistas | Consejo de administración (board) |
 | **Restricciones de compraventa** | Derecho de tanto básico | Drag-along, tag-along, ROFR negociables |
@@ -67,7 +67,7 @@ La estructura no mata la agilidad  -  **la falta de estructura mata el producto*
 
 **2. Contrato de trabajo para desarrolladores**
 - Cláusula de **propiedad intelectual obligatoria**: _"todo el código, diseño y documentación producidos durante la relación laboral, dentro o fuera del horario pactado, y relacionados con el giro de la empresa, son propiedad exclusiva del empleador"_
-- Sin esta cláusula, el dev podría reclamar coautoría del producto
+- Por la Ley Federal del Derecho de Autor (art. 103), salvo pacto en contrario, los derechos patrimoniales de un programa creado por un empleado en sus funciones o siguiendo instrucciones corresponden al empleador; la cláusula lo deja por escrito y cubre otros casos (trabajo fuera de funciones, colaboradores externos)
 
 **3. Acuerdo de no competencia**
 - En MX es válido si: tiene **límite temporal** (máx 1-2 años), **ámbito geográfico** definido y **compensación económica**

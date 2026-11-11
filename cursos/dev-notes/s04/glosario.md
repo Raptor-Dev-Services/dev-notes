@@ -312,7 +312,7 @@ Error de configuración de DI donde un servicio de lifetime largo (Singleton) in
 ### Factory Method
 **Categoría:** Patrón de diseño  -  Creacional
 **Definición:** Patrón que define una interfaz para crear un objeto, pero deja que las subclases (o el método en sí) decidan qué clase concreta instanciar. El creador (factory) produce un objeto cuyo tipo exacto depende de una condición evaluada en tiempo de ejecución. Desacopla al cliente del tipo concreto del objeto creado.
-**En el proyecto:** El Handler actúa como factory: evalúa el resultado de `_profiles.GetByPublicIdAsync(...)` y retorna `new GetUserProfileSuccess(...)` o `new GetUserProfileNotFoundFailure(...)`. El caller (InteractorPipeline) solo sabe que recibe un `GetUserProfileResponse`.
+**En el proyecto:** Ningún componente del back-template es un Factory Method estricto. El Handler decide con un condicional qué Response construir (`new GetUserProfileSuccess(...)` o `new GetUserProfileNotFoundFailure(...)`); eso es creación condicional sobre una jerarquía de Responses, no el patrón GoF, que exige un método de creación que las subclases sobrescriben. El ejemplo del patrón son las katas (`NotificacionFactory`).
 
 ---
 
@@ -372,7 +372,7 @@ Error de configuración de DI donde un servicio de lifetime largo (Singleton) in
 ### Handler
 **Categoría:** Back-template  -  Patrón de aplicación
 **Definición:** Clase que implementa `IRequestHandler<TRequest, TResponse>` and contiene la lógica de un caso de uso específico. Recibe un Request, ejecuta la operación (consultando repositorios o modificando el dominio) y retorna una Response. El Handler es el "corazón" del caso de uso y debe tener alta cohesión: solo orquesta, no contiene lógica de dominio compleja.
-**En el proyecto:** `GetUserProfileHandler`, `CreateContactHandler`, `SendMessageHandler`, etc. Cada use case tiene exactamente un Handler. El Handler actúa como Factory Method al decidir qué tipo de Response retornar.
+**En el proyecto:** `GetUserProfileHandler`, `CreateContactHandler`, `SendMessageHandler`, etc. Cada use case tiene exactamente un Handler. El Handler decide con un condicional qué tipo de Response retornar (creación condicional sobre una jerarquía; no es el patrón Factory Method de GoF).
 
 ---
 
@@ -646,7 +646,7 @@ Interfaz que permite crear scopes de DI manualmente dentro de un servicio Single
 ### Proxy
 **Categoría:** Patrón de diseño  -  Estructural
 **Definición:** Patrón que proporciona un sustituto o marcador de posición para otro objeto, controlando el acceso a él. El Proxy implementa la misma interfaz que el objeto real, interceptando las llamadas para agregar funcionalidad (control de acceso, lazy loading, logging, caching). A diferencia del Decorator, el Proxy típicamente controla el acceso más que agregar comportamiento.
-**En el proyecto:** `ResultViewModel<T>` actúa como Proxy entre la Response de dominio y el HTTP layer. El Controller nunca accede a la Response original directamente; siempre lee a través del ViewModel. El Proxy traduce el dominio tipado a un formato serializable para HTTP.
+**En el proyecto:** El ejemplo real de Proxy es el lazy loading de EF Core (proxies que cargan la navegación al acceder a ella) y la kata `ReportePesadoProxy`. `ResultViewModel<T>` no es un Proxy: no implementa la interfaz de la Response ni controla el acceso a ella; es un ViewModel de salida.
 
 ---
 
@@ -689,7 +689,7 @@ Interfaz que permite crear scopes de DI manualmente dentro de un servicio Single
 
 ### ResultViewModel\<T\>
 **Categoría:** Back-template  -  Patrón
-**Definición:** Clase del back-template que actúa como Proxy entre la Response de dominio y la respuesta HTTP. El Presenter la puebla; el Controller la lee. Contiene `Data` (el DTO de éxito), `IsSuccess` (bool) y `Message` (mensaje de error en caso de fallo). Es serializable a JSON directamente en la respuesta HTTP.
+**Definición:** Clase del back-template que es el ViewModel de salida entre la Response de dominio y la respuesta HTTP (no es un Proxy: no comparte interfaz con la Response). El Presenter la puebla; el Controller la lee. Contiene `Data` (el DTO de éxito), `IsSuccess` (bool) y `Message` (mensaje de error en caso de fallo). Es serializable a JSON directamente en la respuesta HTTP.
 **En el proyecto:** `ResultViewModel<UsersController>` es el tipo genérico usado en el módulo Users. El Controller lee `if (_viewModel.IsSuccess) return Ok(_viewModel)`. La `T` genérica ayuda a que el contenedor de DI resuelva el ViewModel correcto por módulo.
 
 ---
@@ -785,7 +785,7 @@ Lifetime de DI donde se crea exactamente una instancia del servicio al arrancar 
 ### Structural Patterns (patrones estructurales)
 **Categoría:** Patrón de diseño  -  Clasificación GoF
 **Definición:** Familia de patrones GoF que tratan de cómo se componen las clases y los objetos para formar estructuras más grandes. Se centran en la relación entre objetos. Los 7 patrones estructurales del catálogo GoF son: Adapter, Bridge, Composite, Decorator, Facade, Flyweight y Proxy.
-**En el proyecto:** Los 7 patrones estructurales se cubren en S04, Parte 2. Todos están presentes en el back-template: Adapter (repositorios), Bridge (interfaces de dominio), Composite (jerarquía de Responses), Decorator (InteractorPipeline), Facade (Mediator.Send), Flyweight (IOptions), Proxy (ResultViewModel).
+**En el proyecto:** Los 7 patrones estructurales se cubren en S04, Parte 2. Todos están presentes en el back-template: Adapter (repositorios), Bridge (interfaces de dominio), Composite (jerarquía de Responses), Decorator (InteractorPipeline), Facade (Mediator.Send), Flyweight (IOptions), Proxy (lazy loading de EF Core).
 
 ---
 
@@ -845,7 +845,7 @@ Lifetime de DI donde se crea una nueva instancia del servicio cada vez que se in
 ### UserProfile
 **Categoría:** Sistema de mensajería  -  Entidad
 **Definición:** Entidad de dominio que representa el perfil de un usuario (agente) del workspace. Tiene `Id` (long, PK), `PublicId` (Guid, expuesto externamente), `TenantId` (long, aislamiento multi-tenant), `FullName` (string), `IsActive` (bool, soft delete), `CreatedAtUtc` y `UpdatedAtUtc`. Es la entidad principal del módulo Users.
-**En el proyecto:** Usada en S04 como ejemplo en todos los patrones: Singleton (su contexto de accessor), Factory Method (Handler que retorna Success o NotFound), Prototype (request with `{}`), Adapter (Repository adapta DbContext), etc.
+**En el proyecto:** Usada en S04 como ejemplo en todos los patrones: Singleton (su contexto de accessor), la jerarquía de Responses (Handler que retorna Success o NotFound), Prototype (request with `{}`), Adapter (Repository adapta DbContext), etc.
 
 ---
 

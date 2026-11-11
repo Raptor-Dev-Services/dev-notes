@@ -828,7 +828,9 @@ protected override async Task ExecuteAsync(CancellationToken stoppingToken)
 
 ## Caso 1: Procesar cola de webhooks de WhatsApp
 
-WhatsApp envía webhooks en tiempo real. El endpoint debe responder en < 500ms o Meta retransmite.
+WhatsApp envía webhooks en tiempo real. El endpoint debe responder `200 OK` a cada notificación; si no, Meta reintenta durante 36 horas con frecuencia decreciente (por eso conviene responder rápido y procesar en segundo plano, y deduplicar). La documentación no fija un límite en milisegundos.
+
+Fuente: Meta, *Webhooks for Graph API: Getting started*, developers.facebook.com/docs/graph-api/webhooks/getting-started (consultado en noviembre de 2026).
 
 ```csharp
 // Channels.Presentation/Controllers/WebhookController.cs

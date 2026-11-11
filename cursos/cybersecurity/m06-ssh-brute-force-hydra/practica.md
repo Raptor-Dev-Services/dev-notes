@@ -33,7 +33,7 @@ sudo adduser practica
 
 ```bash
 hydra -L usuarios_practica.txt -P passwords_practica.txt \
-  -t 1 -w 3 -V ssh://<IP_DE_TU_VICTIMA>
+  -t 1 -W 3 -V ssh://<IP_DE_TU_VICTIMA>
 ```
 
 Observa en la salida (`-V`) cómo Hydra prueba cada combinación. Confirma que encuentra la combinación válida que configuraste.
@@ -60,7 +60,7 @@ sudo fail2ban-client status sshd
 
 ```bash
 hydra -L usuarios_practica.txt -P passwords_practica.txt \
-  -t 1 -w 1 -V ssh://<IP_DE_TU_VICTIMA>
+  -t 1 -W 1 -V ssh://<IP_DE_TU_VICTIMA>
 ```
 
 Después de varios intentos fallidos, verifica si tu IP de Kali quedó bloqueada:

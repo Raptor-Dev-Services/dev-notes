@@ -467,7 +467,7 @@ Este policy da a la API acceso solo a la carpeta `conversations/` del bucket y a
 
 ---
 
-## AWS Free Tier  -  qué incluye (12 meses)
+## AWS Free Tier  -  esquema anterior de 12 meses
 
 | Servicio | Límite Free Tier |
 |----------|-----------------|
@@ -477,9 +477,11 @@ Este policy da a la API acceso solo a la carpeta `conversations/` del bucket y a
 | Data transfer | 100 GB salientes/mes |
 | Secrets Manager | 30 días de prueba por secreto |
 
+**Vigencia:** esta tabla describe el esquema anterior de 12 meses. Para cuentas nuevas, a noviembre de 2026 AWS ofrece hasta $200 en créditos y un plan que se cierra a los 6 meses o al agotar los créditos (aws.amazon.com/free). Los límites por servicio de la tabla no se verificaron contra la página vigente: confírmalos allí antes de planear costos.
+
 **Importante:** Free Tier no cubre Multi-AZ en RDS. En desarrollo usar single-AZ; en producción pagar Multi-AZ.
 
-El sistema de mensajería en desarrollo cabe en Free Tier. En producción (con Multi-AZ y RDS real) presupuestar ~$80-150/mes.
+En producción (con Multi-AZ y RDS real) presupuesta el costo con la calculadora de precios de AWS; la cifra de ejemplo previa no tenía fuente y se retiró.
 
 ---
 

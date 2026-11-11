@@ -393,11 +393,11 @@ Ya no hace falta un estudio de efectos especiales: la herramienta hace el trabaj
 
 ## De dónde salió el nombre
 
-- **Finales de 2017:** en un foro de Reddit, un usuario que firmaba "deepfakes" explicó cómo cambiar el rostro de celebridades en videos con un programa llamado FakeApp.
+- **Finales de 2017:** en un foro de Reddit, un usuario que firmaba "deepfakes" publicó videos con rostros de celebridades cambiados con aprendizaje profundo. FakeApp, una aplicación para facilitarlo, salió hasta enero de 2018 y la hicieron otras personas.
 - **Diciembre de 2017:** la prensa tecnológica lo documenta. **7 de febrero de 2018:** Reddit cierra esas comunidades.
 - Algunas comunidades de la industria para adultos ofrecieron contenido explícito **a la medida**, con el rostro elegido de una base de datos.
 
-Fuente: Robertson (2018), The Verge.
+Fuente: Robertson (2018), The Verge; Cole (2018), VICE.
 
 <!--
 Subrayar: el primer uso masivo fue sin consentimiento. Los usos dañinos aparecen en cuanto una

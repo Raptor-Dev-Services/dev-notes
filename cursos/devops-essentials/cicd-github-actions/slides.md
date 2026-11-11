@@ -342,14 +342,18 @@ GitHub Actions  ->  presenta token OIDC firmado por GitHub
      ↓
 AWS STS         ->  valida el token, verifica la trust policy
      ↓
-Credenciales temporales (15 min)  ->  llegan al runner
+Credenciales temporales (por omisión 1 hora)  ->  llegan al runner
 ```
 
 El runner nunca tiene `AWS_ACCESS_KEY_ID`. Solo tiene un token de sesión que expira solo.
 
 **Ventajas:**
 - No hay credenciales de larga duración que rotar o filtrar
-- Tokens expiran en 15 minutos automáticamente
+- Las credenciales temporales expiran solas (por omisión a la hora; la duración es configurable)
+
+Fuente: AWS, *AssumeRoleWithWebIdentity* (API Reference de STS): `DurationSeconds` vale 3600 s (1 hora) por omisión y es configurable, docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html.
+
+-
 - La trust policy limita el acceso al repo/rama exacto
 
 ---
