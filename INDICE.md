@@ -264,7 +264,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 08 - Contenedores Docker (5 docs)
+## 08 - Contenedores Docker y Kubernetes (9 docs)
 
 | # | Doc | Tema |
 |---|-----|------|
@@ -273,6 +273,10 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 | 03 | [Compose](08-contenedores/03-compose.md) | docker-compose.yml, redes, volúmenes, profiles |
 | 04 | [Proyecto Real](08-contenedores/04-proyecto-real.md) | Setup completo: API + frontend + postgres + seq |
 | 05 | [Comandos](08-contenedores/05-comandos.md) | Referencia de comandos docker y docker compose |
+| 06 | [Kubernetes: conceptos](08-contenedores/06-kubernetes-conceptos.md) | Orquestador, componentes, K3s, kubectl, pods, etiquetas, Compose o Kubernetes |
+| 07 | [Kubernetes: manifiestos](08-contenedores/07-kubernetes-manifiestos.md) | Deployment, actualización y regreso, probes, Service, Ingress |
+| 08 | [Kubernetes: seguridad](08-contenedores/08-kubernetes-seguridad.md) | RBAC, Pod Security, políticas como código, NetworkPolicy |
+| 09 | [Kubernetes: diagnóstico](08-contenedores/09-kubernetes-diagnostico.md) | Método, cinco fallas, versiones, Kustomize y Helm, runbook |
 
 ---
 
@@ -473,6 +477,7 @@ Cada curso de [academy.raptorcloud.dev](https://academy.raptorcloud.dev) está t
 | Curso | Unidades |
 |-------|----------|
 | [Linux para desarrolladores](cursos/linux-for-developers/README.md) | 6 sesiones de 5 h |
+| [Kubernetes: del Compose al clúster](cursos/kubernetes/README.md) | 6 sesiones de 5 h |
 | [Aplicaciones con LLM](cursos/llm-applications/README.md) | 6 sesiones de 5 h |
 | [Preparación para entrevistas técnicas](cursos/technical-interviews/README.md) | 6 módulos de 2 h |
 | [Dev Notes](cursos/dev-notes/README.md) | 6 sesiones de 8 h |
