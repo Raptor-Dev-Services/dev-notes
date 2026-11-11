@@ -11,8 +11,8 @@
 
 | Recurso | Sección | Tiempo est. |
 |---|---|---|
-| [`11-vibe-coding/03-ai-workflow.md`](../../11-vibe-coding/03-ai-workflow.md) | Ciclo de desarrollo con IA y cuándo delegar | 15 min |
-| [`11-vibe-coding/11-etica-y-uso-responsable.md`](../../11-vibe-coding/11-etica-y-uso-responsable.md) | Completa, con la plantilla de política | 30 min |
+| [`11-vibe-coding/03-ai-workflow.md`](../../../11-vibe-coding/03-ai-workflow.md) | Ciclo de desarrollo con IA y cuándo delegar | 15 min |
+| [`11-vibe-coding/11-etica-y-uso-responsable.md`](../../../11-vibe-coding/11-etica-y-uso-responsable.md) | Completa, con la plantilla de política | 30 min |
 
 Recomendadas: *A Citizen's Guide to Artificial Intelligence* (Zerilli et al., 2021), caps. 8 y 10; *Moral Codes* (Blackwell, 2024), caps. 1 a 3 y 11.
 
