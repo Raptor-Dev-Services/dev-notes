@@ -3,6 +3,8 @@
 **Informática forense**
 **Tiempo estimado:** 4 horas
 
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
+
 ---
 
 ## Parte 1 - Lecturas (1.5 horas)
@@ -59,7 +61,7 @@ Antes de tocar nada, escribe en una bitácora (fecha, hora con zona horaria y re
 
 El encargado de sistemas te dice: "si quieres, lo apago y te lo llevas, así nadie lo toca". ¿Qué le contestas y en qué principios y artículos te apoyas?
 
-### Formato de la entrega
+### Formato del documento
 
 Un documento (PDF o Markdown) con:
 
@@ -94,6 +96,8 @@ Un documento (PDF o Markdown) con:
 | Preservación de lo volátil | Registra hora, procesos, conexiones y sesiones sin instalar nada en el equipo | Registra parte de lo volátil | Apagó el equipo o instaló herramientas en él | 25 % |
 | Integridad y bitácora | Cada archivo con su SHA-256 y cada acción con hora, zona y responsable | Hash o bitácora incompletos | Sin hash o sin bitácora | 15 % |
 | Justificación | Decisiones y respuesta apoyadas en principios y artículos vigentes | Justificación correcta pero sin fundamento | Sin justificación | 15 % |
+
+Autoevalúate: suma los puntos de cada criterio según tu nivel de logro y compáralos con el máximo. Menos de 70 sobre 100: vuelve a leer la nota indicada y rehaz el apartado más débil.
 
 ---
 

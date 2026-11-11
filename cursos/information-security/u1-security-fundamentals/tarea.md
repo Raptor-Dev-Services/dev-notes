@@ -5,6 +5,8 @@
 **Tiempo estimado:** 3 horas.
 **Valor:** 7.5 puntos.
 
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
+
 ---
 
 ## Objetivo
@@ -49,7 +51,7 @@ Y debe mostrar al menos un ejemplo concreto de la organización en cada rama (un
 
 ---
 
-## Entregable
+## Lo que debes tener al terminar
 
 Un archivo PDF, en Arial 12 con interlineado 1.5, con:
 
@@ -61,7 +63,9 @@ Un archivo PDF, en Arial 12 con interlineado 1.5, con:
 
 ---
 
-## Rúbrica
+## Rúbrica (autoevaluación)
+
+Califica cada criterio con el nivel que mejor describa tu trabajo.
 
 | Criterio | Excelente | Bueno | Regular | Deficiente |
 |---|---|---|---|---|
@@ -73,12 +77,13 @@ Un archivo PDF, en Arial 12 con interlineado 1.5, con:
 
 **Total:** 7.5 puntos.
 
+**Autoevaluación:** suma tus puntos de cada criterio. Si sacas menos de 5.25 (70 %), vuelve a leer las lecturas de la Parte 1 y rehaz el apartado con menos puntos.
+
 ---
 
 ## Referencias
 
 - American Psychological Association. (2020). *Publication manual of the American Psychological Association* (7.ª ed.). https://apastyle.apa.org/
-- Bibliotecas UNAM. (s. f.). *¿Cómo hacer citas y referencias en formato APA?* Dirección General de Bibliotecas y Servicios Digitales de Información, UNAM. https://www.bibliotecas.unam.mx/
 
 ---
 

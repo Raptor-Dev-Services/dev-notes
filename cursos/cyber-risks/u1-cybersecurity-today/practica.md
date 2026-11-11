@@ -1,22 +1,24 @@
 # Práctica - U1 - Un día sin internet
 
 **Riesgos actuales en ciberseguridad**
-**Tiempo estimado:** 90 minutos en clase (20 de lectura del caso y redacción, 40 de exposición de aportaciones, 30 de réplicas), o una semana si se hace en un foro en línea.
+**Tiempo estimado:** 90 minutos (20 de lectura del caso y redacción, 40 de redacción de tu aportación y 30 de contraste con otras posturas).
+
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
 
 ---
 
 ## Objetivo
 
-Reconocer, con argumentos y no solo con impresiones, cuánto dependen tu vida diaria y tu trabajo de internet, y llevar esa dependencia al terreno de la seguridad: lo que más usamos es lo que más conviene proteger. Al final, cada participante debe poder explicar qué servicios de su campo se detendrían sin la red, qué principio de la tríada CID se rompería y por qué esa dependencia es la razón de ser de la ciberseguridad.
+Reconocer, con argumentos y no solo con impresiones, cuánto dependen tu vida diaria y tu trabajo de internet, y llevar esa dependencia al terreno de la seguridad: lo que más usamos es lo que más conviene proteger. Al final debes poder explicar qué servicios de su campo se detendrían sin la red, qué principio de la tríada CID se rompería y por qué esa dependencia es la razón de ser de la ciberseguridad.
 
 ---
 
 ## Antes de empezar
 
-- Lean la nota [01 - TIC, internet y seguridad](../../../12-seguridad/02-riesgos/01-tic-internet-y-seguridad.md), en especial "Las TIC: de herramienta a infraestructura" y "Seguridad: la pieza que llegó tarde".
-- Revisen en la nota [03 - Ciberseguridad en México](../../../12-seguridad/02-riesgos/03-ciberseguridad-en-mexico.md) la sección "Las redes sociales como vector": ahí están los datos de uso de la ENDUTIH 2024 que pueden citar.
-- Revisen en su teléfono qué aplicaciones usaron ayer, pero **no compartan** capturas con contactos, conversaciones ni ubicaciones.
-- Se discuten ideas, no personas: se vale disentir sin descalificar.
+- Lee la nota [01 - TIC, internet y seguridad](../../../12-seguridad/02-riesgos/01-tic-internet-y-seguridad.md), en especial "Las TIC: de herramienta a infraestructura" y "Seguridad: la pieza que llegó tarde".
+- Revisa en la nota [03 - Ciberseguridad en México](../../../12-seguridad/02-riesgos/03-ciberseguridad-en-mexico.md) la sección "Las redes sociales como vector": ahí están los datos de uso de la ENDUTIH 2024 que puedes citar.
+- Revisa en tu teléfono qué aplicaciones usaste ayer, pero **no compartas** capturas con contactos, conversaciones ni ubicaciones.
+- Se contrastan ideas, no personas: se vale disentir sin descalificar.
 
 ---
 
@@ -52,41 +54,41 @@ Usa estas preguntas como guía; no hace falta responderlas en orden ni todas, pe
 
 ---
 
-## Momento 2 - Réplicas argumentadas
+## Momento 2 - Contraste con otras posturas
 
-Lee las aportaciones del grupo y responde a **por lo menos tres compañeros**. Cada réplica tiene que:
+Busca en las notas de la unidad (por ejemplo, la 01 y la 03) o en una fuente confiable **dos posturas distintas a la tuya** sobre cuánto depende la vida diaria de internet, o sobre quién responde cuando falla. Resume cada una en 80 a 150 palabras y, para cada una, tu contraste debe:
 
 - **Fijar postura.** Di con claridad si estás de acuerdo, en desacuerdo o de acuerdo en parte.
-- **Justificar con lo aprendido.** Apoya tu postura en un concepto, dato o caso de la unidad. "Me gustó tu punto" o "pienso igual" no cuentan como réplica.
-- **Aportar algo nuevo.** Una pregunta que el compañero no se hizo, un riesgo que no vio, una medida que podría tomar o un ejemplo de tu propio campo que contraste con el suyo.
+- **Justificar con lo aprendido.** Apoya tu postura en un concepto, dato o caso de la unidad. "Me gustó ese punto" o "pienso igual" no cuentan como contraste.
+- **Aportar algo nuevo.** Un dato que la postura no considera, un riesgo que no vio, una medida que podría tomar o un ejemplo de tu propio campo que contraste con el suyo.
 
-Extensión sugerida: de 80 a 150 palabras por réplica.
+Algunos caminos para contrastar:
 
-Algunos caminos para replicar:
+- Si una postura dice que se podría trabajar "sin problema" un día sin internet, pregúntate por los datos de los clientes: ¿dónde están guardados y quién los respalda?
+- Si otra dice que todo depende del proveedor de nube, revisa qué le toca al cliente en el modelo de responsabilidad compartida.
+- Busca una postura de una profesión muy distinta a la tuya y compara: ¿dependen de la red de la misma manera?
 
-- Si un compañero dice que podría trabajar "sin problema" un día sin internet, pregúntale por los datos de sus clientes: ¿dónde están guardados y quién los respalda?
-- Si otro dice que todo depende del proveedor de nube, recuérdale qué le toca al cliente en el modelo de responsabilidad compartida.
-- Busca a alguien de una profesión muy distinta a la tuya y compara: ¿dependen de la red de la misma manera?
-
-Al cierre, quien modera comenta con el grupo dos o tres réplicas que hayan hecho cambiar de postura a alguien.
+Al cierre, anota cuál de las dos posturas te hizo cambiar o matizar la tuya, y por qué.
 
 ---
 
-## Lo que se entrega
+## Lo que debes tener al terminar
 
-1. **La aportación individual** del momento 1, con la fuente de su dato o concepto.
-2. **Las tres réplicas** del momento 2 (o más), cada una con la postura explícita y su justificación.
-3. En clase, un archivo con ambas partes, nombre y fecha, al terminar la sesión; en foro, las publicaciones dentro del plazo que fije el grupo.
+1. **Tu aportación individual** del momento 1, con la fuente de su dato o concepto.
+2. **Los dos contrastes** del momento 2, cada uno con la postura resumida, tu posición explícita y su justificación.
+3. Un documento con ambas partes, con tu nombre y la fecha, guardado por tu cuenta.
 
 ---
 
-## Cómo se evalúa
+## Cómo te autoevalúas
 
 | Criterio | Excelente | Suficiente | Insuficiente | Puntos |
 |---|---|---|---|---|
 | Aportación individual | Explica la importancia de internet en su vida y su profesión con ejemplos concretos y responde las tres primeras preguntas guía (3) | Explica la importancia, pero con ejemplos generales o deja una pregunta guía sin tocar (1.5 a 2) | Solo opina, sin ejemplos ni relación con su campo (0) | 3 |
 | Relación con la seguridad | Conecta la dependencia con un riesgo y con el principio de la tríada CID que se rompería (2) | Menciona el riesgo sin ligarlo a la tríada o al revés (1) | No relaciona su uso de internet con la seguridad (0) | 2 |
 | Uso de la unidad | Cita con precisión al menos un dato o concepto de las notas e indica de cuál lo tomó (1.5) | Usa un dato o concepto, pero sin fuente o con una imprecisión (0.75) | No usa nada de la unidad (0) | 1.5 |
-| Réplicas | Tres o más réplicas con postura explícita, justificación y algo nuevo para el compañero (2.5) | Tres réplicas, pero alguna sin justificación o sin aporte propio (1 a 1.5) | Menos de tres réplicas, o réplicas de simple acuerdo (0) | 2.5 |
+| Contraste con otras posturas | Dos posturas distintas resumidas, con tu posición explícita, justificación y un dato o idea nueva (2.5) | Dos posturas, pero alguna sin justificación o sin aporte propio (1 a 1.5) | Menos de dos posturas, o simple acuerdo (0) | 2.5 |
 | Redacción y respeto | Texto claro, sin errores de ortografía, tono respetuoso aun en el desacuerdo (1) | De dos a cinco errores o algún pasaje confuso (0.5) | Más de cinco errores o tono descalificador (0) | 1 |
 | **Total** | | | | **10** |
+
+Suma tus puntos. Con menos de 7, vuelve a leer las notas indicadas y rehaz el apartado más débil.

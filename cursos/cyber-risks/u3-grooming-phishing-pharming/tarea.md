@@ -3,6 +3,8 @@
 **Riesgos actuales en ciberseguridad**
 **Tiempo estimado:** 4 horas, individual.
 
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
+
 ---
 
 ## Parte 1 - Lecturas (2 horas)
@@ -71,7 +73,7 @@ Una tabla con las 40 palabras, ordenadas por tema y, dentro de cada tema, de may
 
 Un párrafo de 100 a 150 palabras: por qué esas cinco palabras son el centro de la unidad, y cuál dejaste fuera del peso 5 aunque te costó trabajo.
 
-### Formato de la entrega
+### Formato del documento
 
 Un solo PDF (o un Markdown con la imagen incrustada) de **3 a 5 páginas**, con este orden:
 
@@ -94,7 +96,7 @@ Un solo PDF (o un Markdown con la imagen incrustada) de **3 a 5 páginas**, con 
 
 ---
 
-## Rúbrica
+## Rúbrica de autoevaluación
 
 | Criterio | Excelente | Bueno | Regular | Insuficiente |
 |---|---|---|---|---|
@@ -104,6 +106,8 @@ Un solo PDF (o un Markdown con la imagen incrustada) de **3 a 5 páginas**, con 
 | **Presentación y ortografía** (1.5 pts) | 1.5: respeta el formato y la extensión, sin faltas de ortografía ni de sintaxis, con acentos también en la nube | 1.1: formato y extensión correctos, con dos a cuatro errores | 0.75: la extensión se sale del rango o hay de cinco a siete errores | 0: no sigue el formato pedido o tiene ocho errores o más |
 | **Fuentes de información** (1 pt) | 1: cada definición dice su fuente; al menos tres fuentes confiables y vigentes, bien citadas en APA 7 | 0.75: fuentes confiables y en APA 7, pero alguna desactualizada o faltan en pocas definiciones | 0.5: fuentes incompletas o con errores de formato | 0: sin fuentes, o sin formato de cita |
 | **Total** | **7.5** | | | |
+
+Suma tus puntos. Con menos de 5.25 (70 %), vuelve a leer la nota indicada y rehaz el apartado más débil.
 
 ---
 

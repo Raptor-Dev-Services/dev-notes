@@ -3,6 +3,8 @@
 **Riesgos actuales en ciberseguridad**
 **Tiempo estimado:** 5 horas, individual.
 
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
+
 ---
 
 ## Parte 1 - Lecturas (1.5 horas)
@@ -25,7 +27,7 @@ Reconocer cómo se presentan hoy las tres tendencias delictivas de la unidad a p
 
 Una por cada tendencia: carding, juice jacking y cryptojacking. Cada noticia debe cumplir tres condiciones:
 
-- **Reciente:** publicada en los 24 meses anteriores a la fecha de entrega. Si para el juice jacking no encuentras un caso, vale un aviso de una autoridad o una investigación publicada; acláralo en el análisis.
+- **Reciente:** publicada en los 24 meses anteriores a la fecha en que terminas el documento. Si para el juice jacking no encuentras un caso, vale un aviso de una autoridad o una investigación publicada; acláralo en el análisis.
 - **Con fuente identificable:** un periódico, una autoridad, una empresa de seguridad o una revista técnica. Una publicación en redes sociales sin fuente no cuenta.
 - **Del tema correcto:** una filtración masiva de datos personales no es carding por sí sola; lo es si se usaron o se vendieron datos de tarjetas para hacer cargos. Un ransomware no es cryptojacking.
 
@@ -62,7 +64,7 @@ Treinta en total. Reglas:
 
 Entre 150 y 250 palabras: qué tienen en común las tres tendencias, cuál te parece hoy más probable en tu entorno y por qué.
 
-### Formato de la entrega
+### Formato del documento
 
 Un archivo PDF o Markdown de entre 1,800 y 3,000 palabras, sin contar las referencias, con esta estructura:
 
@@ -81,17 +83,19 @@ Un archivo PDF o Markdown de entre 1,800 y 3,000 palabras, sin contar las refere
 ## Referencias (APA 7)
 ```
 
-Si entregas PDF, usa un solo tipo de letra, de tamaño legible, en todo el documento.
+Si lo haces en PDF, usa un solo tipo de letra, de tamaño legible, en todo el documento.
 
 ---
 
-## Rúbrica (7.5 puntos)
+## Rúbrica de autoevaluación (7.5 puntos)
 
 | Criterio | Excelente | Bueno | Regular | Insuficiente |
 |---|---|---|---|---|
 | **Contenido y comprensión** (4 pts) | 4: respeta la extensión; las tres noticias son de la tendencia correcta; el análisis las une con la unidad y las treinta recomendaciones son concretas y correctas | 3: respeta la extensión y cubre todo, pero el análisis o las recomendaciones se quedan en lo general | 1.5: se excede o se queda corto, o falta una noticia o parte de las recomendaciones; la comprensión es solo general | 0: fuera de extensión, faltan secciones o hay errores de concepto que muestran que el tema no se entendió |
 | **Información de apoyo** (2.5 pts) | 2.5: cada noticia con fuente confiable en APA 7 y con detalles (fechas, actores, vía de entrada) que sostienen el análisis | 1.5: fuentes correctas, pero con pocos detalles que apoyen el análisis | 1: algunos detalles; fuentes incompletas o mal citadas | 0: sin fuentes, o con detalles que no sostienen lo que se afirma |
 | **Ortografía, gramática y presentación** (1 pt) | 1: sin errores; formato uniforme y fácil de leer | 0.5: sin errores; el formato varía, pero se lee bien | 0.25: menos de cinco errores | 0: cinco errores o más, o un formato que estorba la lectura |
+
+Suma tus puntos. Con menos de 5.25 (70 %), vuelve a leer la nota indicada y rehaz el apartado más débil.
 
 ---
 

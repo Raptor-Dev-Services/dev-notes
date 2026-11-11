@@ -3,6 +3,8 @@
 **Riesgos actuales en ciberseguridad**
 **Tiempo estimado:** 4 horas (1.5 de lecturas y 2.5 del ejercicio), actividad individual.
 
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
+
 ---
 
 ## Parte 1 - Lecturas (1.5 horas)
@@ -79,15 +81,15 @@ Debajo del mapa, o en una segunda página:
 - Una nota de **100 a 150 palabras**: cómo se lee el mapa y qué relación les pareció más importante.
 - **Referencias en APA 7**: las tres notas y al menos una fuente primaria de sus listas de referencias (la ENCS, la ENDUTIH 2024 o el informe de Cisco de 2018, por ejemplo). Toda cifra lleva su cita.
 
-#### 8. Revisar antes de entregar
+#### 8. Revisar el documento final
 
-Lean en voz alta cinco proposiciones al azar; si alguna no tiene sentido, corríjanla. Revisen ortografía y acentos.
+Lee en voz alta cinco proposiciones al azar; si alguna no tiene sentido, corrígela. Revisa ortografía y acentos.
 
 La herramienta es libre (CmapTools, draw.io, Excalidraw, Mermaid o una hoja a mano bien digitalizada), siempre que el mapa se lea completo.
 
 ---
 
-## Entregable
+## Lo que debes tener al terminar
 
 Un archivo **PDF** (o Markdown con el diagrama incrustado) con nombre `u1-mapa-conceptual-<apellido>.pdf`, de **una a dos páginas**:
 
@@ -98,7 +100,7 @@ Un archivo **PDF** (o Markdown con el diagrama incrustado) con nombre `u1-mapa-c
 
 ---
 
-## Rúbrica (7.5 puntos)
+## Rúbrica de autoevaluación (7.5 puntos)
 
 | Criterio | Excelente | Bueno | Regular | Insuficiente | Puntos |
 |---|---|---|---|---|---|
@@ -109,6 +111,8 @@ Un archivo **PDF** (o Markdown con el diagrama incrustado) con nombre `u1-mapa-c
 | Comparación de componentes | Tres o más comparaciones con semejanzas y diferencias explicadas con detalle (1.5) | Tres comparaciones, pero descritas de forma general (1) | Menos de tres comparaciones, o sin decir en qué se parecen o se distinguen (0.5) | No hay comparaciones (0) | 1.5 |
 | Fuentes de información | Las fuentes respaldan el contenido, son actuales, están en APA 7 y cada cifra tiene cita (1) | Fuentes adecuadas en APA 7, alguna poco actual o alguna cifra sin cita (0.75) | Fuentes que aportan poco o con errores de formato (0.5) | Sin fuentes o sin formato de cita (0) | 1 |
 | **Total** | | | | | **7.5** |
+
+Suma tus puntos. Con menos de 5.25 (70 %), vuelve a leer la nota indicada y rehaz el apartado más débil.
 
 ---
 

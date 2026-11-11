@@ -1,7 +1,9 @@
 # Práctica - U5 - La cadena de custodia digital en un caso real
 
 **Informática forense**
-**Tiempo estimado:** 2 horas, individual, con discusión en el foro del grupo.
+**Tiempo estimado:** 2 horas, individual.
+
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
 
 ---
 
@@ -13,7 +15,7 @@ Reflexionar, con argumentos técnicos y legales, sobre lo que gana una investiga
 
 ## Antes de empezar
 
-Lean, o tengan a la mano:
+Lee, o ten a la mano:
 
 - [`14-procedimientos-investigacion-forense.md`](../../../12-seguridad/03-forense/14-procedimientos-investigacion-forense.md): el procedimiento general y el equipo encendido.
 - [`15-identificacion-fijacion-preservacion.md`](../../../12-seguridad/03-forense/15-identificacion-fijacion-preservacion.md): el árbol de decisiones, el embalaje y la cadena de custodia.
@@ -33,32 +35,32 @@ Una empresa de distribución detecta que la lista de precios y la cartera de cli
 
 ---
 
-## Primer momento: su aportación (a más tardar el jueves de la semana)
+## Primer momento: tu aportación
 
-Publiquen en el foro un documento de 500 a 800 palabras que responda:
+Escribe en un documento propio un texto de 500 a 800 palabras que responda:
 
-1. **Procesos metodológicos.** Para cada uno de los cinco elementos del caso, ¿qué procedimiento aplicarían y en qué orden? Usen el árbol de decisiones de la nota 15 y los pasos del equipo encendido de la nota 14. Digan qué **no** harían y por qué.
-2. **Autorizaciones.** ¿Qué elementos se pueden asegurar con la diligencia y cuáles exigen orden de un juez? Fundamenten con el CNPP y el artículo 16 constitucional.
+1. **Procesos metodológicos.** Para cada uno de los cinco elementos del caso, ¿qué procedimiento aplicarías y en qué orden? Usa el árbol de decisiones de la nota 15 y los pasos del equipo encendido de la nota 14. Di qué **no** harías y por qué.
+2. **Autorizaciones.** ¿Qué elementos se pueden asegurar con la diligencia y cuáles exigen orden de un juez? Fundamenta con el CNPP y el artículo 16 constitucional.
 3. **Cadena de custodia.** ¿Qué datos debe tener el registro de cada elemento, quién firma en cada cambio de manos y qué pasaría en juicio si faltara uno de esos registros?
-4. **Más allá de lo penal.** Si la empresa decide no denunciar y solo despedir al empleado, ¿por qué le sigue conviniendo preservar la evidencia con el mismo rigor? Piensen en un juicio laboral o mercantil.
+4. **Más allá de lo penal.** Si la empresa decide no denunciar y solo despedir al empleado, ¿por qué le sigue conviniendo preservar la evidencia con el mismo rigor? Piensa en un juicio laboral o mercantil.
 
 ---
 
-## Segundo momento: retroalimentación
+## Segundo momento: contraste con otras posturas
 
-Comenten la aportación de **tres compañeros**, de preferencia a quienes aún nadie les haya respondido. En cada comentario:
+Busca en las notas 12, 14 y 15 **tres** criterios o procedimientos distintos a los que propusiste (por ejemplo, otro orden de acciones para el equipo encendido o otra razón para pedir orden judicial). Para cada uno:
 
-- Digan si están de acuerdo o no con el orden y los procedimientos que propusieron, y qué cambiarían.
-- Fundamenten su postura con lo visto en la unidad: una opinión sin fundamento no cuenta.
-- Comparen su propia respuesta con la del compañero: qué vio él que ustedes no.
+- Di si estás de acuerdo o no con ese orden o procedimiento, y qué cambiarías.
+- Fundamenta tu postura con lo visto en la unidad: una opinión sin fundamento no cuenta.
+- Compara tu propia respuesta con ese criterio: qué ve la nota que tú no viste.
 
 ---
 
-## Lo que se entrega
+## Lo que debes tener al terminar
 
-- La aportación del primer momento, en el foro.
-- Los tres comentarios del segundo momento.
-- Redacción cuidada: ortografía, claridad y respeto en el trato.
+- La aportación del primer momento, en un documento propio.
+- Los tres contrastes del segundo momento.
+- Redacción cuidada: ortografía y claridad.
 
 ---
 
@@ -69,8 +71,10 @@ Comenten la aportación de **tres compañeros**, de preferencia a quienes aún n
 | Dominio del procedimiento | 35 % | El orden de las acciones es correcto para cada elemento y respeta la volatilidad |
 | Fundamento legal | 25 % | Cita los artículos aplicables y distingue lo que exige orden judicial |
 | Cadena de custodia | 20 % | Explica su contenido y las consecuencias de romperla |
-| Retroalimentación | 15 % | Tres comentarios con postura propia y fundamento |
-| Redacción | 5 % | Clara, correcta y respetuosa |
+| Contraste | 15 % | Tres contrastes con postura propia y fundamento |
+| Redacción | 5 % | Clara y correcta |
+
+Autoevalúate: suma los puntos de cada criterio según tu nivel de logro y compáralos con el máximo. Menos de 70 sobre 100: vuelve a leer la nota indicada y rehaz el apartado más débil.
 
 ---
 
@@ -81,4 +85,4 @@ Comenten la aportación de **tres compañeros**, de preferencia a quienes aún n
 - [ ] El teléfono se aísla antes de cualquier otra cosa, y señalé que su extracción necesita orden judicial.
 - [ ] La cuenta de correo web no se abre sin autorización del juez.
 - [ ] Expliqué qué pasa en juicio con un hueco en la cadena de custodia.
-- [ ] Comenté a tres compañeros con fundamento.
+- [ ] Contrasté tres criterios distintos a los míos con fundamento.

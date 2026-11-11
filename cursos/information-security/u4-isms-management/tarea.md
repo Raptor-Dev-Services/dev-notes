@@ -5,6 +5,8 @@
 **Tiempo estimado:** 5 horas.
 **Valor:** 7.5 puntos.
 
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
+
 ---
 
 ## Objetivo
@@ -58,13 +60,15 @@ Qué decisión le piden a la dirección y por qué.
 
 ---
 
-## Entregable
+## Lo que debes tener al terminar
 
 Un documento PDF, en Arial 12 con interlineado 1.5, con las siete secciones y referencias en APA 7.
 
 ---
 
-## Rúbrica
+## Rúbrica (autoevaluación)
+
+Califica cada criterio con el nivel que mejor describa tu trabajo.
 
 | Criterio | Excelente | Bueno | Regular | Deficiente |
 |---|---|---|---|---|
@@ -74,6 +78,8 @@ Un documento PDF, en Arial 12 con interlineado 1.5, con las siete secciones y re
 | **Conclusiones** (2 pts) | La recomendación es clara, en lenguaje de negocio, y se desprende del análisis: 2 | Clara pero poco ligada al análisis: 1.33 | Ambigua: 0.67 | Sin recomendación: 0 |
 
 **Total:** 7.5 puntos.
+
+**Autoevaluación:** suma tus puntos de cada criterio. Si sacas menos de 5.25 (70 %), vuelve a leer las lecturas de la Parte 1 y rehaz el apartado con menos puntos.
 
 ---
 

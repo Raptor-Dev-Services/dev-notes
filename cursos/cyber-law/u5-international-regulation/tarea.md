@@ -3,6 +3,8 @@
 **Legislación nacional e internacional en ciberseguridad**
 **Tiempo estimado:** 8 horas, individual.
 
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
+
 ---
 
 ## Parte 1 - Lecturas (2 horas)
@@ -32,22 +34,22 @@
 
 ### Consigna
 
-Elaboren una **infografía** que compare la regulación de ciberseguridad de tres regiones: la Unión Europea, Estados Unidos y una tercera a su elección (Latinoamérica o Asia). Después graben un **video de 5 a 8 minutos** en el que expliquen el valor de esas regulaciones y cómo se vinculan con la legislación mexicana.
+Elabora una **infografía** que compare la regulación de ciberseguridad de tres regiones: la Unión Europea, Estados Unidos y una tercera a tu elección (Latinoamérica o Asia). Después graba un **video de 5 a 8 minutos** en el que expliques el valor de esas regulaciones y cómo se vinculan con la legislación mexicana.
 
-La base obligatoria es el **Reglamento (UE) 2019/881** y lo estudiado en los tres temas. El ángulo de la tarea es concreto: **una entidad mexicana** (elijan una real o ficticia: una fintech, una tienda en línea, un fabricante de dispositivos conectados, un hospital privado) que trata datos de personas en la Unión Europea o en California, o que vende productos con elementos digitales en Europa. ¿Qué le exigen esas leyes y cómo se compara con lo que le exige la ley mexicana?
+La base obligatoria es el **Reglamento (UE) 2019/881** y lo estudiado en los tres temas. El ángulo de la tarea es concreto: **una entidad mexicana** (elige una real o ficticia: una fintech, una tienda en línea, un fabricante de dispositivos conectados, un hospital privado) que trata datos de personas en la Unión Europea o en California, o que vende productos con elementos digitales en Europa. ¿Qué le exigen esas leyes y cómo se compara con lo que le exige la ley mexicana?
 
 ### Pasos
 
-1. **Elijan la entidad** y descríbanla en tres líneas: qué hace, qué datos trata y en qué mercados opera.
-2. **Hagan el mapa de obligaciones.** Para cada región, identifiquen qué normas le aplican y por qué (por ejemplo, el artículo 3.2 del RGPD si ofrece servicios a residentes europeos; la CCPA si cumple los umbrales de California; la Ley de Ciberresiliencia si vende productos conectados en Europa).
-3. **Comparen con México.** Contrasten esas obligaciones con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares de 2025 y con la ausencia de una ley mexicana de ciberseguridad.
-4. **Diseñen la infografía.** Una página, legible, con las tres regiones, sus instrumentos principales, a quién obligan, plazos de aviso de incidentes, sanciones máximas y la columna de México.
-5. **Graben el video.** Expliquen la infografía, el impacto para la entidad (procesos que debe cambiar, costos, riesgos de multa) y su opinión sobre qué debería adoptar México. Citen al menos tres documentos en voz o en pantalla.
-6. **Verifiquen la vigencia** de cada norma que mencionen. La pregunta "¿esto sigue vigente?" vale puntos: un proyecto que nunca se aprobó o una directiva ya sustituida no se presentan como ley.
+1. **Elige la entidad** y descríbela en tres líneas: qué hace, qué datos trata y en qué mercados opera.
+2. **Haz el mapa de obligaciones.** Para cada región, identifica qué normas le aplican y por qué (por ejemplo, el artículo 3.2 del RGPD si ofrece servicios a residentes europeos; la CCPA si cumple los umbrales de California; la Ley de Ciberresiliencia si vende productos conectados en Europa).
+3. **Compara con México.** Contrasta esas obligaciones con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares de 2025 y con la ausencia de una ley mexicana de ciberseguridad.
+4. **Diseña la infografía.** Una página, legible, con las tres regiones, sus instrumentos principales, a quién obligan, plazos de aviso de incidentes, sanciones máximas y la columna de México.
+5. **Graba el video.** Explica la infografía, el impacto para la entidad (procesos que debe cambiar, costos, riesgos de multa) y tu opinión sobre qué debería adoptar México. Cita al menos tres documentos en voz o en pantalla.
+6. **Verifica la vigencia** de cada norma que menciones. La pregunta "¿esto sigue vigente?" vale puntos: un proyecto que nunca se aprobó o una directiva ya sustituida no se presentan como ley.
 
-### Formato de la entrega
+### Formato del documento
 
-Un archivo `tarea-u5.md` (o un PR en el repositorio del equipo) con:
+Un archivo `tarea-u5.md` con:
 
 ```markdown
 ## La entidad
@@ -72,6 +74,8 @@ Un archivo `tarea-u5.md` (o un PR en el repositorio del equipo) con:
 ---
 
 ## Rúbrica (10 puntos)
+
+Autoevalúate con esta rúbrica. Suma tus puntos: con menos de 7, vuelve a leer la nota indicada y rehaz el apartado más débil.
 
 | Criterio | Excelente | Bueno | Regular | Insuficiente |
 |---|---|---|---|---|
@@ -99,19 +103,19 @@ Un archivo `tarea-u5.md` (o un PR en el repositorio del equipo) con:
 ## Preguntas frecuentes
 
 **¿Puedo elegir Asia en lugar de Latinoamérica?**
-Sí. Si lo hacen, incluyan al menos a China (Ley de Ciberseguridad de 2017 y Ley de Protección de Información Personal de 2021) y un segundo país, y verifiquen sus textos en fuentes oficiales.
+Sí. Si lo haces, incluye al menos a China (Ley de Ciberseguridad de 2017 y Ley de Protección de Información Personal de 2021) y un segundo país, y verifica sus textos en fuentes oficiales.
 
 **¿La entidad tiene que ser real?**
 No. Puede ser ficticia, pero verosímil: que sus datos y mercados justifiquen las normas que le aplican.
 
 **¿Cuenta la Ley de Ciberresiliencia si mi entidad no fabrica nada?**
-Solo si vende o importa productos con elementos digitales en la Unión. Si no, explíquenlo en una línea: saber cuándo una norma no aplica también es análisis jurídico.
+Solo si vende o importa productos con elementos digitales en la Unión. Si no, explícalo en una línea: saber cuándo una norma no aplica también es análisis jurídico.
 
 **¿El video puede ser una presentación narrada?**
-Sí, siempre que se escuche su explicación y no solo se lean las láminas.
+Sí, siempre que se escuche tu explicación y no solo se lean las láminas.
 
 ---
 
 ## Cierre del curso
 
-Con esta tarea se completan las cinco. Revisen que entre todas cubran: el concepto de derecho de la ciberseguridad (U1), las estrategias (U2), los estándares (U3), la ley mexicana (U4) y el contexto internacional (U5). Juntas forman su mapa del derecho de la ciberseguridad.
+Con esta tarea se completan las cinco. Revisa que entre todas cubran: el concepto de derecho de la ciberseguridad (U1), las estrategias (U2), los estándares (U3), la ley mexicana (U4) y el contexto internacional (U5). Juntas forman tu mapa del derecho de la ciberseguridad.

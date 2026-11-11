@@ -1,7 +1,9 @@
 # Práctica - U2 - La foto que salió del chat
 
 **Riesgos actuales en ciberseguridad**
-**Tiempo estimado:** 2 horas, en dos momentos: análisis individual del caso y réplicas a compañeros.
+**Tiempo estimado:** 2 horas, en dos momentos: análisis individual del caso y contraste con otras posturas.
+
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
 
 ---
 
@@ -13,14 +15,14 @@ Afianzar lo aprendido en la unidad con un caso. El punto de partida es un hecho 
 
 ## Antes de empezar
 
-- Lean las notas [06 - Sexting](../../../12-seguridad/02-riesgos/06-sexting.md), [04 - Cyberbullying](../../../12-seguridad/02-riesgos/04-cyberbullying.md) y [05 - Cyberstalking y doxing](../../../12-seguridad/02-riesgos/05-cyberstalking.md).
+- Lee las notas [06 - Sexting](../../../12-seguridad/02-riesgos/06-sexting.md), [04 - Cyberbullying](../../../12-seguridad/02-riesgos/04-cyberbullying.md) y [05 - Cyberstalking y doxing](../../../12-seguridad/02-riesgos/05-cyberstalking.md).
 - Las fuentes se citan en APA 7, en el texto y en una lista al final.
 - **Reglas de la discusión:**
   - Se analiza un caso ficticio. Nadie cuenta experiencias propias ni de conocidos con datos que permitan identificarlos.
   - No se describe ningún contenido íntimo: basta con decir "una foto íntima".
   - No se culpa a la víctima. El análisis se centra en quién presiona, quién difunde y quién pudo intervenir.
   - Se critica el argumento, nunca a la persona que lo escribe.
-- Si el tema les toca de cerca, pueden hablarlo en privado con el instructor. Al final está a quién acudir.
+- Si el tema te toca de cerca, puedes hablarlo con un adulto de confianza. Al final está a quién acudir.
 
 ---
 
@@ -69,39 +71,39 @@ Escribe, en orden, los pasos que le recomendarías a Valeria y a quién debería
 
 ---
 
-## Momento 2 - Réplicas a compañeros (50 min)
+## Momento 2 - Contraste con otras posturas (50 min)
 
-Lee las aportaciones del grupo y replica a **mínimo tres**, de preferencia las que todavía no tienen comentarios. Cada réplica, de **120 a 200 palabras**:
+Busca en las notas de la unidad (04, 05 y 06) o en una fuente confiable **al menos dos posturas distintas a la tuya** sobre cómo se corta la cadena del caso (por ejemplo, quién tenía más responsabilidad de intervenir, o qué debería hacer primero Valeria). Resume cada una y escribe un contraste de **120 a 200 palabras** por postura, que:
 
-- Di si estás de acuerdo o no, y con qué parte en concreto.
-- Justifícalo con algo de la unidad: un rasgo de la conducta, un artículo de ley, una cifra o un paso de respuesta.
-- Agrega un riesgo que tu compañero no vio, o corrige uno que haya clasificado mal.
-- Cierra con una pregunta que lo obligue a precisar su análisis.
+- Diga si estás de acuerdo o no, y con qué parte en concreto.
+- Lo justifique con algo de la unidad: un rasgo de la conducta, un artículo de ley, una cifra o un paso de respuesta.
+- Agregue un riesgo que esa postura no vio, o corrija uno que haya clasificado mal, aportando un dato nuevo.
+- Cierre con una pregunta que te obligue a precisar tu propio análisis.
 
-"Estoy de acuerdo, buena participación" no cuenta como réplica. Una opinión sin fundamento, tampoco.
-
----
-
-## Lo que se entrega
-
-Un archivo `practica-u2.md`, o la publicación en el foro del grupo, con:
-
-1. La aportación del momento 1, con referencias en APA 7.
-2. Las tres réplicas del momento 2, sin nombres de compañeros: "Aportación A", "B" y "C".
+"Estoy de acuerdo, es una buena postura" no cuenta como contraste. Una opinión sin fundamento, tampoco.
 
 ---
 
-## Cómo se evalúa
+## Lo que debes tener al terminar
+
+Un archivo `practica-u2.md`, guardado por tu cuenta, con:
+
+1. Tu aportación del momento 1, con referencias en APA 7.
+2. Los dos contrastes del momento 2, cada uno con la postura resumida y sin nombres de personas reales.
+
+---
+
+## Cómo te autoevalúas
 
 | Criterio | Excelente | Suficiente | Insuficiente |
 |---|---|---|---|
 | Cadena de riesgos | 3 pts: los cuatro planos, en orden y ligados entre sí | 2 pts: tres planos, o los cuatro sin relación entre ellos | 0.5 pts: lista suelta de riesgos sin orden |
 | Uso de la unidad | 2 pts: papeles bien asignados, conducta del perfil identificada y un artículo de ley bien aplicado | 1 pt: conceptos correctos pero sin ley o con una ley mal aplicada | 0 pts: solo opinión personal |
 | Puntos de corte y respuesta | 1.5 pts: dos puntos de corte y pasos de ayuda en orden, con a quién acudir | 1 pt: un punto de corte o pasos incompletos | 0 pts: no los propone |
-| Réplicas | 2.5 pts: tres réplicas con postura, fundamento, riesgo nuevo y pregunta | 1.5 pts: tres réplicas, alguna superficial | 0.5 pts: menos de tres o sin fundamento |
+| Contraste con otras posturas | 2.5 pts: dos posturas resumidas con tu postura, fundamento, riesgo o dato nuevo y pregunta | 1.5 pts: dos posturas, alguna superficial | 0.5 pts: menos de dos o sin fundamento |
 | Forma y trato | 1 pt: ortografía, redacción y APA 7 correctas; trato respetuoso y sin culpar a la víctima | 0.5 pts: errores menores | 0 pts: errores frecuentes o trato que revictimiza |
 
-**Total: 10 puntos.**
+**Total: 10 puntos.** Suma tus puntos. Con menos de 7, vuelve a leer la nota indicada y rehaz el apartado más débil.
 
 ---
 

@@ -397,6 +397,10 @@ flowchart TD
     OB --> EJ[8 ejes transversales: qué capacidades hacen falta en todos]
 ```
 
+---
+
+## Principios y objetivos de la ENCS
+
 | Principios rectores | Objetivos estratégicos |
 |---|---|
 | Derechos humanos | Sociedad y derechos |

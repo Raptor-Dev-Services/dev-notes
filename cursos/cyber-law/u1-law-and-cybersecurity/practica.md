@@ -1,27 +1,28 @@
 # Práctica - U1 - La cuarta revolución industrial y el derecho
 
 **Legislación nacional e internacional en ciberseguridad**
-**Tiempo estimado:** 3 horas, en equipos de cinco personas.
+**Tiempo estimado:** 3 horas, individual.
+
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
 
 ---
 
 ## Objetivo
 
-Identificar qué tan lejos llega la cuarta revolución industrial (4RI), cómo impacta a la sociedad y qué derechos pone en juego, y explicarlo en un formato breve que obligue a elegir lo esencial: un guion y un video de **máximo dos minutos**. Después, cada equipo revisa el trabajo de otros tres con una pauta común.
+Identificar qué tan lejos llega la cuarta revolución industrial (4RI), cómo impacta a la sociedad y qué derechos pone en juego, y explicarlo en un formato breve que obligue a elegir lo esencial: un guion y un video de **máximo dos minutos**. Después, contrasta tu enfoque con el de otras posturas que encuentres en las lecturas.
 
 ---
 
 ## Antes de empezar
 
-- Lean la nota [03 - Retos del derecho ante el escenario digital](../../../12-seguridad/05-legislacion/03-retos-derecho-escenario-digital.md), en especial los mapas del Foro Económico Mundial y la sección del internet de las cosas.
-- Repasen la definición de trabajo de la nota [01](../../../12-seguridad/05-legislacion/01-justificacion-derecho-ciberseguridad.md): el video tiene que dejar claro qué papel juega el derecho, no solo qué hace la tecnología.
-- Repártanse roles: guionista, investigación de fuentes, edición, locución y revisión. Una persona puede tener dos roles, pero nadie se queda sin uno.
+- Lee la nota [03 - Retos del derecho ante el escenario digital](../../../12-seguridad/05-legislacion/03-retos-derecho-escenario-digital.md), en especial los mapas del Foro Económico Mundial y la sección del internet de las cosas.
+- Repasa la definición de trabajo de la nota [01](../../../12-seguridad/05-legislacion/01-justificacion-derecho-ciberseguridad.md): tu video tiene que dejar claro qué papel juega el derecho, no solo qué hace la tecnología.
 
 ---
 
 ## Paso 1 - Elegir el ángulo (20 min)
 
-Dos minutos no alcanzan para todo. Elijan **una** tecnología de la 4RI y **un** derecho que se vea afectado. Algunas combinaciones posibles:
+Dos minutos no alcanzan para todo. Elige **una** tecnología de la 4RI y **un** derecho que se vea afectado. Algunas combinaciones posibles:
 
 | Tecnología | Derecho en juego |
 |---|---|
@@ -42,42 +43,41 @@ El guion debe responder, en este orden:
 2. **Qué alcance tiene**: cuántas personas o sectores toca, con al menos una cifra con fuente y año.
 3. **Qué derecho afecta** y cómo, con un ejemplo concreto.
 4. **Qué reto jurídico** plantea: vacío legal, jurisdicción, responsabilidad, consentimiento.
-5. **Qué propone el equipo**: una medida de política pública, de regulación, técnica o cultural.
+5. **Qué propones tú**: una medida de política pública, de regulación, técnica o cultural.
 
-Extensión orientativa: 250 a 300 palabras (lo que cabe en dos minutos de locución). Incluyan al final las referencias en APA 7.
+Extensión orientativa: 250 a 300 palabras (lo que cabe en dos minutos de locución). Incluye al final las referencias en APA 7.
 
 ---
 
 ## Paso 3 - Grabar el video (60 min)
 
 - Duración máxima: **2:00**. Un video de 2:15 no cumple.
-- Pueden aparecer en cámara, usar diapositivas con voz o animaciones simples.
-- Las cifras que digan en voz deben aparecer escritas en pantalla con su fuente.
-- Súbanlo a un servicio en la nube o a una plataforma de video con acceso para el instructor.
+- Puedes aparecer en cámara, usar diapositivas con voz o animaciones simples.
+- Las cifras que digas en voz deben aparecer escritas en pantalla con su fuente.
+- Guarda el video en tu equipo (o en un servicio de tu elección) junto con el guion.
 
 ---
 
-## Paso 4 - Revisión entre pares (40 min)
+## Paso 4 - Contraste individual (40 min)
 
-Cada equipo revisa el trabajo de **tres** equipos distintos, empezando por los que todavía no tienen comentarios. Una opinión ("me gustó") no cuenta. Cada revisión debe:
+Busca en las lecturas de la unidad **tres** posturas distintas a la tuya (por ejemplo, otro derecho afectado por la misma tecnología, o una propuesta de regulación distinta a la tuya) y para cada una:
 
-1. Señalar un acierto y explicar por qué lo es, con base en las lecturas de la unidad.
-2. Señalar una debilidad o un dato que falte, y sugerir cómo corregirlo.
-3. Comparar su enfoque con el del propio equipo: ¿eligieron un derecho distinto?, ¿qué ganó o perdió cada uno?
+1. Resume la postura en dos o tres líneas, con su fuente.
+2. Señala un acierto y explica por qué lo es, con base en las lecturas de la unidad.
+3. Di en qué coincides y en qué no, aportando un dato nuevo que respalde tu posición. Una opinión ("me gustó") no cuenta.
 
-Cuiden la ortografía, la redacción y el tono respetuoso.
+Cuida la ortografía, la redacción y el tono.
 
 ---
 
-## Evidencia que entregan
+## Lo que debes tener al terminar
 
-Un archivo `practica-u1.md` (o un PR en el repositorio del equipo) con:
+Un archivo `practica-u1.md` con:
 
-1. Nombres de los integrantes y rol de cada uno.
-2. El guion final con sus referencias.
-3. El enlace al video y su duración exacta.
-4. Las tres revisiones entre pares que hicieron.
-5. Una línea con el cambio que harían a su propio video después de leer las revisiones recibidas.
+1. El guion final con sus referencias.
+2. El enlace o la ruta al video y su duración exacta.
+3. Las tres posturas contrastadas del paso 4, cada una con resumen, acierto y coincidencias o diferencias.
+4. Una línea con el cambio que harías a tu video después del contraste.
 
 ---
 
@@ -87,6 +87,7 @@ Un archivo `practica-u1.md` (o un PR en el repositorio del equipo) con:
 - [ ] Se nombra una tecnología concreta de la 4RI y un derecho concreto.
 - [ ] Hay al menos una cifra con fuente y año, visible en pantalla.
 - [ ] El guion explica el papel del derecho, no solo el de la tecnología.
-- [ ] La propuesta del equipo es una medida concreta (de política, regulación, técnica o cultura).
+- [ ] Tu propuesta es una medida concreta (de política, regulación, técnica o cultura).
 - [ ] Las referencias están en APA 7.
-- [ ] Hay tres revisiones entre pares, cada una con un acierto, una mejora y una comparación.
+- [ ] Contrastaste tres posturas distintas a la tuya, cada una con un acierto y una comparación con dato nuevo.
+- [ ] Autoevaluación: cuenta tus casillas marcadas; si te faltan dos o más, rehaz el paso correspondiente antes de pasar a la unidad siguiente.

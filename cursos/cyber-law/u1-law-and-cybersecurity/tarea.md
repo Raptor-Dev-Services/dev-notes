@@ -3,6 +3,8 @@
 **Legislación nacional e internacional en ciberseguridad**
 **Tiempo estimado:** 8 horas, individual.
 
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
+
 ---
 
 ## Parte 1 - Lecturas (2 horas)
@@ -51,9 +53,9 @@ Sustenta cada afirmación con los contenidos y materiales de la unidad. Puedes e
 4. **Propón alternativas**: para cada problema que identifiques, una acción concreta y viable, y quién debería ejecutarla.
 5. **Explica tus razones**: por qué tu propuesta funcionaría y qué evidencia la respalda.
 6. **Concluye** con lenguaje claro, sin repetir tecnicismos, y conecta la conclusión con lo que desarrollaste.
-7. **Revisa** ortografía, sintaxis y formato antes de entregar.
+7. **Revisa** ortografía, sintaxis y formato antes de dar por terminado el documento.
 
-### Formato de la entrega
+### Formato del documento
 
 - Documento en Arial 12, interlineado 1.5, de 8 a 12 cuartillas sin contar portada ni referencias.
 - Portada con título, nombre y fecha.
@@ -79,6 +81,8 @@ Sustenta cada afirmación con los contenidos y materiales de la unidad. Puedes e
 
 ## Rúbrica (10 puntos)
 
+Autoevalúate con esta rúbrica.
+
 | Criterio | Excelente | Bueno | Regular | Insuficiente |
 |---|---|---|---|---|
 | Interpretación de evidencias (2) | 2: explica con precisión las fuentes y sus datos, y lo que afirma demuestra que las entendió a detalle | 1.34: las explica y muestra una comprensión general | 0.66: las menciona, pero lo que concluye de ellas es pobre | 0: las interpreta mal |
@@ -87,6 +91,8 @@ Sustenta cada afirmación con los contenidos y materiales de la unidad. Puedes e
 | Resultados o procedimientos (1.5) | 1.5: justifica cada resultado clave y explica sus razones | 0.9: justifica algunos | 0.6: justifica pocos o con razones escuetas | 0: los presenta sin justificar |
 | Conclusiones (2) | 2: claras, sencillas y ligadas al desarrollo | 1.34: ligadas al trabajo, pero con lenguaje impreciso | 0.66: con ambigüedades que dificultan entenderlas | 0: ambiguas y llenas de tecnicismos |
 | Presentación, organización y ortografía (1) | 1: respeta el formato y la extensión, sin errores | 0.6: respeta formato y extensión, con dos a cuatro errores | 0.4: se aleja de la extensión, con cinco a siete errores | 0: se aleja mucho de la extensión o tiene ocho errores o más |
+
+Suma tus puntos: con menos de 7, vuelve a leer la nota indicada y rehaz el apartado más débil.
 
 ---
 

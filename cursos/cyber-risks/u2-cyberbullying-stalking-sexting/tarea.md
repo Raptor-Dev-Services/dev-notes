@@ -3,6 +3,8 @@
 **Riesgos actuales en ciberseguridad**
 **Tiempo estimado:** 5 horas, individual.
 
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
+
 ---
 
 ## Parte 1 - Lecturas (1.5 horas)
@@ -42,7 +44,7 @@ El objetivo es reconocer cómo se ven hoy los delitos digitales que afectan a ni
 
 #### 2. Analizar antes de diseñar (60 min)
 
-Responde por escrito estas preguntas. Son tu borrador y no se entregan, pero todo lo que pongas en el tríptico sale de aquí.
+Responde por escrito estas preguntas. Son tu borrador y no forman parte del documento final, pero todo lo que pongas en el tríptico sale de aquí.
 
 | Pregunta | Pista |
 |---|---|
@@ -80,20 +82,22 @@ Una hoja horizontal doblada en tres: seis paneles, tres por cara.
 - [ ] No aparece ningún dato que identifique a una víctima menor.
 - [ ] Sin errores de ortografía.
 
-### Formato de la entrega
+### Formato del documento
 
 - Un archivo `tarea-u2.pdf` con las dos caras del tríptico (exterior e interior).
 - Si las referencias no caben en la contraportada, una tercera página solo con ellas.
 
 ---
 
-## Rúbrica (7.5 puntos)
+## Rúbrica de autoevaluación (7.5 puntos)
 
 | Criterio | Excelente | Bueno | Regular | Insuficiente |
 |---|---|---|---|---|
 | Explicación y comprensión | 4 pts: respeta la extensión y explica con precisión la noticia, sus consecuencias legales con la norma aplicable, el daño y la prevención | 3 pts: respeta la extensión y cubre los cuatro puntos, pero de forma general | 1.5 pts: se pasa o se queda corto de extensión, y cubre los puntos de forma superficial | 0 pts: fuera de extensión y confuso; no se aprecia comprensión del tema |
 | Información de apoyo | 2.5 pts: datos, normas y al menos tres fuentes en APA 7 respaldan cada afirmación | 1.5 pts: hay datos y fuentes, pero algunas afirmaciones quedan sin respaldo | 1 pt: apoyo escaso, una sola fuente o datos sin citar | 0 pts: sin datos ni fuentes |
 | Ortografía, gramática y presentación | 1 pt: sin errores; diseño legible y consistente | 0.5 pts: sin errores; mezcla estilos, pero se lee bien | 0.25 pts: hasta cuatro errores; diseño legible | 0 pts: cinco errores o más, o un diseño que estorba la lectura |
+
+Suma tus puntos. Con menos de 5.25 (70 %), vuelve a leer la nota indicada y rehaz el apartado más débil.
 
 ---
 

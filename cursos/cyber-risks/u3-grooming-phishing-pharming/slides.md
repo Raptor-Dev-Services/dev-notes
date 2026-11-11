@@ -463,6 +463,10 @@ sequenceDiagram
     E->>E: el navegador se conecta a esa IP
 ```
 
+---
+
+## Por qué importa el DNS
+
 - La computadora no entiende nombres: necesita la dirección IP del servidor.
 - El **DNS** es el directorio que traduce uno en otra; antes de preguntarle, el equipo revisa su archivo **hosts**.
 - Si alguien altera cualquiera de esas respuestas, el navegador va, con toda normalidad, a la IP equivocada.

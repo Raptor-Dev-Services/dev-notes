@@ -1,7 +1,9 @@
 # Tarea - U2 - España 2019 frente a la estrategia de México
 
 **Legislación nacional e internacional en ciberseguridad**
-**Tiempo estimado:** 5 horas
+**Tiempo estimado:** 5 horas, individual.
+
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
 
 ---
 
@@ -34,9 +36,9 @@ Identificar las fortalezas y las desventajas de México en ciberseguridad compar
 
 ### Consigna
 
-Elaboren un **cuadro comparativo** entre la Estrategia Nacional de Ciberseguridad de España (2019) y la Estrategia Nacional de Ciberseguridad de México (2017). El cuadro tiene una fila por elemento y una columna por país; cada celda explica, no solo enumera.
+Elabora un **cuadro comparativo** entre la Estrategia Nacional de Ciberseguridad de España (2019) y la Estrategia Nacional de Ciberseguridad de México (2017). El cuadro tiene una fila por elemento y una columna por país; cada celda explica, no solo enumera.
 
-| Elemento | Qué deben poner en cada columna |
+| Elemento | Qué debes poner en cada columna |
 |---|---|
 | 1. Objetivo | El objetivo general, con sus palabras, y a quién protege |
 | 2. Estructura | Cómo está organizado el documento: capítulos, objetivos, líneas o ejes, gobernanza |
@@ -47,23 +49,23 @@ Elaboren un **cuadro comparativo** entre la Estrategia Nacional de Cibersegurida
 
 ### Pasos sugeridos
 
-1. Lean primero los dos documentos originales en las secciones indicadas; las notas son apoyo, no sustituto.
-2. Llenen el cuadro en borrador, una fila a la vez, cuidando que cada celda de México tenga su par en España.
-3. Marquen con una palabra cada diferencia relevante (por ejemplo: "presupuesto", "órgano rector", "foro público privado").
-4. Redacten la reflexión: al menos dos fortalezas y dos desventajas de México, cada una apoyada en una celda del cuadro.
-5. Revisen ortografía, formato y extensión antes de entregar.
+1. Lee primero los dos documentos originales en las secciones indicadas; las notas son apoyo, no sustituto.
+2. Llena el cuadro en borrador, una fila a la vez, cuidando que cada celda de México tenga su par en España.
+3. Marca con una palabra cada diferencia relevante (por ejemplo: "presupuesto", "órgano rector", "foro público privado").
+4. Redacta la reflexión: al menos dos fortalezas y dos desventajas de México, cada una apoyada en una celda del cuadro.
+5. Revisa ortografía, formato y extensión antes de dar por terminado el documento.
 
 ### Variante actual (obligatoria en esta versión del curso)
 
-La estrategia mexicana de 2017 no se actualizó. Agreguen una **tercera columna** con el Plan Nacional de Ciberseguridad 2025-2030 y la Política General de Ciberseguridad para la APF, al menos en las filas de objetivo, estructura, colaboración y reflexión. La pregunta que debe contestar esa columna: **¿qué corrigió el marco de 2025 respecto de las tres lecciones del proceso de 2017 (liderazgo, carácter vinculante y presupuesto) y qué sigue pendiente?**
+La estrategia mexicana de 2017 no se actualizó. Agrega una **tercera columna** con el Plan Nacional de Ciberseguridad 2025-2030 y la Política General de Ciberseguridad para la APF, al menos en las filas de objetivo, estructura, colaboración y reflexión. La pregunta que debe contestar esa columna: **¿qué corrigió el marco de 2025 respecto de las tres lecciones del proceso de 2017 (liderazgo, carácter vinculante y presupuesto) y qué sigue pendiente?**
 
-### Formato de la entrega
+### Formato del documento
 
 - Documento de **máximo 4 cuartillas**, Arial 11, interlineado 1.15.
 - Portada simple con nombre, unidad y fecha; el cuadro puede ir en orientación horizontal.
 - Referencias en APA 7 al final (no cuentan en las 4 cuartillas).
 
-Si lo entregan en el repositorio del equipo, un archivo `tarea-u2.md` con esta estructura:
+Si lo guardas en un repositorio propio, usa un archivo `tarea-u2.md` con esta estructura:
 
 ```markdown
 ## Cuadro comparativo
@@ -87,6 +89,8 @@ Si lo entregan en el repositorio del equipo, un archivo `tarea-u2.md` con esta e
 
 ## Rúbrica (10 puntos)
 
+Autoevalúate con esta rúbrica. Suma tus puntos: con menos de 7, vuelve a leer la nota indicada y rehaz el apartado más débil.
+
 | Criterio | Excelente | Bueno | Regular | Deficiente |
 |---|---|---|---|---|
 | Presentación, organización y ortografía (3 pts) | 3: respeta el formato y no tiene errores de sintaxis ni de ortografía | 1.5: respeta el formato, con dos a cuatro errores | 0.75: respeta el formato, con cinco a siete errores | 0: no respeta el formato o tiene ocho o más errores |
@@ -109,10 +113,10 @@ Si lo entregan en el repositorio del equipo, un archivo `tarea-u2.md` con esta e
 ## Preguntas frecuentes
 
 **¿Puedo comparar con la estrategia española nueva?**
-Si al momento de entregar ya se publicó en el BOE una estrategia que sustituya a la de 2019, úsenla como cuarta columna opcional, pero la comparación base sigue siendo con 2019, que es la que estudia la unidad.
+Si al momento de terminar ya se publicó en el BOE una estrategia que sustituya a la de 2019, úsala como cuarta columna opcional, pero la comparación base sigue siendo con 2019, que es la que estudia la unidad.
 
 **¿El Plan Nacional 2025-2030 sustituye jurídicamente a la ENCS?**
-No hay un acto que abrogue la ENCS; simplemente dejó de aplicarse y el plan ocupa su lugar como documento de referencia. Lo que sí es obligatorio para el gobierno federal es la Política General publicada en el DOF. Digan esto con precisión en su cuadro.
+No hay un acto que abrogue la ENCS; simplemente dejó de aplicarse y el plan ocupa su lugar como documento de referencia. Lo que sí es obligatorio para el gobierno federal es la Política General publicada en el DOF. Di esto con precisión en tu cuadro.
 
 **¿Cuenta como fortaleza que México tenga ocho ejes y España siete líneas?**
 El número no es fortaleza. Lo que cuenta es si cada eje o línea tiene responsable, recursos e indicadores.

@@ -3,6 +3,8 @@
 **Introducción a la ciberseguridad**
 **Tiempo estimado:** 5 horas (2 de lectura y 3 de investigación y diseño)
 
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
+
 ---
 
 ## Parte 1 - Lecturas (2 horas)
@@ -53,11 +55,11 @@ Aquí está la diferencia entre una infografía de internet y una de este curso.
 3. Una línea de "qué hacer" por actividad: una medida de prevención o de respuesta.
 4. Imágenes e iconos **libres de derechos** (o creados por ustedes), con su licencia o fuente.
 5. Las fuentes al final en **APA 7**.
-6. Entrega en un solo **PDF**.
+6. El resultado final es un solo **PDF**.
 
 Recuerden que una infografía combina elementos visuales y texto para destacar las ideas clave: si necesita párrafos largos para entenderse, todavía no es infografía.
 
-### Formato de la entrega
+### Formato del documento
 
 Un archivo `tarea-u4-<apellido>.pdf` con:
 
@@ -73,7 +75,7 @@ Referencias (APA 7) y créditos de imágenes
 
 ---
 
-## Rúbrica
+## Rúbrica de autoevaluación
 
 Total: 7.5 puntos.
 
@@ -86,6 +88,8 @@ Total: 7.5 puntos.
 | Representación del proceso o idea | Coincide con los datos, es fácil de interpretar y cubre todo lo pedido (1.5) | Adecuada y fiel a los datos, pero difícil de interpretar (0.75) | Distorsiona algunos datos o cubre solo una parte (0.35) | Distorsiona los datos, incompleta o desordenada (0) | 1.5 |
 | Fuentes de información | Enriquecen el trabajo, actuales y bien citadas en APA 7 (0.5) | Bien citadas, no tan recientes (0.35) | Bien citadas, pero no todas aportan o están desactualizadas (0.25) | Sin formato APA o sin actualidad (0) | 0.5 |
 
+Autoevalúate: suma tus puntos de cada criterio (máximo 7.5). Si sacas menos de 5.25 (70 %), vuelve a leer las notas 10 a 12 y rehaz el apartado más débil.
+
 ---
 
 ## Criterio de aceptación
@@ -96,7 +100,7 @@ Total: 7.5 puntos.
 - [ ] Ninguna actividad se llama "robo de datos" o "robo de identidad" sin aclarar su nombre jurídico.
 - [ ] Las imágenes son libres de derechos o propias, con su crédito.
 - [ ] Las fuentes están en APA 7 y al menos dos son de 2024 en adelante.
-- [ ] Se entrega un solo PDF.
+- [ ] El resultado final es un solo PDF.
 
 ---
 

@@ -3,6 +3,8 @@
 **Riesgos actuales en ciberseguridad**
 **Tiempo estimado:** 6 horas, individual.
 
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
+
 ---
 
 ## Parte 1 - Lecturas (2 horas)
@@ -71,7 +73,7 @@ Cuida que haya **juicio propio**: contrasta a los autores que citas, di con qui�
 
 Al menos cinco fuentes, tres de ellas de 2023 o posteriores. Citas en el texto y lista de referencias en APA 7. Prefiere fuentes primarias: leyes, informes oficiales, artículos académicos y comunicados de los organismos.
 
-### Formato de la entrega
+### Formato del documento
 
 Un archivo PDF o Markdown, de **máximo cinco cuartillas** sin contar portada ni referencias (como guía, no más de 2,000 palabras), con esta estructura:
 
@@ -100,7 +102,7 @@ Un archivo PDF o Markdown, de **máximo cinco cuartillas** sin contar portada ni
 
 ---
 
-## Rúbrica (7.5 puntos)
+## Rúbrica de autoevaluación (7.5 puntos)
 
 | Criterio | Excelente | Bueno | Regular | Insuficiente |
 |---|---|---|---|---|
@@ -109,3 +111,5 @@ Un archivo PDF o Markdown, de **máximo cinco cuartillas** sin contar portada ni
 | Fundamentación | **2:** argumentos firmes que sostienen la tesis, con autores pertinentes y actuales | **1.33:** algunos argumentos, con autores pertinentes y actuales | **0.67:** algunos argumentos, con autores pertinentes pero desactualizados | **0:** argumentos débiles que no sostienen la tesis |
 | Fuentes | **1:** enriquecen el ensayo, son actuales y están en APA 7 | **0.5:** enriquecen el ensayo y están en APA 7, aunque alguna es antigua | **0.25:** en APA 7, pero varias no aportan o no son actuales | **0:** no siguen APA 7 o no aportan al ensayo |
 | Análisis crítico | **2.5:** juicios propios relevantes que contrastan o refuerzan a los autores citados | **1.67:** juicios relevantes que solo a veces dialogan con los autores | **0.83:** juicios poco relevantes, sin relación clara con los autores | **0:** solo resume; no hay postura propia |
+
+Suma tus puntos (el máximo es 7.5). Con menos de 5.25 (70 %), vuelve a leer la nota indicada y rehaz el apartado más débil.
