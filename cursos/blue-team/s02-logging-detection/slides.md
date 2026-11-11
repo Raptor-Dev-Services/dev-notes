@@ -843,6 +843,8 @@ El ataque del módulo 6 hace, como máximo, 6 intentos. La regla de fábrica pid
 |---|---|
 | *Defensive Security Handbook* (Berlin, Brotherston y Reyor, 2024) | Cap. 21 Understanding IDSs and IPSs; cap. 22 Logging and Monitoring |
 | *Threat Hunting with Elastic Stack* (Pease, 2021) | Cap. 3 Introduction to the Elastic Stack; cap. 4 y 5 Building Your Hunting Lab, partes 1 y 2; cap. 6 Data Collection with Beats and the Elastic Agent; cap. 7 Using Kibana to Explore and Visualize Data |
+| *Cybersecurity: Attack and Defense Strategies* (Diogenes y Ozkaya, 2019), de profundización | Cap. 12 Active Sensors; cap. 17 Log Analysis |
+| *CIS Ubuntu Linux 24.04 LTS Benchmark* v1.0.0 (2024), de profundización | Secciones 6.1 System Logging y 6.2 System Auditing |
 
 Se citan por capítulo. Cada quien consigue su copia.
 

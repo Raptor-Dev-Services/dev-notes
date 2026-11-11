@@ -755,6 +755,8 @@ Libros: *Defensive Security Handbook* (Berlin, Brotherston y Reyor, 2024), caps.
 | Libro | Capítulos |
 |---|---|
 | *Defensive Security Handbook* (Berlin, Brotherston y Reyor, 2024) | Cap. 1 Creating a Security Program; cap. 2 Asset Management and Documentation; cap. 3 Policies; cap. 4 Standards and Procedures; cap. 18 Vulnerability Management |
+| *Executive's Cybersecurity Program Handbook* (Brown, 2023), de profundización | Cap. 1 The First 90 Days; cap. 4 Establishing Governance through Policy; cap. 6 Risk Management |
+| *Attack Surface Management* (Eddings y Kaufmann, 2025), de profundización | Cap. 4 Identification and Classification of Assets; cap. 6 Prioritization and Crown Jewel Analysis |
 
 Se citan por capítulo. Cada quien consigue su copia.
 

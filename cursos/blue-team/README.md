@@ -111,6 +111,34 @@ Curso de **Raptor Dev Services Academy**. Las clases como presentación, el quiz
 
 Un laboratorio de detección con cinco reglas, cada una vista disparar, y el informe completo del incidente simulado: línea de tiempo, evidencia y postmortem.
 
+## Lecturas de profundización
+
+Libros de la biblioteca de ciberseguridad que amplían una sesión sin ser la columna del curso. Se leen después de la sesión, no antes; los capítulos son los del índice de cada libro (en los de Packt, por orden de aparición). Cada quien consigue su copia.
+
+| Libro | Capítulos | Sesión y para qué |
+|---|---|---|
+| *Executive's Cybersecurity Program Handbook* (Jason Brown, 2023) | 1 The First 90 Days; 4 Establishing Governance through Policy; 6 Risk Management; 12 Testing Your Security and Building Metrics | 1. Cómo arrancar el programa, sostenerlo con políticas y medir si funciona. |
+| *Attack Surface Management* (Ron Eddings y MJ Kaufmann, 2025) | 4 Identification and Classification of Assets; 5 Automating Asset Discovery; 6 Prioritization and Crown Jewel Analysis; 8 Remediation | 1. Profundiza el inventario de activos y qué se protege primero. |
+| *Building a Cyber Risk Management Program* (Brian Allen, Brandon Bapst y Terry Allan Hicks, 2023) | 2 The Cyber Risk Management Program; 5 Risk-Based Strategy and Execution | 1. Priorizar por riesgo, no sólo por puntaje. |
+| *CIS Ubuntu Linux 24.04 LTS Benchmark* v1.0.0 (Center for Internet Security, 2024) | Secciones 1.2 Package Management; 5.1 Configure SSH Server; 5.2 Configure privilege escalation; 6.1 System Logging; 6.2 System Auditing | 1 y 2. Un estándar de configuración real contra el cual medir `victima`; 6.1 y 6.2 acompañan qué registrar. |
+| *CIS Docker Benchmark* v1.7.0 (Center for Internet Security, 2024) | Secciones 1 Host Configuration; 6 Docker Security Operations | 1 y 2. Estándar de endurecimiento si el sistema de ejemplo corre contenedores. |
+| *Cybersecurity: Attack and Defense Strategies* (Yuri Diogenes y Erdal Ozkaya, 2.ª ed., 2019) | 12 Active Sensors; 17 Log Analysis | 2. Qué ven los sensores y cómo se leen las bitácoras de sistema, firewall y servidor web. |
+| *Infosec Strategies and Best Practices* (Joseph MacMillan, 2021) | 6 Designing and Managing Security Testing Processes; 7 Owning Security Operations | 2. Cómo operar la detección como proceso continuo. |
+| *Incident Response in the Age of Cloud* (Erdal Ozkaya, 2021) | 3 How to Organize an Incident Response Team; 5 Methods and Tools of Incident Response Processes (OODA, playbooks); 6 Incident Handling; 8 Incident Reporting | 3. Roles, playbooks y a quién se reporta; el cap. 11 (Incident Response in the Cloud) queda como contexto si el sistema vive en la nube. |
+| *Cybersecurity: Attack and Defense Strategies* (Diogenes y Ozkaya, 2019) | 2 Incident Response Process; 14 Investigating an Incident; 15 Recovery Process | 3. Otro recorrido del ciclo de respuesta, con la recuperación. |
+| *Building Secure and Reliable Systems* (Heather Adkins y otros, 2020) | 15 Investigating Systems; 17 Crisis Management; 18 Recovery and Aftermath | 3. La respuesta vista desde quien opera el servicio: investigar, manejar la crisis y recuperar. |
+| *Executive's Cybersecurity Program Handbook* (Brown, 2023) | 7 Incident Response | 3. Cómo se inserta la respuesta en el programa de la sesión 1. |
+| *Practical Forensic Imaging* (Bruce Nikkel, 2016) | 3 Forensic Image Formats; 4 Planning and Preparation; 6 Forensic Image Acquisition; 7 Forensic Image Management | 4. Profundiza la adquisición de la imagen, el bloqueo de escritura, la verificación de integridad y el manejo de la copia. |
+| *Cybersecurity: Attack and Defense Strategies* (Diogenes y Ozkaya, 2019) | 13 Threat Intelligence | 5. Inteligencia de amenazas para alimentar la hipótesis de cacería. |
+| *Cybersecurity Threats, Malware Trends, and Strategies* (Tim Rains, 2.ª ed., 2023) | Capítulo «What to Know about Threat Intelligence» (el índice no lo numera) | 5. Qué es y qué no es la inteligencia de amenazas, con sus límites. |
+| *Incident Response in the Age of Cloud* (Ozkaya, 2021) | 10 Cyber Threat Intelligence Sharing; 12 Building a Culture of Incident Readiness | 5 y 6. Compartir indicadores y convertir la cacería y el ensayo en cultura. |
+| *Incident Response in the Age of Cloud* (Ozkaya, 2021) | 13 Incident Response Best Practices (probar el plan, revisiones posteriores) | 6. Refuerza el ejercicio de mesa y el postmortem. |
+| *Building Secure and Reliable Systems* (Adkins y otros, 2020) | 16 Disaster Planning; 18 Recovery and Aftermath; Apéndice A Disaster Risk Assessment Matrix | 6. Planear el desastre antes de que ocurra y aprender del después. |
+
+**Revisados y no incluidos:** *Practical Malware Analysis*, *Adversarial Tradecraft in Cybersecurity* y *Malware Development for Ethical Hackers* (ingeniería inversa y técnica ofensiva, más allá de este curso); *Zero Trust Networks*, *Practical Cybersecurity Architecture* y *Software Supply Chain Security* (arquitectura y cadena de suministro, que piden un curso propio); *The Cybersecurity Playbook for Modern Enterprises* y *Building a Cyber Resilient Business* (orientados a dirección ejecutiva).
+
+---
+
 ## Libros base
 
 | Libro | Autor | Año | Para qué |
