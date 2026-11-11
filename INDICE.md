@@ -298,7 +298,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 10 - Cloud (21 docs)
+## 10 - Cloud (22 docs)
 
 ### Fundamentos Cloud
 
@@ -329,7 +329,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 | [IAM](10-cloud/15-aws-iam-seguridad.md) | Users, roles, policies, OIDC IRSA, least privilege |
 | [CloudWatch](10-cloud/16-aws-cloudwatch.md) | Métricas, logs, dashboards, alarmas, X-Ray |
 
-### Operaciones y Seguridad (7 docs)
+### Operaciones y Seguridad (8 docs)
 
 | Doc | Tema |
 |-----|------|
@@ -344,7 +344,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 11 - Vibe Coding / AI-Assisted Development (10 docs)
+## 11 - Vibe Coding / AI-Assisted Development (11 docs)
 
 | # | Doc | Tema |
 |---|-----|------|
@@ -531,6 +531,9 @@ Cada curso de [academy.raptorcloud.dev](https://academy.raptorcloud.dev) está t
 | [Legislación nacional e internacional en ciberseguridad](cursos/cyber-law/README.md) | 5 unidades |
 | [Defensa y respuesta a incidentes](cursos/blue-team/README.md) | 6 sesiones de 5 h |
 | [Ciberseguridad II: pentest con Kali](cursos/pentesting-with-kali/README.md) | 6 módulos de 2 h |
+| [Seguridad de APIs: atacar y defender](cursos/api-security/README.md) | 6 módulos de 2 h |
+| [Seguridad en la nube y Zero Trust](cursos/cloud-security/README.md) | 6 módulos de 2 h |
+| [Infraestructura como código](cursos/infrastructure-as-code/README.md) | 6 sesiones de 5 h |
 
 ---
 
