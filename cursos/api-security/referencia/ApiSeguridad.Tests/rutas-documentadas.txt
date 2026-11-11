@@ -1,0 +1,11 @@
+# Contrato de la API: una linea por ruta, VERBO /ruta. Lo que la aplicacion expone y no esta aqui es un hallazgo.
+POST /api/auth/login
+GET /api/perfil
+PATCH /api/perfil
+GET /api/pedidos
+GET /api/pedidos/{id:int}
+POST /api/pedidos/{id:int}/cupon
+GET /api/productos
+POST /api/vistas-previas
+GET /api/admin/usuarios
+GET /api/reportes/resumen
