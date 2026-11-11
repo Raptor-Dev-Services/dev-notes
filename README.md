@@ -20,7 +20,7 @@ El listado completo de documentos está en [INDICE.md](INDICE.md) y las rutas de
 | [08-contenedores](08-contenedores/) | Docker: conceptos, Dockerfile multi-stage, Compose, proyecto real, comandos | 5 |
 | [09-cicd](09-cicd/) | Checklists DevSecOps, GitHub Actions (OIDC + AWS), Azure DevOps, Terraform | 4 |
 | [10-cloud](10-cloud/) | AWS y Azure, Linux + Nginx, terminal, Bash, systemd y diagnóstico, observabilidad, secretos, costos, seguridad web, Zero Trust, AWS en profundidad, tracing distribuido | 21 |
-| [11-vibe-coding](11-vibe-coding/) | CLAUDE.md, prompts efectivos, AI workflow, manejo de contexto, LLMOps, arquitectura agéntica, LLM en producción, RAG, MCP, seguridad de LLM | 16 |
+| [11-vibe-coding](11-vibe-coding/) | CLAUDE.md, prompts efectivos, AI workflow, manejo de contexto, LLMOps, arquitectura agéntica, LLM en producción, RAG, MCP, seguridad de LLM | 10 |
 | [12-seguridad](12-seguridad/) | Ruta de ciberseguridad en cinco materias: introducción, riesgos actuales, informática forense, seguridad de la información y legislación | 76 |
 | [roadmap](roadmap/) | Rutas de aprendizaje por objetivo | 7 |
 | [cursos](cursos/) | Los cursos de [academy.raptorcloud.dev](https://academy.raptorcloud.dev) en Markdown: clase, práctica, tarea y glosario de cada unidad | 16 |
