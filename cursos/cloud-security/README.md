@@ -41,7 +41,7 @@ Versiones con las que se escribió (a noviembre de 2026): Python 3.14, moto 5.2.
 
 ## Módulo 2. Identidad y mínimo privilegio (2 h)
 
-> Casi todos los incidentes en la nube empiezan con una identidad con demasiado permiso.
+> Una identidad con demasiado permiso convierte cualquier fallo en un incidente grande.
 
 **Material:** [clase](m02-identity-least-privilege/slides.md), [práctica](m02-identity-least-privilege/practica.md), [tarea](m02-identity-least-privilege/tarea.md), [glosario](m02-identity-least-privilege/glosario.md). El quiz está en la plataforma.
 

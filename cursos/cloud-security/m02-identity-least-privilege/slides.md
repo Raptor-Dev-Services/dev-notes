@@ -15,13 +15,12 @@ Prerrequisito: leer 10-cloud/15-aws-iam-seguridad.md. Esta clase no la repite: l
 
 ## La idea de hoy
 
-> Casi todos los incidentes en la nube empiezan con una identidad con demasiado permiso.
+> Una identidad con demasiado permiso convierte cualquier fallo en un incidente grande.
 
 - En la nube **todo es una llamada de API**, y cada llamada la hace una identidad
 - Una llave filtrada hace exactamente lo que su política permite, ni más ni menos
 - Mínimo privilegio no es un adjetivo: es un resultado que se **demuestra**
 
-<!-- Matiz: "casi todos" es la frase de la propuesta del curso, no una cifra medida. No la citen como estadística. -->
 
 ---
 
