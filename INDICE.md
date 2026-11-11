@@ -230,7 +230,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 06 - Frontend React (11 docs)
+## 06 - Frontend React (15 docs)
 
 | # | Doc | Tema |
 |---|-----|------|
@@ -245,6 +245,10 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 | 09 | [Componentes Headless](06-frontend/09-componentes-headless.md) | Prop getters, hook vs render prop vs HOC, sobre-abstracción |
 | 10 | [Fronteras de Import](06-frontend/10-fronteras-import.md) | app -> features -> shared con `import/no-restricted-paths` |
 | 11 | [Prácticas del Código Real](06-frontend/11-practicas-codigo-real.md) | Máquina de estados, AbortController, Result en cliente, incidentes |
+| 12 | [TypeScript para React](06-frontend/12-typescript-para-react.md) | Contrato de la API como tipos, uniones discriminadas, genéricos, Zod en la frontera |
+| 13 | [Seguridad en el Navegador](06-frontend/13-seguridad-en-el-navegador.md) | Cookie HttpOnly vs localStorage, XSS, CSRF, CSP sin unsafe-inline |
+| 14 | [Pruebas del Front](06-frontend/14-pruebas-front.md) | Vitest, Testing Library, MSW, Playwright |
+| 15 | [Caché y Versionado de Assets](06-frontend/15-cache-y-versionado-de-assets.md) | Huella en los assets, Cache-Control, el navegador con el JavaScript viejo |
 
 ---
 
@@ -504,6 +508,7 @@ Cada curso de [academy.raptorcloud.dev](https://academy.raptorcloud.dev) está t
 | [Diseño y arquitectura de software](cursos/software-architecture/README.md) | 4 módulos de 2 h |
 | [Backend con .NET](cursos/dotnet-backend/README.md) | 6 módulos de 2 h |
 | [Frontend con React](cursos/react-frontend/README.md) | 1 módulo de 2 h |
+| [React en producción con TypeScript](cursos/react-production/README.md) | 6 sesiones de 5 h |
 | [Git, Docker, CI/CD y nube](cursos/devops-essentials/README.md) | 5 módulos de 2 h |
 | [Seguridad web y OWASP](cursos/web-security/README.md) | 1 módulo de 2 h |
 | [Vibe coding profesional](cursos/ai-assisted-coding/README.md) | 1 módulo de 2 h |

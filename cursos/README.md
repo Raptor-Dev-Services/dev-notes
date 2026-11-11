@@ -12,6 +12,7 @@ Los cursos de [Raptor Dev Services Academy](https://academy.raptorcloud.dev) en 
 | [Diseño y arquitectura de software](software-architecture/README.md) | 4 módulos de 2 h | Quien diseña software y necesita elegir arquitectura, contratos de API y proceso de equipo |
 | [Backend con .NET](dotnet-backend/README.md) | 6 módulos de 2 h | Quien construye el backend de un producto en .NET |
 | [Frontend con React](react-frontend/README.md) | 1 módulo de 2 h | Quien construye la interfaz de un producto con React |
+| [React en producción con TypeScript](react-production/README.md) | 6 sesiones de 5 h | Quien ya hace pantallas en React y quiere que aguanten usuarios reales |
 | [Git, Docker, CI/CD y nube](devops-essentials/README.md) | 5 módulos de 2 h | Quien lleva su aplicación del repositorio a producción |
 | [Infraestructura como código](infrastructure-as-code/README.md) | 6 sesiones de 5 h | Quien ya endureció una VM a mano y quiere crearla y configurarla desde código, con pruebas y políticas |
 | [Seguridad web y OWASP](web-security/README.md) | 1 módulo de 2 h | Quien desarrolla aplicaciones web y debe protegerlas |

@@ -15,7 +15,7 @@ El listado completo de documentos está en [INDICE.md](INDICE.md) y las rutas de
 | [03-arquitectura](03-arquitectura/) | DDD, CQRS, hexagonal, vertical slice, specification, versionado, microservicios, Keycloak, monolito modular, Clean Architecture, C4, REPR, diseño de sistemas + API design (5 docs) | 21 |
 | [04-backend](04-backend/) | ASP.NET Core: result pattern, repository, pipeline behaviors, validación, caching, EF Core, Dapper, JWT, performance, multi-tenancy SaaS + testing (5 docs) | 51 |
 | [05-bases-de-datos](05-bases-de-datos/) | SQL, índices, transacciones, PostgreSQL avanzado, Dapper, connection strings, migraciones multi-tenant, RLS | 8 |
-| [06-frontend](06-frontend/) | React 19, Vite, Tailwind v4, design system, componentes primitivos, feature hook, capa de dominio, estado, headless, fronteras de import | 11 |
+| [06-frontend](06-frontend/) | React 19, Vite, Tailwind v4, design system, componentes primitivos, feature hook, capa de dominio, estado, headless, fronteras de import, TypeScript, seguridad en el navegador, pruebas, caché de assets | 15 |
 | [07-git](07-git/) | Tooling, SemVer, config, Git Flow, tags, conventional commits, merge strategies, rollback, stash | 9 |
 | [08-contenedores](08-contenedores/) | Docker y Kubernetes: conceptos, Dockerfile multi-stage, Compose, proyecto real, comandos, Kubernetes (conceptos, manifiestos, seguridad, diagnóstico) | 9 |
 | [09-cicd](09-cicd/) | Checklists DevSecOps, GitHub Actions (OIDC + AWS), Azure DevOps, Terraform y OpenTofu, Ansible, políticas como código | 7 |
@@ -42,7 +42,7 @@ dev-notes/
 ├── 03-arquitectura/         16 docs (01-16) + api-design/ (5 docs)
 ├── 04-backend/              46 docs (01-46) + testing/ (5 docs)
 ├── 05-bases-de-datos/       8 docs
-├── 06-frontend/             11 docs
+├── 06-frontend/             15 docs
 ├── 07-git/                  9 docs
 ├── 08-contenedores/         9 docs
 ├── 09-cicd/                 7 docs
