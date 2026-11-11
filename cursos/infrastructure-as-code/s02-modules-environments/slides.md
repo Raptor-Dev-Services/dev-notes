@@ -188,7 +188,7 @@ variable "replicas" {
 
 ## Validar antes de crear
 
-```hcl {1-9|11-19}
+```hcl {1-8|10-18}
 variable "entorno" {
   type = string
 

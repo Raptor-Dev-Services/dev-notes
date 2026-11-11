@@ -668,7 +668,7 @@ salida: 3
 
 Este archivo **no se ejecuta** en el laboratorio: no hay un CI conectado. Lo que sí se puede hacer es comprobar que es YAML válido y que dice lo que ustedes creen.
 
-Creen `~/iac/s03/plan.yml` con el contenido de las láminas de la Parte 4 (workflow completo) y valídenlo:
+Creen `~/iac/s03/plan.yml` uniendo los dos bloques de código de las láminas de la Parte 4 (la cabecera y los pasos forman **un solo** archivo; los pasos van con la sangría que traen, debajo de `steps:`) y valídenlo:
 
 ```bash
 python3 - <<'PY'
