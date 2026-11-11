@@ -409,7 +409,7 @@ Salida real:
 desplegada la versión 1: /app.js
 desplegada la versión 2: /app.js
 VISTO sin huella: JavaScript versión 1
-  ✓  1 e2e/cache.spec.ts:7:1 › sin huella: el navegador sigue con el JavaScript viejo hasta que vence su caché
+  ok  1 e2e/cache.spec.ts:7:1 › sin huella: el navegador sigue con el JavaScript viejo hasta que vence su caché
 ```
 
 Desplegaste la versión 2 y el navegador siguió corriendo la 1. **La prueba pasa porque el error existe.** Escribe en tu reporte, con tus palabras, qué cabecera lo causó y por qué el HTML nuevo no bastó.

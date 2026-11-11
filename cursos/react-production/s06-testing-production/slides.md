@@ -742,7 +742,7 @@ Salida real:
 desplegada la versión 1: /app.js
 desplegada la versión 2: /app.js
 VISTO sin huella: JavaScript versión 1
-  ✓  1 e2e/cache.spec.ts:7:1 › sin huella: el navegador sigue con el JavaScript viejo...
+  ok  1 e2e/cache.spec.ts:7:1 › sin huella: el navegador sigue con el JavaScript viejo...
 ```
 
 La prueba **pasa porque el error existe**: afirma que el navegador sigue con la versión 1 tras desplegar la 2.

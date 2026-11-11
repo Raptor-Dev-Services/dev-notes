@@ -136,7 +136,7 @@ npx vitest run src/features/tickets/tickets-estado.test.tsx
 Resultado real (extracto):
 
 ```text
- ❯ src/features/tickets/tickets-estado.test.tsx (5 tests | 1 failed)
+ > src/features/tickets/tickets-estado.test.tsx (5 tests | 1 failed)
      × al cambiar el filtro se pide y se muestra la lista de ese filtro
  FAIL  ... > al cambiar el filtro se pide y se muestra la lista de ese filtro
 TestingLibraryElementError: Unable to find an element with the text: /El correo no sincroniza/.
@@ -242,7 +242,7 @@ Salida real:
 
 ```text
 Running 1 test using 1 worker
-  ✓  1 e2e/red-caida.spec.ts:3:1 › con la red caída el formulario conserva lo escrito y, al recargar, el borrador (635ms)
+  ok  1 e2e/red-caida.spec.ts:3:1 › con la red caída el formulario conserva lo escrito y, al recargar, el borrador (635ms)
   1 passed
 ```
 
@@ -258,7 +258,7 @@ const enviar = handleSubmit((valores) => {
 Corre la prueba otra vez. Resultado real (extracto):
 
 ```text
-  ✘  1 e2e/red-caida.spec.ts:3:1 › con la red caída el formulario conserva lo escrito y, al recargar, el borrador
+  fallo  1 e2e/red-caida.spec.ts:3:1 › con la red caída el formulario conserva lo escrito y, al recargar, el borrador
     Error: expect(locator).toHaveValue(expected) failed
     Locator:  getByLabel('Título')
     Expected: "Escrito justo antes de que cayera la red"

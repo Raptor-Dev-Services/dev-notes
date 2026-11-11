@@ -112,7 +112,7 @@ npx eslint src/practica/lista-any.tsx
   6:56  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
   9:30  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
 
-✖ 3 problems (3 errors, 0 warnings)
+x 3 problems (3 errors, 0 warnings)
 ```
 
 **Responde por escrito** (2 líneas): el lint protestó por los `any`, ¿protestó por el campo equivocado? ¿Qué vería la persona que usa esta pantalla?
@@ -271,7 +271,7 @@ tsc: 0
    9:37  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
   10:33  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
 
-✖ 4 problems (4 errors, 0 warnings)
+x 4 problems (4 errors, 0 warnings)
 ```
 
 Reescríbelo con el contrato. **Antes de leer la solución**, intenta tipar tú: parámetros con `PaginaDeTickets`, resultado de `resumir` como `Record<Prioridad, number>`.

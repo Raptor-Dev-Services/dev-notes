@@ -520,7 +520,7 @@ echo $?
 ```
 
 ```console
-✖ 1 problem (0 errors, 1 warning)
+x 1 problem (0 errors, 1 warning)
 exit sin tope: 0
 ESLint found too many warnings (maximum: 0).
 exit con tope 0: 1

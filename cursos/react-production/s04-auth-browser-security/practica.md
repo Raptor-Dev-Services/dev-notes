@@ -331,10 +331,10 @@ CSP="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' dat
 
 ```text
 Running 4 tests using 3 workers
-  ✓  ... e2e/tickets.spec.ts:3:1 › entrar, crear un ticket y verlo en la lista
-  ✓  ... e2e/red-caida.spec.ts:3:1 › con la red caída el formulario conserva lo escrito y, al recargar, el borrador
-  ✓  ... e2e/tickets.spec.ts:19:1 › la cookie de sesión no es legible desde JavaScript
-  ✓  ... e2e/csp.spec.ts:3:1 › la CSP bloquea un script en línea inyectado
+  ok  ... e2e/tickets.spec.ts:3:1 › entrar, crear un ticket y verlo en la lista
+  ok  ... e2e/red-caida.spec.ts:3:1 › con la red caída el formulario conserva lo escrito y, al recargar, el borrador
+  ok  ... e2e/tickets.spec.ts:19:1 › la cookie de sesión no es legible desde JavaScript
+  ok  ... e2e/csp.spec.ts:3:1 › la CSP bloquea un script en línea inyectado
   4 passed
 ```
 
