@@ -74,7 +74,7 @@ Fuente: kubernetes.io, "ReplicaSet"; Burns et al., *Kubernetes: Up and Running* 
 
 Un **Deployment** administra ReplicaSets para que actualizar una versión sea una operación declarativa:
 
-```mermaid {Dep,RS1|RS2,P1}
+```mermaid {Dep,RS1|RS2,P1,P2}
 flowchart TB
   Dep[Deployment api] --> RS1[ReplicaSet v1: 3 pods]
   Dep -.->|al cambiar la plantilla| RS2[ReplicaSet v2: 0 a 3 pods]
