@@ -11,8 +11,9 @@ Cada nota explica su tema con el detalle completo, cierra con su glosario y sus 
 | [Informática forense](03-forense/README.md) | 16 | [`digital-forensics`](../cursos/digital-forensics/README.md) |
 | [Seguridad de la información](04-seguridad-informacion/README.md) | 15 | [`information-security`](../cursos/information-security/README.md) |
 | [Legislación nacional e internacional en ciberseguridad](05-legislacion/README.md) | 15 | [`cyber-law`](../cursos/cyber-law/README.md) |
+| [Pentest con Kali](07-pentest/README.md) | 3 | [`pentesting-with-kali`](../cursos/pentesting-with-kali/README.md) |
 
-**Total: 76 notas.**
+**Total: 79 notas.**
 
 ---
 

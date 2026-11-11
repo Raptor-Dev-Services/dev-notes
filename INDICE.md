@@ -359,7 +359,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 12 - Seguridad (76 docs)
+## 12 - Seguridad (79 docs)
 
 La ruta de ciberseguridad en cinco materias. Índice por materia en [`12-seguridad/`](12-seguridad/README.md).
 
@@ -464,6 +464,14 @@ La ruta de ciberseguridad en cinco materias. Índice por materia en [`12-segurid
 | 14 | [Regulación de la ciberseguridad en Estados Unidos](12-seguridad/05-legislacion/14-estados-unidos.md) |
 | 15 | [Regulación de la ciberseguridad en Latinoamérica](12-seguridad/05-legislacion/15-latinoamerica.md) |
 
+### Pentest con Kali (3 docs)
+
+| # | Doc |
+|---|-----|
+| 01 | [Metodología de pentest](12-seguridad/07-pentest/01-metodologia-de-pentest.md) |
+| 02 | [Escalamiento de privilegios en Linux](12-seguridad/07-pentest/02-escalamiento-de-privilegios-linux.md) |
+| 03 | [Informe de pentest](12-seguridad/07-pentest/03-informe-de-pentest.md) |
+
 ---
 
 ## Cursos de academy
@@ -488,6 +496,7 @@ Cada curso de [academy.raptorcloud.dev](https://academy.raptorcloud.dev) está t
 | [Informática forense](cursos/digital-forensics/README.md) | 5 unidades |
 | [Seguridad de la información](cursos/information-security/README.md) | 5 unidades |
 | [Legislación nacional e internacional en ciberseguridad](cursos/cyber-law/README.md) | 5 unidades |
+| [Ciberseguridad II: pentest con Kali](cursos/pentesting-with-kali/README.md) | 6 módulos de 2 h |
 
 ---
 
