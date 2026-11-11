@@ -228,7 +228,7 @@ const ticket = ticketSchema.parse(datos);
 - `unknown` obliga a comprobar antes de usar. `any` no.
 - `z.infer` evita que el tipo y la validación se separen con el tiempo.
 
-Fuente: documentación de Zod 4 (zod.dev), secciones *Defining schemas* y *Inferring types*.
+Fuente: documentación de Zod 4 (zod.dev/basics), secciones *Defining a schema*, *Parsing data* e *Inferring types*.
 
 ---
 
@@ -759,7 +759,7 @@ m.ts(4,14): error TS2345: Argument of type 'number' is not assignable to paramet
 - Para el compilador ambos son `number`, pero con una marca que solo existe en tiempo de compilación.
 - Útil cuando mezclar dos ids sería un bug serio. **No lo pongas en todo**: cada marca exige un punto donde se crea, con `as`, y ahí vuelve el acto de fe.
 
-Fuente: patrón descrito en *TypeScript 5 Design Patterns and Best Practices* (Despoudis, 2025), cap. 2; ejemplo compilado con TypeScript 6.0.3.
+Es un patrón de la comunidad, no una característica del lenguaje. Fuente: ejemplo compilado con TypeScript 6.0.3 (los errores son la salida real del compilador).
 
 <!-- Aquí podría hablarse de "nominal typing". TypeScript es estructural: dos tipos con la misma forma son intercambiables. La marca es el truco para simular lo contrario. Hay que decir que el curso no lo usa en el proyecto. -->
 
