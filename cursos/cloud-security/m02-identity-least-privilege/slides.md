@@ -202,7 +202,7 @@ Cómo se detecta: probándola. Una política sin prueba es una intención.
 
 AWS recomienda usar condiciones para restringir más. Ejemplo que la propia documentación menciona: exigir que las solicitudes usen TLS.
 
-```json {1-4|5-8|*}
+```json {1|2-3|4}
 { "Effect": "Deny",
   "Action": "s3:*",
   "Resource": ["arn:aws:s3:::lab-datos", "arn:aws:s3:::lab-datos/*"],

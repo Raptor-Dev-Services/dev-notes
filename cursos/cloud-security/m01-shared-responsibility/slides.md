@@ -341,7 +341,7 @@ Cuidado: quitar el bloqueo no borra la política; si había una pública, el buc
 
 El ciclo de todo el curso, aplicado a un bucket:
 
-```python {1-3|5-8|10-13}
+```python {1-3|5-8|10-12}
 # Detectar: ¿está bloqueado el acceso público?
 bpa = s3.get_public_access_block(Bucket="lab-logs")
 # Si no hay configuración, la llamada falla: NoSuchPublicAccessBlockConfiguration

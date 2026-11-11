@@ -27,6 +27,7 @@ Documentación sobre infraestructura cloud, administración de Linux y operació
 | [19-bash-scripting.md](19-bash-scripting.md) | Códigos de salida, set -Eeuo pipefail y sus huecos, comillas, trap, verificar el resultado, ShellCheck |
 | [20-systemd.md](20-systemd.md) | Arranque, units y drop-ins, unit endurecida para una API, cgroups, timers en lugar de cron, journal |
 | [21-diagnostico-linux.md](21-diagnostico-linux.md) | Método USE, lista de cinco minutos, disco lleno, fstab y nofail, puerto ocupado, servicio que no arranca, runbook |
+| [22-seguridad-en-la-nube.md](22-seguridad-en-la-nube.md) | Responsabilidad compartida, inventario, datos, identidad; lista de revisión del curso de seguridad en la nube |
 
 
 ---
