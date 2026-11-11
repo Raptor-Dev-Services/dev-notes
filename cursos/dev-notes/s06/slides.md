@@ -2137,7 +2137,7 @@ Al hacer deploy de una version nueva:
 ```
 
 **Usar Silo cuando:**
-- El contrato exige aislamiento fisico (HIPAA, datos de gobierno)
+- El contrato exige aislamiento fisico (p. ej. clientes de salud o de gobierno; HIPAA no lo exige por si misma, lo pide el contrato)
 - Un tenant tiene volumenes que no deben competir con otros
 - El cliente tiene derecho contractual a un backup separado
 
@@ -2417,7 +2417,7 @@ Estado: Pausado         Estado: Pausado
         |              crear nuevas conversaciones ni canales
         v
   tenant_plans.status = "paused"
-  El tenant tiene 30 dias para exportar sus datos (GDPR)
+  El tenant tiene 30 dias para exportar sus datos (plazo de la politica de este ejemplo, no de la ley)
         |
         v (si no regulariza o no reanuda)
 Estado: Cancelado

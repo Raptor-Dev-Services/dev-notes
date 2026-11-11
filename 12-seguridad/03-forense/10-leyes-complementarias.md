@@ -85,7 +85,7 @@ El resto del artículo 183 se resume así:
 
 El mismo artículo cierra recordando que las comunicaciones privadas son inviolables y que solo la autoridad judicial federal puede autorizar su intervención. Y para el tratamiento de los datos personales conservados, remite a la ley de protección de datos en posesión de particulares.
 
-Actualización al 2026: la LMTR agrega una obligación que cambia el panorama de la telefonía prepago: los concesionarios móviles solo pueden activar y mantener activas las líneas asociadas a una persona usuaria que presentó una identificación oficial con CURP (o RFC para personas morales; pasaporte para extranjeros), conforme a los lineamientos de la Comisión (artículos 103 y 164, fracción III).
+Actualización al 2026: la LMTR agrega una obligación que cambia el panorama de la telefonía prepago: los concesionarios móviles solo pueden activar y mantener activas las líneas asociadas a una persona usuaria que presentó una identificación oficial con CURP (o RFC para personas morales; pasaporte para extranjeros), conforme a los lineamientos de la Comisión (artículo 103; para las comercializadoras, artículo 164, fracción III).
 
 ### El hueco de internet
 

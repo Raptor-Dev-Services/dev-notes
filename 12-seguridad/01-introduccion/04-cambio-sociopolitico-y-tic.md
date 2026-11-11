@@ -28,7 +28,7 @@ En México, garantizar que la población pueda usar las TIC es una obligación c
 
 > El Estado garantizará el derecho de acceso a las tecnologías de la información y comunicación, así como a los servicios de radiodifusión y telecomunicaciones, incluido el de banda ancha e Internet. Para tales efectos, el Ejecutivo Federal a través de la dependencia encargada de elaborar y conducir las políticas de telecomunicaciones y radiodifusión, establecerá condiciones de competencia efectiva en la prestación de dichos servicios.
 
-> **Actualización al 2026:** ese párrafo fue reformado el 20 de diciembre de 2024. Antes encargaba la competencia efectiva a un órgano autónomo; ahora la encarga a una dependencia del Ejecutivo Federal, como parte de la reforma que extinguió a varios órganos autónomos.
+> **Actualización al 2026:** ese párrafo fue reformado el 20 de diciembre de 2024. Ahora la competencia efectiva queda a cargo del Ejecutivo Federal, a través de la dependencia que conduce las políticas de telecomunicaciones.
 
 La obligación se repite en los planes nacionales de desarrollo y en tratados que México ha firmado: es política de Estado, no programa sexenal. En términos operativos, el Estado debe tener programas que acerquen el acceso y la educación digital a todos los sectores, no solo a los que ya están conectados.
 

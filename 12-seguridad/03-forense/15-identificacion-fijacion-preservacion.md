@@ -198,7 +198,7 @@ Toda transacción electrónica registra la IP de origen y de destino, la fecha y
 
 El material funda la intervención del perito en los artículos 112 Bis y 113 Bis de la Ley de Instituciones de Crédito. Actualización al 2026: la fracción del 112 Bis que asocia a medios electrónicos es anterior a la reforma de 2008; hoy el 112 Bis trata de tarjetas e instrumentos de pago, y el acceso indebido a equipos y medios electrónicos del sistema bancario está tipificado en el artículo 112 Quáter (prisión de tres a nueve años).
 
-La regulación de la CNBV obliga a los bancos, desde 2006, a guardar bitácoras de su banca electrónica, y la regla sigue vigente:
+La regulación de la CNBV obliga a los bancos a guardar bitácoras de su banca electrónica (la compilación indica que el artículo 316 Bis 15 fue adicionado por resolución publicada en el DOF el 27-01-2010), y la regla sigue vigente:
 
 Disposiciones de carácter general aplicables a las instituciones de crédito (Circular Única de Bancos), artículo 316 Bis 15 (compilación con modificaciones hasta el 6 de noviembre de 2026):
 

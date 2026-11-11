@@ -42,7 +42,7 @@ El artículo 10 de la ley enumera los "objetivos legítimos de interés público
 
 Las NOM son una figura peculiar. Desde el punto de vista formal son actos administrativos, porque las emite una dependencia del Ejecutivo y no el Congreso. Desde el punto de vista material se comportan como normas generales: son abstractas, se aplican a todos los que caen en su supuesto y obligan. Por eso hay quien sostiene que en realidad son reglamentos o incluso leyes disfrazadas, y que delegar en una dependencia la facultad de dictarlas viola la división de poderes.
 
-La Segunda Sala de la Suprema Corte de Justicia de la Nación sostuvo lo contrario: cuando la dependencia expide la NOM dentro de su ámbito de competencia, no contraviene los principios de legalidad, de reserva de ley ni de subordinación jerárquica que derivan de los artículos 16, 49 y 73, fracción X, de la Constitución, y tampoco hay una delegación indebida de la facultad de legislar en favor de una autoridad administrativa.
+La Suprema Corte de Justicia de la Nación ha sostenido criterios en sentido contrario: una NOM que la dependencia expide dentro de su competencia y de lo que su ley habilitante le autoriza no contraviene por sí sola los principios de legalidad, reserva de ley y subordinación jerárquica, ni implica una delegación indebida de la facultad de legislar; el límite es que no rebase lo que la ley dispone.
 
 Eso no deja a las NOM fuera del control judicial. Pueden impugnarse por dos vías:
 

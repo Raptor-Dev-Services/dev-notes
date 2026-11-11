@@ -3444,7 +3444,7 @@ Nunca en CDN:
 
 ```
 Latencia: usuarios en México Y en España → regiones sa-east-1 + eu-west-1
-Compliance: datos de EU no pueden salir de EU (GDPR) → región europea obligatoria
+Compliance: el RGPD restringe transferir datos fuera del EEE sin garantías (arts. 44 a 49) → una región europea es la vía más sencilla
 Disaster recovery: si toda una región de AWS cae → la otra sigue
 ```
 
