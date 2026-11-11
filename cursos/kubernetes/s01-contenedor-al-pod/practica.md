@@ -50,7 +50,7 @@ Para quien no tenga una VM libre. El clúster completo corre en **un contenedor 
 ```bash
 docker run -d --name k3s-lab --privileged \
   -v "$PWD:$PWD" -p 127.0.0.1:18081:80 \
-  rancher/k3s:v1.34.1-k3s1 server
+  rancher/k3s:v1.37.2-k3s1 server
 ```
 
 Las opciones, una por una: `--privileged` porque K3s necesita administrar redes y cgroups; `-v "$PWD:$PWD"` monta la carpeta de trabajo en la **misma ruta** dentro del contenedor, para que los archivos se vean igual; `-p 127.0.0.1:18081:80` deja el puerto 80 del clúster (donde escucha Traefik) en el 18081 de su equipo, solo local.
@@ -69,12 +69,13 @@ La función vale solo en esa terminal; si abren otra, la definen de nuevo.
 ```console
 $ kubectl get nodes
 NAME           STATUS   ROLES           AGE   VERSION
-913899f8ce8a   Ready    control-plane   50s   v1.34.1+k3s1
+913899f8ce8a   Ready    control-plane   50s   v1.37.2+k3s1
 $ kubectl get pods -A
 ```
 
 - **STATUS `Ready`.** Si dice `NotReady`, esperen un minuto y repitan.
 - En `kube-system` deben ver `coredns`, `traefik`, `local-path-provisioner` y `metrics-server`. Los trae K3s; en otro tipo de clúster tendrían que instalarlos.
+- También verán pods `helm-install-*` en `Completed` (uno se llama `helm-install-gateway-api-crd`): son trabajos de instalación de K3s que terminaron, no un problema.
 - Anoten la versión que les salió: es la que citarán en su ADR.
 
 ---
@@ -235,7 +236,7 @@ Salida esperada del `get`: `ImagePullBackOff`. La causa está en los eventos, no
 Warning  Failed  ...  Failed to pull image "traefik/whoami:v9.9.9": ... not found
 ```
 
-1. ¿Qué palabra de ese mensaje dice por qué?
+1. ¿Qué palabra de ese mensaje dice por qué? (En K3s 1.37 el evento empieza con `spec.containers{roto}:` antes de `Failed to pull image`.)
 2. Corrijan la etiqueta **sin borrar el pod**. La imagen de un contenedor sí se puede cambiar en un pod vivo (es de los pocos campos que aceptan cambio):
 
 ```bash
@@ -257,7 +258,7 @@ kubectl wait --for=condition=Ready pod/cliente --timeout=60s
 kubectl exec cliente -- nslookup db
 ```
 
-Resultado esperado: `server can't find db.cluster.local: NXDOMAIN` (y lo mismo con `db.svc.cluster.local`). Ahora por IP:
+Resultado esperado: `server can't find db.svc.cluster.local: NXDOMAIN` (el nombre de la última línea cambia entre versiones y con el dominio de búsqueda de su red; lo que importa es `NXDOMAIN`). Ahora por IP:
 
 ```bash
 IP=$(kubectl get pod db -o jsonpath='{.status.podIP}')

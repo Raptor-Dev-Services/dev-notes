@@ -19,7 +19,7 @@ Desplegar una API y un front con Deployments, Services y un Ingress; publicar un
 mkdir -p ~/k8s-lab/s02/k8s && cd ~/k8s-lab/s02
 docker run -d --name k3s-lab --privileged \
   -v "$PWD:$PWD" -p 127.0.0.1:18081:80 \
-  rancher/k3s:v1.34.1-k3s1 server
+  rancher/k3s:v1.37.2-k3s1 server
 kubectl() { docker exec -i -w "$PWD" k3s-lab kubectl "$@"; }
 sleep 40 && kubectl get nodes
 ```
@@ -310,7 +310,7 @@ kubectl rollout status deployment/front --timeout=60s
 kubectl get pods -l app=front
 ```
 
-Debe terminar con `successfully rolled out` y dos pods `1/1`. Después, y esto es lo importante del paso: **corrijan el archivo** `k8s/front.yaml` (vuelvan a `path: /`) para que el repositorio diga lo mismo que el clúster. Un `undo` repara el clúster, no el repositorio.
+Debe terminar con `successfully rolled out` y dos pods `1/1`. `kubectl` mostrará antes un aviso (`resource deployments/front was previously managed with 'kubectl apply'. Rolling back will not update the kubectl.kubernetes.io/last-applied-configuration annotation...`): es exactamente por qué hay que corregir el archivo. Después, y esto es lo importante del paso: **corrijan el archivo** `k8s/front.yaml` (vuelvan a `path: /`) para que el repositorio diga lo mismo que el clúster. Un `undo` repara el clúster, no el repositorio.
 
 ```bash
 git diff

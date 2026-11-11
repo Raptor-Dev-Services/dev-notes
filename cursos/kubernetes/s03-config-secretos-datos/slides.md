@@ -9,7 +9,7 @@
 <!--
 Sesión de 5 horas. Hilo conductor: la API de la sesión 2 deja de llevar su configuración pegada en la imagen y su
 contraseña en el YAML, y la base de datos ya no pierde sus datos cuando se borra su pod. Versión de referencia:
-K3s v1.34.1+k3s1 (probado el 11 de noviembre de 2026). Ejemplo ilustrativo: la base, la contraseña y la tabla de
+K3s v1.37.2+k3s1 (probado el 11 de noviembre de 2026). Ejemplo ilustrativo: la base, la contraseña y la tabla de
 alumnos son de laboratorio.
 -->
 
@@ -207,7 +207,7 @@ metadata:
 - Otra razón para crear secretos con `kubectl create secret` o con una herramienta de secretos, y no con `apply` de un YAML con valores.
 
 <!--
-Esto se verificó en el clúster de laboratorio (K3s v1.34.1). Hacer que lo vean en la práctica es el "verlo fallar" más claro de la sesión.
+Esto se verificó en el clúster de laboratorio (K3s v1.37.2). Hacer que lo vean en la práctica es el "verlo fallar" más claro de la sesión.
 -->
 
 ---

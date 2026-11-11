@@ -6,7 +6,7 @@
 
 Un clúster recién instalado acepta casi todo: pods como root, imágenes `latest`, cualquier pod hablando con la base y una cuenta de despliegue con más poder del que necesita. Esta nota pone cuatro barreras, y de cada una explica la **prueba de rechazo**: la acción que debe fallar y la salida que lo demuestra. Una política que nunca rechazó nada no se ha probado.
 
-Complementa a [07-kubernetes-manifiestos.md](07-kubernetes-manifiestos.md) (lo que se despliega) y a [05-secretos-produccion.md](../10-cloud/05-secretos-produccion.md) (dónde viven los secretos). Los ejemplos se probaron con K3s `v1.34.1+k3s1` el 11 de noviembre de 2026, en un laboratorio propio.
+Complementa a [07-kubernetes-manifiestos.md](07-kubernetes-manifiestos.md) (lo que se despliega) y a [05-secretos-produccion.md](../10-cloud/05-secretos-produccion.md) (dónde viven los secretos). Los ejemplos se probaron con K3s `v1.37.2+k3s1` el 11 de noviembre de 2026, en un laboratorio propio.
 
 ---
 

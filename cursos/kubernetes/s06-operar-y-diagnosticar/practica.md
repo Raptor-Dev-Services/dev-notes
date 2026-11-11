@@ -19,13 +19,13 @@ Cada falla vive en su propio namespace (`falla1` a `falla5`) para no estorbarse.
 
 ```bash
 mkdir -p ~/k8s-lab/s06 && cd ~/k8s-lab/s06
-docker run -d --name k3s-lab --privileged -v "$PWD:$PWD" rancher/k3s:v1.34.1-k3s1 server
+docker run -d --name k3s-lab --privileged -v "$PWD:$PWD" rancher/k3s:v1.37.2-k3s1 server
 kubectl() { docker exec -i -w "$PWD" k3s-lab kubectl "$@"; }
 sleep 40 && kubectl get nodes
 for n in 1 2 3 4 5; do kubectl create namespace falla$n; done
 ```
 
-- **Ejemplo ilustrativo:** la aplicación es `nginx`; las fallas son inventadas para la práctica. Las salidas son de K3s `v1.34.1+k3s1`.
+- **Ejemplo ilustrativo:** la aplicación es `nginx`; las fallas son inventadas para la práctica. Las salidas son de K3s `v1.37.2+k3s1`.
 - **Regla de la práctica:** antes de abrir la sección "Soluciones" del final, cada equipo escribe, **por falla**, (1) el síntoma, (2) los comandos que corrió **en orden**, (3) la causa y (4) el arreglo. Si adivinaron, no cuenta: tienen que poder decir qué línea de la salida los llevó a la causa.
 - Un solo cambio a la vez, y siempre **desde el archivo**: corrijan `fallaN.yaml` y vuelvan a aplicar.
 
@@ -257,7 +257,7 @@ sleep 30
 kubectl -n falla4 get pods
 ```
 
-Diagnostiquen. Pista de método: ¿el STATUS dice la causa? ¿Qué comando sí?
+Diagnostiquen. Pista de método: ¿el STATUS dice la causa? ¿Qué comando sí? (Si ven `Error` en lugar de `CrashLoopBackOff`, esperen unos segundos: el kubelet aún no ha acumulado reinicios.)
 
 ---
 

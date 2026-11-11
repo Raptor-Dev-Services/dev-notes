@@ -9,10 +9,8 @@
 <!--
 Sesión de 5 horas. Hilo conductor: ya se sabe desplegar, asegurar y escalar. Hoy se opera: mantener el clúster al día,
 organizar los manifiestos y, sobre todo, encontrar por qué algo no arranca sin adivinar. Se siembran cinco fallas.
-Versión de referencia: K3s v1.34.1+k3s1 (probado el 11 de noviembre de 2026).
-Aviso que se dice en voz alta: según kubernetes.io/releases (consultado el 11 de noviembre de 2026), la rama 1.34 de
-Kubernetes ya salió de mantenimiento el 2026-10-27; el laboratorio la usa porque es la que se probó, no porque se
-recomiende para producción.
+Versión de referencia: K3s v1.37.2+k3s1 (probado el 11 de noviembre de 2026).
+Versión elegida: K3s v1.37.2+k3s1, release estable del 2026-11-03 (github.com/k3s-io/k3s/releases), de la rama 1.37, con fin de vida el 2027-10-28 según kubernetes.io/releases (consultado el 11 de noviembre de 2026).
 -->
 
 ---
@@ -90,7 +88,7 @@ Fuente: kubernetes.io, "Kubernetes Components"; Sachdeva, *CKA Study Companion* 
 ```console
 $ kubectl get nodes
 NAME           STATUS   ROLES           AGE     VERSION
-7bb2c67833c5   Ready    control-plane   2m36s   v1.34.1+k3s1
+7bb2c67833c5   Ready    control-plane   2m36s   v1.37.2+k3s1
 $ kubectl get --raw='/readyz?verbose' | tail -3
 [+]poststarthook/apiservice-openapiv3-controller ok
 [+]shutdown ok
@@ -117,7 +115,8 @@ $ kubectl get pods -A | grep -v Running
 A noviembre de 2026, según kubernetes.io:
 
 - El proyecto mantiene ramas de las **tres versiones menores más recientes**: 1.37, 1.36 y 1.35.
-- La rama 1.34 figura con fin de vida el 2026-10-27.
+- La rama 1.37, la del laboratorio, tiene fin de vida el 2027-10-28; la 1.36, el 2027-06-28; la 1.35, el 2027-02-28.
+- Una rama que sale de esa lista deja de recibir parches: la 1.34, por ejemplo, ya no está entre las mantenidas.
 - Desde 1.19 cada versión recibe unos **12 meses** de parches.
 
 Consecuencia: un clúster que no se actualiza **se queda sin parches de seguridad** en poco más de un año.
@@ -249,7 +248,7 @@ deployment.apps/prod-web created
 - Se cambian el nombre (prefijo), las réplicas y la etiqueta de imagen **sin tocar la base**.
 - Sin plantillas ni lenguaje nuevo: son parches sobre el YAML.
 
-Fuente: Sachdeva, *CKA Study Companion* (2025), cap. 11 (Manifest Management Tools: Kustomize); probado en K3s v1.34.1.
+Fuente: Sachdeva, *CKA Study Companion* (2025), cap. 11 (Manifest Management Tools: Kustomize); probado en K3s v1.37.2.
 
 ---
 
@@ -457,7 +456,7 @@ Targeting container "api". If you don't see processes from this container...
 - No toca la imagen de la aplicación ni su manifiesto.
 - Se usa para mirar desde dentro, no para parchar.
 
-Fuente: kubernetes.io, "Debug Running Pods"; probado en K3s v1.34.1.
+Fuente: kubernetes.io, "Debug Running Pods"; probado en K3s v1.37.2.
 
 ---
 

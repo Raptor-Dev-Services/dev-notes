@@ -8,7 +8,7 @@
 
 <!--
 Sesión de 5 horas. Hilo conductor: los pods sueltos de la sesión 1 se convierten en una API y un front que se
-publican, se actualizan sin corte y se regresan si fallan. Versión de referencia: K3s v1.34.1+k3s1 (probado el 11 de
+publican, se actualizan sin corte y se regresan si fallan. Versión de referencia: K3s v1.37.2+k3s1 (probado el 11 de
 noviembre de 2026). Los nombres de pods con sus hashes son de esa corrida: los de cada equipo serán otros.
 -->
 
@@ -224,6 +224,7 @@ REVISION  CHANGE-CAUSE
 
 - `undo` vuelve a la revisión anterior **con otra actualización gradual**, no con un salto.
 - Cuántas revisiones se conservan lo decide `revisionHistoryLimit` (10 por omisión).
+- Con un Deployment creado con `apply`, `kubectl rollout undo` avisa (probado en K3s v1.37.2) que el regreso **no actualiza** la anotación `last-applied-configuration` y sugiere volver a aplicar el archivo anterior: otra razón para corregir el archivo del repositorio.
 - `kubectl rollout restart` hace una actualización gradual sin cambiar nada de la plantilla: sirve para recrear los pods.
 
 <!--
@@ -307,7 +308,7 @@ $ kubectl describe pod front-5fcc468f4b-nxs97 | grep Unhealthy
   Warning  Unhealthy  ...  Readiness probe failed: HTTP probe failed with statuscode: 404
 ```
 
-- El pod nuevo está `Running` pero **no Ready** (`0/1`).
+- El pod nuevo está `Running` pero **no Ready** (`0/1`). Mientras nginx arranca puede aparecer antes un evento `connection refused`; el que importa es el del 404.
 - Los dos viejos **siguen atendiendo**: el despliegue se detiene sin cortar el servicio.
 - Eso es lo que debe pasar. La probe hizo su trabajo: protegió a los usuarios de una versión mala.
 

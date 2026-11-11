@@ -6,9 +6,9 @@
 
 Un pod en `CrashLoopBackOff` es un **síntoma**. La causa está en los eventos y en los logs. Quien diagnostica adivinando reinicia, borra y espera; quien sigue un método llega a la causa de un error que nunca había visto. Esta nota trae el método, las cinco fallas más frecuentes con la salida real de cada una, y la forma de un runbook.
 
-Las salidas se obtuvieron en un laboratorio propio con K3s `v1.34.1+k3s1`, el 11 de noviembre de 2026. Los nombres de pods y las IP cambian en cada clúster.
+Las salidas se obtuvieron en un laboratorio propio con K3s `v1.37.2+k3s1` (release estable del 2026-11-03 en github.com/k3s-io/k3s/releases), de la rama 1.37 de Kubernetes, con fin de vida el 2027-10-28 según kubernetes.io/releases (consultado el 11 de noviembre de 2026). Los nombres de pods y las IP cambian en cada clúster.
 
-**Aviso de versión.** Según kubernetes.io/releases (consultado el 11 de noviembre de 2026), las ramas mantenidas son 1.37, 1.36 y 1.35, y la 1.34 tiene fin de vida el 2026-10-27. El laboratorio usa 1.34 porque es la que se probó; en producción se usa una rama mantenida. Esas fechas cambian: se consultan de nuevo antes de decidir.
+Las ramas mantenidas de Kubernetes a esa fecha son 1.37, 1.36 y 1.35; esas fechas cambian y se consultan de nuevo antes de decidir.
 
 ---
 

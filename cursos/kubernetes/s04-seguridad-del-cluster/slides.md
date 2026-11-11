@@ -9,7 +9,7 @@
 <!--
 Sesión de 5 horas. Hilo conductor: el clúster de las sesiones anteriores acepta todo. Hoy se le ponen cuatro
 barreras (quién puede qué, qué pods se admiten, qué políticas se exigen, qué tráfico pasa) y, de cada una,
-se ve el rechazo con los propios ojos. Versión de referencia: K3s v1.34.1+k3s1 (probado el 11 de noviembre de 2026).
+se ve el rechazo con los propios ojos. Versión de referencia: K3s v1.37.2+k3s1 (probado el 11 de noviembre de 2026).
 Todo se hace en un laboratorio propio. No hay objetivos reales.
 -->
 
@@ -381,7 +381,7 @@ spec:
 
 - La política define **qué se valida**; el binding, **dónde** y **con qué acción** (`Deny`, `Warn` o `Audit`).
 - La expresión es CEL: `all(...)` recorre los contenedores.
-- Se probó en K3s v1.34.1: no hizo falta instalar nada.
+- Se probó en K3s v1.37.2: no hizo falta instalar nada.
 
 ---
 

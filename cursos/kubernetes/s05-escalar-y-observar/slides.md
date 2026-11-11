@@ -9,7 +9,7 @@
 <!--
 Sesión de 5 horas. Hilo conductor: la API de las sesiones anteriores recibe una prueba de carga, y el clúster le agrega
 réplicas solo. La clase es sobre medir: cuánto pide cada pod, cuánto usa, cuándo se agregan réplicas y si sirvió.
-Versión de referencia: K3s v1.34.1+k3s1 (probado el 11 de noviembre de 2026). Las cifras de las salidas son de UNA
+Versión de referencia: K3s v1.37.2+k3s1 (probado el 11 de noviembre de 2026). Las cifras de las salidas son de UNA
 corrida de laboratorio con un solo nodo y poca carga: las de cada equipo serán distintas, y eso es lo que se mide.
 -->
 
@@ -247,19 +247,19 @@ spec:
 Un Deployment `php-apache` (la imagen de ejemplo de la documentación de Kubernetes, `registry.k8s.io/hpa-example`), con `requests.cpu: 200m`, y un pod `carga` que le hace peticiones sin parar:
 
 ```console
-13:31:49  cpu: 0%/50%    REPLICAS 1
-13:32:10  cpu: 61%/50%   REPLICAS 1
-13:32:30  cpu: 250%/50%  REPLICAS 2
-13:32:50  cpu: 147%/50%  REPLICAS 4
+13:58:25  cpu: 0%/50%    REPLICAS 1
+13:58:45  cpu: 74%/50%   REPLICAS 1
+13:59:05  cpu: 250%/50%  REPLICAS 2
+13:59:25  cpu: 94%/50%   REPLICAS 4
 ```
 
 ```console
 $ kubectl describe hpa php-apache | grep SuccessfulRescale
-  Normal  SuccessfulRescale  60s  ...  New size: 2; reason: cpu resource utilization (percentage of request) above target
-  Normal  SuccessfulRescale  45s  ...  New size: 4; reason: cpu resource utilization (percentage of request) above target
+  Normal  SuccessfulRescale  69s  ...  New size: 2; reason: cpu resource utilization (percentage of request) above target
+  Normal  SuccessfulRescale  54s  ...  New size: 4; reason: cpu resource utilization (percentage of request) above target
 ```
 
-- Con 1 réplica y 61 %: ceil(1 × 61 / 50) = **2**. Coincide con la fórmula.
+- Con 1 réplica y 74 %: ceil(1 × 74 / 50) = **2**. Coincide con la fórmula.
 - Después, con 250 % y 2 réplicas, la fórmula pide más de 4: el HPA se **topó en `maxReplicas: 4`**.
 - Estas cifras son de una corrida, en un nodo con poca carga. Las tuyas cambiarán.
 

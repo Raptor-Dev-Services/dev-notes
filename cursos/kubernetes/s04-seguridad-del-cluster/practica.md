@@ -19,13 +19,13 @@ Todo en su laboratorio, con su propio clúster. No se prueba nada contra un sist
 
 ```bash
 mkdir -p ~/k8s-lab/s04 && cd ~/k8s-lab/s04
-docker run -d --name k3s-lab --privileged -v "$PWD:$PWD" rancher/k3s:v1.34.1-k3s1 server
+docker run -d --name k3s-lab --privileged -v "$PWD:$PWD" rancher/k3s:v1.37.2-k3s1 server
 kubectl() { docker exec -i -w "$PWD" k3s-lab kubectl "$@"; }
 sleep 40 && kubectl get nodes
 ```
 
 - **Ejemplo ilustrativo:** namespaces `app`, `prod`, `base` y `pol`, y las identidades `lector-pods` y `intruso` son de laboratorio.
-- Las versiones de las salidas de esta guía son de K3s `v1.34.1+k3s1`. Los mensajes exactos pueden variar un poco en otra versión.
+- Las versiones de las salidas de esta guía son de K3s `v1.37.2+k3s1`. Los mensajes exactos pueden variar un poco en otra versión.
 
 ---
 

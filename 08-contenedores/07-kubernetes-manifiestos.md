@@ -6,7 +6,7 @@
 
 [06-kubernetes-conceptos.md](06-kubernetes-conceptos.md) deja un pod suelto: sin controlador no se repone, sin Service no tiene nombre estable y sin Ingress nadie entra. Esta nota escribe los manifiestos para publicar una API y un front, actualizarlos sin cortar el servicio y regresar si la versión nueva falla.
 
-Los ejemplos se probaron con K3s `v1.34.1+k3s1` el 11 de noviembre de 2026. La API de ejemplo es `traefik/whoami`, que responde con el nombre del pod que la atendió; **ejemplo ilustrativo**, no una API real.
+Los ejemplos se probaron con K3s `v1.37.2+k3s1` el 11 de noviembre de 2026. La API de ejemplo es `traefik/whoami`, que responde con el nombre del pod que la atendió; **ejemplo ilustrativo**, no una API real.
 
 ---
 
@@ -81,7 +81,7 @@ kubectl rollout undo deployment/api
 | `progressDeadlineSeconds` | 600 | Segundos sin progreso antes de marcar el despliegue como detenido |
 | `revisionHistoryLimit` | 10 | ReplicaSets viejos que se conservan |
 
-Los valores se comprobaron en el clúster con `kubectl get deploy -o jsonpath='{.spec.strategy}'` y con `kubectl get deploy -o yaml`. `rollout undo` regresa con **otra** actualización gradual, no con un salto. Cambiar `replicas` escala pero no actualiza.
+Los valores se comprobaron en el clúster con `kubectl get deploy -o jsonpath='{.spec.strategy}'` y con `kubectl get deploy -o yaml`. `rollout undo` regresa con **otra** actualización gradual, no con un salto; `kubectl` avisa que el regreso no actualiza la anotación `last-applied-configuration` del objeto aplicado con `apply`. Cambiar `replicas` escala pero no actualiza.
 
 Una actualización durante la que hubo tráfico de prueba mostró un `502` entre respuestas `200` en una corrida de laboratorio: la actualización gradual reduce el corte, no lo garantiza en cero. Cómo se apaga la aplicación (cierre ordenado de conexiones) importa.
 

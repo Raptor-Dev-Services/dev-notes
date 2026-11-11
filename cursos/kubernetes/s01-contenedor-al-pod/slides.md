@@ -10,8 +10,8 @@
 Sesión de 5 horas. Hilo conductor: el compose.yaml de un proyecto (una API y una base) se traduce a pods, línea
 por línea, y al final se decide con argumentos si el proyecto necesita Kubernetes. La respuesta honesta puede ser "no".
 Antes de empezar: cada equipo con Docker funcionando (curso devops-essentials o la nota 08-contenedores/03-compose.md).
-Versión de referencia de la sesión: el clúster de laboratorio corrió con K3s v1.34.1+k3s1 el 11 de noviembre de 2026.
-Aviso que se dice en voz alta: según kubernetes.io/releases (consultado ese día), la rama 1.34 de Kubernetes tiene fin de vida el 2026-10-27; el laboratorio la usa porque es la que se probó, y en producción se usa una rama mantenida.
+Versión de referencia de la sesión: el clúster de laboratorio corrió con K3s v1.37.2+k3s1 el 11 de noviembre de 2026.
+Versión elegida: K3s v1.37.2+k3s1, release estable del 2026-11-03 (github.com/k3s-io/k3s/releases) de la rama 1.37, con fin de vida el 2027-10-28 según kubernetes.io/releases (consultado el 11 de noviembre de 2026).
 -->
 
 ---
@@ -380,7 +380,7 @@ $ kubectl exec cliente -- nslookup db
 Server:		<IP-del-DNS>
 Address:	<IP-del-DNS>#53
 
-** server can't find db.cluster.local: NXDOMAIN
+** server can't find db.svc.cluster.local: NXDOMAIN
 ```
 
 - El nombre de un pod **no** es un nombre de DNS.

@@ -6,7 +6,7 @@ Curso de **Raptor Dev Services Academy**. Las clases como presentación, el quiz
 **Objetivo:** desplegar, asegurar, escalar y diagnosticar una aplicación en Kubernetes, y saber cuándo no hace falta.
 **Formato:** 6 sesiones de 5 horas (30 h). Cada sesión trae clase, quiz, práctica, tarea y glosario, como Titulación 2026.
 **Para quién:** quien ya despliega con Compose y se topa con Kubernetes en ofertas de trabajo o en un cliente.
-**Versión de referencia:** las prácticas se probaron con K3s `v1.34.1+k3s1` (11 de noviembre de 2026). Según kubernetes.io/releases (consultado ese día), la rama 1.34 tiene fin de vida el 2026-10-27: sirve para el laboratorio, no se recomienda para producción.
+**Versión de referencia:** las prácticas se verificaron con K3s `v1.37.2+k3s1` (release estable del 2026-11-03 en github.com/k3s-io/k3s/releases), de la rama 1.37 de Kubernetes, con fin de vida el 2027-10-28 según kubernetes.io/releases (consultado el 11 de noviembre de 2026).
 
 ---
 

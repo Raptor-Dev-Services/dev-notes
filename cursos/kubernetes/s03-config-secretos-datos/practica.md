@@ -17,7 +17,7 @@ Separar la configuración (ConfigMap), el secreto (Secret) y los datos (volumen)
 
 ```bash
 mkdir -p ~/k8s-lab/s03 && cd ~/k8s-lab/s03
-docker run -d --name k3s-lab --privileged -v "$PWD:$PWD" rancher/k3s:v1.34.1-k3s1 server
+docker run -d --name k3s-lab --privileged -v "$PWD:$PWD" rancher/k3s:v1.37.2-k3s1 server
 kubectl() { docker exec -i -w "$PWD" k3s-lab kubectl "$@"; }
 sleep 40 && kubectl get nodes
 ```

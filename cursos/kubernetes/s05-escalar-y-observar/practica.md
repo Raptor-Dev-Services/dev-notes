@@ -19,7 +19,7 @@ La prueba de carga se hace contra **su propio clúster**, nunca contra un sistem
 
 ```bash
 mkdir -p ~/k8s-lab/s05 && cd ~/k8s-lab/s05
-docker run -d --name k3s-lab --privileged -v "$PWD:$PWD" rancher/k3s:v1.34.1-k3s1 server
+docker run -d --name k3s-lab --privileged -v "$PWD:$PWD" rancher/k3s:v1.37.2-k3s1 server
 kubectl() { docker exec -i -w "$PWD" k3s-lab kubectl "$@"; }
 sleep 40 && kubectl get nodes
 ```
@@ -155,10 +155,10 @@ Dejen correr **unos 3 minutos**. En una corrida de laboratorio, los números fue
 
 | hora | réplicas | CPU (% de la petición) |
 |---|---|---|
-| 13:31:49 | 1 | 0 |
-| 13:32:10 | 1 | 61 |
-| 13:32:30 | 2 | 250 |
-| 13:32:50 | 4 | 147 |
+| 13:58:25 | 1 | 0 |
+| 13:58:45 | 1 | 74 |
+| 13:59:05 | 2 | 250 |
+| 13:59:25 | 4 | 94 |
 
 Comparen con lo que ustedes registran. Después:
 
