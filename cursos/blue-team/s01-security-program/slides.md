@@ -586,7 +586,7 @@ La decisión correcta depende de **tu contexto**: ¿ese `sshd` está en internet
 | ¿Hay un control que lo compense (firewall, VPN, WAF)? | Baja, y se documenta |
 | ¿Se puede aplicar el arreglo sin romper el servicio? | Define la ventana, no la prioridad |
 
-Orden de lectura: **KEV** (ya pasa) → **exposición y datos** (aquí importa) → **EPSS** (qué tan probable) → **CVSS** (qué tan grave).
+Orden de lectura: primero **KEV** (ya pasa), luego **exposición y datos** (aquí importa), luego **EPSS** (qué tan probable) y al final **CVSS** (qué tan grave).
 
 ---
 
