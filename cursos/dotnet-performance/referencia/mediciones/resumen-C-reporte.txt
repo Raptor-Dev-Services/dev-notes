@@ -1,0 +1,5 @@
+(api-C.log, seccion /reporte) GET /reporte?pedidos=N&version=V en la API de ejemplo local; la cabecera X-Bytes-Asignados sale de GC.GetAllocatedBytesForCurrentThread dentro del endpoint (codigo sincrono):
+version=1 (concatenacion con +=) pedidos=100  -> 214968 B
+version=1 pedidos=1000 -> 23055296 B
+version=2 (StringBuilder con capacidad) pedidos=100  -> 14600 B
+version=2 pedidos=1000 -> 150760 B

@@ -129,7 +129,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 04 - Backend ASP.NET Core (46 docs)
+## 04 - Backend ASP.NET Core (48 docs)
 
 ### Core patterns (8)
 
@@ -142,6 +142,8 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 | 08 | [Problem Details](04-backend/08-problem-details.md) | RFC 9457, middleware de errores, ProblemDetailsFactory |
 | 18 | [Common Library](04-backend/18-common-library.md) | Submódulo NuGet compartido: IMediator, IRequest, IResponse |
 | 46 | [DI Patterns](04-backend/46-di-patterns.md) | Decorator/Scrutor, Keyed Services, captive dependency |
+| 47 | [Benchmarking](04-backend/47-benchmarking.md) | BenchmarkDotNet, leer la tabla, qué hace mentir a un benchmark |
+| 48 | [Diagnóstico en producción](04-backend/48-diagnostico-en-produccion.md) | dotnet-counters, dotnet-dump, dotnet-trace, fugas de memoria |
 | - | [REPR / Minimal APIs](03-arquitectura/13-repr.md) | Ver sección Arquitectura |
 
 ### Infraestructura y cross-cutting (12)

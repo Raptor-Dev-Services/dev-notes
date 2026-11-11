@@ -1,0 +1,17 @@
+    0 Error(s)
+### gc
+recien creado:         generacion 0
+tras un GC de gen0:    generacion 1
+tras un GC de gen1:    generacion 2
+1 000 000 de byte[100]: 128.0 MB asignados (medido con GetAllocatedBytesForCurrentThread)
+colecciones durante el ciclo: gen0 +20, gen1 +0, gen2 +0
+### race
+esperado: 4,000,000
+leer-sumar-escribir sin proteger:  2,548,716
+Interlocked:   4,000,000
+### BDN Debug
+// Validating benchmarks:
+//    * Assembly Bench which defines benchmarks is non-optimized
+Benchmark was built without optimization enabled (most probably a DEBUG configuration). Please, build it in RELEASE.
+If you want to debug the benchmarks, please see https://benchmarkdotnet.org/articles/guides/troubleshooting.html#debugging-benchmarks.
+
