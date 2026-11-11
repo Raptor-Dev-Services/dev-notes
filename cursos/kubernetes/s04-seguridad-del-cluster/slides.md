@@ -417,7 +417,7 @@ pod/libre created
 
 Fuente: Ray, *Policy as Code* (2024), cap. 7 y cap. 8: cada uno trae su capítulo con instalación, tipos de política, modos de aplicación y pruebas.
 
-- En este curso **no** se instalan: se explican y se citan. Una política escrita de memoria, sin correrla, rompe la regla de la clase (nada sin probar).
+- En este curso **no** se instalan: se explican y se citan. Una política escrita sin correrla rompe la regla de la clase (nada sin probar).
 - Si tu equipo elige uno, el criterio es la prueba de rechazo de esta sesión.
 - Adopta como con Pod Security: primero **auditar**, luego hacer cumplir.
 
