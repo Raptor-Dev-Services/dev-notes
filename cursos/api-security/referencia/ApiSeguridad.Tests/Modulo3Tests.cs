@@ -123,4 +123,40 @@ public class Modulo3Tests
         var cuerpo = await (await ana.GetAsync("/api/perfil")).TextAsync();
         Assert.Contains("hashContrasena", cuerpo, StringComparison.OrdinalIgnoreCase);
     }
+
+    // La matriz de autorizacion: quien (0 = sin sesion, 1 Ana, 2 Beto, 3 Admin), que llama y que debe recibir.
+    // Pedidos 100 y 101 son de Ana; el 200, de Beto. El administrador NO ve pedidos ajenos: decision de negocio de la API de practica.
+    public static IEnumerable<object[]> Matriz() =>
+    [
+        [0, "GET", "/api/perfil", 401],
+        [0, "GET", "/api/pedidos", 401],
+        [0, "GET", "/api/pedidos/100", 401],
+        [0, "GET", "/api/admin/usuarios", 401],
+        [0, "GET", "/api/reportes/resumen", 401],
+        [1, "GET", "/api/perfil", 200],
+        [1, "GET", "/api/pedidos", 200],
+        [1, "GET", "/api/pedidos/100", 200],
+        [1, "GET", "/api/pedidos/200", 404],
+        [1, "POST", "/api/pedidos/200/cupon", 404],
+        [1, "GET", "/api/admin/usuarios", 403],
+        [1, "GET", "/api/reportes/resumen", 403],
+        [2, "GET", "/api/pedidos/200", 200],
+        [2, "GET", "/api/pedidos/100", 404],
+        [2, "GET", "/api/pedidos/101", 404],
+        [2, "GET", "/api/admin/usuarios", 403],
+        [3, "GET", "/api/admin/usuarios", 200],
+        [3, "GET", "/api/reportes/resumen", 200],
+        [3, "GET", "/api/pedidos/100", 404],
+    ];
+
+    [Theory]
+    [MemberData(nameof(Matriz))]
+    public async Task Matriz_de_autorizacion(int quien, string verbo, string ruta, int esperado)
+    {
+        using var f = new Fabrica();
+        using var cliente = quien == 0 ? f.CreateClient() : f.ComoUsuario(quien);
+        var contenido = verbo == "POST" ? Ayuda.Json("""{"codigo":"PROMO10"}""") : null;
+        var r = await cliente.SendAsync(new HttpRequestMessage(new HttpMethod(verbo), ruta) { Content = contenido });
+        Assert.Equal(esperado, (int)r.StatusCode);
+    }
 }

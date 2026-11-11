@@ -6,7 +6,7 @@ namespace ApiSeguridad.Tests;
 
 /// <summary>Modulo 1: el inventario. Lo que la aplicacion expone se compara con lo que el equipo documento.</summary>
 [Trait("Categoria", "Seguridad")]
-public class Modulo1Tests
+public class Modulo1Tests(Xunit.Abstractions.ITestOutputHelper salida)
 {
     public sealed record Diferencias(List<string> SinDocumentar, List<string> Fantasma, List<string> AnonimasInesperadas);
 
@@ -57,6 +57,24 @@ public class Modulo1Tests
         var d = Comparar(fabrica);
         Assert.Contains("GET /api/v0/debug/estado", d.SinDocumentar);
         Assert.Contains("GET /api/v0/debug/estado", d.AnonimasInesperadas);
+    }
+
+    [Fact]
+    public void El_inventario_se_puede_listar()
+    {
+        using var fabrica = new Fabrica();
+        var filas = new List<string>();
+        foreach (var fuente in fabrica.Services.GetServices<EndpointDataSource>())
+            foreach (var e in fuente.Endpoints.OfType<RouteEndpoint>())
+            {
+                var verbos = string.Join(",", e.Metadata.GetMetadata<HttpMethodMetadata>()?.HttpMethods ?? []);
+                var acceso = e.Metadata.GetMetadata<IAllowAnonymous>() is not null ? "publica"
+                    : e.Metadata.GetMetadata<IAuthorizeData>()?.Policy is { } politica ? $"politica {politica}"
+                    : "sesion (politica por omision)";
+                filas.Add($"{verbos,-6} {e.RoutePattern.RawText,-32} {acceso}");
+            }
+        foreach (var fila in filas.Order()) salida.WriteLine(fila);
+        Assert.NotEmpty(filas);
     }
 
     [Fact]
