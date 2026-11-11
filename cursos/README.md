@@ -17,6 +17,7 @@ Los cursos de [Raptor Dev Services Academy](https://academy.raptorcloud.dev) en 
 | [Infraestructura como código](infrastructure-as-code/README.md) | 6 sesiones de 5 h | Quien ya endureció una VM a mano y quiere crearla y configurarla desde código, con pruebas y políticas |
 | [Seguridad web y OWASP](web-security/README.md) | 1 módulo de 2 h | Quien desarrolla aplicaciones web y debe protegerlas |
 | [Vibe coding profesional](ai-assisted-coding/README.md) | 1 módulo de 2 h | Quien programa con un asistente de IA y quiere resultados que resistan una revisión |
+| [IA, ética y criterio profesional](ai-and-society/README.md) | 6 módulos de 90 min | Quien quiere razonar sobre sesgo, transparencia, responsabilidad, privacidad y regulación de la IA, desde cualquier carrera |
 | [Ciberseguridad](cybersecurity/README.md) | 6 módulos | Quien empieza en pruebas de seguridad, con autorización y ética |
 | [Ciberseguridad II: pentest con Kali](pentesting-with-kali/README.md) | 6 módulos de 2 h | Quien terminó Ciberseguridad y quiere hacer una prueba de penetración completa, con alcance, priorización, corrección e informe |
 | [Introducción a la ciberseguridad](cyber-intro/README.md) | 5 unidades | Quien empieza en ciberseguridad, desde cualquier carrera |
