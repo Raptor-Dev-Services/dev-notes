@@ -26,6 +26,7 @@ Los cursos de [Raptor Dev Services Academy](https://academy.raptorcloud.dev) en 
 | [Defensa y respuesta a incidentes](blue-team/README.md) | 6 sesiones de 5 h | Quien terminó Ciberseguridad y quiere el otro lado: detectar, responder, conservar evidencia y cazar |
 | [Seguridad de la información](information-security/README.md) | 5 unidades | Quien gestiona riesgos, un SGSI o la continuidad del negocio |
 | [Legislación nacional e internacional en ciberseguridad](cyber-law/README.md) | 5 unidades | Quien necesita el marco legal de México y del mundo |
+| [Seguridad de APIs: atacar y defender](api-security/README.md) | 6 módulos de 2 h | Desarrolladores de backend que quieren encontrar sus fallas antes que otros |
 
 ## Cómo está organizado cada curso
 

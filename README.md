@@ -21,7 +21,7 @@ El listado completo de documentos está en [INDICE.md](INDICE.md) y las rutas de
 | [09-cicd](09-cicd/) | Checklists DevSecOps, GitHub Actions (OIDC + AWS), Azure DevOps, Terraform y OpenTofu, Ansible, políticas como código | 7 |
 | [10-cloud](10-cloud/) | AWS y Azure, Linux + Nginx, terminal, Bash, systemd y diagnóstico, observabilidad, secretos, costos, seguridad web, Zero Trust, AWS en profundidad, tracing distribuido | 21 |
 | [11-vibe-coding](11-vibe-coding/) | CLAUDE.md, prompts efectivos, AI workflow, manejo de contexto, LLMOps, arquitectura agéntica, LLM en producción, RAG, MCP, seguridad de LLM, ética y uso responsable | 11 |
-| [12-seguridad](12-seguridad/) | Ruta de ciberseguridad en cinco materias (introducción, riesgos actuales, informática forense, seguridad de la información y legislación) y las notas de defensa y respuesta a incidentes y de pentest con Kali | 84 |
+| [12-seguridad](12-seguridad/) | Ruta de ciberseguridad en cinco materias (introducción, riesgos actuales, informática forense, seguridad de la información y legislación) y las notas de defensa y respuesta a incidentes y de pentest con Kali, y dos notas de seguridad de APIs | 86 |
 | [roadmap](roadmap/) | Rutas de aprendizaje por objetivo | 7 |
 | [cursos](cursos/) | Los cursos de [academy.raptorcloud.dev](https://academy.raptorcloud.dev) en Markdown: clase, práctica, tarea y glosario de cada unidad | 17 |
 | [resources](resources/books/README.md) | Bibliografía indexada | - |
@@ -48,7 +48,7 @@ dev-notes/
 ├── 09-cicd/                 7 docs
 ├── 10-cloud/                21 docs (01-21)
 ├── 11-vibe-coding/          11 docs
-├── 12-seguridad/            84 docs en 7 materias (01-introduccion a 07-pentest)
+├── 12-seguridad/            86 docs: 7 materias (01-introduccion a 07-pentest) y 2 notas sueltas
 ├── roadmap/                 7 rutas
 ├── cursos/                  17 cursos de academy, en Markdown
 ├── resources/books/         índice de biblioteca

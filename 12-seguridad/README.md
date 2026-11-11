@@ -14,7 +14,16 @@ Cada nota explica su tema con el detalle completo, cierra con su glosario y sus 
 | [Defensa y respuesta a incidentes](06-blue-team/README.md) | 5 | [`blue-team`](../cursos/blue-team/README.md) |
 | [Pentest con Kali](07-pentest/README.md) | 3 | [`pentesting-with-kali`](../cursos/pentesting-with-kali/README.md) |
 
-**Total: 84 notas.**
+**Total: 86 notas** (84 en las siete materias y 2 notas sueltas de seguridad de APIs, abajo).
+
+### Seguridad de APIs
+
+Notas del curso [`api-security`](../cursos/api-security/README.md):
+
+| Nota | Módulo |
+|---|---|
+| [Seguridad de GraphQL](09-graphql-seguridad.md) | 5 |
+| [Pruebas de seguridad de APIs](10-pruebas-de-seguridad-de-apis.md) | 6 |
 
 ---
 
