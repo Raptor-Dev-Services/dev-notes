@@ -475,7 +475,13 @@ Cada curso de [academy.raptorcloud.dev](https://academy.raptorcloud.dev) está t
 | [Linux para desarrolladores](cursos/linux-for-developers/README.md) | 6 sesiones de 5 h |
 | [Aplicaciones con LLM](cursos/llm-applications/README.md) | 6 sesiones de 5 h |
 | [Preparación para entrevistas técnicas](cursos/technical-interviews/README.md) | 6 módulos de 2 h |
-| [Dev Notes: curso completo](cursos/dev-notes/README.md) | 6 sesiones y 18 módulos |
+| [Dev Notes](cursos/dev-notes/README.md) | 6 sesiones de 8 h |
+| [Diseño y arquitectura de software](cursos/software-architecture/README.md) | 4 módulos de 2 h |
+| [Backend con .NET](cursos/dotnet-backend/README.md) | 6 módulos de 2 h |
+| [Frontend con React](cursos/react-frontend/README.md) | 1 módulo de 2 h |
+| [Git, Docker, CI/CD y nube](cursos/devops-essentials/README.md) | 5 módulos de 2 h |
+| [Seguridad web y OWASP](cursos/web-security/README.md) | 1 módulo de 2 h |
+| [Vibe coding profesional](cursos/ai-assisted-coding/README.md) | 1 módulo de 2 h |
 | [Ciberseguridad](cursos/cybersecurity/README.md) | 6 módulos |
 | [Introducción a la ciberseguridad](cursos/cyber-intro/README.md) | 5 unidades |
 | [Riesgos actuales en ciberseguridad](cursos/cyber-risks/README.md) | 5 unidades |
