@@ -88,7 +88,7 @@
 ### Dependencia
 **Categoría:** Arquitectura
 **Definición:** Relación en la que un archivo necesita a otro para funcionar; en el código, un `import`. Un grafo de dependencias sano tiene un solo sentido.
-**En el curso:** `app` → `features` → `shared`.
+**En el curso:** `app` usa `features`, y `features` usa `shared`.
 
 
 
@@ -226,7 +226,7 @@
 ### Políticas (`policies`)
 **Categoría:** Herramientas
 **Definición:** Lista de reglas de `boundaries/dependencies`: quién puede importar a quién. Con `default: 'disallow'`, todo lo no permitido está prohibido.
-**En el curso:** Cinco políticas definen la estructura `app` → `features` → `shared`.
+**En el curso:** Cinco políticas definen la estructura `app` usa `features`, y `features` usa `shared`.
 
 
 

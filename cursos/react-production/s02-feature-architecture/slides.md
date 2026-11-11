@@ -178,7 +178,7 @@ flowchart TD
 - La estructura por tipo de archivo **dispersa** lo que cambia junto: un tema, cinco carpetas.
 - La estructura por feature **concentra** el cambio.
 - Pero las carpetas no controlan **quién importa a quién**: para eso hacen falta reglas.
-- La meta es un grafo de dependencias en un solo sentido: `app` → `features` → `shared`.
+- La meta es un grafo de dependencias en un solo sentido: `app` usa `features`, y `features` usa `shared`.
 
 ---
 
@@ -466,7 +466,7 @@ Fuente: documentación de TanStack Query, *Render Optimizations*, secciones *sel
 | `*-page.tsx`, `ticket-form.tsx` | Pantalla y formulario | Sí |
 
 - Lo que **no sabe de React** se prueba sin React.
-- La dirección de dependencias dentro de la feature: pantalla → hook → api/dominio. Nunca al revés.
+- La dirección de dependencias dentro de la feature: la pantalla usa el hook, y el hook usa api y dominio. Nunca al revés.
 
 ---
 

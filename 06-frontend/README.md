@@ -24,6 +24,10 @@ Documentación sobre el stack frontend: Vite, React, Tailwind CSS v4, Headless U
 | [09-componentes-headless.md](09-componentes-headless.md) | Separar comportamiento de apariencia: hook headless, prop getters, HOC vs render props |
 | [10-fronteras-import.md](10-fronteras-import.md) | app -> features -> shared enforzado con `import/no-restricted-paths` |
 | [11-practicas-codigo-real.md](11-practicas-codigo-real.md) | Patrones de producción que mejoran el ejemplo de libro, con el incidente que los originó |
+| [12-typescript-para-react.md](12-typescript-para-react.md) | El contrato de la API como tipos: esquema único, uniones discriminadas, genéricos |
+| [13-seguridad-en-el-navegador.md](13-seguridad-en-el-navegador.md) | Sesión con cookie HttpOnly, XSS, CSRF y CSP sin `unsafe-inline` |
+| [14-pruebas-front.md](14-pruebas-front.md) | Pruebas con Vitest, Testing Library, MSW y Playwright |
+| [15-cache-y-versionado-de-assets.md](15-cache-y-versionado-de-assets.md) | Huella en los assets y `Cache-Control` para que el usuario reciba la versión nueva |
 
 
 ---

@@ -1,0 +1,77 @@
+openapi: 3.1.0
+info:
+  title: Mesa de ayuda (Ejemplo ilustrativo)
+  version: 0.1.0
+paths:
+  /api/tickets:
+    get:
+      operationId: listarTickets
+      parameters:
+        - name: estado
+          in: query
+          required: false
+          schema: { $ref: '#/components/schemas/EstadoTicket' }
+      responses:
+        '200':
+          description: Lista de tickets
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/PaginaDeTickets' }
+    post:
+      operationId: crearTicket
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/NuevoTicket' }
+      responses:
+        '201':
+          description: Ticket creado
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Ticket' }
+        '422':
+          description: Errores de validación por campo
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/CuerpoDeError' }
+components:
+  schemas:
+    Prioridad:
+      type: string
+      enum: [baja, media, alta]
+    EstadoTicket:
+      type: string
+      enum: [abierto, cerrado]
+    Ticket:
+      type: object
+      required: [id, titulo, prioridad, estado, creadoEn]
+      properties:
+        id: { type: integer }
+        titulo: { type: string }
+        prioridad: { $ref: '#/components/schemas/Prioridad' }
+        estado: { $ref: '#/components/schemas/EstadoTicket' }
+        creadoEn: { type: string, format: date-time }
+    PaginaDeTickets:
+      type: object
+      required: [datos, total]
+      properties:
+        datos:
+          type: array
+          items: { $ref: '#/components/schemas/Ticket' }
+        total: { type: integer }
+    NuevoTicket:
+      type: object
+      required: [titulo, prioridad]
+      properties:
+        titulo: { type: string, minLength: 5 }
+        prioridad: { $ref: '#/components/schemas/Prioridad' }
+    CuerpoDeError:
+      type: object
+      required: [codigo, mensaje]
+      properties:
+        codigo: { type: string }
+        mensaje: { type: string }
+        errores:
+          type: object
+          additionalProperties: { type: string }
