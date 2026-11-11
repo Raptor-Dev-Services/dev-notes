@@ -498,7 +498,7 @@
 ### STS (AWS Security Token Service)
 **Categoría:** AWS / Seguridad
 **Definición:** Servicio de AWS que emite credenciales de seguridad temporales para usuarios o cargas de trabajo autenticadas. Las credenciales tienen una duración limitada (por defecto 1 hora, configurable) y se usan igual que las credenciales de larga duración.
-**En el proyecto:** En el flujo OIDC del sistema de mensajería, GitHub presenta el token OIDC a AWS STS, que lo valida y emite credenciales temporales (por omisión de 1 hora, configurable) para que el runner pueda hacer push a ECR y actualizar ECS.
+**En el proyecto:** En el flujo OIDC del sistema de mensajería, GitHub presenta el token OIDC a AWS STS, que lo valida y emite credenciales temporales (por omisión de 1 hora, configurables desde 15 minutos hasta la duración máxima del rol, según la referencia de AWS STS para AssumeRoleWithWebIdentity: https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html) para que el runner pueda hacer push a ECR y actualizar ECS.
 
 ---
 
