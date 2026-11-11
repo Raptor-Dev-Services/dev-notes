@@ -340,6 +340,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 | [Seguridad Web](10-cloud/07-seguridad-web.md) | OWASP Top 10, WAF, headers de seguridad |
 | [Zero Trust](10-cloud/08-zero-trust.md) | Nunca confiar, siempre verificar - modelo de seguridad |
 | [Costos](10-cloud/06-costos.md) | Optimización de costos AWS/Azure, Reserved Instances |
+| [Seguridad en la nube](10-cloud/22-seguridad-en-la-nube.md) | Responsabilidad compartida, inventario, acceso público, identidad y mínimo privilegio |
 
 ---
 
