@@ -96,6 +96,47 @@ feature:           D -- E                       feature:  D' -- E'
 
 ---
 
+## merge: el grafo real de commits
+
+```sim git
+paso: commit
+paso: branch feature
+paso: checkout feature
+paso: commit
+paso: commit
+paso: checkout main
+paso: commit
+paso: merge feature
+```
+
+**Qué hacer:** avanza con **Siguiente**, un paso a la vez. Es la situación de la lámina anterior (la rama principal aquí se llama `main`; allá, `develop`): `feature` sale del segundo commit (`C1`; `C0` es el commit inicial que la simulación crea sola) con dos commits propios y la rama principal avanza por su lado. Cuando las dos historias se separaron, el merge crea un commit nuevo con **dos padres**.
+
+> Los identificadores son `C0`, `C1`... en lugar de los hashes reales; el grafo (padres y ramas) se calcula como lo hace Git.
+
+---
+
+## rebase: otros SHAs, y luego un avance rápido
+
+```sim git
+paso: commit
+paso: branch feature
+paso: checkout feature
+paso: commit
+paso: commit
+paso: checkout main
+paso: commit
+paso: checkout feature
+paso: rebase main
+paso: checkout main
+paso: merge feature
+```
+
+**Qué hacer:** compara con la lámina anterior. Tras `rebase main`, los commits de `feature` se reaplican sobre la punta de `main` con identificadores nuevos (los `D'` y `E'` del esquema) y los originales quedan sin rama. El merge final ya no necesita un commit nuevo: es un **avance rápido** (*fast-forward*) y la historia queda lineal.
+
+> Por eso la regla de oro: reescribir ids de commits que otros ya tienen es lo que rompe su historia. El rebase de la simulación no reaplica commits de merge.
+
+---
+
 <!-- _class: lead -->
 
 # Parte 2: Git Flow
@@ -330,7 +371,7 @@ Para el sistema de mensajería:
 
 ---
 
-## Las tres estrategias
+## Las cuatro estrategias
 
 | Estrategia | Comando | Historial | Cuándo usar |
 |-----------|---------|-----------|-------------|

@@ -108,7 +108,7 @@ public sealed class GetConversationHandler
 
  Concatenar input del usuario en SQL
 
-```csharp
+```csharp {1-2|5|6}
 // Si email = "' OR '1'='1" -> devuelve todos los usuarios
 // Si email = "'; DROP TABLE Contacts; --" -> borra la tabla de contactos
 public async Task<Contact?> GetByEmailAsync(string email)
@@ -118,7 +118,7 @@ public async Task<Contact?> GetByEmailAsync(string email)
 }
 ```
 
- Parámetros nombrados  -  Dapper/EF Core escapan automáticamente
+ Parámetros nombrados  -  Dapper/EF Core los envían como datos, no como parte del SQL
 
 ```csharp
 public async Task<Contact?> GetByEmailAsync(string email, CancellationToken ct)
@@ -136,6 +136,25 @@ var contact = await _ctx.Contacts
     .Where(c => c.Email == email)
     .FirstOrDefaultAsync(ct);
 ```
+
+---
+
+## A03  -  SQL Injection: pruébalo contra los dos
+
+```sim sqli
+usuario: ' OR '1'='1' --
+clave:
+fila: 1 | ana | admin | s3creta-ana
+fila: 2 | beto | cliente | beto2026
+fila: 3 | carla | cliente | c4rla-x
+fila: 4 | diego | soporte | d1ego-ok
+```
+
+**Qué hacer:** pulsa **Entrada normal** y luego la inyección. En la consulta concatenada, el texto del usuario se vuelve parte del SQL y entra sin clave; en la parametrizada, el mismo texto se compara como un nombre y no devuelve nada. Prueba también **Solo ' OR '1'='1** (sin el comentario): como AND se evalúa antes que OR, esta consulta de dos condiciones no devuelve todo; la de una sola condición de la lámina anterior sí.
+
+> Ejemplo ilustrativo: la tabla, los usuarios y las claves son ficticios, y esta simulación no usa una base de datos real. Los parámetros se muestran como `$1` y `$2` (así los numera PostgreSQL); en Dapper se escriben `@email`, y el mecanismo es el mismo: el valor viaja aparte del SQL.
+
+<!-- Fuente: documentación de Npgsql, "Basic Usage" (parámetros): el valor de un parámetro no se interpola en el texto del SQL. -->
 
 ---
 
@@ -273,11 +292,38 @@ var valid = BCrypt.Net.BCrypt.Verify(password, hash);
 
 ---
 
+## Un hash: determinista, de un solo sentido y sensible a un bit
+
+```sim hash
+texto: abc
+bit: 0
+```
+
+**Qué hacer:** escribe `abc` y compara el SHA-256 con el de `abcd`; luego cambia el número de bit y mira cuántos bits del resumen cambian al invertir uno solo de la entrada. El mismo texto da siempre el mismo resumen, y por eso un atacante puede probar candidatos muy rápido (SHA-256 está diseñado para ser rápido): es la razón por la que SHA-256 es buena para verificar integridad y mala como almacén de contraseñas.
+
+> Los resúmenes son los reales (WebCrypto). SHA-1 está marcado como roto: la primera colisión práctica se publicó en 2017 ("SHAttered").
+
+<!-- Fuente: FIPS 180-4 (SHA-1 y SHA-256), con "abc" como ejemplo; SHAttered, 2017. La rapidez de SHA-256 frente a BCrypt es el argumento de la lámina anterior. -->
+
+---
+
+## ¿Cuánta entropía tiene una contraseña?
+
+```sim password
+texto: abcdefgh
+```
+
+**Qué hacer:** compara `abcdefgh` con `Abc123!x`, ambas de 8 caracteres: lo que sube es el tamaño del alfabeto. Después escribe `Password1!`: la estimación sale alta y la contraseña es débil, porque la simulación supone caracteres al azar y no detecta palabras comunes. Por eso la entropía es una cota de lo que podría valer, no una medida de lo que vale.
+
+> Simulación simplificada: longitud × log2 del alfabeto. No incluye una tasa de intentos, porque cualquier velocidad que pusiéramos sería inventada.
+
+---
+
 ## A04  -  Rate Limiting en Login
 
  Limitar intentos de login por IP para bloquear fuerza bruta
 
-```csharp
+```csharp {4-10|12|15|18-20|*}
 // Program.cs
 builder.Services.AddRateLimiter(opts =>
 {

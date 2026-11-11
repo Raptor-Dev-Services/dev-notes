@@ -65,6 +65,19 @@ Signature: HMACSHA256(base64(header) + "." + base64(payload), Jwt:Key)
 
 ---
 
+## JWT  -  fírmalo y rómpelo tú mismo
+
+```sim jwt
+secreto: secreto-ficticio-de-clase-no-usar-en-produccion
+payload: {"sub":"550e8400-e29b-41d4-a716-446655440000","email":"agente@example.com","role":"Agent","tenant_id":"42"}
+```
+
+**Qué hacer:** cambia `"role"` a `"Admin"` en el payload y mira cómo la firma de antes deja de verificar; pulsa **Firmar** y la firma vuelve a ser válida, porque solo quien tiene el secreto puede recalcularla. Después escribe `secret` como secreto y lee el aviso: es el caso del Error 3 de esta unidad.
+
+> Caso ilustrativo: el secreto y los datos del payload son ficticios. El token de la lámina anterior también lo es: su firma no se calculó sobre su payload.
+
+---
+
 ## Claims estándar (RFC 7519)
 
 | Claim | Nombre | Descripción |
@@ -358,7 +371,7 @@ public interface IJwtTokenService
 
 ## JwtTokenService  -  implementación en Infrastructure
 
-```csharp
+```csharp {10-12|14-21|23-30|*}
 // Shared/Authentication/Authentication.Infrastructure/Services/JwtTokenService.cs
 public sealed class JwtTokenService : IJwtTokenService
 {
@@ -712,7 +725,7 @@ public sealed record RefreshTokenInvalidFailure(string Message)
 
 ## RefreshTokenHandler  -  rotación segura real
 
-```csharp
+```csharp {5-6|8-10|12-15|17-18|20-27|*}
 // Shared/Authentication/Authentication.Application/UseCases/RefreshToken/RefreshTokenHandler.cs
 public async Task<RefreshTokenResponse> Handle(
     RefreshTokenRequest request, CancellationToken cancellationToken)
@@ -966,7 +979,7 @@ var token   = handler.ReadJwtToken(rawToken); // NO valida firma ni expiración
 var userId  = token.Claims.First(c => c.Type == "sub").Value;
 ```
 
-```csharp
+```csharp {2|3|4-5|6|8-9}
 //  BIEN  -  el middleware AddJwtAuthentication ya valida automáticamente:
 // ValidateIssuerSigningKey = true  -> verifica la firma con Jwt:Key
 // ValidateLifetime         = true  -> rechaza tokens expirados

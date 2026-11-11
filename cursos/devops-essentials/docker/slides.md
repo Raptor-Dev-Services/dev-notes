@@ -260,7 +260,7 @@ El contexto de build es todo lo que Docker envía al daemon. Sin `.dockerignore`
 
 ## Dockerfile multi-stage .NET 10  -  stages 1 y 2
 
-```dockerfile
+```dockerfile {1-3|5-9|11|13-16|18-22|*}
 # Stage 1: restore  -  cachear dependencias NuGet
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS restore
 WORKDIR /src
@@ -338,6 +338,25 @@ RUN dotnet build
 
 > El truco: copiar **solo los archivos que cambian poco** antes de ejecutar `dotnet restore`.
 > Si los `.csproj` no cambiaron, Docker reutiliza la capa de restore completa.
+
+---
+
+## La caché de capas, paso a paso
+
+```sim docker-capas
+dockerfile: FROM mcr.microsoft.com/dotnet/sdk:10.0
+dockerfile: WORKDIR /src
+dockerfile: COPY Host/Host.csproj Host/
+dockerfile: RUN dotnet restore
+dockerfile: COPY . .
+dockerfile: RUN dotnet build
+```
+
+**Qué hacer:** pulsa **Construir** (la primera vez todo se ejecuta). Cambia un archivo de la última `COPY` y construye otra vez: se reutilizan las capas de arriba, incluido el `restore`. Ahora cambia el `.csproj` de la primera `COPY`: se reconstruye desde esa capa y **todas las siguientes**. Es el truco de la lámina anterior: lo que cambia poco va primero.
+
+> Es la misma estructura de la lámina anterior (con la imagen real del SDK de .NET en lugar de `sdk:10.0`). Simulación simplificada: BuildKit calcula sus claves de otra forma; la regla (una capa cambiada invalida las siguientes) sí es la real.
+
+<!-- Fuente: documentación de Docker, "Build cache" y "Cache invalidation" (docs.docker.com/build/cache/). -->
 
 ---
 

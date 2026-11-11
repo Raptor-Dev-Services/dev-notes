@@ -130,7 +130,7 @@ on:
 
 ## ci.yml  -  Validación en cada PR
 
-```yaml
+```yaml {1-6|8-12|14-17|19-23|25-26|*}
 # .github/workflows/ci.yml
 name: CI
 

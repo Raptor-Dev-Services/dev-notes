@@ -158,7 +158,7 @@ su propia tienda en línea? (10 min para esta lámina y la siguiente).
 
 ## El ciclo del fraude
 
-```mermaid
+```mermaid {O,P|D,U,V|R}
 flowchart LR
     O[Conseguir datos] --> P[Probar con cargos chicos]
     P -->|rechazada| D[Se descarta]
@@ -276,7 +276,7 @@ Fuente: Krebs (2011), *Krebs on Security*.
 
 ## Un mismo cable para energía y datos
 
-```mermaid
+```mermaid {T,Q|C|E|R}
 flowchart LR
     T[Teléfono sin batería] --> Q[Puerto USB público]
     Q -->|detrás solo hay corriente| C[Solo carga]
