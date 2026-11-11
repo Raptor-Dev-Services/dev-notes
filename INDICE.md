@@ -359,6 +359,113 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
+## 12 - Seguridad (76 docs)
+
+La ruta de ciberseguridad en cinco materias. Índice por materia en [`12-seguridad/`](12-seguridad/README.md).
+
+### Introducción a la ciberseguridad (15 docs)
+
+| # | Doc |
+|---|-----|
+| 01 | [Revolución sociotecnológica y herramental TIC](12-seguridad/01-introduccion/01-revolucion-sociotecnologica-y-tic.md) |
+| 02 | [Era digital y TIC](12-seguridad/01-introduccion/02-era-digital-y-tic.md) |
+| 03 | [De la infotecnología al infotech en el siglo XXI](12-seguridad/01-introduccion/03-de-la-infotecnologia-al-infotech.md) |
+| 04 | [Cambio sociopolítico y TIC](12-seguridad/01-introduccion/04-cambio-sociopolitico-y-tic.md) |
+| 05 | [Ciberciudadanía y ciberparticipación](12-seguridad/01-introduccion/05-ciberciudadania-y-ciberparticipacion.md) |
+| 06 | [Ciberseguridad, in-seguridad y ciberprevención](12-seguridad/01-introduccion/06-ciberseguridad-inseguridad-y-ciberprevencion.md) |
+| 07 | [Ciberentorno: aproximaciones y tendencias](12-seguridad/01-introduccion/07-ciberentorno-aproximaciones-y-tendencias.md) |
+| 08 | [¿Riesgos o vulnerabilidades?](12-seguridad/01-introduccion/08-riesgos-y-vulnerabilidades.md) |
+| 09 | [Ciberamenazas: principales dimensiones](12-seguridad/01-introduccion/09-ciberamenazas-principales-dimensiones.md) |
+| 10 | [Conductas, hechos y delitos](12-seguridad/01-introduccion/10-conductas-hechos-y-delitos.md) |
+| 11 | [Los ciberdelitos en México](12-seguridad/01-introduccion/11-ciberdelitos-en-mexico.md) |
+| 12 | [Investigar el ciberdelito](12-seguridad/01-introduccion/12-investigar-el-ciberdelito.md) |
+| 13 | [Disponibilidad de la información: el desafío global](12-seguridad/01-introduccion/13-disponibilidad-de-la-informacion.md) |
+| 14 | [Confidencialidad: elemento vital de la ciberseguridad](12-seguridad/01-introduccion/14-confidencialidad.md) |
+| 15 | [Integridad: trascendencia y escenarios mediatos](12-seguridad/01-introduccion/15-integridad.md) |
+
+### Riesgos actuales en ciberseguridad (15 docs)
+
+| # | Doc |
+|---|-----|
+| 01 | [TIC, internet y seguridad: de la sociedad del conocimiento a ARPANET](12-seguridad/02-riesgos/01-tic-internet-y-seguridad.md) |
+| 02 | [Ciberseguridad, panorama general: ransomware, exploits, nube y elecciones](12-seguridad/02-riesgos/02-ciberseguridad-panorama-general.md) |
+| 03 | [Actualidad de la ciberseguridad en México: la Estrategia Nacional y lo que vino después](12-seguridad/02-riesgos/03-ciberseguridad-en-mexico.md) |
+| 04 | [Cyberbullying: el acoso entre pares que no se apaga](12-seguridad/02-riesgos/04-cyberbullying.md) |
+| 05 | [Cyberstalking y doxing: cuando alguien te sigue la pista](12-seguridad/02-riesgos/05-cyberstalking.md) |
+| 06 | [Sexting: el contenido íntimo que deja de ser tuyo](12-seguridad/02-riesgos/06-sexting.md) |
+| 07 | [Grooming: el adulto que se disfraza de amigo](12-seguridad/02-riesgos/07-grooming.md) |
+| 08 | [Phishing: pescar datos con un anzuelo de confianza](12-seguridad/02-riesgos/08-phishing.md) |
+| 09 | [Pharming: cuando la dirección correcta te lleva al sitio equivocado](12-seguridad/02-riesgos/09-pharming.md) |
+| 10 | [Carding: el fraude silencioso con tarjetas](12-seguridad/02-riesgos/10-carding.md) |
+| 11 | [Juice jacking: el peligro de cargar el teléfono en cualquier puerto](12-seguridad/02-riesgos/11-juice-jacking.md) |
+| 12 | [Cryptojacking: minar con la electricidad de otros](12-seguridad/02-riesgos/12-cryptojacking.md) |
+| 13 | [Inteligencia artificial: la misma herramienta para atacar y defender](12-seguridad/02-riesgos/13-inteligencia-artificial.md) |
+| 14 | [Drones: el juguete que también es plataforma de ataque](12-seguridad/02-riesgos/14-drones.md) |
+| 15 | [Deepfakes: cuando ver y oír ya no basta para creer](12-seguridad/02-riesgos/15-deepfakes.md) |
+
+### Informática forense (16 docs)
+
+| # | Doc |
+|---|-----|
+| 01 | [Derecho positivo mexicano](12-seguridad/03-forense/01-derecho-positivo-mexicano.md) |
+| 02 | [Criminalística orientada a las TIC](12-seguridad/03-forense/02-criminalistica-tic.md) |
+| 03 | [Metodología de la investigación](12-seguridad/03-forense/03-metodologia-investigacion.md) |
+| 04 | [Las TIC en la investigación de ciberdelitos](12-seguridad/03-forense/04-tic-investigacion-ciberdelitos.md) |
+| 05 | [Cibercriminalidad: fundamentos de investigación en México](12-seguridad/03-forense/05-cibercriminalidad-fundamentos.md) |
+| 06 | [Cibercrimen en el mundo](12-seguridad/03-forense/06-cibercrimen-en-el-mundo.md) |
+| 07 | [Cibercrimen en México](12-seguridad/03-forense/07-cibercrimen-en-mexico.md) |
+| 08 | [Legislación internacional: el Convenio de Budapest](12-seguridad/03-forense/08-convenio-de-budapest.md) |
+| 09 | [El Código Penal Federal y los ciberdelitos](12-seguridad/03-forense/09-codigo-penal-federal.md) |
+| 10 | [Leyes complementarias contra los ciberdelitos](12-seguridad/03-forense/10-leyes-complementarias.md) |
+| 11 | [Fundamentos legales de la investigación](12-seguridad/03-forense/11-fundamentos-legales-investigacion.md) |
+| 12 | [Principios éticos y cadena de custodia](12-seguridad/03-forense/12-etica-cadena-custodia.md) |
+| 13 | [Obtención y tratamiento de evidencia digital](12-seguridad/03-forense/13-obtencion-tratamiento-evidencia.md) |
+| 14 | [Procedimientos de investigación en informática forense](12-seguridad/03-forense/14-procedimientos-investigacion-forense.md) |
+| 15 | [Identificación, fijación y preservación de evidencia digital](12-seguridad/03-forense/15-identificacion-fijacion-preservacion.md) |
+| 16 | [El dictamen pericial en informática forense](12-seguridad/03-forense/16-dictamen-pericial.md) |
+
+### Seguridad de la información (15 docs)
+
+| # | Doc |
+|---|-----|
+| 01 | [Principios y conceptos fundamentales de la seguridad de la información](12-seguridad/04-seguridad-informacion/01-principios-y-conceptos.md) |
+| 02 | [Normas internacionales en materia de seguridad de la información](12-seguridad/04-seguridad-informacion/02-normas-internacionales.md) |
+| 03 | [El SGSI desde la óptica de ISO/IEC 27001](12-seguridad/04-seguridad-informacion/03-sgsi-iso-27001.md) |
+| 04 | [Seguridad de la información: ¿gasto o inversión?](12-seguridad/04-seguridad-informacion/04-gasto-o-inversion.md) |
+| 05 | [La seguridad de la información y su complejidad en las organizaciones](12-seguridad/04-seguridad-informacion/05-complejidad-en-las-organizaciones.md) |
+| 06 | [Marcos de referencia y arquitecturas de seguridad de la información](12-seguridad/04-seguridad-informacion/06-marcos-de-referencia-y-arquitecturas.md) |
+| 07 | [Perspectiva de riesgo de la sociedad de la información](12-seguridad/04-seguridad-informacion/07-riesgo-en-la-sociedad-de-la-informacion.md) |
+| 08 | [Aseguramiento físico y administrativo de las infraestructuras de procesamiento de datos](12-seguridad/04-seguridad-informacion/08-seguridad-fisica.md) |
+| 09 | [Seguridad lógica y aseguramiento del ciclo de vida de los datos](12-seguridad/04-seguridad-informacion/09-seguridad-logica-y-ciclo-de-vida-de-los-datos.md) |
+| 10 | [Activar el sistema de gestión de seguridad de la información](12-seguridad/04-seguridad-informacion/10-activar-el-sgsi.md) |
+| 11 | [Desarrollo e implementación del sistema de gestión de seguridad de la información](12-seguridad/04-seguridad-informacion/11-implementar-el-sgsi.md) |
+| 12 | [Auditoría y certificación del sistema de gestión de seguridad de la información](12-seguridad/04-seguridad-informacion/12-auditoria-y-certificacion.md) |
+| 13 | [Introducción a la continuidad del negocio y la resiliencia](12-seguridad/04-seguridad-informacion/13-continuidad-y-resiliencia.md) |
+| 14 | [Desarrollo e implementación del plan de continuidad](12-seguridad/04-seguridad-informacion/14-plan-de-continuidad.md) |
+| 15 | [Pruebas y mantenimiento del plan de continuidad](12-seguridad/04-seguridad-informacion/15-pruebas-y-mantenimiento-del-plan.md) |
+
+### Legislación nacional e internacional en ciberseguridad (15 docs)
+
+| # | Doc |
+|---|-----|
+| 01 | [Justificación del derecho y la ciberseguridad](12-seguridad/05-legislacion/01-justificacion-derecho-ciberseguridad.md) |
+| 02 | [Componentes del derecho de la ciberseguridad](12-seguridad/05-legislacion/02-componentes-derecho-ciberseguridad.md) |
+| 03 | [Retos del derecho ante el escenario digital](12-seguridad/05-legislacion/03-retos-derecho-escenario-digital.md) |
+| 04 | [Escenario internacional de la ciberseguridad](12-seguridad/05-legislacion/04-escenario-internacional.md) |
+| 05 | [Estrategias nacionales de ciberseguridad](12-seguridad/05-legislacion/05-estrategias-ciberseguridad.md) |
+| 06 | [La Estrategia Nacional de Ciberseguridad de México](12-seguridad/05-legislacion/06-estrategia-nacional-mexico.md) |
+| 07 | [NIST: estándares y marco de ciberseguridad](12-seguridad/05-legislacion/07-nist.md) |
+| 08 | [ISO y la familia ISO/IEC 27000](12-seguridad/05-legislacion/08-iso.md) |
+| 09 | [Normas Oficiales Mexicanas y ciberseguridad](12-seguridad/05-legislacion/09-normas-oficiales-mexicanas.md) |
+| 10 | [Marco constitucional y legal de la ciberseguridad en México](12-seguridad/05-legislacion/10-marco-constitucional-legal.md) |
+| 11 | [Ciberseguridad en el derecho penal mexicano](12-seguridad/05-legislacion/11-derecho-penal.md) |
+| 12 | [Ciberseguridad y protección de datos personales en México](12-seguridad/05-legislacion/12-proteccion-datos-personales.md) |
+| 13 | [Ciberseguridad en la Unión Europea](12-seguridad/05-legislacion/13-union-europea.md) |
+| 14 | [Regulación de la ciberseguridad en Estados Unidos](12-seguridad/05-legislacion/14-estados-unidos.md) |
+| 15 | [Regulación de la ciberseguridad en Latinoamérica](12-seguridad/05-legislacion/15-latinoamerica.md) |
+
+---
+
 ## Cursos de academy
 
 Cada curso de [academy.raptorcloud.dev](https://academy.raptorcloud.dev) está también aquí en Markdown, en [`cursos/`](cursos/): clase, práctica, tarea y glosario de cada unidad, con las notas de este índice como lectura.
@@ -370,6 +477,11 @@ Cada curso de [academy.raptorcloud.dev](https://academy.raptorcloud.dev) está t
 | [Preparación para entrevistas técnicas](cursos/technical-interviews/README.md) | 6 módulos de 2 h |
 | [Dev Notes: curso completo](cursos/dev-notes/README.md) | 6 sesiones y 18 módulos |
 | [Ciberseguridad](cursos/cybersecurity/README.md) | 6 módulos |
+| [Introducción a la ciberseguridad](cursos/cyber-intro/README.md) | 5 unidades |
+| [Riesgos actuales en ciberseguridad](cursos/cyber-risks/README.md) | 5 unidades |
+| [Informática forense](cursos/digital-forensics/README.md) | 5 unidades |
+| [Seguridad de la información](cursos/information-security/README.md) | 5 unidades |
+| [Legislación nacional e internacional en ciberseguridad](cursos/cyber-law/README.md) | 5 unidades |
 
 ---
 

@@ -9,6 +9,11 @@ Los cursos de [Raptor Dev Services Academy](https://academy.raptorcloud.dev) en 
 | [Preparación para entrevistas técnicas](technical-interviews/README.md) | 6 módulos de 2 h | Egresados que buscan su primer trabajo o el siguiente |
 | [Dev Notes: curso completo](dev-notes/README.md) | 6 sesiones y 18 módulos | Quien quiere fundamentos, patrones y arquitectura en .NET, sobre las notas de este repo |
 | [Ciberseguridad](cybersecurity/README.md) | 6 módulos | Quien empieza en pruebas de seguridad, con autorización y ética |
+| [Introducción a la ciberseguridad](cyber-intro/README.md) | 5 unidades | Quien empieza en ciberseguridad, desde cualquier carrera |
+| [Riesgos actuales en ciberseguridad](cyber-risks/README.md) | 5 unidades | Quien quiere reconocer y prevenir las amenazas de hoy |
+| [Informática forense](digital-forensics/README.md) | 5 unidades | Quien investiga incidentes y necesita evidencia que resista un juicio |
+| [Seguridad de la información](information-security/README.md) | 5 unidades | Quien gestiona riesgos, un SGSI o la continuidad del negocio |
+| [Legislación nacional e internacional en ciberseguridad](cyber-law/README.md) | 5 unidades | Quien necesita el marco legal de México y del mundo |
 
 ## Cómo está organizado cada curso
 
