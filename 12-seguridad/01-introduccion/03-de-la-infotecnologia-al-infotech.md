@@ -45,7 +45,7 @@ Otro ejemplo son las plataformas de transporte privado por aplicación (Uber, Di
 
 ### Gobierno electrónico
 
-Otro caso es el uso de las TIC por los gobiernos para prestar servicios. La Organización de los Estados Americanos define el **gobierno electrónico** como la aplicación de las TIC al funcionamiento del sector público para hacerlo más eficiente, más transparente y más abierto a la participación ciudadana. Con él, el gobierno se acerca a una ciudadanía que ya vive en línea, mejora procesos, eleva la calidad de los servicios, decide con más información y coordina mejor a sus distintas dependencias. Las TIC no cambian al gobierno: lo vuelven más accesible.
+Otro caso es el uso de las TIC por los gobiernos para prestar servicios. La Organización de los Estados Americanos (s. f.) define el **gobierno electrónico** como la aplicación de las TIC al funcionamiento del sector público para hacerlo más eficiente, más transparente y más abierto a la participación ciudadana. Con él, el gobierno se acerca a una ciudadanía que ya vive en línea, mejora procesos, eleva la calidad de los servicios, decide con más información y coordina mejor a sus distintas dependencias. Las TIC no cambian al gobierno: lo vuelven más accesible.
 
 Aplicaciones típicas:
 
@@ -93,7 +93,7 @@ El quinto punto merece detalle. La regulación de las TIC existe, aunque no sea 
 - cualquier conducta que atente contra la seguridad, la disponibilidad y la confiabilidad de la información;
 - y la vulnerabilidad del propio usuario.
 
-Los ciberataques afectan por igual a personas, empresas y gobiernos. El de mayo de 2017, con el ransomware conocido como WannaCry, cifró equipos de hospitales, empresas y dependencias en más de cien países en pocas horas (BBC Mundo, 2017).
+Los ciberataques afectan por igual a personas, empresas y gobiernos. El del 12 de mayo de 2017, con el ransomware conocido como WannaCry, afectó en pocas horas a más de 200,000 equipos de hospitales, empresas y dependencias en al menos 100 países (BBC Mundo, 2017; National Audit Office, 2017).
 
 ## Ciberadicción
 
@@ -164,7 +164,7 @@ La dependencia tecnológica es el primer paso hacia lo que hoy se considera adic
 
 La pandemia de covid-19 multiplicó el número de personas conectadas. La Asociación de Internet MX atribuyó el aumento a la recuperación del poder adquisitivo, a la reorganización del gasto de los hogares y a las nuevas necesidades digitales del confinamiento. Lo más probable es que, al volver la "normalidad", el uso no haya regresado al nivel anterior. La hiperconexión también hizo crecer los riesgos y amenazas del ciberentorno, y millones de personas los enfrentaron sin alfabetización digital ni acompañamiento. Si hubiera más información confiable sobre las patologías asociadas, el uso excesivo de las TIC podría tratarse como un problema de salud pública.
 
-> **Actualización al 2026:** la ENDUTIH 2025 del INEGI registra 104.9 millones de personas usuarias de internet en México (86.1 por ciento de la población de seis años o más), y la UIT estima unos 6,000 millones de personas conectadas en el mundo en 2025, alrededor de 74 por ciento de la población. La cifra de 4,388 millones corresponde a estimaciones de 2019 que siguieron citándose después.
+> **Actualización al 2026:** la ENDUTIH 2025 del INEGI registra 104.9 millones de personas usuarias de internet en México (86.1 por ciento de la población de seis años o más), y la UIT estima unos 6,300 millones de personas conectadas en el mundo en 2026, 76 por ciento de la población, y 2,000 millones todavía desconectadas. La cifra de 4,388 millones corresponde a estimaciones de 2019 que siguieron citándose después.
 
 ## La globalización y las TIC en el desarrollo social
 
@@ -187,7 +187,7 @@ Cuestionar lo que se encuentra en internet, y comprobar si cumple un mínimo de 
 
 ## La evolución de las TIC y el crimen organizado
 
-Benjamín Blanco, en su artículo sobre el crimen organizado y las nuevas tecnologías, analiza la cara más oscura de las TIC: su uso con fines delictivos. Su análisis confirma que el potencial de estas herramientas existe sin importar quién las use ni con qué intención, y que están estrechamente ligadas a la comisión de delitos en cualquier parte del mundo.
+Benjamín Blanco Blanco (2009), en su artículo sobre el crimen organizado y las nuevas tecnologías, analiza la cara más oscura de las TIC: su uso con fines delictivos. Su análisis confirma que el potencial de estas herramientas existe sin importar quién las use ni con qué intención, y que están estrechamente ligadas a la comisión de delitos en cualquier parte del mundo.
 
 Pensar que en el mundo digital "no pasa nada grave" nos pone en riesgo a todos. Muchas conductas indebidas en línea están tipificadas como delitos en distintas legislaciones, y ni la curiosidad ni la ignorancia eximen de responsabilidad: en el derecho mexicano rige el principio de que desconocer la ley no excusa su cumplimiento (Código Civil Federal, artículo 21). La unidad 4 de la materia trata los ciberdelitos a fondo.
 
@@ -226,6 +226,7 @@ Pensar que en el mundo digital "no pasa nada grave" nos pone en riesgo a todos. 
 - American Psychiatric Association. (2022). *Diagnostic and statistical manual of mental disorders* (5.a ed., texto revisado). https://www.psychiatry.org/psychiatrists/practice/dsm
 - Asociación de Internet MX. (2022). *18o. Estudio sobre los hábitos de personas usuarias de internet en México 2022*. https://www.asociaciondeinternet.mx/estudios/habitos-de-internet
 - BBC Mundo. (2017, 13 de mayo). *Ciberataque masivo en el mundo* [nota]. https://www.bbc.com/mundo/noticias-39903218
+- Blanco Blanco, B. (2009, abril). El crimen organizado y las nuevas tecnologías. *El Fisco*, (151). https://elfisco.com/articulos/revista-no-151-el-crimen-organizado-y-las-nuevas-tecnologias
 - Código Civil Federal. (1928, última reforma vigente). Cámara de Diputados. https://www.diputados.gob.mx/LeyesBiblio/pdf/CCF.pdf
 - Dictionary.com. (s. f.). *Infotech*. https://www.dictionary.com/browse/infotech
 - 1EdTech. (s. f.). *Open Badges*. https://www.1edtech.org/standards/open-badges
@@ -233,13 +234,15 @@ Pensar que en el mundo digital "no pasa nada grave" nos pone en riesgo a todos. 
 - GQ. (s. f.). *Inventos que no necesitamos*. https://www.revistagq.com/noticias/tecnologia/articulos/inventos-que-no-necesitamos/23226
 - Grajales Escobar, J. F. y Osorno Mira, Y. M. (2019). La globalización y la importancia de las TIC en el desarrollo social. *Revista Reflexiones y Saberes*, (11), 2-9. Universidad Católica del Norte. https://revistavirtual.ucn.edu.co/index.php/RevistaRyS/article/download/1133/1527
 - Instituto Nacional de Estadística y Geografía. (2026). *ENDUTIH 2025* [comunicado de prensa]. https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2026/endutih/ENDUTIH_25_RR.pdf
+- National Audit Office. (2017, 27 de octubre). *Investigation: WannaCry cyber attack and the NHS*. https://www.nao.org.uk/reports/investigation-wannacry-cyber-attack-and-the-nhs/
+- Organización de los Estados Americanos. (s. f.). *Sobre e-Gobierno* [página del Programa de Gobierno Electrónico]. https://web.archive.org/web/20130523142358/http://portal.oas.org/Portal/Sector/SAP/DepartamentoparalaGesti%C3%B3nP%C3%BAblicaEfectiva/NPA/SobreProgramadeeGobierno/tabid/811/language/es-CO/Default.aspx
 - Organización Mundial de la Salud. (s. f.). *Gaming disorder* [preguntas frecuentes de la CIE-11]. https://www.who.int/standards/classifications/frequently-asked-questions/gaming-disorder
-- Pinto, M. (s. f.). *Calidad y evaluación de los contenidos electrónicos* [portal e-coms]. Universidad de Granada. https://www.mariapinto.es/e-coms/
-- Pontificia Universidad Católica del Ecuador. (2017). *Cómo encontrar información confiable en internet*. https://www.pucevirtual.edu.ec/wp-content/uploads/2017/02/como-encontrar-informacion-confiable-internet.pdf
+- Pinto, M. (s. f.). *Calidad y evaluación de los contenidos electrónicos* [portal e-coms]. Universidad de Granada. http://www.mariapinto.es/e-coms/calidad-y-evaluacion-de-los-contenidos-electronicos/
+- Pontificia Universidad Católica del Ecuador. (2017). *Cómo encontrar información confiable en internet* [Reportaje de Universia difundido por PUCE Virtual]. https://web.archive.org/web/20191117124254/https://www.pucevirtual.edu.ec/como-encontrar-informacion-confiable-en-internet/
 - Real Academia Española. (s. f.). Dependencia. En *Diccionario de la lengua española*. https://dle.rae.es/dependencia
 - Rodríguez, C. y Gil, S. (2014). *Ética y TIC*. CEAPAT-IMSERSO. http://www.ceapat.es/InterPresent1/groups/imserso/documents/binario/eticaytic.pdf
-- Unión Internacional de Telecomunicaciones. (2025, 17 de noviembre). *Aumenta el número mundial de usuarios de Internet, pero las disparidades profundizan las principales brechas digitales* [comunicado]. https://www.itu.int/es/mediacentre/Pages/PR-2025-11-17-Facts-and-Figures.aspx
-- Citas secundarias sin obra original localizada: Stable-Gutiérrez, definición de infotecnología; Eduexperts (2019), aplicabilidad tecnológica; Organización de los Estados Americanos (2010), definición de gobierno electrónico; Blanco, B., *El crimen organizado y las nuevas tecnologías*, revista *El Fisco*, núm. 151; Worldometer (2022) y estimaciones de 2021 para México.
+- Unión Internacional de Telecomunicaciones. (2026, 3 de noviembre). *Ya hay 6 300 millones de personas conectadas, pero las brechas digitales siguen existiendo* [comunicado]. https://www.itu.int/es/mediacentre/Pages/PR-2026-11-03-Facts-and-Figures.aspx
+- Citas secundarias sin obra original localizada: Stable-Gutiérrez, definición de infotecnología; Eduexperts (2019), aplicabilidad tecnológica; Worldometer (2022) y estimaciones de 2021 para México.
 
 ---
 

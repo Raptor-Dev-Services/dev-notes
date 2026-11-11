@@ -162,11 +162,11 @@ Esa falta de madurez es justo lo que preocupa desde la seguridad: muchas innovac
 
 ### Biohacking
 
-El biohacking agrupa prácticas que buscan "mejorar" el cuerpo y la mente con tecnología: dispositivos que miden el sueño o el ritmo cardíaco, implantes de chips bajo la piel para abrir puertas o pagar, dietas y suplementos medidos con datos, e incluso biología experimental hecha fuera de los laboratorios. La Fundación Telefónica lo presenta como un fenómeno con dos lados: oportunidades reales para la salud y el bienestar, y riesgos éticos, sanitarios y de seguridad, porque cada dato biométrico o implante conectado es también información sensible que puede filtrarse o manipularse (Fundación Telefónica, s. f.).
+El biohacking agrupa prácticas que buscan "mejorar" el cuerpo y la mente con tecnología: dispositivos que miden el sueño o el ritmo cardíaco, implantes de chips bajo la piel para abrir puertas o pagar, dietas y suplementos medidos con datos, e incluso biología experimental hecha fuera de los laboratorios. La Fundación Telefónica lo presenta como un fenómeno con dos lados: oportunidades reales para la salud y el bienestar, y riesgos éticos, sanitarios y de seguridad, porque cada dato biométrico o implante conectado es también información sensible que puede filtrarse o manipularse (Rodríguez Canfranc, 2017).
 
 ## La importancia social de la información
 
-La información sostiene el funcionamiento de las sociedades modernas. Impulsa decisiones e innovación, pero también la participación ciudadana, el acceso a servicios y la vida comunitaria. Cuando circula con libertad, las personas pueden participar en la vida democrática y aprovechar oportunidades educativas y económicas; cuando se oculta, se dificulta la transparencia y la rendición de cuentas de gobiernos y empresas. Gestionarla bien y garantizar el acceso a ella son condiciones del progreso social (Alfonso, 2001).
+La información sostiene el funcionamiento de las sociedades modernas. Impulsa decisiones e innovación, pero también la participación ciudadana, el acceso a servicios y la vida comunitaria. Cuando circula con libertad, las personas pueden participar en la vida democrática y aprovechar oportunidades educativas y económicas; cuando se oculta, se dificulta la transparencia y la rendición de cuentas de gobiernos y empresas. Gestionarla bien y garantizar el acceso a ella son condiciones del progreso social (Alfonso Sánchez, 2001).
 
 ## El factor humano, el punto más débil
 
@@ -208,16 +208,15 @@ Entender estas dinámicas permite ajustar estrategias, reforzar la protección y
 
 ## Referencias
 
-- Alfonso, I. (2001). *La importancia social de la información*. Lectura citada por el temario; sin enlace verificado al 2026.
-- Bursztein, S. (2014). *Factor humano: el talón de Aquiles de la seguridad (I). La percepción del valor de la información*. Lectura citada por el temario; sin enlace verificado al 2026.
+- Alfonso Sánchez, I. R. (2001). La importancia social de la información. *ACIMED, 9*(3), 221-223. http://scielo.sld.cu/scielo.php?script=sci_arttext&pid=S1024-94352001000300007
+- Bursztein, S. (2014, 11 de octubre). Factor humano: el talón de Aquiles de la seguridad I. La percepción del valor de la información. *Magazcitum*. https://www.magazcitum.com.mx/index.php/archivos/2735
 - Centros Conacyt. (2016, 18 de noviembre). *La realidad aumentada* [Video]. YouTube. https://youtu.be/OD8Om02yQEk
 - Christensen, C. M. (1997). *The innovator's dilemma: When new technologies cause great firms to fail*. Harvard Business School Press. https://www.christenseninstitute.org/theory/disruptive-innovation/
 - CIBERSEC. (2019). *Se detectan vulnerabilidades en la plataforma virtual Bigscreen*. Lectura citada por el temario; sin enlace verificado al 2026.
 - Dabirian, R., y Loza Matovelle, D. (2015). Introducción a la tecnología disruptiva y su implementación en equipos científicos. *Revista Politécnica, 36*(3). https://doaj.org/article/c466239818ff413ebccd085e508af9c5
-- Ecoticias. (2017). *DARPA empieza a trabajar en su programa de hackeo de cerebros para acelerar el aprendizaje*. Lectura citada por el temario; sin enlace verificado al 2026.
+- Ecoticias. (2017, 28 de abril). *DARPA empieza a trabajar en su programa de hackeo de cerebros para acelerar el aprendizaje*. https://www.ecoticias.com/tecnologia-verde/173313_darpa-empieza-a-trabajar-en-su-programa-de-hackeo-de-cerebros-para-acelerar-el-aprendizaje
 - Escuela Superior de Ingenieros de Telecomunicaciones. (2013). *Seguridad nacional y ciberdefensa: aproximación conceptual*. Lectura citada por el temario; sin enlace verificado al 2026.
-- Facultat d'Informàtica de Barcelona. (s. f.). *Realidad virtual*. Lectura citada por el temario; sin enlace verificado al 2026.
-- Fundación Telefónica. (s. f.). *Biohacking. Conviértete en la mejor versión de ti mismo*. Lectura citada por el temario; sin enlace verificado al 2026.
+- Facultat d'Informàtica de Barcelona. (s. f.). *Realidad virtual*. https://www.fib.upc.edu/retro-informatica/avui/realitatvirtual.html
 - INCIBE. (2017). *Amenaza vs vulnerabilidad, ¿sabes en qué se diferencian?* Instituto Nacional de Ciberseguridad. https://www.incibe.es/empresas/blog/amenaza-vs-vulnerabilidad-sabes-se-diferencian
 - Juanes, B. (2019). *Cómo normar un mundo de realidad aumentada*. Lectura citada por el temario; sin enlace verificado al 2026.
 - Leiner, B. M., Cerf, V. G., Clark, D. D., Kahn, R. E., Kleinrock, L., Lynch, D. C., Postel, J., Roberts, L. G., y Wolff, S. (1997). *A brief history of the Internet*. Internet Society. https://www.internetsociety.org/internet/history-internet/brief-history-internet/
@@ -225,7 +224,8 @@ Entender estas dinámicas permite ajustar estrategias, reforzar la protección y
 - Ley General de Protección de Datos Personales en Posesión de Sujetos Obligados. (2025, 20 de marzo; última reforma DOF 14-11-2025). Cámara de Diputados del H. Congreso de la Unión. https://www.diputados.gob.mx/LeyesBiblio/pdf/LGPDPPSO.pdf
 - Linares, A. (s. f.). *No repudio*. Lectura citada por el temario; sin enlace verificado al 2026.
 - Martínez, F. (2005). *Medios electrónicos en la administración tributaria. Factura electrónica. Comprobantes fiscales digitales*. Lectura citada por el temario; sin enlace verificado al 2026.
-- Trejo García, E. del C. (2006). *Regulación jurídica de internet*. Centro de Documentación, Información y Análisis, Cámara de Diputados. Lectura citada por el temario; sin enlace verificado al 2026.
+- Rodríguez Canfranc, P. (2017). *Biohacking. Conviértete en la mejor versión de ti mismo* (Lo + Visto 8). Fundación Telefónica. https://www.fundaciontelefonica.com/publicaciones/627/
+- Trejo García, E. del C. (2006). *Regulación jurídica de internet* (SPE-ISS-12-06). Centro de Documentación, Información y Análisis, Cámara de Diputados. https://www.diputados.gob.mx/sedia/sia/spe/SPE-ISS-12-06.pdf
 - Unión Internacional de Telecomunicaciones. (2008). *Recomendación UIT-T X.1205: Aspectos generales de la ciberseguridad*. https://www.itu.int/rec/T-REC-X.1205-200804-I/es
 - Universia Knowledge Wharton. (2014). *Tecnología disruptiva*. Lectura citada por el temario; sin enlace verificado al 2026.
 - Universidad Nacional Autónoma de México. (s. f.). *Diferencia entre dato, información y conocimiento*. Lectura citada por el temario; sin enlace verificado al 2026.

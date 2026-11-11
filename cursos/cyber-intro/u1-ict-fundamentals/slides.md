@@ -261,7 +261,7 @@ atiende "Transparencia para el Pueblo" y hay nueva ley de datos personales en po
 | 2022 | 88.6 millones, 75.6 % (Asociación de Internet MX) |
 | 2025 | 104.9 millones, 86.1 % (ENDUTIH) |
 
-Mundo, 2025: unos 6,000 millones conectados y 2,200 millones fuera (UIT).
+Mundo, 2026: unos 6,300 millones conectados (76 %) y 2,000 millones fuera (UIT).
 
 ---
 
@@ -314,7 +314,7 @@ El uso, y su contenido, los decide el usuario.
 
 <!--
 El quinto conecta con toda la materia: ataques, usurpación de identidad, malware y la vulnerabilidad del
-propio usuario. Ejemplo: WannaCry, mayo de 2017, más de cien países en horas.
+propio usuario. Ejemplo: WannaCry, 12 de mayo de 2017, más de 200,000 equipos en al menos 100 países en horas (NAO, 2017).
 -->
 
 ---

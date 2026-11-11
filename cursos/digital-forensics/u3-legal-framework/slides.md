@@ -77,7 +77,7 @@ Una empresa de Guadalajara amanece con sus servidores cifrados y una nota que pi
 - Impulsado por el Consejo de Europa (fundado en 1949, distinto de la Unión Europea).
 - Abierto a Estados no europeos: Canadá, Japón, Estados Unidos, Argentina, Panamá, entre otros.
 - Protocolo adicional de 2003: racismo y xenofobia en línea.
-- Segundo protocolo adicional de 2022: cooperación reforzada y pruebas electrónicas.
+- Segundo protocolo adicional de 2022: cooperación reforzada y pruebas electrónicas; aún no en vigor (4 de las 5 ratificaciones que necesita, a noviembre de 2026).
 
 Lectura: [nota 08](../../../12-seguridad/03-forense/08-convenio-de-budapest.md).
 
@@ -160,7 +160,7 @@ antes de que llegue el oficio.
 ## ¿Y México?
 
 - Hasta noviembre de 2026 no hay en el DOF decreto de aprobación ni promulgatorio del Convenio.
-- Algunas fuentes secundarias ya lo listan como Parte: hay que verificarlo en el depositario antes de afirmarlo.
+- Algunas fuentes secundarias ya lo listan como Parte, pero el depositario no: el Consejo de Europa contaba 84 Partes en octubre de 2026 y México no estaba entre ellas. Verifica siempre en el depositario.
 - La Convención de la ONU contra la Ciberdelincuencia (adoptada en diciembre de 2024, firma en Hanói en octubre de 2025) tampoco tenía firma de México en la Colección de Tratados.
 
 <!--
@@ -389,7 +389,7 @@ Cumple cuatro requisitos (art. 97), que en lenguaje forense son tres propiedades
 ## Conclusiones de la unidad
 
 - El Convenio de Budapest es el modelo legislativo de referencia para perseguir ciberdelitos más allá de las fronteras; su valor está en las definiciones comunes y la cooperación.
-- En el Código Penal Federal, los ciberdelitos son acciones u omisiones sancionadas que usan las TIC: el ransomware se persigue como extorsión, el phishing como fraude y la denegación de servicio como sabotaje.
+- Los ciberdelitos son acciones u omisiones sancionadas que usan las TIC. En el Código Penal Federal, el phishing se persigue como fraude y la denegación de servicio como sabotaje; el ransomware se persigue como extorsión, que desde el 28 de noviembre de 2025 está en la ley general de la materia y ya no en el CPF.
 - Las leyes complementarias completan el marco: la de telecomunicaciones fija el rastreo de la telefonía (pero no el de IP), la LFDA protege el software y el Código de Comercio da validez a los mensajes de datos y a la firma electrónica.
 
 ---

@@ -69,7 +69,7 @@
 
 ### ISO/IEC 27001
 **Categoría:** Estándares / ISO
-**Definición:** Norma internacional, certificable, con los requisitos de un sistema de gestión de seguridad de la información (SGSI). Su edición vigente es la de 2022, con un anexo de 93 controles.
+**Definición:** Norma internacional, certificable, con los requisitos de un sistema de gestión de seguridad de la información (SGSI). Su edición vigente es la de 2022, con un anexo de 93 controles y una enmienda de 2024 sobre cambio climático.
 
 ### ISO/IEC 27032
 **Categoría:** Estándares / ISO

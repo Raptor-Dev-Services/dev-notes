@@ -114,7 +114,7 @@ Los drones se perciben como simples juguetes, pero pueden ser herramientas valio
 - BBC News. (2018, 20 de diciembre). *Gatwick Airport: Drone sightings cause delays* [Video]. YouTube. https://youtu.be/14NQbf9m2VU
 - BBC News. (2018, 4 de agosto). *Venezuela President Maduro survives "drone assassination attempt"*. https://www.bbc.com/news/world-latin-america-45073385
 - CBS News. (2023, 23 de agosto). *Drug cartels are sharply increasing use of bomb-dropping drones, Mexican army says*. https://www.cbsnews.com/news/drug-cartels-more-bomb-dropping-drones-mexico-army/
-- Davis, G. (2018). *Rogue drones cause Gatwick Airport to close for over 30 hours: More on this threat*. McAfee. https://www.mcafee.com/blogs/
+- Davis, G. (2018, 21 de diciembre). Rogue drones cause Gatwick Airport to close for over 30 hours: More on this threat. *McAfee Blogs*. https://web.archive.org/web/20210303081230/https://www.mcafee.com/blogs/consumer/consumer-threat-notices/rogue-drones-cause-gatwick-airport-to-close/
 - Federal Aviation Administration. (s. f.). *Remote identification of drones*. https://www.faa.gov/uas/getting_started/remote_id
 - Incredible Facts. (2019, 6 de enero). *10 best military drones in the world* [Video]. YouTube. https://youtu.be/muEJGEQA1Yk
 - Make It Extreme. (2017, 18 de julio). *Homemade drone catcher* [Video]. YouTube. https://youtu.be/mi3Ed-paCE4

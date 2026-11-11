@@ -246,24 +246,24 @@ Parada y Errecaborde (2018, pp. 22-25) proponen un abordaje integral del cibercr
 
 ## Referencias
 
-- Albaladejo, M. (2012). *El hecho jurídico*. Universidad de Oviedo.
+- Albaladejo, M. (1955). El hecho jurídico. *Revista de la Facultad de Derecho (Universidad de Oviedo)*, *III*(73), 346-381. https://hdl.handle.net/10651/5225
 - Cámara de Diputados. (2019, 21 de mayo). *Proponen un Código Penal Único que ponga fin al caos jurídico* (Boletín 1677). http://www5.diputados.gob.mx/index.php/esl/Comunicacion/Boletines/2019/Mayo/21/1677-Proponen-un-Codigo-Penal-Unico-que-ponga-fin-al-caos-juridico
 - Cámara de Diputados del H. Congreso de la Unión. (2026). *Código Penal Federal* (Última reforma DOF 13-03-2026). https://www.diputados.gob.mx/LeyesBiblio/pdf/CPF.pdf
 - Cámara de Diputados del H. Congreso de la Unión. (2025). *Código Nacional de Procedimientos Penales* (Última reforma DOF 28-11-2025). https://www.diputados.gob.mx/LeyesBiblio/pdf/CNPP.pdf
 - Cámara de Diputados del H. Congreso de la Unión. (2022). *Ley Nacional del Sistema Integral de Justicia Penal para Adolescentes* (Última reforma DOF 20-12-2022). https://www.diputados.gob.mx/LeyesBiblio/pdf/LNSIJPA.pdf
 - ComputerHoy.com. (2019). *¿Qué es ingeniería social?* [Video]. YouTube. https://youtu.be/N6S0JUeBWFw
 - Congreso del Estado de Colima. (2017). *Código Penal para el Estado de Colima*. https://cdhcolima.org.mx/wp-content/uploads/2017/01/C%C3%B3digo-Penal-para-el-Estado-de-Colima.pdf
-- Díaz-Aranda, E. (2014). *Lecciones de derecho penal para el nuevo sistema de justicia en México*. UNAM, Instituto de Investigaciones Jurídicas. https://biblio.juridicas.unam.mx/bjv
-- Gómez Sancha, S. (2018). Las tormentas legales en el nuevo escenario tecnológico. *Abogados. Revista del Consejo General de la Abogacía Española*. https://www.abogacia.es/
+- Díaz-Aranda, E. (2014). *Lecciones de derecho penal (para el nuevo sistema de justicia en México)*. UNAM, Instituto de Investigaciones Jurídicas. https://biblio.juridicas.unam.mx/bjv/detalle-libro/3805-lecciones-de-derecho-penal-para-el-nuevo-sistema-de-justicia-en-mexico
+- Gómez Sancha, S. (2018, febrero). Las tormentas legales en el nuevo escenario tecnológico. *Abogacía Española. Revista del Consejo General de la Abogacía Española*, (108), 24. https://www.abogacia.es/wp-content/uploads/2018/03/ABOG-108b-WEB.pdf
 - Harán, M. (2018, 16 de abril). Robo de datos de un casino tras vulnerar el termómetro de un acuario. *WeLiveSecurity*. https://www.welivesecurity.com/la-es/2018/04/16/robo-datos-casino-vulnerar-termometro-acuario/
 - Litigante en curso. (2018). *La conducta y su ausencia: ¿qué es?* [Video]. YouTube. https://youtu.be/QhiXEFsQhA8
 - López, O. (2019, 22 de febrero). Richard Stallman: "Los móviles espían y transmiten nuestras conversaciones, incluso apagados". *El País*. https://elpais.com/retina/2019/02/22/tendencias/1550819915_405396.html
-- Parada, R. A., & Errecaborde, J. D. (2018). Hacia un abordaje integral en materia de cibercrimen. *Revista Pensamiento Penal*. https://www.pensamientopenal.com.ar/
+- Parada, R. A., & Errecaborde, J. D. (Comps.). (2018). *Cibercrimen y delitos informáticos: Los nuevos tipos penales en la era de internet*. Erreius. https://www.pensamientopenal.com.ar/system/files/2018/09/doctrina46963.pdf
 - Peña Gonzáles, O., & Almanza Altamirano, F. (2010). *Teoría del delito: Manual práctico para su aplicación en la teoría del caso*. Asociación Peruana de Ciencias Jurídicas y Conciliación. https://www.pensamientopenal.com.ar/doctrina/46022-teoria-del-delito-manual-practico-su-aplicacion-teoria-del-caso
 - Pérez, J. (2019). Cómo una herramienta secreta creada por Estados Unidos se convierte en una destructiva arma "online". (Enlace original no disponible.)
 - Real Academia Española. (s. f.). Conducta. En *Diccionario de la lengua española*. https://dle.rae.es/conducta
 - Sabán, A. (2019). El malware para hospitales puede hacer creer a los médicos que pacientes sanos tienen cáncer (y viceversa). *Genbeta*. https://www.genbeta.com/actualidad/malware-para-hospitales-puede-hacer-creer-a-medicos-que-pacientes-sanos-tienen-cancer-viceversa
-- Sierra, M. (2019). El "Netflix" del crimen: pagar por ver ilegalmente lo que graban cámaras de seguridad. *Vozpópuli*. https://www.vozpopuli.com/economia-y-finanzas/netflix-crimen-pagar-ilegalmente-graban-camaras-seguridad_0_1218179031.html
+- Sierra, M. (2019, 14 de febrero). El "Netflix" del crimen: pagar por ver ilegalmente lo que graban cámaras de seguridad. *Vozpópuli*. https://web.archive.org/web/20200812094756/https://www.vozpopuli.com/economia-y-finanzas/netflix-crimen-pagar-ilegalmente-graban-camaras-seguridad_0_1218179031.html
 - Supercurioso. (s. f.). Biohackers lograron introducir un virus informático en una cadena de ADN. https://supercurioso.com/biohackers-virus-informatico-cadena-adn/
 - UNAM Global. (2018). *El robot es inocente* [Video]. YouTube. https://youtu.be/usZ_0LjaAAc
 

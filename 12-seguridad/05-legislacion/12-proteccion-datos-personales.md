@@ -146,7 +146,7 @@ Las multas no excluyen la responsabilidad civil ni la penal (artículo 61). Los 
 | Autoridad | IFAI y después INAI, autónomo | Secretaría Anticorrupción y Buen Gobierno |
 | Multa máxima | Hasta 320,000 días de salario mínimo de la Ciudad de México, que el material estimaba en cerca de 18 millones de pesos | 320,000 veces la UMA, con multa adicional por reincidencia y hasta el doble con datos sensibles |
 | Delitos | Artículos 67, 68 y 69 | Artículos 62, 63 y 64, con las mismas penas |
-| Reglamento | Reglamento publicado en el DOF el 21 de diciembre de 2011 | El decreto de 2025 ordenó al Ejecutivo adecuar los reglamentos en 90 días; no verifiqué la publicación de uno nuevo al cierre de esta nota |
+| Reglamento | Reglamento publicado en el DOF el 21 de diciembre de 2011 | Actualización al 2026: no se ha publicado un reglamento nuevo. Al 10 de noviembre de 2026 la Cámara de Diputados sigue registrando como vigente el de 2011, expedido para la ley abrogada, aunque el decreto de 2025 ordenó al Ejecutivo adecuar los reglamentos en 90 días (transitorio Décimo Segundo) |
 
 El monto en pesos de cualquier multa cambia cada año porque la UMA se actualiza; por eso la ley ya no lo expresa en salarios mínimos.
 
@@ -168,7 +168,7 @@ El material explicaba que, cuando entró en vigor la ley general de 2017, los co
 
 En el plano internacional, México se sumó al Convenio 108 del Consejo de Europa, el primer tratado vinculante sobre protección de datos (Estrasburgo, 1981), y a su Protocolo Adicional sobre autoridades de control y flujos transfronterizos de datos (2001). El Senado los aprobó el 26 de abril de 2018, el instrumento de adhesión se depositó el 28 de junio de 2018 y los decretos promulgatorios se publicaron en el DOF el 28 de septiembre de 2018, con vigencia desde el 1 de octubre de ese año. El convenio refuerza los marcos nacionales: obliga a aplicar los mismos principios en los sectores público y privado y a cooperar con las demás partes.
 
-**Actualización al 2026:** el Protocolo Adicional dice, en su artículo 1, que las autoridades de control ejercerán sus funciones con total independencia. Con la autoridad de datos dentro del Ejecutivo desde 2025, ese compromiso internacional es uno de los argumentos más citados en el debate sobre el nuevo esquema. El convenio se modernizó en 2018 con el protocolo conocido como Convenio 108+; no pude verificar si México lo firmó.
+**Actualización al 2026:** el Protocolo Adicional dice, en su artículo 1, que las autoridades de control ejercerán sus funciones con total independencia. Con la autoridad de datos dentro del Ejecutivo desde 2025, ese compromiso internacional es uno de los argumentos más citados en el debate sobre el nuevo esquema. El convenio se modernizó en 2018 con un protocolo de enmienda (STCE n.º 223), conocido como Convenio 108+, que todavía no está en vigor: necesita 38 ratificaciones y al 10 de noviembre de 2026 sumaba 34, la última de Moldavia (15 de mayo de 2026). México no lo ha firmado ni ratificado.
 
 ## Consejos técnicos para proteger tus datos
 
@@ -214,6 +214,7 @@ La ley protege, pero la primera línea de defensa es la persona. El material cer
 - Cámara de Diputados del H. Congreso de la Unión. (2025). *Ley General de Protección de Datos Personales en Posesión de Sujetos Obligados* (DOF 20-03-2025, última reforma DOF 14-11-2025). https://www.diputados.gob.mx/LeyesBiblio/pdf/LGPDPPSO.pdf
 - Cámara de Diputados del H. Congreso de la Unión. (2025). *Ley General de Transparencia y Acceso a la Información Pública* (DOF 20-03-2025). https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf
 - Cámara de Diputados del H. Congreso de la Unión. (2026). *Constitución Política de los Estados Unidos Mexicanos* (última reforma DOF 07-10-2026). https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf
+- Consejo de Europa. (2026). *Republic of Moldova becomes the 34th state to ratify the Convention 108+*. https://www.coe.int/en/web/data-protection/-/republic-of-moldova-becomes-the-34th-state-to-ratify-the-convention-108-
 - Presidencia de la República. (2018, 28 de septiembre). Decreto Promulgatorio del Convenio para la Protección de las Personas con respecto al Tratamiento Automatizado de Datos de Carácter Personal. *Diario Oficial de la Federación*. https://dof.gob.mx/nota_detalle.php?codigo=5539473&fecha=28/09/2018
 - Presidencia de la República. (2018, 28 de septiembre). Decreto Promulgatorio del Protocolo Adicional al Convenio para la Protección de las Personas con respecto al Tratamiento Automatizado de Datos de Carácter Personal, a las Autoridades de Control y a los Flujos Transfronterizos de Datos. *Diario Oficial de la Federación*. https://dof.gob.mx/nota_detalle.php?codigo=5539474&fecha=28/09/2018
 - Presidencia de la República. (2024, 20 de diciembre). Decreto por el que se reforman, adicionan y derogan diversas disposiciones de la Constitución Política de los Estados Unidos Mexicanos, en materia de simplificación orgánica. *Diario Oficial de la Federación*. https://dof.gob.mx/nota_detalle.php?codigo=5745905&fecha=20/12/2024

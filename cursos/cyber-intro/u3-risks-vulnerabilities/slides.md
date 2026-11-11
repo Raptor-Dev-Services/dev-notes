@@ -305,7 +305,7 @@ Detrás de los grandes ataques suele haber delincuencia informática organizada.
 
 ENISA 2022: ransomware, malware, ingeniería social, amenazas contra los datos, denegación de servicio, amenazas contra internet, desinformación y cadena de suministro.
 
-Actualización al 2026: en el informe de ENISA de 2025, la denegación de servicio fue el 77 % de los incidentes, el phishing abrió cerca del 60 % de las intrusiones y el ransomware fue la amenaza de mayor impacto.
+Actualización al 2026: en el informe de ENISA de 2026 (8,257 incidentes de 2025), la denegación de servicio fue el 51.3 % de los incidentes, el phishing la técnica de ingeniería social más usada (77.8 %) y el ransomware siguió como la amenaza de mayor impacto a corto plazo.
 
 ---
 

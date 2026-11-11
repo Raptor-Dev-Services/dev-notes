@@ -157,7 +157,7 @@ Los agresores aprovechan carencias afectivas, problemas de autoestima y conflict
 
 ### En México
 
-- **Código Penal Federal, artículo 199 Septies.** Desde junio de 2018 sanciona con cuatro a ocho años de prisión y de 400 a 1,000 días multa a quien, por cualquier medio electrónico, contacte a una persona menor de 18 años y le pida imágenes, audio o video de actividades sexuales explícitas o de contenido erótico, o un encuentro sexual. Es, en la práctica, el tipo federal del grooming.
+- **Código Penal Federal, artículo 199 Septies.** Desde junio de 2018 sanciona con cuatro a ocho años de prisión y de 400 a 1,000 días multa a quien, por cualquier medio electrónico, contacte a una persona menor de 18 años y le pida imágenes, audio o video de actividades sexuales explícitas o de actos de connotación sexual, o le solicite un encuentro sexual. Es, en la práctica, el tipo federal del grooming.
 - El mismo código sanciona la pornografía de personas menores de 18 años (artículo 202, de siete a doce años) y la corrupción de menores, y desde 2021 la violación a la intimidad sexual (artículos 199 Octies a 199 Decies).
 - **San Luis Potosí** es el ejemplo estatal de referencia: el artículo 178 Bis de su código penal trata como abuso sexual equiparado que alguien, por medios electrónicos, contacte o induzca a un menor de 18 años a realizar actos de exhibicionismo o de naturaleza sexual con fines lascivos, con la pena del abuso sexual agravada cuando la víctima es menor. Otras entidades tienen figuras parecidas.
 
@@ -197,7 +197,7 @@ El grooming es de las conductas digitales con consecuencias más tangibles en el
 - Cámara de Diputados del H. Congreso de la Unión. (2016, 14 de diciembre). *Minuta proyecto de decreto por el que se reforman y adicionan diversas disposiciones del Código Penal Federal* (CD-LXIII-II-1P-129). Gaceta del Senado. https://infosen.senado.gob.mx/sgsp/gaceta/63/2/2017-02-02-1/assets/documentos/2_Minuta_Art.211-259y210_CPF.pdf
 - Cámara de Diputados del H. Congreso de la Unión. (2024). *Ley General para Prevenir, Sancionar y Erradicar los Delitos en Materia de Trata de Personas*. https://www.diputados.gob.mx/LeyesBiblio/pdf/LGPSEDMTP.pdf
 - Cámara de Diputados del H. Congreso de la Unión. (2026). *Código Penal Federal* (última reforma publicada en el DOF el 13 de marzo de 2026). https://www.diputados.gob.mx/LeyesBiblio/pdf/CPF.pdf
-- Congreso del Estado de San Luis Potosí. (s. f.). *Código Penal del Estado de San Luis Potosí* (art. 178 Bis). https://congresosanluis.gob.mx/
+- Congreso del Estado de San Luis Potosí. (2026). *Código Penal del Estado de San Luis Potosí* (art. 178 Bis) [Última reforma P.O. 14-05-2026]. https://web.archive.org/web/20260531061333/http://congresosanluis.gob.mx/sites/default/files/unpload/legislacion/codigos/2026/05/Codigo_Penal_Estado%20%28al%2014%20de%20mayo%20de%20%202026%29.pdf
 - En línea Prod. (2017, 7 de diciembre). *Cortometraje "Rechazar solicitud": grooming* [Video]. YouTube. https://youtu.be/o2ftdZBAaDk
 - Federal Bureau of Investigation. (s. f.). *Safe Online Surfing (SOS) program*. https://www.fbi.gov/how-we-can-help-you/outreach/safe-online-surfing-sos-program
 - Fondo de las Naciones Unidas para la Infancia. (2017). *Estado mundial de la infancia 2017: Niños en un mundo digital*. https://www.unicef.org/media/48591/file/SOWC_2017_SP.pdf

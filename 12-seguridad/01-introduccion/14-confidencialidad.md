@@ -82,7 +82,7 @@ Ese contexto trae riesgos, incluidos los jurídicos. Un ejemplo cotidiano: si al
 
 | Concepto | En qué consiste | El desafío |
 |---|---|---|
-| OSINT (*open source intelligence*, inteligencia de fuentes abiertas) | Búsqueda estructurada de información en fuentes públicas: periódicos, blogs, videos, nombres de usuario e incluso copias de archivos que ya no existen en su sitio original (INCIBE-CERT, 2014) | Lo público también puede usarse para perfilar o atacar a alguien |
+| OSINT (*open source intelligence*, inteligencia de fuentes abiertas) | Búsqueda estructurada de información en fuentes públicas: periódicos, blogs, videos, nombres de usuario e incluso copias de archivos que ya no existen en su sitio original (Martínez, 2014) | Lo público también puede usarse para perfilar o atacar a alguien |
 | Páginas recopilatorias | Sitios que funcionan como marcos de trabajo y reúnen herramientas automatizadas de búsqueda; seguirán apareciendo más | Comprobar la veracidad y la autoría real de lo que reúnen |
 | Búsquedas estructuradas en fuentes abiertas | Uso metódico y repetible de esas herramientas para responder una pregunta concreta | Que la información quede etiquetada como pública o privada y que las fuentes decidan con conciencia qué publican |
 
@@ -184,7 +184,7 @@ El ejemplo muestra el mismo mecanismo que en el caso de Facebook, con otro fin: 
 
 > **Actualización al 2026:** México abrogó la ley de datos personales de 2010. El 20 de marzo de 2025 se publicó en el DOF una nueva Ley Federal de Protección de Datos Personales en Posesión de los Particulares (en vigor desde el día siguiente; su última reforma es del DOF 14 de noviembre de 2025).
 
-> **Actualización al 2026:** el INAI se extinguió en 2025. Sus atribuciones en datos personales pasaron a la Secretaría Anticorrupción y Buen Gobierno, que es ahora la autoridad ante la que se ejercen los derechos ARCO frente a particulares.
+> **Actualización al 2026:** el INAI se extinguió en 2025. Sus atribuciones en datos personales pasaron a la Secretaría Anticorrupción y Buen Gobierno, que es ahora la autoridad ante la que se presenta la solicitud de protección de datos cuando una empresa no atiende el ejercicio de los derechos ARCO (artículo 40 de la LFPDPPP). Los derechos ARCO se ejercen primero ante el propio responsable.
 
 > **Actualización al 2026:** en Europa sigue vigente el Reglamento General de Protección de Datos (UE) 2016/679, y desde el 1 de agosto de 2024 está en vigor el Reglamento de Inteligencia Artificial (UE) 2024/1689, que prohíbe ciertas prácticas de IA y fija obligaciones de transparencia y gestión de riesgos.
 
@@ -218,8 +218,9 @@ El ejemplo muestra el mismo mecanismo que en el caso de Facebook, con otro fin: 
 - Instituto Nacional de Ciberseguridad. (2020). *¿Sabes proteger la información de tu empresa?* INCIBE. https://www.incibe.es/empresas/blog/sabes-proteger-informacion-tu-empresa
 - Khandelwal, S. (2019, 11 de abril). *Dragonblood: Researchers detail new ways to hack WPA3 WiFi passwords*. The Hacker News. https://thehackernews.com/2019/04/wpa3-hack-wifi-password.html
 - Ley Federal de Protección de Datos Personales en Posesión de los Particulares. (2025). *Diario Oficial de la Federación*, 20 de marzo de 2025. Última reforma DOF 14-11-2025. Cámara de Diputados. https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf
+- Martínez, A. (2014, 28 de mayo). *OSINT - La información es poder*. INCIBE-CERT. https://www.incibe.es/incibe-cert/blog/osint-la-informacion-es-poder
 - Open Knowledge Foundation. (s. f.). *The Open Definition*. https://opendefinition.org/
-- Panda Security. (2017). *Open Data: el motor de la Smart City y un reto para la ciberseguridad*. Panda Mediacenter (enlace directo no localizado en 2026). https://www.pandasecurity.com/es/mediacenter/
+- Panda Security. (2017, 26 de enero). *Open Data: el motor de la Smart City y un reto para la ciberseguridad*. Panda Mediacenter. https://web.archive.org/web/20200427225647/https://www.pandasecurity.com/spain/mediacenter/noticias/open-data-ciberseguridad/
 - Parlamento Europeo y Consejo de la Unión Europea. (2016). *Reglamento (UE) 2016/679 relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales (Reglamento general de protección de datos)*. Diario Oficial de la Unión Europea. https://eur-lex.europa.eu/eli/reg/2016/679/oj
 - Parlamento Europeo y Consejo de la Unión Europea. (2024). *Reglamento (UE) 2024/1689 por el que se establecen normas armonizadas en materia de inteligencia artificial*. Diario Oficial de la Unión Europea. https://eur-lex.europa.eu/eli/reg/2024/1689/oj
 - Privacy Affairs. (2023). *Dark web price index 2022*. https://www.privacyaffairs.com/dark-web-price-index-2022/

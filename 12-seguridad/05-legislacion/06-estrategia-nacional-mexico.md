@@ -39,7 +39,7 @@ El material incluía el video oficial de presentación, en el que varios actores
 2. Hace falta un liderazgo del más alto nivel dentro del Ejecutivo.
 3. Se necesita un marco institucional vinculante, con atribuciones claras y presupuesto anual propio para diseñar, coordinar, evaluar y actualizar la estrategia.
 
-El documento *Memorias y recomendaciones para el seguimiento a la Estrategia Nacional de Ciberseguridad*, elaborado por la CEDN, recoge cómo participaron los actores, qué documentos se generaron y cómo se conciliaron las propuestas. Su recomendación central para la siguiente etapa: no perder a los aliados ni el trabajo acumulado en foros, mesas y documentos, porque fue un esfuerzo de cientos de personas.
+El documento *Memoria y recomendaciones: Estrategia Nacional de Ciberseguridad*, elaborado por la CEDN en 2018, recoge cómo participaron los actores, qué documentos se generaron y cómo se conciliaron las propuestas. Su recomendación central para la siguiente etapa: no perder a los aliados ni el trabajo acumulado en foros, mesas y documentos, porque fue un esfuerzo de cientos de personas.
 
 ## Qué dice la ENCS
 
@@ -198,7 +198,7 @@ A diferencia del plan, esta política sí es obligatoria para las dependencias y
 - Agencia de Transformación Digital y Telecomunicaciones. (2025). *Plan Nacional de Ciberseguridad 2025-2030*. Gobierno de México. https://www.portal.atdt.gob.mx/wp-content/uploads/2026/01/Plan_Nacional_de_Ciberseguridad-2.pdf
 - Agencia de Transformación Digital y Telecomunicaciones. (2025, 17 de diciembre). Acuerdo por el que se emite la Política General de Ciberseguridad para la Administración Pública Federal. *Diario Oficial de la Federación*. https://dof.gob.mx/nota_detalle.php?codigo=5776454&fecha=17/12/2025
 - Cámara de Diputados del H. Congreso de la Unión. (2026). *Ley Orgánica de la Administración Pública Federal* (última reforma publicada DOF 07-05-2026). https://www.diputados.gob.mx/LeyesBiblio/pdf/LOAPF.pdf
-- Coordinación de Estrategia Digital Nacional. (2018). *Memorias y recomendaciones para el seguimiento a la Estrategia Nacional de Ciberseguridad*. Presidencia de la República.
+- Coordinación de Estrategia Digital Nacional. (2018). *Memoria y recomendaciones: Estrategia Nacional de Ciberseguridad*. Presidencia de la República. https://www.gob.mx/cms/uploads/attachment/file/411729/Memoria_y_Recomendaciones_ENCS.pdf
 - Coordinación de Estrategia Digital Nacional. (2021, 6 de septiembre). Acuerdo por el que se expide la Estrategia Digital Nacional 2021-2024. *Diario Oficial de la Federación*. https://dof.gob.mx/nota_detalle.php?codigo=5628886&fecha=06/09/2021
 - Gobierno de la República. (2013). *Estrategia Digital Nacional*. https://www.gob.mx/cms/uploads/attachment/file/17083/Estrategia_Digital_Nacional.pdf
 - Gobierno de la República. (2017). *Estrategia Nacional de Ciberseguridad*. https://www.gob.mx/cms/uploads/attachment/file/271884/Estrategia_Nacional_Ciberseguridad.pdf

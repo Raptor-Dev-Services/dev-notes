@@ -261,12 +261,13 @@ En México, la neutralidad está en la ley que regula a los proveedores de acces
 - MIT News. (2020, 8 de junio). *Engineers put tens of thousands of artificial brain synapses on a single chip*. Massachusetts Institute of Technology. https://news.mit.edu/2020/thousands-artificial-brain-synapses-single-chip-0608
 - Ney, P., Koscher, K., Organick, L., Ceze, L. y Kohno, T. (2017). Computer security, privacy, and DNA sequencing: Compromising computers with synthesized DNA, privacy leaks, and more. En *26th USENIX Security Symposium*. USENIX. https://www.usenix.org/conference/usenixsecurity17/technical-sessions/presentation/ney
 - Organización de las Naciones Unidas. (s. f.). *Objetivo 9: Construir infraestructuras resilientes, promover la industrialización sostenible y fomentar la innovación*. https://www.un.org/sustainabledevelopment/es/infrastructure/
+- Ossorio, M. (1999). *Diccionario de ciencias jurídicas, políticas y sociales*. Heliasta. https://www.grupoclaridad.com.ar/product/diccionario-de-ciencias-juridicas-politicas-y-sociales/
 - Red en Defensa de los Derechos Digitales. (s. f.). *R3D*. https://r3d.mx/
-- Regalado, A. (2017). *ADN cargado con un virus informático hackea un ordenador por primera vez*. MIT Technology Review en español. https://www.technologyreview.es/
+- Regalado, A. (2017, 17 de agosto). ADN cargado con un virus informático hackea un ordenador por primera vez (M. Corredor, Trad.). *MIT Technology Review en español*. https://www.technologyreview.es/article/adn-cargado-con-un-virus-informatico-hackea-un-ordenador-por-primera-vez
 - UNESCO. (2003). *Carta sobre la preservación del patrimonio digital*. https://www.unesco.org/es/legal-affairs/charter-preservation-digital-heritage
 - UNESCO. (2005). *Hacia las sociedades del conocimiento: informe mundial de la UNESCO*. https://unesdoc.unesco.org/ark:/48223/pf0000141908
 - Unión Europea. (2022). Decisión (UE) 2022/2481 del Parlamento Europeo y del Consejo, de 14 de diciembre de 2022, por la que se establece el programa estratégico de la Década Digital para 2030. EUR-Lex. https://eur-lex.europa.eu/eli/dec/2022/2481/oj
-- Citas secundarias sin obra original localizada: Aquiles (2008) y Gallo (2000), definiciones de tecnología; Ossorio (1999), *Diccionario de ciencias jurídicas, políticas y sociales*, Heliasta; Cremades (2003), definición de sociedad de la información; Fundación Telefónica, definición de TIC.
+- Citas secundarias sin obra original localizada: Aquiles (2008) y Gallo (2000), definiciones de tecnología; Cremades (2003), definición de sociedad de la información; Fundación Telefónica, definición de TIC.
 
 ---
 

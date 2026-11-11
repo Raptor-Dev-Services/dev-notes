@@ -237,7 +237,7 @@ corrige o el que la vende?
 | Febrero de 2025 | Prácticas prohibidas |
 | Agosto de 2025 | Modelos de uso general |
 | Agosto de 2026 | Transparencia, incluido el etiquetado de deepfakes |
-| Diciembre de 2026 | Prohibición de sistemas que generan imágenes íntimas no consentidas o abuso sexual infantil (Ómnibus digital, 2026/1744) |
+| Diciembre de 2026 | Prohibición de sistemas que generan imágenes íntimas no consentidas o abuso sexual infantil (Ómnibus digital sobre IA, 2026/1744) |
 | Diciembre de 2027 y agosto de 2028 | Sistemas de alto riesgo |
 
 En Estados Unidos, el marco de riesgos de IA del NIST (2023) sirve como guía voluntaria.

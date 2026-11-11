@@ -109,7 +109,7 @@ Dos respuestas: técnica (los CERT) y legal (las leyes).
 - El ejercicio del tema: si solo el 1 % de los usuarios tuviera intención delictiva, con 4 mil millones de usuarios serían más de 40 millones de atacantes posibles.
 - Histórico (2015): 340 millones de nuevos códigos maliciosos, 529 millones de identidades expuestas, ransomware 35 % arriba.
 
-**Actualización al 2026:** 6 mil millones de personas en línea (UIT, 2025); 1,008,597 denuncias y 20,877 millones de dólares en pérdidas ante el FBI en 2025; 4.99 millones de dólares por fuga de datos (IBM, 2026).
+**Actualización al 2026:** 6,300 millones de personas en línea (UIT, 2026); 1,008,597 denuncias y 20,877 millones de dólares en pérdidas ante el FBI en 2025; 4.99 millones de dólares por fuga de datos (IBM, 2026).
 
 ---
 
@@ -298,7 +298,7 @@ Y los hábitos: 70 % juega y trabaja con el mismo móvil; 37 % mezcla datos pers
 
 <!--
 Subrayar para la unidad 4: la investigación de este caso dependió de bitácoras que los atacantes intentaron borrar.
-El monto exacto no aparece en el informe oficial; las cifras de prensa varían.
+El Banco de México estimó el 22 de mayo de 2018 unos 300 millones de pesos en envíos irregulares; la prensa llegó a hablar de 400.
 -->
 
 ---

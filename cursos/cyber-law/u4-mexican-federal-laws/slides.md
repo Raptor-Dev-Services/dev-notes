@@ -281,7 +281,7 @@ lee como UMA. Se cita tal cual porque así está el texto vigente.
 | Sexting difundido | Adultos: 199 Octies. Menores: 202 y 199 Septies |
 | Sextorsión | Amenazas (282) y extorsión en la ley general de 2025 |
 
-**Actualización 2025:** el artículo 390 del CPF (extorsión) se derogó; la extorsión vive ahora en una ley general, con agravantes por usar datos privados o medios electrónicos.
+**Actualización al 2026:** el artículo 390 del CPF (extorsión) se derogó (DOF 28-11-2025); la extorsión vive ahora en una ley general, con agravantes por usar datos privados o medios electrónicos.
 
 ---
 
@@ -320,7 +320,7 @@ Antes de tratar datos: ¿qué datos?, ¿para qué?, ¿con qué fundamento?, ¿co
 | 2015 a marzo de 2025 | INAI, órgano autónomo |
 | Desde el 21 de marzo de 2025 | Secretaría Anticorrupción y Buen Gobierno |
 
-**Actualización 2025:** nuevas leyes de datos (DOF 20-03-2025) para particulares y para el sector público. Las de 2010 y 2017 quedaron abrogadas.
+**Actualización al 2026:** nuevas leyes de datos (DOF 20-03-2025) para particulares y para el sector público. Las de 2010 y 2017 quedaron abrogadas.
 
 <!--
 Subraya la pérdida de independencia: el material clásico decía que una buena ley necesita un regulador

@@ -23,6 +23,7 @@
 | Reglamento (UE) 2019/881, versión consolidada en EUR-Lex | Leer de primera mano los artículos 1, 2, 46 a 56 sobre certificación |
 | Reglamento (UE) 2016/679 (RGPD), artículos 3, 32, 33 y 83 | Alcance extraterritorial, seguridad, aviso de brechas y multas |
 | Estrategia Nacional de Ciberseguridad de Estados Unidos (2023) | Los cinco pilares y la responsabilidad de los fabricantes |
+| *President Trump's Cyber Strategy for America* (marzo de 2026) | La estrategia más reciente: sus seis pilares y qué conserva o deja de la de 2023 |
 | Ley de Privacidad del Consumidor de California (CCPA) | Derechos de los consumidores que una empresa mexicana debe atender |
 
 ---

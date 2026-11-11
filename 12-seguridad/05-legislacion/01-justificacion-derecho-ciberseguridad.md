@@ -212,7 +212,7 @@ La protección de datos sostiene el funcionamiento de la economía digital, el c
 - Cámara de Diputados del H. Congreso de la Unión. (2025). *Ley General de Protección de Datos Personales en Posesión de Sujetos Obligados* (DOF 20-03-2025, última reforma 14-11-2025). https://www.diputados.gob.mx/LeyesBiblio/pdf/LGPDPPSO.pdf
 - Gobierno de la República. (2017). *Estrategia Nacional de Ciberseguridad*. https://www.gob.mx/cms/uploads/attachment/file/271884/Estrategia_Nacional_Ciberseguridad.pdf
 - Kosseff, J. (2018). Defining cybersecurity law. *Iowa Law Review, 103*(3), 985. https://ilr.law.uiowa.edu/print/volume-103-issue-3/defining-cybersecurity-law/
-- Kosseff, J. (2022). *Cybersecurity law* (3.ª ed.). Wiley. https://www.wiley.com/en-us/search?pq=kosseff%20cybersecurity%20law
+- Kosseff, J. (2022). *Cybersecurity law* (3.ª ed.). Wiley. https://www.wiley.com/en-us/Cybersecurity+Law%2C+3rd+Edition-p-9781119822172
 
 ---
 

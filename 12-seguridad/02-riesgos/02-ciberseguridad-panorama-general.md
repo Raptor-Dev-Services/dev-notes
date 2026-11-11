@@ -22,7 +22,7 @@ El **ransomware** es un tipo de malware que cifra los archivos del equipo de la 
 |---|---|---|
 | Marzo de 2016 | La campaña **SamSam** fue el primer ataque a gran escala que usó la red para propagar ransomware, sin que el usuario tuviera que ejecutar nada. | Demostró que el ransomware podía extenderse solo dentro de una organización. Los investigadores de Cisco anticiparon que pronto se automatizaría. |
 | Abril de 2017 | El grupo Shadow Brokers filtró **EternalBlue**, un exploit para una vulnerabilidad del protocolo de archivos compartidos de Microsoft Windows. | Puso en manos de cualquiera un arma capaz de entrar a millones de equipos sin parche. |
-| 12 de mayo de 2017 | Apareció **WannaCry**, un *cryptoworm*: ransomware combinado con las capacidades de un gusano, que usaba EternalBlue para propagarse por internet como reguero de pólvora. | Afectó hospitales, fábricas y gobiernos en más de cien países en pocas horas. |
+| 12 de mayo de 2017 | Apareció **WannaCry**, un *cryptoworm*: ransomware combinado con las capacidades de un gusano, que usaba EternalBlue para propagarse por internet como reguero de pólvora. | En pocas horas afectó a más de 200,000 equipos de hospitales, fábricas y gobiernos en al menos 100 países (National Audit Office, 2017). |
 
 La evolución fue directa: los atacantes juntaron la propagación automática de SamSam con las funciones de un gusano, y el ransomware pasó de infectar equipo por equipo a moverse solo por las redes aprovechando sus vulnerabilidades.
 
@@ -119,6 +119,7 @@ La ciberseguridad ya no puede tratarse de manera aislada. Requiere varias capas 
 - Cadwalladr, C. y Graham-Harrison, E. (2018, 17 de marzo). Revealed: 50 million Facebook profiles harvested for Cambridge Analytica in major data breach. *The Guardian*. https://www.theguardian.com/news/2018/mar/17/cambridge-analytica-facebook-influence-us-election
 - Cisco Talos. (2017, 12 de mayo). Player 3 has entered the game: Say hello to "WannaCry". *Cisco Talos Blog*. https://blog.talosintelligence.com/2017/05/wannacry.html
 - Cisco. (2018). *Cisco 2018 annual cybersecurity report*. https://www.cisco.com/c/dam/m/digital/elq-cmcglobal/witb/acr2018/acr2018final.pdf
+- National Audit Office. (2017, 27 de octubre). *Investigation: WannaCry cyber attack and the NHS*. https://www.nao.org.uk/reports/investigation-wannacry-cyber-attack-and-the-nhs/
 - National Institute of Standards and Technology. (2024). *The NIST cybersecurity framework (CSF) 2.0* (NIST CSWP 29). https://doi.org/10.6028/NIST.CSWP.29
 - Office of the Director of National Intelligence. (2017). *Assessing Russian activities and intentions in recent US elections* (ICA 2017-01D). https://www.dni.gov/files/documents/ICA_2017_01.pdf
 - Parlamento Europeo y Consejo de la Unión Europea. (2016). *Reglamento (UE) 2016/679 relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos (Reglamento general de protección de datos)*. Diario Oficial de la Unión Europea, L 119, 1-88. https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32016R0679

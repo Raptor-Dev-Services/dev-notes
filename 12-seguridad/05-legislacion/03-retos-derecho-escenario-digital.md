@@ -196,10 +196,10 @@ Las conclusiones de los tres temas de la unidad, reunidas:
 
 ## Referencias
 
-- Banafa, A. (s. f.). *Inteligencia artificial en ciberseguridad: retos*. OpenMind BBVA. https://www.bbvaopenmind.com/tecnologia/inteligencia-artificial/inteligencia-artificial-en-ciberseguridad-retos/ (al 10 de noviembre de 2026 el enlace redirige a la página general de innovación de BBVA)
+- Banafa, A. (2018, 27 de marzo). *Inteligencia artificial en ciberseguridad: retos*. OpenMind BBVA. https://web.archive.org/web/20240714101617/https://www.bbvaopenmind.com/tecnologia/inteligencia-artificial/inteligencia-artificial-en-ciberseguridad-retos/
 - Hicock, R. (2016). *Password guidance*. Microsoft Research. https://www.microsoft.com/en-us/research/publication/password-guidance/
-- International Data Corporation. (2019, 3 de enero). *IDC forecasts worldwide spending on the Internet of Things to reach $745 billion in 2019* [Comunicado de prensa]. https://www.idc.com/getdoc.jsp?containerId=prUS44596319
-- International Data Corporation. (2019, 18 de junio). *The growth in connected IoT devices is expected to generate 79.4ZB of data in 2025* [Comunicado de prensa]. https://www.idc.com/getdoc.jsp?containerId=prUS45213219
+- International Data Corporation. (2019, 3 de enero). *IDC forecasts worldwide spending on the Internet of Things to reach $745 billion in 2019, led by the manufacturing, consumer, transportation, and utilities sectors* [Comunicado de prensa]. https://web.archive.org/web/20191220175428/https://www.idc.com/getdoc.jsp?containerId=prUS44596319
+- International Data Corporation. (2019, 18 de junio). *The growth in connected IoT devices is expected to generate 79.4ZB of data in 2025, according to a new IDC forecast* [Comunicado de prensa]. https://web.archive.org/web/20191216193122/https://www.idc.com/getdoc.jsp?containerId=prUS45213219
 - Internet Society. (2015). *La Internet de las cosas: una breve reseña. Para entender mejor los problemas y desafíos de un mundo más conectado*. https://www.internetsociety.org/wp-content/uploads/2017/09/report-InternetOfThings-20160817-es-1.pdf
 - Internet Society. (2018, 19 de abril). *IoT security for policymakers*. https://www.internetsociety.org/resources/2018/iot-security-for-policymakers/
 - Naciones Unidas. (s. f.). *Objetivos de Desarrollo Sostenible*. https://sdgs.un.org/goals

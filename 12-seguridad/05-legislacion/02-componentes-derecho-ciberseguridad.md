@@ -52,7 +52,7 @@ El segundo componente es la presencia de la ciberseguridad, explícita o implíc
 
 El tercer componente lo forman los documentos técnicos que dicen cómo proteger tecnologías, datos e información. Hay muchísimos, publicados por organismos como la Organización Internacional de Normalización (ISO), la Comisión Electrotécnica Internacional (IEC), el NIST estadounidense o la agencia europea ENISA. Su peso no viene de una imposición estatal sino de cómo se construyen: participan expertos de todo el mundo, de sectores y perfiles muy distintos, y se revisan periódicamente.
 
-Las normas de la familia ISO/IEC 27000 (en particular 27000 de vocabulario, 27001 de sistemas de gestión y 27002 de controles) son la referencia central de la seguridad de la información. En México **no son obligatorias por sí mismas**, pero suelen servir de base para las normas mexicanas y para las Normas Oficiales Mexicanas, que sí son vinculantes cuando la autoridad las expide en su ámbito (la unidad 3 lo explica a fondo).
+Las normas de la familia ISO/IEC 27000 (en particular 27000, que presenta la familia y sus conceptos; 27001, de sistemas de gestión, y 27002, de controles) son la referencia central de la seguridad de la información. En México **no son obligatorias por sí mismas**, pero suelen servir de base para las normas mexicanas y para las Normas Oficiales Mexicanas, que sí son vinculantes cuando la autoridad las expide en su ámbito (la unidad 3 lo explica a fondo).
 
 ### ISO/IEC 27032 y la ciberseguridad
 
@@ -66,7 +66,7 @@ La norma ISO/IEC 27032, publicada en julio de 2012 con el título "Tecnologías 
 
 Esa edición entendía la ciberseguridad como la preservación de la confidencialidad, la integridad y la disponibilidad de la información **en el ciberespacio**. La lección de fondo sigue vigente: la ciberseguridad no es un problema solo tecnológico, y tampoco se resuelve solo con leyes. Involucra disciplinas y actores diversos, y las normas técnicas ayudan a orientar cómo se desarrollan y se usan las tecnologías.
 
-**Actualización al 2026:** ISO/IEC 27032:2012 fue retirada. La reemplazó la segunda edición, ISO/IEC 27032:2023, con nuevo título ("Cybersecurity. Guidelines for Internet security") y nueva estructura: ahora se centra en la seguridad en internet, ofrece orientación de alto nivel para proteger la información y los servicios que se usan a través de la red y trae un anexo que relaciona sus controles con los de ISO/IEC 27002. La familia también se renovó: ISO/IEC 27001 y 27002 tienen ediciones de 2022.
+**Actualización al 2026:** ISO/IEC 27032:2012 fue retirada. La reemplazó la segunda edición, ISO/IEC 27032:2023, con nuevo título ("Cybersecurity. Guidelines for Internet security") y nueva estructura: ahora se centra en la seguridad en internet, ofrece orientación de alto nivel para proteger la información y los servicios que se usan a través de la red y trae un anexo que relaciona sus controles con los de ISO/IEC 27002. La familia también se renovó: ISO/IEC 27001 y 27002 tienen ediciones de 2022 (la 27001, con una enmienda de 2024 sobre cambio climático), y en julio de 2026 salió la sexta edición de ISO/IEC 27000, que sustituye a la de 2018 y ya no es un documento de vocabulario.
 
 ## 4. Complemento de la vida privada y los datos personales
 
@@ -167,6 +167,7 @@ A medida que crecen los usuarios de internet y la sociedad de la información, e
 - International Organization for Standardization. (2012). *ISO/IEC 27032:2012. Information technology. Security techniques. Guidelines for cybersecurity* (retirada). https://www.iso.org/standard/44375.html
 - International Organization for Standardization. (2023). *ISO/IEC 27032:2023. Cybersecurity. Guidelines for Internet security*. https://www.iso.org/standard/76070.html
 - International Organization for Standardization. (2022). *ISO/IEC 27001:2022. Information security, cybersecurity and privacy protection. Information security management systems. Requirements*. https://www.iso.org/standard/27001
+- International Organization for Standardization. (2026). *ISO/IEC 27000:2026. Information security, cybersecurity and privacy protection. Information security management systems. Overview*. https://www.iso.org/standard/27000
 - Naciones Unidas. (2024). *Convención de las Naciones Unidas contra la Ciberdelincuencia* (estado de firmas y ratificaciones). Colección de Tratados de las Naciones Unidas. https://treaties.un.org/Pages/ViewDetails.aspx?src=TREATY&mtdsg_no=XVIII-16&chapter=18&clang=_en
 
 ---

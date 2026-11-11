@@ -66,6 +66,8 @@ El programa de infraestructuras críticas buscó un marco regulatorio para ident
 > 7. Cooperación Internacional.
 > 8. Fomento de la industria de la ciberseguridad.
 
+**Actualización al 2026:** en el listado oficial de normativa de ciberseguridad del gobierno argentino, consultado en noviembre de 2026, la estrategia de 2023 sigue siendo la más reciente. Lo que cambió fue la autoridad: el Decreto de Necesidad y Urgencia 941/2025, fechado el 31 de diciembre de 2025 y publicado en el Boletín Oficial el 2 de enero de 2026, creó el **Centro Nacional de Ciberseguridad**, organismo descentralizado en la órbita de la Secretaría de Innovación, Ciencia y Tecnología de la Jefatura de Gabinete de Ministros. Es la autoridad nacional en la materia, dirige el CERT.ar y tiene a su cargo implementar los objetivos de la Estrategia Nacional de Ciberseguridad.
+
 ### Persecución penal y ciberdefensa
 
 Tres instrumentos completan el cuadro que estudia el material:
@@ -125,8 +127,8 @@ El gobierno siguiente (2018-2022) mantuvo la política pero reorganizó las comp
 **Actualización al 2026:** Chile pasó de la política a la ley en tres pasos.
 
 - **Ley 21.459** (20 de junio de 2022), que actualizó los delitos informáticos y derogó la ley de 1993 para adecuarse al Convenio de Budapest, del que Chile es Parte desde 2017.
-- **Política Nacional de Ciberseguridad 2023-2028**, segunda generación de la política.
-- **Ley 21.663, Ley Marco de Ciberseguridad** (publicada el 8 de abril de 2024), que creó la **Agencia Nacional de Ciberseguridad (ANCI)**, en funciones desde el 1 de enero de 2025, e impuso deberes a los prestadores de servicios esenciales y a los operadores de importancia vital.
+- **Política Nacional de Ciberseguridad 2023-2028**, segunda generación de la política, aprobada por el Decreto 164 del Ministerio del Interior y Seguridad Pública y publicada en el Diario Oficial el 4 de diciembre de 2023.
+- **Ley 21.663, Ley Marco de Ciberseguridad** (publicada el 8 de abril de 2024), que creó la **Agencia Nacional de Ciberseguridad (ANCI)** e impuso deberes a los prestadores de servicios esenciales y a los operadores de importancia vital. El DFL 1-21.663 fijó el 1 de enero de 2025 como inicio de actividades de la ANCI y de vigencia de la ley, salvo la calificación y los deberes específicos de los operadores de importancia vital, el deber de reportar incidentes y el régimen de infracciones y sanciones (artículos 5, 8 y 9 y título VII), que rigen desde el 1 de marzo de 2025.
 
 Su artículo 1 fija el objeto:
 
@@ -149,13 +151,13 @@ El avance de las neurotecnologías abrió un debate sobre la protección de lo m
 | Datos neuronales | Información obtenida de los patrones de actividad de las neuronas mediante neurotecnología, invasiva o no, que representa actividad psíquica consciente e inconsciente: el aspecto más íntimo de la privacidad |
 | Neuroderechos | Nuevos derechos humanos que protegerían la privacidad y la integridad mental y psíquica frente al uso abusivo de las neurotecnologías |
 
-La propuesta recibió críticas académicas. Un artículo de 2021 de Alejandra Zúñiga, Luis Villavicencio y Ricardo Salas sostiene que no hace falta crear derechos nuevos, porque la dignidad, la autonomía, la privacidad y la integridad ya protegen esos bienes, y que multiplicar derechos puede debilitar a los existentes. El punto de fondo del debate es el mismo: entender bien la dignidad, la autonomía y la autodeterminación para no retroceder en los derechos ya ganados, y darle a la protección de la mente el mismo peso que a los demás derechos fundamentales.
+La propuesta recibió críticas académicas. Un artículo de 2020 de Alejandra Zúñiga, Luis Villavicencio y Ricardo Salas sostiene que no hace falta crear derechos nuevos, porque la dignidad, la autonomía, la privacidad y la integridad ya protegen esos bienes, y que multiplicar derechos puede debilitar a los existentes. El punto de fondo del debate es el mismo: entender bien la dignidad, la autonomía y la autodeterminación para no retroceder en los derechos ya ganados, y darle a la protección de la mente el mismo peso que a los demás derechos fundamentales.
 
 Aun con esas objeciones, el Senado aprobó el 21 de abril de 2021 una reforma constitucional al artículo 19 sobre integridad mental. Se publicó como **Ley 21.383** (25 de octubre de 2021) y agregó al número 1.º del artículo 19 de la Constitución chilena este párrafo:
 
 > El desarrollo científico y tecnológico estará al servicio de las personas y se llevará a cabo con respeto a la vida y a la integridad física y psíquica. La ley regulará los requisitos, condiciones y restricciones para su utilización en las personas, debiendo resguardar especialmente la actividad cerebral, así como la información proveniente de ella.
 
-**Actualización al 2026:** Chile fue el primer país en llevar la protección de la actividad cerebral a su Constitución. En agosto de 2023 su Corte Suprema aplicó esa protección al ordenar a una empresa de neurotecnología que borrara los datos cerebrales que había recabado de un usuario con un dispositivo comercial. La ley de neuroprotección que debía desarrollar la reforma seguía en trámite legislativo en la última consulta.
+**Actualización al 2026:** Chile fue el primer país en llevar la protección de la actividad cerebral a su Constitución. En agosto de 2023 su Corte Suprema aplicó esa protección al ordenar a una empresa de neurotecnología que borrara los datos cerebrales que había recabado de un usuario con un dispositivo comercial. La ley de neuroprotección que debía desarrollar la reforma (boletín 13.828-19) seguía en trámite: el Senado la aprobó el 7 de diciembre de 2021 y, al 5 de octubre de 2026, su discusión general seguía pendiente en la Cámara de Diputados.
 
 ## Conclusiones del tema
 
@@ -199,13 +201,18 @@ Aun con esas objeciones, el Senado aprobó el 21 de abril de 2021 una reforma co
 - Ministerio de Defensa de la República Argentina. (2016). *Decreto 42/2016, estructura organizativa del Ministerio de Defensa*. http://servicios.infoleg.gob.ar/infolegInternet/anexos/255000-259999/257609/norma.htm
 - Ministerio de Justicia y Derechos Humanos de la República Argentina. (2016). *Resolución 69/2016, Programa Nacional contra la Criminalidad Informática*. http://servicios.infoleg.gob.ar/infolegInternet/anexos/255000-259999/259549/norma.htm
 - Ministerio de Tecnologías de la Información y las Comunicaciones de Colombia. (2026). *Portal MinTIC*. https://www.mintic.gov.co/portal/inicio/
+- Ministerio del Interior y Seguridad Pública. (2023). *Decreto 164, aprueba Política Nacional de Ciberseguridad 2023-2028*. Biblioteca del Congreso Nacional de Chile. https://www.bcn.cl/leychile/navegar?idNorma=1198702
+- Ministerio del Interior y Seguridad Pública. (2024). *Decreto con fuerza de ley 1-21.663, determina la entrada en vigencia de la Ley 21.663 y la iniciación de actividades de la Agencia Nacional de Ciberseguridad*. Diario Oficial de la República de Chile. https://www.diariooficial.interior.gob.cl/publicaciones/2024/12/24/44032/01/2588834.pdf
 - Ministerio Público Fiscal de la República Argentina. (2014). *Resolución PGN 2035/2014*. https://www.mpf.gob.ar/resoluciones/pgn/2014/PGN-2035-2014-001.pdf
+- Ministerio Público Fiscal de la República Argentina. (2015). *Resolución PGN 3743/2015, creación de la Unidad Fiscal Especializada en Ciberdelincuencia*. https://www.mpf.gob.ar/resoluciones/pgn/2015/PGN-3743-2015-001.pdf
 - Ministerio Público Fiscal de la República Argentina. (2026). *Unidad Fiscal Especializada en Ciberdelincuencia (UFECI)*. https://www.mpf.gob.ar/ufeci/
 - NATO Cooperative Cyber Defence Centre of Excellence. (2017). *Tallinn Manual 2.0 on the international law applicable to cyber operations*. https://ccdcoe.org/research/tallinn-manual/
-- Secretaría de Gobierno de Modernización. (2019). *Resolución 829/2019, Estrategia Nacional de Ciberseguridad*. https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-829-2019-324908
+- Presidencia de la Nación Argentina. (2025). *Decreto de Necesidad y Urgencia 941/2025, modificación de la Ley de Inteligencia Nacional N° 25.520*. Boletín Oficial de la República Argentina. https://www.argentina.gob.ar/normativa/nacional/norma-422011/texto
+- Secretaría de Gobierno de Modernización. (2019). *Resolución 829/2019, Estrategia Nacional de Ciberseguridad*. https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-829-2019-323594
 - Secretaría de Innovación Pública. (2023). *Resolución 44/2023, Segunda Estrategia Nacional de Ciberseguridad*. https://www.argentina.gob.ar/normativa/nacional/norma-389245/texto
-- Superintendencia Financiera de Colombia. (2018). *Circular Externa 007 de 2018: requerimientos mínimos para la gestión del riesgo de ciberseguridad*. https://www.superfinanciera.gov.co/
-- Zúñiga, A., Villavicencio, L. y Salas, R. (2021). ¿Neuroderechos? Razones para no legislar. *Ciper Chile*. https://www.ciperchile.cl/
+- Senado de la República de Chile. (2026). *Boletín 13.828-19, sobre protección de los neuroderechos y la integridad mental, y el desarrollo de la investigación y las neurotecnologías* [Tramitación del proyecto]. https://tramitacion.senado.cl/appsenado/templates/tramitacion/index.php?boletin_ini=13828-19
+- Superintendencia Financiera de Colombia. (2018, 5 de junio). *Circular Externa 007 de 2018: requerimientos mínimos para la gestión del riesgo de ciberseguridad*. https://web.archive.org/web/20220823111518/https://www.superfinanciera.gov.co/descargas/institucional/pubFile1031741/ce007_18.doc
+- Zúñiga Fajuri, A., Villavicencio Miranda, L. y Salas Venegas, R. (2020, 11 de diciembre). ¿Neuroderechos? Razones para no legislar. *CIPER Chile*. https://www.ciperchile.cl/2020/12/11/neuroderechos-razones-para-no-legislar/
 
 ---
 

@@ -180,7 +180,7 @@ Identificación meticulosa, adquisición cuidadosa, análisis exhaustivo y docum
 
 ## Referencias
 
-- Arias Galicia, F. (2001). *Introducción a la metodología de investigación en ciencias de la administración y del comportamiento*. Trillas. https://search.worldcat.org/search?q=Arias+Galicia+Introducci%C3%B3n+a+la+metodolog%C3%ADa+de+investigaci%C3%B3n
+- Arias Galicia, F. (2001). *Introducción a la metodología de investigación en ciencias de la administración y del comportamiento*. Trillas. https://openlibrary.org/books/OL13119452M
 - Edmund, N. W. (2005). *End the biggest educational and intellectual blunder in history*. Scientific Method Publishing. https://www.scientificmethod.com/
 - Lira Arteaga, O. M. (2018). *Cibercriminalidad: fundamentos de investigación en México*. Ubijus. Edición anterior: Instituto Nacional de Ciencias Penales, 2010, ISBN 978-607-7882-13-8, https://www.marcialpons.es/libros/cibercriminalidad/9786077882138/
 

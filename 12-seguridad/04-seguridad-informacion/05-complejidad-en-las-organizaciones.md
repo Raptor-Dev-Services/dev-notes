@@ -100,7 +100,7 @@ Un manual de referencia como el *Computer and Information Security Handbook* (Va
 ## Referencias
 
 - Barker, E. (2020). *Recommendation for key management: Part 1. General* (NIST Special Publication 800-57 Part 1 Rev. 5). National Institute of Standards and Technology. https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final
-- Cámara de Diputados del H. Congreso de la Unión. (2025). *Ley Federal de Protección de Datos Personales en Posesión de los Particulares* (DOF 20-03-2025). https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf
+- Cámara de Diputados del H. Congreso de la Unión. (2025). *Ley Federal de Protección de Datos Personales en Posesión de los Particulares* (DOF 20-03-2025, última reforma DOF 14-11-2025). https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf
 - National Institute of Standards and Technology. (2024). *Module-lattice-based key-encapsulation mechanism standard* (FIPS 203). https://csrc.nist.gov/pubs/fips/203/final
 - PCI Security Standards Council. (2024). *Payment Card Industry Data Security Standard: Requirements and testing procedures* (v4.0.1). https://www.pcisecuritystandards.org/document_library/
 - Secretaría Anticorrupción y Buen Gobierno. (2026). *Secretaría Anticorrupción y Buen Gobierno*. Gobierno de México. https://www.gob.mx/buengobierno

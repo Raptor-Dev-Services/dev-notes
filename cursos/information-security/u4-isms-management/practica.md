@@ -46,7 +46,7 @@ Publiquen una aportación con:
 2. **Lo que el SGSI no cubre.** Identifiquen al menos tres obligaciones del RGPD que ningún control del Anexo A resuelve por sí solo (por ejemplo, la evaluación de impacto sobre los derechos de las personas o la designación del delegado de protección de datos).
 3. **Su conclusión:** ¿es indispensable implantar un SGSI completo para cumplir estos artículos, o basta con implantar los controles pertinentes? Justifiquen con el principio de que la seguridad debe ser adecuada al riesgo.
 
-> Actualización al 2026: ISO publicó normas que cierran parte de esa brecha, como ISO/IEC 27701, que extiende el SGSI a la gestión de la privacidad. Pueden mencionarla en su análisis.
+> Actualización al 2026: ISO publicó normas que cierran parte de esa brecha, como ISO/IEC 27701, cuya edición 2025 especifica por sí misma un sistema de gestión de la privacidad de la información, sin depender ya de la 27001. Pueden mencionarla en su análisis.
 
 ---
 

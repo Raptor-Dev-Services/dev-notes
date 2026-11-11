@@ -280,7 +280,7 @@ Y el *sharenting*: publicar la vida de los hijos no es delito, pero los expone.
 
 ## Budapest y la nueva convención de la ONU
 
-- **Budapest (2001):** referencia mundial y ley modelo; más de 20 años y pensado para Europa. 84 Partes en 2026; México no es Parte.
+- **Budapest (2001):** referencia mundial y ley modelo; más de 20 años y pensado para Europa. 84 Partes desde el 14 de octubre de 2026; México no es Parte.
 - ¿Un convenio latinoamericano? El temario lo plantea.
 - **ONU (2024):** primera convención mundial contra la ciberdelincuencia. 96 firmantes a noviembre de 2026, aún no en vigor. México no la ha firmado.
 

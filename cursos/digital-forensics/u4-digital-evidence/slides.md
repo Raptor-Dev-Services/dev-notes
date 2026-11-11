@@ -143,7 +143,7 @@ información sin autorización. La víctima, en cambio, sí puede aportar sus pr
 - En urgencia (vida en peligro, secuestro, extorsión, delincuencia organizada) se ordena directo y el juez debe **ratificar en 48 horas**; si no ratifica, la información no entra al proceso.
 - Conservación inmediata de datos informáticos: hasta **90 días**.
 
-Actualización al 2026: el CNPP aún remite a la Ley Federal de Telecomunicaciones y Radiodifusión, abrogada en julio de 2025. La conservación de registros está hoy en el art. 183 de la nueva ley: 12 meses en consulta en tiempo real y 12 más en archivo.
+Actualización al 2026: el CNPP aún remite a la Ley Federal de Telecomunicaciones y Radiodifusión, abrogada por la ley publicada en julio de 2025 con efecto desde octubre de 2025, al integrarse la Comisión Reguladora de Telecomunicaciones. La conservación de registros está hoy en el art. 183 de la nueva ley: 12 meses en consulta en tiempo real y 12 más en archivo.
 
 ---
 

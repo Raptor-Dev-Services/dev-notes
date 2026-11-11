@@ -152,13 +152,15 @@ Es el tratado del Consejo de Europa que busca armonizar las leyes penales de los
 
 Tiene dos protocolos: el Primero (2003), sobre actos de racismo y xenofobia cometidos por sistemas informáticos, y el **Segundo Protocolo Adicional** (abierto a firma en mayo de 2022), que agiliza la cooperación y la entrega de pruebas electrónicas, incluso con proveedores de servicio de otros países.
 
-**Actualización al 2026:** según el Consejo de Europa, al 30 de septiembre de 2026 el Convenio tenía 83 Partes. México no es Parte: figura en la categoría de Estados firmantes o invitados a adherirse, y el Consejo de Europa le brinda asistencia técnica para avanzar hacia la adhesión. El material ya lo describía como observador con la adhesión "en análisis"; seis años después, la decisión sigue pendiente.
+**Actualización al 2026:** según el Consejo de Europa, el Convenio llegó a 84 Partes el 14 de octubre de 2026, cuando se adhirió Kazajistán; otros dos Estados lo firmaron sin ratificarlo y 11 están invitados a adherirse. México no es Parte: figura entre los Estados invitados a adherirse, y el Consejo de Europa le brinda asistencia técnica para avanzar hacia la adhesión. El Segundo Protocolo Adicional todavía no está en vigor: necesita cinco ratificaciones y al 10 de noviembre de 2026 sumaba cuatro (Serbia, Japón, Hungría y Costa Rica) y 52 firmas. El material ya lo describía como observador con la adhesión "en análisis"; seis años después, la decisión sigue pendiente.
 
 ### Convenio 108 sobre protección de datos (1981)
 
 El Convenio para la protección de las personas con respecto al tratamiento automatizado de datos de carácter personal, también del Consejo de Europa, es el primer tratado vinculante sobre protección de datos. Su Protocolo Adicional de 2001 añade autoridades de control y reglas para flujos transfronterizos de datos.
 
 Este sí obliga a México: los decretos promulgatorios del Convenio y de su Protocolo Adicional se publicaron en el Diario Oficial de la Federación el 28 de septiembre de 2018. Su relación con la ley mexicana de datos se estudia en la unidad 4 ([nota 12](12-proteccion-datos-personales.md)).
+
+**Actualización al 2026:** el Convenio se modernizó con un protocolo de enmienda abierto a firma el 10 de octubre de 2018 (STCE n.º 223), conocido como Convenio 108+. Todavía no está en vigor: necesita 38 ratificaciones y al 10 de noviembre de 2026 sumaba 34, la última de Moldavia (15 de mayo de 2026). México no lo ha firmado ni ratificado, así que para México sigue rigiendo el texto de 1981 con su Protocolo Adicional.
 
 ### Convención de las Naciones Unidas contra la Ciberdelincuencia
 
@@ -228,10 +230,15 @@ La ausencia de un tratado de ciberdelito no deja a México sin herramientas, per
 
 ## Referencias
 
+- Alianza del Pacífico. (2016). *Hoja de ruta del Subgrupo de Agenda Digital*. https://alianzapacifico.net/wp-content/uploads/Hoja-de-Ruta-SGAD2016-2017.pdf
 - Asamblea General de las Naciones Unidas. (2024). *Convención de las Naciones Unidas contra la Ciberdelincuencia* (A/RES/79/243). Colección de Tratados de las Naciones Unidas. https://treaties.un.org/Pages/ViewDetails.aspx?src=TREATY&mtdsg_no=XVIII-16&chapter=18&clang=_en
 - Banco Interamericano de Desarrollo y Organización de los Estados Americanos. (2016). *Ciberseguridad: ¿estamos preparados en América Latina y el Caribe?* BID. https://publications.iadb.org/es/ciberseguridad-estamos-preparados-en-america-latina-y-el-caribe
+- Comisión Económica para América Latina y el Caribe. (2015). *Agenda digital para América Latina y el Caribe (eLAC2018)*. https://hdl.handle.net/11362/38886
 - Consejo de Europa. (2001). *Convenio sobre la Ciberdelincuencia* (STE n.º 185). https://www.coe.int/en/web/cybercrime/the-budapest-convention
-- Consejo de Europa. (2026). *Parties and observers to the Convention on Cybercrime*. https://www.coe.int/en/web/cybercrime/parties-observers
+- Consejo de Europa. (2026a). *Costa Rica becomes the fourth state to ratify the Second Additional Protocol to the Convention on Cybercrime*. https://www.coe.int/en/web/cybercrime/news/-/asset_publisher/S73WWxscOuZ5/content/costa-rica-becomes-the-fourth-state-to-ratify-the-second-additional-protocol-to-the-convention-on-cybercrime
+- Consejo de Europa. (2026b, 14 de octubre). *Kazakhstan becomes the 84th Party to the Convention on Cybercrime* [Noticia del Comité del Convenio sobre la Ciberdelincuencia]. https://www.coe.int/en/web/cybercrime/t-cy-news
+- Consejo de Europa. (2026c). *Parties and observers to the Convention on Cybercrime*. https://www.coe.int/en/web/cybercrime/parties-observers
+- Consejo de Europa. (2026d). *Republic of Moldova becomes the 34th state to ratify the Convention 108+*. https://www.coe.int/en/web/data-protection/-/republic-of-moldova-becomes-the-34th-state-to-ratify-the-convention-108-
 - Diario Oficial de la Federación. (2018, 28 de septiembre). *Decreto Promulgatorio del Convenio para la Protección de las Personas con respecto al Tratamiento Automatizado de Datos de Carácter Personal*. https://dof.gob.mx/nota_detalle.php?codigo=5539473&fecha=28/09/2018
 - Global Cyber Security Capacity Centre. (s. f.). *The Cybersecurity Capacity Maturity Model for Nations (CMM)*. Universidad de Oxford. https://www.gcscc.ox.ac.uk/the-cmm
 - Lewis, J. A. (2018). *Economic impact of cybercrime: No slowing down*. Center for Strategic and International Studies y McAfee. https://www.csis.org/analysis/economic-impact-cybercrime

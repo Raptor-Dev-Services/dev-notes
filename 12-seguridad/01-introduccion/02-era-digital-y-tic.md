@@ -64,7 +64,7 @@ En la práctica, este derecho abarca varias facultades: acceder a la informació
 
 ### Las tres vertientes del derecho a la información
 
-Siguiendo a Carpizo, citado por Rodríguez, el derecho a la información se puede descomponer en tres facultades:
+Siguiendo a Carpizo y Villanueva (2001), el derecho a la información se puede descomponer en tres facultades:
 
 | Vertiente | Qué permite |
 |---|---|
@@ -74,13 +74,13 @@ Siguiendo a Carpizo, citado por Rodríguez, el derecho a la información se pued
 
 ### Sus límites
 
-El derecho a la información y la libertad de expresión no son absolutos. El propio primer párrafo del artículo 6o. marca dónde terminan: cuando se ataca la moral, la vida privada o los derechos de terceros, cuando se provoca un delito o cuando se perturba el orden público. Soto (2010) desarrolla estas restricciones con más detalle. Para la ciberseguridad, la frontera con la **vida privada** es la más relevante: publicar datos de otra persona no está protegido por la libertad de expresión.
+El derecho a la información y la libertad de expresión no son absolutos. El propio primer párrafo del artículo 6o. marca dónde terminan: cuando se ataca la moral, la vida privada o los derechos de terceros, cuando se provoca un delito o cuando se perturba el orden público. Soto Gama (2010) desarrolla estas restricciones con más detalle. Para la ciberseguridad, la frontera con la **vida privada** es la más relevante: publicar datos de otra persona no está protegido por la libertad de expresión.
 
 ### Acceso no significa gratuidad
 
 Que el acceso a internet sea un derecho no obliga a que sea gratis. Como otros servicios públicos, se paga. Cada Estado decide si ofrece conexión gratuita en algunos espacios públicos, pero no está obligado a darla sin costo en todas partes.
 
-> **Actualización al 2026:** el Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales (INAI) se extinguió en marzo de 2025, tras la reforma constitucional del 20 de diciembre de 2024 y la nueva Ley General de Transparencia y Acceso a la Información Pública (DOF 20-03-2025). Sus funciones en el ámbito federal pasaron a "Transparencia para el Pueblo", órgano desconcentrado de la Secretaría Anticorrupción y Buen Gobierno. Ese mismo día se publicó una nueva Ley Federal de Protección de Datos Personales en Posesión de los Particulares.
+> **Actualización al 2026:** el Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales (INAI) se extinguió en marzo de 2025, tras la reforma constitucional del 20 de diciembre de 2024 y la nueva Ley General de Transparencia y Acceso a la Información Pública (DOF 20-03-2025). Sus funciones de acceso a la información pública federal pasaron a "Transparencia para el Pueblo", órgano administrativo desconcentrado de la Secretaría Anticorrupción y Buen Gobierno, y las de protección de datos personales, a la propia Secretaría. Ese mismo día se publicó una nueva Ley Federal de Protección de Datos Personales en Posesión de los Particulares.
 
 ## Brecha generacional, analfabetismo y migración digitales
 
@@ -120,7 +120,7 @@ Palacios (2017) observa que la brecha entre generaciones no es nueva, pero hoy s
 
 La Encuesta Nacional sobre Disponibilidad y Uso de Tecnologías de la Información en los Hogares (ENDUTIH) de 2018 registró 74.3 millones de usuarios de internet de seis años o más en México. El grupo de 55 años o más era el de menor uso; las cifras reportadas para ese grupo fueron 4.1 por ciento en mujeres y 4.0 por ciento en hombres. The Social Intelligence Unit (2017) concluye que la brecha generacional no solo ayuda a explicar la brecha digital: para los adultos que no usan internet, se convierte en un obstáculo para ejercer plenamente su derecho a la información y a la libre expresión.
 
-> **Actualización al 2026:** la ENDUTIH 2025 del INEGI estima 104.9 millones de personas usuarias de internet, 86.1 por ciento de la población de seis años o más (en 2015 eran 57.4 por ciento). La brecha persiste por lugar de residencia: 88.9 por ciento en zonas urbanas frente a 75.2 por ciento en zonas rurales. A escala mundial, la UIT calcula unos 6,000 millones de personas conectadas en 2025, alrededor de tres cuartas partes de la humanidad, y 2,200 millones todavía fuera de línea.
+> **Actualización al 2026:** la ENDUTIH 2025 del INEGI estima 104.9 millones de personas usuarias de internet, 86.1 por ciento de la población de seis años o más (en 2015 eran 57.4 por ciento). La brecha persiste por lugar de residencia: 88.9 por ciento en zonas urbanas frente a 75.2 por ciento en zonas rurales. A escala mundial, la UIT calcula unos 6,300 millones de personas conectadas en 2026, 76 por ciento de la población, y 2,000 millones todavía fuera de línea.
 
 ## Nuevas tecnologías y ciberseguridad
 
@@ -146,7 +146,7 @@ Una tecnología emergente es una innovación en desarrollo o recién introducida
 
 > **Actualización al 2026:** los conteos públicos más recientes de Internet2 hablan de unas 330 universidades, cerca de 60 agencias de gobierno y 46 redes regionales y estatales; la cifra exacta cambia cada año y se consulta en su directorio de miembros.
 
-**4. Internet de las cosas (IoT).** Es la conexión a internet de objetos cotidianos para que se comuniquen y compartan datos entre sí. Ya en 2014 la revista Forbes describía cómo esa conectividad rebasaba a teléfonos, tabletas y computadoras para llegar a casi cualquier objeto. La idea es que cada dispositivo tenga una dirección en la red y pueda hablar con otros, muchas veces sin que lo notemos. Se conectan por wifi, WiMAX, RFID, 3G, LTE, Bluetooth, NFC o 5G. El beneficio es la automatización y la eficiencia; el costo es que cada foco, cámara o reloj conectado es un equipo más que se puede atacar. Kaspersky advirtió, por ejemplo, que los dispositivos médicos conectados y los servicios de salud quedarían cada vez más expuestos a ataques dirigidos (Namestnikova, 2021), y ESET dedicó su informe *Tendencias 2019* a la privacidad en un mundo de dispositivos inteligentes.
+**4. Internet de las cosas (IoT).** Es la conexión a internet de objetos cotidianos para que se comuniquen y compartan datos entre sí. Ya en 2014 la revista Forbes describía cómo esa conectividad rebasaba a teléfonos, tabletas y computadoras para llegar a casi cualquier objeto (Morgan, 2014). La idea es que cada dispositivo tenga una dirección en la red y pueda hablar con otros, muchas veces sin que lo notemos. Se conectan por wifi, WiMAX, RFID, 3G, LTE, Bluetooth, NFC o 5G. El beneficio es la automatización y la eficiencia; el costo es que cada foco, cámara o reloj conectado es un equipo más que se puede atacar. Kaspersky advirtió, por ejemplo, que los dispositivos médicos conectados y los servicios de salud quedarían cada vez más expuestos a ataques dirigidos (Namestnikova, 2021), y ESET dedicó su informe *Tendencias 2019* a la privacidad en un mundo de dispositivos inteligentes.
 
 **5. Cómputo en la nube.** Microsoft Azure la describe como la entrega de servicios de cómputo (servidores, almacenamiento, bases de datos, redes, software, análisis e inteligencia) a través de internet, con tres promesas: innovar más rápido, disponer de recursos flexibles y aprovechar economías de escala. Normalmente se paga solo lo que se usa, lo que baja los costos de operación y permite crecer cuando el negocio lo requiere. Servicios de almacenamiento conocidos son Box, Dropbox, Google Drive e iCloud. Guardar datos en servidores ajenos tiene riesgos: los términos de servicio son **contratos de adhesión**, redactados por una sola parte, que el usuario acepta sin negociar y que pueden generarle problemas jurídicos (dónde se guardan sus datos, quién puede acceder a ellos, qué pasa si el servicio cierra).
 
@@ -214,24 +214,28 @@ La brecha digital es la desigualdad en el acceso y en el uso de la tecnología e
 
 ## Referencias
 
-- AgroSMARTcoop. (2017). *Trazabilidad en la cadena agroalimentaria* [proyecto Interreg Sudoe]. Programa Interreg Sudoe. https://www.interreg-sudoe.eu/
+- AgroSMARTcoop. (2017, 29 de mayo). *2.8. Nuevas tecnologías de la información y la comunicación para mejorar la trazabilidad en las empresas del sector cárnico* [buena práctica del proyecto Interreg Sudoe]. https://web.archive.org/web/20190718171547/http://www.agrosmartcoop.eu/2017/05/29/2-8-nuevas-tecnologias-de-la-informacion-y-la-comunicacion-para-mejorar-la-trazabilidad-en-las-empresas-del-sector-carnico-tipologia-4/
 - Argentina, Secretaría de Innovación Pública. (s. f.). *Inteligencia artificial para inteligencias reales* [manual]. https://www.argentina.gob.ar/sites/default/files/manual_-_inteligencia_artificial.pdf
+- Carpizo, J. y Villanueva, E. (2001). El derecho a la información. Propuestas de algunos elementos para su regulación en México. En D. Valadés y R. Gutiérrez Rivas (Coords.), *Derechos humanos. Memoria del IV Congreso Nacional de Derecho Constitucional III* (pp. 71-101). Universidad Nacional Autónoma de México, Instituto de Investigaciones Jurídicas. https://archivos.juridicas.unam.mx/www/bjv/libros/1/94/6.pdf
 - Constitución Política de los Estados Unidos Mexicanos. (1917, última reforma DOF 07-10-2026). Cámara de Diputados. https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf
 - Corporación Universitaria para el Desarrollo de Internet. (s. f.). *CUDI*. https://www.cudi.edu.mx/
 - ESET. (2018, 18 de diciembre). *Tendencias 2019: privacidad e intrusión en la aldea global*. WeLiveSecurity. https://www.welivesecurity.com/la-es/2018/12/18/tendencias-2019-ciberseguridad/
 - Instituto Nacional de Estadística y Geografía. (2019). *Encuesta Nacional sobre Disponibilidad y Uso de Tecnologías de la Información en los Hogares (ENDUTIH) 2018*. https://www.inegi.org.mx/programas/dutih/2018/
 - Instituto Nacional de Estadística y Geografía. (2026). *Encuesta Nacional sobre Disponibilidad y Uso de Tecnologías de la Información en los Hogares (ENDUTIH) 2025* [comunicado de prensa]. https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2026/endutih/ENDUTIH_25_RR.pdf
 - Internet2. (s. f.). *Community*. https://internet2.edu/community/
+- Jarque, C. M. (2021). El desafío de la inclusión digital universal. *EconomíaUNAM, 18*(54), 77-85. https://web.archive.org/web/20240906100103/http://revistaeconomia.unam.mx/index.php/ecu/article/view/655
 - Kaspersky. (s. f.). *¿Qué es la biometría?* https://latam.kaspersky.com/resource-center/definitions/biometrics
 - Ley General de Transparencia y Acceso a la Información Pública. (2025). *Diario Oficial de la Federación*, 20 de marzo de 2025. Cámara de Diputados. https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf
 - Microsoft Azure. (s. f.). *¿Qué es la informática en la nube?* https://azure.microsoft.com/es-es/resources/cloud-computing-dictionary/what-is-cloud-computing
+- Morgan, J. (2014, 13 de mayo). A simple explanation of "the internet of things". *Forbes*. https://www.forbes.com/sites/jacobmorgan/2014/05/13/simple-explanation-internet-things-that-anyone-can-understand/
 - Namestnikova, M. (2021). *The dangers of "connected" healthcare: predictions for 2022*. Securelist, Kaspersky. https://securelist.com/connected-healthcare-predictions-for-2022/104969/
 - Oracle. (s. f.). *¿Qué es el big data?* https://www.oracle.com/mx/big-data/what-is-big-data/
 - Organización de las Naciones Unidas. (1948). *Declaración Universal de los Derechos Humanos*. https://www.un.org/es/about-us/universal-declaration-of-human-rights
 - Prensky, M. (2001). Digital natives, digital immigrants. *On the Horizon, 9*(5), 1-6. https://doi.org/10.1108/10748120110424816
+- Soto Gama, D. (2010). *Principios generales del derecho a la información*. Instituto de Transparencia y Acceso a la Información Pública del Estado de México y Municipios. https://infoem.org.mx/sipoem/ipo_capacitacionComunicacion/pdf/pet_tesis_003_2009.pdf
 - Unión Internacional de Telecomunicaciones. (2008). *Recomendación UIT-T X.1205: Aspectos generales de la ciberseguridad*. https://www.itu.int/rec/T-REC-X.1205-200804-I/es
-- Unión Internacional de Telecomunicaciones. (2025, 17 de noviembre). *Aumenta el número mundial de usuarios de Internet, pero las disparidades profundizan las principales brechas digitales* [comunicado]. https://www.itu.int/es/mediacentre/Pages/PR-2025-11-17-Facts-and-Figures.aspx
-- Citas secundarias sin obra original localizada: Carpizo, citado por Rodríguez (vertientes del derecho a la información); Soto (2010), límites al derecho a la información; Notimex (2019); Torvisco (2019); Palacios (2017); The Social Intelligence Unit (2017); Forbes (2014), internet de las cosas; Jarque (2021), *El desafío de la inclusión digital universal*.
+- Unión Internacional de Telecomunicaciones. (2026, 3 de noviembre). *Ya hay 6 300 millones de personas conectadas, pero las brechas digitales siguen existiendo* [comunicado]. https://www.itu.int/es/mediacentre/Pages/PR-2026-11-03-Facts-and-Figures.aspx
+- Citas secundarias sin obra original localizada: Notimex (2019); Torvisco (2019); Palacios (2017); The Social Intelligence Unit (2017).
 
 ---
 

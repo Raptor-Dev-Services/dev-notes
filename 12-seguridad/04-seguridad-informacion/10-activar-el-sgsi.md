@@ -139,16 +139,16 @@ Los detalles del proceso de evaluación están en la nota [03](03-sgsi-iso-27001
 
 - bvconsulting. (2010). *¿Qué es un business case?* [Video]. YouTube. https://youtu.be/drPWUq_iGmg
 - Cámara de Diputados del H. Congreso de la Unión. (2020). *Ley Federal de Protección a la Propiedad Industrial*. https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPPI.pdf
-- Cámara de Diputados del H. Congreso de la Unión. (2025). *Ley Federal de Protección de Datos Personales en Posesión de los Particulares* (DOF 20-03-2025). https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf
+- Cámara de Diputados del H. Congreso de la Unión. (2025). *Ley Federal de Protección de Datos Personales en Posesión de los Particulares* (DOF 20-03-2025, última reforma DOF 14-11-2025). https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf
 - Cámara de Diputados del H. Congreso de la Unión. (s. f.-a). *Código de Comercio*. https://www.diputados.gob.mx/LeyesBiblio/pdf/CCom.pdf
-- Cámara de Diputados del H. Congreso de la Unión. (s. f.-b). *Código Penal Federal*. https://www.diputados.gob.mx/LeyesBiblio/pdf/CPF.pdf
+- Cámara de Diputados del H. Congreso de la Unión. (2026). *Código Penal Federal* (última reforma DOF 13-03-2026). https://www.diputados.gob.mx/LeyesBiblio/pdf/CPF.pdf
 - Comisión Nacional Bancaria y de Valores. (2005, con reformas posteriores). *Disposiciones de carácter general aplicables a las instituciones de crédito*. CNBV. https://www.cnbv.gob.mx/Normatividad/Disposiciones%20de%20car%C3%A1cter%20general%20aplicables%20a%20las%20instituciones%20de%20cr%C3%A9dito.pdf
 - INCIBE. (2008). *Alcance SGSI* [Video]. YouTube. https://youtu.be/vB0IL4FeA9Q
 - INCIBE. (2010a). *SGSI 06: Definición de las políticas, organización, alcance* [Video]. YouTube. https://youtu.be/qawa_QcuFfc
 - INCIBE. (2010b). *SGSI 08: Análisis y valoración de riesgos. Metodologías* [Video]. YouTube. https://youtu.be/g7EPuzN5Awg
 - International Organization for Standardization e International Electrotechnical Commission. (2016). *ISO/IEC 27004:2016 Information technology. Security techniques. Information security management. Monitoring, measurement, analysis and evaluation*. ISO. https://www.iso.org/standard/64120.html
 - International Organization for Standardization e International Electrotechnical Commission. (2017). *ISO/IEC 27003:2017 Information technology. Security techniques. Information security management systems. Guidance*. ISO. https://www.iso.org/standard/63417.html
-- ISOTools Excellence. (2016). *ISO 27001: Técnicas para convencer a la alta dirección de su implementación*. https://www.isotools.us/2016/
+- ISOTools Excellence. (2016, 15 de septiembre). *ISO 27001: Técnicas para convencer a la alta dirección de su implementación* [Entrada de blog]. https://iso-27001.blog/2016/09/iso-27001-tecnicas-convencer-alta-direccion-implementacion/
 - KAWAK. (2016). *ISO 27001 desde un enfoque práctico* [Video]. YouTube. https://youtu.be/Nv8EuEjV5ZA
 - PeopleCert. (s. f.). *ITIL service management*. AXELOS. https://www.axelos.com/certifications/itil-service-management
 

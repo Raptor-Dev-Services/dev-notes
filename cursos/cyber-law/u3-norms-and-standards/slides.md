@@ -235,11 +235,11 @@ Ejercicio rápido: "ISO 27001" sin año, ¿a cuál se refiere? Puede ser 2005, 2
 | Norma | Tema | Situación |
 |---|---|---|
 | OSI (ISO 7498) | Modelo de siete capas | Edición conocida 1994 |
-| ISO/IEC 27001 | Sistema de gestión de seguridad (SGSI) | Vigente 2022 |
+| ISO/IEC 27001 | Sistema de gestión de seguridad (SGSI) | Vigente 2022, con enmienda de 2024 |
 | ISO/IEC 17799 | Buenas prácticas de controles | Renombrada 27002 en 2007 |
-| ISO/IEC 20000-1 | Gestión de servicios de TI | Edición conocida 2018 |
-| ISO 31000 | Gestión de riesgos | Edición conocida 2018 |
-| ISO/IEC/IEEE 12207 | Ciclo de vida del software | Edición conocida 2017 |
+| ISO/IEC 20000-1 | Gestión de servicios de TI | Vigente 2018, con enmienda de 2024 |
+| ISO 31000 | Gestión de riesgos | Vigente 2018; revisión en curso |
+| ISO/IEC/IEEE 12207 | Ciclo de vida del software | Vigente 2026 (sustituyó a la de 2017) |
 
 ---
 
@@ -271,13 +271,13 @@ La respuesta propuesta es de gestión: preparación, anticipar vulnerabilidades 
 
 | Norma | Tema |
 |---|---|
-| 27000 | Vocabulario |
+| 27000 | Panorama de la familia (edición 2026; ya no es de vocabulario) |
 | 27001 | Requisitos del SGSI, certificable |
 | 27002 | Controles |
 | 27005 | Gestión de riesgos |
 | 27017 y 27018 | Nube y datos personales en la nube |
 | 27042 y 27043 | Evidencia digital e investigación de incidentes |
-| 27701 | Extensión de privacidad (antes proyecto 27552) |
+| 27701 | Gestión de la privacidad; norma propia desde la edición 2025 (antes proyecto 27552) |
 
 <!--
 27042 y 27043 conectan con la materia de informática forense: la norma no solo previene, también ayuda a

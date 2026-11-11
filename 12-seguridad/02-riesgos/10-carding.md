@@ -142,7 +142,7 @@ El carding existe desde hace años y sigue siendo rentable, pero es prevenible c
 - Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros. (2019, 26 de julio). ¡Cuidado! fraudes al por mayor. *Proteja su Dinero*. https://revista.condusef.gob.mx/usuario-inteligente/que-hay-de-nuevo/2019/07/cuidado-fraudes-al-por-mayor/
 - Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros. (2019, 3 de junio). Carding y bineros otra forma de hackeo. *Proteja su Dinero*. https://revista.condusef.gob.mx/usuario-inteligente/que-hay-de-nuevo/2019/06/carding-y-bineros-otra-forma-de-hackeo/
 - HackWise. (2022, 10 de junio). *Así clonan tus tarjetas de crédito y débito (cazando skimmers)* [Video]. YouTube. https://youtu.be/dnd4fYeZu58
-- Infobae. (2019). *Carding, el nuevo fraude a través de tarjetas bancarias y cómo prevenirlo*. https://www.infobae.com/
+- Infobae. (2019, 28 de junio). *Carding, el nuevo fraude a través de tarjetas bancarias y cómo prevenirlo*. https://www.infobae.com/america/mexico/2019/06/28/carding-el-nuevo-fraude-a-traves-de-tarjetas-bancarias-y-como-prevenirlo/
 - International Organization for Standardization. (2017). *ISO/IEC 7812-1:2017 Identification cards: Identification of issuers, Part 1: Numbering system*. https://www.iso.org/standard/70484.html
 - Malone, A. (2024, 11 de junio). Just published: PCI DSS v4.0.1. *PCI Perspectives*. PCI Security Standards Council. https://blog.pcisecuritystandards.org/just-published-pci-dss-v4-0-1
 - PCI Security Standards Council. (2022). *FAQ 1091: What are acceptable formats for truncation of primary account numbers?* https://www.pcisecuritystandards.org/faqs/1091
