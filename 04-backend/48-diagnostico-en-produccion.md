@@ -93,6 +93,7 @@ La salida lista funciones por tiempo exclusivo e inclusivo. En la corrida del cu
 
 - Microsoft Learn, *dotnet-counters*: https://learn.microsoft.com/dotnet/core/diagnostics/dotnet-counters
 - Microsoft Learn, *dotnet-dump*: https://learn.microsoft.com/dotnet/core/diagnostics/dotnet-dump
+- Microsoft Learn, *Creating metrics* (instrumentación, a noviembre de 2026): https://learn.microsoft.com/en-us/dotnet/core/diagnostics/metrics-instrumentation
 - Microsoft Learn, *dotnet-trace*: https://learn.microsoft.com/dotnet/core/diagnostics/dotnet-trace
 - *Effective .NET Memory Management* (Williams, 2024), cap. 6. *Systems Programming with C# and .NET* (Vroegop, 2024), caps. 10 y 11. *Tools and Skills for .NET 10* (Price, 2025), cap. 5.
 
@@ -103,7 +104,7 @@ La salida lista funciones por tiempo exclusivo e inclusivo. En la corrida del cu
 | Término | Definición |
 |---------|-----------|
 | Contador / métrica | valor numérico que el runtime o la aplicación publica periódicamente |
-| Meter | API de .NET para publicar métricas propias que `dotnet-counters` puede leer |
+| Meter | API de .NET para publicar métricas propias que `dotnet-counters` puede leer. Un `Counter<T>` solo aumenta; un `ObservableGauge<T>` se lee con un callback en cada ciclo de recolección |
 | Volcado (dump) | copia de la memoria de un proceso en un momento dado |
 | `dumpheap -stat` | comando de SOS que resume el heap por tipo, con conteo y tamaño |
 | `gcroot` | comando de SOS que muestra la cadena de referencias que mantiene vivo a un objeto |

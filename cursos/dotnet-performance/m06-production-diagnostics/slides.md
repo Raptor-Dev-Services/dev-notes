@@ -159,7 +159,8 @@ var fuga = new ConcurrentDictionary<int, byte[]>();
 meter.CreateObservableGauge("ejemplo.cache.entradas", () => fuga.Count, "entrada", "Entradas en la cache sin limite");
 ```
 
-- Un **contador** (`Counter`) solo sube; un **medidor observable** (`ObservableGauge`) se consulta en cada lectura.
+- Un **contador** (`Counter<T>`) rastrea un valor que solo aumenta: el código reporta los incrementos con `Add`. Para valores que suben y bajan (colas, cachés) existen `UpDownCounter<T>` y `ObservableUpDownCounter<T>`.
+- Un **medidor observable** (`ObservableGauge<T>`) recibe un callback que la herramienta invoca **en cada ciclo de recolección**; los callbacks de todos los observables corren en secuencia (uno lento retrasa a los demás) y en un hilo distinto del que actualiza el valor, así que hay que sincronizar. Su par que empuja el valor es `Gauge<T>` con `Record`.
 - Esa métrica de negocio ("cuántas entradas tiene mi caché") es la que une la memoria con una causa.
 - `dotnet-counters` la ve por el nombre del `Meter`: `--counters ApiEjemplo`.
 
@@ -519,6 +520,7 @@ Criterio: cada mejora lleva su medición antes y después, con `Allocated` o con
 - [dotnet-counters](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/dotnet-counters)
 - [dotnet-dump](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/dotnet-dump)
 - [dotnet-trace](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/dotnet-trace)
+- [Instrumentación de métricas (System.Diagnostics.Metrics)](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/metrics-instrumentation)
 - [Distributed tracing concepts](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/distributed-tracing-concepts)
 
 **Libros (cada quien consigue su copia)**

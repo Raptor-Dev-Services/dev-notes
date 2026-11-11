@@ -25,7 +25,7 @@
 
 ### Contador (Counter)
 **Categoría:** Métricas
-**Definición:** Instrumento de `System.Diagnostics.Metrics` que acumula un valor que solo crece, como el número de peticiones atendidas.
+**Definición:** Instrumento de `System.Diagnostics.Metrics` (`Counter<T>`) que rastrea un valor que solo aumenta; el código reporta los incrementos con `Add` y la herramienta muestra el total o la tasa. Para valores que suben y bajan existen `UpDownCounter<T>` y `ObservableUpDownCounter<T>`.
 **En el curso:** `ejemplo.peticiones` cuenta las peticiones de `/pedido/{id}`.
 
 ---
@@ -107,8 +107,8 @@
 
 ### Medidor observable (ObservableGauge)
 **Categoría:** Métricas
-**Definición:** Instrumento cuyo valor se obtiene llamando a una función cada vez que se lee, en lugar de registrarlo en cada cambio.
-**En el curso:** `ejemplo.cache.entradas` devuelve `fuga.Count` en cada lectura.
+**Definición:** Instrumento (`ObservableGauge<T>`) cuyo valor se obtiene con un callback que la herramienta invoca en cada ciclo de recolección, en lugar de registrarlo en cada cambio. Los callbacks de los observables corren en secuencia y en un hilo distinto del que actualiza el valor, así que hay que sincronizar. Su par que empuja el valor es `Gauge<T>` con `Record`.
+**En el curso:** `ejemplo.cache.entradas` devuelve `fuga.Count` en cada ciclo de recolección.
 
 ---
 
