@@ -104,7 +104,7 @@ Luego contesta:
 2. Con el folio A03 sin usar el sexo, ¿a cuántas personas puedes confundir? ¿Quiénes son? (Pista: una socia nació el mismo día y vive en la misma zona.)
 3. ¿Qué lección sacas para decidir qué columnas se publican?
 
-**Lo que debes ver:** con los tres datos casi todos quedan identificados; sin uno de ellos, el número baja, pero sigue habiendo personas únicas. El nombre no hacía falta para identificar.
+**Lo que debes ver:** con los tres datos, diez de los doce folios quedan identificados; sin uno de ellos, el número baja, pero sigue habiendo personas únicas. El nombre no hacía falta para identificar.
 
 ---
 
