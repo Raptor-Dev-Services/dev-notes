@@ -59,18 +59,18 @@ Entender esto es clave para estimar cuánto tardará tu práctica.
 
 ```bash
 hydra -L usuarios_practica.txt -P passwords_practica.txt \
-  -t 1 -w 3 -V ssh://<IP_DE_TU_VICTIMA>
+  -t 1 -W 3 -V ssh://<IP_DE_TU_VICTIMA>
 ```
 
 - `-t 1`: un solo hilo (evita saturar o bloquear el servicio).
-- `-w 3`: 3 segundos de espera entre intentos (simula un ataque lento).
+- `-W 3`: pausa de 3 segundos entre conexiones de cada hilo (simula un ataque lento). No confundir con `-w`, que es el tiempo máximo de espera de la respuesta.
 - `-V`: modo detallado, muestra cada combinación que se prueba.
 
 ---
 
-## Por qué `-t` bajo y `-w` alto en el laboratorio
+## Por qué `-t` bajo y `-W` alto en el laboratorio
 
-Valores de `-t` altos (muchos hilos simultáneos) saturan el servicio y disparan bloqueos tipo `fail2ban` más rápido. Para observar el comportamiento con claridad en clase, se usan valores bajos y lentos, no para "evadir detección" en un sistema real.
+Valores de `-t` altos (muchos hilos simultáneos) saturan el servicio y disparan bloqueos tipo `fail2ban` más rápido. Para observar el comportamiento con claridad en clase, se usan pocos hilos y pausas entre conexiones (`-W`), no para "evadir detección" en un sistema real.
 
 ---
 
@@ -78,7 +78,7 @@ Valores de `-t` altos (muchos hilos simultáneos) saturan el servicio y disparan
 
 Mismo patrón de sintaxis para otros servicios: `ftp://`, `telnet://`, `http-post-form://` (este último con sintaxis adicional para el formulario).
 
-Fuente: documentación de Hydra (THC-Hydra), github.com/vanhauser-thc/thc-hydra.
+Fuente: documentación de Hydra (THC-Hydra), github.com/vanhauser-thc/thc-hydra (`hydra -h`: "-w / -W TIME: wait time for a response / between connects per thread").
 
 ---
 

@@ -102,7 +102,7 @@
 
 ### BaseApiController
 **Categoría:** Back-template / ASP.NET Core
-**Definición:** Clase abstracta en `Shared.Web` que hereda de `ControllerBase` y provee el `IMediator` a todos los Controllers. Implementa el patrón Template Method: define el acceso al Mediator y deja los endpoints para cada subclase.
+**Definición:** Clase abstracta en `Shared.Web` que hereda de `ControllerBase` y provee el `IMediator` a todos los Controllers. Es herencia para reutilizar: expone el acceso al Mediator y cada subclase define sus endpoints. No es el patrón Template Method, que exige un método plantilla con pasos abstractos.
 **En el proyecto:** Todos los Controllers del CRM (`ConversationsController`, `ContactsController`, etc.) heredan de `BaseApiController`.
 
 ---
@@ -976,7 +976,7 @@
 ### Template Method pattern (patrón Template Method)
 **Categoría:** Patrón de diseño
 **Definición:** Patrón donde la clase base define el esqueleto de un algoritmo y las subclases sobreescriben los pasos variables.
-**En el proyecto:** `BaseApiController` define el acceso fijo a `IMediator` y los controllers definen sus propios endpoints.
+**En el proyecto:** Ningún componente del back-template lo implementa de forma estricta; `BaseApiController` solo reutiliza el acceso a `IMediator` por herencia.
 
 ---
 

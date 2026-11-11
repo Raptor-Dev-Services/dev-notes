@@ -247,10 +247,10 @@ El contexto de build es todo lo que Docker envía al daemon. Sin `.dockerignore`
 
 | Stage | Imagen base | Tamaño | Contiene |
 |-------|-------------|--------|----------|
-| `restore` / `build` | `sdk:10.0` | ~740 MB | SDK + herramientas de build |
-| `final` (producción) | `aspnet:10.0-noble-chiseled` | ~110 MB | Solo runtime ASP.NET |
+| `restore` / `build` | `sdk:10.0` | mucho mayor (incluye el SDK) | SDK + herramientas de build |
+| `final` (producción) | `aspnet:10.0-noble-chiseled` | mucho menor (solo runtime) | Solo runtime ASP.NET |
 
-**Sin multi-stage:** la imagen final incluiría el SDK completo (~740 MB), el código fuente y las herramientas de compilación  -  una superficie de ataque enorme.
+**Sin multi-stage:** la imagen final incluiría el SDK completo, el código fuente y las herramientas de compilación  -  una superficie de ataque enorme.
 
 **Con multi-stage:** la imagen final solo contiene el `publish` output + el runtime necesario.
 
@@ -912,7 +912,7 @@ docker compose up -d --force-recreate
 |-------|--------------|-----------|
 | Tags en producción | `:latest` | `:v1.2.0` o `:${GIT_SHA}` |
 | Imagen producción | Una sola stage con SDK | Multi-stage: build -> publish -> final |
-| Imagen base final | `sdk:10.0` (740 MB) | `aspnet:10.0-noble-chiseled` (110 MB) |
+| Imagen base final | `sdk:10.0` (imagen grande) | `aspnet:10.0-noble-chiseled` (imagen pequeña) |
 | `.dockerignore` | Ausente -> GBs de contexto | `bin/`, `obj/`, `node_modules/`, `.env` |
 | Secretos en imagen | `COPY .env .` o `ARG SECRET` | Vars de entorno en runtime (`-e` / compose) |
 | Usuario en contenedor | root (default) | `USER app` (no-root) |

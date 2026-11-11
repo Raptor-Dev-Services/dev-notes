@@ -349,7 +349,7 @@
 
 ### RFC 7807
 **Categoría:** Estándares HTTP / Interoperabilidad
-**Definición:** Estándar IETF (Request for Comments) que define un formato JSON uniforme para describir errores en APIs HTTP. Especifica los campos `type`, `title`, `status`, `detail` e `instance`, y permite extensiones adicionales. Garantiza que los clientes puedan procesar errores de forma consistente independientemente del endpoint.
+**Definición:** Estándar IETF (Request for Comments), obsoletado por el RFC 9457 (julio de 2023, que conserva el formato), que define un formato JSON uniforme para describir errores en APIs HTTP. Especifica los campos `type`, `title`, `status`, `detail` e `instance`, y permite extensiones adicionales. Garantiza que los clientes puedan procesar errores de forma consistente independientemente del endpoint.
 **En el proyecto:** El sistema de mensajería adopta RFC 7807 a través de `ProblemDetails` y `ValidationProblemDetails` de ASP.NET Core. Todas las respuestas de error siguen esta estructura, lo que facilita el procesamiento uniforme de errores en los clientes React.
 
 ### RequestHandlerDelegate\<TResponse\>

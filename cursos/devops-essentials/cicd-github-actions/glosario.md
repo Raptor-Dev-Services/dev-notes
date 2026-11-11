@@ -372,7 +372,7 @@
 ### OIDC (OpenID Connect)
 **Categoría:** Seguridad / Autenticación
 **Definición:** Capa de identidad construida sobre OAuth 2.0 que permite a un servicio (como AWS STS) verificar la identidad de una carga de trabajo mediante tokens firmados emitidos por un proveedor de identidad externo (como GitHub). Elimina la necesidad de credenciales de larga duración.
-**En el proyecto:** El `cd-oidc.yml` del sistema de mensajería usa OIDC para que GitHub emita un token firmado que AWS STS valida contra el proveedor `token.actions.githubusercontent.com`, obteniendo credenciales temporales de 15 minutos para el deploy.
+**En el proyecto:** El `cd-oidc.yml` del sistema de mensajería usa OIDC para que GitHub emita un token firmado que AWS STS valida contra el proveedor `token.actions.githubusercontent.com`, obteniendo credenciales temporales (por omisión de 1 hora, configurable) para el deploy.
 
 ### OIDC Provider (AWS)
 **Categoría:** AWS / Seguridad
@@ -498,7 +498,7 @@
 ### STS (AWS Security Token Service)
 **Categoría:** AWS / Seguridad
 **Definición:** Servicio de AWS que emite credenciales de seguridad temporales para usuarios o cargas de trabajo autenticadas. Las credenciales tienen una duración limitada (por defecto 1 hora, configurable) y se usan igual que las credenciales de larga duración.
-**En el proyecto:** En el flujo OIDC del sistema de mensajería, GitHub presenta el token OIDC a AWS STS, que lo valida y emite credenciales temporales de 15 minutos para que el runner pueda hacer push a ECR y actualizar ECS.
+**En el proyecto:** En el flujo OIDC del sistema de mensajería, GitHub presenta el token OIDC a AWS STS, que lo valida y emite credenciales temporales (por omisión de 1 hora, configurables desde 15 minutos hasta la duración máxima del rol, según la referencia de AWS STS para AssumeRoleWithWebIdentity: https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html) para que el runner pueda hacer push a ECR y actualizar ECS.
 
 ---
 

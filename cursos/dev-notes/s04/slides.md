@@ -142,7 +142,7 @@ public sealed class GetUserProfileHandler
 
 ---
 
-## Factory Method  -  por qué es un patrón
+## Factory Method  -  creación condicional en el Handler (aún no es el patrón)
 
 ```csharp
 // El caller (InteractorPipeline) solo sabe que recibe GetUserProfileResponse
@@ -875,8 +875,8 @@ var n2 = new PushNotification("Tienes un mensaje nuevo", "es-MX", "push", userId
 **Problema:** quieres controlar, decorar o diferir el acceso a un objeto costoso.
 
 ```csharp
-// ResultViewModel<T> como Proxy del Response en el back-template
-// El Controller NUNCA accede al Response directamente  -  pasa por el ViewModel
+// ResultViewModel<T> NO es un Proxy: es un ViewModel de salida (se muestra para contrastarlo)
+// No comparte interfaz con la Response ni decide si dejar pasar el acceso
 
 public class ResultViewModel<T>
 {
@@ -884,7 +884,7 @@ public class ResultViewModel<T>
     public bool    IsSuccess { get; private set; }
     public string? Message   { get; private set; }
 
-    // El Presenter popula el proxy
+    // El Presenter popula el ViewModel
     public void Set<TData>(ISuccess<TData> success)
         { Data = success.Data; IsSuccess = true; }
     public ResultViewModel<T> Fail(string msg)
@@ -893,10 +893,10 @@ public class ResultViewModel<T>
 ```
 
 ```csharp
-// El Controller lee el proxy  -  nunca la Response original
+// El Controller lee el ViewModel
 if (_viewModel.IsSuccess) return Ok(_viewModel);
 return result is GetUserProfileNotFoundFailure ? NotFound(_viewModel) : StatusCode(500, _viewModel);
-// El Proxy desacopla el tipo de Response (dominio) del código de status HTTP
+// El ViewModel desacopla el tipo de Response (dominio) del código de status HTTP
 ```
 
 ---
@@ -912,7 +912,7 @@ return result is GetUserProfileNotFoundFailure ? NotFound(_viewModel) : StatusCo
 | Tipo | Propósito | Ejemplo real |
 |------|-----------|-------------|
 | **Virtual** | Difiere la creación hasta que se necesita | `Lazy<T>`, lazy loading de EF Core |
-| **Protection** | Controla quién puede acceder y qué puede ver | `ResultViewModel<T>`, `[Authorize]` |
+| **Protection** | Controla quién puede acceder y qué puede ver | Un proxy de autorización que envuelve al objeto real (`[Authorize]` es un filtro del pipeline, no un Proxy) |
 | **Remote** | Representa un objeto en otro proceso o red | `HttpClient`, cliente de WhatsApp API |
 
 **Diferencia con Decorator:**
@@ -923,8 +923,9 @@ return result is GetUserProfileNotFoundFailure ? NotFound(_viewModel) : StatusCo
 | El cliente construye el Decorator | El Proxy decide si crear el objeto real |
 | "Hace mas" | "Decide si dejas pasar" |
 
-`ResultViewModel<T>` es un **Protection Proxy**: el Controller nunca accede
-al `Response` de dominio directamente, solo a lo que el Proxy expone.
+`ResultViewModel<T>` **no** es un Proxy: un Proxy implementa la misma interfaz
+que el objeto real y controla el acceso a él; el ViewModel es un contenedor de salida.
+El Proxy real del back-template es el lazy loading de EF Core.
 
 ---
 
@@ -933,7 +934,7 @@ al `Response` de dominio directamente, solo a lo que el Proxy expone.
 | Patrón | Dónde vive en el back-template |
 |--------|-------------------------------|
 | Singleton | `AddSingleton<ITenantContextAccessor, TenantContextAccessor>()` |
-| Factory Method | Handler: `return new GetUserProfileNotFoundFailure(...)` |
+| Factory Method | (sin ejemplo estricto; el Handler solo crea la Response con un condicional) |
 | Abstract Factory | Familia de repos (EF Core / InMemory / Dapper) |
 | Builder | `AddOptions<JwtSettings>().BindConfiguration().ValidateOnStart()` |
 | Prototype | `record with { }` en tests  -  copiar Request modificando un campo |
@@ -943,7 +944,7 @@ al `Response` de dominio directamente, solo a lo que el Proxy expone.
 | Decorator | `InteractorPipeline` envuelve el Handler con log + publish |
 | Facade | `Mediator.Send(new GetUserProfileRequest(...))` oculta todo el pipeline |
 | Flyweight | String interning, `AgentRole` enum, `IOptions<JwtSettings>` singleton |
-| Proxy | `ResultViewModel<T>`  -  buffer entre Response de dominio y HTTP output |
+| Proxy | Lazy loading de EF Core (`ResultViewModel<T>` es un ViewModel, no un Proxy) |
 
 ---
 
@@ -957,7 +958,7 @@ Modules/Contacts/
 |
 |-- Contacts.Application/UseCases/GetContact/
 |   |-- GetContactRequest.cs                        <- Prototype (record with {})
-|   |-- GetContactHandler.cs                        <- Factory Method
+|   |-- GetContactHandler.cs                        <- crea Responses con condicionales
 |   `-- Responses/
 |       |-- GetContactResponse.cs                   <- Composite raíz
 |       |-- GetContactSuccess.cs                    <- Composite Leaf
