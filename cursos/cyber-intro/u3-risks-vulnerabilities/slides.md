@@ -247,6 +247,24 @@ impacto de 1 a 5, umbral 10. Cada equipo comparte el activo con riesgo más alto
 
 ---
 
+## Probabilidad × impacto: la matriz del ejercicio
+
+```sim riesgo
+probabilidad: 1, 2, 3, 4, 5
+impacto: 1, 2, 3, 4, 5
+nivel: Debajo del umbral | 1 | 9
+nivel: Umbral o más | 10 | 25
+riesgo: Pérdida del único respaldo | 2 | 5
+riesgo: Correo de phishing a un empleado | 4 | 3
+riesgo: Caída del servidor por un día | 3 | 2
+```
+
+**Qué hacer:** es la escala del ejercicio de esta unidad: probabilidad e impacto de 1 a 5, y umbral 10. Mueve la probabilidad o el impacto de cada riesgo y mira cuándo cruza el umbral; después propongan sus propios tres activos y calculen su puntaje en equipo.
+
+> Ejemplo ilustrativo: los tres riesgos son inventados para practicar y no son estadísticas. La escala de 1 a 5 y el umbral 10 son los del ejercicio, no los de un estándar. Es el método cualitativo: probabilidad × impacto.
+
+---
+
 ## Riesgos que no salen en el reporte técnico
 
 | Riesgo | Raíz |

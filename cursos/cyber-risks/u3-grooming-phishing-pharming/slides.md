@@ -266,7 +266,7 @@ que lo delata. Anote en el pizarrón lo que digan; al final de la parte lo revis
 
 ## Un engaño en cinco pasos
 
-```mermaid
+```mermaid {A|B|C|D|E}
 flowchart LR
     A[Correo: tu cuenta fue bloqueada] --> B[Enlace a una copia del portal]
     B --> C[La víctima captura su tarjeta]

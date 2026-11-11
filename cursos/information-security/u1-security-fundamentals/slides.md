@@ -174,7 +174,7 @@ fuente posible.
 
 ## Cómo se relacionan
 
-```mermaid
+```mermaid {F,A|V|I,N|C}
 flowchart LR
     F[Fuente] --> A[Amenaza]
     A -->|aprovecha| V[Vulnerabilidad]
@@ -296,7 +296,7 @@ La dirección firma tres veces: la política, el riesgo residual y la implantaci
 
 ## El proceso
 
-```mermaid
+```mermaid {C,E|D1,T|D2,A}
 flowchart TD
     C[Contexto] --> E[Evaluación: identificar, estimar, valorar]
     E --> D1{¿Suficiente?}

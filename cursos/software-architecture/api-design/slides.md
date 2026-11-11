@@ -47,6 +47,18 @@ REST no es un protocolo ni un estándar  -  es un **estilo arquitectónico** con
 
 ---
 
+## Un GET de verdad
+
+```sim http
+ruta: /api/courses
+```
+
+**Qué hacer:** pulsa **Enviar** y lee tres cosas: el estado (la clase 2xx), el `content-type` y el cuerpo JSON. Es una petición `GET` real a la API pública de este sitio: lee, no modifica nada, y puedes repetirla las veces que quieras con el mismo efecto.
+
+> Es la API de este sitio, no la del sistema de mensajería de la unidad; sirve para ver una respuesta HTTP real. GET es seguro e idempotente según la RFC 9110 (sección 9.2).
+
+---
+
 ## Recursos  -  la unidad de diseño
 
 En REST, todo se modela como un **recurso** (sustantivo, nunca verbo):
@@ -809,6 +821,18 @@ GET /api/contacts?page=1&pageSize=20&sortBy=createdAt&sortDir=desc
 |---|---|
 | `500` | Error interno  -  nunca exponer stack trace |
 | `503` | App reiniciando o mantenimiento |
+
+---
+
+## Un 404 de verdad
+
+```sim http
+ruta: /api/ruta-que-no-existe
+```
+
+**Qué hacer:** pulsa **Enviar**: el servidor contesta `404`, el estado de un recurso que no existe, y el navegador lo trata como un error del cliente (4xx) aunque la petición llegó bien. A noviembre de 2026, esta API contesta ese 404 con el cuerpo vacío; la API de la unidad, en cambio, devuelve un Problem Details, como en las láminas de esta parte.
+
+> Es una petición real a este sitio, no a la API del sistema de mensajería. Los estados 4xx y 5xx están definidos en la RFC 9110, sección 15.
 
 ---
 
