@@ -107,8 +107,8 @@ flowchart LR
     C --> D[Ocurre un caso concreto]
     D --> E[Fiscal califica la conducta]
     E --> F[Juez revisa la tipicidad]
-    F --> G{Encaje completo?}
-    G -- si --> H[Posible delito: siguen los demás elementos]
+    F --> G{¿Encaje completo?}
+    G -- sí --> H[Posible delito: siguen los demás elementos]
     G -- no --> I[Conducta atípica: no hay delito]
 ```
 
