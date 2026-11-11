@@ -234,7 +234,7 @@ Assert.Equal("cliente", perfil!.Rol);
 public sealed record PerfilCambio(string? Nombre);   // lo único que el cliente puede cambiar
 ```
 
-```csharp {1-2|3-5}
+```csharp {1-2|3-4}
 var cambios = await peticion.ReadFromJsonAsync<PerfilCambio>();
 if (cambios?.Nombre is not { Length: > 0 and <= 60 } nombre)
     return Results.Problem(statusCode: 400, title: "Nombre invalido");

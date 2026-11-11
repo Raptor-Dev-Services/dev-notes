@@ -289,7 +289,7 @@ public void Verlo_fallar_la_aplicacion_no_arranca_con_una_clave_corta()
 
 Una API que nadie documentó es la que nadie protegió. El código de referencia compara lo que **expone** con un contrato escrito (`rutas-documentadas.txt`):
 
-```csharp {1-4|5-12|13-15|*}
+```csharp {1-4|5-11|12-13|*}
 foreach (var fuente in fabrica.Services.GetServices<EndpointDataSource>())
     foreach (var e in fuente.Endpoints.OfType<RouteEndpoint>())
     {

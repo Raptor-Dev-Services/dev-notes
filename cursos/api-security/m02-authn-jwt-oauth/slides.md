@@ -211,7 +211,7 @@ public static class ClavesJwt
 }
 ```
 
-```csharp {1-3|4-6|*}
+```csharp {1-2|3-4|*}
 builder.Services.AddOptions<OpcionesJwt>().BindConfiguration("Jwt")
     .Validate(o => ClavesJwt.EsValida(o.Clave), "La clave de firma debe medir al menos 256 bits (32 bytes).")
     .Validate(o => !string.IsNullOrWhiteSpace(o.Emisor) && !string.IsNullOrWhiteSpace(o.Audiencia), "Faltan el emisor o la audiencia.")

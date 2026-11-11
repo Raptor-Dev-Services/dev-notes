@@ -87,7 +87,7 @@ Regla de partida: **el cliente no es de fiar**. Todo lo que el cliente manda se 
 
 Cada llamada a una API debería pasar por cuatro preguntas, **en este orden**:
 
-```mermaid {C|G|A|Z}
+```mermaid {C|G|A|Z,D}
 flowchart LR
   C[Cliente] --> G[¿Es una ruta que existe y está documentada?]
   G --> A[¿Quién eres? autenticación]
@@ -241,7 +241,7 @@ Fuente: OWASP, API9:2023 (api-security.owasp.org/editions/2023/en/0xa9-improper-
 
 El propio OWASP lo ilustra: un límite de peticiones que se aplicó **solo** en la puerta de producción y no en un servidor beta que ejecuta la misma API.
 
-```mermaid {P,B|L}
+```mermaid {U,P,B|L}
 flowchart LR
   U[Cliente] --> P[api.ejemplo.test producción con límite]
   U --> B[beta.ejemplo.test misma API sin límite]
