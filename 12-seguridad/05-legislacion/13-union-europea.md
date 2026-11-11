@@ -110,13 +110,13 @@ Con o sin certificado, el modelo europeo empuja cuatro deberes básicos:
 3. Dar a conocer las vulnerabilidades que se descubran y cómo corregirlas.
 4. Avisar a los clientes cuándo termina el soporte de seguridad.
 
-**Actualización al 2026:** lo que en 2019 era una expectativa ya es obligación. La Ley de Ciberresiliencia (Reglamento (UE) 2024/2847) exige seguridad por diseño, gestión de vulnerabilidades y soporte durante la vida útil a todo producto con elementos digitales que se venda en la Unión. Entró en vigor el 10 de diciembre de 2024; desde el 11 de septiembre de 2026 los fabricantes deben avisar vulnerabilidades explotadas e incidentes graves por la plataforma única de ENISA, y el resto de sus obligaciones aplica desde el 11 de diciembre de 2027. Las multas llegan a 15 millones de euros o al 2.5 % de la facturación mundial.
+**Actualización al 2026:** lo que en 2019 era una expectativa ya es obligación. La Ley de Ciberresiliencia (Reglamento (UE) 2024/2847) exige seguridad por diseño, gestión de vulnerabilidades y soporte durante la vida útil a todo producto con elementos digitales que se venda en la Unión. Entró en vigor el 10 de diciembre de 2024; sus reglas sobre los organismos de evaluación de la conformidad aplican desde el 11 de junio de 2026; desde el 11 de septiembre de 2026 los fabricantes deben avisar vulnerabilidades explotadas e incidentes graves por la plataforma única de ENISA, y el resto de sus obligaciones aplica desde el 11 de diciembre de 2027. Las multas llegan a 15 millones de euros o al 2.5 % de la facturación mundial anual, la cifra que sea mayor.
 
 ### La relación con la Directiva NIS
 
 La primera ley europea de seguridad de redes y sistemas de información, la Directiva (UE) 2016/1148 (NIS), pidió a los operadores de servicios esenciales y a ciertos proveedores digitales medidas de seguridad "acordes con el estado de la técnica", sin decir cuáles. Ese requisito abierto deja la carga de la prueba en el operador. Usar productos certificados es la forma más sencilla de demostrar que se cumplió.
 
-**Actualización al 2026:** la NIS fue sustituida por la Directiva (UE) 2022/2555 (NIS2), que los Estados debían trasponer a más tardar el 17 de octubre de 2024. Amplía los sectores obligados, divide a las organizaciones en entidades esenciales e importantes, hace responsables a los órganos de dirección, impone avisos escalonados de incidentes (alerta temprana en 24 horas, notificación en 72 horas e informe final en un mes) y fija multas de hasta 10 millones de euros o el 2 % de la facturación para las entidades esenciales.
+**Actualización al 2026:** la NIS fue sustituida por la Directiva (UE) 2022/2555 (NIS2), que los Estados debían trasponer a más tardar el 17 de octubre de 2024. Amplía los sectores obligados, divide a las organizaciones en entidades esenciales e importantes, hace responsables a los órganos de dirección, impone avisos escalonados de incidentes (alerta temprana en 24 horas, notificación en 72 horas e informe final en un mes) y obliga a los Estados a prever multas cuyo máximo sea de al menos 10 millones de euros o el 2 % de la facturación mundial anual, la cifra que sea mayor, para las entidades esenciales, y de al menos 7 millones de euros o el 1.4 % para las importantes. La transposición se retrasó: la Comisión abrió procedimientos de infracción el 28 de noviembre de 2024, envió dictámenes motivados a 19 Estados el 7 de mayo de 2025 y, el 8 de julio de 2026, llevó ante el Tribunal de Justicia de la Unión Europea a España, Francia, Irlanda y los Países Bajos, con petición de sanciones económicas, por no haber notificado la transposición completa. El 20 de enero de 2026 la Comisión propuso, además, ajustes puntuales a NIS2 para aclarar y simplificar su cumplimiento.
 
 ## El paquete europeo vigente
 
@@ -133,7 +133,7 @@ La primera ley europea de seguridad de redes y sistemas de información, la Dire
 | Reglamento (UE) 2025/37 | 2025 | Reforma del 2019/881 para certificar también servicios de seguridad gestionados |
 | Ley de Cibersolidaridad, Reglamento (UE) 2025/38 | 2025 | Red europea de centros de detección, mecanismo de emergencia y revisión de incidentes |
 
-Y el reglamento de 2019 está por cambiar otra vez: el 20 de enero de 2026 la Comisión propuso un nuevo Reglamento sobre la Ciberseguridad que derogaría al 2019/881, reforzaría el mandato de ENISA (alertas tempranas, plataforma única de notificación, base europea de vulnerabilidades) y agilizaría la creación de esquemas. Al cierre de esta nota seguía en el procedimiento legislativo ordinario.
+Y el reglamento de 2019 está por cambiar otra vez: el 20 de enero de 2026 la Comisión propuso un nuevo Reglamento sobre la Ciberseguridad que derogaría al 2019/881, reforzaría el mandato de ENISA (alertas tempranas, plataforma única de notificación, base europea de vulnerabilidades), agilizaría la creación de esquemas (en doce meses, por regla general) y crearía un marco para reducir los riesgos de proveedores de terceros países en las cadenas de suministro de TIC. Es la propuesta COM(2026) 11, conocida como *Cybersecurity Act 2* (procedimiento 2026/0011(COD)); al 10 de noviembre de 2026 seguía en primera lectura, con un proyecto de informe de la comisión ITRE del Parlamento Europeo fechado el 18 de septiembre y todavía sin votar.
 
 ## La ciberseguridad como conflicto en la política internacional
 
@@ -162,7 +162,7 @@ Conviene no confundir a la Unión Europea (27 Estados) con el Consejo de Europa 
 - Adoptar reglas procesales para conservar y revelar rápido datos almacenados, interceptarlos, ejercer jurisdicción, acceder a datos en otro país en ciertos casos, extraditar y prestar asistencia jurídica mutua.
 - Participar en el Comité del Convenio (T-CY), que da seguimiento a su aplicación.
 
-**Actualización al 2026:** en 2022 se abrió a firma el Segundo Protocolo adicional, sobre cooperación reforzada y obtención de pruebas electrónicas. Al 30 de septiembre de 2026 el Convenio tenía 83 Partes; México figura entre los firmantes o invitados a adherirse, pero no es Parte. En paralelo, la Asamblea General de la ONU adoptó en diciembre de 2024 la Convención de las Naciones Unidas contra la Ciberdelincuencia, abierta a firma en Hanói en octubre de 2025, que todavía no está en vigor. Su contenido se estudia en la nota del escenario internacional.
+**Actualización al 2026:** en 2022 se abrió a firma el Segundo Protocolo adicional, sobre cooperación reforzada y obtención de pruebas electrónicas. El Protocolo todavía no está en vigor: necesita cinco ratificaciones y al 10 de noviembre de 2026 sumaba cuatro. El Convenio llegó a 84 Partes el 14 de octubre de 2026, con la adhesión de Kazajistán; México figura entre los Estados invitados a adherirse, pero no es Parte. En paralelo, la Asamblea General de la ONU adoptó en diciembre de 2024 la Convención de las Naciones Unidas contra la Ciberdelincuencia, abierta a firma en Hanói en octubre de 2025, que todavía no está en vigor. Su contenido se estudia en la nota del escenario internacional.
 
 ## Conclusiones del tema
 
@@ -185,7 +185,7 @@ Conviene no confundir a la Unión Europea (27 Estados) con el Consejo de Europa 
 | Violación de la seguridad de los datos | Incidente que destruye, altera, pierde o expone datos personales sin autorización |
 | Autoridad de control | Organismo independiente de cada Estado que vigila el cumplimiento del RGPD |
 | NIS2 | Directiva de 2022 que fija medidas de gestión de riesgos y avisos de incidentes para entidades esenciales e importantes |
-| Ley de Ciberresiliencia | Reglamento de 2024 que exige seguridad por diseño y gestión de vulnerabilidades a los productos con elementos digitales |
+| Ley de Ciberresiliencia | Nombre común del Reglamento de Ciberresiliencia (UE) 2024/2847, de 2024, que exige seguridad por diseño y gestión de vulnerabilidades a los productos con elementos digitales |
 | Producto con elementos digitales | Software o hardware que se conecta, directa o indirectamente, a un dispositivo o red |
 | Mercado Único Digital | Estrategia de 2015 para eliminar barreras nacionales al comercio y los servicios digitales en la Unión |
 | Servicio de seguridad gestionado | Servicio que un proveedor presta para operar la seguridad de otro, como la respuesta a incidentes o las pruebas de penetración |
@@ -194,13 +194,17 @@ Conviene no confundir a la Unión Europea (27 Estados) con el Consejo de Europa 
 
 ## Referencias
 
+- Comisión Europea. (2010). *Una Agenda Digital para Europa* (COM(2010) 245 final). https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:52010DC0245
 - Comisión Europea. (2015). *Una Estrategia para el Mercado Único Digital de Europa* (COM(2015) 192 final). https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:52015DC0192
 - Comisión Europea. (2020). *Cybersecurity of 5G networks: EU toolbox of risk mitigating measures*. https://digital-strategy.ec.europa.eu/en/library/cybersecurity-5g-networks-eu-toolbox-risk-mitigating-measures
 - Comisión Europea. (2026). *The EU Cybersecurity Act*. https://digital-strategy.ec.europa.eu/en/policies/cybersecurity-act
 - Comisión Europea. (2026). *Cyber Resilience Act: reporting obligations*. https://digital-strategy.ec.europa.eu/en/policies/cra-reporting
+- Comisión Europea. (2026, 8 de julio). *Commission refers Ireland, Spain, France and the Netherlands to the Court of Justice for failing to transpose the rules on cybersecurity* [Comunicado de prensa]. https://digital-strategy.ec.europa.eu/en/news/commission-refers-ireland-spain-france-and-netherlands-court-justice-failing-transpose-rules
 - Consejo de Europa. (2001). *Convenio sobre la Ciberdelincuencia* (STE n.º 185). https://www.coe.int/es/web/conventions/full-list?module=treaty-detail&treatynum=185
-- Consejo de Europa. (2026). *Parties/Observers to the Budapest Convention*. https://www.coe.int/en/web/cybercrime/parties-observers
+- Consejo de Europa. (2026a, 14 de octubre). *Kazakhstan becomes the 84th Party to the Convention on Cybercrime* [Noticia del Comité del Convenio sobre la Ciberdelincuencia]. https://www.coe.int/en/web/cybercrime/t-cy-news
+- Consejo de Europa. (2026b). *Parties/Observers to the Budapest Convention*. https://www.coe.int/en/web/cybercrime/parties-observers
 - ENISA. (2026). *Agencia de la Unión Europea para la Ciberseguridad*. https://www.enisa.europa.eu/
+- Parlamento Europeo. (2026). *Cybersecurity Act 2* (procedimiento 2026/0011(COD)) [Observatorio Legislativo]. https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2026%2F0011%28COD%29
 - Parlamento Europeo y Consejo de la Unión Europea. (1995). *Directiva 95/46/CE relativa a la protección de las personas físicas en lo que respecta al tratamiento de datos personales*. https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:31995L0046
 - Parlamento Europeo y Consejo de la Unión Europea. (2009). *Directiva 2009/136/CE*. https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32009L0136
 - Parlamento Europeo y Consejo de la Unión Europea. (2016a). *Reglamento (UE) 2016/679, Reglamento General de Protección de Datos*. https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32016R0679
@@ -208,9 +212,9 @@ Conviene no confundir a la Unión Europea (27 Estados) con el Consejo de Europa 
 - Parlamento Europeo y Consejo de la Unión Europea. (2019). *Reglamento (UE) 2019/881 relativo a ENISA y a la certificación de la ciberseguridad de las TIC (Reglamento sobre la Ciberseguridad)*. Versión consolidada de 4 de febrero de 2025. https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:02019R0881-20250204
 - Parlamento Europeo y Consejo de la Unión Europea. (2022a). *Directiva (UE) 2022/2555 (NIS2)*. https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32022L2555
 - Parlamento Europeo y Consejo de la Unión Europea. (2022b). *Reglamento (UE) 2022/2554 sobre la resiliencia operativa digital del sector financiero (DORA)*. https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32022R2554
-- Parlamento Europeo y Consejo de la Unión Europea. (2024). *Reglamento (UE) 2024/2847 relativo a los requisitos horizontales de ciberseguridad para los productos con elementos digitales (Ley de Ciberresiliencia)*. https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32024R2847
-- Parlamento Europeo y Consejo de la Unión Europea. (2025a). *Reglamento (UE) 2025/37 por el que se modifica el Reglamento (UE) 2019/881 en lo que respecta a los servicios de seguridad gestionados*. https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32025R0037
-- Parlamento Europeo y Consejo de la Unión Europea. (2025b). *Reglamento (UE) 2025/38 (Ley de Cibersolidaridad)*. https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32025R0038
+- Parlamento Europeo y Consejo de la Unión Europea. (2024). *Reglamento (UE) 2024/2847 relativo a los requisitos horizontales de ciberseguridad para los productos con elementos digitales (Reglamento de Ciberresiliencia)*. https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32024R2847
+- Parlamento Europeo y Consejo de la Unión Europea. (2025a). *Reglamento (UE) 2025/37 por el que se modifica el Reglamento (UE) 2019/881 en lo que se refiere a los servicios de seguridad gestionados*. https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32025R0037
+- Parlamento Europeo y Consejo de la Unión Europea. (2025b). *Reglamento (UE) 2025/38 por el que se establecen medidas destinadas a reforzar la solidaridad y las capacidades en la Unión a fin de detectar ciberamenazas e incidentes, prepararse y responder a ellos y por el que se modifica el Reglamento (UE) 2021/694 (Reglamento de Cibersolidaridad)*. https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32025R0038
 - Comisión Europea. (2024). *Reglamento de Ejecución (UE) 2024/482 sobre el esquema europeo de certificación de la ciberseguridad basado en los Criterios Comunes (EUCC)*. https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32024R0482
 
 ---

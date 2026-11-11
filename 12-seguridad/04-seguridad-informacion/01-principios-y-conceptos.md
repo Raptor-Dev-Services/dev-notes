@@ -133,7 +133,7 @@ La pregunta recurrente en cualquier organización es cuánto hay que invertir (o
 
 La gestión del riesgo ofrece más caminos que la sola mitigación, y elegir bien entre ellos es lo que convierte la seguridad en una inversión y no en un gasto sin fondo (tema de la nota [04](04-gasto-o-inversion.md)).
 
-> Actualización al 2026: las definiciones de esta nota provienen de ISO/IEC 27000 en sus ediciones de 2014 y 2018. En julio de 2026 se publicó la sexta edición, ISO/IEC 27000:2026, que reemplaza a la de 2018 y se presenta como un panorama de conceptos y relaciones más que como vocabulario. Los conceptos (tríada, amenaza, vulnerabilidad, control, riesgo) se mantienen.
+> Actualización al 2026: las definiciones de esta nota provienen de ISO/IEC 27000 en sus ediciones de 2014 y 2018. En julio de 2026 se publicó la sexta edición, ISO/IEC 27000:2026, que reemplaza a la de 2018 y ya no es un documento de vocabulario: presenta los conceptos y principios del SGSI y la relación entre las normas de la familia, y solo define los términos que usa. Los conceptos (tríada, amenaza, vulnerabilidad, control, riesgo) se mantienen.
 
 ## Glosario
 
@@ -166,7 +166,7 @@ La gestión del riesgo ofrece más caminos que la sola mitigación, y elegir bie
 - Méndez, T. [Mendez Thomas]. (2014, 16 de mayo). *El peligro de las redes sociales* [Video]. YouTube. https://youtu.be/IalqkfFiI20
 - National Security Agency. (s. f.). *World War I: Zimmermann telegram*. National Cryptologic Museum. https://www.nsa.gov/History/National-Cryptologic-Museum/Exhibits-Artifacts/Exhibit-View/Article/2719151/world-war-1-zimmermann-telegram/
 - What You Need To Know. (2013, 16 de diciembre). *Information security* [Video]. YouTube. https://youtu.be/eUxUUarTRW4
-- Zárate, A. (2008, 9 de mayo). Mantienen hackeo de la página de internet del Senado. *El Universal*. https://www.eluniversal.com.mx/
+- Zárate, A. (2008, 9 de mayo). Mantienen hackeo de la página de internet del Senado. *El Universal*. https://archivo.eluniversal.com.mx/notas/505494.html
 
 ---
 

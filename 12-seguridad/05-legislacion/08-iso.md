@@ -63,11 +63,11 @@ El material selecciona seis normas populares para las tecnologías de la informa
 | Interconexión de sistemas abiertos (OSI) | Modelo de referencia universal de siete capas para los protocolos de comunicación. Lo impulsaron fabricantes de computadoras y proveedores de telecomunicaciones a principios de los ochenta, e ISO lo adoptó como norma. | Se publicó como ISO 7498 en 1984; la edición conocida es ISO/IEC 7498-1:1994. Sigue siendo la referencia didáctica para explicar redes. |
 | ISO/IEC 27001 | Requisitos para establecer, implementar, mantener y mejorar un sistema de gestión de seguridad de la información (SGSI). El material la describía como un proceso de seis pasos para crear políticas y procesos de seguridad. | Vigente la edición 2022 (con una enmienda de 2024 sobre cambio climático). Su estructura ya no se cuenta en "seis pasos": sigue los capítulos comunes de los sistemas de gestión (contexto, liderazgo, planificación, apoyo, operación, evaluación del desempeño y mejora) y un anexo con 93 controles. |
 | ISO/IEC 17799 | Código de buenas prácticas con más de 100 controles sobre continuidad del negocio, control de acceso, gestión de activos y otros dominios. | En 2007 cambió de número y pasó a llamarse ISO/IEC 27002. La edición vigente, 27002:2022, organiza 93 controles en cuatro temas: organizacionales, de personas, físicos y tecnológicos. |
-| ISO/IEC 20000 | Especificación técnica que recoge las mejores prácticas de gestión de servicios de TI. | La parte de requisitos es ISO/IEC 20000-1; la edición conocida es la de 2018. |
-| ISO 31000 | Estandariza la definición de riesgo y sus términos, con directrices de gestión de riesgos útiles para cualquier persona, empresa o dependencia. | Edición conocida: ISO 31000:2018. Es la base conceptual que retoman las normas de riesgo de seguridad. |
-| ISO/IEC 12207 | Proceso uniforme de gestión del ciclo de vida para todo el software. | Hoy es una norma triple, ISO/IEC/IEEE 12207, con edición conocida de 2017. |
+| ISO/IEC 20000 | Especificación técnica que recoge las mejores prácticas de gestión de servicios de TI. | La parte de requisitos es ISO/IEC 20000-1:2018, vigente con su enmienda 1:2024 sobre cambio climático. |
+| ISO 31000 | Estandariza la definición de riesgo y sus términos, con directrices de gestión de riesgos útiles para cualquier persona, empresa o dependencia. | Vigente la edición ISO 31000:2018; ISO ya trabaja en su tercera edición, que todavía es un proyecto. Es la base conceptual que retoman las normas de riesgo de seguridad. |
+| ISO/IEC 12207 | Proceso uniforme de gestión del ciclo de vida para todo el software. | Hoy es una norma triple, ISO/IEC/IEEE 12207. La edición de 2017 fue sustituida por la de 2026, que el IEEE publicó el 15 de abril de 2026. |
 
-**Actualización al 2026:** ISO/IEC 17799 ya no existe con ese número desde 2007, y la 27002 que la sustituyó pasó de 114 controles en 14 dominios (edición 2013) a 93 controles en 4 temas (edición 2022). ISO/IEC 27001 vigente es la de 2022. Para 20000-1, 31000 y 12207 se indican las ediciones conocidas; el sitio de ISO bloqueó la consulta automatizada y no fue posible confirmar si hay una edición posterior.
+**Actualización al 2026:** ISO/IEC 17799 ya no existe con ese número desde 2007, y la 27002 que la sustituyó pasó de 114 controles en 14 dominios (edición 2013) a 93 controles en 4 temas (edición 2022). ISO/IEC 27001 vigente es la de 2022. En noviembre de 2026 se confirmó el estado de las demás: ISO/IEC 20000-1:2018 sigue vigente con su enmienda de 2024 sobre cambio climático; ISO 31000:2018 sigue vigente mientras se prepara su tercera edición, y la norma del ciclo de vida del software tiene una edición nueva, la de 2026, que sustituye a la de 2017.
 
 ## El atractivo del ciberdelito
 
@@ -87,10 +87,10 @@ ISO/IEC 27001 es la norma insignia de la familia. Su primera edición como norma
 
 | Norma | Tema | Para qué la usa un abogado o un auditor |
 |---|---|---|
-| ISO/IEC 27000 | Vocabulario común y panorama de la familia | Definir en un contrato o en un dictamen qué significa "incidente", "control" o "riesgo" sin ambigüedad |
+| ISO/IEC 27000 | Panorama de la familia y conceptos del SGSI | Ubicar qué norma de la familia trata cada tema antes de citarla en un contrato o en un dictamen |
 | ISO/IEC 27001 | Requisitos del SGSI, certificable | Exigir a un proveedor una certificación verificable |
 | ISO/IEC 27002 | Guía de controles | Detallar las medidas de seguridad de un contrato o de una política interna |
-| ISO/IEC 27005 | Gestión de riesgos de seguridad de la información (edición conocida 2022) | Documentar por qué se eligieron ciertas medidas y no otras |
+| ISO/IEC 27005 | Gestión de riesgos de seguridad de la información (vigente la edición 2022) | Documentar por qué se eligieron ciertas medidas y no otras |
 | ISO/IEC 27017 | Controles para servicios en la nube | Negociar con proveedores de nube quién es responsable de cada control |
 | ISO/IEC 27018 | Protección de datos personales en nubes públicas | Revisar si un proveedor de nube trata datos personales como encargado responsable |
 | ISO/IEC 27042 | Análisis e interpretación de evidencia digital | Valorar si un peritaje informático siguió un método aceptado |
@@ -98,7 +98,7 @@ ISO/IEC 27001 es la norma insignia de la familia. Su primera edición como norma
 
 La utilidad jurídica de estas normas va más allá de la prevención. ISO/IEC 27043 ofrece directrices para muchos tipos de investigación: accesos no autorizados, corrupción de datos, fallas de sistemas, violaciones de la seguridad en empresas y otras investigaciones digitales. Con ellas, la familia no solo ayuda a gestionar la seguridad, también a identificar a los responsables de un ataque y a llevarlos ante la justicia con evidencia bien tratada.
 
-La revista de 2019 anunciaba además un proyecto del SC 27, entonces llamado ISO/IEC 27552, para extender la 27001 a la gestión de la privacidad. **Actualización al 2026:** ese proyecto se publicó en agosto de 2019 como ISO/IEC 27701, la extensión de privacidad que muchas empresas usan para demostrar cumplimiento con leyes de protección de datos.
+La revista de 2019 anunciaba además un proyecto del SC 27, entonces llamado ISO/IEC 27552, para extender la 27001 a la gestión de la privacidad. **Actualización al 2026:** ese proyecto se publicó en agosto de 2019 como ISO/IEC 27701, una extensión de las normas 27001 y 27002 para la gestión de la privacidad. El 14 de octubre de 2025 salió su segunda edición, ISO/IEC 27701:2025, que ya no es una extensión: es una norma de requisitos propia para un sistema de gestión de la privacidad de la información, que muchas empresas usan para demostrar cumplimiento con leyes de protección de datos. También cambió la norma que encabeza la familia: en julio de 2026 se publicó la sexta edición, ISO/IEC 27000:2026, que sustituye a la de 2018 y ya no es un documento de vocabulario; presenta los conceptos del SGSI y la relación entre las normas de la familia.
 
 ## ISO/IEC 27032: ciberseguridad
 
@@ -169,6 +169,7 @@ Muchas organizaciones usan el marco del NIST para diagnosticar y planear, y la 2
 ## Referencias
 
 - Gasiorowski-Denis, E. (Ed.). (2019). *ISOfocus*, (132). Organización Internacional de Normalización. https://www.iso.org/isofocus
+- Institute of Electrical and Electronics Engineers. (2026). *IEEE/ISO/IEC 12207-2026 ISO/IEC/IEEE International Standard: Systems and software engineering: Software life cycle processes*. https://standards.ieee.org/ieee/12207/11416/
 - International Organization for Standardization. (s. f.-a). *ISO Cyber Risk Solutions* [Video]. YouTube. https://www.youtube.com/watch?v=nRJ8M6SC8Rg
 - International Organization for Standardization. (s. f.-b). *Members*. https://www.iso.org/members.html
 - International Organization for Standardization. (2018). *ISO 31000:2018 Risk management: Guidelines*. https://www.iso.org/standard/65694.html
@@ -178,6 +179,9 @@ Muchas organizaciones usan el marco del NIST para diagnosticar y planear, y la 2
 - International Organization for Standardization e International Electrotechnical Commission. (2022b). *ISO/IEC 27002:2022 Information security, cybersecurity and privacy protection: Information security controls*. https://www.iso.org/standard/75652.html
 - International Organization for Standardization e International Electrotechnical Commission. (2022c). *ISO/IEC 27005:2022 Information security, cybersecurity and privacy protection: Guidance on managing information security risks*. https://www.iso.org/standard/80585.html
 - International Organization for Standardization e International Electrotechnical Commission. (2023). *ISO/IEC 27032:2023 Cybersecurity: Guidelines for Internet security*. https://www.iso.org/standard/76070.html
+- International Organization for Standardization e International Electrotechnical Commission. (2024). *ISO/IEC 20000-1:2018/Amd 1:2024 Information technology: Service management: Part 1: Service management system requirements: Amendment 1: Climate action changes*. https://webstore.iec.ch/en/publication/92576
+- International Organization for Standardization e International Electrotechnical Commission. (2025). *ISO/IEC 27701:2025 Information security, cybersecurity and privacy protection: Privacy information management systems: Requirements and guidance*. https://webstore.iec.ch/en/publication/110123
+- International Organization for Standardization e International Electrotechnical Commission. (2026). *ISO/IEC 27000:2026 Information security, cybersecurity and privacy protection: Information security management systems: Overview*. https://www.iso.org/standard/27000
 - International Organization for Standardization, International Electrotechnical Commission e Institute of Electrical and Electronics Engineers. (2017). *ISO/IEC/IEEE 12207:2017 Systems and software engineering: Software life cycle processes*. https://www.iso.org/standard/63712.html
 - IT Governance Ltd. (s. f.). *What is ISO 27001? A brief summary of the standard* [Video]. YouTube. https://www.youtube.com/watch?v=io6w3Yw4q9w
 - JTC 1. (s. f.). *ISO/IEC JTC 1 Information technology*. https://jtc1info.org/

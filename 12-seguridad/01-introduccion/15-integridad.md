@@ -69,22 +69,35 @@ Cuando se trata de información confidencial (datos personales, bancarios o cont
 
 ### Seguridad nacional
 
-Microsoft reconoce que la seguridad del flujo transfronterizo de datos es crítica y que puede tener implicaciones para la seguridad nacional. En México, la Ley de Seguridad Nacional enumera en su artículo 5 los actos que se consideran amenazas para el país. Varios de ellos pueden cometerse o facilitarse con medios tecnológicos. En resumen, son:
+Microsoft reconoce que la seguridad del flujo transfronterizo de datos es crítica y que puede tener implicaciones para la seguridad nacional. En México, la Ley de Seguridad Nacional enumera en su artículo 5 los actos que se consideran amenazas para el país. Varios de ellos pueden cometerse o facilitarse con medios tecnológicos. Su texto vigente (última reforma DOF 14-11-2025) es el siguiente; la Cámara de Diputados publica la fracción XIII entre corchetes porque la Suprema Corte la declaró inválida:
 
-| Fracción | Amenaza (resumen) |
-|---|---|
-| I | Actos dirigidos a consumar espionaje, sabotaje, terrorismo, rebelión, traición a la patria o genocidio contra el Estado mexicano dentro del territorio nacional |
-| II | Injerencia extranjera en asuntos nacionales que pueda dañar al Estado |
-| III | Actos que impidan a las autoridades actuar contra la delincuencia organizada |
-| IV | Actos que busquen romper la unidad de las partes de la Federación previstas en el artículo 43 constitucional |
-| V | Actos que estorben o bloqueen operaciones militares o navales contra la delincuencia organizada |
-| VI | Actos contra la seguridad de la aviación |
-| VII | Actos contra el personal diplomático |
-| VIII | Tráfico ilegal de materiales nucleares y de armas químicas, biológicas y convencionales de destrucción masiva |
-| IX | Actos ilícitos contra la navegación marítima |
-| X | Financiamiento de actos y organizaciones terroristas |
-| XI | Actos que estorben o bloqueen actividades de inteligencia o contrainteligencia |
-| XII | Actos que destruyan o inhabiliten infraestructura estratégica o indispensable para proveer bienes o servicios públicos |
+> Artículo 5.- Para los efectos de la presente Ley, son amenazas a la Seguridad Nacional:
+>
+> I. Actos tendentes a consumar espionaje, sabotaje, terrorismo, rebelión, traición a la patria, genocidio, en contra de los Estados Unidos Mexicanos dentro del territorio nacional;
+>
+> II. Actos de interferencia extranjera en los asuntos nacionales que puedan implicar una afectación al Estado Mexicano;
+>
+> III. Actos que impidan a las autoridades actuar contra la delincuencia organizada;
+>
+> IV. Actos tendentes a quebrantar la unidad de las partes integrantes de la Federación, señaladas en el artículo 43 de la Constitución Política de los Estados Unidos Mexicanos;
+>
+> V. Actos tendentes a obstaculizar o bloquear operaciones militares o navales contra la delincuencia organizada;
+>
+> VI. Actos en contra de la seguridad de la aviación;
+>
+> VII. Actos que atenten en contra del personal diplomático;
+>
+> VIII. Todo acto tendente a consumar el tráfico ilegal de materiales nucleares, de armas químicas, biológicas y convencionales de destrucción masiva;
+>
+> IX. Actos ilícitos en contra de la navegación marítima;
+>
+> X. Todo acto de financiamiento de acciones y organizaciones terroristas;
+>
+> XI. Actos tendentes a obstaculizar o bloquear actividades de inteligencia o contrainteligencia;
+>
+> XII. Actos tendentes a destruir o inhabilitar la infraestructura de carácter estratégico o indispensable para la provisión de bienes o servicios públicos, y
+>
+> XIII. [Actos ilícitos en contra del fisco federal a los que hace referencia el artículo 167 del Código Nacional de Procedimientos Penales.]
 
 La fracción XII es la que más se relaciona con la ciberseguridad: un ataque informático que deje fuera de servicio la red eléctrica, el agua o las telecomunicaciones encaja en ella. La conclusión es que proteger el flujo de datos importa no solo para la seguridad de la información en general, sino también para la del Estado.
 
@@ -170,7 +183,7 @@ Investigar un delito cometido en la nube es uno de los frentes menos explorados 
 
 Como las denuncias e investigaciones en la nube todavía son poco frecuentes, no existe una metodología consolidada para el análisis forense remoto. Enfrentar estos retos exige conocer bien las barreras y adoptar soluciones nuevas, y estar preparados para los obstáculos a medida que surjan.
 
-> **Actualización al 2026:** la Asamblea General de la ONU adoptó en diciembre de 2024 la Convención de las Naciones Unidas contra la Ciberdelincuencia, primer tratado mundial en la materia, que incluye cooperación para obtener evidencia electrónica. Se abrió a firma en Hanói el 25 y 26 de octubre de 2025, donde la firmaron 71 Estados y la Unión Europea; entrará en vigor 90 días después de la cuadragésima ratificación.
+> **Actualización al 2026:** la Asamblea General de la ONU adoptó el 24 de diciembre de 2024 la Convención de las Naciones Unidas contra la Ciberdelincuencia (resolución 79/243), primer tratado mundial en la materia, que incluye cooperación para obtener evidencia electrónica. Se abrió a firma en Hanói el 25 y 26 de octubre de 2025, donde la firmaron 71 Estados y la Unión Europea; entrará en vigor 90 días después de la cuadragésima ratificación. Según la Colección de Tratados de la ONU, al 10 de noviembre de 2026 sumaba 96 firmantes y 3 ratificaciones (Catar, Azerbaiyán y Vietnam), así que aún no está en vigor; México no aparece entre los firmantes.
 
 ## E. Retos de las organizaciones para ser ciberresilientes
 
@@ -240,11 +253,12 @@ Las imágenes de cierre del tema recuerdan, con distintas voces, que la tecnolog
 - Internet Society. (2022). *Cifrado* [Informe de política pública; publicado originalmente en 2016]. https://www.internetsociety.org/es/policybriefs/encryption/
 - Kaspersky. (2017, 2 de agosto). *Hacking industrial robots*. Kaspersky Daily. https://www.kaspersky.com/blog/hacking-industrial-robots/17879/
 - Ley de Seguridad Nacional. (2005). *Diario Oficial de la Federación*, 31 de enero de 2005. Última reforma DOF 14-11-2025. Cámara de Diputados. https://www.diputados.gob.mx/LeyesBiblio/pdf/LSN.pdf
-- Ley Federal de Protección de Datos Personales en Posesión de los Particulares. (2025). *Diario Oficial de la Federación*, 20 de marzo de 2025. Cámara de Diputados. https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf
+- Ley Federal de Protección de Datos Personales en Posesión de los Particulares. (2025). *Diario Oficial de la Federación*, 20 de marzo de 2025. Última reforma DOF 14-11-2025. Cámara de Diputados. https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf
 - Luna, S. (2022, 6 de febrero). *El peligro del metaverso: violan en manada al avatar de una mujer*. COPE. https://www.cope.es/programas/fin-de-semana/noticias/metaverso-aun-tiene-mucho-que-mejorar-para-evitar-comportamientos-inadecuados-dentro-20220206_1771241
 - Microsoft. (s. f.). *¿Qué es la informática en la nube?* Microsoft Azure. https://azure.microsoft.com/es-es/resources/cloud-computing-dictionary/what-is-cloud-computing
 - National Institute of Standards and Technology. (2024). *The NIST Cybersecurity Framework (CSF) 2.0* (NIST CSWP 29). https://doi.org/10.6028/NIST.CSWP.29
-- Oficina de Seguridad del Internauta. (2019). *Cifrado y almacenamiento seguro de ficheros paso a paso*. INCIBE (la OSI hoy publica en la sección de ciudadanía de INCIBE; enlace directo no localizado en 2026). https://www.incibe.es/ciudadania
+- Oficina de Seguridad del Internauta. (2019, 29 de mayo). *Cifrado y almacenamiento seguro de ficheros paso a paso*. INCIBE. https://www.incibe.es/ciudadania/blog/cifrado-y-almacenamiento-seguro-de-ficheros-paso-paso
+- Organización de las Naciones Unidas. (2026). *Estado de la Convención de las Naciones Unidas contra la Ciberdelincuencia* (capítulo XVIII-16). United Nations Treaty Collection. https://treaties.un.org/Pages/ViewDetails.aspx?src=TREATY&mtdsg_no=XVIII-16&chapter=18&clang=_en
 - Organización de las Naciones Unidas, Oficina de Asuntos Jurídicos. (2025). *The United Nations Convention against Cybercrime opens for signature in Hanoi*. https://www.un.org/ola/en/node/1234
 - Panda Security. (2018). *Retos de las organizaciones en su objetivo de ser ciberresilientes* (enlace directo no localizado en 2026). https://www.pandasecurity.com/es/mediacenter/
 - Podestá, A., Castellone, M., Constanzo, B., Waimann, J. e Iturriaga, I. (2014). *Dificultades de investigaciones penales en cloud computing*. Universidad FASTA. https://repositorioslatinoamericanos.uchile.cl/handle/2250/6284342

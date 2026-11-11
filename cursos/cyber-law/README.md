@@ -92,14 +92,14 @@ Un mapa de cumplimiento para una organización mexicana real o ficticia: qué le
 
 | Fuente | Emisor | Año o versión | Para qué |
 |---|---|---|---|
-| Constitución Política de los Estados Unidos Mexicanos | Congreso de la Unión | Última reforma DOF 07-10-2026 | Derechos de acceso a las TIC, libertad de difusión y protección de datos |
-| Código Penal Federal | Congreso de la Unión | Última reforma DOF 13-03-2026 | Delitos informáticos y de intimidad sexual |
-| Ley Federal de Protección de Datos Personales en Posesión de los Particulares | Congreso de la Unión | 2025 | Obligaciones de quien trata datos personales |
-| Estrategia Nacional de Ciberseguridad y Plan Nacional de Ciberseguridad 2025-2030 | Gobierno de México | 2017 y 2025 | Política pública nacional |
-| NIST Cybersecurity Framework | NIST | 2.0 (2024) | Gestión de riesgos de ciberseguridad |
-| ISO/IEC 27001 y 27032 | ISO/IEC | 2022 y 2023 | Sistemas de gestión y seguridad en internet |
-| Convenio sobre la Ciberdelincuencia | Consejo de Europa | 2001 | Armonización penal y cooperación internacional |
-| Reglamento (UE) 2016/679 y Reglamento (UE) 2019/881 | Unión Europea | 2016 y 2019 | Protección de datos y certificación de ciberseguridad |
+| [Constitución Política de los Estados Unidos Mexicanos](https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf) | Congreso de la Unión | Última reforma DOF 07-10-2026 | Derechos de acceso a las TIC, libertad de difusión y protección de datos |
+| [Código Penal Federal](https://www.diputados.gob.mx/LeyesBiblio/pdf/CPF.pdf) | Congreso de la Unión | Última reforma DOF 13-03-2026 | Delitos informáticos y de intimidad sexual |
+| [Ley Federal de Protección de Datos Personales en Posesión de los Particulares](https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf) | Congreso de la Unión | 2025 | Obligaciones de quien trata datos personales |
+| [Estrategia Nacional de Ciberseguridad](https://www.gob.mx/cms/uploads/attachment/file/271884/Estrategia_Nacional_Ciberseguridad.pdf) y [Plan Nacional de Ciberseguridad 2025-2030](https://www.portal.atdt.gob.mx/wp-content/uploads/2026/01/Plan_Nacional_de_Ciberseguridad-2.pdf) | Gobierno de México | 2017 y 2025 | Política pública nacional |
+| [NIST Cybersecurity Framework](https://doi.org/10.6028/NIST.CSWP.29) | NIST | 2.0 (2024) | Gestión de riesgos de ciberseguridad |
+| [ISO/IEC 27001](https://www.iso.org/standard/27001) y [27032](https://www.iso.org/standard/76070.html) | ISO/IEC | 2022 y 2023 | Sistemas de gestión y seguridad en internet |
+| [Convenio sobre la Ciberdelincuencia](https://rm.coe.int/1680081561) | Consejo de Europa | 2001 | Armonización penal y cooperación internacional |
+| [Reglamento (UE) 2016/679](https://eur-lex.europa.eu/eli/reg/2016/679/oj) y [Reglamento (UE) 2019/881](https://eur-lex.europa.eu/eli/reg/2019/881/oj) | Unión Europea | 2016 y 2019 | Protección de datos y certificación de ciberseguridad |
 
 ---
 

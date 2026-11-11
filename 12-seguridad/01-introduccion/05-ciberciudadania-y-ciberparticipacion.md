@@ -59,7 +59,7 @@ Ese poder se expresa en opiniones e interacciones en plataformas y tiene impacto
 
 ### La ciberanimación
 
-Viché (2016) usa el término **ciberanimación** para el uso de estrategias y herramientas digitales que fomentan la participación activa en lo social y lo político: campañas de sensibilización, eventos virtuales y contenidos multimedia que movilizan, informan y conectan grupos distintos. La idea de fondo es que el ciberespacio puede ser un lugar efectivo de deliberación y acción colectiva, un puente entre lo digital y la vida cívica.
+Viché González (2015) usa el término **ciberanimación** para el uso de estrategias y herramientas digitales que fomentan la participación activa en lo social y lo político: campañas de sensibilización, eventos virtuales y contenidos multimedia que movilizan, informan y conectan grupos distintos. La idea de fondo es que el ciberespacio puede ser un lugar efectivo de deliberación y acción colectiva, un puente entre lo digital y la vida cívica.
 
 ### Movimientos con huella digital
 
@@ -82,7 +82,7 @@ En muchos países el cumplimiento de las promesas de campaña es incierto o simp
 
 ### El presidente 2.0
 
-La campaña de Barack Obama en 2008 es el caso clásico: su triunfo se atribuyó en buena parte al uso estratégico de internet para movilizar votantes, recaudar fondos y difundir su mensaje, y se le apodó el primer "presidente 2.0". Compte (2017) compara después a Obama, Donald Trump y Emmanuel Macron como presidentes que gobiernan y hacen campaña desde las redes. El propio Obama resumió la idea de que el papel de la ciudadanía en una democracia no se agota en el día de la elección.
+La campaña de Barack Obama en 2008 es el caso clásico: su triunfo se atribuyó en buena parte al uso estratégico de internet para movilizar votantes, recaudar fondos y difundir su mensaje, y se le apodó el primer "presidente 2.0". Compte Topazio (2017) compara después a Obama, Donald Trump y Emmanuel Macron como presidentes que gobiernan y hacen campaña desde las redes. El propio Obama resumió la idea de que el papel de la ciudadanía en una democracia no se agota en el día de la elección.
 
 Los medios siguen pesando mucho, y no siempre para bien. Durante su primer mandato Trump usó la inmediatez de las redes para descalificar a México una y otra vez. Las promesas de campaña de cualquier candidato llegan a millones de personas, pero ningún mecanismo obliga a cumplirlas una vez electo; ni siquiera la reputación basta. Aguirre recoge un dato de Przeworski: en la evidencia histórica ningún tribunal ha fallado a favor del electorado y en contra de un gobierno por incumplir lo prometido en campaña.
 
@@ -119,7 +119,7 @@ Un riesgo de participar en redes es creer demasiado. La confianza excesiva en lo
 
 ## D. Desenredando el impacto de las redes sociales
 
-Las redes son una herramienta de comunicación excelente: masivas, baratas y accesibles, y por eso las usan personas, organizaciones y gobiernos. Tienen dos caras. Gómez (2020) estudia cómo influyen en la percepción ciudadana sobre la compra del voto en México: las redes pueden destapar prácticas ilegales y, al mismo tiempo, moldear percepciones sin verificar.
+Las redes son una herramienta de comunicación excelente: masivas, baratas y accesibles, y por eso las usan personas, organizaciones y gobiernos. Tienen dos caras. Gómez Vilchis (2020) estudia cómo influyen en la percepción ciudadana sobre la compra del voto en México: las redes pueden destapar prácticas ilegales y, al mismo tiempo, moldear percepciones sin verificar.
 
 La influencia de los medios sociales en la participación pide una mirada nueva. La información llega rápido y a mucha gente, así que hay que revisar qué tan válida es la información cívica que circula. Las redes motivan, movilizan, abren debates y amplifican voces, pero esa velocidad exige una gestión crítica de los contenidos sobre los que se basa la participación democrática.
 
@@ -127,7 +127,7 @@ La influencia de los medios sociales en la participación pide una mirada nueva.
 
 ### Educación en ciudadanía digital
 
-Formar ciudadanos digitales significa enseñar a usar la tecnología de manera ética y efectiva: alfabetización mediática, protección de la privacidad, participación informada. Ávila Muñoz (s. f.) plantea la construcción de ciudadanía digital como un reto para la educación, formal e informal, y la vincula con la democracia digital y una cultura de respeto en línea.
+Formar ciudadanos digitales significa enseñar a usar la tecnología de manera ética y efectiva: alfabetización mediática, protección de la privacidad, participación informada. Ávila Muñoz (2016) plantea la construcción de ciudadanía digital como un reto para la educación, formal e informal, y la vincula con la democracia digital y una cultura de respeto en línea.
 
 ### La brecha digital
 
@@ -135,10 +135,12 @@ Aun con todas sus ventajas, el acceso y el uso de las TIC siguen siendo un desaf
 
 | Dato | Fuente |
 |---|---|
-| 2,200 millones de personas sin internet en el mundo en 2025; 96 % vive en países de ingreso bajo y medio | ITU (2025) |
-| 94 % de uso de internet en países de ingreso alto contra 23 % en los de ingreso bajo | ITU (2025) |
-| 77 % de los hombres y 71 % de las mujeres del mundo usan internet | ITU (2025) |
-| En México, alrededor de 20 millones de personas de seis años o más no usaban internet en 2024 | INEGI (2025) |
+| 2,000 millones de personas sin internet en el mundo en 2026; lo usa 82 % de quienes viven en ciudades y 63 % de quienes viven en zonas rurales | ITU (2026) |
+| 93 % de uso de internet en países de ingreso alto contra 32 % en los de ingreso bajo | ITU (2026) |
+| 79 % de los hombres y 74 % de las mujeres del mundo usan internet | ITU (2026) |
+| En México, alrededor de 17 millones de personas de seis años o más no usaban internet en 2025 | INEGI (2026) |
+
+> **Actualización al 2026:** las tres filas de la UIT vienen de *Facts and Figures 2026* (3 de noviembre de 2026). En esa edición la UIT revisó su estimación de 2025 de 2,200 a 2,100 millones de personas desconectadas.
 
 ## F. Ciberpolítica: nuevas formas de acción y comunicación
 
@@ -175,21 +177,21 @@ Pero los resultados rara vez coinciden con las expectativas. Las promesas de má
 ## Referencias
 
 - Aguirre Sala, J. F. (2014). El potencial de los medios digitales ante la participación ciudadana tradicional y en el presupuesto participativo. *Comunicación y Sociedad*, (22), 211-229. https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0188-252X2014000200009
-- Ávila Muñoz. (s. f.). *Construcción de ciudadanía digital: un reto para la educación*.
-- Caballero Álvarez, R. (2016). *Ciberpolítica: las nuevas formas de acción y comunicación políticas*.
-- Cáceres, M., y Escalante, D. (2019). *Ciudadanía y lucha anticorrupción abonan al Estado de derecho*.
+- Ávila Muñoz, P. (2016). Construcción de ciudadanía digital: un reto para la educación [Ponencia]. *Suplemento Signos EAD*. https://p3.usal.edu.ar/index.php/supsignosead/article/view/3666
+- Caballero Álvarez, R. (2016). Ciberpolítica. Las nuevas formas de acción y comunicación políticas [Reseña del libro *Ciberpolítica. Las nuevas formas de acción y comunicación políticas*, por R. Cotarelo (Ed.)]. *Comunicación y Sociedad*, (25), 291-296. https://doi.org/10.32870/cys.v0i25.2931
+- Cáceres, M., y Escalante, D. (2019, 29 de junio). Ciudadanía y lucha anticorrupción abonan al estado de derecho. *El Diario de Hoy*. https://web.archive.org/web/20191221024437/https://www.elsalvador.com/eldiariodehoy/ciudadania-y-lucha-anticorrupcion-abonan-al-estado-de-derecho/616990/2019/
 - Cámara de Diputados del H. Congreso de la Unión. (2026). *Constitución Política de los Estados Unidos Mexicanos* (última reforma DOF 07-10-2026). https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf
-- Compte, F. (2017). *Macron, Trump y Obama, presidentes de las redes sociales*.
-- Gómez, R. (2020). Impacto de las redes sociales en la percepción ciudadana sobre la compra del voto en México. *Revista Mexicana de Opinión Pública*.
-- Hernández, L. (2019). *Funcionarios no pueden bloquear en redes sociales* [Nota informativa].
-- Hernández de Velazco, J., Alvarado, L., y Velazco, J. (2013). *Participación ciudadana, tecnologías de información-comunicación y opinión pública*.
-- Instituto Nacional de Estadística y Geografía. (2025). *Encuesta Nacional sobre Disponibilidad y Uso de Tecnologías de la Información en los Hogares (ENDUTIH) 2024* [Comunicado de prensa]. https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2025/endutih/ENDUTIH_24_RR.pdf
-- International Telecommunication Union. (2025, 17 de noviembre). *Connecting the world and beyond: Facts and Figures 2025* [Comunicado de prensa]. https://www.itu.int/en/mediacentre/Pages/PR-2025-11-17-facts-and-figures.aspx
-- Olvera, E. (2022). *Apoyan miles a Loret en foro de redes sociales en vivo* [Nota informativa].
+- Compte Topazio, F. (2017, 14 de mayo). Macron, Trump y Obama, presidentes de las redes sociales. *Noticias*. https://noticias.perfil.com/noticias/internacionales/2017-05-14-macron-trump-y-obama-presidentes-de-las-redes-sociales.phtml
+- Gómez Vilchis, R. R. (2020). Impacto de las redes sociales en la percepción ciudadana sobre la compra del voto en México. *Revista Mexicana de Opinión Pública*, (28), 37-55. https://doi.org/10.22201/fcpys.24484911e.2020.28.68479
+- Hernández, L. (2019, 21 de marzo). Funcionarios no pueden bloquear en redes sociales. *El Economista*. https://www.eleconomista.com.mx/politica/Funcionarios-no-pueden-bloquear-en-redes-sociales-20190320-0157.html
+- Hernández de Velazco, J., Alvarado Peña, L., y Velazco González, J. (2013). Participación ciudadana, tecnologías de información-comunicación y opinión pública. *Teorías, Enfoques y Aplicaciones en las Ciencias Sociales*, 5(11), 26-34. https://revistas.uclave.org/index.php/teacs/article/view/1627
+- Instituto Nacional de Estadística y Geografía. (2026). *Encuesta Nacional sobre Disponibilidad y Uso de Tecnologías de la Información en los Hogares (ENDUTIH) 2025* [Reporte de resultados, 16 de junio de 2026]. https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2026/endutih/ENDUTIH_25_RR.pdf
+- International Telecommunication Union. (2026, 3 de noviembre). *6.3 billion people now online, yet digital divides persist* [Comunicado de prensa]. https://www.itu.int/en/mediacentre/Pages/PR-2026-11-03-Facts-and-Figures.aspx
+- Olvera, E. (2022, 12 de febrero). Apoyan miles a Carlos Loret en foro de redes sociales en vivo. *El Informador*. https://www.informador.mx/mexico/AMLO-Apoyan-miles-a-Carlos-Loret-en-foro-de-redes-sociales-en-vivo-20220212-0102.html
 - Ramos Chávez, A. (2015). Ciudadanía en la pantalla. Información y acción colectiva a través de Internet. *Revista General de Información y Documentación*, 25(2), 603-626. https://doi.org/10.5209/rev_RGID.2015.v25.n2.51231
 - Resina de la Fuente, J. (2010). Ciberpolítica, redes sociales y nuevas movilizaciones en España: el impacto digital en los procesos de deliberación y participación ciudadana. *Mediaciones Sociales*, (7), 143-164. https://revistas.ucm.es/index.php/MESO/article/view/MESO1010220143A
 - Suprema Corte de Justicia de la Nación. (2019). *Amparo en revisión 1005/2018* (Segunda Sala, 20 de marzo de 2019) [Resumen y sentencia]. https://www.scjn.gob.mx/derechos-humanos/sites/default/files/sentencias-emblematicas/sentencia/2022-01/AR1005-2018.pdf
-- Viché, M. (2016). *El empoderamiento de los ciudadanos internautas*.
+- Viché González, M. (2015). El empoderamiento de los ciudadanos en Internet. *Revista Internacional de Pensamiento Político*, 10, 85-100. https://hdl.handle.net/10433/10396
 
 ---
 

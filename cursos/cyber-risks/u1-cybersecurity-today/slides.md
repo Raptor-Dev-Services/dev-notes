@@ -17,13 +17,13 @@ Reparto sugerido: apertura 10 min, tema 1 35 min, tema 2 35 min, tema 3 30 min, 
 
 ## Por qué importa
 
-- En México hay **100.2 millones** de personas usuarias de internet: el **83.1 %** de la población de seis años y más.
+- En México hay **104.9 millones** de personas usuarias de internet: el **86.1 %** de la población de seis años y más.
 - Casi todo lo que hacemos en un día pasa por la red: estudiar, cobrar, pagar, enterarnos, platicar.
 - Usarla a diario no es lo mismo que entenderla.
 
 Lo que no entendemos, no lo sabemos proteger.
 
-Fuente: INEGI, ENDUTIH 2024.
+Fuente: INEGI, ENDUTIH 2025.
 
 <!--
 Pregunta de arranque (2 min): ¿cuántas de las cosas que hicieron hoy antes de llegar a clase habrían sido
@@ -92,11 +92,11 @@ tarea manual?
 
 | Dato de México | Valor |
 |---|---|
-| Uso de internet en zonas urbanas | 86.9 % |
-| Uso de internet en zonas rurales | 68.5 % |
+| Uso de internet en zonas urbanas | 88.9 % |
+| Uso de internet en zonas rurales | 75.2 % |
 | Razón principal de quien no lo usa | No sabe cómo |
 
-Fuente: INEGI, ENDUTIH 2024. Desde 2013, el artículo 6.º constitucional reconoce el derecho de acceso a las TIC y a la banda ancha.
+Fuente: INEGI, ENDUTIH 2025 (uso por zona). Desde 2013, el artículo 6.º constitucional reconoce el derecho de acceso a las TIC y a la banda ancha.
 
 ---
 
@@ -250,9 +250,9 @@ archivos así. Casi siempre hay uno. Que cuenten cómo se enteraron y si había 
 |---|---|---|
 | Marzo de 2016 | **SamSam** usa la red para propagar ransomware sin que nadie ejecute nada | El ransomware ya podía moverse solo dentro de una organización |
 | Abril de 2017 | Shadow Brokers filtra **EternalBlue**, exploit del protocolo de archivos compartidos de Windows | Un arma para entrar a millones de equipos sin parche, al alcance de cualquiera |
-| 12 de mayo de 2017 | **WannaCry**, un *cryptoworm*, usa EternalBlue para saltar de red en red | Hospitales, fábricas y gobiernos de más de cien países en horas |
+| 12 de mayo de 2017 | **WannaCry**, un *cryptoworm*, usa EternalBlue para saltar de red en red | Más de 200,000 equipos de hospitales, fábricas y gobiernos en al menos 100 países, en horas |
 
-Fuente: Cisco Talos (2017); Cisco (2018).
+Fuente: Cisco Talos (2017); Cisco (2018); National Audit Office del Reino Unido (2017).
 
 ---
 

@@ -227,7 +227,7 @@ Un proceso crítico se parece a uno primario: si se detiene, el margen desaparec
 - Encargo al NIST de un marco voluntario de ciberseguridad.
 - Identificación de la infraestructura en mayor riesgo.
 
-Actualización: la PPD-21 se sustituyó por el NSM-22 (2024), con 16 sectores.
+Actualización al 2026: la PPD-21 se sustituyó por el NSM-22 (abril de 2024), con 16 sectores; la Orden Ejecutiva 14239 (marzo de 2025) ordenó revisarlo.
 
 ---
 

@@ -38,7 +38,7 @@ En este punto la tecnología deja de ser una novedad y se vuelve una herramienta
 
 Las TIC son el conjunto de tecnologías que permiten crear, almacenar, procesar y transmitir información: computadoras, teléfonos, redes, programas y servicios en línea. Su integración transformó cómo interactuamos, trabajamos y accedemos a la información, y con su uso creciente aparecieron también riesgos importantes para la seguridad.
 
-> Actualización al 2026: según la Encuesta Nacional sobre Disponibilidad y Uso de Tecnologías de la Información en los Hogares (ENDUTIH) 2024 del INEGI, México superó los **100.2 millones de usuarios de internet**, el **83.1 %** de la población de seis años y más. La diferencia entre zonas urbanas (86.9 %) y rurales (68.5 %) sigue siendo grande, y la razón más citada por quienes no lo usan es que no saben cómo hacerlo. Desde la reforma constitucional de 2013, el artículo 6.º de la Constitución reconoce el derecho de acceso a las TIC y a la banda ancha.
+> Actualización al 2026: según la Encuesta Nacional sobre Disponibilidad y Uso de Tecnologías de la Información en los Hogares (ENDUTIH) 2025 del INEGI, México llegó a **104.9 millones de usuarios de internet**, el **86.1 %** de la población de seis años y más. La diferencia entre zonas urbanas (88.9 %) y rurales (75.2 %) se redujo, pero sigue siendo grande, y la razón más citada por quienes no lo usan es que no saben cómo hacerlo. Desde la reforma constitucional de 2013, el artículo 6.º de la Constitución reconoce el derecho de acceso a las TIC y a la banda ancha.
 
 ## Qué es internet
 
@@ -128,10 +128,10 @@ La tecnología cambió todos los ámbitos de la vida, y mantenerse al día es in
 
 ## Referencias
 
-- Cámara de Diputados del H. Congreso de la Unión. (2025). *Constitución Política de los Estados Unidos Mexicanos* (art. 6.º). https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf
+- Cámara de Diputados del H. Congreso de la Unión. (2026). *Constitución Política de los Estados Unidos Mexicanos* (última reforma DOF 07-10-2026). https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf
 - Code.org. (2016, 27 de junio). *What is the internet?* [Video]. YouTube. https://youtu.be/Dxcc6ycZ73M
 - Drucker, P. F. (1994, noviembre). The age of social transformation. *The Atlantic Monthly*. https://www.theatlantic.com/past/docs/politics/ecbig/soctrans.htm
-- Instituto Nacional de Estadística y Geografía. (2025). *Encuesta Nacional sobre Disponibilidad y Uso de Tecnologías de la Información en los Hogares (ENDUTIH) 2024*. https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2025/endutih/ENDUTIH_24_RR.pdf
+- Instituto Nacional de Estadística y Geografía. (2026). *Encuesta Nacional sobre Disponibilidad y Uso de Tecnologías de la Información en los Hogares (ENDUTIH) 2025* [Reporte de resultados, 16 de junio de 2026]. https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2026/endutih/ENDUTIH_25_RR.pdf
 - Kimation Studio. (2014, 2 de noviembre). *Historia de internet (ilustrado)* [Video]. YouTube. https://youtu.be/BWb6ri3ePew
 - Leiner, B. M., Cerf, V. G., Clark, D. D., Kahn, R. E., Kleinrock, L., Lynch, D. C., Postel, J., Roberts, L. G. y Wolff, S. (1997). *A brief history of the internet*. Internet Society. https://www.internetsociety.org/internet/history-internet/brief-history-internet/
 - NAOV. (2017, 19 de mayo). *La historia del internet* [Video]. YouTube. https://youtu.be/D9i1ZknIkZk

@@ -108,7 +108,7 @@ Acuerdo político: 10 de diciembre de 2018. Vigente desde junio de 2019.
 1. **ENISA** pasa de mandato temporal a permanente, con más tareas y recursos.
 2. **Marco europeo de certificación** para productos, servicios y procesos de TIC.
 
-Desde 2025 también certifica **servicios de seguridad gestionados** (Reglamento 2025/37).
+Desde 2025 el marco abarca también los **servicios de seguridad gestionados** (Reglamento 2025/37).
 
 ---
 
@@ -168,7 +168,7 @@ Primer esquema adoptado: **EUCC** (2024), basado en Criterios Comunes.
 | Ley de Ciberresiliencia (2024/2847) | Productos con elementos digitales |
 | Ley de Cibersolidaridad (2025/38) | Detección y respuesta coordinada |
 
-En enero de 2026 la Comisión propuso sustituir el 2019/881 por un nuevo reglamento.
+En enero de 2026 la Comisión propuso sustituir el 2019/881 por un nuevo reglamento (*Cybersecurity Act 2*, COM(2026) 11), todavía en primera lectura en noviembre de 2026.
 
 <!--
 No pidan memorizar números: pidan que sepan qué regula cada pieza y a quién obliga.
@@ -192,7 +192,7 @@ No pidan memorizar números: pidan que sepan qué regula cada pieza y a quién o
 - Tipificar acceso ilícito, interceptación, daños a datos y sistemas, abuso de dispositivos, fraude y falsificación informáticos, pornografía infantil e infracciones a la propiedad intelectual.
 - Reglas procesales: conservación rápida de datos, interceptación, jurisdicción, extradición, asistencia mutua.
 
-83 Partes en septiembre de 2026. **México no es Parte.**
+84 Partes desde el 14 de octubre de 2026. **México no es Parte.**
 
 ---
 
@@ -252,7 +252,7 @@ Sigue sin existir una ley federal general de privacidad.
 - Proyecto S. 773: comercio seguro, especialistas en TI, defensas ante interrupciones.
 - Ciberespacio como activo nacional estratégico.
 
-**Actualización al 2026:** nunca fue ley. Se dictaminó en comisión en diciembre de 2010 y no se votó en el pleno. La que sí se aprobó fue la **Ley de Ciberseguridad de 2015**, con la CISA 2015 de intercambio de información.
+**Actualización al 2026:** nunca fue ley. Se dictaminó en comisión en diciembre de 2010 y no se votó en el pleno. La que sí se aprobó fue la **Ley de Ciberseguridad de 2015**, con la CISA 2015 de intercambio de información, que venció el 30 de septiembre de 2025 y desde entonces vive de prórrogas temporales; la vigente llega al 11 de diciembre de 2026.
 
 <!--
 Este es un buen ejemplo para la habilidad que más importa en derecho: verificar si una norma existe
@@ -261,15 +261,18 @@ y está vigente antes de citarla. El material original la presentaba como ley.
 
 ---
 
-## Las estrategias, de 2011 a 2023
+## Las estrategias, de 2011 a 2026
 
 | Documento | Enfoque |
 |---|---|
 | Estrategia Internacional para el Ciberespacio (2011) | Cooperación, diez normas de conducta, diplomacia, defensa y desarrollo |
 | Estrategia Cibernética Nacional (2018) | Cuatro pilares, primacía en el ciberespacio |
 | Estrategia Nacional de Ciberseguridad (2023) | Cinco pilares, responsabilidad hacia los fabricantes |
+| *President Trump's Cyber Strategy for America* (marzo de 2026) | Seis pilares: adversarios, regulación de sentido común, redes federales, infraestructura crítica, tecnologías emergentes y talento |
 
 Más la Orden Ejecutiva 14028 (2021), CIRCIA (2022) y la Orden 14306 (2025).
+
+**Actualización al 2026:** la estrategia de marzo de 2026 es la más reciente y llegó con la Orden Ejecutiva 14390 contra el cibercrimen y el fraude. La regla final de CIRCIA sigue sin publicarse, así que la obligación de reportar todavía no corre.
 
 ---
 
@@ -302,6 +305,7 @@ Pregunten cuáles de estas diez normas ven reflejadas en la estrategia mexicana 
 ## Argentina
 
 - Estrategia nacional 2019 y **segunda estrategia 2023** con ocho objetivos.
+- Centro Nacional de Ciberseguridad, autoridad nacional creada por el DNU 941/2025 (publicado en enero de 2026).
 - Ciberdefensa en el Ministerio de Defensa (Decreto 42/2016).
 - Programa Nacional contra la Criminalidad Informática (Res. 69/2016).
 - Fiscalía especializada: punto focal en 2014, **UFECI** en 2015.

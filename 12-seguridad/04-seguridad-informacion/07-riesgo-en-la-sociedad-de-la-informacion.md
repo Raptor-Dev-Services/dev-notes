@@ -58,7 +58,7 @@ En su edición 2019 (la decimocuarta), los riesgos tecnológicos aparecieron ent
 
 Que dos riesgos tecnológicos compitan con los ambientales muestra el valor que los datos tienen ya para la sociedad.
 
-> Actualización al 2026: el *Global Risks Report 2026* (vigesimoprimera edición, 14 de enero de 2026) coloca la **confrontación geoeconómica** como el principal riesgo a dos años, seguida de la desinformación, la polarización social, los eventos meteorológicos extremos y los conflictos armados entre Estados. La **inseguridad cibernética** sigue dentro de los diez primeros. A diez años dominan los riesgos ambientales.
+> Actualización al 2026: el *Global Risks Report 2026* (vigesimoprimera edición, 14 de enero de 2026) coloca la **confrontación geoeconómica** como el principal riesgo a dos años, seguida de la desinformación, la polarización social, los eventos meteorológicos extremos y los conflictos armados entre Estados. La **inseguridad cibernética** ocupa el sexto lugar a dos años y el octavo a diez; la desinformación, el segundo y el cuarto. A diez años dominan los riesgos ambientales.
 
 Los riesgos asociados a las infraestructuras críticas y a las tecnologías de la información crecen porque esas tecnologías se usan en todo. Los esquemas de seguridad actuales no van a sostenerse frente a los riesgos que traen las tecnologías nuevas y los usos nuevos de la información: hay que pensar en paradigmas distintos ante el **cómputo cuántico**, la **nanotecnología** o las **tecnologías alimentarias**, entre otras.
 
@@ -84,7 +84,7 @@ En su edición 2021, ENISA identificó nueve amenazas principales:
 
 Los tipos de ataque, sus motivos y sus autores tienen una relación directa con las amenazas y con las vulnerabilidades de los sistemas. Entender esa relación es lo que permite reaccionar bien y elegir controles eficaces.
 
-> Actualización al 2026: el *ENISA Threat Landscape 2025* (1 de octubre de 2025) analizó 4,875 incidentes ocurridos entre julio de 2024 y junio de 2025. Según el informe y sus resúmenes, la denegación de servicio impulsada por hacktivistas fue la mayor parte de los incidentes registrados, el phishing siguió siendo la principal vía de entrada, el ransomware el más dañino, y la frontera entre ciberdelincuencia, espionaje y hacktivismo es cada vez más difusa. La inteligencia artificial aparece a la vez como herramienta de los atacantes y como superficie de ataque nueva.
+> Actualización al 2026: el *ENISA Threat Landscape 2026*, publicado el 22 de septiembre de 2026, analizó 8,257 incidentes ocurridos entre el 1 de enero y el 31 de diciembre de 2025: la denegación de servicio fue el 51.3 % de los incidentes y el acceso no autorizado, el 39.5 %; el phishing fue la técnica de ingeniería social más usada (77.8 %), la explotación de vulnerabilidades abrió el 60.4 % de los accesos no autorizados con vía de entrada identificada, y el ransomware siguió como la amenaza de mayor impacto a corto plazo. El informe subraya la dependencia de proveedores de software, de servicios y de nube, porque un incidente en un tercero se propaga a muchas organizaciones; advierte que delincuentes, hacktivistas y grupos ligados a Estados usan cada vez más las mismas vías de entrada y herramientas, y que la inteligencia artificial apoya cada vez más fases del ataque.
 
 ## Los tipos de control
 
@@ -121,7 +121,7 @@ Dos precisiones conceptuales. Las **amenazas** son factores, a menudo externos, 
 ## Referencias
 
 - Agencia de la Unión Europea para la Ciberseguridad. (2021). *ENISA threat landscape 2021*. ENISA. https://www.enisa.europa.eu/publications/enisa-threat-landscape-2021
-- Agencia de la Unión Europea para la Ciberseguridad. (2025). *ENISA threat landscape 2025*. ENISA. https://www.enisa.europa.eu/publications/enisa-threat-landscape-2025
+- Agencia de la Unión Europea para la Ciberseguridad. (2026). *ENISA threat landscape 2026*. ENISA. https://www.enisa.europa.eu/publications/enisa-threat-landscape-2026
 - Caralli, R. A., Stevens, J. F., Young, L. R., y Wilson, W. R. (2007). *Introducing OCTAVE Allegro: Improving the information security risk assessment process* (CMU/SEI-2007-TR-012). Software Engineering Institute. https://insights.sei.cmu.edu/library/introducing-octave-allegro-improving-the-information-security-risk-assessment-process/
 - Committee of Sponsoring Organizations of the Treadway Commission. (2017). *Enterprise risk management: Integrating with strategy and performance*. COSO. https://www.coso.org/enterprise-risk-management
 - International Organization for Standardization e International Electrotechnical Commission. (2022). *ISO/IEC 27005:2022 Information security, cybersecurity and privacy protection. Guidance on managing information security risks*. ISO. https://www.iso.org/standard/80585.html

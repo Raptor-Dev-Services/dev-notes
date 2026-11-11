@@ -196,7 +196,7 @@ Su valor está en el enfoque: el desarrollo de capacidades sirve para fortalecer
 ## Referencias
 
 - Comisión Europea. (s. f.). *The EU's Cybersecurity Strategy*. https://digital-strategy.ec.europa.eu/en/policies/cybersecurity-strategy
-- Global Forum on Cyber Expertise. (2017). *Global Agenda for Cyber Capacity Building* (Comunicado de Delhi). https://thegfce.org/
+- Global Forum on Cyber Expertise. (2017, 24 de noviembre). *Delhi Communiqué on a GFCE Global Agenda for Cyber Capacity Building*. https://web.archive.org/web/20260222075248/https://thegfce.org/wp-content/uploads/2020/04/DelhiCommunique.pdf
 - NCS Guide. (2025). *Guide to Developing a National Cybersecurity Strategy* (3.ª ed.). Unión Internacional de Telecomunicaciones y socios. https://ncsguide.org/ncs-guide-2025/
 - Presidencia del Gobierno de España. (2019). Orden PCI/487/2019, de 26 de abril, por la que se publica la Estrategia Nacional de Ciberseguridad 2019, aprobada por el Consejo de Seguridad Nacional. *Boletín Oficial del Estado*, 103, 43437-43455. https://www.boe.es/boe/dias/2019/04/30/pdfs/BOE-A-2019-6347.pdf
 - Unión Internacional de Telecomunicaciones, Banco Mundial, Secretaría de la Commonwealth, Organización de Telecomunicaciones de la Commonwealth y Centro de Excelencia de Ciberdefensa Cooperativa de la OTAN. (2018). *Guía para la elaboración de una estrategia nacional de ciberseguridad: participación estratégica en la ciberseguridad*. UIT. https://ncsguide.org/archives/

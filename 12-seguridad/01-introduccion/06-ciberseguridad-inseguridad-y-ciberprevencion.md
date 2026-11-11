@@ -156,7 +156,7 @@ Para un especialista en ciberseguridad, conocer la huella implica entender cómo
 
 ## E. Ciberactivismo y movimientos sociales
 
-Martínez (s. f.) documenta ejemplos de ciberactivismo con impacto en la comunidad internacional. En México el fenómeno aún no alcanza los niveles de otros países, pero merece atención: explorar este tipo de activismo puede abrir vías nuevas para la participación, la defensa de derechos y la influencia política. Lo recomendable es seguir su desarrollo y fomentarlo de forma responsable, reconociendo su capacidad para amplificar voces.
+Martínez Martínez (2013) documenta ejemplos de ciberactivismo con impacto en la comunidad internacional. En México el fenómeno aún no alcanza los niveles de otros países, pero merece atención: explorar este tipo de activismo puede abrir vías nuevas para la participación, la defensa de derechos y la influencia política. Lo recomendable es seguir su desarrollo y fomentarlo de forma responsable, reconociendo su capacidad para amplificar voces.
 
 ## F. Google sabe más de ti que tu madre
 
@@ -202,26 +202,26 @@ Material opcional de la unidad, útil para profundizar:
 
 ## Referencias
 
-- Arenas, G. (2018). *Google sabe más de ti que tu propia madre* [Artículo de divulgación].
-- Cámara de Diputados del H. Congreso de la Unión. (2025). *Ley Federal de Protección de Datos Personales en Posesión de los Particulares* (DOF 20-03-2025). https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf
+- Arenas, G. (2018, 24 de abril). Google sabe más de ti que tu propia madre. *GQ España*. https://www.revistagq.com/noticias/tecnologia/articulos/datos-que-google-sabe/28869
+- Cámara de Diputados del H. Congreso de la Unión. (2025). *Ley Federal de Protección de Datos Personales en Posesión de los Particulares* (DOF 20-03-2025, última reforma DOF 14-11-2025). https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf
 - Cámara de Diputados del H. Congreso de la Unión. (2026a). *Constitución Política de los Estados Unidos Mexicanos* (última reforma DOF 07-10-2026). https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf
 - Cámara de Diputados del H. Congreso de la Unión. (2026b). *Código Penal Federal* (última reforma DOF 13-03-2026). https://www.diputados.gob.mx/LeyesBiblio/pdf/CPF.pdf
 - Cámara de Diputados del H. Congreso de la Unión. (2026c). *Ley Federal del Trabajo* (última reforma DOF 14-05-2026). https://www.diputados.gob.mx/LeyesBiblio/pdf/LFT.pdf
 - ComputerHoy. (2015). *¿Qué es Anonymous?* [Video]. YouTube. https://youtu.be/DDC4SPhkWZg
 - Cortés, D., y Garzón, T. (2017). *El ciberactivismo en las revoluciones posmodernas*.
-- Fernández Prados, J. S. (2012). Ciberactivismo: conceptualización, hipótesis y medida. *Arbor. Ciencia, Pensamiento y Cultura*, 188(756), 631-639. https://arbor.revistas.csic.es
+- Fernández Prados, J. S. (2012). Ciberactivismo: conceptualización, hipótesis y medida. *Arbor. Ciencia, Pensamiento y Cultura*, 188(756), 631-639. https://doi.org/10.3989/arbor.2012.756n4001
 - García, I. (2014). *Redes sociales, el otro campo de acción de las autodefensas* [Nota informativa].
 - INCIBE. (2015, 4 de diciembre). *Introducción a la ciberseguridad* [Video]. YouTube. https://youtu.be/TM-OT1U3P0k
 - Internet Society. (2016, 12 de enero). *Cuatro razones para cuidar nuestras huellas digitales* [Video]. YouTube. https://youtu.be/cpH-zSRV6Ug
-- IT Governance. (2015). *Cyber resilience: Cyber security and business resilience*. IT Governance Ltd. https://www.itgovernance.co.uk
+- IT Governance. (2015). *Cyber resilience: Cyber security and business resilience*. https://www.itgovernance.co.uk/download/cyber-resilience.pdf
 - La Vanguardia. (2018). *El experto en ciberseguridad Deepak Daswani nos aconseja cómo mejorar nuestra seguridad* [Video]. YouTube. https://youtu.be/eY3dB6SlhLI
 - López, D., Serrano, M., y Fernández, C. (2017). *Derechos y obligaciones de los ciudadanos/as en el entorno digital*.
-- Malacara, N. (2021). *5 tips para ejercer tu derecho a la desconexión digital*. Expansión.
-- Martínez. (s. f.). *Ciberactivismo y movimientos sociales*.
+- Malacara, N. (2021, 12 de julio). 5 tips para ejercer tu derecho a la desconexión digital. *Expansión*. https://expansion.mx/carrera/2021/07/12/5-tips-ejercer-derecho-desconexion-digital
+- Martínez Martínez, H. (2013). Ciberactivismo y movimientos sociales urbanos contemporáneos. Un mapa de la investigación en España. En *Investigar la comunicación hoy. Revisión de políticas científicas y aportaciones metodológicas: Simposio Internacional sobre Política Científica en Comunicación* (Vol. 2, pp. 447-458). Universidad de Valladolid. https://dialnet.unirioja.es/servlet/articulo?codigo=4228937
 - Real Academia Española. (s. f.). Prevención. En *Diccionario de la lengua española* (23.a ed., versión 23.8 en línea). https://dle.rae.es/prevenci%C3%B3n
 - Ribble, M. (2023). *Nine elements of digital citizenship*. Digital Citizenship. https://www.digitalcitizenship.net/nine-elements.html
 - Spafford, E. H. (s. f.). *Quotable Spaf*. Purdue University, CERIAS. https://spaf.cerias.purdue.edu/quotes.html
-- Tamez, E. (2015). *Nueve elementos de la ciudadanía digital*.
+- Tamez, E. (2015). *Nueve elementos de la ciudadanía digital*. Jason Ohler. http://www.jasonohler.com/wordpressii/wp-content/uploads/2013/12/Nueve-elementos-de-la-cudadania-digital.pdf
 - UNAM Global TV. (2021). *Datos personales: entre más vulnerables, más valiosos. ¿Por qué?* [Video]. YouTube. https://www.youtube.com/watch?v=YDWirXAlivA
 - Vargas, E. (2011). *Hija de Peña Nieto causa ira en Twitter al reenviar mensaje que insulta a críticos* [Nota informativa].
 - Vázquez, M., y Valbuena, F. (2018). *La pirámide de necesidades de Abraham Maslow*.

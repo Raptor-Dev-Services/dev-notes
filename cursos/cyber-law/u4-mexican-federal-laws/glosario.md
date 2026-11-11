@@ -31,7 +31,7 @@
 
 ### Convenio 108
 **Categoría:** Derecho internacional / Datos personales
-**Definición:** Tratado del Consejo de Europa de 1981, el primero vinculante sobre protección de datos personales. Obliga a aplicar principios comunes en los sectores público y privado; su Protocolo Adicional de 2001 regula las autoridades de control y los flujos transfronterizos. Vigente para México desde el 1 de octubre de 2018.
+**Definición:** Tratado del Consejo de Europa de 1981, el primero vinculante sobre protección de datos personales. Obliga a aplicar principios comunes en los sectores público y privado; su Protocolo Adicional de 2001 regula las autoridades de control y los flujos transfronterizos. Vigente para México desde el 1 de octubre de 2018. Su versión modernizada, el Convenio 108+ (2018), todavía no está en vigor y México no la ha firmado.
 
 ---
 

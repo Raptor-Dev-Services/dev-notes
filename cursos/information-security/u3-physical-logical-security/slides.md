@@ -82,7 +82,7 @@ El valor decide dónde se guarda y dónde se procesa un dato.
 
 - El Foro Económico Mundial publica su *Global Risks Report* cada año.
 - En 2019, el fraude o robo de datos y los ciberataques estaban entre los cinco más probables.
-- En 2026, la inseguridad cibernética sigue entre los diez primeros a dos años.
+- En 2026, la inseguridad cibernética ocupa el sexto lugar a dos años, y la desinformación, el segundo.
 
 Nuevos paradigmas: cómputo cuántico, nanotecnología, tecnologías alimentarias.
 
@@ -92,7 +92,7 @@ Nuevos paradigmas: cómputo cuántico, nanotecnología, tecnologías alimentaria
 
 ENISA 2021: ransomware, malware, criptominado, correo, amenazas a los datos, a la disponibilidad e integridad, desinformación, errores no maliciosos y cadena de suministro.
 
-Actualización: el informe 2025 analizó 4,875 incidentes; el phishing sigue como principal vía de entrada y el ransomware como el más dañino.
+Actualización al 2026: el informe 2026 analizó 8,257 incidentes de 2025; la denegación de servicio fue el 51.3 %, el phishing la técnica de ingeniería social más usada (77.8 %) y el ransomware siguió como la amenaza de mayor impacto a corto plazo.
 
 ---
 

@@ -96,7 +96,7 @@ Dentro de la investigación hay otro papel distinto al policial: el del perito. 
 
 En la práctica también se distingue el enfoque: el ciberforense investiga incidentes, analiza datos y detecta las brechas de seguridad; el perito forense se concentra en recolectar y preservar la prueba para que sea admitida en el proceso con su integridad intacta.
 
-Su disciplina es la **informática forense**. Gervilla (2014) la describe como una ciencia reciente que asegura, identifica, preserva, analiza y presenta datos (la prueba digital) de manera que puedan ser aceptados en un proceso legal; sus herramientas permiten, en la medida de lo posible, reconstruir lo que pasó en el equipo, examinar lo recuperado y comprobar su autenticidad.
+Su disciplina es la **informática forense**. Gervilla Rivas (2014) la describe como una ciencia reciente que asegura, identifica, preserva, analiza y presenta datos (la prueba digital) de manera que puedan ser aceptados en un proceso legal; sus herramientas permiten, en la medida de lo posible, reconstruir lo que pasó en el equipo, examinar lo recuperado y comprobar su autenticidad.
 
 ### La prueba ilícita
 
@@ -134,7 +134,7 @@ Aun así, la pericia técnica no decide sola un juicio. Pesan también los aspec
 
 ## Jueces y norma jurídica
 
-La humanidad está dividida en naciones, clases, religiones y profesiones, y cada grupo tiene su propia idea de lo justo; son tantas que no se puede hablar de una sola noción de justicia, uniforme y primaria (Bernal, 2005).
+La humanidad está dividida en naciones, clases, religiones y profesiones, y cada grupo tiene su propia idea de lo justo; son tantas que no se puede hablar de una sola noción de justicia, uniforme y primaria (Bernal Moreno, 2005).
 
 La relación entre los jueces y la norma es un tema central de la filosofía del derecho, porque la búsqueda de justicia es una aspiración humana constante y, para muchos autores, el derecho es su instrumento (Ruiz, 2009). Sin embargo, al final de un proceso penal la víctima a menudo siente que no se hizo justicia, aun cuando el responsable fue sancionado y el daño se pagó.
 
@@ -144,7 +144,7 @@ La relación entre los jueces y la norma es un tema central de la filosofía del
 - **El juez está acotado.** Determina la responsabilidad y la pena con base en las pruebas y en lo que la ley permite; no puede ir más allá. A la sociedad le toca asumir su parte y exigir que los jueces apliquen la ley correctamente.
 - **En lo digital, el daño persiste.** La información expuesta en internet casi nunca desaparece por completo, y eso hace aún más difícil que la víctima perciba justicia.
 
-Abarzúa y Valenzuela (s. f., pp. 54-55) profundizan en el derecho como forma de alcanzar la justicia, como lectura complementaria.
+Abarzúa y Valenzuela (2014, pp. 54-55) profundizan en el derecho como forma de alcanzar la justicia, como lectura complementaria.
 
 ## La prueba de los ciberdelitos
 
@@ -203,26 +203,26 @@ Por eso la cifra de víctimas que reportan las encuestas (por ejemplo, el MOCIBA
 
 ## Referencias
 
-- Abarzúa Navarrete, S., & Valenzuela Vargas, M. (s. f.). *El derecho como forma de alcanzar la justicia*. Universidad de Chile. https://repositorio.uchile.cl/
-- Bernal, J. (2005). La idea de justicia. *Revista de la Facultad de Derecho de México*. UNAM. https://revistas.juridicas.unam.mx/
+- Abarzúa Navarrete, S. A., & Valenzuela Vargas, M. H. (2014). *El derecho como forma de alcanzar la justicia* [Memoria de licenciatura, Universidad de Chile]. Repositorio Académico de la Universidad de Chile. https://repositorio.uchile.cl/handle/2250/116688
+- Bernal Moreno, J. K. (2005). La idea de justicia. *Revista del Posgrado en Derecho de la UNAM*, *1*(1). https://revistas-colaboracion.juridicas.unam.mx/index.php/rev-posgrado-derecho/article/view/17098
 - Cámara de Diputados del H. Congreso de la Unión. (2025). *Código Nacional de Procedimientos Penales* (Última reforma DOF 28-11-2025). https://www.diputados.gob.mx/LeyesBiblio/pdf/CNPP.pdf
 - Cámara de Diputados del H. Congreso de la Unión. (2025). *Ley General del Sistema Nacional de Seguridad Pública* (DOF 16-07-2025). https://www.diputados.gob.mx/LeyesBiblio/pdf/LGSNSP.pdf
-- Cámara de Diputados del H. Congreso de la Unión. (2024). *Constitución Política de los Estados Unidos Mexicanos* (reforma en materia de Guardia Nacional, DOF 30-09-2024). https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf
+- Cámara de Diputados del H. Congreso de la Unión. (2026). *Constitución Política de los Estados Unidos Mexicanos* (última reforma DOF 07-10-2026; reforma en materia de Guardia Nacional, DOF 30-09-2024). https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf
 - Consejo Nacional de Seguridad Pública. (2017). *Protocolo Nacional de Actuación. Primer Respondiente*. https://transparencia.info.jalisco.gob.mx/sites/default/files/Protocolo%20Nacional.pdf
-- García, A. (2021). Estos son los precios de la Dark Web en 2021 para tarjetas, cuentas y más. (Enlace original no disponible.)
-- Gervilla Rivas, C. (2014). *Metodología para un análisis forense* [Trabajo final de máster, Universitat Oberta de Catalunya]. https://openaccess.uoc.edu/
+- García, A. (2021, 7 de junio). Estos son los precios de la Dark Web en 2021 para tarjetas, cuentas y más. *ADSLZone*. https://web.archive.org/web/20250616033816/https://www.adslzone.net/noticias/internet/precios-dark-web-2021-tarjetas-cuentas/
+- Gervilla Rivas, C. (2014). *Metodología para un análisis forense* [Trabajo final de máster, Universitat Oberta de Catalunya]. https://hdl.handle.net/10609/39681
 - González, O. (2018). *Modelo homologado de unidades de policía cibernética* [Presentación]. Consejo Nacional de Seguridad Pública.
-- INCIBE. (2015). *Así trabaja el ciberdelincuente: ¿se lo vas a permitir?* [Video]. Instituto Nacional de Ciberseguridad de España. https://www.incibe.es/
-- Instituto Nacional de Ciencias Penales. (2008). *ABC del nuevo sistema de justicia penal en México*. https://poderjudicialyucatan.gob.mx/pdf/refpenal/ABCReformaImpreso.pdf
+- INCIBE. (2015, 10 de diciembre). *Así trabaja el ciberdelincuente: ¿se lo vas a permitir?* [Video]. YouTube. https://www.youtube.com/watch?v=HJKkkaL6Trc
+- Instituto Nacional de Ciencias Penales. (2008). *ABC del nuevo sistema de justicia penal en México*. https://web.archive.org/web/20230522083447/https://www.poderjudicialyucatan.gob.mx/pdf/refpenal/ABCReformaImpreso.pdf
 - Instituto Nacional de Estadística y Geografía. (2026). *Módulo sobre Ciberacoso (MOCIBA) 2025* [Reporte de resultados 24/26]. https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2026/mociba/MOCIBA2025_RR.pdf
+- Procuraduría General de la República. (2013). *Cartilla. Derechos básicos del detenido*. https://www.gob.mx/cms/uploads/attachment/file/342687/Cartilla_Derechos_b_sicos_del_detenido.pdf
 - Procuraduría General de la República. (2016). *Cartilla informativa sobre el nuevo sistema de justicia penal*. https://www.gob.mx/fgr
 - Quevedo González, J. (2017). *Investigación y prueba del ciberdelito* [Tesis doctoral, Universitat de Barcelona]. Dipòsit Digital de la Universitat de Barcelona. https://hdl.handle.net/2445/128112
 - Rosales de Salamanca Rodríguez, F. (2016). Validez y eficacia procesal de las evidencias digitales. En R. Oliva León & S. Valero Barceló (Coords.), *La prueba electrónica: Validez y eficacia procesal* (pp. 25 y ss.). Juristas con Futuro. https://files.griddo.ecija.com/ebook-sept16pruebaelectronicagran-final.pdf
 - Ruiz. (2009). (Referencia incompleta en el material de origen; no fue posible identificar la obra.)
 - Secretariado Ejecutivo del Sistema Nacional de Seguridad Pública. (2024). *Avances de la implementación: Modelo homologado de unidades de policía cibernética*. Gobierno de México. https://www.gob.mx/cms/uploads/attachment/file/891117/14_CIBERN_TICA.pdf
-- Secretaría de Gobernación. (2013). *Cartilla de derechos que asisten a las personas en detención*. https://www.gob.mx/segob
 - Suprema Corte de Justicia de la Nación. (2011). *Prueba ilícita. Las pruebas obtenidas, directa o indirectamente, violando derechos fundamentales, no surten efecto alguno* (Tesis 1a. CLXII/2011, registro digital 161221). Semanario Judicial de la Federación. https://sjf2.scjn.gob.mx/detalle/tesis/161221
-- Tiempo. (2020). Aumentan hasta un 600 % ciberdelitos en México durante pandemia. *Tiempo, la noticia digital*. (Enlace original no disponible.)
+- Tiempo. (2020, 26 de octubre). Aumentan hasta un 600 % ciberdelitos en México durante pandemia. *Tiempo, la noticia digital*. https://www.tiempo.com.mx/noticia/aumentan_casos_de_ciberdelitos_en_mexico_durante_pandemia/
 - Vega, M. (2018). Esto es lo que vale tu información en el mercado negro. *El Economista*. https://www.eleconomista.com.mx/
 - Vértigo TV. (2013). *El ABC para ser ciberpolicía* [Video]. YouTube. https://youtu.be/dOiXXgESuNg
 

@@ -176,9 +176,9 @@ Ejemplos orientativos: informes del GGE (2013, 2015, 2021), *Manual de Tallin* (
 
 - Armoniza delitos: acceso ilícito, interceptación, daño a datos y sistemas, abuso de dispositivos, fraude y falsificación informáticos, pornografía infantil, propiedad intelectual.
 - Reglas procesales: conservación rápida de datos, entrega, interceptación, jurisdicción, extradición y asistencia mutua.
-- Protocolos: 2003 (racismo y xenofobia) y 2022 (pruebas electrónicas).
+- Protocolos: 2003 (racismo y xenofobia) y 2022 (pruebas electrónicas; aún no en vigor, lleva 4 de las 5 ratificaciones que necesita).
 
-**Al 30 de septiembre de 2026: 83 Partes. México no es Parte.**
+**Al 14 de octubre de 2026: 84 Partes. México no es Parte.**
 
 ---
 
@@ -186,7 +186,8 @@ Ejemplos orientativos: informes del GGE (2013, 2015, 2021), *Manual de Tallin* (
 
 - Primer tratado vinculante sobre protección de datos personales.
 - Protocolo Adicional de 2001: autoridades de control y flujos transfronterizos.
-- **Este sí obliga a México:** decretos promulgatorios en el DOF del 28 de septiembre de 2018.
+- **Este sí obliga a México:** decretos promulgatorios en el DOF del 28 de septiembre de 2018, vigentes desde el 1 de octubre.
+- Convenio 108+ (2018): aún no en vigor (34 de 38 ratificaciones); México no lo ha firmado.
 
 ---
 

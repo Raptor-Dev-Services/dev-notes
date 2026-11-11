@@ -239,7 +239,7 @@ Las páginas de phishing aumentaron 38.1 % entre un año y otro, aunque su peso 
 
 ## Lo que ha cambiado desde entonces
 
-> **Actualización al 2026.** Las cifras de esta nota son de 2018. El volumen 24 del *Internet Security Threat Report* se consulta hoy en el sitio de documentación de Broadcom, que adquirió el negocio empresarial de Symantec en 2019. Para cifras actuales conviene usar fuentes oficiales: el Centro de Denuncias de Delitos en Internet del FBI recibió en 2025 1,008,597 denuncias y registró pérdidas por 20,877 millones de dólares, con el fraude de inversión (8,648 millones) y el compromiso de correo de negocios (3,046 millones) entre las categorías más costosas (IC3, 2026). La UIT estima unos 6 mil millones de personas conectadas en 2025 (UIT, 2025).
+> **Actualización al 2026.** Las cifras de esta nota son de 2018. El volumen 24 del *Internet Security Threat Report* se consulta hoy en el sitio de documentación de Broadcom, que adquirió el negocio empresarial de Symantec en 2019. Para cifras actuales conviene usar fuentes oficiales: el Centro de Denuncias de Delitos en Internet del FBI recibió en 2025 1,008,597 denuncias y registró pérdidas por 20,877 millones de dólares, con el fraude de inversión (8,648 millones) y el compromiso de correo de negocios (3,046 millones) entre las categorías más costosas (IC3, 2026). La UIT estima unos 6,300 millones de personas conectadas en 2026, 76 % de la población mundial (UIT, 2026).
 
 Las conclusiones de la unidad resumen la magnitud: con más de 5 mil millones de usuarios en el mundo, aunque solo una fracción mínima tuviera intención delictiva serían decenas de millones de posibles atacantes; los ataques contra el internet de las cosas crecen de forma exponencial; el teléfono es ya el blanco principal, y los países desarrollados siguen siendo a la vez la principal fuente y el principal destino de los ataques.
 
@@ -265,7 +265,7 @@ Las conclusiones de la unidad resumen la magnitud: con más de 5 mil millones de
 
 - Federal Bureau of Investigation, Internet Crime Complaint Center. (2026). *2025 IC3 annual report*. https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf
 - Symantec. (2019). *Internet security threat report* (vol. 24). https://docs.broadcom.com/doc/istr-24-2019-en
-- Unión Internacional de Telecomunicaciones. (2025, 17 de noviembre). *Connecting the world and beyond* [Comunicado de Facts and Figures 2025]. https://www.itu.int/en/mediacentre/Pages/PR-2025-11-17-Facts-and-Figures.aspx
+- Unión Internacional de Telecomunicaciones. (2026, 3 de noviembre). *Ya hay 6 300 millones de personas conectadas, pero las brechas digitales siguen existiendo* [comunicado]. https://www.itu.int/es/mediacentre/Pages/PR-2026-11-03-Facts-and-Figures.aspx
 - Lira Arteaga, O. M. (2018). *Cibercriminalidad: fundamentos de investigación en México*. Ubijus. Edición anterior: Instituto Nacional de Ciencias Penales, 2010, ISBN 978-607-7882-13-8, https://www.marcialpons.es/libros/cibercriminalidad/9786077882138/
 
 ---

@@ -52,7 +52,7 @@ flowchart LR
 
 Las principales clases de ciberataque se vigilan y clasifican cada año por organismos y empresas especializadas, que publican sus listas a principios de año y las actualizan con datos reales. El Foro Económico Mundial advirtió en su informe de riesgos de 2021 sobre el aumento del cibercrimen, y una nota de prensa de 2022 reportó que el robo de datos a empresas creció 151 % durante 2021 (Hernández, 2022).
 
-> **Actualización al 2026:** el informe de amenazas de ENISA publicado en octubre de 2025 analizó 4,875 incidentes entre julio de 2024 y junio de 2025: la denegación de servicio fue el 77 % de los incidentes reportados, el phishing fue la vía de entrada en alrededor del 60 % de las intrusiones, la explotación de vulnerabilidades fue la segunda vía (21.3 %) y el ransomware se señaló como la amenaza de mayor impacto en la Unión Europea (ENISA, 2025).
+> **Actualización al 2026:** el *ENISA Threat Landscape 2026*, publicado el 22 de septiembre de 2026, analizó 8,257 incidentes ocurridos entre el 1 de enero y el 31 de diciembre de 2025: la denegación de servicio fue el 51.3 % de los incidentes y el acceso no autorizado, el 39.5 %; el phishing fue la técnica de ingeniería social más usada (77.8 %), la explotación de vulnerabilidades abrió el 60.4 % de los accesos no autorizados con vía de entrada identificada, y el ransomware siguió como la amenaza de mayor impacto a corto plazo (ENISA, 2026).
 
 ## Las tres propiedades que el riesgo amenaza
 
@@ -163,7 +163,7 @@ No cumplir una obligación profesional o contractual genera responsabilidad. Pue
 
 Seguridad y cumplimiento normativo van juntos en la gestión de riesgos. Cumplir la ley no es la meta final sino el piso: debe servir de incentivo para proteger de verdad las aplicaciones y los datos. Incluso un programa de seguridad sólido necesita ajustes para medir, supervisar y demostrar su cumplimiento frente a las amenazas del momento, y debe incluir un plan para recuperarse si el ataque ocurre. Integrar la estrategia de cumplimiento con la de seguridad informática reduce el riesgo total, sobre todo en tres frentes: la seguridad de las aplicaciones, el control de acceso a los datos y la gestión de identidades y accesos.
 
-Invertir en prevención sale más barato que pagar las pérdidas de un ataque más el costo de recuperarse. Y el costo no lo pagan solo las empresas: también las personas cuyos datos se exponen. Ya en 2019 se estimaba que las ganancias del cibercrimen superarían a las del narcotráfico (Aetecno, 2019).
+Invertir en prevención sale más barato que pagar las pérdidas de un ataque más el costo de recuperarse. Y el costo no lo pagan solo las empresas: también las personas cuyos datos se exponen. Ya en 2019 se estimaba que las ganancias del cibercrimen superarían a las del narcotráfico (AETecno, 2019).
 
 ### Obsolescencia jurídica
 
@@ -233,18 +233,18 @@ Distinguir riesgo de vulnerabilidad es la base de cualquier estrategia de protec
 
 ## Referencias
 
-- Aetecno. (2019). *Ganancias de los ciberdelincuentes superarán a las del narcotráfico*. Lectura citada por el temario; sin enlace verificado al 2026.
-- Alonso, N. (2018). *La tecnología es un producto adictivo y debe ser regulado como tal*. Lectura citada por el temario; sin enlace verificado al 2026.
+- AETecno. (2019, 20 de febrero). Ganancias de los ciberdelincuentes superarán a las del narcotráfico. *AméricaEconomía*. https://web.archive.org/web/20190221210758/https://tecno.americaeconomia.com/articulos/ganancias-de-los-ciberdelincuentes-superaran-las-del-narcotrafico
+- Alonso, N. (2018, 12 de febrero). La tecnología es un producto adictivo y debe ser regulado como tal. *El País*. https://elpais.com/tecnologia/2018/02/09/actualidad/1518209058_401300.html
 - Associated Press. (2019, 14 de mayo). Vulnerabilidad de WhatsApp permitió hackear celulares. *Voz de América*. https://www.vozdeamerica.com/a/vulnerabilidad-de-whatsapp-permitio-hackear-celulares/4917891.html (el temario citaba la misma nota de agencia publicada en *El Universal*).
 - Colombia Digital. (2012, 16 de noviembre). *¿Qué es el analfabetismo digital?* [Video]. YouTube. https://youtu.be/ygOBFJzJmtU
-- ENISA. (2025). *ENISA threat landscape 2025*. Agencia de la Unión Europea para la Ciberseguridad. https://www.enisa.europa.eu/publications/enisa-threat-landscape-2025
-- Fundación Telefónica. (2016). *Ciberseguridad, la protección de la información en un mundo digital*. Lectura citada por el temario; sin enlace verificado al 2026.
-- Hernández, L. (2022). *Ciberataques en el mundo: robo de datos a compañías se dispara 151 % en 2021*. Lectura citada por el temario; sin enlace verificado al 2026.
-- HHP. (2018, 28 de diciembre). *Seguridad informática* [Video]. YouTube. Sin enlace verificado al 2026.
+- ENISA. (2026). *ENISA threat landscape 2026*. Agencia de la Unión Europea para la Ciberseguridad. https://www.enisa.europa.eu/publications/enisa-threat-landscape-2026
+- Fundación Telefónica. (2016). *Ciberseguridad, la protección de la información en un mundo digital*. https://www.fundaciontelefonica.com/publications/ciberseguridad-la-proteccion-de-la-informacion-en-un-mundo-digital/
+- Hernández, L. (2022, 18 de enero). Ciberataques en el mundo: robo de datos a compañías se dispara 151 % en 2021. *El Financiero*. https://www.elfinanciero.com.mx/economia/2022/01/18/ciberataques-en-el-mundo-robo-de-datos-a-companias-se-dispara-151-en-2021/
+- HHP. (2018, 28 de diciembre). *Seguridad informática* [Video]. YouTube. https://www.youtube.com/watch?v=1Cg70xiRmBY
 - INCIBE. (2015). *Gestión de riesgos. Una guía de aproximación para el empresario*. Instituto Nacional de Ciberseguridad. https://www.incibe.es/empresas/guias/gestion-de-riesgos-una-guia-de-aproximacion-para-el-empresario-actualizacion
 - INCIBE. (2017a). *Amenaza vs vulnerabilidad, ¿sabes en qué se diferencian?* Instituto Nacional de Ciberseguridad. https://www.incibe.es/empresas/blog/amenaza-vs-vulnerabilidad-sabes-se-diferencian
 - INCIBE. (2017b). *¡Fácil y sencillo! Análisis de riesgos en 6 pasos*. Instituto Nacional de Ciberseguridad. https://www.incibe.es/empresas/blog/analisis-riesgos-pasos-sencillo
-- INCIBE. (2017c, 14 de septiembre). *Análisis de riesgos* [Video]. YouTube. Sin enlace verificado al 2026.
+- INCIBE. (2017c, 14 de septiembre). *Análisis de riesgos* [Video]. YouTube. https://www.youtube.com/watch?v=knxhzpNFWGI
 - INCIBE. (2023). *Ciberseguridad en la identidad digital y la reputación online. Guía de recomendaciones para empresas*. Instituto Nacional de Ciberseguridad. https://www.incibe.es/empresas/guias/guia-ciberseguridad-identidad-online
 - INCIBE. (2025). *Guía de gestión de riesgos* (actualización 04/2025). Instituto Nacional de Ciberseguridad. https://www.incibe.es/sites/default/files/2026-02/Gu%C3%ADa%20de%20gesti%C3%B3n%20de%20riesgos_INCIBE_Actualizacion_04_2025.pdf
 - INCIBE. (s. f.). *Protección de la información*. Instituto Nacional de Ciberseguridad. https://www.incibe.es/empresas/que-te-interesa/proteccion-informacion

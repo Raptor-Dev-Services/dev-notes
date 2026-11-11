@@ -56,6 +56,8 @@ Una buena metodología asegura que se evalúen todas las características del si
 
 Los principios del auditor son integridad, presentación imparcial, debido cuidado profesional, confidencialidad, independencia y un enfoque basado en la evidencia y en el riesgo.
 
+> Actualización al 2026: ISO 19011 tiene cuarta edición, ISO 19011:2026, publicada en mayo de 2026, que sustituye a la de 2018 y da más orientación para las auditorías remotas. ISO/IEC 27007 sigue vigente en su edición de 2020.
+
 ## La certificación
 
 Certificar significa que un **organismo de certificación** evalúa el SGSI de la organización contra ISO/IEC 27001. El organismo se asegura de que la evaluación de riesgos refleje bien las actividades del negocio en todo el alcance del sistema, y verifica que la organización haya analizado y tratado sus riesgos y los siga gestionando de forma sistemática. Un certificado emitido por un organismo **acreditado** tiene credibilidad frente a otras organizaciones.
@@ -68,6 +70,8 @@ Hay que distinguir dos figuras:
 | Organismo de certificación | Empresa acreditada que audita y certifica sistemas de gestión según normas como ISO/IEC 27001, ISO 9001 o ISO 14001 | Las certificadoras comerciales acreditadas |
 
 Los requisitos que deben cumplir los organismos que certifican SGSI están en ISO/IEC 27006. La validez de un certificado acreditado se puede consultar en bases públicas como IAF CertSearch.
+
+> Actualización al 2026: ISO/IEC 27006:2015 y su enmienda de 2020 se retiraron el 1 de marzo de 2024. Las sustituyó ISO/IEC 27006-1:2024, que se aplica junto con ISO/IEC 17021-1, la norma general para quienes auditan y certifican sistemas de gestión.
 
 ### El proceso con el auditor
 
@@ -139,7 +143,9 @@ Implantar un SGSI basado en ISO/IEC 27001 ayuda a homologar el criterio para apl
 - INCIBE. (2010). *SGSI 09: Gestión y tratamiento de los riesgos* [Video]. YouTube. https://youtu.be/9T9X0q2y6vQ
 - International Accreditation Forum. (s. f.). *IAF CertSearch*. https://www.iafcertsearch.org/
 - International Organization for Standardization. (2018). *ISO 19011:2018 Guidelines for auditing management systems*. ISO. https://www.iso.org/standard/70017.html
+- International Organization for Standardization. (2026). *ISO 19011:2026 Guidelines for auditing management systems*. ISO. https://www.iso.org/standard/19011
 - International Organization for Standardization e International Electrotechnical Commission. (2020). *ISO/IEC 27007:2020 Information security, cybersecurity and privacy protection. Guidelines for information security management systems auditing*. ISO. https://www.iso.org/standard/77802.html
+- International Organization for Standardization e International Electrotechnical Commission. (2024). *ISO/IEC 27006-1:2024 Information security, cybersecurity and privacy protection. Requirements for bodies providing audit and certification of information security management systems. Part 1: General*. ISO. https://www.iso.org/standard/82908.html
 - ISO 27001 Paso a Paso. (s. f.). *Fase 10: El proceso de certificación ISO 27001*. https://normaiso27001.es/fase-10-el-proceso-de-certificacion-iso-27001/
 
 ---

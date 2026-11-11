@@ -116,7 +116,7 @@ El DRP es una pieza del BCP.
 El inicio cambia; el centro se parece. La continuidad es un resultado obligado de la gestión del riesgo.
 
 <!--
-Actualizaciones para mencionar: ISO 22301 vigente en 2019; en ISO/IEC 27001:2022 el antiguo A.17 vive
+Actualizaciones para mencionar: ISO 22301:2019 vigente, con su enmienda 1:2024 sobre cambio climático; en ISO/IEC 27001:2022 el antiguo A.17 vive
 en los controles 5.29 y 5.30; NIS2 pide continuidad a las entidades esenciales en la UE.
 -->
 

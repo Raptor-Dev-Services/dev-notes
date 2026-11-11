@@ -85,7 +85,7 @@ En la evaluación social se cuentan beneficios que no tienen precio de mercado (
 
 La **Estrategia Digital Nacional** (publicada en 2013 y, en su versión 2021-2024, expedida por acuerdo en el Diario Oficial de la Federación el 6 de septiembre de 2021) y la **Estrategia Nacional de Ciberseguridad** (2017) fueron esfuerzos importantes para el país. Nadie esperaba de ellas un retorno de inversión: se analizan como proyectos sociales con impacto en el desarrollo nacional. La pregunta para discutir es qué tipo de proyecto es una estrategia de ciberseguridad nacional y con qué indicadores se mide su impacto (por ejemplo: capacidades de respuesta a incidentes en las instituciones, tiempos de atención, formación de especialistas, coordinación entre sectores, cooperación internacional).
 
-> Actualización al 2026: la Estrategia Digital Nacional 2021-2024 concluyó con el sexenio. En la administración 2024-2030, la política digital quedó a cargo de la Agencia de Transformación Digital y Telecomunicaciones (ATDT). De acuerdo con reportes de prensa especializada de diciembre de 2025, la ATDT presentó un Plan Nacional de Ciberseguridad 2025-2030 con un consejo nacional de ciberseguridad y la previsión de una nueva estrategia nacional y de una ley general en la materia. Consulta la información oficial vigente en el portal de la ATDT.
+> Actualización al 2026: la Estrategia Digital Nacional 2021-2024 concluyó con el sexenio. En la administración 2024-2030, la política digital quedó a cargo de la Agencia de Transformación Digital y Telecomunicaciones (ATDT). En diciembre de 2025 la ATDT presentó el Plan Nacional de Ciberseguridad 2025-2030 y publicó en el Diario Oficial de la Federación (17 de diciembre de 2025) el acuerdo que emite la Política General de Ciberseguridad para la Administración Pública Federal. Esa política es obligatoria para las dependencias y entidades federales, salvo la Defensa, la Marina y el Centro Nacional de Inteligencia en lo que toca a seguridad nacional, y encarga a la Dirección General de Ciberseguridad de la ATDT desarrollar, actualizar y difundir la Estrategia Nacional de Ciberseguridad, cuya única versión publicada sigue siendo la de 2017. México no tiene todavía una ley de ciberseguridad.
 
 ## Tres casos para practicar
 
@@ -122,9 +122,10 @@ Una vez entendidos los principios de evaluación, antes de proponer la compra de
 
 ## Referencias
 
+- Agencia de Transformación Digital y Telecomunicaciones. (2025, 17 de diciembre). Acuerdo por el que se emite la Política General de Ciberseguridad para la Administración Pública Federal. *Diario Oficial de la Federación*. https://dof.gob.mx/nota_detalle.php?codigo=5776454&fecha=17/12/2025
 - Agencia de Transformación Digital y Telecomunicaciones. (2026). *Agencia de Transformación Digital y Telecomunicaciones*. Gobierno de México. https://www.gob.mx/atdt
 - Gobierno de la República. (2013). *Estrategia Digital Nacional*. Gobierno de México. https://www.gob.mx/cms/uploads/attachment/file/17083/Estrategia_Digital_Nacional.pdf
-- Gobierno de la República. (2017). *Estrategia Nacional de Ciberseguridad*. Gobierno de México. https://www.gob.mx/gobmx/documentos/estrategia-nacional-de-ciberseguridad
+- Gobierno de la República. (2017). *Estrategia Nacional de Ciberseguridad*. https://www.gob.mx/cms/uploads/attachment/file/271884/Estrategia_Nacional_Ciberseguridad.pdf
 - Lardizábal, J. I. [Jorge Ignacio Lardizábal]. (2013). *Evaluación de proyectos de inversión* [Video]. YouTube. https://youtu.be/yqFaW4Z1JgA
 - Lepatru007. (2018). *Cómo elaborar un proyecto social* [Video]. YouTube. https://youtu.be/-Stuo-M1CCs
 - Project Management Institute. (2021). *A guide to the project management body of knowledge (PMBOK guide)* (7.ª ed.). PMI. https://www.pmi.org/standards/pmbok

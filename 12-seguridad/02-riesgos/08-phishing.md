@@ -102,7 +102,7 @@ La Policía Federal publicó una guía sobre phishing que explica cómo los deli
 - Recordar que los bancos no piden información confidencial por canales inseguros como el correo.
 - Usar un filtro anti-spam.
 
-> Actualización al 2026: la Ley de la Guardia Nacional de 2019 ordenó la extinción de la Policía Federal, y en 2020 sus divisiones, incluida la científica que atendía los delitos cibernéticos, pasaron a la Guardia Nacional (que desde la ley de 2025 depende de la Secretaría de la Defensa Nacional). La guía sigue siendo válida en su contenido; para denunciar hoy se acude a la policía cibernética de la Guardia Nacional o de la entidad, y a la fiscalía.
+> Actualización al 2026: la Ley de la Guardia Nacional de 2019 ordenó la extinción de la Policía Federal, y en 2020 sus divisiones, incluida la científica que atendía los delitos cibernéticos, pasaron a la Guardia Nacional (que desde la reforma constitucional de septiembre de 2024 depende de la Secretaría de la Defensa Nacional, como reitera su ley de 2025). La guía sigue siendo válida en su contenido; para denunciar hoy se acude a la policía cibernética de la Guardia Nacional o de la entidad, y a la fiscalía.
 
 ### Del UNAM-CERT
 
@@ -155,7 +155,7 @@ El phishing seguirá evolucionando mientras crezca el número de personas conect
 - Aaron, G. y Rasmussen, R. (2015). *Global phishing survey 2H2014: Trends and domain name use*. Anti-Phishing Working Group. https://docs.apwg.org/reports/APWG_Global_Phishing_Report_2H_2014.pdf
 - Anti-Phishing Working Group. (2026). *Phishing activity trends report, 2nd quarter 2026*. https://docs.apwg.org/reports/apwg_trends_report_q2_2026.pdf
 - Black Hat. (2017). *Ichthyology: Phishing as a science* [Video]. YouTube. https://www.youtube.com/@BlackHatOfficialYT
-- Cámara de Diputados del H. Congreso de la Unión. (2025). *Ley Federal de Protección de Datos Personales en Posesión de los Particulares*. https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf
+- Cámara de Diputados del H. Congreso de la Unión. (2025). *Ley Federal de Protección de Datos Personales en Posesión de los Particulares* (DOF 20-03-2025, última reforma DOF 14-11-2025). https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf
 - Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros. (2019, 26 de julio). ¡Cuidado! fraudes al por mayor. *Proteja su Dinero*. https://revista.condusef.gob.mx/usuario-inteligente/que-hay-de-nuevo/2019/07/cuidado-fraudes-al-por-mayor/
 - Cybersecurity and Infrastructure Security Agency. (s. f.). *Phishing guidance: Stopping the attack cycle at phase one*. https://www.cisa.gov/resources-tools/resources/phishing-guidance-stopping-attack-cycle-phase-one
 - Federal Bureau of Investigation. (2026). *2025 IC3 annual report*. Internet Crime Complaint Center. https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf

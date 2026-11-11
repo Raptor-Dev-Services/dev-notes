@@ -95,7 +95,7 @@ Sus ideas centrales siguen vigentes como diagnóstico:
 
 La pieza central de la Ley de Ciberseguridad de 2015 es la **Ley de Intercambio de Información sobre Ciberseguridad (CISA 2015)**. Su objetivo es mejorar la ciberseguridad del país mediante el intercambio de información sobre amenazas: permite que empresas y gobierno compartan indicadores de amenaza y medidas defensivas, y da a las empresas protección de responsabilidad cuando lo hacen conforme a la ley. Su antecedente se presentó en el Senado en julio de 2014; la versión que prosperó se aprobó en el Senado el 27 de octubre de 2015.
 
-**Actualización al 2026:** la CISA 2015 tenía fecha de vencimiento el 30 de septiembre de 2025. Expiró ese día, durante el cierre del gobierno federal, y desde entonces el Congreso la ha prorrogado varias veces de forma temporal dentro de leyes de financiamiento (a enero y luego a septiembre de 2026, con una prórroga posterior); al cierre de esta nota no tenía una reautorización de largo plazo. No hay que confundirla con la **CISA agencia** (Cybersecurity and Infrastructure Security Agency), creada en noviembre de 2018 dentro del Departamento de Seguridad Nacional.
+**Actualización al 2026:** la CISA 2015 tenía fecha de vencimiento el 30 de septiembre de 2025. Expiró ese día, durante el cierre del gobierno federal, y el Congreso la revivió con prórrogas temporales dentro de leyes de financiamiento: la Ley Pública 119-37 (12 de noviembre de 2025) la extendió al 30 de enero de 2026; la 119-75 (3 de febrero de 2026), al 30 de septiembre de 2026, y la 119-103 (2 de septiembre de 2026), al 11 de diciembre de 2026. Al 10 de noviembre de 2026 no tenía una reautorización de largo plazo. No hay que confundirla con la **CISA agencia** (Cybersecurity and Infrastructure Security Agency), creada en noviembre de 2018 dentro del Departamento de Seguridad Nacional.
 
 ## La estrategia internacional para el ciberespacio (2011)
 
@@ -129,7 +129,7 @@ En septiembre de 2018 la Casa Blanca publicó la *National Cyber Strategy of the
 
 Frente a la visión colaborativa de 2011, esta estrategia buscaba la primacía en el nuevo dominio y relegaba la cooperación internacional. El contraste muestra que la política cibernética de un país cambia con cada administración.
 
-**Actualización al 2026:** después vinieron la Orden Ejecutiva 14028 (mayo de 2021), que modernizó la ciberseguridad federal y exigió seguridad en la cadena de suministro de software; la ley CIRCIA (marzo de 2022), que obliga a operadores de infraestructura crítica a reportar incidentes graves a la CISA y pagos de rescate; y la *National Cybersecurity Strategy* de marzo de 2023, con cinco pilares (defender la infraestructura crítica, desarticular a los actores de amenaza, usar las fuerzas del mercado para impulsar la seguridad, invertir en un futuro resiliente y forjar alianzas internacionales) y la idea de trasladar la responsabilidad hacia los fabricantes de software. En 2025 la Orden Ejecutiva 14306 modificó las órdenes 14144 (enero de 2025) y 13694, y la administración anunció una nueva estrategia nacional.
+**Actualización al 2026:** después vinieron la Orden Ejecutiva 14028 (mayo de 2021), que modernizó la ciberseguridad federal y exigió seguridad en la cadena de suministro de software; la ley CIRCIA (marzo de 2022), que obligará a las entidades de infraestructura crítica cubiertas a reportar a la CISA los incidentes graves en 72 horas y los pagos de rescate en 24 horas, aunque esa obligación empieza hasta que entre en vigor su regla final, que al 10 de noviembre de 2026 no se había publicado (la propuesta salió el 4 de abril de 2024); y la *National Cybersecurity Strategy* de marzo de 2023, con cinco pilares (defender la infraestructura crítica, desarticular a los actores de amenaza, usar las fuerzas del mercado para impulsar la seguridad, invertir en un futuro resiliente y forjar alianzas internacionales) y la idea de trasladar la responsabilidad hacia los fabricantes de software. En junio de 2025 la Orden Ejecutiva 14306 modificó las órdenes 14144 (enero de 2025) y 13694. El 6 de marzo de 2026 la Casa Blanca publicó la estrategia nacional más reciente, *President Trump's Cyber Strategy for America*, con seis pilares (moldear la conducta de los adversarios, promover una regulación de sentido común, modernizar y asegurar las redes del gobierno federal, asegurar la infraestructura crítica, sostener la superioridad en tecnologías críticas y emergentes, y formar talento y capacidad), y ese mismo día el presidente firmó la Orden Ejecutiva 14390 contra el cibercrimen, el fraude y las estafas dirigidas a sus ciudadanos.
 
 ## Conclusiones del tema
 
@@ -137,7 +137,7 @@ Frente a la visión colaborativa de 2011, esta estrategia buscaba la primacía e
 - Es necesario buscar uniformidad en la protección de los datos personales, que hoy depende del estado y del sector.
 - Construir con otros países un ciberespacio abierto, interoperable, próspero y confiable sigue siendo un desafío para su política exterior.
 - Estados Unidos promovió el modelo de múltiples partes interesadas en la gobernanza del ciberespacio.
-- Su política osciló entre la construcción colaborativa (2011) y la búsqueda de primacía cibernética (2018), y siguió cambiando en 2023 y 2025.
+- Su política osciló entre la construcción colaborativa (2011) y la búsqueda de primacía cibernética (2018), y siguió cambiando en 2023, 2025 y 2026.
 
 ## Glosario
 
@@ -152,7 +152,7 @@ Frente a la visión colaborativa de 2011, esta estrategia buscaba la primacía e
 | CCPA | Ley de Privacidad del Consumidor de California, vigente desde 2020 y reforzada por la CPRA |
 | CISA 2015 | Ley de intercambio de información sobre amenazas entre empresas y gobierno, con protección de responsabilidad |
 | CISA (agencia) | Agencia de Ciberseguridad y Seguridad de la Infraestructura, creada en 2018 en el Departamento de Seguridad Nacional |
-| CIRCIA | Ley de 2022 que obliga a reportar incidentes graves y pagos de rescate de la infraestructura crítica |
+| CIRCIA | Ley de 2022 que obligará a reportar incidentes graves y pagos de rescate de la infraestructura crítica cuando entre en vigor su regla final, pendiente al 10 de noviembre de 2026 |
 | Indicador de amenaza | Dato técnico que ayuda a detectar un ataque, como una dirección, un dominio o una firma de malware |
 | Múltiples partes interesadas | Modelo de gobernanza donde gobiernos, empresas, comunidad técnica, academia y sociedad civil deciden juntos |
 | Orden ejecutiva | Instrucción del presidente a las agencias federales, con fuerza dentro de la administración |
@@ -163,9 +163,14 @@ Frente a la visión colaborativa de 2011, esta estrategia buscaba la primacía e
 - Casa Blanca. (2011). *International strategy for cyberspace: Prosperity, security, and openness in a networked world*. https://obamawhitehouse.archives.gov/sites/default/files/rss_viewer/international_strategy_for_cyberspace.pdf
 - Casa Blanca. (2018). *National cyber strategy of the United States of America*. https://trumpwhitehouse.archives.gov/wp-content/uploads/2018/09/National-Cyber-Strategy.pdf
 - Casa Blanca. (2023). *National cybersecurity strategy*. https://bidenwhitehouse.archives.gov/wp-content/uploads/2023/03/National-Cybersecurity-Strategy-2023.pdf
+- Casa Blanca. (2026). *President Trump's cyber strategy for America*. https://www.whitehouse.gov/wp-content/uploads/2026/03/President-Trumps-Cyber-Strategy-for-America.pdf
 - Congreso de los Estados Unidos. (2010). *Cybersecurity Act of 2010* (S. 773, 111.º Congreso). https://www.congress.gov/bill/111th-congress/senate-bill/773
 - Senado de los Estados Unidos. (2010). *Cybersecurity Act of 2010* (S. Rept. 111-384). https://www.govinfo.gov/app/details/CRPT-111srpt384
 - Congreso de los Estados Unidos. (2015). *Consolidated Appropriations Act, 2016* (Public Law 114-113, división N: Cybersecurity Act of 2015). https://www.govinfo.gov/app/details/PLAW-114publ113
+- Congreso de los Estados Unidos. (2025). *Continuing Appropriations, Agriculture, Legislative Branch, Military Construction and Veterans Affairs, and Extensions Act, 2026* (Public Law 119-37). https://www.govinfo.gov/content/pkg/PLAW-119publ37/html/PLAW-119publ37.htm
+- Congreso de los Estados Unidos. (2026a). *Consolidated Appropriations Act, 2026* (Public Law 119-75). https://www.govinfo.gov/content/pkg/PLAW-119publ75/html/PLAW-119publ75.htm
+- Congreso de los Estados Unidos. (2026b). *Continuing Appropriations and Extensions Act, 2027* (Public Law 119-103). https://www.govinfo.gov/content/pkg/PLAW-119publ103/html/PLAW-119publ103.htm
+- Cybersecurity and Infrastructure Security Agency. (2024). Cyber Incident Reporting for Critical Infrastructure Act (CIRCIA) reporting requirements [Propuesta de regla]. *Federal Register, 89*, 23644-23776. https://www.govinfo.gov/content/pkg/FR-2024-04-04/pdf/2024-06526.pdf
 - Cybersecurity and Infrastructure Security Agency. (2026). *Cybersecurity Information Sharing Act of 2015 procedures and guidance*. https://www.cisa.gov/resources-tools/resources/cybersecurity-information-sharing-act-2015-procedures-and-guidance
 - Cybersecurity and Infrastructure Security Agency. (2026). *Cyber Incident Reporting for Critical Infrastructure Act of 2022 (CIRCIA)*. https://www.cisa.gov/topics/cyber-threats-and-advisories/information-sharing/cyber-incident-reporting-critical-infrastructure-act-2022-circia
 - Cybersecurity and Infrastructure Security Agency. (2026). *Federal Information Security Modernization Act*. https://www.cisa.gov/topics/cyber-threats-and-advisories/federal-information-security-modernization-act
@@ -176,6 +181,7 @@ Frente a la visión colaborativa de 2011, esta estrategia buscaba la primacía e
 - Oficina del Procurador General de California. (2026). *California Consumer Privacy Act (CCPA)*. https://oag.ca.gov/privacy/ccpa
 - Presidente de los Estados Unidos. (2021). *Executive Order 14028: Improving the nation's cybersecurity*. Federal Register. https://www.federalregister.gov/documents/2021/05/17/2021-10460/improving-the-nations-cybersecurity
 - Presidente de los Estados Unidos. (2025). *Executive Order 14306: Sustaining select efforts to strengthen the nation's cybersecurity and amending Executive Order 13694 and Executive Order 14144*. Federal Register. https://www.federalregister.gov/documents/2025/06/11/2025-10804/sustaining-select-efforts-to-strengthen-the-nations-cybersecurity-and-amending-executive-order-13694-and-executive-order-14144
+- Presidente de los Estados Unidos. (2026). Executive Order 14390: Combating cybercrime, fraud, and predatory schemes against American citizens. *Federal Register, 91*, 12051-12053. https://www.govinfo.gov/content/pkg/FR-2026-03-11/html/2026-04826.htm
 - Schneier, B. (2018). *Click here to kill everybody: Security and survival in a hyper-connected world*. W. W. Norton. https://www.schneier.com/books/click-here/
 
 ---

@@ -177,7 +177,7 @@ Mal usadas, estas tecnologías pueden abrir vulnerabilidades de seguridad y caus
 
 ### Para seguir leyendo
 
-Dos lecturas complementarias ayudan a ver hacia dónde va el problema. Un reportaje de IT Digital Security (2016) anticipaba que las amenazas serían cada vez más inteligentes, autónomas y difíciles de detectar, porque atacantes y herramientas se perfeccionan sin pausa. Y M. Moreno, en la revista CSO España (2019), sostiene que si estalla un conflicto bélico entre países, buena parte de él se librará en el ciberespacio: dejar sin servicio a un adversario, es decir, atacar su disponibilidad, se ha vuelto un objetivo militar.
+Dos lecturas complementarias ayudan a ver hacia dónde va el problema. Un reportaje de MuySeguridad (2016) anticipaba que las amenazas serían cada vez más inteligentes, autónomas y difíciles de detectar, porque atacantes y herramientas se perfeccionan sin pausa. Y M. Moreno, en la revista CSO España (2019), sostiene que si estalla un conflicto bélico entre países, buena parte de él se librará en el ciberespacio: dejar sin servicio a un adversario, es decir, atacar su disponibilidad, se ha vuelto un objetivo militar.
 
 ## Lo que deja el tema
 
@@ -218,10 +218,10 @@ Dos lecturas complementarias ayudan a ver hacia dónde va el problema. Un report
 - Instituto Nacional de Ciberseguridad. (2016). *Tecnologías biométricas aplicadas a la ciberseguridad: una guía de aproximación para el empresario*. INCIBE. Copia de consulta: https://www.aec.es/wp-media/uploads/DPD-00289.SEG-GUI-031-guia_tecnologias_biometricas_aplicadas_ciberseguridad_metad.pdf
 - Instituto Nacional de Ciberseguridad. (2020). *¿Sabes proteger la información de tu empresa?* INCIBE. https://www.incibe.es/empresas/blog/sabes-proteger-informacion-tu-empresa
 - Instituto Nacional de Ciberseguridad. (2024, 26 de marzo). *Biometría: amenazas, riesgos y vulnerabilidades*. INCIBE. https://www.incibe.es/empresas/blog/biometria-amenazas-riesgos-y-vulnerabilidades
-- IT Digital Security. (2016). *Las ciberamenazas serán más inteligentes, autónomas y complejas de detectar que nunca*. IT Digital Media Group (enlace directo no localizado en 2026). https://www.itdigitalsecurity.es/
 - Lecuit, J. A. (2019). *Implicaciones sobre el uso de la inteligencia artificial en el campo de la ciberseguridad* (ARI 50/2019). Real Instituto Elcano. https://www.realinstitutoelcano.org/analisis/implicaciones-sobre-el-uso-de-la-inteligencia-artificial-en-el-campo-de-la-ciberseguridad/
 - Lewis, M., Yarats, D., Dauphin, Y. N., Parikh, D. y Batra, D. (2017). *Deal or no deal? End-to-end learning for negotiation dialogues*. arXiv. https://arxiv.org/abs/1706.05125
 - Moreno, M. (2019). Ciberespacio: el campo de batalla del siglo XXI. *CSO España*, (39), 5-9. https://digital.computerworld.es/pubs/CSO39/index.html?page=5
+- MuySeguridad. (2016, 22 de noviembre). *Las ciberamenazas serán más inteligentes, autónomas y complejas de detectar que nunca*. https://www.muyseguridad.net/2016/11/22/ciberamenazas-inteligentes-autonomas-complejas/
 - National Institute of Standards and Technology. (2024). *The NIST Cybersecurity Framework (CSF) 2.0* (NIST CSWP 29). https://doi.org/10.6028/NIST.CSWP.29
 - Parlamento Europeo y Consejo de la Unión Europea. (2022). *Directiva (UE) 2022/2555 del Parlamento Europeo y del Consejo, relativa a las medidas destinadas a garantizar un elevado nivel común de ciberseguridad en toda la Unión (Directiva NIS 2)*. Diario Oficial de la Unión Europea. https://eur-lex.europa.eu/eli/dir/2022/2555/oj
 - Parlamento Europeo y Consejo de la Unión Europea. (2024). *Reglamento (UE) 2024/1689 por el que se establecen normas armonizadas en materia de inteligencia artificial*. Diario Oficial de la Unión Europea. https://eur-lex.europa.eu/eli/reg/2024/1689/oj

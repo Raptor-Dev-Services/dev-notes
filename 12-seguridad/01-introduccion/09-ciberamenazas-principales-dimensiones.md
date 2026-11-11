@@ -41,7 +41,7 @@ Actuar de forma ética o dañina es una decisión: el libre albedrío, que la RA
 
 **Sector salud.** Hospitales y laboratorios se volvieron blanco preferente desde la pandemia, con técnicas dirigidas que no han desaparecido (Itech-Learning, 2021).
 
-**Ransomware global.** En mayo de 2017 WannaCry cifró equipos de hospitales, empresas y gobiernos en decenas de países aprovechando una falla de Windows sin parchar; semanas después, Petya (en su variante conocida como NotPetya) paralizó otra vez a grandes organizaciones (Redacción, 2017). El ransomware es código malicioso que cifra la información y exige un rescate para devolverla.
+**Ransomware global.** El 12 de mayo de 2017 WannaCry afectó a más de 200,000 equipos de hospitales, empresas y gobiernos en al menos 100 países aprovechando una falla de Windows sin parchar (National Audit Office, 2017); semanas después, Petya (en su variante conocida como NotPetya) paralizó otra vez a grandes organizaciones (Molist, 2017). El ransomware es código malicioso que cifra la información y exige un rescate para devolverla.
 
 **Infraestructura crítica.** Redes eléctricas, agua, telecomunicaciones, transporte y servicios financieros sostienen la vida de un país; un ataque contra ellas compromete su estabilidad y su seguridad (González, 2022).
 
@@ -76,7 +76,7 @@ El Parlamento Europeo resumió el informe de 2022 de ENISA, la agencia de cibers
 
 Entre junio de 2021 y junio de 2022, los sectores más atacados fueron la administración pública (24 % de los incidentes), los servicios digitales (13 %), el público en general (12.4 %), los servicios (11.8 %), el sector financiero (8.6 %) y el de salud (7.2 %).
 
-> **Actualización al 2026:** el Parlamento Europeo actualizó esa página en julio de 2025 con el informe de ENISA de 2024, que redujo la lista a siete amenazas encabezadas por los ataques a la disponibilidad, el ransomware y las amenazas contra los datos, con la administración pública como sector más afectado (19 %). El informe de ENISA de octubre de 2025 reporta que la denegación de servicio fue el 77 % de los incidentes y que el phishing abrió alrededor del 60 % de las intrusiones (ENISA, 2025).
+> **Actualización al 2026:** el Parlamento Europeo actualizó esa página en julio de 2025 con el informe de ENISA de 2024, que redujo la lista a siete amenazas encabezadas por los ataques a la disponibilidad, el ransomware y las amenazas contra los datos, con la administración pública como sector más afectado (19 %). El *ENISA Threat Landscape 2026*, publicado el 22 de septiembre de 2026, analizó 8,257 incidentes ocurridos entre el 1 de enero y el 31 de diciembre de 2025: la denegación de servicio fue el 51.3 % de los incidentes y el acceso no autorizado, el 39.5 %; el phishing fue la técnica de ingeniería social más usada (77.8 %), la explotación de vulnerabilidades abrió el 60.4 % de los accesos no autorizados con vía de entrada identificada, y el ransomware siguió como la amenaza de mayor impacto a corto plazo (ENISA, 2026).
 
 ### Malware
 
@@ -141,7 +141,7 @@ Cada día aparecen vulnerabilidades, técnicas de explotación, dispositivos y a
 
 ### Evento no es incidente
 
-Un **evento** es un hecho imprevisto que afecta algún activo (hardware, ancho de banda, software o una aplicación) sin que la información quede comprometida. Un **incidente** sí compromete la información y la seguridad de los usuarios. Los titulares de prensa ("hackeados", "vulneraron sus datos") suelen exagerar o minimizar; la magnitud real solo la establecen los especialistas y, después, las propias víctimas. Uber ocultó durante un año un ataque de 2016 que expuso datos de 57 millones de personas, y ocultarlo agravó el daño (Hipertextual, 2017).
+Un **evento** es un hecho imprevisto que afecta algún activo (hardware, ancho de banda, software o una aplicación) sin que la información quede comprometida. Un **incidente** sí compromete la información y la seguridad de los usuarios. Los titulares de prensa ("hackeados", "vulneraron sus datos") suelen exagerar o minimizar; la magnitud real solo la establecen los especialistas y, después, las propias víctimas. Uber ocultó durante un año un ataque de 2016 que expuso datos de 57 millones de personas, y ocultarlo agravó el daño (Redondo, 2017).
 
 ### Cuánto cuesta un incidente
 
@@ -190,7 +190,7 @@ Las ciberamenazas van desde el malware sofisticado y las vulnerabilidades de dí
 ## Para profundizar
 
 - Cuánto saben de cada usuario las plataformas que usa a diario (Arenas, 2018).
-- Los nueve elementos de la ciudadanía digital como base de la prevención (Tamez, s. f.).
+- Los nueve elementos de la ciudadanía digital como base de la prevención (Tamez, 2015).
 - Los congresos especializados, como Infosecurity, donde se presentan las amenazas del año (Infosecurity, 2018).
 
 ## Glosario
@@ -216,31 +216,32 @@ Las ciberamenazas van desde el malware sofisticado y las vulnerabilidades de dí
 ## Referencias
 
 - Amazon Web Services. (2018). *Mejores prácticas de AWS para la resistencia a los DDoS*. Versión vigente (2026): https://docs.aws.amazon.com/whitepapers/latest/aws-best-practices-ddos-resiliency/aws-best-practices-ddos-resiliency.html
-- Arenas, G. (2018). *Google sabe más de ti que tu propia madre*. Lectura citada por el temario; sin enlace verificado al 2026.
-- Ávila Niño, F. Y. (2023). Ransomware, una amenaza latente en Latinoamérica. *InterSedes, 24*(49). https://doi.org/10.15517/isucr.v24i49.50765
+- Arenas, G. (2018, 24 de abril). Google sabe más de ti que tu propia madre. *GQ España*. https://www.revistagq.com/noticias/tecnologia/articulos/datos-que-google-sabe/28869
+- Ávila Niño, F. Y. (2023). Ransomware, una amenaza latente en Latinoamérica. *InterSedes, 24*(49), 92-119. https://doi.org/10.15517/isucr.v24i49.50765
 - BBC News Mundo. (2018). *Cómo Cambridge Analytica analizó la personalidad de millones de usuarios de Facebook* [Video]. YouTube. https://www.youtube.com/watch?v=7831NGClsrM
 - Casi Creativos. (2023). *El sharenting, la historia de Ella* [Video]. YouTube. https://www.youtube.com/watch?v=dRa-6Du9OBE
 - Cyber Readiness Institute. (2020). *Manual de estrategias para actuar ante ataques de ransomware*. https://cyberreadinessinstitute.org/wp-content/uploads/20-CRI-Ransomware-Playbook-ES.pdf
-- ENISA. (2025). *ENISA threat landscape 2025*. Agencia de la Unión Europea para la Ciberseguridad. https://www.enisa.europa.eu/publications/enisa-threat-landscape-2025
+- ENISA. (2026). *ENISA threat landscape 2026*. Agencia de la Unión Europea para la Ciberseguridad. https://www.enisa.europa.eu/publications/enisa-threat-landscape-2026
 - Fernández Prados, J. S. (2012). Ciberactivismo: conceptualización, hipótesis y medida. *Arbor, 188*(756), 631-639. https://doi.org/10.3989/arbor.2012.756n4001
 - García Monje, R. A. (2017). *Seguridad informática y el malware*. Universidad Piloto de Colombia. https://repository.unipiloto.edu.co/bitstream/handle/20.500.12277/2641/00004128.pdf
-- González, S. (2022). *Ciberataques a la infraestructura crítica de un país y sus consecuencias*. WeLiveSecurity. Sin enlace verificado al 2026.
-- Google Help. (2016, 8 de febrero). *Cómo evitar ataques de ingeniería social* [Video]. YouTube. Sin enlace verificado al 2026.
-- Hipertextual. (2017). *Uber ocultó un ciberataque que expuso los datos de 57 millones de personas*. Sin enlace verificado al 2026.
+- González, S. (2022, 10 de marzo). Ciberataques a la infraestructura crítica de un país y sus consecuencias. *WeLiveSecurity*. https://www.welivesecurity.com/la-es/2022/03/10/ciberataques-infraestructura-critica-pais-consecuencias/
+- Google Help. (2016, 8 de febrero). *Cómo evitar ataques de ingeniería social* [Video]. YouTube. https://www.youtube.com/watch?v=xDdVnRHO3CE
 - INCIBE-CERT. (s. f.). *Respuesta a incidentes*. Instituto Nacional de Ciberseguridad. https://www.incibe.es/incibe-cert/incidentes/respuesta-incidentes
 - Infosecurity. (2018). *Join the most specialized cybersecurity event*. Lectura citada por el temario; sin enlace verificado al 2026.
-- Invdes. (2019). *Hackers criminales rehabilitados ahora se enfrentan contra delincuentes de internet*. Sin enlace verificado al 2026.
+- Invdes. (2019, 6 de abril). *Hackers criminales rehabilitados ahora se enfrentan contra delincuentes de internet*. https://invdes.com.mx/politica-cyt-i/hackers-criminales-rehabilitados-ahora-se-enfrentan-contra-delincuentes-de-internet/
 - Itech-Learning. (2021). *ESET: ciberamenazas, técnicas y tácticas dirigidas al sector salud* [Video]. YouTube. https://www.youtube.com/watch?v=1fvm6fXxe0o
-- MexicanH Team. (2013). *Manifiesto zapatista Anonymous* [Video]. YouTube. Sin enlace verificado al 2026.
+- MexicanH Team. (2013, 14 de enero). *Manifiesto zapatista Anonymous* [Video]. Vimeo. https://vimeo.com/57356483
 - Microsoft. (2026). *Planee la respuesta a incidentes en el modelo de adopción de seguridad*. Microsoft Learn. https://learn.microsoft.com/es-es/security/zero-trust/security-adoption-discipline-security-operations-incidents
+- National Audit Office. (2017, 27 de octubre). *Investigation: WannaCry cyber attack and the NHS*. https://www.nao.org.uk/reports/investigation-wannacry-cyber-attack-and-the-nhs/
+- Molist, M. (2017, 28 de junio). De WannaCry a Petya: cómo un ransomware ha paralizado (otra vez) el mundo. *El Confidencial*. https://www.elconfidencial.com/tecnologia/2017-06-28/petya-ransomware-ciberataque-wannacry_1406044/
 - National Institute of Standards and Technology. (2025). *Incident response recommendations and considerations for cybersecurity risk management* (SP 800-61 Rev. 3). https://csrc.nist.gov/pubs/sp/800/61/r3/final
 - Parlamento Europeo. (2022, 27 de enero; actualizado el 30 de julio de 2025). *Ciberseguridad: amenazas principales y emergentes*. https://www.europarl.europa.eu/topics/es/article/20220120STO21428/ciberseguridad-amenanzas-principales-y-emergentes
-- Redacción. (2017). De WannaCry a Petya: cómo un ransomware ha paralizado (otra vez) el mundo. *El Confidencial*. Sin enlace verificado al 2026.
+- Redondo, M. (2017, 22 de noviembre). Uber ocultó un ciberataque que expuso los datos de 57 millones de personas. *Hipertextual*. https://web.archive.org/web/20171122010321/https://hipertextual.com/2017/11/uber-oculto-ciberataque-que-expuso-datos-57-millones-personas
 - Rosero Tejada, L. F. (2021). *El phishing como riesgo informático, técnicas y prevención en los canales electrónicos: un mapeo sistemático* [Trabajo de titulación, Universidad Politécnica Salesiana]. https://dspace.ups.edu.ec/handle/123456789/21699
-- Sánchez, S. (2017). Más de 5 mil millones de documentos y 229 empresas afectadas: así han sido los mayores robos de datos de la historia. *Xataka*. Sin enlace verificado al 2026.
+- Sánchez, S. (2017, 28 de enero). Más de 5 mil millones de documentos y 229 empresas afectadas: así han sido los mayores robos de datos de la historia. *Xataka*. https://www.xataka.com/privacidad/mas-de-5-mil-millones-de-documentos-y-229-empresas-afectadas-asi-han-sido-los-mayores-robos-de-datos-de-la-historia
 - Secretaría de Comunicaciones y Transportes. (2023). *Guía de ciberseguridad para el uso seguro de redes y dispositivos de telecomunicaciones en apoyo a la educación*. Gobierno de México. https://www.gob.mx/cms/uploads/attachment/file/841520/10082020_Gui_a_de_ciberseguridad_en_apoyo_a_la_educacio_n_-_VF_para_publicar.pdf
-- Tamez, E. (s. f.). *Nueve elementos de la ciudadanía digital*. PantallasAmigas. Lectura citada por el temario; sin enlace verificado al 2026.
-- Universia. (2018). *Habilidades necesarias para ser hacker*. Sin enlace verificado al 2026.
+- Tamez, E. (2015). *Nueve elementos de la ciudadanía digital*. Jason Ohler. http://www.jasonohler.com/wordpressii/wp-content/uploads/2013/12/Nueve-elementos-de-la-cudadania-digital.pdf
+- Universia. (2018). *Habilidades necesarias para ser hacker*. https://web.archive.org/web/20201023034639/https://www.universia.net/es/actualidad/habilidades/habilidades-necesarias-ser-hacker-1154161.html
 - Univisión Noticias. (2015). *Publican datos de usuarios de Ashley Madison* [Video]. YouTube. https://www.youtube.com/watch?v=y_N-FTqSl1Y
 
 ---

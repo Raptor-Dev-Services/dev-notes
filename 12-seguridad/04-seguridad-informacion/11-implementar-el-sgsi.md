@@ -157,7 +157,7 @@ Uno de los puntos clave al establecer un control es declarar quién hace qué, d
 - International Organization for Standardization e International Electrotechnical Commission. (2022b). *ISO/IEC 27002:2022 Information security, cybersecurity and privacy protection. Information security controls*. ISO. https://www.iso.org/standard/75652.html
 - ISO27k Forum. (s. f.). *ISO27k toolkit: ISMS status, Statement of Applicability and controls status workbook*. https://www.iso27001security.com/toolkit
 - Mendoza, M. Á. (2015, 1 de abril). ¿Qué es la declaración de aplicabilidad (SoA)? *WeLiveSecurity*. https://www.welivesecurity.com/la-es/2015/04/01/que-es-declaracion-de-aplicabilidad-soa/
-- Muñoz, M. (2015). *Guía de implantación de un SGSI basado en la norma UNE-ISO/IEC 27001*. Universitat Oberta de Catalunya. https://openaccess.uoc.edu/
+- Muñoz Martín, M. (2015). *Guía de implantación de un SGSI basado en la norma UNE-ISO/IEC 27001* [Trabajo final de carrera, Universitat Oberta de Catalunya]. https://hdl.handle.net/10609/42965
 
 ---
 

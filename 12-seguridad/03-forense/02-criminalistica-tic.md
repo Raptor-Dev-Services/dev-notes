@@ -258,7 +258,7 @@ Antes de mover o desconectar cualquier equipo encendido, se pide la opinión del
 
 ### Recomendaciones de levantamiento
 
-Moreno González, en su *Compendio de criminalística*, señala que la técnica depende de la naturaleza, cantidad, variedad y estado de los indicios. Sus recomendaciones, adaptadas a TIC:
+Moreno González (2003), en su *Compendio de criminalística*, señala que la técnica depende de la naturaleza, cantidad, variedad y estado de los indicios. Sus recomendaciones, adaptadas a TIC:
 
 1. Levantar todo: es preferible pecar de exceso que de defecto.
 2. Manipular cada indicio solo lo indispensable.
@@ -329,10 +329,11 @@ flowchart LR
 - Cámara de Diputados del H. Congreso de la Unión. (2025). *Código Nacional de Procedimientos Penales* [Última reforma DOF 28-11-2025]. Diario Oficial de la Federación. https://www.diputados.gob.mx/LeyesBiblio/pdf/CNPP.pdf
 - Cámara de Diputados del H. Congreso de la Unión. (2025). *Ley de la Fiscalía General de la República* [Última reforma DOF 14-11-2025]. Diario Oficial de la Federación. https://www.diputados.gob.mx/LeyesBiblio/pdf/LFGR.pdf
 - Galton, F. (1892). *Finger prints*. Macmillan. https://galton.org/books/finger-prints/
-- Locard, E. (1923). *Manuel de technique policière*. Payot. https://search.worldcat.org/search?q=Manuel+de+technique+polici%C3%A8re+Locard
-- Montiel Sosa, J. (2007). *Criminalística*. Limusa. https://search.worldcat.org/search?q=Montiel+Sosa+Criminal%C3%ADstica+Limusa
-- Moreno González, L. R. (2001). *Antología de la investigación criminalística*. Instituto Nacional de Ciencias Penales. https://search.worldcat.org/search?q=Antolog%C3%ADa+de+la+investigaci%C3%B3n+criminal%C3%ADstica+Moreno+Gonz%C3%A1lez
-- Moreno González, L. R. (2006). *Introducción a la criminalística*. Porrúa. https://search.worldcat.org/search?q=Introducci%C3%B3n+a+la+criminal%C3%ADstica+Moreno+Gonz%C3%A1lez
+- Locard, E. (1923). *Manuel de technique policière (enquête criminelle)*. Payot. https://catalogue.bnf.fr/ark:/12148/cb308262663
+- Montiel Sosa, J. (2007). *Criminalística*. Limusa. https://limusa.com.mx/producto/criminalistica-1-2a-ed/
+- Moreno González, L. R. (2001). *Antología de la investigación criminalística*. Instituto Nacional de Ciencias Penales.
+- Moreno González, L. R. (2003). *Compendio de criminalística* (4.ª ed.). Porrúa.
+- Moreno González, L. R. (2006). *Manual de introducción a la criminalística* (12.ª ed.). Porrúa.
 - Procuraduría General de la República. (2015, 12 de febrero). *Acuerdo A/009/15 por el que se establecen las directrices que deberán observar los servidores públicos que intervengan en materia de cadena de custodia*. Diario Oficial de la Federación. https://dof.gob.mx/nota_detalle.php?codigo=5381699&fecha=12/02/2015
 - Unidad de Investigaciones Cibernéticas y Operaciones Tecnológicas. (2018). *Guía técnica de cadena de custodia de evidencia digital*. Agencia de Investigación Criminal, Procuraduría General de la República. https://www.gob.mx/fgr (documento institucional sin dirección pública estable verificada; se cita la sede oficial de la institución sucesora).
 - Weil, J., Kuarsingh, V., Donley, C., Liljenstolpe, C. y Azinger, M. (2012). *IANA-reserved IPv4 prefix for shared address space* (RFC 6598). Internet Engineering Task Force. https://www.rfc-editor.org/rfc/rfc6598

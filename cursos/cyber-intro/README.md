@@ -153,15 +153,15 @@ Las de cada tema están al final de cada nota. Estas son las que sostienen la pr
 
 - American Psychological Association. (2020). *Publication manual of the American Psychological Association* (7th ed.). https://apastyle.apa.org/products/publication-manual-7th-edition
 - Cámara de Diputados del H. Congreso de la Unión. (2026). *Código Penal Federal* (última reforma DOF 13-03-2026). https://www.diputados.gob.mx/LeyesBiblio/pdf/CPF.pdf
-- Comisión Nacional de los Derechos Humanos e Instituto Nacional de Estudios Históricos de las Revoluciones de México. (2015). *Derecho humano de acceso a la información*. https://constitucion1917.gob.mx/work/models/Constitucion1917/Resource/1350/DH_Acceso_Informacion.pdf
+- Comisión Nacional de los Derechos Humanos e Instituto Nacional de Estudios Históricos de las Revoluciones de México. (2015). *Derecho humano de acceso a la información*. https://web.archive.org/web/20260613060942/https://constitucion1917.gob.mx/work/models/Constitucion1917/Resource/1350/DH_Acceso_Informacion.pdf
 - Organización para la Cooperación y el Desarrollo Económicos. (2016). *Proyecto OCDE/G20 de Erosión de la Base Imponible y Traslado de Beneficios: nota explicativa. Informes finales 2015*. https://www.oecd.org/es/publications/proyecto-beps-nota-explicativa_9789264263567-es
 - Rodríguez, C. y Gil, S. (2014). *Ética y TIC*. CEAPAT-IMSERSO. http://www.ceapat.es/InterPresent1/groups/imserso/documents/binario/eticaytic.pdf
 - Secretaría de Educación Pública. (2018). *¿Qué sabemos sobre ciudadanía digital en México?* Education Futures. https://educationfutures.com/understanding-digital-citizenship-in-mexico/
-- TECNO. (2015). *Tecnología: ¿un beneficio o una adicción? La dependencia tecnológica* [entrada de blog]. Sin enlace localizado al 2026.
-- Téllez Valdés, J. (2009). *Derecho informático*. McGraw-Hill Interamericana.
+- TECNO2015 [seudónimo]. (2015). *Tecnología: ¿un beneficio o una adicción? La dependencia tecnológica* [Trabajo presentado al Concurso 2015]. Universidad Católica del Uruguay. https://web.archive.org/web/20230515162605/https://ucu.edu.uy/sites/default/files/facultad/dcsp/Concurso_2015/038_Tecno2015_tecnologia_un_beneficio_o_una_adicci%C3%B3n.pdf
+- Téllez Valdés, J. (2009). *Derecho informático* (4.ª ed.). McGraw-Hill Interamericana. https://www.siia.unam.mx/siia-publico/v/include/modulo_productos/revistas.php?id=11679
 - Unión Internacional de Telecomunicaciones. (2008). *Recomendación UIT-T X.1205: Aspectos generales de la ciberseguridad*. https://www.itu.int/rec/T-REC-X.1205-200804-I/es
 
-> **Actualización al 2026:** el órgano garante del acceso a la información que menciona el folleto de 2015, el INAI, se extinguió en 2025; sus funciones pasaron a la Secretaría Anticorrupción y Buen Gobierno, y en marzo de 2025 se publicaron una nueva Ley General de Transparencia y una nueva ley federal de datos personales. El derecho de acceso sigue en el artículo 6o. constitucional.
+> **Actualización al 2026:** el órgano garante del acceso a la información que menciona el folleto de 2015, el INAI, se extinguió en marzo de 2025; sus funciones de acceso a la información pasaron a Transparencia para el Pueblo, órgano desconcentrado de la Secretaría Anticorrupción y Buen Gobierno, y en marzo de 2025 se publicaron una nueva Ley General de Transparencia y una nueva ley federal de datos personales. El derecho de acceso sigue en el artículo 6o. constitucional.
 
 ---
 

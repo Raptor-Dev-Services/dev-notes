@@ -442,7 +442,7 @@ ayuda funciona y que quien la pide no es culpable. 5 minutos.
 
 | Conducta | Norma | Pena |
 |---|---|---|
-| Difundir contenido íntimo de un adulto sin su consentimiento, u obtenerlo con engaño | CPF, arts. 199 Octies a 199 Decies (Ley Olimpia, DOF 1 de junio de 2021) | 3 a 6 años y 500 a 1,000 UMA; hasta la mitad más si había relación de pareja |
+| Difundir contenido íntimo de un adulto sin su consentimiento, o grabarlo o elaborarlo sin su consentimiento | CPF, arts. 199 Octies a 199 Decies (Ley Olimpia, DOF 1 de junio de 2021) | 3 a 6 años y 500 a 1,000 UMA; hasta la mitad más si había relación de pareja |
 | Contactar a un menor por medios electrónicos para pedirle contenido sexual o un encuentro | CPF, art. 199 Septies (2018) | 4 a 8 años |
 | Producir, ofrecer o difundir contenido sexual de menores de 18 años | CPF, art. 202 | 7 a 12 años |
 | Violencia digital | LGAMVLV | El ministerio público o el juez pueden ordenar a las plataformas retirar el contenido |

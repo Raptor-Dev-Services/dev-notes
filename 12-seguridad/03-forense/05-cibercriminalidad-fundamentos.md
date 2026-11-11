@@ -65,7 +65,7 @@ Cifras históricas que reúne el libro (todas con su año y su fuente; son refer
 
 Las tendencias con más presencia en ese periodo fueron: delitos que cruzan fronteras, fraude con tarjetas de crédito, ataques contra dispositivos móviles, ataques que aprovechan el anonimato y el cifrado, fraudes con los nuevos esquemas de pago y ataques a sistemas biométricos. El libro aclara que, contra lo que podría esperarse, la situación no mejoró desde su primera edición (2010), y que México aparece en las estadísticas mundiales entre los países con más víctimas en proporción.
 
-> **Actualización al 2026.** La Unión Internacional de Telecomunicaciones estima unos **6 mil millones** de personas en línea en 2025, cerca de tres cuartas partes de la población mundial (UIT, 2025). El Centro de Denuncias de Delitos en Internet del FBI recibió en 2025 **1,008,597** denuncias con pérdidas reportadas por **20,877 millones de dólares**, 26 % más que en 2024 (IC3, 2026). IBM y Ponemon calculan en su edición 2026 un costo promedio mundial de **4.99 millones de dólares** por fuga de datos, 12 % más que el año anterior (IBM, 2026).
+> **Actualización al 2026.** La Unión Internacional de Telecomunicaciones estima unos **6,300 millones** de personas en línea en 2026, 76 % de la población mundial, y 2,000 millones todavía desconectadas (UIT, 2026). El Centro de Denuncias de Delitos en Internet del FBI recibió en 2025 **1,008,597** denuncias con pérdidas reportadas por **20,877 millones de dólares**, 26 % más que en 2024 (IC3, 2026). IBM y Ponemon calculan en su edición 2026 un costo promedio mundial de **4.99 millones de dólares** por fuga de datos, 12 % más que el año anterior (IBM, 2026).
 
 ## La nube: datos ajenos en territorio ajeno
 
@@ -229,11 +229,11 @@ Conocer estos problemas es el primer paso para proponer ajustes en procedimiento
 - Lira Arteaga, O. M. (2018). *Cibercriminalidad: fundamentos de investigación en México*. Ubijus. Edición anterior: Instituto Nacional de Ciencias Penales, 2010, ISBN 978-607-7882-13-8, https://www.marcialpons.es/libros/cibercriminalidad/9786077882138/
 - Lledó Benito, I. (2022). *El derecho penal, robots, IA y cibercriminalidad: desafíos éticos y jurídicos. ¿Hacia una distopía?* Dykinson. https://doi.org/10.2307/j.ctv2gz3tqm
 - Pérez Arias, J. (2021). Cibercriminalidad: hacia la nueva realidad (virtual) del derecho penal. *Revista Internacional de Doctrina y Jurisprudencia, 26*, 175-193. https://doi.org/10.25115/ridj.vi26.7063
-- SANS Institute. (2012). *SANS mobility/BYOD security survey*. Citada por Lira Arteaga (2018).
+- SANS Institute. (2012). *SANS survey on mobility/BYOD security policies and practices* [Informe de K. Johnson y T. DeLaGrange, octubre de 2012]. https://web.archive.org/web/20170801121924/http://www.sans.org/reading-room/whitepapers/analyst/survey-mobility-byod-security-policies-practices-35175
 - Software Engineering Institute. (s. f.). *CERT Division*. Carnegie Mellon University. https://www.sei.cmu.edu/divisions/cert/
 - SonicWall. (2022). *2022 SonicWall cyber threat report*. https://www.sonicwall.com/2022-cyber-threat-report
 - Symantec. (2016). *Internet security threat report* (vol. 21). Citado por Lira Arteaga (2018); los informes posteriores se publican en https://www.security.com
-- Unión Internacional de Telecomunicaciones. (2025, 17 de noviembre). *Connecting the world and beyond* [Comunicado de Facts and Figures 2025]. https://www.itu.int/en/mediacentre/Pages/PR-2025-11-17-Facts-and-Figures.aspx
+- Unión Internacional de Telecomunicaciones. (2026, 3 de noviembre). *Ya hay 6 300 millones de personas conectadas, pero las brechas digitales siguen existiendo* [comunicado]. https://www.itu.int/es/mediacentre/Pages/PR-2026-11-03-Facts-and-Figures.aspx
 
 ---
 

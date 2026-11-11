@@ -107,7 +107,7 @@ Para las organizaciones, la consecuencia es que resulta prácticamente imposible
 
 El material original señalaba que la regulación de la IA era limitada e indirecta. Por ejemplo, en Estados Unidos las normas de crédito obligan a los bancos a explicar por qué niegan un préstamo, lo que restringe el uso de modelos de aprendizaje profundo poco transparentes; y el Reglamento General de Protección de Datos de la Unión Europea limita el uso de datos personales para entrenar y aplicar IA de consumo. El ritmo de la tecnología suele rebasar la capacidad de los reguladores.
 
-> Actualización al 2026: el cambio más grande es el **Reglamento (UE) 2024/1689**, la primera ley integral de IA del mundo. Entró en vigor el 1 de agosto de 2024 y se aplica por etapas: las prácticas prohibidas desde febrero de 2025, las obligaciones para modelos de uso general desde agosto de 2025 y las de transparencia (incluido el etiquetado de deepfakes) desde agosto de 2026. En julio de 2026, el llamado Ómnibus digital (Reglamento (UE) 2026/1744) movió las obligaciones de los sistemas de alto riesgo a diciembre de 2027 y agosto de 2028, y agregó desde diciembre de 2026 la prohibición de sistemas que generen imágenes íntimas no consentidas o material de abuso sexual infantil. En Estados Unidos, el Marco de Gestión de Riesgos de IA del NIST (enero de 2023, hoy en revisión) se volvió la referencia voluntaria para las organizaciones.
+> Actualización al 2026: el cambio más grande es el **Reglamento (UE) 2024/1689**, la primera ley integral de IA del mundo. Entró en vigor el 1 de agosto de 2024 y se aplica por etapas: las prácticas prohibidas desde febrero de 2025, las obligaciones para modelos de uso general desde agosto de 2025 y las de transparencia (incluido el etiquetado de deepfakes) desde agosto de 2026. En julio de 2026, el llamado Ómnibus digital sobre IA (Reglamento (UE) 2026/1744) movió las obligaciones de los sistemas de alto riesgo a diciembre de 2027 y agosto de 2028, y agregó desde diciembre de 2026 la prohibición de sistemas que generen imágenes íntimas no consentidas o material de abuso sexual infantil. En Estados Unidos, el Marco de Gestión de Riesgos de IA del NIST (enero de 2023, hoy en revisión) se volvió la referencia voluntaria para las organizaciones.
 
 ## Para cerrar
 
@@ -136,7 +136,7 @@ La IA amplía tanto la capacidad de proteger como la de atacar, y la historia mu
 
 - Big Sleep team. (2024, 1 de noviembre). *From Naptime to Big Sleep: Using large language models to catch vulnerabilities in real-world code*. Project Zero. https://projectzero.google/2024/10/from-naptime-to-big-sleep.html
 - Caspian Report. (2018, 16 de diciembre). *Global race for AI superiority* [Video]. YouTube. https://youtu.be/_0gUXxZ-ExE
-- Check Point Software Technologies. (s. f.). *Artificial intelligence: A silver bullet in cyber security? CPX 360 keynote* [Video]. YouTube. https://www.youtube.com/@CheckPointSW
+- Check Point Software Technologies. (2018, 21 de marzo). *Artificial intelligence: A silver bullet in cyber security? CPX 360 keynote* [Video]. YouTube. https://www.youtube.com/watch?v=ggje-L0ViFM
 - DARPA. (2025, 8 de agosto). *AI Cyber Challenge marks pivotal inflection point for cyber defense*. https://www.darpa.mil/news/2025/aixcc-results
 - DW Documentary. (2019, 14 de agosto). *Artificial intelligence and its ethics* [Video]. YouTube. https://youtu.be/Izd2qOgOGQI
 - Fortinet. (2018, 15 de noviembre). *Fortinet predicts organizations will employ more automation to combat threats* [Comunicado de prensa]. https://www.fortinet.com/corporate/about-us/newsroom/press-releases/2018/fortinet-predicts-organizations-will-employ-more-automation-to-c
@@ -145,7 +145,7 @@ La IA amplía tanto la capacidad de proteger como la de atacar, y la historia mu
 - OWASP Foundation. (2025). *OWASP top 10 for large language model applications*. https://genai.owasp.org/llm-top-10/
 - Parlamento Europeo y Consejo de la Unión Europea. (2016). *Reglamento (UE) 2016/679 relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales*. EUR-Lex. https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32016R0679
 - Parlamento Europeo y Consejo de la Unión Europea. (2024). *Reglamento (UE) 2024/1689 por el que se establecen normas armonizadas en materia de inteligencia artificial*. EUR-Lex. https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32024R1689
-- Parlamento Europeo y Consejo de la Unión Europea. (2026). *Reglamento (UE) 2026/1744 por el que se modifica el Reglamento (UE) 2024/1689 (Ómnibus digital sobre IA)*. EUR-Lex. https://eur-lex.europa.eu/eli/reg/2026/1744/oj
+- Parlamento Europeo y Consejo de la Unión Europea. (2026). *Reglamento (UE) 2026/1744 por el que se modifican los Reglamentos (UE) 2024/1689, (UE) 2018/1139 y (UE) 2023/1230 en lo que respecta a la simplificación de la aplicación de normas armonizadas en materia de inteligencia artificial (Ómnibus digital sobre IA)*. EUR-Lex. https://eur-lex.europa.eu/eli/reg/2026/1744/oj
 
 ---
 

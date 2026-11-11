@@ -101,9 +101,9 @@ Límite: cada gobierno decide qué digitaliza, con criterios poco claros.
 
 | Dato | Fuente |
 |---|---|
-| 74 % del mundo en línea; 2,200 millones sin conexión | ITU, 2025 |
-| México: 100.2 millones de usuarios, 83.1 % de la población de 6 años o más | INEGI, ENDUTIH 2024 |
-| México urbano 86.9 % frente a rural 68.5 % | INEGI, ENDUTIH 2024 |
+| 76 % del mundo en línea; 2,000 millones sin conexión | ITU, 2026 |
+| México: 104.9 millones de usuarios, 86.1 % de la población de 6 años o más | INEGI, ENDUTIH 2025 |
+| México urbano 88.9 % frente a rural 75.2 % | INEGI, ENDUTIH 2025 |
 
 <!--
 Un servicio que solo existe en línea deja fuera a casi uno de cada tres habitantes rurales.

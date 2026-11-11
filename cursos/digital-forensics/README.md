@@ -112,8 +112,8 @@ Unos 60 minutos diarios bastan. Todo trabajo es propio y cita sus fuentes, inclu
 | Obra | Autor o emisor | Año | Para qué |
 |---|---|---|---|
 | [Cibercriminalidad: fundamentos de investigación en México](https://www.marcialpons.es/libros/cibercriminalidad/9786077882138/) | Óscar Manuel Lira Arteaga (Ubijus; 1.ª ed. INACIPE, 2010) | 2018 | Libro base de casi todas las unidades |
-| Ciberdelitos: perspectiva para su persecución | Óscar Manuel Lira Arteaga (Tirant lo Blanch) | 2019 | Persecución de ciberdelitos; profundización de las unidades 2 y 3 |
-| Intervención de comunicaciones y su agravio a los derechos de la víctima | Óscar Manuel Lira Arteaga (Ubijus) | 2017 | Intervención de comunicaciones; profundización de la unidad 4 |
+| [Ciberdelitos: perspectiva para su persecución](https://editorial.tirant.com/mex/libro/ciberdelitos-perspectiva-para-su-persecucion-oscar-manuel-lira-arteaga-9788491902980) | Óscar Manuel Lira Arteaga (Tirant lo Blanch) | 2019 | Persecución de ciberdelitos; profundización de las unidades 2 y 3 |
+| [Intervención de comunicaciones en telefonía celular y su agravio a los derechos de la víctima](https://www.dijuris.com/shop/9786079389727-intervencion-de-comunicaciones-en-telefonia-celular-y-su-agravio-a-los-derechos-de-la-victima-1-a-ed-2017-79572) | Óscar Manuel Lira Arteaga (Ubijus) | 2017 | Intervención de comunicaciones; profundización de la unidad 4 |
 | [Constitución Política de los Estados Unidos Mexicanos](https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf) | Congreso de la Unión | 1917, última reforma DOF 07-10-2026 | Derechos, competencias y jerarquía normativa |
 | [Código Penal Federal](https://www.diputados.gob.mx/LeyesBiblio/pdf/CPF.pdf) | Congreso de la Unión | 1931, última reforma DOF 13-03-2026 | Tipos penales informáticos |
 | [Código Nacional de Procedimientos Penales](https://www.diputados.gob.mx/LeyesBiblio/pdf/CNPP.pdf) | Congreso de la Unión | 2014, última reforma DOF 28-11-2025 | Investigación, cadena de custodia y prueba pericial |

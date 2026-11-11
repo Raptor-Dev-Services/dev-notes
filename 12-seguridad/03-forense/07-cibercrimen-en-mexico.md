@@ -188,7 +188,7 @@ El Sistema de Pagos Electrónicos Interbancarios (SPEI) del Banco de México mue
 - El patrón: transferencias ilegítimas hacia cuentas receptoras reales, casi siempre desde cuentas emisoras inexistentes, y retiro posterior del dinero en efectivo.
 - La respuesta: migrar a los participantes afectados y a los de perfil de riesgo parecido a una plataforma alterna (COA-SPEI), poner alertas en el SPEI central para detectar mensajes de pago anómalos, ajustar la regulación y el manual de operación, nombrar un oficial de seguridad del SPEI que verifique el cumplimiento de los requisitos de seguridad informática, establecer un protocolo de reacción con cuatro niveles de alerta y firmar, con otras autoridades financieras, bases de coordinación en seguridad de la información.
 
-Lo que agrega el material de la unidad, con base en notas de prensa de 2019: la Unidad de Inteligencia Financiera bloqueó cuentas de una banda con base en León, Guanajuato, que habría robado hasta 100 millones de pesos al mes mediante hackeo y código malicioso en cajeros, y depositaba el dinero en cuentas de terceros en Jalisco, Tamaulipas y Sinaloa. La Fiscalía General de la República detuvo a ocho integrantes, cateó 11 residencias y aseguró 27 autos de lujo. El material estima lo sustraído al SPEI en unos 400 millones de pesos y afirma que el Banco de México creó a raíz del ataque un área de ciberseguridad dentro de su dirección de tecnologías de la información. El informe oficial no publica el monto, y las cifras de prensa de la época varían, así que esos datos se toman como estimaciones.
+Lo que agrega el material de la unidad, con base en notas de prensa de 2019: la Unidad de Inteligencia Financiera bloqueó cuentas de una banda con base en León, Guanajuato, que habría robado hasta 100 millones de pesos al mes mediante hackeo y código malicioso en cajeros, y depositaba el dinero en cuentas de terceros en Jalisco, Tamaulipas y Sinaloa. La Fiscalía General de la República detuvo a ocho integrantes, cateó 11 residencias y aseguró 27 autos de lujo. El material estima lo sustraído al SPEI en unos 400 millones de pesos y afirma que el Banco de México creó a raíz del ataque un área de ciberseguridad dentro de su dirección de tecnologías de la información. El informe anual no publica el monto, pero el Banco de México informó el 22 de mayo de 2018 que los envíos irregulares sujetos a revisión sumaban aproximadamente 300 millones de pesos; los 400 millones del material y los demás datos de prensa se toman como estimaciones.
 
 ## Cajeros automáticos y clonación de tarjetas
 
@@ -252,18 +252,19 @@ El tema cierra con la idea de que ninguna pieza basta sola: hay que actualizar l
 
 ## Referencias
 
-- Asociación de Internet MX. (2019). *15.º Estudio sobre los hábitos de los usuarios de internet en México 2019*. https://www.asociaciondeinternet.mx/estudios/habitos-de-internet
-- Asociación de Internet MX. (2018). *Estudio de comercio electrónico en México 2018*. https://www.asociaciondeinternet.mx/estudios
-- Asociación de Internet MX. (2020). *Estudio de comercio electrónico en México 2020*. https://www.asociaciondeinternet.mx/estudios
+- Asociación de Internet MX. (2018). *Estudio de comercio electrónico en México 2018*. https://irp.cdn-website.com/81280eda/files/uploaded/Estudio%20de%20comercio%20electro%CC%81nico_2018.pdf
+- Asociación de Internet MX. (2019). *15.º Estudio sobre los hábitos de los usuarios de internet en México 2019*. https://irp-cdn.multiscreensite.com/81280eda/files/uploaded/15%2BEstudio%2Bsobre%2Blos%2BHa_bitos%2Bde%2Blos%2BUsuarios%2Bde%2BInternet%2Ben%2BMe_xico%2B2019%2Bversio_n%2Bpu_blica.pdf
+- Asociación de Internet MX. (2020). *Estudio sobre comercio electrónico en México 2020*. https://irp.cdn-website.com/81280eda/files/uploaded/Estudio%20de%20Comercio%20Electro%CC%81nico%20en%20Me%CC%81xico%202020.pdf
 - Banco de México. (2018). *Información sobre los ataques a participantes del Sistema de Pagos Electrónicos Interbancarios (SPEI)* [Extracto del Informe trimestral enero-marzo 2018, recuadro 6]. https://www.banxico.org.mx/publicaciones-y-prensa/informes-trimestrales/recuadros/%7B86A498AE-5F8A-57CE-2C11-B5059AB9EB20%7D.pdf
+- Banco de México. (2018, 22 de mayo). *Puntos importantes sobre la situación actual del SPEI*. https://www.banxico.org.mx/spei/d/%7BB806F1E8-686D-B9F1-0452-EC375543C801%7D.pdf
 - Banco de México. (2019). *Informe anual sobre las infraestructuras de los mercados financieros 2018*. https://www.banxico.org.mx/publicaciones-y-prensa/informe-anual-sobre-las-infraestructuras-de-los-me/%7B47E2C88D-F4B1-1D34-2913-8E25F249E6F1%7D.pdf
 - Cámara de Diputados del H. Congreso de la Unión. (2026). *Código Penal Federal* [Última reforma DOF 13-03-2026]. Diario Oficial de la Federación. https://www.diputados.gob.mx/LeyesBiblio/pdf/CPF.pdf
 - Cámara de Diputados del H. Congreso de la Unión. (2025). *Ley de la Guardia Nacional* [Nueva ley DOF 16-07-2025]. Diario Oficial de la Federación. https://www.diputados.gob.mx/LeyesBiblio/pdf/LGN.pdf
 - Instituto Nacional de Estadística y Geografía. (2025). *Encuesta Nacional sobre Disponibilidad y Uso de Tecnologías de la Información en los Hogares (ENDUTIH) 2024* [Comunicado]. https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2025/endutih/ENDUTIH_24_RR.pdf
 - Instituto Nacional de Estadística y Geografía. (2026a). *ENDUTIH 2025. Reporte de resultados* (16 de junio de 2026). https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2026/endutih/ENDUTIH_25_RR.pdf
 - Instituto Nacional de Estadística y Geografía. (2026b). *Módulo sobre Ciberacoso (MOCIBA) 2025. Reporte de resultados* (7 de julio de 2026). https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2026/mociba/MOCIBA2025_RR.pdf
-- Norton. (2013). *Reporte Norton 2013: México* [Presentación de prensa]. Citado en el material de la unidad; sin enlace oficial vigente.
 - Lira Arteaga, O. M. (2018). *Cibercriminalidad: fundamentos de investigación en México*. Ubijus. Edición anterior: Instituto Nacional de Ciencias Penales, 2010, ISBN 978-607-7882-13-8, https://www.marcialpons.es/libros/cibercriminalidad/9786077882138/
+- Norton. (2013). *Reporte Norton 2013* [Kit de prensa de Symantec para México]. https://web.archive.org/web/20131117035954/http://www.symantec.com/es/mx/about/news/resources/press_kits/detail.jsp?pkid=norton-report-2013
 
 ---
 

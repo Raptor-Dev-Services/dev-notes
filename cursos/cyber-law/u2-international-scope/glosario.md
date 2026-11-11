@@ -39,14 +39,14 @@
 ### Convenio 108
 **Categoría:** Derecho internacional / Datos personales
 **Definición:** Convenio del Consejo de Europa de 1981 para proteger a las personas frente al tratamiento automatizado de sus datos. Fue el primer tratado vinculante sobre la materia; su Protocolo Adicional de 2001 regula autoridades de control y flujos transfronterizos.
-**En el curso:** obliga a México desde su promulgación en el DOF en septiembre de 2018.
+**En el curso:** vigente para México desde el 1 de octubre de 2018 (decretos promulgatorios en el DOF del 28 de septiembre de 2018). Su versión modernizada, el Convenio 108+ (2018), todavía no está en vigor y México no la ha firmado.
 
 ---
 
 ### Convenio de Budapest
 **Categoría:** Derecho internacional / Ciberdelito
 **Definición:** Convenio sobre la Ciberdelincuencia del Consejo de Europa, firmado en 2001. Armoniza los delitos informáticos, da a las autoridades herramientas procesales para obtener pruebas electrónicas y establece reglas de cooperación internacional. Tiene un protocolo de 2003 sobre racismo y xenofobia y otro de 2022 sobre pruebas electrónicas.
-**En el curso:** contaba con 83 Partes en septiembre de 2026; México no es una de ellas.
+**En el curso:** llegó a 84 Partes el 14 de octubre de 2026, con la adhesión de Kazajistán; México no es una de ellas. El protocolo de 2022 todavía no está en vigor.
 
 ---
 

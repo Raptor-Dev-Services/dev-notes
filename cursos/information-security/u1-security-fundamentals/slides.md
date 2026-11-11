@@ -262,9 +262,9 @@ Actualización: la guía de 2002 se retiró; hoy rige la SP 800-30 Rev. 1 (2012)
 
 - **SGSI:** sistema construido alrededor de la evaluación de riesgos del negocio para establecer, implantar, operar, vigilar, revisar, mantener y mejorar la seguridad.
 - **27001:** requisitos (la única certificable para una organización).
-- **27002:** controles. **27003:** guía. **27004:** medición. **27005:** riesgos. **27006:** certificadoras.
+- **27002:** controles. **27003:** guía. **27004:** medición. **27005:** riesgos. **27006-1:** certificadoras.
 
-Actualización: 27001 y 27002 vigentes en su edición 2022; 27000 en su edición 2026.
+Actualización: 27001 (con su enmienda de 2024) y 27002 vigentes en su edición 2022; 27000 en su sexta edición, de 2026, que ya no es de vocabulario; la 27006 la sustituyó la 27006-1:2024.
 
 ---
 

@@ -67,7 +67,7 @@ En febrero de 2013, la Casa Blanca emitió la **Orden Ejecutiva 13636, Improving
 - **Programa voluntario** para promover la adopción del marco.
 - **Identificación de la infraestructura en mayor riesgo**, sector por sector.
 
-> Actualización al 2026: la orden se emitió junto con la Directiva Presidencial PPD-21, que definía los sectores de infraestructura crítica. En abril de 2024, la PPD-21 fue sustituida por el Memorando de Seguridad Nacional NSM-22, que conserva **16 sectores** (entre ellos químico, comunicaciones, manufactura crítica, presas, base industrial de defensa, servicios de emergencia, energía, servicios financieros, alimentos y agricultura, instalaciones de gobierno, salud, tecnologías de la información, reactores nucleares, transporte y agua) y llama a las agencias responsables *Sector Risk Management Agencies*. La lista y su estado vigente se consultan en el sitio de CISA.
+> Actualización al 2026: la orden se emitió junto con la Directiva Presidencial PPD-21, que definía los sectores de infraestructura crítica. En abril de 2024, la PPD-21 fue sustituida por el Memorando de Seguridad Nacional NSM-22, que conserva **16 sectores** (entre ellos químico, comunicaciones, manufactura crítica, presas, base industrial de defensa, servicios de emergencia, energía, servicios financieros, alimentos y agricultura, servicios e instalaciones de gobierno, salud, tecnologías de la información, reactores nucleares, transporte y agua) y llama a las agencias responsables *Sector Risk Management Agencies*. La lista y su estado vigente se consultan en el sitio de CISA. La Orden Ejecutiva 14239 (18 de marzo de 2025) mandó revisar el NSM-22, junto con otras políticas de infraestructura crítica, para pasar de un enfoque de todos los peligros a uno basado en riesgo; al 10 de noviembre de 2026 no se había publicado un documento que lo sustituya.
 
 ## El marco de ciberseguridad del NIST
 
@@ -156,12 +156,13 @@ Al revisar fuentes es común encontrar arquitecturas de seguridad de fabricantes
 - Cybersecurity and Infrastructure Security Agency. (2024). *National Security Memorandum on critical infrastructure security and resilience*. https://www.cisa.gov/national-security-memorandum-critical-infrastructure-security-and-resilience
 - Cybersecurity and Infrastructure Security Agency. (s. f.). *Critical infrastructure sectors*. https://www.cisa.gov/topics/critical-infrastructure-security-and-resilience/critical-infrastructure-sectors
 - Executive Order No. 13636. (2013). Improving critical infrastructure cybersecurity. *Federal Register, 78*(33), 11739-11744. https://www.federalregister.gov/documents/2013/02/19/2013-03915/improving-critical-infrastructure-cybersecurity
+- Executive Order No. 14239. (2025). Achieving efficiency through state and local preparedness. *Daily Compilation of Presidential Documents*, DCPD-202500374. https://www.govinfo.gov/content/pkg/DCPD-202500374/html/DCPD-202500374.htm
 - INTED Education. (2016). *La cadena de valor de Michael Porter en 5 minutos* [Video]. YouTube. https://youtu.be/mLQcndDR-bU
 - National Institute of Standards and Technology. (2018). *Framework for improving critical infrastructure cybersecurity* (versión 1.1). https://doi.org/10.6028/NIST.CSWP.04162018
 - National Institute of Standards and Technology. (2024). *The NIST Cybersecurity Framework (CSF) 2.0*. https://doi.org/10.6028/NIST.CSWP.29
 - Orbus Software. (2016). *What is SABSA?* [Video]. YouTube. https://youtu.be/qbFTg85I4eE
 - Porter, M. E. (1985). *Competitive advantage: Creating and sustaining superior performance*. Free Press. https://www.hbs.edu/faculty/Pages/item.aspx?num=193
-- Sherwood, J., Clark, A., y Lynas, D. (2005). *Enterprise security architecture: A business-driven approach*. CRC Press. https://sabsa.org/
+- Sherwood, J., Clark, A., y Lynas, D. (2005). *Enterprise security architecture: A business-driven approach*. CRC Press. https://www.routledge.com/Enterprise-Security-Architecture-A-Business-Driven-Approach/Sherwood-Clark-Lynas/p/book/9781578203185
 - The Open Group. (2022). *The TOGAF standard* (10.ª ed.). https://www.opengroup.org/togaf
 - Zachman, J. A. (2008). *John Zachman's concise definition of the Zachman Framework*. Business Rules Journal. https://www.brcommunity.com/articles.php?id=b696
 

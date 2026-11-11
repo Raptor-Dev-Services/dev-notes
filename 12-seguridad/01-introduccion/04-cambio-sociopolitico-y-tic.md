@@ -53,8 +53,8 @@ Antes de hablar de derechos conviene fijar la idea de gobierno abierto: una form
 
 La apropiación todavía es dispareja. Hay recursos, iniciativas y servicios que podrían usarse y no se han incorporado del todo. Cada gobernante decide qué temas digitaliza, con criterios que rara vez se explican, y el resultado es una integración irregular y poco equitativa. Los números ayudan a dimensionar el problema:
 
-- En el mundo, la Unión Internacional de Telecomunicaciones estimó para 2025 unos 6,000 millones de personas en línea (74 % de la población) y 2,200 millones todavía desconectadas, casi todas en países de ingreso bajo y medio (ITU, 2025).
-- En México, la ENDUTIH 2024 contó 100.2 millones de usuarios de internet, el 83.1 % de la población de seis años o más; en zonas urbanas el uso llegó a 86.9 % y en las rurales a 68.5 % (INEGI, 2025).
+- **Actualización al 2026:** en el mundo, la Unión Internacional de Telecomunicaciones estima para 2026 unos 6,300 millones de personas en línea (76 % de la población) y 2,000 millones todavía desconectadas; el uso de internet llega a 93 % en los países de ingreso alto y apenas a 32 % en los de ingreso bajo (ITU, 2026).
+- En México, la ENDUTIH 2025 contó 104.9 millones de usuarios de internet, el 86.1 % de la población de seis años o más; en zonas urbanas el uso llegó a 88.9 % y en las rurales a 75.2 % (INEGI, 2026).
 
 Casi veinte puntos de diferencia entre ciudad y campo: un servicio que solo existe en línea deja fuera a mucha gente.
 
@@ -184,7 +184,7 @@ Para que funcione, el autor retoma condiciones como la voluntad política, una s
 
 ### D. Ciudadanía digital e iniciativa de normas
 
-Lo presencial y lo virtual se refuerzan: una comunidad que se identifica en línea con un fin común puede lograr que una política pública o un proyecto de ley se retire. El caso de referencia en México es la iniciativa de delitos informáticos presentada en el Senado por el entonces senador Omar Fayad, criticada por tipificar de manera excesiva el uso de la red y retirada tras la reacción en línea (Notimex, s. f.).
+Lo presencial y lo virtual se refuerzan: una comunidad que se identifica en línea con un fin común puede lograr que una política pública o un proyecto de ley se retire. El caso de referencia en México es la iniciativa de delitos informáticos presentada en el Senado por el entonces senador Omar Fayad, criticada por tipificar de manera excesiva el uso de la red y retirada tras la reacción en línea (Notimex, 2015).
 
 ### E. Educación en ciudadanía digital
 
@@ -202,7 +202,7 @@ Las redes sirven a fines distintos. Twitter, hoy X, fue durante años el espacio
 
 - **Participación electrónica.** Gil-García, Criado y Téllez (2017) relacionan la participación electrónica con el uso de redes sociales y la participación política dentro de la administración pública.
 - **Ciberciudadanía responsable.** Rodríguez Gordo (2017) analiza el papel del ciudadano en una sociedad mediada por la tecnología: la sobreinformación, la orientación política de las reformas educativas y la aparición de nuevos medios exigen que el ciudadano distinga fuentes confiables de desinformación.
-- **Teledemocracia.** Garcés Noblecía (s. f.) evalúa críticamente las nuevas modalidades de participación política en línea y la intervención de actores sociales en ese entorno.
+- **Teledemocracia.** Garcés Noblecía (2008) evalúa críticamente las nuevas modalidades de participación política en línea y la intervención de actores sociales en ese entorno.
 - **Plataformas y seguridad jurídica.** Díaz Santana y García Rodríguez (2022) muestran que el tráfico de datos personales en plataformas digitales genera inseguridad jurídica; citan un estudio de la Asociación de Internet en México según el cual en el mercado negro se compraban datos personales desde 100 pesos (correo, cuentas bancarias, firma electrónica, actas de nacimiento). Proponen normas hechas democráticamente, que protejan derechos, se apliquen a todos por igual y se cumplan siempre.
 
 > **Actualización al 2026:** el organismo federal de protección de datos (INAI) se extinguió en 2025. La nueva Ley Federal de Protección de Datos Personales en Posesión de los Particulares, publicada el 20 de marzo de 2025, asigna la protección de datos frente a particulares a la Secretaría Anticorrupción y Buen Gobierno.
@@ -233,15 +233,15 @@ Una última advertencia: ciudadano o político, quien publica debe pensar en las
 - Aguirre Sala, J. F. (2014). El potencial de los medios digitales ante la participación ciudadana tradicional y en el presupuesto participativo. *Comunicación y Sociedad*, (22), 211-229. https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0188-252X2014000200009
 - Cámara de Diputados del H. Congreso de la Unión. (2026). *Constitución Política de los Estados Unidos Mexicanos* (última reforma DOF 07-10-2026). https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf
 - Cámara de Diputados del H. Congreso de la Unión. (2025a). *Ley en Materia de Telecomunicaciones y Radiodifusión* (DOF 16-07-2025). https://www.diputados.gob.mx/LeyesBiblio/pdf/LMTR.pdf
-- Cámara de Diputados del H. Congreso de la Unión. (2025b). *Ley Federal de Protección de Datos Personales en Posesión de los Particulares* (DOF 20-03-2025). https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf
+- Cámara de Diputados del H. Congreso de la Unión. (2025b). *Ley Federal de Protección de Datos Personales en Posesión de los Particulares* (DOF 20-03-2025, última reforma DOF 14-11-2025). https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf
 - Consejería Jurídica y de Servicios Legales de la Ciudad de México. (2022). *Ley de Participación Ciudadana de la Ciudad de México* (texto vigente, última reforma 27-10-2022). https://data.consejeria.cdmx.gob.mx//images/leyes/leyes/LEY_DE_PARTICIPACION_CIUDADANA_DE_LA_CDMX4.pdf
 - Díaz Santana, K. J., y García Rodríguez, M. P. (2022). Seguridad jurídica de los usuarios de plataformas digitales en México vinculada con la cultura de la paz y de la legalidad. En M. Cantero Ramírez, J. C. Guzmán Díaz y L. Martínez Martínez (Coords.), *La cultura de paz y legalidad desde una visión multidisciplinaria* (pp. 187-204). Prometeo Editores; Universidad de Guadalajara. https://www.cusur.udg.mx
-- Garcés Noblecía, R. (s. f.). *República electrónica y teledemocracia*.
-- Gil-García, J., Criado, J., y Téllez, J. (2017). *Tecnologías de información y comunicación en la administración pública: conceptos, enfoques, aplicaciones y resultados*.
-- Instituto Nacional de Estadística y Geografía. (2025). *Encuesta Nacional sobre Disponibilidad y Uso de Tecnologías de la Información en los Hogares (ENDUTIH) 2024* [Comunicado de prensa]. https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2025/endutih/ENDUTIH_24_RR.pdf
-- International Telecommunication Union. (2025). *Measuring digital development: Facts and Figures 2025*. https://www.itu.int/itu-d/reports/statistics/facts-figures-2025/
+- Garcés Noblecía, R. (2008). República electrónica y teledemocracia. En J. Álvarez-Cienfuegos Fidalgo y M. López López (Coords.), *Republicanos y republicanismos* (pp. 137-149). Universidad Michoacana de San Nicolás de Hidalgo; Universidad Nacional Autónoma de México. https://www.ciga.unam.mx/publicaciones/images/abook_file/9709836137.pdf
+- Gil-García, J. R., Criado, J. I., y Téllez, J. C. (Eds.). (2017). *Tecnologías de información y comunicación en la administración pública: conceptos, enfoques, aplicaciones y resultados*. INFOTEC. https://www.clubdeinnovacion.es/images/informes/tecnologias_informacion_libro_electronico.pdf
+- Instituto Nacional de Estadística y Geografía. (2026). *Encuesta Nacional sobre Disponibilidad y Uso de Tecnologías de la Información en los Hogares (ENDUTIH) 2025* [Reporte de resultados, 16 de junio de 2026]. https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2026/endutih/ENDUTIH_25_RR.pdf
+- International Telecommunication Union. (2026). *Measuring digital development: Facts and Figures 2026*. https://www.itu.int/itu-d/reports/statistics/facts-figures-2026/
 - Mandujano Estrada, M. (2017). Ciudadanía y competencia digital: sobre los presupuestos de una civilización digital global a partir de la iniciativa Europa 2020. *Argumentos de Razón Técnica*, (20), 103-117. https://institucional.us.es/revistas/argumentos/20/07%20ARTMandujano.pdf
-- Notimex. (s. f.). *El senador Fayad retira la iniciativa que causó polémica por criminalizar el uso de la red* [Nota informativa].
+- Notimex. (2015, 3 de noviembre). Retira Fayad iniciativa que sancionaría ciberdelitos. *El Siglo de Torreón*. https://www.elsiglodetorreon.com.mx/noticia/2015/retira-fayad-iniciativa-que-sancionaria-ciberdelitos.html
 - Open Government Partnership. (s. f.). *Mexico*. https://www.opengovpartnership.org/members/mexico/
 - Osés Abando, J. (2014, 2 de octubre). Ciberciudadanía y "nuevos" derechos: hacia la neo-privacidad. *Diario La Ley*. https://www.aelpa.org/actualidad/201410/Ciberciudadania-JosuOses.pdf
 - Parlamento Europeo y Consejo de la Unión Europea. (2022). Decisión (UE) 2022/2481 por la que se establece el programa estratégico de la Década Digital para 2030. *Diario Oficial de la Unión Europea*, L 323. https://eur-lex.europa.eu/eli/dec/2022/2481/oj

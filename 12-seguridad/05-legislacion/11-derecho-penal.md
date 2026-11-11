@@ -176,7 +176,7 @@ El Convenio sobre la Ciberdelincuencia del Consejo de Europa, firmado en Budapes
 
 El material indicaba que México era observador y estudiaba su adhesión, para lo cual tendría que decidir si reformaba el CPF o expedía una ley especial que redujera las lagunas e incompatibilidades.
 
-**Actualización al 2026:** México sigue sin ser parte. Figura entre los Estados invitados a adherirse y recibe asistencia técnica del Consejo de Europa, pero no ha depositado su instrumento; el convenio sumaba 83 partes al 30 de septiembre de 2026. Su Segundo Protocolo Adicional (2022) regula el acceso transfronterizo a evidencia electrónica. En paralelo, la Asamblea General de la ONU adoptó el 24 de diciembre de 2024 la Convención de las Naciones Unidas contra la Ciberdelincuencia, que se abrió a firma en Hanói en octubre de 2025; en noviembre de 2026 tenía 96 firmantes y 3 ratificaciones, todavía lejos de las 40 que necesita para entrar en vigor, y México no aparece en la lista de firmantes de la Colección de Tratados de la ONU.
+**Actualización al 2026:** México sigue sin ser parte. Figura entre los Estados invitados a adherirse y recibe asistencia técnica del Consejo de Europa, pero no ha depositado su instrumento; el convenio llegó a 84 Partes el 14 de octubre de 2026, con la adhesión de Kazajistán. Su Segundo Protocolo Adicional (2022), sobre cooperación reforzada y revelación de pruebas electrónicas, todavía no está en vigor: necesita cinco ratificaciones y al 10 de noviembre de 2026 sumaba cuatro. En paralelo, la Asamblea General de la ONU adoptó el 24 de diciembre de 2024 la Convención de las Naciones Unidas contra la Ciberdelincuencia, que se abrió a firma en Hanói en octubre de 2025; en noviembre de 2026 tenía 96 firmantes y 3 ratificaciones, todavía lejos de las 40 que necesita para entrar en vigor, y México no aparece en la lista de firmantes de la Colección de Tratados de la ONU.
 
 ## Lo que deja el tema
 
@@ -212,6 +212,8 @@ El material indicaba que México era observador y estudiaba su adhesión, para l
 - Cámara de Diputados del H. Congreso de la Unión. (2025). *Ley General para Prevenir, Investigar y Sancionar los Delitos en Materia de Extorsión* (DOF 28-11-2025). https://www.diputados.gob.mx/LeyesBiblio/pdf/LGPISDME.pdf
 - Cámara de Diputados del H. Congreso de la Unión. (2025). *Ley Federal de Protección de Datos Personales en Posesión de los Particulares* (última reforma DOF 14-11-2025). https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf
 - Consejo de Europa. (2001). *Convenio sobre la Ciberdelincuencia* (STE n.º 185) y sus protocolos. https://www.coe.int/en/web/cybercrime/the-budapest-convention
+- Consejo de Europa. (2026a). *Costa Rica becomes the fourth state to ratify the Second Additional Protocol to the Convention on Cybercrime*. https://www.coe.int/en/web/cybercrime/news/-/asset_publisher/S73WWxscOuZ5/content/costa-rica-becomes-the-fourth-state-to-ratify-the-second-additional-protocol-to-the-convention-on-cybercrime
+- Consejo de Europa. (2026b, 14 de octubre). *Kazakhstan becomes the 84th Party to the Convention on Cybercrime* [Noticia del Comité del Convenio sobre la Ciberdelincuencia]. https://www.coe.int/en/web/cybercrime/t-cy-news
 - Consejo de Europa. (s. f.). *Parties and observers to the Convention on Cybercrime*. https://www.coe.int/en/web/cybercrime/parties-observers
 - Gercke, M. (2009). *El ciberdelito: guía para los países en desarrollo*. Unión Internacional de Telecomunicaciones. https://www.itu.int/dms_pub/itu-d/oth/01/0B/D010B0000073301PDFS.pdf
 

@@ -43,7 +43,7 @@
 
 ### Convenio de Budapest
 **Categoría:** Derecho internacional / Tratados
-**Definición:** Convenio sobre la Ciberdelincuencia del Consejo de Europa (2001). Obliga a tipificar delitos informáticos, a adoptar reglas procesales para obtener pruebas electrónicas y a cooperar entre Estados. Tenía 83 Partes en septiembre de 2026; México no es una de ellas.
+**Definición:** Convenio sobre la Ciberdelincuencia del Consejo de Europa (2001). Obliga a tipificar delitos informáticos, a adoptar reglas procesales para obtener pruebas electrónicas y a cooperar entre Estados. Llegó a 84 Partes el 14 de octubre de 2026; México no es una de ellas.
 
 ---
 
@@ -74,7 +74,7 @@
 
 ### Ley de Ciberresiliencia
 **Categoría:** Unión Europea / Reglamentos
-**Definición:** Reglamento (UE) 2024/2847, que exige seguridad por diseño, gestión de vulnerabilidades y soporte durante la vida útil a todo producto con elementos digitales vendido en la Unión. Los avisos de vulnerabilidades explotadas rigen desde el 11 de septiembre de 2026 y el resto desde el 11 de diciembre de 2027.
+**Definición:** Reglamento (UE) 2024/2847, que exige seguridad por diseño, gestión de vulnerabilidades y soporte durante la vida útil a todo producto con elementos digitales vendido en la Unión. Los avisos de vulnerabilidades explotadas e incidentes graves rigen desde el 11 de septiembre de 2026 y la aplicación plena llega el 11 de diciembre de 2027.
 
 ---
 

@@ -58,7 +58,7 @@ Actualización al 2026: la versión vigente es **COBIT 2019**, que sustituyó a 
 
 A diferencia de COBIT, que es un modelo de auditoría y control, la norma ISO/IEC 27001 define un **sistema de gestión**: una serie de actividades que la organización realiza mediante procesos sistemáticos, documentados y conocidos por todos, para establecer, implementar, mantener y mejorar su SGSI. Su objetivo es proteger la confidencialidad, la integridad y la disponibilidad de la información a partir de evaluar los riesgos y aplicar controles. Es certificable: un organismo externo puede auditar que la organización la cumple.
 
-Actualización al 2026: la edición vigente es **ISO/IEC 27001:2022**, con la enmienda 1 de 2024 (que agrega consideraciones de cambio climático entre los requisitos de las partes interesadas). Su anexo A pasó de 114 controles a **93**, agrupados en cuatro temas: organizacionales, de personas, físicos y tecnológicos. Quien lea documentación de una organización certificada antes de 2022 encontrará la estructura anterior (2013) y la tendrá que mapear.
+Actualización al 2026: la edición vigente es **ISO/IEC 27001:2022**, con la enmienda 1 de 2024 (que pide determinar, en la cláusula 4.1, si el cambio climático es un tema relevante para la organización y añade en la 4.2 una nota sobre los requisitos climáticos de las partes interesadas). Su anexo A pasó de 114 controles a **93**, agrupados en cuatro temas: organizacionales, de personas, físicos y tecnológicos. Quien lea documentación de una organización certificada antes de 2022 encontrará la estructura anterior (2013) y la tendrá que mapear.
 
 | Aspecto | COBIT 2019 | ISO/IEC 27001:2022 |
 |---|---|---|
@@ -139,7 +139,7 @@ Este orden conecta los cuatro temas de la unidad: el [derecho positivo](01-derec
 - International Organization for Standardization e International Electrotechnical Commission. (2022). *ISO/IEC 27001:2022. Information security, cybersecurity and privacy protection: Information security management systems: Requirements*. https://www.iso.org/standard/27001
 - International Organization for Standardization e International Electrotechnical Commission. (2024). *ISO/IEC 27001:2022/Amd 1:2024. Climate action changes*. https://www.iso.org/standard/88435.html
 - ISACA. (2018). *COBIT 2019 framework: Introduction and methodology*. https://www.isaca.org/resources/cobit
-- Universidad EAFIT. (s. f.). *COBIT: Modelo para auditoría y control de sistemas de información*. https://www.eafit.edu.co/escuelas/administracion/consultorio-contable/Documents/A%20COBIT.pdf (dirección original del material; en 2026 redirige al sitio general de la universidad).
+- Universidad EAFIT. (s. f.). *COBIT: Modelo para auditoría y control de sistemas de información*. https://web.archive.org/web/20240528013554/https://www.eafit.edu.co/escuelas/administracion/consultorio-contable/Documents/A%20COBIT.pdf
 - Washington Technology. (2009, febrero). *Merged AeA and ITAA organization has new name*. https://www.washingtontechnology.com/2009/02/merged-aea-and-itaa-organization-has-new-name/323130
 
 ---
