@@ -1,0 +1,38 @@
+CPU(s):                                  12
+Model name:                              11th Gen Intel(R) Core(TM) i5-11500 @ 2.70GHz
+CPU(s) scaling MHz:                      73%
+### jit (Release)
+Release/optimizado: True  |  Runtime: 10.0.14
+llamada 1:    1003.9 us  (resultado 333328333350000)
+llamada 2:      94.9 us  (resultado 333328333350000)
+llamada 3:      85.7 us  (resultado 333328333350000)
+llamada 4:      82.7 us  (resultado 333328333350000)
+llamada 5:      85.7 us  (resultado 333328333350000)
+llamada 6:      90.7 us  (resultado 333328333350000)
+llamada 7:      83.3 us  (resultado 333328333350000)
+llamada 8:      78.5 us  (resultado 333328333350000)
+### gc (Release)
+recien creado:         generacion 0
+tras un GC de gen0:    generacion 1
+tras un GC de gen1:    generacion 2
+1 000 000 de byte[100]: 1.3 MB asignados (medido con GetAllocatedBytesForCurrentThread)
+colecciones durante el ciclo: gen0 +0, gen1 +0, gen2 +0
+### loh (Release)
+GC.GetGCMemoryInfo, modo de servidor: False, latencia: Interactive
+byte[84975] nace en gen0; byte[84976] nace directo en gen2 (LOH)
+byte[85000]: generacion 2
+double[10600]: generacion 0  |  double[10700]: generacion 2
+### race (Release)
+esperado: 4,000,000
+sin proteger:  4,000,000
+Interlocked:   4,000,000
+### jit (Debug)
+Release/optimizado: True  |  Runtime: 10.0.14
+llamada 1:     280.1 us  (resultado 333328333350000)
+llamada 2:     118.5 us  (resultado 333328333350000)
+llamada 3:     118.2 us  (resultado 333328333350000)
+llamada 4:     142.8 us  (resultado 333328333350000)
+llamada 5:     147.9 us  (resultado 333328333350000)
+llamada 6:     126.4 us  (resultado 333328333350000)
+llamada 7:     126.3 us  (resultado 333328333350000)
+llamada 8:     149.9 us  (resultado 333328333350000)

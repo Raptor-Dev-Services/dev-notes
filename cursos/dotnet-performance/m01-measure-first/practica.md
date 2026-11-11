@@ -162,7 +162,12 @@ En la corrida del curso, las llamadas 2 a 8 en Debug salieron entre 118 y 150 µ
 
 Para ver por qué el `GlobalSetup` compara los resultados, **rompe a propósito** `ConCiclo`: en `Bench/M1_Medir.cs`, cambia `palabras++` por `palabras += 2`, y corre de nuevo el comando del paso 2.
 
-BenchmarkDotNet debe fallar durante el `GlobalSetup` con una `InvalidOperationException` cuyo mensaje es el del código: `Las dos implementaciones no coinciden.` (el mensaje viene de la línea `throw` del archivo; esta salida no se capturó para el curso).
+BenchmarkDotNet falla durante el `GlobalSetup`. Salida medida (BenchmarkDotNet 0.15.8, .NET 10):
+
+```
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.InvalidOperationException: Las dos implementaciones no coinciden.
+```
 
 Sin esa comprobación, el benchmark habría medido, con toda seriedad, una función **incorrecta** más rápida. Revierte el cambio.
 

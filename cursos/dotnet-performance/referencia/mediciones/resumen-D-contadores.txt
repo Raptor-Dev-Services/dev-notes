@@ -1,0 +1,30 @@
+Resumen de contadores-fuga.csv y contadores-acotada.csv (dotnet-counters collect --format csv, cada 5 s, API de ejemplo con 4 clientes a ~200-340 peticiones/s; carga de 45 s al inicio).
+heap = suma de dotnet.gc.last_collection.heap.size (gen0+gen1+gen2+loh+poh) en la ultima recoleccion; ws = dotnet.process.memory.working_set; entradas = ejemplo.cache.entradas (solo cuenta el diccionario sin limite; en 'acotada' vale 0 porque la cache acotada es IMemoryCache)
+
+## fuga
+15:04:53 heap=51.8 MB ws=147.2 MB entradas= 2270
+15:04:58 heap=51.8 MB ws=199.0 MB entradas= 4145
+15:05:13 heap=87.5 MB ws=223.3 MB entradas= 4451
+15:05:18 heap=87.5 MB ws=226.4 MB entradas= 6215
+15:05:23 heap=154.5 MB ws=269.9 MB entradas= 7928
+15:05:28 heap=221.6 MB ws=313.0 MB entradas= 9613
+15:05:33 heap=221.6 MB ws=330.0 MB entradas= 10269
+15:05:38 heap=221.6 MB ws=330.0 MB entradas= 10269
+15:05:43 heap=221.6 MB ws=330.1 MB entradas= 10269
+15:05:48 heap=221.6 MB ws=330.2 MB entradas= 10269
+15:12:53 heap=221.6 MB ws=210.4 MB entradas= 10269
+15:12:58 heap=221.5 MB ws=0.0 MB entradas= None
+
+## acotada
+15:13:44 heap=3.0 MB ws=103.4 MB entradas= 0
+15:13:49 heap=3.0 MB ws=103.8 MB entradas= 0
+15:13:54 heap=3.0 MB ws=103.9 MB entradas= 0
+15:13:59 heap=3.1 MB ws=104.0 MB entradas= 0
+15:14:04 heap=3.0 MB ws=104.2 MB entradas= 0
+15:14:09 heap=3.0 MB ws=104.0 MB entradas= 0
+15:14:14 heap=3.0 MB ws=104.0 MB entradas= 0
+15:14:19 heap=3.1 MB ws=104.0 MB entradas= 0
+15:14:24 heap=3.1 MB ws=104.1 MB entradas= 0
+15:14:29 heap=3.1 MB ws=104.1 MB entradas= 0
+15:16:34 heap=3.1 MB ws=105.7 MB entradas= 0
+15:16:39 heap=2.1 MB ws=0.0 MB entradas= None

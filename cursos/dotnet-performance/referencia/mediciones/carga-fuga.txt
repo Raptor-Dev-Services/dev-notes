@@ -1,0 +1,3 @@
+peticiones: 10269  errores: 0  concurrencia: 4  duracion: 45 s
+peticiones/s: 228
+latencia ms  p50: 0.5  p95: 2.7  p99: 5.4  max: 14185.7
