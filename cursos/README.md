@@ -15,6 +15,7 @@ Los cursos de [Raptor Dev Services Academy](https://academy.raptorcloud.dev) en 
 | [Seguridad web y OWASP](web-security/README.md) | 1 módulo de 2 h | Quien desarrolla aplicaciones web y debe protegerlas |
 | [Vibe coding profesional](ai-assisted-coding/README.md) | 1 módulo de 2 h | Quien programa con un asistente de IA y quiere resultados que resistan una revisión |
 | [Ciberseguridad](cybersecurity/README.md) | 6 módulos | Quien empieza en pruebas de seguridad, con autorización y ética |
+| [Ciberseguridad II: pentest con Kali](pentesting-with-kali/README.md) | 6 módulos de 2 h | Quien terminó Ciberseguridad y quiere hacer una prueba de penetración completa, con alcance, priorización, corrección e informe |
 | [Introducción a la ciberseguridad](cyber-intro/README.md) | 5 unidades | Quien empieza en ciberseguridad, desde cualquier carrera |
 | [Riesgos actuales en ciberseguridad](cyber-risks/README.md) | 5 unidades | Quien quiere reconocer y prevenir las amenazas de hoy |
 | [Informática forense](digital-forensics/README.md) | 5 unidades | Quien investiga incidentes y necesita evidencia que resista un juicio |
