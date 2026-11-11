@@ -49,7 +49,7 @@ Curso de **Raptor Dev Services Academy**. Las clases como presentación, el quiz
 **Material:** [clase](s03-data-state-forms/slides.md), [práctica](s03-data-state-forms/practica.md), [tarea](s03-data-state-forms/tarea.md), [glosario](s03-data-state-forms/glosario.md). El quiz está en la plataforma.
 
 - [ ] **Clase:** dónde vive cada estado, traer datos con caché, formularios con validación y errores del servidor.
-- [ ] **Lectura:** [`06-frontend/08-estado-donde-vive.md`](../../06-frontend/08-estado-donde-vive.md).
+- [ ] **Lectura:** [`06-frontend/08-estado-donde-vive.md`](../../06-frontend/08-estado-donde-vive.md). [`06-frontend/02-react-produccion.md`](../../06-frontend/02-react-produccion.md) (TanStack Query y formularios).
 - [ ] **Práctica:** un formulario que valida en el cliente, muestra los errores del servidor y no pierde lo escrito cuando falla la red.
 - [ ] **Tarea:** los cuatro estados (cargando, vacío, error y con datos) en todas sus pantallas.
 - **Libros:** *React Application Architecture for Production*, caps. 5 y 6. *Learn React with TypeScript*, caps. 8 a 10. *Learn React Hooks* (Bugl, 2025), caps. 5 a 8.
