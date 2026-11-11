@@ -363,9 +363,9 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ---
 
-## 12 - Seguridad (81 docs)
+## 12 - Seguridad (84 docs)
 
-La ruta de ciberseguridad en cinco materias y las notas de defensa y respuesta a incidentes. Índice por materia en [`12-seguridad/`](12-seguridad/README.md).
+La ruta de ciberseguridad en cinco materias y las notas de defensa y respuesta a incidentes y de pentest con Kali. Índice por materia en [`12-seguridad/`](12-seguridad/README.md).
 
 ### Introducción a la ciberseguridad (15 docs)
 
@@ -477,6 +477,13 @@ La ruta de ciberseguridad en cinco materias y las notas de defensa y respuesta a
 | 03 | [Respuesta a incidentes](12-seguridad/06-blue-team/03-respuesta-a-incidentes.md) |
 | 04 | [Forense básico de un servidor Linux](12-seguridad/06-blue-team/04-forense-basico.md) |
 | 05 | [Inteligencia de amenazas, MITRE ATT&CK y cacería](12-seguridad/06-blue-team/05-threat-hunting-attack.md) |
+### Pentest con Kali (3 docs)
+
+| # | Doc |
+|---|-----|
+| 01 | [Metodología de pentest](12-seguridad/07-pentest/01-metodologia-de-pentest.md) |
+| 02 | [Escalamiento de privilegios en Linux](12-seguridad/07-pentest/02-escalamiento-de-privilegios-linux.md) |
+| 03 | [Informe de pentest](12-seguridad/07-pentest/03-informe-de-pentest.md) |
 
 ---
 
@@ -504,6 +511,7 @@ Cada curso de [academy.raptorcloud.dev](https://academy.raptorcloud.dev) está t
 | [Seguridad de la información](cursos/information-security/README.md) | 5 unidades |
 | [Legislación nacional e internacional en ciberseguridad](cursos/cyber-law/README.md) | 5 unidades |
 | [Defensa y respuesta a incidentes](cursos/blue-team/README.md) | 6 sesiones de 5 h |
+| [Ciberseguridad II: pentest con Kali](cursos/pentesting-with-kali/README.md) | 6 módulos de 2 h |
 
 ---
 

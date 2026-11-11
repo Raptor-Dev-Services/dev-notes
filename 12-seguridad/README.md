@@ -12,8 +12,9 @@ Cada nota explica su tema con el detalle completo, cierra con su glosario y sus 
 | [Seguridad de la información](04-seguridad-informacion/README.md) | 15 | [`information-security`](../cursos/information-security/README.md) |
 | [Legislación nacional e internacional en ciberseguridad](05-legislacion/README.md) | 15 | [`cyber-law`](../cursos/cyber-law/README.md) |
 | [Defensa y respuesta a incidentes](06-blue-team/README.md) | 5 | [`blue-team`](../cursos/blue-team/README.md) |
+| [Pentest con Kali](07-pentest/README.md) | 3 | [`pentesting-with-kali`](../cursos/pentesting-with-kali/README.md) |
 
-**Total: 81 notas.**
+**Total: 84 notas.**
 
 ---
 
