@@ -674,7 +674,7 @@ Fuentes: página de manual `sshd_config(5)` ("the first obtained value will be u
 
 ## Firewall: permitir SSH antes de activar
 
-```yaml {1-9|11-16|*}
+```yaml {1-6|8-12|*}
 - name: Permitir los puertos TCP ANTES de activar el firewall
   community.general.ufw:
     rule: allow

@@ -473,7 +473,7 @@ Con el `namespace` ya definido pero `name: endurecer` en `converge.yml`:
 
 ## `verify.yml`: probar el resultado, no los pasos
 
-```yaml {1-9|11-23|*}
+```yaml {1-9|11-15|17-22|*}
 - name: Verify
   hosts: instance
   become: true
