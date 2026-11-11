@@ -67,7 +67,7 @@ curl -sfL https://get.k3s.io | sudo sh -
 sudo k3s kubectl get nodes
 ```
 
-Los ejemplos del curso se probaron con K3s `v1.34.1+k3s1` el 11 de noviembre de 2026. Los comandos de `kubectl` son los mismos en cualquier distribución conforme; lo que cambia es lo que el clúster ya trae instalado.
+Los ejemplos del curso se probaron con K3s `v1.34.1+k3s1` el 11 de noviembre de 2026. Según kubernetes.io/releases (consultado ese día), la rama 1.34 tiene fin de vida el 2026-10-27: el laboratorio la usa porque es la que se probó; en producción se usa una rama mantenida. Los comandos de `kubectl` son los mismos en cualquier distribución conforme; lo que cambia es lo que el clúster ya trae instalado.
 
 ---
 
