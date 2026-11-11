@@ -272,7 +272,7 @@ Para que exista acceso ilícito, el sistema debe estar **protegido por algún me
 - Vías de comunicación y correspondencia: interferir comunicaciones (167 VI), decodificar señales (168 bis).
 - Libre desarrollo de la personalidad: corrupción y pornografía de menores (200 a 202 bis), turismo sexual, lenocinio.
 - Falsedad: moneda, títulos, sellos y documentos (234 a 245).
-- Contra las personas: hostigamiento, abuso sexual, amenazas, lesiones psicológicas.
+- Contra las personas: hostigamiento, abuso sexual, amenazas, lesiones (art. 288: daño con huella material en el cuerpo).
 - Patrimoniales: robo, abuso de confianza, fraude, recursos de procedencia ilícita; derechos de autor (424 bis).
 
 ---

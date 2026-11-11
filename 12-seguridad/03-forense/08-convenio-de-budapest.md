@@ -170,7 +170,7 @@ Mezclar las dos produce debates interminables sobre derechos humanos y datos per
 
 ## La Directiva europea 2006/24/CE
 
-Para mostrar que la conservación de datos de conexión se puede legislar, el material revisaba la **Directiva 2006/24/CE** del Parlamento Europeo y del Consejo, publicada en el Diario Oficial de la Unión Europea el **15 de marzo de 2006**. Su propósito era armonizar las obligaciones de los proveedores de comunicaciones electrónicas de acceso público y de redes públicas, para que ciertos datos estuvieran disponibles en la investigación, detección y enjuiciamiento de **delitos graves**, según los definiera cada Estado miembro.
+Para mostrar que la conservación de datos de conexión se puede legislar, el material revisaba la **Directiva 2006/24/CE** del Parlamento Europeo y del Consejo, de **15 de marzo de 2006**, publicada en el Diario Oficial de la Unión Europea el **13 de abril de 2006** (L 105). Su propósito era armonizar las obligaciones de los proveedores de comunicaciones electrónicas de acceso público y de redes públicas, para que ciertos datos estuvieran disponibles en la investigación, detección y enjuiciamiento de **delitos graves**, según los definiera cada Estado miembro.
 
 Su alcance: datos de **tráfico y de localización** de personas físicas y jurídicas, más los necesarios para identificar al abonado o usuario registrado. Quedaba fuera, de manera expresa, el **contenido** de las comunicaciones, incluida la información consultada en la red.
 

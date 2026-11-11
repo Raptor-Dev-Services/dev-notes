@@ -254,7 +254,7 @@ El delito cibernético muestra cuánto dependemos de las redes y qué tan frági
 | Seguridad pública | 4 a 10 años | 4 a 10 años |
 | Sistema financiero | 6 meses a 4 años | 3 meses a 2 años |
 
-Pesa más quien abusa de un acceso autorizado; todo sube una mitad si la información se usa para provecho.
+Pesa más quien abusa de un acceso autorizado; todo sube hasta una mitad si la información se usa para provecho.
 
 ---
 

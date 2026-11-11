@@ -1,6 +1,6 @@
 # 44 - GDPR: Exportación de Datos y Derecho al Olvido
 
-El GDPR (Reglamento General de Protección de Datos) y leyes equivalentes (LGPD en Brasil, CCPA en California) otorgan a los usuarios y empresas derechos sobre sus datos: derecho a acceso (exportar todos sus datos) y derecho al olvido (eliminar todos sus datos). En un SaaS multi-tenant, estos derechos aplican al nivel del tenant.
+El GDPR (Reglamento General de Protección de Datos) y leyes equivalentes (LGPD en Brasil, CCPA en California) otorgan a los usuarios y empresas derechos sobre sus datos: derecho a acceso (exportar todos sus datos) y derecho al olvido (eliminar todos sus datos). El RGPD concede estos derechos a las personas físicas (los «interesados»); en un SaaS multi-tenant este tema los adapta al nivel del tenant como práctica de diseño (otra cosa es lo que pida el contrato).
 
 ---
 
@@ -9,11 +9,11 @@ El GDPR (Reglamento General de Protección de Datos) y leyes equivalentes (LGPD 
 ```
 Derecho de Acceso (Art. 15 GDPR):
   → El tenant puede solicitar una exportación de TODOS sus datos en formato legible
-  → El SaaS tiene 30 días para cumplir
+  → El plazo legal es de un mes desde la solicitud, prorrogable dos meses más (Art. 12.3 RGPD)
 
 Derecho al Olvido / Supresión (Art. 17 GDPR):
   → El tenant puede solicitar la eliminación de todos sus datos
-  → El SaaS tiene 30 días para cumplir
+  → El plazo legal es de un mes desde la solicitud, prorrogable dos meses más (Art. 12.3 RGPD)
   → Excepciones: datos requeridos por ley (facturas, registros fiscales)
 
 Portabilidad de datos (Art. 20 GDPR):

@@ -19,7 +19,7 @@ El CPF define el delito como el acto u omisión que sancionan las leyes penales.
 | Denegación de servicio contra sitios de gobierno o servicios públicos | Sabotaje (CPF, art. 140) |
 | Entrar a un sistema protegido y copiar o borrar datos | Acceso ilícito a sistemas y equipos de informática (CPF, arts. 211 bis 1 a 211 bis 7) |
 | Intervenir comunicaciones privadas | CPF, art. 177 |
-| "Ciberbullying" o acoso en redes | Según el caso: amenazas, hostigamiento sexual, violación a la intimidad sexual, lesiones psicológicas |
+| "Ciberbullying" o acoso en redes | Según el caso: amenazas, hostigamiento sexual, violación a la intimidad sexual y, solo si dejan huella material en el cuerpo, lesiones (art. 288) |
 
 El autor del material insiste en este punto por una razón práctica: si se cree que no hay ley para "el ciberbullying" o "el phishing", se pierde tiempo pidiendo leyes nuevas mientras los casos se archivan. Muchas de esas conductas están tipificadas desde hace décadas; lo que hace falta es saber vincular el término técnico con el tipo penal y documentarlo bien. También advierte que las penas de algunos tipos informáticos son bajas, así que conviene identificar **todas** las conductas que concurren en un caso: la acumulación de penas evita que el responsable salga bajo fianza y siga delinquiendo.
 
@@ -222,7 +222,7 @@ Código Penal Federal, artículo 282 (texto vigente):
 
 El juez puede exigir una caución de no ofender cuando el daño amenazado es leve o evitable, cuando la amenaza se hace con emblemas, señas o frases de doble sentido, o cuando busca impedir un hecho ilícito (art. 283). Si el amenazador cumple, las penas se acumulan (art. 284).
 
-En los delitos **contra la vida y la integridad corporal**, las lesiones incluyen las psicológicas (art. 288): lo que se envía por redes o mensajes para martirizar a una víctima deja secuelas. En homicidio (302) y feminicidio (325) los registros de comunicación suelen ser evidencia central.
+En los delitos **contra la vida y la integridad corporal**, el artículo 288 define la lesión como toda alteración en la salud y cualquier otro daño que deja huella material en el cuerpo humano, producido por una causa externa; no menciona de forma expresa el daño psicológico, de modo que lo que se envía por redes o mensajes para martirizar a una víctima se encuadra, según el caso, como amenazas u otro tipo. En homicidio (302) y feminicidio (325) los registros de comunicación suelen ser evidencia central.
 
 ## Delitos patrimoniales
 

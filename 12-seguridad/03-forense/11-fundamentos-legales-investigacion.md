@@ -12,7 +12,7 @@ La cadena de custodia y la ética del perito tienen su propia nota ([nota 12](12
 
 ## De dónde viene el marco: del código federal al nacional
 
-En el fuero federal rigió por décadas el Código Federal de Procedimientos Penales (CFPP) de 1934: sus artículos 123 y 181 obligaban a impedir que se perdieran o alteraran los indicios y a asegurar instrumentos y productos del delito, y desde 2009 sus artículos 123 Bis a 123 Quintus regularon la cadena de custodia. La reforma constitucional del 18 de junio de 2008 sustituyó el sistema mixto y escrito por uno acusatorio y oral, y el CNPP (DOF 05-03-2014) unificó las reglas para la federación y las entidades.
+En el fuero federal rigió por décadas el Código Federal de Procedimientos Penales (CFPP) de 1934: sus artículos 123 y 181 obligaban a impedir que se perdieran o alteraran los indicios y a asegurar instrumentos y productos del delito. La reforma constitucional del 18 de junio de 2008 sustituyó el sistema mixto y escrito por uno acusatorio y oral, y el CNPP (DOF 05-03-2014) unificó las reglas para la federación y las entidades.
 
 Actualización al 2026: el CFPP está abrogado. El CNPP rige en todo el país desde el 18 de junio de 2016, plazo máximo de su segundo transitorio, y su última reforma es del 28-11-2025. Los artículos 123 y 181 del CFPP solo se aplican a procedimientos iniciados antes de la transición.
 
