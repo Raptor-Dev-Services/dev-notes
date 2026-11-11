@@ -58,7 +58,7 @@ Fuente: Código Penal Federal, Título noveno, arts. 211 bis 1 a 211 bis 7 (dipu
 
 - Elegir dónde guardar la sesión y justificarlo con lo que un XSS puede y no puede hacer.
 - Reconocer los tres tipos de XSS y los *sinks* peligrosos de una aplicación React.
-- Sanitizar HTML ajeno con DOMPurify y saber cuándo no hace falta (casi siempre).
+- Sanitizar HTML ajeno con DOMPurify y saber cuándo no hace falta.
 - Explicar por qué un ataque CSRF funciona o no, según `SameSite`, la cabecera personalizada y el origen.
 - Escribir una **Content Security Policy** sin `unsafe-inline` que la aplicación aguante.
 - **Demostrar** que tu defensa funciona: robar el token y ver el bloqueo.
@@ -224,7 +224,7 @@ const html2 = renderToStaticMarkup(<p dangerouslySetInnerHTML={{ __html: ataque 
 // contiene onerror="alert(1)": React no escapa nada aquí
 ```
 
-- Interpolar con llaves (`{valor}`) **convierte el texto en texto**: `<` pasa a `&lt;`. La mayoría del XSS clásico no entra por JSX.
+- Interpolar con llaves (`{valor}`) **convierte el texto en texto**: `<` pasa a `&lt;`. El XSS por interpolar texto no ocurre en JSX; entra por los sinks de las láminas siguientes.
 - `dangerouslySetInnerHTML` es la salida de emergencia: inserta el HTML **tal cual**. El nombre es la advertencia.
 
 Fuente: documentación de React, *Common components*, `dangerouslySetInnerHTML` ("Only use `dangerouslySetInnerHTML` with trusted and sanitized data"). Prueba real en `src/shared/ui/html-seguro.test.tsx`, ejecutada con React 19.3.1. *Fragmento* simplificado de esa prueba.

@@ -36,7 +36,7 @@ Si alguien no instala en la apertura, se resuelve ahí y no a la mitad de la pr�
 - Si el servidor cambia un campo, lo ideal es que falle **tu build**, no la pantalla del usuario.
 - Hoy aprendemos a lograrlo, **y a ver cuándo TypeScript solo aparenta protegerte**.
 
-<!-- Pregunta al grupo: ¿quién ha visto "undefined" impreso en una pantalla porque el backend renombró un campo? Casi todos. Esa es la razón de la sesión. -->
+<!-- Pregunta al grupo: ¿quién ha visto "undefined" impreso en una pantalla porque el backend renombró un campo? Esa es la razón de la sesión. -->
 
 ---
 
@@ -773,7 +773,7 @@ function leer<T>(dato: unknown): T { return dato as T; }     // el as miente, de
 ```
 
 - `leer<Ticket>(...)` suena a "leer un `Ticket`" y no comprueba nada: es un `as` con otra cara.
-- Un genérico que **solo aparece en el retorno** casi siempre es esto.
+- Un genérico que **solo aparece en el retorno** equivale a un `as`.
 - La alternativa honesta recibe la prueba: `leer(dato, esquema)`.
 
 ---

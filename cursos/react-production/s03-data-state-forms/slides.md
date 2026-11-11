@@ -467,7 +467,7 @@ flowchart LR
   G --> F
 ```
 
-- Para acciones casi siempre exitosas (cerrar un ticket, marcar como leído) el usuario no espera.
+- Para acciones simples y poco propensas a fallar (cerrar un ticket, marcar como leído) el usuario no espera.
 - Costo: hay que guardar copia y deshacer. Si la acción falla seguido o es cara de deshacer, **no** la hagas optimista.
 
 Fuente: TanStack Query, *Optimistic Updates* (tanstack.com/query/latest/docs/framework/react/guides/optimistic-updates), leída el 2026-11-11.

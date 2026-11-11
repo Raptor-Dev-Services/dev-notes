@@ -38,7 +38,7 @@ Esta sesión se trabaja con un navegador real (Chromium). Quien no lo tenga inst
 - La accesibilidad tampoco se adivina: una herramienta encuentra una parte, y el resto se recorre con el teclado.
 - Hoy cada afirmación sale con la medición que la sostiene, hecha en un navegador real.
 
-<!-- Pregunta al grupo: ¿quién ha envuelto algo en useMemo "por si acaso"? Casi todos. Hoy vemos cuánto costaba y cuánto ganó. -->
+<!-- Pregunta al grupo: ¿quién ha envuelto algo en useMemo "por si acaso"? Hoy vemos cuánto costaba y cuánto ganó. -->
 
 ---
 
@@ -340,7 +340,7 @@ will not move module into another chunk.
 | Decisión | Cuándo |
 |---|---|
 | `lazy` en una ruta | la pantalla es pesada o se visita poco |
-| Dejarla en el chunk principal | es la primera pantalla de casi todos |
+| Dejarla en el chunk principal | es la pantalla de entrada (`/entrar`): se pide siempre al abrir la aplicación sin sesión |
 
 ---
 
@@ -425,7 +425,7 @@ La misma página aclara que `memo` es una optimización, no una garantía: React
 
 ## React Compiler: memoizar sin escribirlo
 
-React Compiler memoiza por ti. Según react.dev, hace innecesarios `useMemo`, `useCallback` y `React.memo` en la mayoría de los casos.
+React Compiler memoiza por ti. Según react.dev, memoiza valores y funciones automáticamente, lo que reduce la necesidad de escribir `useMemo` y `useCallback` a mano.
 
 ```ts
 // vite.compiler.config.ts (fragmento de la doc oficial, probado en el proyecto)

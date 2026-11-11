@@ -219,7 +219,7 @@ Fuente: TanStack Query, guía de pruebas (tanstack.com/query/latest/docs/framewo
 
 | Prioridad | Consulta | Cuándo |
 |---|---|---|
-| 1 | `getByRole` | casi siempre: "tu primera preferencia para casi todo" |
+| 1 | `getByRole` | primera preferencia en la guía de Testing Library |
 | 1 | `getByLabelText` | campos de formulario |
 | 2 | `getByText`, `getByPlaceholderText`, `getByDisplayValue` | cuando no hay rol |
 | 3 | `getByAltText`, `getByTitle` | semánticas |

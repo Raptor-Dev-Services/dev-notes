@@ -35,7 +35,7 @@ Bienvenida. Cada quien debe traer el proyecto de la sesión 1 funcionando (npm r
 - Una regla que **falla en el lint** dura mientras haya pipeline.
 - Hoy ponemos la regla donde ya corren todas las demás: en `npm run lint`.
 
-<!-- Pregunta al grupo: ¿alguien tiene una carpeta utils/ o helpers/ con más de 40 archivos? Casi siempre sí. Ahí vive la arquitectura que nadie decidió. -->
+<!-- Pregunta al grupo: ¿alguien tiene una carpeta utils/ o helpers/ con más de 40 archivos? Ahí vive la arquitectura que nadie decidió. -->
 
 ---
 
