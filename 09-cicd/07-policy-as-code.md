@@ -136,6 +136,8 @@ Con el mismo plan pero `cidr_blocks` acotado a `203.0.113.0/24` y `acl` en `priv
 
 > Los nombres `aws_security_group_rule` y `aws_s3_bucket_acl` y sus atributos son los del proveedor de AWS. Los proveedores cambian: para un proyecto real, revisa los atributos en la documentación de la versión que fijaste, y cubre también los recursos que el proveedor recomiende hoy para lo mismo.
 
+> **Un hueco real:** una regla con protocolo `-1` (todo el tráfico) trae los puertos en `null`, y la función `abre_ssh` de arriba no la ve. La práctica de la sesión 6 muestra ese caso, lo cubre y lo prueba.
+
 ### Probar las políticas
 
 Las políticas son código y se prueban como código. OPA corre archivos `*_test.rego` con `opa test`:
