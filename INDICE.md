@@ -346,6 +346,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 | 08 | [RAG](11-vibe-coding/08-rag.md) | Ingestión, embeddings, pgvector, recuperación con citas y "no lo sé" |
 | 09 | [MCP](11-vibe-coding/09-mcp.md) | Model Context Protocol: servidores, clientes, recursos, herramientas y autorización |
 | 10 | [Seguridad en aplicaciones con LLM](11-vibe-coding/10-seguridad-llm.md) | OWASP Top 10 para LLM, prompt injection, evaluación y monitoreo |
+| 11 | [Ética y uso responsable de la IA](11-vibe-coding/11-etica-y-uso-responsable.md) | Datos que no se comparten, revisión humana, propiedad intelectual, transparencia y política de uso de un equipo |
 
 ---
 
@@ -482,6 +483,7 @@ Cada curso de [academy.raptorcloud.dev](https://academy.raptorcloud.dev) está t
 | [Git, Docker, CI/CD y nube](cursos/devops-essentials/README.md) | 5 módulos de 2 h |
 | [Seguridad web y OWASP](cursos/web-security/README.md) | 1 módulo de 2 h |
 | [Vibe coding profesional](cursos/ai-assisted-coding/README.md) | 1 módulo de 2 h |
+| [IA, ética y criterio profesional](cursos/ai-and-society/README.md) | 6 módulos de 90 min |
 | [Ciberseguridad](cursos/cybersecurity/README.md) | 6 módulos |
 | [Introducción a la ciberseguridad](cursos/cyber-intro/README.md) | 5 unidades |
 | [Riesgos actuales en ciberseguridad](cursos/cyber-risks/README.md) | 5 unidades |

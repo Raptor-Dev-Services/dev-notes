@@ -16,6 +16,7 @@ Documentación sobre el uso profesional de herramientas AI en el ciclo de desarr
 | [08-rag.md](08-rag.md) | RAG con PostgreSQL y pgvector: fragmentar, embeddings detrás de una interfaz, recuperar, citar, decir "no lo sé" y medir |
 | [09-mcp.md](09-mcp.md) | Model Context Protocol: clientes, servidores y transportes, herramientas y recursos, autorización, elicitation y la revisión 2026-07-28 |
 | [10-seguridad-llm.md](10-seguridad-llm.md) | OWASP Top 10 para LLM, prompt injection directa e indirecta, defensas en capas, topes de gasto, evaluación continua y monitoreo |
+| [11-etica-y-uso-responsable.md](11-etica-y-uso-responsable.md) | Uso responsable de la IA en el trabajo: datos que no se comparten, revisión humana, propiedad intelectual, transparencia y política de uso de un equipo |
 
 
 ---

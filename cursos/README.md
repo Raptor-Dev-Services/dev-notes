@@ -14,6 +14,7 @@ Los cursos de [Raptor Dev Services Academy](https://academy.raptorcloud.dev) en 
 | [Git, Docker, CI/CD y nube](devops-essentials/README.md) | 5 módulos de 2 h | Quien lleva su aplicación del repositorio a producción |
 | [Seguridad web y OWASP](web-security/README.md) | 1 módulo de 2 h | Quien desarrolla aplicaciones web y debe protegerlas |
 | [Vibe coding profesional](ai-assisted-coding/README.md) | 1 módulo de 2 h | Quien programa con un asistente de IA y quiere resultados que resistan una revisión |
+| [IA, ética y criterio profesional](ai-and-society/README.md) | 6 módulos de 90 min | Quien quiere razonar sobre sesgo, transparencia, responsabilidad, privacidad y regulación de la IA, desde cualquier carrera |
 | [Ciberseguridad](cybersecurity/README.md) | 6 módulos | Quien empieza en pruebas de seguridad, con autorización y ética |
 | [Introducción a la ciberseguridad](cyber-intro/README.md) | 5 unidades | Quien empieza en ciberseguridad, desde cualquier carrera |
 | [Riesgos actuales en ciberseguridad](cyber-risks/README.md) | 5 unidades | Quien quiere reconocer y prevenir las amenazas de hoy |
