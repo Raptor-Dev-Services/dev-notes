@@ -376,11 +376,11 @@ $ kubectl exec cliente -- wget -qO- http://api.default.svc.cluster.local/
 ```console
 $ kubectl exec cliente -- cat /etc/resolv.conf
 search default.svc.cluster.local svc.cluster.local cluster.local
-nameserver 10.43.0.10
+nameserver <IP-del-DNS>
 options ndots:5
 ```
 
-La IP del servidor DNS es la de la corrida de laboratorio; la tuya puede variar.
+La IP del servidor DNS se muestra como marcador (`<IP-del-DNS>`); la tuya depende de tu clúster.
 
 ---
 
@@ -407,7 +407,7 @@ Hostname: api-8697d45896-jbd6r
 ```console
 $ kubectl get endpointslices -l kubernetes.io/service-name=api
 NAME        ADDRESSTYPE   PORTS   ENDPOINTS                         AGE
-api-qxqr8   IPv4          80      10.42.0.10,10.42.0.9,10.42.0.11   20s
+api-qxqr8   IPv4          80      <IP-pod-1>,<IP-pod-2>,<IP-pod-3>   20s
 ```
 
 - El controlador del Service revisa los pods que empatan con el `selector` y mantiene sus EndpointSlices al día.

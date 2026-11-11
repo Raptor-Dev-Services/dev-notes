@@ -377,17 +377,17 @@ En Compose, `db` es un nombre de host: la API conecta a `db:5432`. Con dos pods 
 
 ```console
 $ kubectl exec cliente -- nslookup db
-Server:		10.43.0.10
-Address:	10.43.0.10:53
+Server:		<IP-del-DNS>
+Address:	<IP-del-DNS>#53
 
 ** server can't find db.cluster.local: NXDOMAIN
 ```
 
 - El nombre de un pod **no** es un nombre de DNS.
-- Sí se puede llegar por IP (`10.42.0.12:5432` abrió), pero esa IP cambia cada vez que el pod se recrea.
+- Sí se puede llegar por IP (`<IP-del-pod>:5432` abrió), pero esa IP cambia cada vez que el pod se recrea.
 - Lo que da un nombre estable es un **Service**: sesión 2.
 
-Los nombres e IP de este ejemplo son los de una corrida de laboratorio; los tuyos serán otros.
+Los nombres de este ejemplo son de una corrida de laboratorio y las IP se sustituyeron por marcadores como `<IP-del-pod>`; los tuyos serán otros.
 
 ---
 

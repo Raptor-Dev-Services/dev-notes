@@ -101,9 +101,9 @@ Una política que selecciona los pods de `web` y solo permite entrada desde `app
 
 ```console
 $ kubectl exec frontal -- wget -qO- -T 3 http://web/
-wget: can't connect to remote host (10.43.11.86): Connection refused
+wget: can't connect to remote host (<IP-del-Service>): Connection refused
 $ kubectl get endpointslices
-web-ddqtj   IPv4   80   10.42.0.16,10.42.0.15   43s
+web-ddqtj   IPv4   80   <IP-pod-1>,<IP-pod-2>   43s
 $ kubectl describe networkpolicy solo-lo-necesario | sed -n '/Allowing/,/Policy Types/p'
   Allowing ingress traffic:
     To Port: 8080/TCP

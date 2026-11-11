@@ -495,12 +495,12 @@ networkpolicy.networking.k8s.io/db-solo-api created
 $ kubectl -n app exec api -- wget -qO- -T 3 http://db/ | head -c 30      # api: sigue pasando
 <!DOCTYPE html> <html> <head>
 $ kubectl -n app exec intruso -- wget -qO- -T 3 http://db/
-wget: can't connect to remote host (10.43.17.142): Connection refused
+wget: can't connect to remote host (<IP-del-Service>): Connection refused
 ```
 
 - Antes de la política, `api` e `intruso` llegaban a `db`.
 - Después, solo `api`. `intruso` recibe **Connection refused**.
-- La IP es de la corrida de laboratorio. El mensaje exacto (`refused` o un tiempo agotado) depende del complemento de red; lo importante es que **no conecta**.
+- La IP se muestra como marcador (`<IP-del-Service>`). El mensaje exacto (`refused` o un tiempo agotado) depende del complemento de red; lo importante es que **no conecta**.
 
 ---
 

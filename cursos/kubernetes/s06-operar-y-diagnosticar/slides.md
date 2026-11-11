@@ -351,7 +351,7 @@ $ kubectl get endpointslices -l kubernetes.io/service-name=api
 NAME        ADDRESSTYPE   PORTS     ENDPOINTS   AGE
 api-wcvxd   IPv4          <unset>   <unset>     34s
 $ kubectl exec cli -- wget -qO- -T 3 http://api/
-wget: can't connect to remote host (10.43.28.67): Connection refused
+wget: can't connect to remote host (<IP-del-Service>): Connection refused
 $ kubectl get pods --show-labels -l app=api | head -2
 api-5b57696d67-26xn4   1/1   Running   0   38s   app=api,pod-template-hash=5b57696d67
 ```
@@ -408,10 +408,10 @@ $ kubectl exec cli -- wget -qO- -T 3 http://api/ | head -c 20
 <htm
 $ kubectl apply -f deny.yaml                 # podSelector: {}  y  policyTypes: [Ingress]
 $ kubectl exec cli -- wget -qO- -T 3 http://api/
-wget: can't connect to remote host (10.43.28.67): Connection refused
+wget: can't connect to remote host (<IP-del-Service>): Connection refused
 $ kubectl get endpointslices -l kubernetes.io/service-name=api
 NAME        ADDRESSTYPE   PORTS   ENDPOINTS              AGE
-api-wcvxd   IPv4          80      10.42.0.9,10.42.0.10   103s
+api-wcvxd   IPv4          80      <IP-pod-1>,<IP-pod-2>   103s
 $ kubectl get pods
 NAME     READY   STATUS    RESTARTS   AGE
 api-...  1/1     Running   0          103s
