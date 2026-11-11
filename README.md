@@ -17,7 +17,7 @@ El listado completo de documentos está en [INDICE.md](INDICE.md) y las rutas de
 | [05-bases-de-datos](05-bases-de-datos/) | SQL, índices, transacciones, PostgreSQL avanzado, Dapper, connection strings, migraciones multi-tenant, RLS | 8 |
 | [06-frontend](06-frontend/) | React 19, Vite, Tailwind v4, design system, componentes primitivos, feature hook, capa de dominio, estado, headless, fronteras de import | 11 |
 | [07-git](07-git/) | Tooling, SemVer, config, Git Flow, tags, conventional commits, merge strategies, rollback, stash | 9 |
-| [08-contenedores](08-contenedores/) | Docker: conceptos, Dockerfile multi-stage, Compose, proyecto real, comandos | 5 |
+| [08-contenedores](08-contenedores/) | Docker y Kubernetes: conceptos, Dockerfile multi-stage, Compose, proyecto real, comandos, Kubernetes (conceptos, manifiestos, seguridad, diagnóstico) | 9 |
 | [09-cicd](09-cicd/) | Checklists DevSecOps, GitHub Actions (OIDC + AWS), Azure DevOps, Terraform | 4 |
 | [10-cloud](10-cloud/) | AWS y Azure, Linux + Nginx, terminal, Bash, systemd y diagnóstico, observabilidad, secretos, costos, seguridad web, Zero Trust, AWS en profundidad, tracing distribuido | 21 |
 | [11-vibe-coding](11-vibe-coding/) | CLAUDE.md, prompts efectivos, AI workflow, manejo de contexto, LLMOps, arquitectura agéntica, LLM en producción, RAG, MCP, seguridad de LLM | 10 |
@@ -44,7 +44,7 @@ dev-notes/
 ├── 05-bases-de-datos/       8 docs
 ├── 06-frontend/             11 docs
 ├── 07-git/                  9 docs
-├── 08-contenedores/         5 docs
+├── 08-contenedores/         9 docs
 ├── 09-cicd/                 4 docs
 ├── 10-cloud/                21 docs (01-21)
 ├── 11-vibe-coding/          10 docs

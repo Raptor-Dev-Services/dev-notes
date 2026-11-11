@@ -5,6 +5,7 @@ Los cursos de [Raptor Dev Services Academy](https://academy.raptorcloud.dev) en 
 | Curso | Formato | Para quién |
 |---|---|---|
 | [Linux para desarrolladores](linux-for-developers/README.md) | 6 sesiones de 5 h | Quien despliega en una VM y quiere entender cada comando |
+| [Kubernetes: del Compose al clúster](kubernetes/README.md) | 6 sesiones de 5 h | Quien ya despliega con Compose y necesita llevar su aplicación a un clúster, o decidir que no hace falta |
 | [Aplicaciones con LLM: de la API al agente](llm-applications/README.md) | 6 sesiones de 5 h | Quien tiene que llevar un LLM a un producto, en C# y .NET |
 | [Preparación para entrevistas técnicas](technical-interviews/README.md) | 6 módulos de 2 h | Egresados que buscan su primer trabajo o el siguiente |
 | [Dev Notes](dev-notes/README.md) | 6 sesiones de 8 h | Quien quiere fundamentos, patrones y arquitectura en .NET, sobre las notas de este repo |

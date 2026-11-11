@@ -13,6 +13,10 @@ Guía completa de Docker para este proyecto, desde conceptos hasta workflows de 
 | 3 | [Docker Compose](03-compose.md) | `image` vs `build`, ports, environment, volumes, `depends_on`, healthcheck, restart, networks, `.env`, override files, profiles, `deploy`, init containers |
 | 4 | [Proyecto Real](04-proyecto-real.md) | Dockerfile multi-stage del back y del front, docker-compose de desarrollo, override, `.env`, compose de producción, health checks, workflow diario, troubleshooting |
 | 5 | [Comandos](05-comandos.md) | `docker build`, `docker run`, `docker ps`, `docker logs`, `docker exec`, `docker inspect`, `docker stats`, `docker system prune`, todos los subcomandos de `docker compose` |
+| 6 | [Kubernetes: conceptos](06-kubernetes-conceptos.md) | Orquestador, componentes del clúster, K3s y kind, `kubectl`, pods, etiquetas, de Compose a pods, cuándo no hace falta |
+| 7 | [Kubernetes: manifiestos](07-kubernetes-manifiestos.md) | Deployment, actualización gradual y regreso, probes, Service, Ingress |
+| 8 | [Kubernetes: seguridad](08-kubernetes-seguridad.md) | RBAC, Pod Security, políticas como código, NetworkPolicy |
+| 9 | [Kubernetes: diagnóstico](09-kubernetes-diagnostico.md) | Método de diagnóstico, cinco fallas, versiones, Kustomize y Helm, runbook |
 
 ---
 
