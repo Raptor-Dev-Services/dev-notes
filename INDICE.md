@@ -131,7 +131,7 @@ Para rutas de aprendizaje ver [`roadmap/`](roadmap/).
 
 ## 04 - Backend ASP.NET Core (48 docs)
 
-### Core patterns (8)
+### Core patterns (9)
 
 | # | Doc | Tema |
 |---|-----|------|
@@ -536,6 +536,7 @@ Cada curso de [academy.raptorcloud.dev](https://academy.raptorcloud.dev) está t
 | [Seguridad de APIs: atacar y defender](cursos/api-security/README.md) | 6 módulos de 2 h |
 | [Seguridad en la nube y Zero Trust](cursos/cloud-security/README.md) | 6 módulos de 2 h |
 | [Infraestructura como código](cursos/infrastructure-as-code/README.md) | 6 sesiones de 5 h |
+| [.NET de alto rendimiento](cursos/dotnet-performance/README.md) | 6 módulos de 2 h |
 
 ---
 
