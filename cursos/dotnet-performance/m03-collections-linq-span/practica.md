@@ -9,7 +9,7 @@
 
 Reescribir un procesamiento de líneas de texto con `Span<T>`, medirlo contra la versión con `Split` y **decir qué parte de la diferencia es firme y cuál es ruido**. En el camino verás fallar una comparación mal hecha.
 
-El código de partida es [`referencia/Bench/M3_Colecciones.cs`](../referencia/Bench/M3_Colecciones.cs), clase `ParsearLineas`. Si lo corres en una máquina distinta, **los tiempos cambiarán**; los bytes asignados deben coincidir con los de esta guía.
+El código de partida es [`referencia/Bench/M3_Colecciones.cs`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/Bench/M3_Colecciones.cs), clase `ParsearLineas`. Si lo corres en una máquina distinta, **los tiempos cambiarán**; los bytes asignados deben coincidir con los de esta guía.
 
 ---
 

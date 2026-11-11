@@ -21,7 +21,7 @@
 
 Lecturas: [19 - Performance](../../../04-backend/19-performance.md) y [20 - Memoria y GC](../../../04-backend/20-memoria-gc.md)
 
-Esta clase continúa el módulo 1 (medir) y el 2 (asignaciones y GC). Todo lo que aquí se afirma de rendimiento sale de un benchmark del [código de referencia](../referencia/Bench/M3_Colecciones.cs) o de la documentación oficial de Microsoft.
+Esta clase continúa el módulo 1 (medir) y el 2 (asignaciones y GC). Todo lo que aquí se afirma de rendimiento sale de un benchmark del [código de referencia](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/Bench/M3_Colecciones.cs) o de la documentación oficial de Microsoft.
 
 ---
 
@@ -66,7 +66,7 @@ Eso es lo que dice la teoría (nota Big O en *Effective .NET Memory Management*,
 
 Mil consultas por operación (la mitad de los valores sí existe); mismas tres estructuras con los mismos datos.
 
-```csharp {1-8|10-14|16-20|*}
+```csharp {1-8|10-14|16-19|*}
 [GlobalSetup]
 public void Preparar()
 {
@@ -88,7 +88,7 @@ public int ListContains()
 // _conjunto.Contains(q)  y  Array.BinarySearch(_ordenado, q) >= 0
 ```
 
-Código completo en [`referencia/Bench/M3_Colecciones.cs`](../referencia/Bench/M3_Colecciones.cs), clase `Busqueda`.
+Código completo en [`referencia/Bench/M3_Colecciones.cs`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/Bench/M3_Colecciones.cs), clase `Busqueda`.
 
 ---
 
@@ -256,7 +256,7 @@ foreach (var u in usuarios) if (u.Activo) activos.Add(u.Correo);
 
 Procesar un archivo de texto con líneas `id,cliente,monto,fecha`. La versión de siempre:
 
-```csharp {1-4|5-7|*}
+```csharp {1-4|5-6|*}
 foreach (string linea in _lineas)
 {
     string[] campos = linea.Split(',');             // un arreglo y una string por campo
@@ -273,7 +273,7 @@ foreach (string linea in _lineas)
 
 La documentación de Microsoft ([Memory-related and span types](https://learn.microsoft.com/en-us/dotnet/standard/memory-and-spans/)) lo describe así: estos tipos permiten crear algoritmos que **evitan copiar memoria o asignar en el heap administrado**; crear un span (con `Slice`, `AsSpan()` o los constructores) no duplica el búfer, solo actualiza la referencia y el desplazamiento de la "vista".
 
-```csharp {1|2-3|4-6|7-9|*}
+```csharp {1|2-3|4-6|7-8|*}
 ReadOnlySpan<char> resto = linea;                    // vista de la string, sin copiar
 int coma = resto.IndexOf(',');
 int id = int.Parse(resto[..coma], CultureInfo.InvariantCulture);   // parsea la porción
@@ -478,7 +478,7 @@ Se mide: un arreglo de 10 000 puntos, llenado en un ciclo y sumado.
 
 - Una colección genérica (`List<int>`) evita el boxing; una no genérica o `List<object>` lo provoca.
 - Mutar un `struct` que está en una lista es una trampa clásica: la lista devuelve una **copia**.
-- Un `record struct` o un `readonly struct` ayudan a que el diseño sea inmutable (lecturas de C# del curso: [Dev Notes, sesión 3](../../dev-notes/README.md)).
+- Un `record struct` o un `readonly struct` ayudan a que el diseño sea inmutable (lecturas de C# del curso: [Dev Notes, sesión 3](https://academy.raptorcloud.dev/dev-notes/)).
 
 ---
 

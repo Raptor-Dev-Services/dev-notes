@@ -18,7 +18,7 @@ Todo corre en un contenedor desechable con el SDK de .NET 10; no se instala nada
 
 ## Antes de empezar
 
-Necesitas Docker y el código de [`referencia/`](../referencia/README.md) en una carpeta tuya:
+Necesitas Docker y el código de [`referencia/`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/README.md) en una carpeta tuya:
 
 ```bash
 cp -r cursos/dotnet-performance/referencia ~/perf-m1

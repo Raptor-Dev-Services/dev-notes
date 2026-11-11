@@ -11,9 +11,9 @@ Encontrar una **fuga de memoria sembrada** en la API de ejemplo con `dotnet-coun
 
 > **Solo la API de ejemplo, en tu máquina.** Nunca apuntes estas herramientas ni la carga a un servicio de producción o ajeno. El volcado contiene la memoria del proceso: se **borra** al terminar.
 
-El código es [`referencia/ApiEjemplo/Program.cs`](../referencia/ApiEjemplo/Program.cs) (endpoint `/pedido/{id}`, variable `CACHE`) y [`referencia/Carga/Program.cs`](../referencia/Carga/Program.cs). Tus cifras serán otras; lo que debe repetirse es la **forma**: el heap sube con la carga y no baja al pararla.
+El código es [`referencia/ApiEjemplo/Program.cs`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/ApiEjemplo/Program.cs) (endpoint `/pedido/{id}`, variable `CACHE`) y [`referencia/Carga/Program.cs`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/Carga/Program.cs). Tus cifras serán otras; lo que debe repetirse es la **forma**: el heap sube con la carga y no baja al pararla.
 
-Entorno de las salidas de esta guía: .NET 10 (SDK 10.0.403, runtime 10.0.14), `dotnet-counters`, `dotnet-dump` y `dotnet-trace` 10.0.750501, i5-11500, contenedor con 4 CPU, servidor compartido y con carga. Salidas completas en [`referencia/mediciones/`](../referencia/mediciones/README.md).
+Entorno de las salidas de esta guía: .NET 10 (SDK 10.0.403, runtime 10.0.14), `dotnet-counters`, `dotnet-dump` y `dotnet-trace` 10.0.750501, i5-11500, contenedor con 4 CPU, servidor compartido y con carga. Salidas completas en [`referencia/mediciones/`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/mediciones/README.md).
 
 ---
 

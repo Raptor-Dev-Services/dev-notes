@@ -13,7 +13,7 @@ Levantar la API de ejemplo con un servidor "chico" (2 procesadores), medirla baj
 
 Los tiempos que verás **serán distintos** a los de esta guía. Lo que debe coincidir es el comportamiento: el bloqueante no completa sus peticiones; el asíncrono sí.
 
-Código: [`referencia/ApiEjemplo`](../referencia/ApiEjemplo/Program.cs) y [`referencia/Carga`](../referencia/Carga/Program.cs).
+Código: [`referencia/ApiEjemplo`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/ApiEjemplo/Program.cs) y [`referencia/Carga`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/Carga/Program.cs).
 
 ---
 

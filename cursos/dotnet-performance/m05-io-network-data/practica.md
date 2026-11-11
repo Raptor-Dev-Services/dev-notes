@@ -11,7 +11,7 @@ Medir la **misma consulta** con Dapper, EF Core con `AsNoTracking` y EF Core con
 
 > **Todo es local.** La base es SQLite en un archivo y las peticiones HTTP van a la API de ejemplo en tu máquina. Nunca apuntes esta práctica a un servicio de producción ni a uno ajeno.
 
-El código es [`referencia/Bench/M5_Datos.cs`](../referencia/Bench/M5_Datos.cs) y [`referencia/Demos/Program.cs`](../referencia/Demos/Program.cs). Los tiempos de tu máquina serán otros; **los bytes asignados deben parecerse** a los de esta guía.
+El código es [`referencia/Bench/M5_Datos.cs`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/Bench/M5_Datos.cs) y [`referencia/Demos/Program.cs`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/Demos/Program.cs). Los tiempos de tu máquina serán otros; **los bytes asignados deben parecerse** a los de esta guía.
 
 Entorno de las salidas de esta guía: .NET 10 (SDK 10.0.403, runtime 10.0.14), BenchmarkDotNet 0.15.8, trabajo `ShortRun`, i5-11500, contenedor con 4 CPU, servidor compartido y con carga.
 

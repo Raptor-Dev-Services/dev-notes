@@ -21,7 +21,7 @@
 
 Lecturas: [05 - Índices](../../../05-bases-de-datos/02-indices.md), [05 - Dapper queries](../../../05-bases-de-datos/05-dapper-queries.md) y [13 - HttpClient](../../../04-backend/13-http-client.md)
 
-Esta clase continúa [Backend con .NET](../../dotnet-backend/README.md): ahí se construye el acceso a datos; aquí se **mide**. No se repite cómo se configura EF Core ni el patrón repositorio.
+Esta clase continúa [Backend con .NET](https://academy.raptorcloud.dev/dotnet-backend/): ahí se construye el acceso a datos; aquí se **mide**. No se repite cómo se configura EF Core ni el patrón repositorio.
 
 ---
 
@@ -30,7 +30,7 @@ Esta clase continúa [Backend con .NET](../../dotnet-backend/README.md): ahí se
 - Entorno de **todas** las mediciones de BenchmarkDotNet: .NET 10 (SDK 10.0.403, runtime 10.0.14), BenchmarkDotNet 0.15.8, trabajo `ShortRun` (1 lanzamiento, 3 iteraciones), CPU i5-11500, contenedor con 4 CPU, en un servidor compartido y con carga.
 - **Los tiempos son ruidosos.** Un tiempo se enuncia como "en esa corrida". Lo firme es la columna `Allocated`.
 - **Todo es local.** Los archivos están en el disco del contenedor y la base es **SQLite en un archivo, dentro del mismo proceso**: no hay red de por medio. Eso cambia qué se puede concluir, y la clase lo marca cada vez.
-- El código está en [`referencia/Bench/M5_Datos.cs`](../referencia/Bench/M5_Datos.cs) y [`referencia/Demos/Program.cs`](../referencia/Demos/Program.cs).
+- El código está en [`referencia/Bench/M5_Datos.cs`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/Bench/M5_Datos.cs) y [`referencia/Demos/Program.cs`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/Demos/Program.cs).
 
 > Nunca corras estas pruebas contra un servicio de producción ni contra uno ajeno. Todo el módulo se hace en tu máquina.
 
@@ -153,7 +153,7 @@ Fuente: [HttpClient guidelines for .NET](https://learn.microsoft.com/en-us/dotne
 
 `Demos http-nuevo` y `Demos http-compartido` hacen 3 000 peticiones a `/ping` de la **API de ejemplo local** y cuentan los sockets en estado `TIME_WAIT` leyendo `/proc/net/tcp` (Linux), antes y después:
 
-```bash {1-2|4-5}
+```bash {1-2|4}
 dotnet run -c Release --project Demos -- http-compartido http://127.0.0.1:5080/ping 3000
 dotnet run -c Release --project Demos -- http-nuevo http://127.0.0.1:5080/ping 3000
 

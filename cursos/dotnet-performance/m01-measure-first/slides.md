@@ -26,7 +26,7 @@ Lecturas: [19 - Performance](../../../04-backend/19-performance.md) y [47 - Benc
 
 ## Cómo se sostienen las cifras de este curso
 
-Cada cifra propia sale de una medición hecha para el curso y el código está en [`referencia/`](../referencia/README.md):
+Cada cifra propia sale de una medición hecha para el curso y el código está en [`referencia/`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/README.md):
 
 - .NET 10 (SDK 10.0.403, runtime 10.0.14), BenchmarkDotNet 0.15.8.
 - Procesador Intel Core i5-11500 de 12 hilos lógicos, dentro de un contenedor limitado a 4 CPU.
@@ -160,7 +160,7 @@ for (int i = 1; i <= 8; i++)
 }
 ```
 
-Es el demo `jit` de [`referencia/Demos`](../referencia/Demos/Program.cs). Lo corres tú en la práctica.
+Es el demo `jit` de [`referencia/Demos`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/Demos/Program.cs). Lo corres tú en la práctica.
 
 ---
 
@@ -281,7 +281,7 @@ public class ContarPalabras
 }
 ```
 
-Fragmento resumido de [`M1_Medir.cs`](../referencia/Bench/M1_Medir.cs) (el archivo completo se compiló y corrió).
+Fragmento resumido de [`M1_Medir.cs`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/Bench/M1_Medir.cs) (el archivo completo se compiló y corrió).
 
 ---
 
@@ -566,4 +566,4 @@ Cada parte de esa frase invalida la medición. Corregida:
 - *High-Performance Programming in C# and .NET* (Alls, 2022), cap. 5, Application Profiling and Tracing. Está escrito para .NET 6: cada técnica del curso se verificó en .NET 10.
 - *Tools and Skills for .NET 10* (Price, 2025), cap. 4, Debugging and Memory Troubleshooting, y cap. 13, Benchmarking Performance, Load, and Stress Testing.
 
-**Mediciones propias:** [`referencia/`](../referencia/README.md), proyectos `Bench` y `Demos`.
+**Mediciones propias:** [`referencia/`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/README.md), proyectos `Bench` y `Demos`.

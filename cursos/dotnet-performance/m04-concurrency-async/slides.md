@@ -21,14 +21,14 @@
 
 Lecturas: [08 - async/await](../../../02-programacion/csharp/08-async.md)
 
-Esta clase continúa el módulo 1 (medir), el 2 (memoria) y el 3 (Span y colecciones). Todo lo que se afirma de rendimiento sale de una medición del [código de referencia](../referencia/README.md) o de la documentación oficial de Microsoft, y lleva su fuente.
+Esta clase continúa el módulo 1 (medir), el 2 (memoria) y el 3 (Span y colecciones). Todo lo que se afirma de rendimiento sale de una medición del [código de referencia](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/README.md) o de la documentación oficial de Microsoft, y lleva su fuente.
 
 ---
 
 ## Cómo se leen las cifras de esta clase
 
 - Entorno de **todas** las mediciones: .NET 10 (SDK 10.0.403, runtime 10.0.14), BenchmarkDotNet 0.15.8, trabajo `ShortRun`, CPU i5-11500, contenedor con 4 CPU, en un servidor compartido y con carga.
-- Las pruebas de carga usan el [cliente `Carga`](../referencia/Carga/Program.cs) contra la [API de ejemplo](../referencia/ApiEjemplo/Program.cs), **ambos en el mismo contenedor**, con `DOTNET_PROCESSOR_COUNT=2` para la API (así se reproduce un servidor chico).
+- Las pruebas de carga usan el [cliente `Carga`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/Carga/Program.cs) contra la [API de ejemplo](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/ApiEjemplo/Program.cs), **ambos en el mismo contenedor**, con `DOTNET_PROCESSOR_COUNT=2` para la API (así se reproduce un servidor chico).
 - **Los tiempos son ruidosos.** Dos corridas idénticas dieron 394 y 1 211 peticiones por segundo. Por eso aquí **no hay "X veces más rápido"** entre esas corridas: hay conclusiones cualitativas que se repitieron en todas las corridas.
 - Las asignaciones (`Allocated`) no dependen de la carga.
 
@@ -120,7 +120,7 @@ app.MapGet("/diag", () =>
 });
 ```
 
-Con `DOTNET_PROCESSOR_COUNT=2`, el proceso ve 2 procesadores y el mínimo de hilos del pool resultó 2 en las mediciones (`"minimoDeHilos":2`, [`api-E.log`](../referencia/mediciones/api-E.log)).
+Con `DOTNET_PROCESSOR_COUNT=2`, el proceso ve 2 procesadores y el mínimo de hilos del pool resultó 2 en las mediciones (`"minimoDeHilos":2`, [`api-E.log`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/mediciones/api-E.log)).
 
 ---
 
@@ -192,7 +192,7 @@ Dos corridas, cada una con la API recién arrancada y con calentamiento:
 - Con 100 clientes, **las 100 peticiones agotaron el tiempo límite de 30 s del cliente**: ninguna terminó bien.
 - El pool pasó de 2 hilos (el mínimo) a **43 o 44**. Fue creciendo, pero no a la velocidad que la carga necesitaba.
 
-Una medición anterior, sin calentamiento ni tiempo límite estricto, mostró lo mismo: las 100 peticiones tardaron unos 22.7 s cada una y el pool pasó de 3 a 43 hilos ([`api-C.log`](../referencia/mediciones/api-C.log)).
+Una medición anterior, sin calentamiento ni tiempo límite estricto, mostró lo mismo: las 100 peticiones tardaron unos 22.7 s cada una y el pool pasó de 3 a 43 hilos ([`api-C.log`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/mediciones/api-C.log)).
 
 ---
 
@@ -282,7 +282,7 @@ La documentación de TAP distingue las dos formas de implementar un método así
 
 ## Paralelizar tiene costo
 
-Se contó cuántos primos hay hasta un límite, de tres formas: secuencial, PLINQ (`AsParallel`) y `Parallel.For` con acumuladores locales ([`M4_Concurrencia.cs`](../referencia/Bench/M4_Concurrencia.cs)). Entorno: 4 CPU del contenedor, servidor cargado.
+Se contó cuántos primos hay hasta un límite, de tres formas: secuencial, PLINQ (`AsParallel`) y `Parallel.For` con acumuladores locales ([`M4_Concurrencia.cs`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/Bench/M4_Concurrencia.cs)). Entorno: 4 CPU del contenedor, servidor cargado.
 
 | Límite | Secuencial | PLINQ | Parallel.For |
 |---|---|---|---|
@@ -315,7 +315,7 @@ No se midió con 4 núcleos libres ni con tamaños mayores: no se afirma qué pa
 
 ## ValueTask: cuándo sí
 
-Un método `async` que devuelve `Task<int>` devuelve un objeto en el heap. Se midieron 1 000 llamadas que terminan de forma síncrona (los valores devueltos se eligieron grandes a propósito, para que el resultado no sea un caso trivial) ([`TaskVsValueTask`](../referencia/Bench/M4_Concurrencia.cs)):
+Un método `async` que devuelve `Task<int>` devuelve un objeto en el heap. Se midieron 1 000 llamadas que terminan de forma síncrona (los valores devueltos se eligieron grandes a propósito, para que el resultado no sea un caso trivial) ([`TaskVsValueTask`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/Bench/M4_Concurrencia.cs)):
 
 | Método | Mean | Allocated |
 |---|---|---|
@@ -360,7 +360,7 @@ Parallel.For(0, hilos, _ => { for (int i = 0; i < vueltas; i++) {
 Parallel.For(0, hilos, _ => { for (int i = 0; i < vueltas; i++) Interlocked.Increment(ref conInterlocked); });
 ```
 
-Salida medida ([`Demos race`](../referencia/Demos/Program.cs), [`demos2.txt`](../referencia/mediciones/demos2.txt)):
+Salida medida ([`Demos race`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/Demos/Program.cs), [`demos2.txt`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/mediciones/demos2.txt)):
 
 ```
 esperado: 4,000,000
@@ -374,7 +374,7 @@ Se **perdieron más de 1.4 millones de actualizaciones**. Una nota honesta: en l
 
 ## Proteger el estado compartido: lock o Interlocked
 
-Para un contador simple, 4 hilos y 250 000 vueltas cada uno ([`Sincronizacion`](../referencia/Bench/M4_Concurrencia.cs)):
+Para un contador simple, 4 hilos y 250 000 vueltas cada uno ([`Sincronizacion`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/Bench/M4_Concurrencia.cs)):
 
 | Método | Mean |
 |---|---|
@@ -466,4 +466,4 @@ Material: [práctica](practica.md) y [tarea](tarea.md).
 - *Systems Programming with C# and .NET* (Vroegop, 2024), cap. 4 (hilos).
 - *Tools and Skills for .NET 10* (Price, 2025), cap. 9 (Multitasking and Concurrency).
 
-**Mediciones propias:** [código de referencia](../referencia/README.md), .NET 10 (SDK 10.0.403, runtime 10.0.14).
+**Mediciones propias:** [código de referencia](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/README.md), .NET 10 (SDK 10.0.403, runtime 10.0.14).

@@ -30,7 +30,7 @@ Esta clase continúa los módulos 1 y 2: ahí se mide con BenchmarkDotNet y se a
 
 - Entorno: .NET 10 (SDK 10.0.403, runtime 10.0.14), `dotnet-counters`, `dotnet-dump` y `dotnet-trace` versión 10.0.750501, Intel Core i5-11500, **un contenedor de Docker con 4 CPU**, en un servidor compartido y con carga, a noviembre de 2026.
 - No hay BenchmarkDotNet aquí: son **corridas únicas** de la API de ejemplo con carga local de 45 segundos. Los números son de esa corrida; lo que importa es la **forma** (sube y no baja), no la cifra exacta.
-- Todo está en [`referencia/mediciones/`](../referencia/mediciones/README.md) y el código en [`referencia/ApiEjemplo/`](../referencia/ApiEjemplo/Program.cs) y [`referencia/Carga/`](../referencia/Carga/Program.cs).
+- Todo está en [`referencia/mediciones/`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/mediciones/README.md) y el código en [`referencia/ApiEjemplo/`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/ApiEjemplo/Program.cs) y [`referencia/Carga/`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/Carga/Program.cs).
 
 > **Solo la API de ejemplo, en tu máquina.** Nunca apuntes estas herramientas ni la carga a un servicio ajeno. En un servicio propio, pide permiso: un volcado contiene toda la memoria del proceso y escribirlo cuesta recursos (la documentación de `dotnet-dump` advierte del consumo de memoria).
 
@@ -76,7 +76,7 @@ Fuentes: documentación de las tres herramientas en learn.microsoft.com (en Refe
 
 ## La trampa de empezar por el volcado
 
-Un volcado completo es lo más detallado y lo más caro. En la medición de este módulo el volcado de una API que tenía unos 240 MB en el heap pesó **553 492 480 bytes** (`ls -la` en [`tools-D.log`](../referencia/mediciones/tools-D.log)).
+Un volcado completo es lo más detallado y lo más caro. En la medición de este módulo el volcado de una API que tenía unos 240 MB en el heap pesó **553 492 480 bytes** (`ls -la` en [`tools-D.log`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/mediciones/tools-D.log)).
 
 - Antes de tomarlo, los **contadores** dicen si de verdad hay un problema y de qué tipo.
 - Si el problema es tiempo y no memoria, un volcado no ayuda: se necesita una traza.
@@ -113,7 +113,7 @@ Condiciones que la documentación pide en Linux:
 
 ## monitor y collect
 
-```bash {1-2|4-8|*}
+```bash {1-2|4-7|*}
 # Ver en vivo (se refresca cada 3 s)
 dotnet-counters monitor -p <PID> --refresh-interval 3 --counters System.Runtime
 
@@ -198,7 +198,7 @@ La API de ejemplo tiene `/pedido/{id}`: arma un arreglo de 20 000 bytes por cada
 | 15:05:28 | 9 613 | 221.6 MB | 313.0 MB |
 | 15:05:33 | 10 269 | 221.6 MB | 330.0 MB |
 
-Fuente: [`resumen-D-contadores.txt`](../referencia/mediciones/resumen-D-contadores.txt) (suma de gen0, gen1, gen2, LOH y POH de `dotnet.gc.last_collection.heap.size`).
+Fuente: [`resumen-D-contadores.txt`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/mediciones/resumen-D-contadores.txt) (suma de gen0, gen1, gen2, LOH y POH de `dotnet.gc.last_collection.heap.size`).
 
 ---
 
@@ -241,7 +241,7 @@ Con `CACHE=acotada` el endpoint usa `IMemoryCache` con límite de 100 entradas y
 | Working set | 147 a 330 MB | ~103 a 106 MB, plano |
 | gen0 / gen1 / gen2 | 7 / 2 / 1 | 30 / 27 / 1 |
 
-Fuentes: [`tools-D.log`](../referencia/mediciones/tools-D.log) y [`resumen-D-contadores.txt`](../referencia/mediciones/resumen-D-contadores.txt). La versión acotada recolecta más veces gen0 y gen1 porque sus objetos mueren rápido; ese es el costo normal de no retener.
+Fuentes: [`tools-D.log`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/mediciones/tools-D.log) y [`resumen-D-contadores.txt`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/mediciones/resumen-D-contadores.txt). La versión acotada recolecta más veces gen0 y gen1 porque sus objetos mueren rápido; ese es el costo normal de no retener.
 
 ---
 
@@ -341,7 +341,7 @@ Salida medida (recortada):
 -> System.Byte[]
 ```
 
-Fuente: [`tools-D3.log`](../referencia/mediciones/tools-D3.log).
+Fuente: [`tools-D3.log`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/mediciones/tools-D3.log).
 
 ---
 

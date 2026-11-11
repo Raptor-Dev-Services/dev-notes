@@ -29,7 +29,7 @@ Este módulo sigue al 1 (medir): aquí se usa la columna `Allocated`, las column
 
 - Entorno de **todas** las mediciones: .NET 10 (SDK 10.0.403, runtime 10.0.14), BenchmarkDotNet 0.15.8, trabajo `ShortRun`, CPU i5-11500, contenedor con 4 CPU, en un servidor compartido y con carga, modo de GC de estación de trabajo (workstation) concurrente.
 - **Los tiempos son ruidosos.** Aquí las conclusiones se apoyan en **bytes asignados**, que no dependen de la carga.
-- Las demos de consola y el endpoint salen del [código de referencia](../referencia/README.md).
+- Las demos de consola y el endpoint salen del [código de referencia](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/README.md).
 - Lo que no se midió se cita de la documentación oficial de Microsoft, con su dirección en la última lámina.
 
 > A noviembre de 2026. Los umbrales y el comportamiento del GC pueden cambiar entre versiones: la documentación lo dice así.
@@ -125,7 +125,7 @@ flowchart LR
 
 ## Verlo en vivo: las generaciones
 
-Demo de [`Demos/Program.cs`](../referencia/Demos/Program.cs), opción `gc` (solo para enseñar; **no** se llama a `GC.Collect` en código de producción):
+Demo de [`Demos/Program.cs`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/Demos/Program.cs), opción `gc` (solo para enseñar; **no** se llama a `GC.Collect` en código de producción):
 
 ```csharp
 var viejo = new byte[1_000];
@@ -188,7 +188,7 @@ La documentación enumera los costos de los objetos grandes: asignarlos es caro 
 
 ## Medir el umbral en Linux
 
-Demo `loh` de [`Demos/Program.cs`](../referencia/Demos/Program.cs): busca el tamaño en que un `byte[]` deja de nacer en gen 0.
+Demo `loh` de [`Demos/Program.cs`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/Demos/Program.cs): busca el tamaño en que un `byte[]` deja de nacer en gen 0.
 
 ```
 byte[84975] nace en gen0; byte[84976] nace directo en gen2 (LOH)
@@ -204,7 +204,7 @@ double[10600]: generacion 0  |  double[10700]: generacion 2
 
 ## El LOH en una tabla de BenchmarkDotNet
 
-Benchmark `Buffers` ([`M3_Colecciones.cs`](../referencia/Bench/M3_Colecciones.cs)): crear `new byte[n]` en cada operación contra rentarlo de `ArrayPool<byte>.Shared`.
+Benchmark `Buffers` ([`M3_Colecciones.cs`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/Bench/M3_Colecciones.cs)): crear `new byte[n]` en cada operación contra rentarlo de `ArrayPool<byte>.Shared`.
 
 | Método | Tamaño | Gen0 | Gen1 | Gen2 | Allocated |
 |---|---|---:|---:|---:|---:|
@@ -270,7 +270,7 @@ Lo medido: **la misma línea de C# asignó 1.3 MB o 128.0 MB según si el arregl
 
 ## 1. Strings: concatenar en un ciclo
 
-El `string` es inmutable: cada `+=` crea una cadena nueva y copia la anterior. El trabajo crece de forma **cuadrática** con el número de piezas. Benchmark `UnirTextos` ([`M1_Medir.cs`](../referencia/Bench/M1_Medir.cs)), N piezas:
+El `string` es inmutable: cada `+=` crea una cadena nueva y copia la anterior. El trabajo crece de forma **cuadrática** con el número de piezas. Benchmark `UnirTextos` ([`M1_Medir.cs`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/Bench/M1_Medir.cs)), N piezas:
 
 | Método | N | Allocated | Gen0 |
 |---|---:|---:|---:|
@@ -287,7 +287,7 @@ De 10 a 1000 piezas (100 veces más), la concatenación pasó de 1816 B a 17.6 m
 
 ## 2. El reporte CSV: lo que pasa en un endpoint
 
-Benchmark `ReporteCsv` ([`M2_Memoria.cs`](../referencia/Bench/M2_Memoria.cs)): un CSV con N pedidos, tres versiones.
+Benchmark `ReporteCsv` ([`M2_Memoria.cs`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/Bench/M2_Memoria.cs)): un CSV con N pedidos, tres versiones.
 
 | Método | Pedidos | Allocated | Gen0 | Gen1 |
 |---|---:|---:|---:|---:|
@@ -306,7 +306,7 @@ Benchmark `ReporteCsv` ([`M2_Memoria.cs`](../referencia/Bench/M2_Memoria.cs)): u
 
 ## El mismo cambio, visto desde el endpoint
 
-La API de ejemplo ([`ApiEjemplo/Program.cs`](../referencia/ApiEjemplo/Program.cs)) expone `GET /reporte?pedidos=N&version=V` y devuelve la cabecera `X-Bytes-Asignados`, calculada con `GC.GetAllocatedBytesForCurrentThread` dentro del endpoint (el código es síncrono, así que mide un solo hilo con fiabilidad).
+La API de ejemplo ([`ApiEjemplo/Program.cs`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/ApiEjemplo/Program.cs)) expone `GET /reporte?pedidos=N&version=V` y devuelve la cabecera `X-Bytes-Asignados`, calculada con `GC.GetAllocatedBytesForCurrentThread` dentro del endpoint (el código es síncrono, así que mide un solo hilo con fiabilidad).
 
 | Versión | Pedidos | `X-Bytes-Asignados` |
 |---|---:|---:|
@@ -323,7 +323,7 @@ Con 1000 pedidos, de 23.06 MB a 150.8 KB por petición. La versión 2 llega a **
 
 ## 3. Boxing y objetos por todos lados
 
-*Boxing* es meter un tipo por valor en un objeto (`object o = 5;`). Cada boxing asigna. Benchmark `BoxingYValores` ([`M2_Memoria.cs`](../referencia/Bench/M2_Memoria.cs)), 10,000 elementos:
+*Boxing* es meter un tipo por valor en un objeto (`object o = 5;`). Cada boxing asigna. Benchmark `BoxingYValores` ([`M2_Memoria.cs`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/Bench/M2_Memoria.cs)), 10,000 elementos:
 
 | Método | Allocated |
 |---|---:|
@@ -411,4 +411,4 @@ Tarea: [`tarea.md`](tarea.md). Glosario: [`glosario.md`](glosario.md).
 - BenchmarkDotNet, *Diagnosers*: https://benchmarkdotnet.org/articles/configs/diagnosers.html
 - *Effective .NET Memory Management* (Williams, 2024), caps. 1 a 4.
 - *High-Performance Programming in C# and .NET* (Alls, 2022), cap. 4.
-- Mediciones propias: [`referencia/`](../referencia/README.md), .NET 10, a noviembre de 2026.
+- Mediciones propias: [`referencia/`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/README.md), .NET 10, a noviembre de 2026.

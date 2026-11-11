@@ -9,7 +9,7 @@
 
 Medir las asignaciones de un endpoint, **bajarlas a la mitad o menos** con un cambio que puedas explicar, y demostrar con la medición (no con la intuición) que lo lograste. En el camino verás fallar dos cosas: la concatenación con `+=` y una demo de asignaciones que el JIT "arregla" por ti.
 
-El código está en [`referencia/`](../referencia/README.md): la API de ejemplo ([`ApiEjemplo/Program.cs`](../referencia/ApiEjemplo/Program.cs)), las demos ([`Demos/Program.cs`](../referencia/Demos/Program.cs)) y el benchmark [`Bench/M2_Memoria.cs`](../referencia/Bench/M2_Memoria.cs). Los resultados de esta guía se midieron con .NET 10 (SDK 10.0.403, runtime 10.0.14), BenchmarkDotNet 0.15.8, trabajo `ShortRun`, i5-11500, contenedor con 4 CPU, en un servidor compartido y con carga. **Los tiempos cambian en tu máquina; los bytes asignados no deberían.**
+El código está en [`referencia/`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/README.md): la API de ejemplo ([`ApiEjemplo/Program.cs`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/ApiEjemplo/Program.cs)), las demos ([`Demos/Program.cs`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/Demos/Program.cs)) y el benchmark [`Bench/M2_Memoria.cs`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/Bench/M2_Memoria.cs). Los resultados de esta guía se midieron con .NET 10 (SDK 10.0.403, runtime 10.0.14), BenchmarkDotNet 0.15.8, trabajo `ShortRun`, i5-11500, contenedor con 4 CPU, en un servidor compartido y con carga. **Los tiempos cambian en tu máquina; los bytes asignados no deberían.**
 
 > Corre la API **solo en tu máquina**, en local. Nunca apuntes una prueba a un servicio real.
 
@@ -122,7 +122,7 @@ Esa cabecera es `GC.GetAllocatedBytesForCurrentThread` antes y después del trab
 
 ## Paso 5 - Encuentra de dónde salen los bytes
 
-Abre el endpoint en [`ApiEjemplo/Program.cs`](../referencia/ApiEjemplo/Program.cs), rama `version == 1`. Sin mirar la rama 2, contesta por escrito:
+Abre el endpoint en [`ApiEjemplo/Program.cs`](https://github.com/Raptor-Dev-Services/dev-notes/blob/main/cursos/dotnet-performance/referencia/ApiEjemplo/Program.cs), rama `version == 1`. Sin mirar la rama 2, contesta por escrito:
 
 1. ¿Cuántas cadenas nuevas se crean por cada pedido?
 2. ¿Qué crece más rápido, el texto final o la basura intermedia? (Pista: compara los 23 MB con el tamaño de un CSV de 1000 líneas cortas.)
