@@ -20,6 +20,7 @@ Los cursos de [Raptor Dev Services Academy](https://academy.raptorcloud.dev) en 
 | [Informática forense](digital-forensics/README.md) | 5 unidades | Quien investiga incidentes y necesita evidencia que resista un juicio |
 | [Seguridad de la información](information-security/README.md) | 5 unidades | Quien gestiona riesgos, un SGSI o la continuidad del negocio |
 | [Legislación nacional e internacional en ciberseguridad](cyber-law/README.md) | 5 unidades | Quien necesita el marco legal de México y del mundo |
+| [Seguridad de APIs: atacar y defender](api-security/README.md) | 6 módulos de 2 h | Desarrolladores de backend que quieren encontrar sus fallas antes que otros |
 
 ## Cómo está organizado cada curso
 

@@ -12,7 +12,16 @@ Cada nota explica su tema con el detalle completo, cierra con su glosario y sus 
 | [Seguridad de la información](04-seguridad-informacion/README.md) | 15 | [`information-security`](../cursos/information-security/README.md) |
 | [Legislación nacional e internacional en ciberseguridad](05-legislacion/README.md) | 15 | [`cyber-law`](../cursos/cyber-law/README.md) |
 
-**Total: 76 notas.**
+**Total: 76 notas** (más las notas sueltas de seguridad de APIs, abajo).
+
+### Seguridad de APIs
+
+Notas del curso [`api-security`](../cursos/api-security/README.md):
+
+| Nota | Módulo |
+|---|---|
+| [Seguridad de GraphQL](09-graphql-seguridad.md) | 5 |
+| [Pruebas de seguridad de APIs](10-pruebas-de-seguridad-de-apis.md) | 6 |
 
 ---
 

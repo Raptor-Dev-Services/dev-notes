@@ -464,6 +464,13 @@ La ruta de ciberseguridad en cinco materias. Índice por materia en [`12-segurid
 | 14 | [Regulación de la ciberseguridad en Estados Unidos](12-seguridad/05-legislacion/14-estados-unidos.md) |
 | 15 | [Regulación de la ciberseguridad en Latinoamérica](12-seguridad/05-legislacion/15-latinoamerica.md) |
 
+### Seguridad de APIs (2 docs)
+
+| # | Doc |
+|---|-----|
+| 09 | [Seguridad de GraphQL](12-seguridad/09-graphql-seguridad.md) |
+| 10 | [Pruebas de seguridad de APIs](12-seguridad/10-pruebas-de-seguridad-de-apis.md) |
+
 ---
 
 ## Cursos de academy
