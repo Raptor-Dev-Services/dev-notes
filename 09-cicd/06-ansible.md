@@ -1,6 +1,6 @@
 # 06 - Ansible: configurar lo que se creó
 
-> Fuente: *Ansible: Up and Running* (Meijer, Hochstein y Moser, 2022): caps. 3 Playbooks: A Beginning, 4 Inventory: Describing Your Servers, 5 Variables and Facts, 8 Debugging Ansible Playbooks, 9 Roles: Scaling Up Your Playbooks, 14 Quality Assurance with Molecule y 24 Best Practices. Comandos y salidas verificados con ansible-core 2.22.0 y ansible-lint 26.11.0 (a noviembre de 2026); las fuentes están en Referencias.
+> Fuente: *Ansible: Up and Running* (Meijer, Hochstein y Moser, 2022): caps. 3 Playbooks: A Beginning, 4 Inventory: Describing Your Servers, 5 Variables and Facts, 8 Debugging Ansible Playbooks, 9 Roles: Scaling Up Your Playbooks, 14 Quality Assurance with Molecule y 24 Best Practices. Las salidas de esta nota se obtuvieron con ansible-core 2.22.0 y ansible-lint 26.11.0; el curso instala ansible-core 2.21.6 porque corre en Python 3.12 (a noviembre de 2026); las fuentes están en Referencias.
 
 ## Problema que resuelve
 
@@ -26,7 +26,7 @@ Ansible describe el estado deseado del servidor en archivos YAML y lo aplica por
 | Rol | Una carpeta con estructura fija que empaqueta tareas, variables, plantillas y handlers |
 | Facts | Datos que Ansible descubre del servidor al empezar (`gather_facts`) |
 
-El nodo de control necesita una versión de Python que acepte la versión de ansible-core. Según PyPI, ansible-core 2.22.0 (publicado el 2026-11-02) requiere Python 3.13 o superior; Ubuntu 24.04 trae Python 3.12 en el sistema. Antes de instalar, revisa la guía oficial de instalación de Ansible para ver qué combinación admite tu versión.
+El nodo de control necesita una versión de Python que acepte la versión de ansible-core. Según PyPI, ansible-core 2.22.0 (publicado el 2026-11-02) requiere Python 3.13 o superior, y la VM Ubuntu 24.04 del curso trae Python 3.12: ahí `pip install ansible-core==2.22.0` no encuentra una distribución compatible, y `ansible-core==2.21.6` sí se instala. Por eso el curso usa 2.21.6. Antes de instalar otra versión, revisa la guía oficial de instalación y la tabla de soporte de Ansible.
 
 ---
 
