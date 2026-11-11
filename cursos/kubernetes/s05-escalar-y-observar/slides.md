@@ -338,7 +338,7 @@ hola desde el job
 
 ## CronJob
 
-```yaml {1-5|6-8|9-18}
+```yaml {1-5|6-8|9-17}
 apiVersion: batch/v1
 kind: CronJob
 metadata:

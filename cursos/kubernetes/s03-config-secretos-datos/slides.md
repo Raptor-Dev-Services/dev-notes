@@ -88,7 +88,7 @@ Fuente: kubernetes.io, "ConfigMaps"; Burns et al., *Kubernetes: Up and Running* 
 
 ## Tres formas de consumirlo
 
-```yaml {1-4|5-12|13-24}
+```yaml {1-4|5-12|13-21}
 envFrom:                          # todas las claves como variables
   - configMapRef:
       name: api-config
