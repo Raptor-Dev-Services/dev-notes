@@ -3,6 +3,8 @@
 **Introducción a la ciberseguridad**
 **Tiempo estimado:** 6 horas, individual.
 
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
+
 ---
 
 ## Parte 1 - Lecturas (2 horas)
@@ -44,7 +46,7 @@ Investiguen el caso en fuentes periodísticas y documentales confiables. **No re
    - Cumplimiento de la ley por parte de la autoridad.
 4. Relacionen el caso con al menos un concepto de cada nota de la unidad (por ejemplo: identidad, ciberpoder, exceso de credibilidad, huella digital, in-seguridad).
 
-### Formato de la entrega
+### Formato del documento
 
 - Ensayo de **máximo cinco cuartillas**, más portada y referencias.
 - Estructura: portada, introducción, desarrollo, conclusiones y referencias.
@@ -72,7 +74,7 @@ Investiguen el caso en fuentes periodísticas y documentales confiables. **No re
 
 ---
 
-## Rúbrica (10 puntos)
+## Rúbrica de autoevaluación (10 puntos)
 
 | Criterio | Excelente (2) | Bueno (1) | Regular (0.5) | Deficiente (0) | Puntos |
 |---|---|---|---|---|---|
@@ -81,6 +83,8 @@ Investiguen el caso en fuentes periodísticas y documentales confiables. **No re
 | Fundamentación | Argumentos sólidos apoyados en referentes teóricos y jurídicos pertinentes y actuales | Algunos argumentos, con referentes pertinentes y actuales | Algunos argumentos; referentes pertinentes pero no actualizados | Argumentos débiles que no sostienen la postura | 2 |
 | Fuentes de información | Las fuentes enriquecen el trabajo, son actuales y están citadas en APA 7 sin errores | Fuentes valiosas y bien citadas, aunque no tan recientes | No todas aportan; citadas correctamente pero poco actuales | Fuentes poco útiles o sin formato de cita | 2 |
 | Análisis | Juicios propios relevantes que contrastan o refuerzan a los autores citados | Juicios relevantes, contrastados solo en parte | Juicios poco relevantes, sin relación clara con los autores | No hay juicio propio: solo un resumen | 2 |
+
+Autoevalúate: suma tus puntos de cada criterio (máximo 10). Si sacas menos de 7 (70 %), vuelve a leer las notas 04 a 06 y rehaz el apartado más débil.
 
 ---
 
@@ -98,7 +102,7 @@ Investiguen el caso en fuentes periodísticas y documentales confiables. **No re
 ## Preguntas frecuentes
 
 **¿Puedo estar a favor del funcionario?**
-Sí. Se califica la fundamentación, no el sentido de la postura. Lo que no vale es ignorar los argumentos contrarios: el mejor ensayo reconoce lo que el otro lado tiene de razón.
+Sí. Al autoevaluarte, valora la fundamentación, no el sentido de la postura. Lo que no vale es ignorar los argumentos contrarios: el mejor ensayo reconoce lo que el otro lado tiene de razón.
 
 **¿Sirve el criterio de la Suprema Corte sobre bloqueos en redes?**
 Sí, como analogía: también trata de qué obligaciones adquiere un servidor público cuando usa redes para informar de su función. Expliquen en qué se parece y en qué no.

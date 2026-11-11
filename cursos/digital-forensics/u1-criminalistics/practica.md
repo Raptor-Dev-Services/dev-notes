@@ -1,18 +1,20 @@
 # Práctica - U1 - ¿Sirve la criminalística para investigar ciberdelitos?
 
 **Informática forense**
-**Tiempo estimado:** 2 horas, en foro, a lo largo de la semana de la unidad.
+**Tiempo estimado:** 2 horas, individual, a lo largo de la semana de la unidad.
+
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
 
 ---
 
-## Actividad de apertura: preséntate (antes de empezar la materia)
+## Actividad de apertura: tu punto de partida (antes de empezar la materia)
 
-El grupo va a trabajar cinco semanas discutiendo casos, así que conviene saber con quién se conversa.
+Vas a trabajar cinco semanas con casos, así que conviene fijar de dónde partes.
 
-1. Publica una presentación breve en el foro de bienvenida: a qué te dedicas, dónde estudiaste, qué te gusta hacer fuera del trabajo y qué esperas aprender en esta materia.
-2. Lee las presentaciones de otras personas del grupo y comenta al menos dos: busca coincidencias de trabajo o de intereses que puedan servir para los foros de las siguientes unidades.
+1. Escribe en un documento propio una presentación breve: a qué te dedicas, qué sabes ya de informática forense y qué esperas aprender en esta materia.
+2. Anota dos temas de la unidad que te gustaría dominar al terminar y, al cerrar la unidad, relee tu presentación para ver qué esperabas y qué sigue pendiente.
 
-No se califica el contenido, solo que participes. Sé cordial: es la primera impresión que dejas en el grupo.
+Esta actividad no suma puntos: solo sirve para que sepas de dónde partes.
 
 ---
 
@@ -22,7 +24,7 @@ Reconocer, con argumentos y no con impresiones, si los procedimientos de la crim
 
 ---
 
-## El caso para discutir
+## El caso para analizar
 
 Un despacho contable denuncia que alguien transfirió fondos de un cliente desde la computadora de recepción un viernes a las 19:40. El lunes, el encargado de sistemas apagó el equipo "para que nadie lo tocara", lo desconectó y lo guardó en su oficina. La policía llega el martes. En el escritorio hay un teclado, un teléfono celular encendido que nadie reclama, una memoria USB y una taza con restos de café. El conmutador de red del despacho guarda bitácoras por 72 horas.
 
@@ -30,9 +32,9 @@ Usa el caso como punto de partida; puedes traer otros, reales o de la lectura.
 
 ---
 
-## Primer momento (a más tardar el jueves de la semana)
+## Primer momento: tu aportación inicial
 
-Publica tu aportación inicial, de 300 a 500 palabras, que conteste:
+Escribe en un documento propio tu aportación inicial, de 300 a 500 palabras, que conteste:
 
 1. **Tu postura.** ¿Son útiles, o no, los métodos criminalísticos para investigar ciberdelitos? Dilo en la primera línea.
 2. **Los principios.** Toma al menos dos de los cuatro principios (intercambio, correspondencia de características, reconstrucción de hechos, probabilidad) y explica cómo se aplican, o por qué no, al caso.
@@ -42,20 +44,20 @@ Publica tu aportación inicial, de 300 a 500 palabras, que conteste:
 
 ---
 
-## Segundo momento (hasta el domingo)
+## Segundo momento: contraste con otras posturas
 
-Comenta las aportaciones de **tres** personas del grupo, de preferencia de quienes todavía no tienen comentarios:
+Busca en las lecturas de la unidad o en otras fuentes **dos** posturas distintas a la tuya sobre si la criminalística sirve para investigar ciberdelitos, y resume cada una en pocas líneas:
 
-- Di si estás de acuerdo o no y por qué. Una opinión personal no basta: compara su postura con la tuya y apóyate en lo visto en la unidad.
-- Señala algo que modificarías o completarías de su análisis.
-- Si alguien sostiene la postura contraria a la tuya, responde a su argumento más fuerte, no al más débil.
+- Di en qué coincides y en qué no, y por qué, aportando un dato nuevo que no estaba en tu aportación inicial. Una opinión personal no basta: apóyate en lo visto en la unidad.
+- Señala algo que modificarías o completarías de tu propio análisis a la luz de esas posturas.
+- Si alguna sostiene la postura contraria a la tuya, responde a su argumento más fuerte, no al más débil.
 
 ---
 
-## Lo que entregan
+## Lo que debes tener al terminar
 
-- Una aportación inicial en el foro (primer momento).
-- Tres comentarios argumentados a otras personas (segundo momento).
+- Tu aportación inicial en un documento propio (primer momento).
+- El contraste con dos posturas distintas, argumentado (segundo momento).
 - Referencias en APA 7 al final de la aportación inicial.
 
 ---
@@ -66,8 +68,10 @@ Comenta las aportaciones de **tres** personas del grupo, de preferencia de quien
 |---|---|---|
 | Postura y argumentación | 30 % | Postura clara desde el inicio, sostenida con razones y no con impresiones |
 | Uso de los contenidos de la unidad | 30 % | Principios, regla de oro y fundamento legal aplicados al caso, no solo enunciados |
-| Retroalimentación | 25 % | Tres comentarios que comparan, cuestionan o completan, con respeto |
+| Contraste con otras posturas | 25 % | Dos posturas distintas a la tuya que comparas, cuestionas o completas, con un dato nuevo |
 | Redacción y referencias | 15 % | Ortografía, claridad, etiqueta y referencias en APA 7 |
+
+Autoevalúate: asígnate en cada criterio de 0 a su peso y suma sobre 100. Menos de 70: vuelve a leer la nota indicada y rehaz el apartado más débil.
 
 ---
 
@@ -77,5 +81,5 @@ Comenta las aportaciones de **tres** personas del grupo, de preferencia de quien
 - [ ] Usaste al menos dos principios de la criminalística aplicados al caso.
 - [ ] Explicaste qué se perdió al apagar el equipo y por qué.
 - [ ] Citaste al menos un artículo vigente.
-- [ ] Comentaste a tres personas distintas, con argumentos.
+- [ ] Contrastaste dos posturas distintas a la tuya, con argumentos y un dato nuevo.
 - [ ] Revisaste ortografía y referencias.

@@ -3,6 +3,8 @@
 **Informática forense**
 **Tiempo estimado:** 3 horas, individual.
 
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
+
 ---
 
 ## Parte 1 - Lecturas (1 hora)
@@ -54,7 +56,7 @@ Debajo del mapa, una tabla que compare **tres** técnicas de ramas distintas:
 
 Un párrafo de 150 a 200 palabras: ¿cuál de las ramas creen que crece más en México hoy y por qué? Sostengan su respuesta con un dato de la nota 07 o de una fuente oficial reciente.
 
-### Formato de la entrega
+### Formato del documento
 
 Un documento (PDF o Markdown con la imagen del mapa) con letra legible de 12 puntos e interlineado 1.5 si es procesador de textos:
 
@@ -87,6 +89,8 @@ Un documento (PDF o Markdown con la imagen del mapa) con letra legible de 12 pun
 | **Presentación y ortografía** (1.0) | 1.0: sigue el formato y no tiene errores | 0.5: sigue el formato, con dos a cuatro errores | 0.3: se aleja del formato o tiene cinco a siete errores | 0: no sigue el formato o tiene ocho errores o más |
 | **Comparación** (1.5) | 1.5: la tabla compara tres técnicas en todas sus columnas y muestra similitudes y diferencias con detalle | 1.1: compara, pero de forma general | 0.75: la comparación es mínima o le faltan columnas | 0: no hay comparación útil |
 
+Autoevalúate: suma los puntos de cada criterio según tu nivel de logro (máximo 7.5). Menos de 5 puntos: vuelve a leer la nota 05 y rehaz la rama o la tabla más débil.
+
 ---
 
 ## Criterio de aceptación
@@ -105,7 +109,7 @@ Un documento (PDF o Markdown con la imagen del mapa) con letra legible de 12 pun
 Sí, en una rama aparte marcada como "fuera de la lectura", con su fuente. El grueso del mapa tiene que salir de la nota 05.
 
 **¿Un mapa hecho a mano vale?**
-Sí, si se lee bien en la imagen. Lo que se califica es la estructura y el contenido, no el diseño.
+Sí, si se lee bien en la imagen. Lo que cuenta es la estructura y el contenido, no el diseño.
 
 **¿Phishing va en fraude o en suplantación de identidad?**
 En las dos, y esa es justo la clase de relación que el mapa debe mostrar.

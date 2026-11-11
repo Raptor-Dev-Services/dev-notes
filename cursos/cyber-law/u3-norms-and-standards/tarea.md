@@ -3,6 +3,8 @@
 **Legislación nacional e internacional en ciberseguridad**
 **Tiempo estimado:** 4 horas, individual.
 
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
+
 ---
 
 ## Parte 1 - Lecturas (1.5 horas)
@@ -30,7 +32,7 @@
 
 **Objetivo:** analizar la norma mexicana que ofrece una guía para fortalecer la ciberseguridad en México.
 
-Elaboren una infografía de una sola página que explique el **objetivo** de la NMX-I-27032-NYCE-2018 y su relación con tres ejes:
+Elabora una infografía de una sola página que explique el **objetivo** de la NMX-I-27032-NYCE-2018 y su relación con tres ejes:
 
 1. **Las tecnologías de la información:** a qué sistemas, plataformas, redes y datos aplica.
 2. **Las técnicas de seguridad:** qué tipos de seguridad integra (de la información, de redes, de internet y de la infraestructura crítica).
@@ -38,22 +40,24 @@ Elaboren una infografía de una sola página que explique el **objetivo** de la 
 
 #### Pasos sugeridos
 
-1. Reúnan los datos duros de la norma: título, organismo que la elaboró, fecha de publicación de su declaratoria en el DOF, entrada en vigor, carácter voluntario y concordancia con ISO/IEC 27032:2012.
-2. Escriban el objetivo de la norma en una o dos frases propias.
-3. Para cada uno de los tres ejes, elijan de dos a cuatro ideas y un ejemplo concreto.
-4. Agreguen un bloque de **contexto** con dos comparaciones breves: la NMX frente a ISO/IEC 27001 y frente al marco del NIST.
-5. Agreguen un bloque de **vigencia**: la NMX copia la edición 2012, que ISO sustituyó en 2023. ¿Qué implica para una empresa que la adopte hoy?
-6. Diseñen: jerarquía visual clara, pocos colores, íconos propios o libres de derechos, letra legible al imprimir en tamaño carta.
-7. Citen sus fuentes en APA 7 al pie de la infografía.
+1. Reúne los datos duros de la norma: título, organismo que la elaboró, fecha de publicación de su declaratoria en el DOF, entrada en vigor, carácter voluntario y concordancia con ISO/IEC 27032:2012.
+2. Escribe el objetivo de la norma en una o dos frases propias.
+3. Para cada uno de los tres ejes, elige de dos a cuatro ideas y un ejemplo concreto.
+4. Agrega un bloque de **contexto** con dos comparaciones breves: la NMX frente a ISO/IEC 27001 y frente al marco del NIST.
+5. Agrega un bloque de **vigencia**: la NMX copia la edición 2012, que ISO sustituyó en 2023. ¿Qué implica para una empresa que la adopte hoy?
+6. Diseña: jerarquía visual clara, pocos colores, íconos propios o libres de derechos, letra legible al imprimir en tamaño carta.
+7. Cita tus fuentes en APA 7 al pie de la infografía.
 
-### Formato de la entrega
+### Formato del documento
 
-- Un PDF o PNG de la infografía, más un enlace al archivo editable si usaron una herramienta en línea.
-- Un archivo `tarea-u3.md` con las fuentes en APA 7 y un párrafo de 100 a 150 palabras que explique sus decisiones de diseño.
+- Un PDF o PNG de la infografía, más un enlace al archivo editable si usaste una herramienta en línea.
+- Un archivo `tarea-u3.md` con las fuentes en APA 7 y un párrafo de 100 a 150 palabras que explique tus decisiones de diseño.
 
 ---
 
 ## Rúbrica (10 puntos)
+
+Autoevalúate con esta rúbrica. Suma tus puntos: con menos de 7, vuelve a leer la nota indicada y rehaz el apartado más débil.
 
 | Criterio | Excelente | Bueno | Regular | Deficiente |
 |---|---|---|---|---|
@@ -80,16 +84,16 @@ Elaboren una infografía de una sola página que explique el **objetivo** de la 
 ## Preguntas frecuentes
 
 **¿Puedo usar una plantilla de una herramienta de diseño?**
-Sí, siempre que el contenido y la organización sean suyos y que retiren cualquier elemento que no aporte.
+Sí, siempre que el contenido y la organización sean tuyos y que retires cualquier elemento que no aporte.
 
 **La norma completa es de pago. ¿Cómo la estudio?**
-Trabajen con la ficha oficial del catálogo, con las notas de la unidad y con la descripción pública de ISO/IEC 27032. Si la consultan en una biblioteca, díganlo en las fuentes.
+Trabaja con la ficha oficial del catálogo, con las notas de la unidad y con la descripción pública de ISO/IEC 27032. Si la consultas en una biblioteca, dilo en las fuentes.
 
 **¿Es obligatoria la NMX para las empresas mexicanas?**
-No por sí misma. Es un estándar voluntario. Se vuelve exigible si un contrato, una licitación o una norma obligatoria la incorpora. Expliquen esa diferencia en la infografía.
+No por sí misma. Es un estándar voluntario. Se vuelve exigible si un contrato, una licitación o una norma obligatoria la incorpora. Explica esa diferencia en la infografía.
 
 ---
 
 ## Preparación para la U4
 
-Traigan anotado un caso de filtración de datos o de acceso no autorizado que haya sido noticia en México. En la siguiente unidad lo analizaremos contra la Constitución, el Código Penal Federal y la ley de protección de datos.
+Ten anotado un caso de filtración de datos o de acceso no autorizado que haya sido noticia en México. En la siguiente unidad lo analizarás contra la Constitución, el Código Penal Federal y la ley de protección de datos.

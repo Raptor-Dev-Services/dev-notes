@@ -3,6 +3,8 @@
 **Introducción a la ciberseguridad**
 **Tiempo estimado:** 5 horas (1.5 de lecturas y 3.5 del reto), actividad individual.
 
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
+
 ---
 
 ## Parte 1 - Lecturas
@@ -44,7 +46,7 @@ Evaluar el nivel de alfabetización digital, con énfasis en hábitos de segurid
 
 #### 2. Aplicarlo
 
-- Envíenlo a **al menos 10 personas** de su entorno personal o laboral.
+- Envíalo a **al menos 10 personas** de su entorno personal o laboral.
 - Busquen **diversidad**: distintas edades, géneros y actividades laborales o profesionales. Si todos son de su generación y de su oficina, el resultado no dice mucho.
 - **No pidan nombre, correo ni teléfono.** Son datos personales que no aportan al análisis y que ustedes tendrían que proteger. Si la herramienta los recoge por defecto, desactívenlo. Agreguen al inicio un aviso breve: para qué es la encuesta, que es anónima y quién verá los resultados.
 
@@ -63,7 +65,7 @@ El informe lleva cinco apartados:
 4. **Resultados:** resumen de lo que respondieron (porcentajes clave).
 5. **Interpretación:** análisis por pregunta o por categoría, y conclusiones generales. ¿Qué tan alfabetizado digitalmente está su entorno? ¿Qué riesgo concreto corre esa gente? ¿Qué le recomendarían?
 
-### Formato de la entrega
+### Formato del documento
 
 - Documento de procesador de textos, letra Arial 12, interlineado 1.5.
 - Fuentes citadas en el texto y listadas al final en APA 7, en orden alfabético.
@@ -84,7 +86,7 @@ El informe lleva cinco apartados:
 
 ---
 
-## Rúbrica (7.5 puntos)
+## Rúbrica de autoevaluación (7.5 puntos)
 
 | Criterio | Excelente | Suficiente | Insuficiente | Puntos |
 |---|---|---|---|---|
@@ -92,6 +94,8 @@ El informe lleva cinco apartados:
 | Calidad del contenido | Todo se relaciona con el tema y lo desarrolla con ideas secundarias y ejemplos; cubre todos los apartados (2) | Se relaciona con el tema pero con pocas ideas secundarias o ejemplos (0.8 a 1.2) | No se relaciona con el tema o deja apartados sin desarrollar (0) | 2 |
 | Análisis de la situación | Descompone los resultados por categoría, los detalla y el análisis es correcto (2) | Separa los componentes; el análisis es aceptable pero con poco detalle (0.67 a 1.33) | No demuestra comprensión; el análisis es incorrecto (0) | 2 |
 | Interpretación de evidencias | Explica las gráficas y respuestas con afirmaciones que demuestran comprensión detallada (2) | Explica las evidencias, pero las conclusiones son generales o pobres (0.5 a 1.5) | La explicación es incorrecta o no hay conclusiones (0) | 2 |
+
+Autoevalúate: suma tus puntos de cada criterio (máximo 7.5). Si sacas menos de 5.25 (70 %), vuelve a leer las notas 01 a 03 y rehaz el apartado más débil.
 
 ---
 
@@ -109,7 +113,7 @@ El informe lleva cinco apartados:
 ## Preguntas frecuentes
 
 **¿Puedo aplicarlo a más de 10 personas?**
-Sí, y la muestra gana valor. Pero diversidad pesa más que cantidad: 12 personas de distintas edades dicen más que 40 compañeros de oficina.
+Sí, y la muestra gana valor. Pero diversidad pesa más que cantidad: 12 personas de distintas edades dicen más que 40 personas de una misma oficina.
 
 **¿Puedo poner los nombres de quienes respondieron para demostrar que es real?**
 No. La evidencia son las estadísticas, no las identidades. Publicar nombres en un trabajo académico es exponer datos personales sin necesidad.

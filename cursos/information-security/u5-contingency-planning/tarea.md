@@ -5,6 +5,8 @@
 **Tiempo estimado:** 4 horas.
 **Valor:** 7.5 puntos.
 
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
+
 ---
 
 ## Objetivo
@@ -52,13 +54,15 @@ Pueden presentarlo como documento o como presentación, siempre con introducció
 
 ---
 
-## Entregable
+## Lo que debes tener al terminar
 
 Un archivo PDF (documento o presentación) en Arial 12 con interlineado 1.5, con introducción, las cuatro partes del análisis, conclusión y referencias en APA 7.
 
 ---
 
-## Rúbrica
+## Rúbrica (autoevaluación)
+
+Califica cada criterio con el nivel que mejor describa tu trabajo.
 
 | Criterio | Excelente | Bueno | Regular | Deficiente |
 |---|---|---|---|---|
@@ -68,6 +72,8 @@ Un archivo PDF (documento o presentación) en Arial 12 con interlineado 1.5, con
 | **Conclusiones** (2 pts) | Claras, en lenguaje sencillo, y se desprenden del análisis: 2 | Ligadas al trabajo con poca precisión: 1.33 | Ambiguas: 0.67 | Confusas: 0 |
 
 **Total:** 7.5 puntos.
+
+**Autoevaluación:** suma tus puntos de cada criterio. Si sacas menos de 5.25 (70 %), vuelve a leer las lecturas de la Parte 1 y rehaz el apartado con menos puntos.
 
 ---
 

@@ -1,21 +1,23 @@
 # Práctica - U5 - México en prospectiva: de los ataques que vivimos a los que vienen
 
 **Riesgos actuales en ciberseguridad**
-**Tiempo estimado:** 2 horas, individual con discusión en grupo (foro o sesión presencial).
+**Tiempo estimado:** 2 horas, individual.
+
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
 
 ---
 
 ## Objetivo
 
-Aplicar lo estudiado en la unidad a un terreno conocido: tres incidentes que sacudieron a México. Primero explicarás cómo funcionaron y, con esa base, argumentarás hacia dónde van ataques parecidos ahora que existen la IA generativa, los drones baratos y los deepfakes. Después contrastarás tu lectura con la de tres compañeros. No se trata de adivinar el futuro, sino de razonarlo con hechos.
+Aplicar lo estudiado en la unidad a un terreno conocido: tres incidentes que sacudieron a México. Primero explicarás cómo funcionaron y, con esa base, argumentarás hacia dónde van ataques parecidos ahora que existen la IA generativa, los drones baratos y los deepfakes. Después contrastarás tu lectura con otras dos posturas. No se trata de adivinar el futuro, sino de razonarlo con hechos.
 
 ---
 
 ## Antes de empezar
 
-- Lean las notas de la unidad: [13 - Inteligencia artificial](../../../12-seguridad/02-riesgos/13-inteligencia-artificial.md), [14 - Drones](../../../12-seguridad/02-riesgos/14-drones.md) y [15 - Deepfakes](../../../12-seguridad/02-riesgos/15-deepfakes.md).
-- Relean la sección "Incidentes que marcaron al país" de [03 - Actualidad de la ciberseguridad en México](../../../12-seguridad/02-riesgos/03-ciberseguridad-en-mexico.md).
-- Tengan a la mano el formato APA 7: cada participación cierra con sus referencias.
+- Lee las notas de la unidad: [13 - Inteligencia artificial](../../../12-seguridad/02-riesgos/13-inteligencia-artificial.md), [14 - Drones](../../../12-seguridad/02-riesgos/14-drones.md) y [15 - Deepfakes](../../../12-seguridad/02-riesgos/15-deepfakes.md).
+- Relee la sección "Incidentes que marcaron al país" de [03 - Actualidad de la ciberseguridad en México](../../../12-seguridad/02-riesgos/03-ciberseguridad-en-mexico.md).
+- Ten a la mano el formato APA 7: cada apartado cierra con sus referencias.
 
 ---
 
@@ -37,7 +39,7 @@ Fuente: nota 03 de la materia.
 >
 > Un lunes a las 7:40, la tesorera de un banco mediano recibe una videollamada del director general. La imagen y la voz son las de siempre. Le pide autorizar de inmediato cuatro transferencias por SPEI "para cerrar una adquisición confidencial". A la misma hora, en una planta petroquímica, los equipos de oficina muestran una nota de rescate, y el personal de vigilancia reporta un dron que sobrevuela la barda perimetral desde hace veinte minutos. A media mañana circula en redes un video en el que un alto mando militar parece admitir que los correos filtrados meses antes son auténticos. Su oficina responde que el video es un deepfake.
 
-Lean el escenario dos veces. Cada pieza tiene un antecedente real en la unidad: la videollamada de Arup (2024), el ransomware de Pemex (2019), las dos direcciones de ataque de un dron y el dividendo del mentiroso.
+Lee el escenario dos veces. Cada pieza tiene un antecedente real en la unidad: la videollamada de Arup (2024), el ransomware de Pemex (2019), las dos direcciones de ataque de un dron y el dividendo del mentiroso.
 
 ---
 
@@ -66,34 +68,33 @@ Escribe entre 250 y 400 palabras con esta estructura:
 
 ---
 
-## Momento 2 - Réplica a tres compañeros (45 min)
+## Momento 2 - Contraste con otras posturas (45 min)
 
-Comenta la participación de **tres** compañeros. Prefiere a quienes todavía no tengan respuestas.
-
-Cada réplica, de 100 a 150 palabras, lleva:
+Busca en las notas de la unidad o en una fuente confiable **dos posturas distintas a la tuya** sobre hacia dónde van estos ataques (por ejemplo, un autor que ve más riesgo en los drones y tú en los deepfakes, o uno que confía en una medida que tú consideras insuficiente). Resúmelas y escribe, de 100 a 150 palabras por postura:
 
 1. **Tu postura:** de acuerdo, en desacuerdo o de acuerdo en parte, dicha en la primera línea.
 2. **Un argumento** apoyado en la unidad: una nota, un caso o un dato con su fuente.
-3. **Un aporte** que haga avanzar su análisis: una tecnología que no consideró, un contraejemplo o una medida de prevención que complemente la suya.
+3. **Un aporte** nuevo: una tecnología que esa postura no consideró, un contraejemplo o una medida de prevención que complemente la suya.
 
-Discutan las ideas, no a las personas. Si no están de acuerdo, díganlo con claridad y con respeto: un desacuerdo bien argumentado vale más que tres "muy buena aportación".
-
----
-
-## Lo que se entrega
-
-- **En foro:** la aportación del Momento 1 y las tres réplicas del Momento 2, cada una con sus referencias.
-- **En sesión presencial:** un documento (PDF o Markdown) con la aportación y las tres réplicas, con el nombre del compañero al que responde cada una.
+Se contrastan las ideas, no las personas. Si no estás de acuerdo, dilo con claridad y con respeto: un desacuerdo bien argumentado vale más que tres "muy buena postura".
 
 ---
 
-## Cómo se evalúa
+## Lo que debes tener al terminar
+
+Un documento (PDF o Markdown), guardado por tu cuenta, con tu aportación del Momento 1 y los dos contrastes del Momento 2, cada uno con la postura resumida y sus referencias.
+
+---
+
+## Cómo te autoevalúas
 
 | Criterio | Puntos | Qué se espera |
 |---|---|---|
 | Lectura de los casos | 2 | Explica cómo funcionaron al menos dos incidentes, con datos correctos y su fuente |
 | Prospectiva argumentada | 3 | Liga los casos con al menos dos tecnologías de la unidad y razona qué cambia; no se limita a predecir |
 | Prevención | 1.5 | Propone una medida concreta, viable y dirigida al sector del caso |
-| Réplicas | 2.5 | Tres réplicas con postura clara, argumento sustentado y un aporte nuevo |
-| Fuentes, redacción y etiqueta | 1 | Referencias en APA 7, buena ortografía y trato respetuoso |
+| Contraste con otras posturas | 2.5 | Dos contrastes con postura clara, argumento sustentado y un aporte nuevo |
+| Fuentes, redacción y tono | 1 | Referencias en APA 7, buena ortografía y trato respetuoso |
 | **Total** | **10** | |
+
+Suma tus puntos. Con menos de 7, vuelve a leer la nota indicada y rehaz el apartado más débil.

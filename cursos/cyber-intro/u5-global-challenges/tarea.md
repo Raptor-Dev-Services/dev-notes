@@ -3,6 +3,8 @@
 **Introducción a la ciberseguridad**
 **Tiempo estimado:** 5 horas, individual
 
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
+
 ---
 
 ## Parte 1 - Lecturas (2 horas)
@@ -43,9 +45,9 @@ Es una actividad **individual**. El objetivo es que expliquen su visión y la de
 
 - **Máximo 20 diapositivas**, incluidas una **portada** con sus datos (nombre, curso, fecha), una de **conclusiones** y una de **fuentes** en APA 7.
 - Pueden usar el formato Pecha Kucha (20 láminas de 20 segundos) como guía de ritmo, pero el tiempo por lámina **no se evalúa**: se evalúan el contenido y el formato.
-- No hace falta un documento escrito aparte: la presentación es el entregable.
+- No hace falta un documento escrito aparte: la presentación es el producto final.
 - La plantilla es libre. Si usan imágenes, que sean libres de derechos o propias, y con su crédito.
-- Se entrega en **PDF**.
+- Guárdala en **PDF**.
 
 ### Pasos sugeridos
 
@@ -70,9 +72,9 @@ Es una actividad **individual**. El objetivo es que expliquen su visión y la de
 5. **Escriban y citen (50 min).** Cada afirmación con dato lleva su cita en la lámina. Cuidado con las leyes: en México la ley de datos personales para particulares es la de 2025 y la autoridad ya no es el INAI.
 6. **Revisen (10 min).** Ortografía, número de láminas, que la tesis se sostenga y que cada fuente de la última lámina aparezca citada en alguna otra.
 
-### Formato de la entrega
+### Formato del documento
 
-Un archivo `tarea-u5-<apellido>.pdf` con la presentación. Si el grupo usa repositorio, súbanlo junto con un `tarea-u5.md` que diga:
+Un archivo `tarea-u5-<apellido>.pdf` con la presentación, junto con un `tarea-u5.md` que diga:
 
 ```markdown
 ## Tesis
@@ -87,7 +89,7 @@ Un archivo `tarea-u5-<apellido>.pdf` con la presentación. Si el grupo usa repos
 
 ---
 
-## Rúbrica
+## Rúbrica de autoevaluación
 
 Total: 10 puntos.
 
@@ -98,6 +100,8 @@ Total: 10 puntos.
 | **Fuentes de información** | 2 pts. Las fuentes enriquecen el trabajo, están bien citadas y referenciadas y son actuales | 1 pt. Enriquecen y están bien citadas, pero algunas no son tan recientes | 0.5 pts. No todas aportan; están bien citadas, pero la información no es actual | 0 pts. Algunas no aportan ni son actuales, y no siguen el formato de cita |
 | **Análisis** | 4 pts. Los juicios y críticas propios son relevantes y contrastan o refuerzan lo que dicen los autores citados | 2.66 pts. Juicios relevantes que en algunos casos contrastan o refuerzan a los autores | 1.34 pts. Juicios poco relevantes que no aportan; no se ve la relación con los autores citados | 0 pts. No hay juicio propio: la presentación solo resume ideas ajenas |
 
+Autoevalúate: suma tus puntos de cada criterio (máximo 10). Si sacas menos de 7 (70 %), vuelve a leer las notas 13 a 15 y rehaz el apartado más débil.
+
 ---
 
 ## Criterio de aceptación
@@ -106,9 +110,9 @@ Total: 10 puntos.
 - [ ] Hay una tesis clara que toda la presentación sostiene.
 - [ ] Explica su visión actual, sus expectativas para el plazo mediato a partir de sus decisiones y su visión deseada del futuro.
 - [ ] Al menos cinco fuentes confiables y actuales, citadas en las láminas y listadas en APA 7.
-- [ ] Las leyes y normas que mencionan están vigentes al momento de entregar.
+- [ ] Las leyes y normas que mencionan están vigentes al momento de terminar el trabajo.
 - [ ] Hay juicio propio: al menos una lámina donde contrastan o critican lo que dice un autor.
-- [ ] Se entrega en PDF y las imágenes son propias o libres de derechos.
+- [ ] Está guardada en PDF y las imágenes son propias o libres de derechos.
 
 ---
 

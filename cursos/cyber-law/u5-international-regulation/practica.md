@@ -1,7 +1,9 @@
 # Práctica - U5 - Derechos humanos en las estrategias de ciberseguridad de América Latina
 
 **Legislación nacional e internacional en ciberseguridad**
-**Tiempo estimado:** 3 horas: 90 minutos de análisis individual y 90 minutos de discusión en foro.
+**Tiempo estimado:** 3 horas, individual: 90 minutos de análisis y 90 minutos de reflexión y contraste.
+
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
 
 ---
 
@@ -15,15 +17,15 @@ Una estrategia puede decir "respetaremos los derechos humanos" en su introducci�
 
 ## Antes de empezar
 
-- Lean la [nota 15](../../../12-seguridad/05-legislacion/15-latinoamerica.md) completa y repasen la sección de la Estrategia Nacional de Ciberseguridad de México en la [nota 06](../../../12-seguridad/05-legislacion/06-estrategia-nacional-mexico.md).
-- Cada persona elige **un país** distinto al de sus compañeros de mesa: Argentina, Colombia, Chile, Uruguay, Brasil, Costa Rica, Perú, Paraguay, Ecuador, República Dominicana o Guatemala. Si eligen uno que no viene en la nota, busquen su estrategia o política nacional en el sitio oficial del gobierno.
-- Tengan a la mano la versión vigente del documento. Si la estrategia del país ya fue sustituida, usen la más reciente y anótenlo.
+- Lee la [nota 15](../../../12-seguridad/05-legislacion/15-latinoamerica.md) completa y repasa la sección de la Estrategia Nacional de Ciberseguridad de México en la [nota 06](../../../12-seguridad/05-legislacion/06-estrategia-nacional-mexico.md).
+- Elige **un país**: Argentina, Colombia, Chile, Uruguay, Brasil, Costa Rica, Perú, Paraguay, Ecuador, República Dominicana o Guatemala. Si eliges uno que no viene en la nota, busca su estrategia o política nacional en el sitio oficial del gobierno.
+- Ten a la mano la versión vigente del documento. Si la estrategia del país ya fue sustituida, usa la más reciente y anótalo.
 
 ---
 
 ## Paso 1 - Leer con lupa (40 min)
 
-Busquen en la estrategia o ley de su país todo lo que toque estos cuatro temas y anoten la página o el artículo:
+Busca en la estrategia o ley de tu país todo lo que toque estos cuatro temas y anota la página o el artículo:
 
 | Tema | Qué buscar |
 |---|---|
@@ -34,9 +36,9 @@ Busquen en la estrategia o ley de su país todo lo que toque estos cuatro temas 
 
 ---
 
-## Paso 2 - Clasificar lo que encontraron (20 min)
+## Paso 2 - Clasificar lo que encontraste (20 min)
 
-Para cada hallazgo, decidan en qué escalón está:
+Para cada hallazgo, decide en qué escalón está:
 
 1. **Mención:** el documento nombra el derecho como principio o valor.
 2. **Compromiso:** el documento dice que habrá una acción, pero sin responsable ni plazo.
@@ -49,7 +51,7 @@ Una estrategia madura tiene medidas y garantías, no solo menciones.
 
 ## Paso 3 - Escribir la reflexión (30 min)
 
-Publiquen en el foro una reflexión de 400 a 600 palabras con esta estructura:
+Escribe, en un documento propio, una reflexión de 400 a 600 palabras con esta estructura:
 
 ```markdown
 ## País y documento analizado
@@ -65,34 +67,36 @@ Publiquen en el foro una reflexión de 400 a 600 palabras con esta estructura:
 (qué tiene ese país que México no tiene, o al revés)
 
 ## Reflexión
-(su postura, sostenida en lo anterior)
+(tu postura, sostenida en lo anterior)
 ```
 
 ---
 
-## Paso 4 - Enriquecer a tres compañeros (60 min)
+## Paso 4 - Contraste con otros países (60 min)
 
-Respondan a tres compañeros que analizaron países distintos al suyo. Cada respuesta lleva dos partes:
+Elige en la nota 15 **tres** países distintos al tuyo y, para cada uno, escribe dos partes:
 
-1. **Evidencia, no opinión.** Aporten un dato verificable que complemente su análisis: un artículo de la ley de su país, una sentencia, un informe de la OEA o del BID, una cifra oficial. Citen la fuente.
-2. **Una recomendación para México.** Expliquen cómo se podría replicar en México la medida que su compañero encontró, qué ley o institución mexicana tendría que cambiar y por qué beneficiaría a las personas.
+1. **Evidencia, no opinión.** Aporta un dato verificable sobre cómo ese país trata los derechos humanos en su estrategia o ley: un artículo, una sentencia, un informe de la OEA o del BID, una cifra oficial. Cita la fuente y di en qué se parece o se diferencia de lo que encontraste en tu país.
+2. **Una recomendación para México.** Explica cómo se podría replicar en México la medida que encontraste, qué ley o institución mexicana tendría que cambiar y por qué beneficiaría a las personas.
 
 ---
 
-## Evidencia que entregan
+## Lo que debes tener al terminar
 
-- La reflexión del paso 3 publicada en el foro, con al menos tres citas de página o artículo.
-- Tres respuestas con evidencia y recomendación.
+- La reflexión del paso 3, con al menos tres citas de página o artículo.
+- Tres contrastes con evidencia y recomendación.
 - La tabla de clasificación del paso 2 como anexo.
 
 ---
 
 ## Checklist
 
-- [ ] Usaron la versión vigente del documento de su país, o explicaron por qué no.
+- [ ] Usé la versión vigente del documento de mi país, o expliqué por qué no.
 - [ ] Cada hallazgo tiene página o artículo.
 - [ ] La clasificación distingue menciones de medidas y de garantías.
 - [ ] La comparación con México menciona al menos una ley o institución mexicana concreta.
-- [ ] Las tres respuestas aportan evidencia con fuente y no solo acuerdo o desacuerdo.
+- [ ] Los tres contrastes aportan evidencia con fuente y no solo acuerdo o desacuerdo.
 - [ ] Cada recomendación dice qué cambiaría en México y quién tendría que hacerlo.
-- [ ] Cuidaron ortografía, redacción y un trato respetuoso.
+- [ ] Cuidé ortografía y redacción.
+
+Autoevaluación: cuenta las casillas marcadas. Si te faltan dos o más, vuelve a leer la nota 15 y rehaz el apartado más débil.

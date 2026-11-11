@@ -1,7 +1,9 @@
 # Tarea - U4 - Si yo legislara la ciberseguridad
 
 **Legislación nacional e internacional en ciberseguridad**
-**Tiempo estimado:** 4 horas
+**Tiempo estimado:** 4 horas, individual.
+
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
 
 ---
 
@@ -42,7 +44,7 @@ Imagina que eres integrante del Congreso de la Unión y que te toca proponer el 
 4. **Justifica.** Explica por qué tu propuesta resuelve el problema mejor que no hacer nada o que la vía administrativa que ya existe.
 5. **Concluye** con lenguaje sencillo: qué cambiaría para una persona común si tu propuesta se aprobara.
 
-### Formato de la entrega
+### Formato del documento
 
 Un documento de Word o PDF, de una a tres cuartillas sin contar portada ni referencias, con referencias en APA 7. Estructura sugerida:
 
@@ -67,6 +69,8 @@ Un documento de Word o PDF, de una a tres cuartillas sin contar portada ni refer
 ---
 
 ## Rúbrica (10 puntos)
+
+Autoevalúate con esta rúbrica. Suma tus puntos: con menos de 7, vuelve a leer la nota indicada y rehaz el apartado más débil.
 
 | Criterio | Excelente | Bueno | Regular | Deficiente |
 |---|---|---|---|---|

@@ -1,8 +1,10 @@
 # Práctica - U3 - Mecanismos de seguridad para el teletrabajo
 
 **Seguridad de la información**
-**Tiempo estimado:** 2 horas, individual con réplica a tres compañeros.
+**Tiempo estimado:** 2 horas, individual, con contraste de posturas.
 **Valor:** 7.5 puntos.
+
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
 
 ---
 
@@ -38,14 +40,14 @@ Lean el decreto completo y las notas [`08-seguridad-fisica.md`](../../../12-segu
 
 ---
 
-## Primer momento (a más tardar el jueves)
+## Primer momento: tu propuesta
 
-Respondan en una aportación:
+Responde en un documento propio:
 
-1. **¿Qué recomendaciones y buenas prácticas de seguridad de la información debería considerar la autoridad** para asegurar la relación de trabajo? Piensen en normas, guías, mínimos de protección de datos y en cómo se supervisa sin invadir la intimidad.
+1. **¿Qué recomendaciones y buenas prácticas de seguridad de la información debería considerar la autoridad** para asegurar la relación de trabajo? Piensa en normas, guías, mínimos de protección de datos y en cómo se supervisa sin invadir la intimidad.
 2. **¿Qué mecanismos de seguridad deben implantar las empresas** para operar con personas en teletrabajo? Organicen la respuesta por capas de la defensa en profundidad:
 
-| Capa | Mecanismos que proponen | Por qué |
+| Capa | Mecanismos que propones | Por qué |
 |---|---|---|
 | Políticas | | |
 | Física (el domicilio, el equipo) | | |
@@ -57,25 +59,29 @@ Respondan en una aportación:
 
 3. **Una tensión que resolver:** el artículo 330-I limita la supervisión con cámara y micrófono. ¿Qué controles de seguridad respetan ese límite y aun así permiten detectar un incidente?
 
-Citen al menos una fuente externa en APA 7, además de la ley.
+Cita al menos una fuente externa en APA 7, además de la ley.
 
 ---
 
-## Segundo momento (hasta el domingo)
+## Segundo momento: contraste con otras posturas
 
-Comenten la aportación de **tres** compañeros: ¿qué capa quedó débil en su propuesta?, ¿algún mecanismo invade la intimidad más de lo proporcional?, ¿qué agregarían?
+Busca tú **dos** posturas distintas a la tuya (por ejemplo, en el decreto, en la NOM-037-STPS-2023 o en una guía de teletrabajo) y resume cada una. Contrástalas con tu propuesta: ¿qué capa quedó débil en tu propuesta?, ¿algún mecanismo invade la intimidad más de lo proporcional?, ¿qué agregarías? Sustenta cada respuesta con un dato nuevo.
 
 ---
 
-## Qué se evalúa
+## Autoevaluación
+
+Califícate con esta rúbrica:
 
 | Criterio | Puntos |
 |---|---|
 | Recomendaciones a la autoridad, concretas y fundadas | 2 |
 | Mecanismos para la empresa, completos por capa | 2.5 |
 | Resuelve la tensión entre supervisión e intimidad | 1 |
-| Réplicas que comparan con argumentos | 1.5 |
+| Contraste con dos posturas distintas, con argumentos y un dato nuevo | 1.5 |
 | Redacción y referencias en APA 7 | 0.5 |
+
+**Suma tus puntos** (máximo 7.5). Si sacas menos de 5.25 (70 %), vuelve a leer la nota [`09-seguridad-logica-y-ciclo-de-vida-de-los-datos.md`](../../../12-seguridad/04-seguridad-informacion/09-seguridad-logica-y-ciclo-de-vida-de-los-datos.md) y rehaz el apartado con menos puntos.
 
 ---
 

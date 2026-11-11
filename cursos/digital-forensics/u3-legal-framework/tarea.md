@@ -3,6 +3,8 @@
 **Informática forense**
 **Tiempo estimado:** 4 horas
 
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
+
 ---
 
 ## Parte 1 - Lecturas (1.5 horas)
@@ -41,7 +43,7 @@ Elabora una **infografía** que muestre la clasificación de los ciberdelitos de
 3. **Las otras formas de responsabilidad** (artículos 11 a 13): tentativa y complicidad, personas jurídicas, sanciones.
 4. **La equivalencia mexicana** de cada tipo: artículo del Código Penal Federal, de la Ley de Instituciones de Crédito, de la Ley General en materia de extorsión o de otra ley vigente. Si no hay equivalente claro, dilo.
 5. **Un ejemplo técnico** por título: qué técnica de ataque cae ahí (por ejemplo, denegación de servicio en interferencia en el sistema).
-6. Una franja con la **situación al día de tu entrega**: si México es Parte o no, con la fuente donde lo verificaste.
+6. Una franja con la **situación al día en que haces la tarea**: si México es Parte o no, con la fuente donde lo verificaste.
 
 ### 2. Cómo hacerla
 
@@ -54,7 +56,7 @@ Elabora una **infografía** que muestre la clasificación de los ciberdelitos de
 
 En un párrafo de 150 a 250 palabras: de los delitos del Convenio, ¿cuál es el que peor cubre hoy la ley mexicana y qué riesgo concreto produce eso en una investigación?
 
-### Formato de la entrega
+### Formato del documento
 
 Un archivo `tarea-u3.md` (o un PDF) con:
 
@@ -84,6 +86,8 @@ Un archivo `tarea-u3.md` (o un PDF) con:
 | Diseño | Tipografía, color y estilo al servicio de la lectura | Buen diseño con algún descuido | El diseño distrae y dificulta la lectura | 7 % |
 | Presentación y ortografía | Sin errores de ortografía ni de sintaxis | De dos a cuatro errores | Cinco o más errores | 7 % |
 | Fuentes | Fuentes oficiales y actuales en APA 7, incluida la verificación del estatus de México | Fuentes correctas pero alguna desactualizada | Sin fuentes o sin formato | 6 % |
+
+Autoevalúate: suma los puntos de cada criterio según tu nivel de logro y compáralos con el máximo. Menos de 70 sobre 100: vuelve a leer la nota indicada y rehaz el apartado más débil.
 
 ---
 

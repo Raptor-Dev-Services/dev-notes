@@ -5,6 +5,8 @@
 **Tiempo estimado:** 4 horas.
 **Valor:** 7.5 puntos.
 
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
+
 ---
 
 ## Objetivo
@@ -44,13 +46,15 @@ Propongan los controles físicos que mitigan cada riesgo y justifiquen cada uno 
 
 ---
 
-## Entregable
+## Lo que debes tener al terminar
 
 Un documento PDF, en Arial 12 con interlineado 1.5, con introducción, mapa, tabla de riesgos, controles propuestos con su justificación, conclusiones y referencias en APA 7.
 
 ---
 
-## Rúbrica
+## Rúbrica (autoevaluación)
+
+Califica cada criterio con el nivel que mejor describa tu trabajo.
 
 | Criterio | Excelente | Bueno | Regular | Deficiente |
 |---|---|---|---|---|
@@ -60,6 +64,8 @@ Un documento PDF, en Arial 12 con interlineado 1.5, con introducción, mapa, tab
 | **Interpretación de evidencias** (2 pts) | Cada control se justifica con una razón del NIST y se clasifica por tipo: 2 | Justificación general: 1.5 | Justificación escueta: 1 | Sin justificación: 0 |
 
 **Total:** 7.5 puntos.
+
+**Autoevaluación:** suma tus puntos de cada criterio. Si sacas menos de 5.25 (70 %), vuelve a leer las lecturas de la Parte 1 y rehaz el apartado con menos puntos.
 
 ---
 

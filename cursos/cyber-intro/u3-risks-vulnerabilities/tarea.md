@@ -3,6 +3,8 @@
 **Introducción a la ciberseguridad**
 **Tiempo estimado:** 5 horas
 
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
+
 ---
 
 ## Parte 1 - Lecturas (1.5 horas)
@@ -44,7 +46,7 @@ Los dispositivos conectados entran a las casas, los hospitales, las fábricas y 
 
 **Opcional para subir de nivel:** ordena las vulnerabilidades con la fórmula riesgo = probabilidad × impacto (escalas de 1 a 5) y marca cuáles tratarías primero.
 
-### Formato de la entrega
+### Formato del documento
 
 Un documento con:
 
@@ -77,7 +79,7 @@ Extensión máxima: 5 cuartillas sin contar imágenes, interlineado 1.15, letra 
 
 ---
 
-## Rúbrica
+## Rúbrica de autoevaluación
 
 Valor total: 7.5 puntos.
 
@@ -87,6 +89,8 @@ Valor total: 7.5 puntos.
 | Investigación | 2 pts. Consiguió material adicional, pertinente y actual, de recursos y autores variados | 1.33 pts. Material suficiente, pertinente y actual, de recursos y autores variados | 0.67 pts. Material suficiente, pertinente y actual, pero de pocos recursos o autores | 0 pts. Material pertinente pero desactualizado, de pocos recursos o autores |
 | Presentación, organización y ortografía | 1.5 pts. Respeta el formato y la extensión; sin errores de sintaxis ni de ortografía | 1 pt. Respeta formato y extensión; de dos a cuatro errores | 0.5 pts. Respeta el formato pero la extensión se aleja de lo pedido; de cinco a siete errores | 0 pts. Formato o extensión muy alejados de lo pedido; ocho errores o más |
 | Fuentes de información | 2 pts. Las fuentes enriquecen el trabajo, son actuales y están citadas y referenciadas en APA 7 | 1 pt. Enriquecen y están bien citadas, pero algunas no son recientes | 0.5 pts. No todas aportan y la información no es actual, aunque el formato sea correcto | 0 pts. Fuentes poco útiles o desactualizadas, sin el formato de cita y referencia |
+
+Autoevalúate: suma tus puntos de cada criterio (máximo 7.5). Si sacas menos de 5.25 (70 %), vuelve a leer las notas 07 a 09 y rehaz el apartado más débil.
 
 ---
 

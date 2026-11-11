@@ -1,13 +1,15 @@
 # Práctica - U3 - ¿Estamos o nos sentimos ciberamenazados?
 
 **Introducción a la ciberseguridad**
-**Tiempo estimado:** 2 horas, individual con discusión en grupo (foro o sesión en vivo).
+**Tiempo estimado:** 2 horas, individual, con un paso de contraste con otras posturas.
+
+> **Estudio individual.** Esta actividad se resuelve por tu cuenta: guarda tu trabajo y evalúalo tú mismo con la rúbrica o el checklist del final. No hay foro ni entrega en la plataforma. Si llevas el curso en grupo, el instructor te indica dónde se entrega.
 
 ---
 
 ## Objetivo
 
-Analizar en grupo qué tan real es la ciberamenaza en nuestro entorno: separar la sensación de inseguridad de la exposición que se puede demostrar con datos. Cada quien toma una postura, la fundamenta con fuentes y la contrasta con la de sus compañeros.
+Analizar qué tan real es la ciberamenaza en nuestro entorno: separar la sensación de inseguridad de la exposición que se puede demostrar con datos. Tomas una postura, la fundamentas con fuentes y la contrastas con otras posturas que tú busques.
 
 ---
 
@@ -29,9 +31,9 @@ Analizar en grupo qué tan real es la ciberamenaza en nuestro entorno: separar l
 
 > ¿Estamos ciberamenazados?
 
-**Segundo momento.** Comenta la participación de **tres** compañeros. Elige de preferencia a quienes todavía no tienen comentarios.
+**Segundo momento.** Contrasta tu postura con **tres posturas distintas** a la tuya que encuentres en las lecturas o en fuentes confiables.
 
-Una opinión sola no basta. Lo que se evalúa es que digas qué piensas, por qué lo piensas y cómo se compara tu postura con la de los demás, apoyándote en lo visto en la unidad.
+Una opinión sola no basta. Lo que debes lograr es que digas qué piensas, por qué lo piensas y cómo se compara tu postura con otras, apoyándote en lo visto en la unidad.
 
 ---
 
@@ -61,47 +63,48 @@ Entre 250 y 400 palabras con esta estructura:
 
 ---
 
-## Paso 3 - Replicar a tres compañeros (segundo momento)
+## Paso 3 - Contrastar con tres posturas distintas (segundo momento)
 
-Cada réplica, de 80 a 150 palabras, hace al menos dos de estas cosas:
+Para cada postura, escribe de 80 a 150 palabras que hagan al menos dos de estas cosas:
 
 - Compara tu postura con la suya: ¿en qué coinciden y en qué no?
-- Revisa su dato: ¿la fuente es confiable y reciente? ¿el dato dice lo que él afirma?
+- Revisa su dato: ¿la fuente es confiable y reciente? ¿el dato dice lo que afirma?
 - Distingue si lo que describe es riesgo, vulnerabilidad, amenaza o incidente, y propón el término preciso si lo confundió.
-- Aporta un dato o caso que complemente o matice su argumento.
+- Aporta un dato o caso nuevo que complemente o matice su argumento.
 
-Cuida la redacción, la ortografía y el respeto: se trata de dialogar, no de ganar.
-
----
-
-## Paso 4 - Cierre del grupo (si es sesión en vivo)
-
-El grupo vota tres preguntas y las responde juntos en 15 minutos:
-
-1. ¿Cuál fue la amenaza más mencionada? ¿Coincide con lo que dicen los informes?
-2. ¿Qué vulnerabilidad se repitió más entre todos?
-3. Si tuvieran que convencer a una pyme de invertir en una sola medida, ¿cuál sería?
+Cuida la redacción y la ortografía: se trata de entender otras posturas, no de ganar.
 
 ---
 
-## Evidencia que entregan
+## Paso 4 - Cierre personal
 
-1. Tu participación del primer momento, con sus referencias.
-2. Tus tres réplicas.
+Responde por escrito, en 15 minutos:
+
+1. ¿Cuál fue la amenaza más mencionada en las fuentes que revisaste? ¿Coincide con lo que dicen los informes?
+2. ¿Qué vulnerabilidad se repitió más entre las que identificaste?
+3. Si tuvieras que convencer a una pyme de invertir en una sola medida, ¿cuál sería?
+---
+
+## Lo que debes tener al terminar
+
+1. Tu postura del primer momento, con sus referencias.
+2. Tus tres contrastes.
 3. La tabla del paso 1 (puede ir como anexo).
 
 ---
 
-## Rúbrica
+## Rúbrica de autoevaluación
 
 | Criterio | Qué se busca | Puntos |
 |---|---|---|
 | Postura fundamentada | Responde la pregunta con argumentos propios, no solo opinión | 2 |
 | Uso de conceptos de la unidad | Distingue riesgo, vulnerabilidad, amenaza e incidente sin confundirlos | 2 |
 | Fuentes | Al menos dos fuentes confiables y recientes, citadas en APA 7 | 1.5 |
-| Réplicas | Tres comentarios que comparan, revisan o aportan, no solo felicitan | 1.5 |
-| Redacción y netiqueta | Ortografía cuidada, tono respetuoso | 0.5 |
+| Contraste | Tres posturas que comparas, revisas o a las que aportas un dato nuevo, no solo resumes | 1.5 |
+| Redacción | Ortografía cuidada, redacción clara | 0.5 |
 | **Total** | | **7.5** |
+
+Suma tus propios puntos. Si sacas menos de 5.25 (70 %), vuelve a leer las notas 07 a 09 y rehaz el apartado más débil.
 
 ---
 
@@ -111,5 +114,5 @@ El grupo vota tres preguntas y las responde juntos en 15 minutos:
 - [ ] Cité al menos dos datos de fuentes distintas, con año, en APA 7.
 - [ ] Expliqué una amenaza concreta y la vulnerabilidad propia que la facilita.
 - [ ] Propuse una medida y cómo comprobaría que funciona.
-- [ ] Repliqué a tres compañeros, de preferencia a quienes no tenían comentarios.
+- [ ] Contrasté mi postura con tres posturas distintas, comparando y aportando un dato nuevo.
 - [ ] Usé con precisión los términos riesgo, vulnerabilidad, amenaza e incidente.
